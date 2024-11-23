@@ -1,7 +1,6 @@
 
 import pdb
 import sys
-sys.path.insert(0, '../')
 
 import unduwave as uw
 
@@ -9,7 +8,6 @@ import unduwave as uw
 A change 2
 """
 
-#uw.hello()
 uw.api.hello()
 pdb.set_trace()
 
