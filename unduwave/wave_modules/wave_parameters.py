@@ -1,82 +1,84 @@
 from unduwave.unduwave_incl import *
+from unduwave.attribute_classes.attributes import _attribute
+from unduwave.attribute_classes.attributes import _attribute_collection
 
-class wave_parameters(WaveElement):
+class wave_parameters(_attribute_collection):
     """
     Represents standard parameters for wave simulations.
 
     Args:
         b_type (str, optional): Type of the wave element.
     """
-    b_type = WaveAttribute('By')
-    wave_prog_folder = WaveAttribute('')
-    in_file_folder = WaveAttribute('')
-    in_files = WaveAttribute({})
-    field_folder = WaveAttribute('')
-    field_files = WaveAttribute([])
-    res_folder = WaveAttribute('')
-    wave_data_res_folder = WaveAttribute('')
-    pics_folder = WaveAttribute('')
-    res_summary_file = WaveAttribute('')
-    no_copy = WaveAttribute([])
-    wave_ending_extract = WaveAttribute([])
-    wave_ending_copy = WaveAttribute([])
-    wave_files_essentials = WaveAttribute([])
-    wave_res_copy_behaviour = WaveAttribute()
-    zip_res_folder = WaveAttribute(1)
+    b_type = _attribute('By')
+    wave_prog_folder = _attribute('')
+    in_file_folder = _attribute('')
+    in_files = _attribute({})
+    field_folder = _attribute('')
+    field_files = _attribute([])
+    res_folder = _attribute('')
+    wave_data_res_folder = _attribute('')
+    pics_folder = _attribute('')
+    res_summary_file = _attribute('')
+    no_copy = _attribute([])
+    wave_ending_extract = _attribute([])
+    wave_ending_copy = _attribute([])
+    wave_files_essentials = _attribute([])
+    wave_res_copy_behaviour = _attribute()
+    zip_res_folder = _attribute(1)
 
-    nthreads = WaveAttribute(2,wave_in_name='MTHREADS')
+    nthreads = _attribute(2,wave_in_name='MTHREADS')
     # WAVE-IN PARAMETERS
-    zipped = WaveAttribute(True)
-    freq_low = WaveAttribute(0,wave_in_name='FREQLOW')
-    freq_high = WaveAttribute(0,wave_in_name='FREQHIG')
-    freq_num = WaveAttribute(0,wave_in_name='NINTFREQ')
-    beam_en = WaveAttribute(0,wave_in_name='DMYENERGY')
-    current = WaveAttribute(0,wave_in_name='DMYCUR')
+    zipped = _attribute(True)
+    freq_low = _attribute(0,wave_in_name='FREQLOW')
+    freq_high = _attribute(0,wave_in_name='FREQHIG')
+    freq_num = _attribute(0,wave_in_name='NINTFREQ')
+    beam_en = _attribute(0,wave_in_name='DMYENERGY')
+    current = _attribute(0,wave_in_name='DMYCUR')
 
-    bsigz = WaveAttribute(0,wave_in_name='BSIGZ(1)') # horizontal beam size [m]
-    bsigzp = WaveAttribute(0,wave_in_name='BSIGZP(1)') # hor beam divergence rad
-    bsigy = WaveAttribute(0,wave_in_name='BSIGY(1)') # Ver beam size m
-    bsigyp = WaveAttribute(0,wave_in_name='BSIGYP(1)') # ver beam divergence rad
-    espread = WaveAttribute(0,wave_in_name='ESPREAD') # ver beam divergence rad
-    emitt_h = WaveAttribute(0,wave_in_name='EPS0H')
-    emitt_v = WaveAttribute(0,wave_in_name='EPS0V')
-    betfunh = WaveAttribute(0,wave_in_name='BETFUN')
-    betfunv = WaveAttribute(0,wave_in_name='BETFUNV')
+    bsigz = _attribute(0,wave_in_name='BSIGZ(1)') # horizontal beam size [m]
+    bsigzp = _attribute(0,wave_in_name='BSIGZP(1)') # hor beam divergence rad
+    bsigy = _attribute(0,wave_in_name='BSIGY(1)') # Ver beam size m
+    bsigyp = _attribute(0,wave_in_name='BSIGYP(1)') # ver beam divergence rad
+    espread = _attribute(0,wave_in_name='ESPREAD') # ver beam divergence rad
+    emitt_h = _attribute(0,wave_in_name='EPS0H')
+    emitt_v = _attribute(0,wave_in_name='EPS0V')
+    betfunh = _attribute(0,wave_in_name='BETFUN')
+    betfunv = _attribute(0,wave_in_name='BETFUNV')
 
-    pinh_w = WaveAttribute(0,wave_in_name='PINW',fac=1e-3)
-    pinh_h = WaveAttribute(0,wave_in_name='PINH',fac=1e-3)
-    spec_calc = WaveAttribute(False,wave_in_name='ISPEC')
-    pinh_x = WaveAttribute(0,wave_in_name='PINCEN(1)')
-    pinh_nz = WaveAttribute(0,wave_in_name='MPINZ')
-    pinh_ny = WaveAttribute(0,wave_in_name='MPINY')
+    pinh_w = _attribute(0,wave_in_name='PINW',fac=1e-3)
+    pinh_h = _attribute(0,wave_in_name='PINH',fac=1e-3)
+    spec_calc = _attribute(False,wave_in_name='ISPEC')
+    pinh_x = _attribute(0,wave_in_name='PINCEN(1)')
+    pinh_nz = _attribute(0,wave_in_name='MPINZ')
+    pinh_ny = _attribute(0,wave_in_name='MPINY')
 
     # Simple Undulator Parameters
-    undu_type = WaveAttribute('')
+    undu_type = _attribute('')
 
-    circumference = WaveAttribute(240,wave_in_name='UMFANG')
-    rdipol = WaveAttribute(4.359,wave_in_name='RDIPOL')
-    iemit = WaveAttribute(0,wave_in_name='IEMIT')
-    irbtab = WaveAttribute(0,wave_in_name='IRBTAB')
-    iefold = WaveAttribute(1,wave_in_name='IEFOLD')
-    isigusr = WaveAttribute(1,wave_in_name='ISIGUSR')
-    ihisascii = WaveAttribute(0,wave_in_name='IHISASCII')
-    undu = WaveAttribute(0,wave_in_name='IUNDULATOR')
-    wigg = WaveAttribute(0,wave_in_name='IWIGGLER')
-    undu_easy = WaveAttribute(0,wave_in_name='KHALBA') # magnetic structure without specific ends
-    undu_endp = WaveAttribute(0,wave_in_name='KHALBASY') # magnetic structure with endpoles
-    undu_gap = WaveAttribute(0,wave_in_name='KUNDUGAP') # undulator with analytic gap-variation
-    undu_ellip = WaveAttribute(0,wave_in_name='KELLIP') # elliptic undulator
+    circumference = _attribute(240,wave_in_name='UMFANG')
+    rdipol = _attribute(4.359,wave_in_name='RDIPOL')
+    iemit = _attribute(0,wave_in_name='IEMIT')
+    irbtab = _attribute(0,wave_in_name='IRBTAB')
+    iefold = _attribute(1,wave_in_name='IEFOLD')
+    isigusr = _attribute(1,wave_in_name='ISIGUSR')
+    ihisascii = _attribute(0,wave_in_name='IHISASCII')
+    undu = _attribute(0,wave_in_name='IUNDULATOR')
+    wigg = _attribute(0,wave_in_name='IWIGGLER')
+    undu_easy = _attribute(0,wave_in_name='KHALBA') # magnetic structure without specific ends
+    undu_endp = _attribute(0,wave_in_name='KHALBASY') # magnetic structure with endpoles
+    undu_gap = _attribute(0,wave_in_name='KUNDUGAP') # undulator with analytic gap-variation
+    undu_ellip = _attribute(0,wave_in_name='KELLIP') # elliptic undulator
 
-    pkHalbasy = WaveAttribute(0.0,wave_in_name='PKHALBASY')
-    b0Halbasy = WaveAttribute(1.0,wave_in_name='B0HALBASY')
-    zlHalbasy = WaveAttribute(0.018,wave_in_name='ZLHALBASY')
-    ahwpolHalbasy = WaveAttribute(5,wave_in_name='AHWPOL')
+    pkHalbasy = _attribute(0.0,wave_in_name='PKHALBASY')
+    b0Halbasy = _attribute(1.0,wave_in_name='B0HALBASY')
+    zlHalbasy = _attribute(0.018,wave_in_name='ZLHALBASY')
+    ahwpolHalbasy = _attribute(5,wave_in_name='AHWPOL')
 
-    b0y = WaveAttribute(0,wave_in_name='B0ELLIPV') # magn. field strength amplitude in vertical direction
-    b0z = WaveAttribute(0,wave_in_name='B0ELLIPH') # magn. field strength amplitude in horizontal direction
-    nper = WaveAttribute(0,wave_in_name='PERELLIP') # number of periods
-    perl_x = WaveAttribute(0,wave_in_name='XLELLIP') # period length
-    ell_shift = WaveAttribute(0.25,wave_in_name='ELLSHFT') # shift between the two magnetic arrays in fractions of one period
+    b0y = _attribute(0,wave_in_name='B0ELLIPV') # magn. field strength amplitude in vertical direction
+    b0z = _attribute(0,wave_in_name='B0ELLIPH') # magn. field strength amplitude in horizontal direction
+    nper = _attribute(0,wave_in_name='PERELLIP') # number of periods
+    perl_x = _attribute(0,wave_in_name='XLELLIP') # period length
+    ell_shift = _attribute(0.25,wave_in_name='ELLSHFT') # shift between the two magnetic arrays in fractions of one period
 
     def get_std_paras(self, b_type = 'By'): 
         """

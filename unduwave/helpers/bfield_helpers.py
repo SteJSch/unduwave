@@ -1,8 +1,8 @@
 """
 Contains the functionality for loading and processing b-field data
 """
-from .unduwave_incl import *
-import helpers.file_folder_helpers as f_h
+from unduwave.unduwave_incl import *
+import unduwave.helpers.file_folder_helpers as ff_h
 
 def load_b_fields_gap(folder, hints = []) : 
 	"""

@@ -1,5 +1,5 @@
 from unduwave.unduwave_incl import *
-import unduwave.wave_parameters as wave_parameters
+from unduwave.wave_modules.wave_parameters import wave_parameters
 
 class wave_postprocess:
     """
@@ -11,7 +11,6 @@ class wave_postprocess:
     
     def __init__(self, wave_paras: wave_parameters):
         self.wave_paras = wave_paras
-
 
     def edit_wave_results(self):
         """

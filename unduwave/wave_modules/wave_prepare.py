@@ -1,4 +1,5 @@
 from unduwave.unduwave_incl import *
+from unduwave.wave_modules.wave_parameters import wave_parameters
 
 class wave_prepare():
     """_summary_
@@ -6,7 +7,7 @@ class wave_prepare():
         Args:
             wave_paras (StdParameters): Standard Parameters used for the simulation
     """ 
-    def __init__(self, wave_paras:StdParameters):
+    def __init__(self, wave_paras:wave_parameters):
                
         self.wave_paras = wave_paras
 

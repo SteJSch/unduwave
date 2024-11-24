@@ -8,7 +8,6 @@ import unduwave as uw
 """
 A change 2
 """
-
 wave = uw.wave()
 wave.say_hello()
 

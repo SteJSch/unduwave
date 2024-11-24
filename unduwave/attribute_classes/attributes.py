@@ -1,4 +1,4 @@
-from .unduwave_incl import *
+from unduwave.unduwave_incl import *
 
 class _attribute:
     """

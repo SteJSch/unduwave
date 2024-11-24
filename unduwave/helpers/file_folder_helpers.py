@@ -4,7 +4,7 @@ Contains functionality for handling files.
 Module to handle various file operations including finding, moving, copying, and deleting files.
 """
 
-from .unduwave_incl import *
+from unduwave.unduwave_incl import *
 
 def find_files_exptn(folder, hints=[], exptns=[]):
     """
