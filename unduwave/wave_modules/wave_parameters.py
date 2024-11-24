@@ -119,7 +119,7 @@ class wave_prog_parameters(_attribute_collection):
 	iemit = _attribute(0,wave_in_name='IEMIT')
 	iefold = _attribute(1,wave_in_name='IEFOLD')
 	isigusr = _attribute(1,wave_in_name='ISIGUSR')
-	ihisascii = _attribute(0,wave_in_name='IHISASCII')
+	ihisascii = _attribute(11,wave_in_name='IHISASCII')
 
 	# undu_type = _attribute('')
 
@@ -170,7 +170,7 @@ class wave_prog_parameters(_attribute_collection):
 											'selected_s0_e_(folded)_x_1_e_6_180000', 'wave.out'])
 		self.nthreads.set(2)
 		self.zipped.set(False)
-		self.wave_res_copy_behaviour.set('copy_all')
+		self.wave_res_copy_behaviour.set('copy_essentials')
 		self.zip_res_folder.set(1)
 		self.iemit.set(0)
 		self.iefold.set(1)

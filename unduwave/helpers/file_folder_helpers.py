@@ -162,6 +162,8 @@ def del_files(hints, exptns, folder):
     Returns:
         list: List of names of the deleted files.
     """
+    if len(hints) < 1 :
+        return []
     files_del = find_files_exptn(folder=folder, hints=hints, exptns=exptns)
     del_names = []
     for file_del in files_del:

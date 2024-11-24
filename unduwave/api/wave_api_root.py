@@ -6,6 +6,7 @@ from unduwave.wave_modules.wave_parameters import *
 from unduwave.wave_modules.wave_prepare import *
 from unduwave.wave_modules.wave_control import *
 from unduwave.wave_modules.wave_postprocess import *
+from unduwave.wave_modules.wave_results import *
 
 class wave_api :
 	def __init__(self,undu_mode='undu_easy') :
@@ -45,6 +46,8 @@ class wave_api :
 		post= wave_postprocess(wave_api=self)
 		post.copy_results()
 		post.cleanup()
-		pdb.set_trace()
-		results = wave_results(post)
+
+	def get_results(self) :
+		results = wave_results(wave_api=self)
+		results.load_from_res_folder()
 		return results

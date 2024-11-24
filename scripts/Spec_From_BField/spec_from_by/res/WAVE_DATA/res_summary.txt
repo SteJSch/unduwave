@@ -3,5 +3,9 @@ bmin [T] : -1.22118139
 first_int [Tm] : -5.38643726e-05
 scnd_int [Tmm] : -9.40087702e-05
 power [kW] : 1.09079266
+pinhole_x [m] : 10.0
+Fund. Freq. [eV] : 432.067322
+Undu_Para : 2.1370976
 gamma : 3369.8702546331497
 half opening angle [rad] : 0.0002967473298490128
+cone_radius_at_x [mm] : 2.9674733855943525

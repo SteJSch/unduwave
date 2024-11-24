@@ -215,12 +215,12 @@
 
        IHOUTP=3  ! output file WAVE.OUT is stored as CWN on histogram file
 
-       IHISASCII=0 ! non zero flag generates ASCII-Files
+       IHISASCII=11 ! non zero flag generates ASCII-Files
                    ! of histograms
                    ! filename is histogramtitle_index.wvh
-                   ! IHISASCII=0 !1 means 1D histos only
-                   ! IHISASCII=0 !10 means 2D histos only
-                   ! IHISASCII=0 !100 means ntuples only
+                   ! IHISASCII=11 !1 means 1D histos only
+                   ! IHISASCII=11 !10 means 2D histos only
+                   ! IHISASCII=11 !100 means ntuples only
                    ! for combinations add numbers, e.g. 1+10=11
                    ! means 1D and 2D histos to be treated
                    ! negative values means no header on file
@@ -695,7 +695,7 @@
 
  !-------------------------- SPECTRUM CALCULATIONS---------------------------
 
-      ISPEC=0 ! to activate spectrum calculations
+      ISPEC=1 ! to activate spectrum calculations
               ! parameter namelists :
               ! COLLIN
               ! SPECTN
