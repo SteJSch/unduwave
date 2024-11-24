@@ -1,7 +1,8 @@
 
+import os
 import pdb
 import sys
-sys.path.insert(0, '../')
+sys.path.insert(0, '../../../')
 
 try :
 	# works when calling script with python3 script_file
@@ -12,12 +13,17 @@ except:
 
 import unduwave as uw
 
+field_folder = f'/'
+
 """
 A change 2
 """
-wave = uw.wave()
+wave = uw.wave(undu_mode='By')
 wave_prog_paras = wave._wave_prog_paras
 wave_prog_paras.res_folder.set(dir_path+'/res/')
+wave_prog_paras.field_files.set( [ 'field.dat' ] )# The magnetic field files to be used in the simulation
+wave_prog_paras.field_folder.set(dir_path+field_folder)# Field Folder
+wave_prog_paras.spec_calc.set(False)
 
 wave.run()
 

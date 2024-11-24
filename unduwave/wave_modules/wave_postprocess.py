@@ -1,5 +1,6 @@
 from unduwave.unduwave_incl import *
-from unduwave.wave_modules.wave_parameters import wave_parameters
+from unduwave.wave_modules.wave_parameters import *
+import unduwave.helpers.file_folder_helpers as f_h
 
 class wave_postprocess:
     """
@@ -9,26 +10,26 @@ class wave_postprocess:
         wave_paras (StdParameters): An instance of the StdParameters class.
     """
     
-    def __init__(self, wave_paras: wave_parameters):
-        self.wave_paras = wave_paras
+    def __init__(self, wave_api):
+        self._wave_api = wave_api
 
-    def edit_wave_results(self):
+    def copy_results(self):
         """
         Cleans the wave-stage folder and copies the desired files to their location,
         deletes non-desired files, and zips the results based on the wave_res_copy_behaviour setting.
         """
         #'copy_all', 'copy_none' - only writes res_summary, 'copy_essentials' 
-        wave_folder    = self.wave_paras.wave_prog_folder.get()
-        res_folder     = self.wave_paras.res_folder.get()
-        res_wave       = res_folder + self.wave_paras.wave_data_res_folder.get()
-        copy_behav     = self.wave_paras.wave_res_copy_behaviour.get()
-        zip_res_folder = self.wave_paras.zip_res_folder.get()
+        wave_folder    = self._wave_api._wave_prog_paras.wave_prog_folder.get()
+        res_folder     = self._wave_api._wave_prog_paras.res_folder.get()
+        res_wave       = res_folder + self._wave_api._wave_prog_paras.wave_data_res_folder.get()
+        copy_behav     = self._wave_api._wave_prog_paras.wave_res_copy_behaviour.get()
+        zip_res_folder = self._wave_api._wave_prog_paras.zip_res_folder.get()
         files_dont_del = []
 
         if copy_behav == 'copy_all' :
-            wave_res_extract   = self.wave_paras.wave_ending_extract.get()
-            wave_res_copy      = self.wave_paras.wave_ending_copy.get()
-            wave_files_no_copy = self.wave_paras.no_copy.get()
+            wave_res_extract   = self._wave_api._wave_prog_paras.wave_ending_extract.get()
+            wave_res_copy      = self._wave_api._wave_prog_paras.wave_ending_copy.get()
+            wave_files_no_copy = self._wave_api._wave_prog_paras.no_copy.get()
             files_del = []
         elif copy_behav == 'copy_del_none' :
             wave_res_extract   = []
@@ -36,11 +37,11 @@ class wave_postprocess:
             wave_files_no_copy = []
             files_del          = []
         elif copy_behav == 'copy_essentials' :
-            wave_res_extract   = self.wave_paras.wave_files_essentials.get()
-            wave_res_copy      = self.wave_paras.wave_ending_copy.get()
+            wave_res_extract   = self._wave_api._wave_prog_paras.wave_files_essentials.get()
+            wave_res_copy      = self._wave_api._wave_prog_paras.wave_ending_copy.get()
             wave_files_no_copy = []
-            files_del          = self.wave_paras.wave_ending_extract.get()
-            files_dont_del     = self.wave_paras.no_copy.get()
+            files_del          = self._wave_api._wave_prog_paras.wave_ending_extract.get()
+            files_dont_del     = self._wave_api._wave_prog_paras.no_copy.get()
 
         if not os.path.exists(res_wave):
             os.makedirs(res_wave)
@@ -135,17 +136,18 @@ class wave_postprocess:
         summary.update( { 'half opening angle [rad]' : open_angle } )
         if 'pinhole_x [m]' in summary :
             summary.update( { 'cone_radius_at_x [mm]' : math.tan( open_angle ) * summary['pinhole_x [m]'] * 1000 } )
-        with open( folder+self.wave_paras.res_summary_file.get(), 'w') as o_f:
+        with open( folder+self._wave_api._wave_prog_paras.res_summary_file.get(), 'w') as o_f:
             for key, val in summary.items() :
                 o_f.write( key + ' : ' + str(val) + '\n' )
     
-    def cleanup(self, wave_folder):
+    def cleanup(self):
         """
         Cleans up the WAVE run by removing the 'WAVE.mhb' file if it exists in the specified folder.
 
         Args:
             wave_folder (str): The folder containing the WAVE run files.
         """
+        wave_folder    = self._wave_api._wave_prog_paras.wave_prog_folder.get()
         wave_mbh_file = os.path.join(wave_folder, 'stage', 'WAVE.mhb')
         if os.path.exists(wave_mbh_file):
             os.remove(wave_mbh_file)
