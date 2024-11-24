@@ -9,8 +9,19 @@ import unduwave as uw
 A change 2
 """
 
-#uw.hello()
-uw.api.hello()
+wave = uw.wave()
+wave.say_hello()
+
+# wave.set_ebam_settings()
+# results = wave.run()
+
+# flux_dens = results.get("flux_dens")
+# flux_dens.plot_live()
+# flux_dens_data = flux_dens.data
+
+# #uw.hello()
+# uw.api.hello()
+
 pdb.set_trace()
 
 # # Create wave instance for spectrum calculation from b-field data
