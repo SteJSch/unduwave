@@ -77,7 +77,8 @@ class undu_paras(_attribute_collection):
 	perl_x = _attribute(0,wave_in_name='XLELLIP') # period length
 	ell_shift = _attribute(0.25,wave_in_name='ELLSHFT') # shift between the two magnetic arrays in fractions of one period
 
-	def get_std_paras(self): 
+	def get_std_paras(self,undu_mode): 
+		self.undu_type.set('undu_ellip')
 		if self.undu_type.get() == 'undu_ellip' :
 			self.b0y.set(0.3)
 			self.b0z.set(1.0)

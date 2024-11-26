@@ -24,7 +24,7 @@ class wave_api :
 		self._bfield_paras = bfield_paras()
 		self._bfield_paras.get_std_paras()
 		self._undu_paras = undu_paras()
-		self._undu_paras.get_std_paras()
+		self._undu_paras.get_std_paras(undu_mode=undu_mode)
 
 	def set_bessy_II_elliptical_undu(self,nperiods) :
 		"""

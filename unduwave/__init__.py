@@ -5,6 +5,7 @@ Unduwave init
 from unduwave.unduwave_incl import *
 from unduwave.constants import *
 from unduwave.api.wave_api_root import wave_api as wave
+from unduwave.api.undu_api_root import undu_api as undu
 from .attribute_classes.attributes import *
 from .wave_modules.wave_parameters import *
 import unduwave.quantities.quantities as quantities

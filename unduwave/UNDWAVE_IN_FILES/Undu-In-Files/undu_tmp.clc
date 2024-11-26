@@ -1,0 +1,62 @@
+
+* Lines written by undugui.py
+Mode Hybrid
+
+& User_Comment
+Planar Hybrid Undulator
+
+*------ Variables
+
+$PerLen = 32
+
+$white=0
+$black=1
+$red=2
+$green=3
+$blue=4
+$yellow=5
+$magenta=6
+$cyan=7
+
+$Br_Hybrid = 1.62
+$mu_Hybrid = 1.0!1.03
+$KsiPerp_Hybrid = 0.0!0.17
+$RECIndex_Hybrid = 1
+$IronIndex_Hybrid = 2
+$ColorMag_Hybrid = $red
+
+$FracDivY_Mag_Hybrid = 2.0
+$FracDivZ_Mag_Hybrid = 2.0
+
+$Mcoating= 0.0 !0.014 ! coating of REC magnets
+
+* ######################## NEW #####################################
+
+* Magnet Definitions --------------------------------
+
+*########## Order of Poles and Magnets
+
+*PER START
+& Magnet
+BlockChamf mag mom $ColorMag_Hybrid  !key, name, mother, color
+0.0 0.0 0.0
+1.12 1.0 0.0 0.0 $RECIndex_Hybrid  !length bc and comp. of magnetization, material index
+10 20 20 0.30  !dimensions 
+2 2 2 1 1  !segmentation
+ 
+
+*PER END
+
+& Module
+0. 0. 0.                   !offset of module
+1          !number of arrays within module
+1. 1. 0. 0. 0. !spacing and direction of arrangement, rotation angle
+1. 1. 1.                   !scaling and symmetry of magnetization vector
+
+& Materials
+2            ! number of material files
+1 1 1 undumag_mu_77K.dat
+2 2 3 Vanadium_Permendur_Radia.dat
+
+
+*************

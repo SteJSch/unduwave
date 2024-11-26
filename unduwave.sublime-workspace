@@ -1,0 +1,1449 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"res",
+				"res_folder"
+			],
+			[
+				"shf",
+				"shft_list"
+			],
+			[
+				"segm_f",
+				"segm_force_main_y"
+			],
+			[
+				"fra",
+				"frac_z"
+			],
+			[
+				"segmm",
+				"segm_pole_main_x"
+			],
+			[
+				"segm_ys",
+				"segm_y_side"
+			],
+			[
+				"_segm",
+				"_segm_x"
+			],
+			[
+				"segm",
+				"segm_y_side_2"
+			],
+			[
+				"outf",
+				"out_file_lines"
+			],
+			[
+				"file",
+				"file_in"
+			],
+			[
+				"magn",
+				"magnets"
+			],
+			[
+				"width",
+				"width_v"
+			],
+			[
+				"bsig",
+				"bsigzp"
+			],
+			[
+				"datafor",
+				"data_force_tmp"
+			],
+			[
+				"dataf",
+				"data_force_lower"
+			],
+			[
+				"for",
+				"force_data"
+			],
+			[
+				"magnn",
+				"magn_names"
+			],
+			[
+				"para",
+				"parallel_n"
+			],
+			[
+				"paral",
+				"parallel_k1_ur"
+			],
+			[
+				"b0",
+				"b0z"
+			],
+			[
+				"wa",
+				"waveNumU"
+			],
+			[
+				"undu",
+				"unduPara"
+			],
+			[
+				"perl",
+				"periodLU"
+			],
+			[
+				"force",
+				"force_names"
+			],
+			[
+				"forc",
+				"force_names"
+			],
+			[
+				"foce",
+				"force_names"
+			],
+			[
+				"magnr",
+				"magn_row"
+			],
+			[
+				"shif",
+				"shifts"
+			],
+			[
+				"load",
+				"load_clc_file"
+			],
+			[
+				"ue",
+				"ue51"
+			],
+			[
+				"par",
+				"ue51_paras"
+			],
+			[
+				"_pole",
+				"_pole_mag_slit"
+			],
+			[
+				"_mag",
+				"_mag_pole_slit"
+			],
+			[
+				"pole",
+				"_pole_paras"
+			],
+			[
+				"_mag_",
+				"_mag_pole_slit"
+			],
+			[
+				"_lenx",
+				"_len_x_side"
+			],
+			[
+				"per",
+				"periodic_l"
+			],
+			[
+				"_seg",
+				"_segm_y_side"
+			],
+			[
+				"seg",
+				"segm_y_side"
+			],
+			[
+				"frac",
+				"frac_z"
+			],
+			[
+				"cpm",
+				"cpmu20_paras"
+			],
+			[
+				"_endma",
+				"_endmagn2_paras"
+			],
+			[
+				"_lenz",
+				"_len_z_side"
+			],
+			[
+				"_len_y",
+				"_len_y_side"
+			],
+			[
+				"endma",
+				"_endmagn1_paras"
+			],
+			[
+				"_len",
+				"_len_y_main"
+			],
+			[
+				"_le",
+				"_len_z_main"
+			],
+			[
+				"_nedpo",
+				"_end_pole_paras"
+			],
+			[
+				"endpole",
+				"_end_pole_paras"
+			],
+			[
+				"_endpo",
+				"_end_pole_paras"
+			],
+			[
+				"getcpm",
+				"get_cpmu20_pole_paras"
+			],
+			[
+				"_len_y_pole_side_",
+				"_len_y_pole_side_middle"
+			],
+			[
+				"_len_y_",
+				"_len_y_pole_side_low"
+			],
+			[
+				"_len_z",
+				"_len_z_side_2"
+			],
+			[
+				"_end",
+				"_endmagn1_paras"
+			],
+			[
+				"_ma",
+				"_mag_paras"
+			],
+			[
+				"_poleen",
+				"_pole_endmag1_r_slit"
+			],
+			[
+				"_po",
+				"_pole_mag_slit"
+			],
+			[
+				"_endm",
+				"_endmag2_pole_l_slit"
+			],
+			[
+				"len_z",
+				"len_z_side"
+			],
+			[
+				"len_y",
+				"len_y_side"
+			],
+			[
+				"pnt",
+				"pnts_side2"
+			],
+			[
+				"pntss",
+				"pnts_side2"
+			],
+			[
+				"pnts",
+				"pnts_side1"
+			],
+			[
+				"_",
+				"_len_z_main"
+			],
+			[
+				"min_",
+				"min_z"
+			],
+			[
+				"block",
+				"block_type"
+			],
+			[
+				"cp",
+				"cpmu20"
+			],
+			[
+				"dir",
+				"dir_path"
+			],
+			[
+				"fma",
+				"f_magns"
+			],
+			[
+				"getn",
+				"get_name_str"
+			],
+			[
+				"ue51",
+				"ue51_paras"
+			],
+			[
+				"fc",
+				"f_cut_1"
+			],
+			[
+				"f_c",
+				"f_cut_1"
+			],
+			[
+				"xs",
+				"xs_p4"
+			],
+			[
+				"xsp",
+				"xs_p2"
+			],
+			[
+				"ivu",
+				"ivue32_ll"
+			],
+			[
+				"magns",
+				"magn_seq_cntr"
+			],
+			[
+				"magnc",
+				"magn_cntr"
+			],
+			[
+				"_magn",
+				"_magnetization"
+			],
+			[
+				"mang",
+				"magnetizations"
+			],
+			[
+				"blocks",
+				"blocks_cm1"
+			],
+			[
+				"corr",
+				"corrs2"
+			],
+			[
+				"cor",
+				"corrs1"
+			],
+			[
+				"keep",
+				"keeper1"
+			],
+			[
+				"strad",
+				"str_add_to"
+			],
+			[
+				"keepe",
+				"keeper3"
+			],
+			[
+				"axi",
+				"axisR"
+			],
+			[
+				"unduma",
+				"undu_magnet_block_coords"
+			],
+			[
+				"ind",
+				"ind_p"
+			],
+			[
+				"degr",
+				"degrees_rad"
+			],
+			[
+				"_leny",
+				"_len_y_side_2"
+			],
+			[
+				"pma",
+				"p_main"
+			],
+			[
+				"_len_y_si",
+				"_len_y_side"
+			],
+			[
+				"_d",
+				"_dist_fm_cm_edge"
+			],
+			[
+				"_len_ys",
+				"_len_y_side_2"
+			],
+			[
+				"pce",
+				"p_center_per"
+			],
+			[
+				"keeper_sli",
+				"keeper_slit_cm"
+			],
+			[
+				"get",
+				"get_correction_keeper_slit"
+			],
+			[
+				"keeper_sl",
+				"keeper_slit_cm"
+			],
+			[
+				"kee",
+				"keeper2"
+			],
+			[
+				"k",
+				"keeper_slit"
+			],
+			[
+				"iv",
+				"ivue32_paras"
+			],
+			[
+				"create_ivue",
+				"create_ivue32_corr_magnet"
+			],
+			[
+				"crea",
+				"create_ivue32_corr_keeper"
+			],
+			[
+				"funm",
+				"fun_magn3"
+			],
+			[
+				"gl",
+				"_glue_slit"
+			],
+			[
+				"pc",
+				"p_center"
+			],
+			[
+				"loadc",
+				"load_clc_file"
+			],
+			[
+				"main",
+				"main_block2"
+			],
+			[
+				"data",
+				"data_shift"
+			],
+			[
+				"bz",
+				"Bz_data_t"
+			],
+			[
+				"by",
+				"By_data_t"
+			],
+			[
+				"bx",
+				"Bx_data_t"
+			],
+			[
+				"tra",
+				"track_field_line"
+			],
+			[
+				"va",
+				"value_x"
+			],
+			[
+				"val",
+				"value_x"
+			],
+			[
+				"datax",
+				"data_x_n"
+			],
+			[
+				"cur",
+				"curvey1"
+			],
+			[
+				"ret",
+				"ret_array"
+			],
+			[
+				"len",
+				"lenb_max"
+			],
+			[
+				"m",
+				"m_x"
+			],
+			[
+				"da",
+				"data_y"
+			],
+			[
+				"dat",
+				"data_x"
+			],
+			[
+				"key",
+				"key_nam"
+			],
+			[
+				"nam",
+				"nam_items"
+			],
+			[
+				"np",
+				"n_period"
+			],
+			[
+				"pl",
+				"per_l"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "unduwave/__init__.py",
+			"settings":
+			{
+				"buffer_size": 606,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/constants.py",
+			"settings":
+			{
+				"buffer_size": 227,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/unduwave_incl.py",
+			"settings":
+			{
+				"buffer_size": 1093,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/api/wave_api_root.py",
+			"settings":
+			{
+				"buffer_size": 1565,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/attribute_classes/attributes.py",
+			"settings":
+			{
+				"buffer_size": 2312,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/helpers/file_folder_helpers.py",
+			"settings":
+			{
+				"buffer_size": 6707,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/helpers/bfield_helpers.py",
+			"settings":
+			{
+				"buffer_size": 11323,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/quantities/quantities.py",
+			"settings":
+			{
+				"buffer_size": 2827,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "unduwave/wave_modules/wave_control.py",
+			"settings":
+			{
+				"buffer_size": 667,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/wave_modules/wave_parameters.py",
+			"settings":
+			{
+				"buffer_size": 7433,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/wave_modules/wave_postprocess.py",
+			"settings":
+			{
+				"buffer_size": 7780,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/wave_modules/wave_prepare.py",
+			"settings":
+			{
+				"buffer_size": 3647,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "unduwave/wave_modules/wave_results.py",
+			"settings":
+			{
+				"buffer_size": 27299,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/example_wave.py",
+			"settings":
+			{
+				"buffer_size": 2088,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/example_wave_install.py",
+			"settings":
+			{
+				"buffer_size": 1570,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/Eliptical_Undu/elliptical_example.py",
+			"settings":
+			{
+				"buffer_size": 1142,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				" install ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy/unduwave/unduwave/unduwave_incl.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/06_radiation_protection/hard_spectrum.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/06_coil_scan/bint1_scan.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/06_coil_scan/scan_coils.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Scripts/undu_ivue32.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/Scripts/undu_cpmu20.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/Scripts/undu_ue51.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/spectrum/spectrum.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/helpers/file_folder_helpers.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/helpers/data_ana_helpers.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/apy_incl.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/helpers/physical_constants.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/__init__.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/magnetism/undu_coils.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/magnetism/undu_magnets.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/forces/forces_helper.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/magnetism/bfield.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/magnetism/undumag_optim_helpers.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/magnetism/undumag.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy_dev/apy/src/optimization/optimization.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Programming/Python_Code/apy/unduwave/setup.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/06_coil_scan/defining_coils.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/05_ivue_first_int_scan/bint1_scan.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/Coils/Undumag/Results/2_defining_coils/defining_coils.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/04_ivue_teststand/teststand.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/Coils/Undumag/Scripts/undu_coils.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/07_Radia_Script_Adapt/radia_script_force_conv.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/Coils/Undumag/Results/1_playing/firsts.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/07_Radia_Script_Adapt/radia_script.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/02_06_11_2024_convergence/convergence.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/05_16_11_Full_Spectrum/harm_6_plot.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/05_16_11_Full_Spectrum/res_harm_scan/compare_brill_wave/compare_plot.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/05_16_11_Full_Spectrum/find_beff_full.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/04_15_11_gap_scan/gap_scan.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/1_construction/construction.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/05_spec_harms/compare_spectra/compare_plot.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/06_radiation_protection/flux_dens_combination.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/03_08_11_2024_force_scan/auswertung.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/05_16_11_Full_Spectrum/harm_scan_spectrum.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/06_radiation_protection/gap_scan.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/05_16_11_Full_Spectrum/hard_spectrum.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/02_25_10_construction/segmentation_plots.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/02_25_10_construction/construction_test.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/05_05_11_2024_force_scan/auswertung.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/02_06_11_2024_convergence/segmentation_plots.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/Bessy-III-IDs/Results/02_First_Spectra/spectrum.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/05_16_11_Full_Spectrum/full_spectrum.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/03_08_11_2024_force_scan/force_scan_ll.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/01_construction/construction.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/05_spec_harms/harm_over_en.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/05_16_11_Full_Spectrum/spectrum.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/Bessy-III-IDs/Results/01_First_Try/spectrum.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/Bessy-III-IDs/Results/01_First_Try/plot_brill.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/06_Full_Spectra/compare_spectra/compare_plot.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/Bessy-III-IDs/Results/01_First_Try/spectrum.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Scripts/undu_ivue32.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/Scripts/undu_cpmu20.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/Scripts/undu_ue51.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/06_11_11_b0_scan/construction_test.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/05_05_11_2024_force_scan/force_scan_lr.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/04_ivue_teststand/teststand.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/06_Full_Spectra/harm_over_en.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/03_08_11_2024_force_scan/force_scan_low.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/03_model_converge/force_convergence.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/03_model_converge/convergence.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/02_06_11_2024_convergence/convergence.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/05_05_11_2024_force_scan/auswertung.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/05_05_11_2024_force_scan/force_scan_ll.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.10.24-Rewrite-Forces-Spectra/01_construction/construction.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/First_Round/7_mag_forces_full/keeper_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/04_05_11_2024_testing_force_radia/construction_test.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/05_05_11_2024_force_scan/force_scan.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/04_05_11_2024_testing_force_radia/force_convergence_ivue.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/03_model_converge/force_convergence.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/03_model_converge/convergence.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/Scripts/cpmu20.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/Scripts/cpmu20_apy.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/02_25_10_construction/construction_test.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/Scripts/cpmu20.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/02_27_10_forces_scrip_radia/force_script_radia.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/1_construction/construction.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/General/Results/1_construction/radia_beff.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/02_23_10_script_writing_single_mag_forces/plot_keepers_old.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/02_23_10_script_writing_single_mag_forces/radia_res.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/02_23_10_script_writing_single_mag_forces/calc_forces.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/First_Round/11_redesign_radia_compare/sim_block.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/01_18_10_undu_bug_compare/radia_scripts/undumag_msh_radia_simu_block_0_x_0_z_0.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/01_18_10_undu_bug_compare/radia_res.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/01_18_10_undu_bug_compare/sim_block.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second_Round/01_18_10_undu_bug_compare/single_block.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second Round/01_18_10_undu_bug_compare/sim_block.py",
+		"/home/a3497/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/Second Round/01_18_10_undu_bug_compare/single_block.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/10_redesign/simple_simu.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/09_retract_poles/script_20_mag_drop_pole_length.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/10_redesign/keeper_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/7_mag_forces_full/keeper_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/Undumag/Scripts/undu_coils.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/9_undu_radia_easy_compare/sim_block.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/8_radia_compare/keeper_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/9_undu_radia_easy_compare/radia_calcs/undumag_msh_radia_simu_block_0.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/9_undu_radia_easy_compare/radia_calcs/undumag_msh_radia_simu_block_1.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/8_radia_compare/radia_file.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/9_undu_radia_easy_compare/keeper_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/IVUE-32/Undumag/Results/1_playing/firsts.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/6_mag_forces_all/plot_magns.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/6_mag_forces_all/plot_keepers.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/7_mag_forces_full/schubleisten_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/09_retract_poles/script_20_pole_drop.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/08_gap_scan_rounded/gap_scan.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/03_gap_scan/gap_scan.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/09_retract_poles/script_20.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/6_mag_forces_all/mag_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/6_mag_forces_all/keeper_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/6_mag_forces_all/plot_keeper.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/6_mag_forces_all/plot.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/05_spec_harms/sensitivity_eval.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/06_Full_Spectra/harm_over_en.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/05_spec_harms/compare_spectra/compare_plot_wave_espread.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/05_spec_harms/compare_spectra/compare_plot_spectra_espread.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/CPMU-20/CPMU-20/Results/29.04-FINAL/02_end_struct_optm/optimize_super.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/3_14.06._force_bsq/b_sq.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/1_15.04.-FirstSteps/firsts.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/2_12.06._mag_forces/mag_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/5_mag_forces_dipole/mag_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/4_17.06._johannes_plots/mag_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/3_14.06._force_bsq/mag_forces.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/3_14.06._force_bsq/force_from_bsq.py",
+		"/home/jerostan/Documents/Very_Unimportant/Arbeit/HZB/Undus/Projekte/UE-51-Kräfte/UE-51/Results/5_mag_forces/mag_forces.py"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "unduwave/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "unduwave/constants.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "unduwave/unduwave_incl.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1093,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "unduwave/api/wave_api_root.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "unduwave/attribute_classes/attributes.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "unduwave/helpers/file_folder_helpers.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6707,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "unduwave/helpers/bfield_helpers.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "unduwave/quantities/quantities.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "unduwave/wave_modules/wave_control.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 667,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "unduwave/wave_modules/wave_parameters.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "unduwave/wave_modules/wave_postprocess.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "unduwave/wave_modules/wave_prepare.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "unduwave/wave_modules/wave_results.py",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 13,
+					"file": "scripts/example_wave.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "scripts/example_wave_install.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "scripts/Eliptical_Undu/elliptical_example.py",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
