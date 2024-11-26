@@ -1,0 +1,9 @@
+bmax [T] : 0.214194894
+bmin [T] : -0.214177996
+first_int [Tm] : -6.20482737e-14
+scnd_int [Tmm] : -2.35734555e-13
+power [kW] : 0.0129112266
+pinhole_x [m] : 10.0
+gamma : 3369.8702546331497
+half opening angle [rad] : 0.0002967473298490128
+cone_radius_at_x [mm] : 2.9674733855943525
