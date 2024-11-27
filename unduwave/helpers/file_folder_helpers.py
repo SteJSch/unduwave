@@ -155,6 +155,8 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 				else:
 					shutil.copyfile(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
 			except:
+				print(convert_path_to_win(folder_in + file_load))
+				print(convert_path_to_win(folder_out + new_file_name))				
 				pdb.set_trace()
 		else:
 			if move:
