@@ -80,17 +80,21 @@ class wave_prepare():
 				field_file = field_files[0]
 				field_file = field_file.replace("(", "\(")
 				field_file = field_file.replace(")", "\)")    
-				os.system( 'cp ' + field_folder + field_file + ' ' + wave_folder + 'stage/' )
-				os.system( 'mv ' + wave_folder + 'stage/' + field_file + ' ' + wave_folder + 'stage/btab.dat' )
+				if os.name == 'nt' :
+					shutil.copyfile(field_folder + field_file, wave_folder + 'stage/')
+					shutil.move(wave_folder + 'stage/' + field_file, wave_folder + 'stage/btab.dat')
+				else:
+					os.system( 'cp ' + field_folder + field_file + ' ' + wave_folder + 'stage/' )
+					os.system( 'mv ' + wave_folder + 'stage/' + field_file + ' ' + wave_folder + 'stage/btab.dat' )
 
 
 
-      # LUNF=    84       ! magnetic field
+	  # LUNF=    84       ! magnetic field
 
-      # FILETB=     'btab.dat'
-      # LUNTB=      85
+	  # FILETB=     'btab.dat'
+	  # LUNTB=      85
 
-      # FILETBZ= 'bz.dat' ! 1D table of magnetic field Bz
-      # LUNTBZ=     70
+	  # FILETBZ= 'bz.dat' ! 1D table of magnetic field Bz
+	  # LUNTBZ=     70
 
-      # FILETBX= 'bx.dat' ! 1D table of magnetic field Bz
+	  # FILETBX= 'bx.dat' ! 1D table of magnetic field Bz

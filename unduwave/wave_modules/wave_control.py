@@ -19,6 +19,9 @@ class wave_control():
 		If given, change the directory back to self.current_folder
 		"""        
 		os.chdir(self.wave_folder + 'stage/' )
-		os.system("../bin/wave.exe")        
+		if os.name == 'nt' :
+			os.system('"../bin/wave.exe"')        
+		else:
+			os.system("../bin/wave.exe")        
 		if not (self.current_folder is None):
 			os.chdir(self.current_folder )
