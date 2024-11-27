@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 # import apy.src.helpers.physical_constants as pc
 # from apy.src.helpers import plot_helpers as plt_h
 import sys
+import subprocess
 import shutil
 import random
 from scipy.interpolate import CubicSpline

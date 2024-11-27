@@ -20,7 +20,7 @@ class wave_control():
 		"""        
 		os.chdir(self.wave_folder + 'stage/' )
 		if os.name == 'nt' :
-			os.system('"../bin/wave.exe"')        
+			subprocess.call('"../bin/wave.exe"')        
 		else:
 			os.system("../bin/wave.exe")        
 		if not (self.current_folder is None):
