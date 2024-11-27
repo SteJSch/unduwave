@@ -31,6 +31,9 @@ Setting Program Parameter
 wave_prog_paras.res_folder.set(res_folder)
 wave_prog_paras.spec_calc.set(True)
 
+spectrometer_paras = wave._spectrometer_paras
+spectrometer_paras.freq_num.set(10)
+
 """
 Setting Undulator Parameter
 """
