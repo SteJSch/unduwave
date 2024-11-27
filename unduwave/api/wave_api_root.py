@@ -36,6 +36,10 @@ class wave_api :
 		"""
 		Runs wave with the given settings, prepares and postprocesses data
 		"""
+
+		if os.name == 'nt' :
+			print("what")
+			pdb.set_trace()
 		
 		prep = wave_prepare(wave_api=self)
 		prep.create_wave_input()
