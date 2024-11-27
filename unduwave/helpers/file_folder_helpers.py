@@ -9,7 +9,6 @@ from unduwave.unduwave_incl import *
 def convert_path_to_win(path) :
 	if os.name == 'nt' :
 		path = path.replace('/','\\')
-		pdb.set_trace()
 	return path
 
 def find_files_exptn(folder, hints=[], exptns=[]):
@@ -149,7 +148,6 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 
 		if os.name == 'nt' :
 			if move:
-				pdb.set_trace()
 				shutil.move('mv ' + folder_in + file_load, folder_out + new_file_name)
 			else:
 				shutil.copyfile(folder_in + file_load, folder_out + new_file_name)
