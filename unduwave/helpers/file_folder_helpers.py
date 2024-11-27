@@ -147,8 +147,8 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 		mvd_names.append(new_file_name)
 
 		if os.name == 'nt' :
-			file_in = file_in.replace('\\(','(')
-			file_in = file_in.replace('\\)',')')
+			file_load = file_load.replace('\\(','(')
+			file_load = file_load.replace('\\)',')')
 			try:
 				if move:
 					shutil.move(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
