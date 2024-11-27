@@ -29,8 +29,8 @@ class wave_control():
 		os.chdir(self.wave_folder + 'stage/' )
 		if os.name == 'nt' :
 			with open(f_h.convert_path_to_win(dir_path+'/../../External-Software/where_is_cygwin_installation.txt'), 'r') as o_f:
-				cygwinfile = f_h.convert_path_to_win(o_f.readlines())
-			wherecyg = cygwinfile[0].replace("'","").strip()
+				cygwinfile = o_f.readlines()
+			wherecyg = f_h.convert_path_to_win(cygwinfile[0].replace("'","").strip())
 			whereundupy = f_h.convert_path_to_win(cygwinfile[1].replace("'","").strip())
 			pdb.set_trace()
 			subprocess.call(f"{wherecyg}bin\\bash.exe --login -c 'cd {whereundupy}unduwave/External-Software/WAVE/stage; ../bin/wave.exe'")        
