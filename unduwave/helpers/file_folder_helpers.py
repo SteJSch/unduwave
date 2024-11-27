@@ -147,10 +147,13 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 		mvd_names.append(new_file_name)
 
 		if os.name == 'nt' :
-			if move:
-				shutil.move(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
-			else:
-				shutil.copyfile(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
+			try:
+				if move:
+					shutil.move(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
+				else:
+					shutil.copyfile(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
+			except:
+				pdb.set_trace()
 		else:
 			if move:
 				os.system('mv ' + folder_in + file_load + ' ' + folder_out + new_file_name)
