@@ -20,7 +20,7 @@ class wave_control():
 		"""        
 		os.chdir(self.wave_folder + 'stage/' )
 		if os.name == 'nt' :
-			subprocess.call('"../bin/wave.exe"')        
+			subprocess.call("C:\\cygwin64\\bin\\bash.exe --login -c 'cd unduwave/External-Software/WAVE/stage; ../bin/wave.exe'")        
 		else:
 			os.system("../bin/wave.exe")        
 		if not (self.current_folder is None):
