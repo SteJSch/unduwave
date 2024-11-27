@@ -1,2 +1,2 @@
-cygwin: 'C:\\cygwin64'
-installation: ''
+'C:\cygwin64\'
+''

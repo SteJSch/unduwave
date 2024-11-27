@@ -1,4 +1,5 @@
 from unduwave.unduwave_incl import *
+import unduwave.helpers.file_folder_helpers as f_h
 
 try :
 	# works when calling script with python3 script_file
@@ -27,11 +28,12 @@ class wave_control():
 		"""        
 		os.chdir(self.wave_folder + 'stage/' )
 		if os.name == 'nt' :
+			with open(f_h.convert_path_to_win(dir_path+'/../../External-Software/where_is_cygwin_installation.txt'), 'r') as o_f:
+				cygwinfile = f_h.convert_path_to_win(o_f.readlines())
+			wherecyg = cygwinfile[0].replace("'","").strip()
+			whereundupy = f_h.convert_path_to_win(cygwinfile[1].replace("'","").strip())
 			pdb.set_trace()
-			with open(folder+"wave.out", 'r') as o_f:
-				# read an store all lines into list
-				wave_out_file = o_f.readlines()
-			subprocess.call("C:\\cygwin64\\bin\\bash.exe --login -c 'cd unduwave/External-Software/WAVE/stage; ../bin/wave.exe'")        
+			subprocess.call(f"{wherecyg}bin\\bash.exe --login -c 'cd {whereundupy}unduwave/External-Software/WAVE/stage; ../bin/wave.exe'")        
 		else:
 			os.system("../bin/wave.exe")        
 		if not (self.current_folder is None):
