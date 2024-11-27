@@ -143,6 +143,7 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 
 		if os.name == 'nt' :
 			if move:
+				pdb.set_trace()
 				shutil.move('mv ' + folder_in + file_load, folder_out + new_file_name)
 			else:
 				shutil.copyfile(folder_in + file_load, folder_out + new_file_name)
