@@ -1,6 +1,7 @@
 from unduwave.unduwave_incl import *
 from unduwave.attribute_classes.attributes import _attribute
 from unduwave.attribute_classes.attributes import _attribute_collection
+import unduwave.helpers.file_folder_helpers as f_h
 
 class ebeam_parameters(_attribute_collection):
 	beam_en = _attribute(0,wave_in_name='DMYENERGY')
@@ -147,8 +148,8 @@ class wave_prog_parameters(_attribute_collection):
 		"""
 		
 		dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.wave_prog_folder.set(dir_path+'/../../External-Software/WAVE/')
-		self.in_file_folder.set(dir_path+'/../UNDWAVE_IN_FILES/WAVE-In-Files/')
+		self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/../../External-Software/WAVE/'))
+		self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/../UNDWAVE_IN_FILES/WAVE-In-Files/'))
 		self.in_files.set({ 'By' : 'load_ext_on_axis_by_ALL_OUT.in', 
 							'Byz' : 'load_ext_on_axis_byz_ALL_OUT.in', 
 							'Bxyz' : 'load_ext_on_axis_bxyz_ALL_OUT.in', 

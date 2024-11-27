@@ -6,6 +6,12 @@ Module to handle various file operations including finding, moving, copying, and
 
 from unduwave.unduwave_incl import *
 
+def convert_path_to_win(path) :
+	if os.name == 'nt' :
+		path = path.replace('/','\\')
+		pdb.set_trace()
+	return path
+
 def find_files_exptn(folder, hints=[], exptns=[]):
 	"""
 	Find files in the specified folder based on hints and exptns.
