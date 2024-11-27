@@ -1,3 +1,3 @@
 #! /bin/bash
 
-../bin/wave.exe
+C:\\cygwin64\cygwin.bat ../bin/wave.exe
