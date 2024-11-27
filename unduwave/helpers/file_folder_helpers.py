@@ -181,7 +181,7 @@ def del_files(hints, exptns, folder):
 	for file_del in files_del:
 		del_names.append(file_del)
 		if os.name == 'nt' :
-			shutil.rmtree(convert_path_to_win(folder + file_del))
+			os.remove(convert_path_to_win(folder + file_del))
 		else:
 			os.system('rm ' + folder + file_del)
 	return del_names
@@ -205,7 +205,7 @@ def del_all_files(exptns, folder):
 	for file_del in files_del:
 		del_names.append(file_del)
 		if os.name == 'nt' :
-			shutil.rmtree(convert_path_to_win(folder + file_del))
+			os.remove(convert_path_to_win(folder + file_del))
 		else:
 			os.system('rm ' + folder + file_del)
 	return del_names
