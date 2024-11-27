@@ -148,9 +148,9 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 
 		if os.name == 'nt' :
 			if move:
-				shutil.move('mv ' + folder_in + file_load, folder_out + new_file_name)
+				shutil.move(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
 			else:
-				shutil.copyfile(folder_in + file_load, folder_out + new_file_name)
+				shutil.copyfile(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
 		else:
 			if move:
 				os.system('mv ' + folder_in + file_load + ' ' + folder_out + new_file_name)
@@ -181,7 +181,7 @@ def del_files(hints, exptns, folder):
 	for file_del in files_del:
 		del_names.append(file_del)
 		if os.name == 'nt' :
-			shutil.rmtree(folder + file_del)
+			shutil.rmtree(convert_path_to_win(folder + file_del))
 		else:
 			os.system('rm ' + folder + file_del)
 	return del_names
@@ -205,7 +205,7 @@ def del_all_files(exptns, folder):
 	for file_del in files_del:
 		del_names.append(file_del)
 		if os.name == 'nt' :
-			shutil.rmtree(folder + file_del)
+			shutil.rmtree(convert_path_to_win(folder + file_del))
 		else:
 			os.system('rm ' + folder + file_del)
 	return del_names
