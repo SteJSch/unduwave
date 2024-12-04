@@ -1,0 +1,2508 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.3)  4 DEC 2024 20:34
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**unduwave.tex
+(./unduwave.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(./sphinxmanual.cls
+Document Class: sphinxmanual 2019/12/01 v2.3.0 Document class (Sphinx manual)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@chapter=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+LaTeX Info: Redefining \and on input line 35.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+2500 (decimal 9472)
+   defining Unicode char U+2502 (decimal 9474)
+   defining Unicode char U+2514 (decimal 9492)
+   defining Unicode char U+251C (decimal 9500)
+   defining Unicode char U+2572 (decimal 9586)
+
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty
+Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen141
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count196
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count197
+\leftroot@=\count198
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count199
+\DOTSCASE@=\count266
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count267
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count268
+\dotsspace@=\muskip16
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
+\tag@help=\toks20
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
+\andhelp@=\toks21
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks22
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count274
+\U@D=\dimen150
+\l@unhyphenated=\language23
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count275
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language6). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language6). Reported on input line 108.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(/usr/share/texmf/tex/latex/tex-gyre/tgtermes.sty
+Package: tgtermes 2009/09/27 v1.2 TeX Gyre Termes as default roman family
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)))
+(/usr/share/texmf/tex/latex/tex-gyre/tgheros.sty
+Package: tgheros 2009/09/27 v1.2 TeX Gyre Heros as default sans serif family
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty
+Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
+\RW=\skip53
+\mylen=\skip54
+\myhi=\skip55
+\px=\skip56
+\py=\skip57
+\pyy=\skip58
+\pxx=\skip59
+\c@AlphaCnt=\count276
+\c@AlphaDecCnt=\count277
+) (./sphinx.sty
+Package: sphinx 2023/03/19 v6.2.0 LaTeX package (Sphinx markup)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(./sphinxoptionshyperref.sty
+File: sphinxoptionshyperref.sty 2021/01/27 hyperref
+) (./sphinxoptionsgeometry.sty
+File: sphinxoptionsgeometry.sty 2021/01/27 geometry
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count278
+\float@exts=\toks25
+\float@box=\box53
+\@float@everytoks=\toks26
+\@floatcapt=\box54
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen151
+\WF@size=\dimen152
+\c@WF@wrappedlines=\count279
+\WF@box=\box55
+\WF@everypar=\toks27
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/capt-of/capt-of.sty
+Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
+\c@tracingmulticols=\count280
+\mult@box=\box56
+\multicol@leftmargin=\dimen153
+\c@unbalance=\count281
+\c@collectmore=\count282
+\doublecol@number=\count283
+\multicoltolerance=\count284
+\multicolpretolerance=\count285
+\full@width=\dimen154
+\page@free=\dimen155
+\premulticols=\dimen156
+\postmulticols=\dimen157
+\multicolsep=\skip60
+\multicolbaselineskip=\skip61
+\partial@page=\box57
+\last@line=\box58
+\mc@boxedresult=\box59
+\maxbalancingoverflow=\dimen158
+\mult@rightbox=\box60
+\mult@grightbox=\box61
+\mult@firstbox=\box62
+\mult@gfirstbox=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\c@minrows=\count286
+\c@columnbadness=\count287
+\c@finalcolumnbadness=\count288
+\last@try=\dimen159
+\multicolovershoot=\dimen160
+\multicolundershoot=\dimen161
+\mult@nat@firstbox=\box100
+\colbreak@box=\box101
+\mc@col@check@num=\count289
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
+)
+(./sphinxlatexgraphics.sty
+File: sphinxlatexgraphics.sty 2021/01/27 graphics
+\spx@image@maxheight=\dimen164
+\spx@image@box=\box102
+) (./sphinxpackageboxes.sty
+Package: sphinxpackageboxes 2023/03/19 v6.2.0 advanced colored boxes
+
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 112.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/p2e-pdftex.def
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks28
+\@arclen=\dimen165
+\@arcrad=\dimen166
+\pIIe@tempdima=\dimen167
+\pIIe@tempdimb=\dimen168
+\pIIe@tempdimc=\dimen169
+\pIIe@tempdimd=\dimen170
+\pIIe@tempdime=\dimen171
+\pIIe@tempdimf=\dimen172
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ellipse/ellipse.sty
+Package: ellipse 2004/11/05 v1.0 .dtx ellipse file
+)
+\@tempdimd=\dimen173
+\spx@tempboxa=\box103
+\spx@tempboxb=\box104
+\spx@boxes@border=\dimen174
+\spx@boxes@border@top=\dimen175
+\spx@boxes@border@right=\dimen176
+\spx@boxes@border@bottom=\dimen177
+\spx@boxes@border@left=\dimen178
+\spx@boxes@padding@top=\dimen179
+\spx@boxes@padding@right=\dimen180
+\spx@boxes@padding@bottom=\dimen181
+\spx@boxes@padding@left=\dimen182
+\spx@boxes@shadow@xoffset=\dimen183
+\spx@boxes@shadow@yoffset=\dimen184
+\spx@boxes@radius@topleft@x=\dimen185
+\spx@boxes@radius@topright@x=\dimen186
+\spx@boxes@radius@bottomright@x=\dimen187
+\spx@boxes@radius@bottomleft@x=\dimen188
+\spx@boxes@radius@topleft@y=\dimen189
+\spx@boxes@radius@topright@y=\dimen190
+\spx@boxes@radius@bottomright@y=\dimen191
+\spx@boxes@radius@bottomleft@y=\dimen192
+)
+(./sphinxlatexadmonitions.sty
+File: sphinxlatexadmonitions.sty 2023/03/19 admonitions
+
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip62
+\fb@frw=\dimen193
+\fb@frh=\dimen194
+\FrameRule=\dimen195
+\FrameSep=\dimen196
+)
+\spx@notice@border=\dimen197
+)
+(./sphinxlatexliterals.sty
+File: sphinxlatexliterals.sty 2023/04/01 code-blocks and parsed literals
+
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count290
+\FV@InFile=\read3
+\FV@TabBox=\box105
+\c@FancyVerbLine=\count291
+\FV@StepNumber=\count292
+\FV@OutFile=\write3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 2021/01/29 v2.0g defines alltt environment
+)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\sphinxcontinuationbox=\box106
+\sphinxvisiblespacebox=\box107
+\sphinxVerbatim@TitleBox=\box108
+\sphinxVerbatim@ContentsBox=\box109
+)
+(./sphinxlatexshadowbox.sty
+File: sphinxlatexshadowbox.sty 2023/03/19 sphinxShadowBox
+) (./sphinxlatexcontainers.sty
+File: sphinxlatexcontainers.sty 2021/05/03 containers
+)
+(./sphinxhighlight.sty
+Package: sphinxhighlight 2022/06/30 stylesheet for highlighting with pygments
+) (./sphinxlatextables.sty
+File: sphinxlatextables.sty 2022/08/15 tables
+
+(/usr/share/texlive/texmf-dist/tex/latex/tabulary/tabulary.sty
+Package: tabulary 2014/06/11 v0.10 tabulary package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen198
+\ar@mcellbox=\box110
+\extrarowheight=\dimen199
+\NC@list=\toks29
+\extratabsurround=\skip63
+\backup@length=\skip64
+\ar@cellbox=\box111
+)
+\TY@count=\count293
+\TY@linewidth=\dimen256
+\tymin=\dimen257
+\tymax=\dimen258
+\TY@tablewidth=\dimen259
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip65
+\LTright=\skip66
+\LTpre=\skip67
+\LTpost=\skip68
+\LTchunksize=\count294
+\LTcapwidth=\dimen260
+\LT@head=\box112
+\LT@firsthead=\box113
+\LT@foot=\box114
+\LT@lastfoot=\box115
+\LT@gbox=\box116
+\LT@cols=\count295
+\LT@rows=\count296
+\c@LT@tables=\count297
+\c@LT@chunks=\count298
+\LT@p@ftn=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box117
+\sift@deathcycles=\count299
+\@vwid@loff=\dimen261
+\@vwid@roff=\dimen262
+)
+\sphinx@TY@tablewidth=\dimen263
+
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks31
+\minrowclearance=\skip69
+\rownum=\count300
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen264
+\lightrulewidth=\dimen265
+\cmidrulewidth=\dimen266
+\belowrulesep=\dimen267
+\belowbottomsep=\dimen268
+\aboverulesep=\dimen269
+\abovetopsep=\dimen270
+\cmidrulesep=\dimen271
+\cmidrulekern=\dimen272
+\defaultaddspace=\dimen273
+\@cmidla=\count301
+\@cmidlb=\count302
+\@aboverulesep=\dimen274
+\@belowrulesep=\dimen275
+\@thisruleclass=\count303
+\@lastruleclass=\count304
+\@thisrulewidth=\dimen276
+))
+(./sphinxlatexnumfig.sty
+File: sphinxlatexnumfig.sty 2021/01/27 numbering
+) (./sphinxlatexlists.sty
+File: sphinxlatexlists.sty 2021/12/20 lists
+\spx@lineitemlabel=\toks32
+)
+\c@sphinxscope=\count305
+ (./sphinxpackagefootnote.sty
+Package: sphinxpackagefootnote 2022/08/15 v5.3.0 Sphinx custom footnotehyper pa
+ckage (Sphinx team)
+\FNH@notes=\box118
+\FNH@toks=\toks33
+\FNH@width=\dimen277
+\c@sphinxfootnotemark=\count306
+) (./sphinxlatexindbibtoc.sty
+File: sphinxlatexindbibtoc.sty 2021/01/27 index, bib., toc
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
+))
+(./sphinxlatexstylepage.sty
+File: sphinxlatexstylepage.sty 2021/01/27 page styling
+
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Rollback for package 'parskip' requested -> version 'v1'.
+         This corresponds to the release introduced on 2001-04-09.
+
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip-2001-04-09.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip70
+\f@nch@O@elh=\skip71
+\f@nch@O@erh=\skip72
+\f@nch@O@olh=\skip73
+\f@nch@O@orh=\skip74
+\f@nch@O@elf=\skip75
+\f@nch@O@erf=\skip76
+\f@nch@O@olf=\skip77
+\f@nch@O@orf=\skip78
+))
+(./sphinxlatexstyleheadings.sty
+File: sphinxlatexstyleheadings.sty 2023/02/11 headings
+
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box119
+\beforetitleunit=\skip79
+\aftertitleunit=\skip80
+\ttl@plus=\dimen278
+\ttl@minus=\dimen279
+\ttl@toksa=\toks34
+\titlewidth=\dimen280
+\titlewidthlast=\dimen281
+\titlewidthfirst=\dimen282
+))
+(./sphinxlatexstyletext.sty
+File: sphinxlatexstyletext.sty 2023/07/23 text styling
+) (./sphinxlatexobjects.sty
+File: sphinxlatexobjects.sty 2023/07/23 documentation environments
+\sphinxsignaturesep=\skip81
+\sphinxsignaturelistskip=\skip82
+\py@argswidth=\skip83
+\lineblockindentation=\skip84
+\DUlineblockindent=\skip85
+))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count307
+\Gm@cntv=\count308
+\c@Gm@tempcnt=\count309
+\Gm@bindingoffset=\dimen283
+\Gm@wd@mp=\dimen284
+\Gm@odd@mp=\dimen285
+\Gm@even@mp=\dimen286
+\Gm@layoutwidth=\dimen287
+\Gm@layoutheight=\dimen288
+\Gm@layouthoffset=\dimen289
+\Gm@layoutvoffset=\dimen290
+\Gm@dimlist=\toks35
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count310
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count311
+)
+\@linkdim=\dimen291
+\Hy@linkcounter=\count312
+\Hy@pagecounter=\count313
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count314
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4062.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4062.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4062.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count315
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen292
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count316
+\Field@Width=\dimen293
+\Fld@charsize=\dimen294
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring ON on input line 6081.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count317
+\c@Item=\count318
+\c@Hfootnote=\count319
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count320
+\c@bookmark@seq@number=\count321
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip86
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
+Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+))
+(./sphinxmessages.sty
+Package: sphinxmessages 2019/01/04 v2.0 Localized LaTeX macros (Sphinx team)
+)
+\@indexfile=\write4
+\openout4 = `unduwave.idx'.
+
+
+Writing index file unduwave.idx
+LaTeX Font Info:    Trying to load font information for T1+qtm on input line 72
+.
+(/usr/share/texmf/tex/latex/tex-gyre/t1qtm.fd
+File: t1qtm.fd 2009/09/25 v1.2 font definition file for T1/qtm
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count322
+\l__pdf_internal_box=\box120
+)
+(./unduwave.aux)
+\openout1 = `unduwave.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count323
+\scratchdimen=\dimen295
+\scratchbox=\box121
+\nofMPsegments=\count324
+\nofMParguments=\count325
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count326
+\MPscratchDim=\dimen296
+\MPnumerator=\count327
+\makeMPintoPDFobject=\count328
+\everyMPtoPDFconversion=\toks37
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@literalblock=\count329
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=36.135pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring ON on input line 72.
+(./unduwave.out) (./unduwave.out)
+\@outlinefile=\write5
+\openout5 = `unduwave.out'.
+
+Package hyperref Info: Option `pageanchor' set `false' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\spacefactor' on input line 80.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@m' on input line 80.
+
+LaTeX Font Info:    Trying to load font information for T1+qhv on input line 80
+.
+(/usr/share/texmf/tex/latex/tex-gyre/t1qhv.fd
+File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
+)<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
+dvips/tex-gyre/q-ec.enc}] [2
+
+
+] (./unduwave.toc)
+\tf@toc=\write6
+\openout6 = `unduwave.toc'.
+
+ [1
+
+] [2
+
+] [1] [2
+
+]
+Chapter 1.
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 1
+15.
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
+File: t1txtt.fd 2000/12/15 v3.1
+) [3]
+<cygwin1.png, id=407, 957.5775pt x 598.48593pt>
+File: cygwin1.png Graphic file (type png)
+<use cygwin1.png>
+Package pdftex.def Info: cygwin1.png  used on input line 196.
+(pdftex.def)             Requested size: 469.7577pt x 293.59856pt.
+ [4 <./cygwin1.png>]
+<cygwin2.png, id=415, 957.5775pt x 598.48593pt>
+File: cygwin2.png Graphic file (type png)
+<use cygwin2.png>
+Package pdftex.def Info: cygwin2.png  used on input line 207.
+(pdftex.def)             Requested size: 469.7577pt x 293.59856pt.
+<cygwin3.png, id=416, 1547.0297pt x 831.85782pt>
+File: cygwin3.png Graphic file (type png)
+<use cygwin3.png>
+Package pdftex.def Info: cygwin3.png  used on input line 217.
+(pdftex.def)             Requested size: 469.75426pt x 252.59293pt.
+ [5 <./cygwin2.png>] [6 <./cygwin3.png>]
+Underfull \hbox (badness 7558) in paragraph at lines 304--306
+[]\T1/qtm/m/n/10 Where you can use the rel-a-tive path within you cyg-win user 
+di-rec-tory. So, if un-duwave lies in
+ []
+
+[7]
+LaTeX Font Info:    Font shape `T1/txtt/b/n' in size <10> not available
+(Font)              Font shape `T1/txtt/bx/n' tried instead on input line 346.
+LaTeX Font Info:    Trying to load font information for TS1+txtt on input line 
+348.
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txtt.fd
+File: ts1txtt.fd 2000/12/15 v3.1
+) [8]
+LaTeX Font Info:    Trying to load font information for TS1+qtm on input line 6
+17.
+
+(/usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd
+File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
+) [9{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
+Underfull \hbox (badness 6493) in paragraph at lines 836--838
+[]\T1/qtm/m/n/10 Dif-fer-ent pa-ram-e-ters for set-ting sim-ple un-du-la-tor mo
+d-els. The first 4 are used in con-junc-tion with
+ []
+
+[10] [11]
+LaTeX Font Info:    Font shape `T1/txtt/m/it' in size <10> not available
+(Font)              Font shape `T1/txtt/m/sl' tried instead on input line 1064.
+
+ [12] [13] [14]
+<3d_plot_orig.png, id=474, 188.3838pt x 196.5744pt>
+File: 3d_plot_orig.png Graphic file (type png)
+<use 3d_plot_orig.png>
+Package pdftex.def Info: 3d_plot_orig.png  used on input line 1284.
+(pdftex.def)             Requested size: 94.19167pt x 98.28696pt.
+<3d_plot_interp.png, id=475, 188.3838pt x 200.4288pt>
+File: 3d_plot_interp.png Graphic file (type png)
+<use 3d_plot_interp.png>
+Package pdftex.def Info: 3d_plot_interp.png  used on input line 1291.
+(pdftex.def)             Requested size: 94.19167pt x 100.21414pt.
+<heat_plot_orig.png, id=476, 377.7312pt x 200.9106pt>
+File: heat_plot_orig.png Graphic file (type png)
+<use heat_plot_orig.png>
+Package pdftex.def Info: heat_plot_orig.png  used on input line 1298.
+(pdftex.def)             Requested size: 188.86513pt x 100.45505pt.
+<heat_plot_interp.png, id=477, 371.4678pt x 200.9106pt>
+File: heat_plot_interp.png Graphic file (type png)
+<use heat_plot_interp.png>
+Package pdftex.def Info: heat_plot_interp.png  used on input line 1305.
+(pdftex.def)             Requested size: 185.73344pt x 100.45505pt.
+ [15] [16 <./3d_plot_orig.png> <./3d_plot_interp.png> <./heat_plot_orig.png> <.
+/heat_plot_interp.png>] [17] [18] [19] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 2335--2335
+[]|[][]\T1/txtt/m/sl/10 convert_x_mm_b_T_file_to_wave_std[][]\T1/qtm/m/n/10 (fo
+lder_in,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2335--2335
+[]|[][]\T1/txtt/m/sl/10 save_prepared_b_data[][]\T1/qtm/m/n/10 (b_fields, folde
+r[,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2335--2335
+[]|[][]\T1/txtt/m/sl/10 convert_x_mm_b_T_file_to_wave_std[][]\T1/qtm/m/n/10 (fo
+lder_in,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2335--2335
+[]|[][]\T1/txtt/m/sl/10 save_prepared_b_data[][]\T1/qtm/m/n/10 (b_fields, folde
+r[,
+ []
+
+[22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
+[37] [38] [39] [40] [41] [42] [43] [44
+
+]
+Chapter 2.
+[45] [46
+
+] [47
+
+
+] (./unduwave.ind [48
+
+
+]
+Underfull \hbox (badness 6348) in paragraph at lines 8--10
+[]\T1/txtt/m/n/10 __add__() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.undu_
+api_root.point_coords
+ []
+
+
+Overfull \hbox (20.24234pt too wide) in paragraph at lines 11--13
+[]\T1/txtt/m/n/10 __repr__() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attribut
+e_classes.attributes._attribute
+ []
+
+
+Overfull \hbox (14.99236pt too wide) in paragraph at lines 14--16
+[]\T1/txtt/m/n/10 __str__() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attribute
+_classes.attributes._attribute
+ []
+
+
+Underfull \hbox (badness 6348) in paragraph at lines 16--18
+[]\T1/txtt/m/n/10 __sub__() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.undu_
+api_root.point_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+[]\T1/txtt/m/n/10 _add_attributes() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave._
+attribute_collection
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+[]\T1/txtt/m/n/10 _add_attributes() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (37.1825pt too wide) in paragraph at lines 20--22
+\T1/qtm/m/it/10 duwave.attribute_classes.attributes._attribute_collection
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+[]\T1/txtt/m/n/10 _attribute \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--28
+[]\T1/txtt/m/n/10 _attribute_collection \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class i
+n un-
+ []
+
+
+Overfull \hbox (70.02228pt too wide) in paragraph at lines 34--36
+[]\T1/txtt/m/n/10 add_to_clc() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.un
+du_api_root.undu_magnet_block_coords
+ []
+
+
+Overfull \hbox (15.63231pt too wide) in paragraph at lines 36--38
+[]\T1/txtt/m/n/10 add_to_clc() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.un
+du_api_root.undu_magnets
+ []
+
+
+Overfull \hbox (66.58228pt too wide) in paragraph at lines 39--41
+[]\T1/txtt/m/n/10 ahwpolHalbasy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_
+modules.wave_parameters.undu_paras
+ []
+
+
+Overfull \hbox (45.58234pt too wide) in paragraph at lines 45--47
+[]\T1/txtt/m/n/10 b0Halbasy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.undu_paras
+ []
+
+
+Overfull \hbox (14.08243pt too wide) in paragraph at lines 48--50
+[]\T1/txtt/m/n/10 b0y \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.wa
+ve_parameters.undu_paras
+ []
+
+
+Overfull \hbox (14.08243pt too wide) in paragraph at lines 51--53
+[]\T1/txtt/m/n/10 b0z \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.wa
+ve_parameters.undu_paras
+ []
+
+
+Overfull \hbox (75.79239pt too wide) in paragraph at lines 53--55
+[]\T1/txtt/m/n/10 b_type \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (63.5024pt too wide) in paragraph at lines 57--59
+[]\T1/txtt/m/n/10 beam_en \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (63.5024pt too wide) in paragraph at lines 60--62
+[]\T1/txtt/m/n/10 betfunh \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (63.5024pt too wide) in paragraph at lines 63--65
+[]\T1/txtt/m/n/10 betfunv \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.ebeam_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
+[]\T1/txtt/m/n/10 bfield_paras \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters\T1/qtm/m/n/10 ),
+ []
+
+
+Overfull \hbox (53.00243pt too wide) in paragraph at lines 69--71
+[]\T1/txtt/m/n/10 bsigy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.
+wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (58.25241pt too wide) in paragraph at lines 72--74
+[]\T1/txtt/m/n/10 bsigyp \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (53.00243pt too wide) in paragraph at lines 75--77
+[]\T1/txtt/m/n/10 bsigz \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.
+wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (58.25241pt too wide) in paragraph at lines 78--80
+[]\T1/txtt/m/n/10 bsigzp \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.ebeam_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+[]\T1/txtt/m/n/10 center_b_field_data() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-
+ule un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
+[]\T1/txtt/m/n/10 center_data() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule un-
+ []
+
+
+Overfull \hbox (75.27226pt too wide) in paragraph at lines 87--89
+[]\T1/txtt/m/n/10 change_segm() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.u
+ndu_api_root.undu_magnet_block_coords
+ []
+
+
+Overfull \hbox (20.8823pt too wide) in paragraph at lines 89--91
+[]\T1/txtt/m/n/10 change_segm() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.u
+ndu_api_root.undu_magnets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+[]\T1/txtt/m/n/10 checkIfDF_Conv() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule u
+n-
+ []
+
+[49
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
+[]\T1/txtt/m/n/10 checkIfList_Conv() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule
+ un-
+ []
+
+
+Overfull \hbox (64.68234pt too wide) in paragraph at lines 96--98
+[]\T1/txtt/m/n/10 children() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attribut
+e_classes.attributes._attribute_collection
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+[]\T1/txtt/m/n/10 circumference \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.ebeam
+_parameters at-
+ []
+
+
+Overfull \hbox (95.0023pt too wide) in paragraph at lines 99--101
+[]\T1/txtt/m/n/10 circumference \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_
+modules.wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (71.94229pt too wide) in paragraph at lines 101--103
+[]\T1/txtt/m/n/10 cleanup() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_postprocess.wave_postprocess
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+[]\T1/txtt/m/n/10 convert_path_to_win() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-
+ule un-
+ []
+
+
+Overfull \hbox (98.19221pt too wide) in paragraph at lines 111--113
+[]\T1/txtt/m/n/10 copy_results() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave
+_modules.wave_postprocess.wave_postprocess
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+[]\T1/txtt/m/n/10 copy_results() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave
+_postprocess
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
+[]\T1/txtt/m/n/10 create_clc_txt() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (32.02246pt too wide) in paragraph at lines 114--116
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnet_block_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
+[]\T1/txtt/m/n/10 create_edge_points() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (32.02246pt too wide) in paragraph at lines 116--118
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnet_block_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
+[]\T1/txtt/m/n/10 create_fresh_clc() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 118--120
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_api method\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+[]\T1/txtt/m/n/10 create_fresh_nam() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 121--123
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_api method\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
+[]\T1/txtt/m/n/10 create_wave_input() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (18.07237pt too wide) in paragraph at lines 126--128
+\T1/qtm/m/it/10 duwave.wave_modules.wave_prepare.wave_prepare
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+[]\T1/txtt/m/n/10 create_wave_input() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave
+.wave_prepare
+ []
+
+
+Overfull \hbox (63.5024pt too wide) in paragraph at lines 130--132
+[]\T1/txtt/m/n/10 current \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.ebeam_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
+[]\T1/txtt/m/n/10 cut_data_support() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule
+ un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--139
+[]\T1/txtt/m/n/10 del_all_files() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule un
+-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--141
+[]\T1/txtt/m/n/10 del_files() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+[]\T1/txtt/m/n/10 dir_path \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+[]\T1/txtt/m/n/10 ebeam_parameters \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters\T1/qtm/m/n/10 ),
+ []
+
+
+Overfull \hbox (45.58234pt too wide) in paragraph at lines 150--152
+[]\T1/txtt/m/n/10 ell_shift \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.undu_paras
+ []
+
+
+Overfull \hbox (63.5024pt too wide) in paragraph at lines 153--155
+[]\T1/txtt/m/n/10 emitt_h \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (63.5024pt too wide) in paragraph at lines 156--158
+[]\T1/txtt/m/n/10 emitt_v \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (63.5024pt too wide) in paragraph at lines 159--161
+[]\T1/txtt/m/n/10 espread \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.ebeam_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
+[]\T1/txtt/m/n/10 extract_summary() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (49.69243pt too wide) in paragraph at lines 161--163
+\T1/qtm/m/it/10 duwave.wave_modules.wave_postprocess.wave_postprocess
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+[]\T1/txtt/m/n/10 extract_summary() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.w
+ave_postprocess
+ []
+
+
+Overfull \hbox (102.04231pt too wide) in paragraph at lines 169--171
+[]\T1/txtt/m/n/10 field_files \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_mo
+dules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+[]\T1/txtt/m/n/10 field_files \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_pr
+og_parameters at-
+ []
+
+
+Overfull \hbox (63.55229pt too wide) in paragraph at lines 173--175
+[]\T1/txtt/m/n/10 field_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_m
+odules.wave_parameters.bfield_paras
+ []
+
+
+Overfull \hbox (107.2923pt too wide) in paragraph at lines 175--177
+[]\T1/txtt/m/n/10 field_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_m
+odules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
+[]\T1/txtt/m/n/10 field_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_p
+rog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
+[]\T1/txtt/m/n/10 find_all_files_exptn() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod
+-ule un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--183
+[]\T1/txtt/m/n/10 find_all_mag_blocks() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (32.02246pt too wide) in paragraph at lines 181--183
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnet_block_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+[]\T1/txtt/m/n/10 find_all_mag_blocks() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+[]\T1/txtt/m/n/10 find_all_names() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (32.02246pt too wide) in paragraph at lines 185--187
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnet_block_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
+[]\T1/txtt/m/n/10 find_all_names() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnets
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+[]\T1/txtt/m/n/10 find_extrema() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule un-
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+[]\T1/txtt/m/n/10 find_files_exptn() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule
+ un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
+[]\T1/txtt/m/n/10 find_load_brilliance() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (8.6924pt too wide) in paragraph at lines 193--195
+\T1/qtm/m/it/10 duwave.wave_modules.wave_results.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+[]\T1/txtt/m/n/10 find_load_brilliance() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duw
+ave.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+[]\T1/txtt/m/n/10 find_load_flux() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (8.6924pt too wide) in paragraph at lines 196--198
+\T1/qtm/m/it/10 duwave.wave_modules.wave_results.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
+[]\T1/txtt/m/n/10 find_load_flux_density_distribution() \T1/qtm/m/n/10 (\T1/qtm
+/m/it/10 un-
+ []
+
+
+Overfull \hbox (8.6924pt too wide) in paragraph at lines 199--201
+\T1/qtm/m/it/10 duwave.wave_modules.wave_results.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
+[]\T1/txtt/m/n/10 find_load_flux_density_distribution() \T1/qtm/m/n/10 (\T1/qtm
+/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+[]\T1/txtt/m/n/10 find_load_flux_density_on_axis() \T1/qtm/m/n/10 (\T1/qtm/m/it
+/10 un-
+ []
+
+
+Overfull \hbox (8.6924pt too wide) in paragraph at lines 203--205
+\T1/qtm/m/it/10 duwave.wave_modules.wave_results.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+[]\T1/txtt/m/n/10 find_load_flux_density_on_axis() \T1/qtm/m/n/10 (\T1/qtm/m/it
+/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
+[]\T1/txtt/m/n/10 find_load_power_distribution() \T1/qtm/m/n/10 (\T1/qtm/m/it/1
+0 un-
+ []
+
+
+Overfull \hbox (8.6924pt too wide) in paragraph at lines 207--209
+\T1/qtm/m/it/10 duwave.wave_modules.wave_results.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+[]\T1/txtt/m/n/10 find_load_power_distribution() \T1/qtm/m/n/10 (\T1/qtm/m/it/1
+0 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
+[]\T1/txtt/m/n/10 find_load_trajectory_bfield_data() \T1/qtm/m/n/10 (\T1/qtm/m/
+it/10 un-
+ []
+
+
+Overfull \hbox (8.6924pt too wide) in paragraph at lines 211--213
+\T1/qtm/m/it/10 duwave.wave_modules.wave_results.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
+[]\T1/txtt/m/n/10 find_load_trajectory_bfield_data() \T1/qtm/m/n/10 (\T1/qtm/m/
+it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+[]\T1/txtt/m/n/10 find_magn_name() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (32.02246pt too wide) in paragraph at lines 215--217
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnet_block_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+[]\T1/txtt/m/n/10 find_magn_name() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
+[]\T1/txtt/m/n/10 find_maxima() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
+[]\T1/txtt/m/n/10 find_minima() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule un-
+ []
+
+
+Overfull \hbox (77.24236pt too wide) in paragraph at lines 224--226
+[]\T1/txtt/m/n/10 freq_high \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.spectrometer_paras
+ []
+
+
+Overfull \hbox (71.99237pt too wide) in paragraph at lines 227--229
+[]\T1/txtt/m/n/10 freq_low \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modul
+es.wave_parameters.spectrometer_paras
+ []
+
+
+Overfull \hbox (72.05235pt too wide) in paragraph at lines 230--232
+[]\T1/txtt/m/n/10 freq_num \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modul
+es.wave_parameters.spectrometer_paras
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
+[]\T1/txtt/m/n/10 gauge_b_field_data() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-u
+le un-
+ []
+
+
+Underfull \hbox (badness 7099) in paragraph at lines 238--240
+[]\T1/txtt/m/n/10 get() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attribute_cla
+sses.attributes._attribute
+ []
+
+
+Overfull \hbox (15.63231pt too wide) in paragraph at lines 240--242
+[]\T1/txtt/m/n/10 get_center() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.un
+du_api_root.undu_magnets
+ []
+
+
+Overfull \hbox (14.99236pt too wide) in paragraph at lines 243--245
+[]\T1/txtt/m/n/10 get_fac() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attribute
+_classes.attributes._attribute
+ []
+
+
+Overfull \hbox (35.9923pt too wide) in paragraph at lines 246--248
+[]\T1/txtt/m/n/10 get_in_name() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attri
+bute_classes.attributes._attribute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--250
+[]\T1/txtt/m/n/10 get_max_extent() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (32.02246pt too wide) in paragraph at lines 248--250
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnet_block_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+[]\T1/txtt/m/n/10 get_max_extent() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
+[]\T1/txtt/m/n/10 get_para() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.undu
+_api_root.undu_api
+ []
+
+
+Overfull \hbox (46.69221pt too wide) in paragraph at lines 255--257
+[]\T1/txtt/m/n/10 get_result() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_m
+odules.wave_results.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
+[]\T1/txtt/m/n/10 get_std_bessy_II_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
+[]\T1/txtt/m/n/10 get_std_bessy_II_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (51.7525pt too wide) in paragraph at lines 263--265
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.ebeam_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--267
+[]\T1/txtt/m/n/10 get_std_bessy_III_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
+[]\T1/txtt/m/n/10 get_std_bessy_III_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+
+ []
+
+
+Overfull \hbox (51.7525pt too wide) in paragraph at lines 267--269
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (5.73227pt too wide) in paragraph at lines 269--271
+[]\T1/txtt/m/n/10 get_std_para() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.
+undu_api_root.undu_api
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.ebe
+am_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.scr
+een_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.spe
+ctrometer_paras
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (25.55247pt too wide) in paragraph at lines 277--279
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.bfield_paras
+ []
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (51.7525pt too wide) in paragraph at lines 279--281
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.ebeam_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (51.45248pt too wide) in paragraph at lines 281--283
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.screen_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (54.9925pt too wide) in paragraph at lines 283--285
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.spectrometer_paras
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (23.33247pt too wide) in paragraph at lines 285--287
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.undu_paras
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (69.29248pt too wide) in paragraph at lines 287--289
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--291
+[]\T1/txtt/m/n/10 get_std_paras() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wav
+e_prog_parameters
+ []
+
+
+Overfull \hbox (75.79239pt too wide) in paragraph at lines 299--301
+[]\T1/txtt/m/n/10 iefold \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (70.5424pt too wide) in paragraph at lines 302--304
+[]\T1/txtt/m/n/10 iemit \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.
+wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (91.54234pt too wide) in paragraph at lines 305--307
+[]\T1/txtt/m/n/10 ihisascii \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+[]\T1/txtt/m/n/10 ihisascii \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_prog
+_parameters at-
+ []
+
+
+Overfull \hbox (117.79227pt too wide) in paragraph at lines 308--310
+[]\T1/txtt/m/n/10 in_file_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave
+_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (86.29236pt too wide) in paragraph at lines 312--314
+[]\T1/txtt/m/n/10 in_files \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modul
+es.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--317
+[]\T1/txtt/m/n/10 interpolate_b_data() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-u
+le un-
+ []
+
+
+Overfull \hbox (75.79239pt too wide) in paragraph at lines 317--319
+[]\T1/txtt/m/n/10 irbtab \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (91.54234pt too wide) in paragraph at lines 320--322
+[]\T1/txtt/m/n/10 irbtabxyz \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+[]\T1/txtt/m/n/10 irbtabxyz \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_prog
+_parameters at-
+ []
+
+
+Overfull \hbox (86.29236pt too wide) in paragraph at lines 323--325
+[]\T1/txtt/m/n/10 irbtabzy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modul
+es.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (81.04237pt too wide) in paragraph at lines 326--328
+[]\T1/txtt/m/n/10 isigusr \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--334
+[]\T1/txtt/m/n/10 load_b_fields_gap() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ul
+e un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
+[]\T1/txtt/m/n/10 load_beff_undumag_file() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 334--336
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_api method\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+[]\T1/txtt/m/n/10 load_beff_undumag_file() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-d
+uwave.undu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
+[]\T1/txtt/m/n/10 load_force_undumag_file() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 337--339
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_api method\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
+[]\T1/txtt/m/n/10 load_force_undumag_file() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+duwave.undu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--342
+[]\T1/txtt/m/n/10 load_from_res_folder() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (8.6924pt too wide) in paragraph at lines 340--342
+\T1/qtm/m/it/10 duwave.wave_modules.wave_results.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--344
+[]\T1/txtt/m/n/10 load_from_res_folder() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duw
+ave.wave_results
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--346
+[]\T1/txtt/m/n/10 load_on_axis_undumag_file() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 u
+n-
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 344--346
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_api method\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+[]\T1/txtt/m/n/10 load_on_axis_undumag_file() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 u
+n-duwave.undu
+ []
+
+
+Overfull \hbox (49.02234pt too wide) in paragraph at lines 352--354
+[]\T1/txtt/m/n/10 mirror() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.undu_a
+pi_root.undu_magnet_block_coords
+ []
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
+[]| \T1/txtt/m/n/10 unduwave.wave_modules.wave_postprocess\T1/qtm/m/n/10 ,
+ []
+
+
+Overfull \hbox (54.27232pt too wide) in paragraph at lines 376--378
+[]\T1/txtt/m/n/10 move_it() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.undu_
+api_root.undu_magnet_block_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
+[]\T1/txtt/m/n/10 mv_cp_files() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ule un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
+[]\T1/txtt/m/n/10 name \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attribute_clas
+ses.attributes._attribute
+ []
+
+
+Overfull \hbox (81.04237pt too wide) in paragraph at lines 390--392
+[]\T1/txtt/m/n/10 no_copy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (19.33241pt too wide) in paragraph at lines 394--396
+[]\T1/txtt/m/n/10 nper \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.w
+ave_parameters.undu_paras
+ []
+
+
+Overfull \hbox (86.29236pt too wide) in paragraph at lines 396--398
+[]\T1/txtt/m/n/10 nthreads \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modul
+es.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (29.83238pt too wide) in paragraph at lines 403--405
+[]\T1/txtt/m/n/10 perl_x \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.undu_paras
+ []
+
+
+Overfull \hbox (102.04231pt too wide) in paragraph at lines 405--407
+[]\T1/txtt/m/n/10 pics_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_mo
+dules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
+[]\T1/txtt/m/n/10 pics_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_pr
+og_parameters at-
+ []
+
+
+Overfull \hbox (57.9524pt too wide) in paragraph at lines 409--411
+[]\T1/txtt/m/n/10 pinh_h \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.screen_parameters
+ []
+
+
+Overfull \hbox (63.20238pt too wide) in paragraph at lines 412--414
+[]\T1/txtt/m/n/10 pinh_ny \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.screen_parameters
+ []
+
+
+Overfull \hbox (63.20238pt too wide) in paragraph at lines 415--417
+[]\T1/txtt/m/n/10 pinh_nz \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_module
+s.wave_parameters.screen_parameters
+ []
+
+
+Overfull \hbox (57.9524pt too wide) in paragraph at lines 418--420
+[]\T1/txtt/m/n/10 pinh_w \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.screen_parameters
+ []
+
+
+Overfull \hbox (57.9524pt too wide) in paragraph at lines 421--423
+[]\T1/txtt/m/n/10 pinh_x \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.screen_parameters
+ []
+
+
+Overfull \hbox (45.58234pt too wide) in paragraph at lines 424--426
+[]\T1/txtt/m/n/10 pkHalbasy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.undu_paras
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
+[]\T1/txtt/m/n/10 plot_b_field_data() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-ul
+e un-
+ []
+
+
+Overfull \hbox (16.75227pt too wide) in paragraph at lines 428--430
+[]\T1/txtt/m/n/10 plot_over() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.quantit
+ies.quantities.wave_quantity
+ []
+
+
+Overfull \hbox (32.50223pt too wide) in paragraph at lines 430--432
+[]\T1/txtt/m/n/10 plot_over_3d() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.quan
+tities.quantities.wave_quantity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--434
+[]\T1/txtt/m/n/10 plot_parametric_3d() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--434
+\T1/qtm/m/it/10 duwave.quantities.quantities.wave_quantity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--437
+[]\T1/txtt/m/n/10 prepare_b_files_for_wave() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un
+-
+ []
+
+
+Overfull \hbox (18.07237pt too wide) in paragraph at lines 435--437
+\T1/qtm/m/it/10 duwave.wave_modules.wave_prepare.wave_prepare
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
+[]\T1/txtt/m/n/10 prepare_b_files_for_wave() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un
+-
+ []
+
+
+Overfull \hbox (58.25241pt too wide) in paragraph at lines 450--452
+[]\T1/txtt/m/n/10 rdipol \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.ebeam_parameters
+ []
+
+
+Overfull \hbox (96.79233pt too wide) in paragraph at lines 452--454
+[]\T1/txtt/m/n/10 res_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_mod
+ules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+[]\T1/txtt/m/n/10 res_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_pro
+g_parameters at-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--457
+[]\T1/txtt/m/n/10 res_summary_file \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (69.29248pt too wide) in paragraph at lines 455--457
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (49.02234pt too wide) in paragraph at lines 460--462
+[]\T1/txtt/m/n/10 rotate() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.undu_a
+pi_root.undu_magnet_block_coords
+ []
+
+
+Overfull \hbox (14.48236pt too wide) in paragraph at lines 469--471
+[]\T1/txtt/m/n/10 run() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.
+wave_control.wave_control
+ []
+
+[53]
+Overfull \hbox (16.75227pt too wide) in paragraph at lines 474--476
+[]\T1/txtt/m/n/10 save_plot() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.quantit
+ies.quantities.wave_quantity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--478
+[]\T1/txtt/m/n/10 save_prepared_b_data() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod
+-ule un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--481
+[]\T1/txtt/m/n/10 screen_parameters \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un
+-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--481
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 7099) in paragraph at lines 482--484
+[]\T1/txtt/m/n/10 set() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attribute_cla
+sses.attributes._attribute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
+[]\T1/txtt/m/n/10 set_bessy_II_elliptical_undu() \T1/qtm/m/n/10 (\T1/qtm/m/it/1
+0 un-
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 484--486
+\T1/qtm/m/it/10 duwave.api.wave_api_root.wave_api method\T1/qtm/m/n/10 ),
+ []
+
+
+Overfull \hbox (35.9923pt too wide) in paragraph at lines 489--491
+[]\T1/txtt/m/n/10 set_in_name() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attri
+bute_classes.attributes._attribute
+ []
+
+
+Overfull \hbox (80.52225pt too wide) in paragraph at lines 491--493
+[]\T1/txtt/m/n/10 set_inactive() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.
+undu_api_root.undu_magnet_block_coords
+ []
+
+
+Overfull \hbox (26.13228pt too wide) in paragraph at lines 493--495
+[]\T1/txtt/m/n/10 set_inactive() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.
+undu_api_root.undu_magnets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
+[]\T1/txtt/m/n/10 set_magnetization() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (32.02246pt too wide) in paragraph at lines 495--497
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnet_block_coords
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--499
+[]\T1/txtt/m/n/10 set_magnetization() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--499
+\T1/qtm/m/it/10 duwave.api.undu_api_root.undu_magnets
+ []
+
+
+Overfull \hbox (20.24234pt too wide) in paragraph at lines 500--502
+[]\T1/txtt/m/n/10 set_name() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.attribut
+e_classes.attributes._attribute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--504
+[]\T1/txtt/m/n/10 set_para() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.api.undu
+_api_root.undu_api
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--507
+[]\T1/txtt/m/n/10 show_all_children() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--507
+\T1/qtm/m/it/10 duwave._attribute_collection method\T1/qtm/m/n/10 ), [][]37[][]
+,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
+[]\T1/txtt/m/n/10 show_all_children() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (37.1825pt too wide) in paragraph at lines 507--509
+\T1/qtm/m/it/10 duwave.attribute_classes.attributes._attribute_collection
+ []
+
+
+Overfull \hbox (91.54234pt too wide) in paragraph at lines 509--511
+[]\T1/txtt/m/n/10 spec_calc \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
+[]\T1/txtt/m/n/10 spec_calc \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_prog
+_parameters at-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--515
+[]\T1/txtt/m/n/10 spectrometer_paras \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in u
+n-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--515
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters\T1/qtm/m/n/10 ),
+ []
+
+
+Overfull \hbox (50.99243pt too wide) in paragraph at lines 526--528
+[]\T1/txtt/m/n/10 undu \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.w
+ave_parameters.spectrometer_paras
+ []
+
+
+Overfull \hbox (91.54234pt too wide) in paragraph at lines 529--531
+[]\T1/txtt/m/n/10 undu_easy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
+[]\T1/txtt/m/n/10 undu_easy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_prog
+_parameters at-
+ []
+
+
+Overfull \hbox (96.79233pt too wide) in paragraph at lines 532--534
+[]\T1/txtt/m/n/10 undu_ellip \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_mod
+ules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+[]\T1/txtt/m/n/10 undu_ellip \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_pro
+g_parameters at-
+ []
+
+
+Overfull \hbox (91.54234pt too wide) in paragraph at lines 535--537
+[]\T1/txtt/m/n/10 undu_endp \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+[]\T1/txtt/m/n/10 undu_endp \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_prog
+_parameters at-
+ []
+
+
+Overfull \hbox (86.29236pt too wide) in paragraph at lines 538--540
+[]\T1/txtt/m/n/10 undu_gap \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modul
+es.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--543
+[]\T1/txtt/m/n/10 undu_magnet_block_coords \T1/qtm/m/n/10 (\T1/qtm/m/it/10 clas
+s in un-
+ []
+
+
+Overfull \hbox (91.54234pt too wide) in paragraph at lines 544--546
+[]\T1/txtt/m/n/10 undu_mode \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
+[]\T1/txtt/m/n/10 undu_mode \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_prog
+_parameters at-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--550
+[]\T1/txtt/m/n/10 undu_paras \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--550
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters\T1/qtm/m/n/10 ),
+ []
+
+
+Overfull \hbox (45.58234pt too wide) in paragraph at lines 551--553
+[]\T1/txtt/m/n/10 undu_type \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.undu_paras
+ []
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 591--593
+[]\T1/txtt/m/n/10 unzip_zip_in_folder() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-
+ule un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 604--606
+[]\T1/txtt/m/n/10 wave_control \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 606--608
+[]\T1/txtt/m/n/10 wave_data_res_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (69.29248pt too wide) in paragraph at lines 606--608
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
+[]\T1/txtt/m/n/10 wave_data_res_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
+\T1/qtm/m/it/10 duwave.wave_prog_parameters at-tribute\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--612
+[]\T1/txtt/m/n/10 wave_ending_copy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (69.29248pt too wide) in paragraph at lines 610--612
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--616
+[]\T1/txtt/m/n/10 wave_ending_extract \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (69.29248pt too wide) in paragraph at lines 614--616
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--618
+[]\T1/txtt/m/n/10 wave_ending_extract \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--618
+\T1/qtm/m/it/10 duwave.wave_prog_parameters at-tribute\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--620
+[]\T1/txtt/m/n/10 wave_files_essentials \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (69.29248pt too wide) in paragraph at lines 618--620
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--622
+[]\T1/txtt/m/n/10 wave_files_essentials \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--622
+\T1/qtm/m/it/10 duwave.wave_prog_parameters at-tribute\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--625
+[]\T1/txtt/m/n/10 wave_postprocess \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--625
+\T1/qtm/m/it/10 duwave.wave_modules.wave_postprocess\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--628
+[]\T1/txtt/m/n/10 wave_prepare \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
+[]\T1/txtt/m/n/10 wave_prog_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (69.29248pt too wide) in paragraph at lines 628--630
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
+[]\T1/txtt/m/n/10 wave_prog_parameters \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in
+ un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
+[]\T1/txtt/m/n/10 wave_quantity \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--638
+[]\T1/txtt/m/n/10 wave_res_copy_behaviour \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Overfull \hbox (69.29248pt too wide) in paragraph at lines 636--638
+\T1/qtm/m/it/10 duwave.wave_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--640
+[]\T1/txtt/m/n/10 wave_res_copy_behaviour \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--640
+\T1/qtm/m/it/10 duwave.wave_prog_parameters at-tribute\T1/qtm/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--643
+[]\T1/txtt/m/n/10 wave_results \T1/qtm/m/n/10 (\T1/qtm/m/it/10 class in un-
+ []
+
+
+Overfull \hbox (50.99243pt too wide) in paragraph at lines 644--646
+[]\T1/txtt/m/n/10 wigg \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules.w
+ave_parameters.spectrometer_paras
+ []
+
+
+Overfull \hbox (45.58234pt too wide) in paragraph at lines 650--652
+[]\T1/txtt/m/n/10 xlHalbasy \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modu
+les.wave_parameters.undu_paras
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--657
+[]\T1/txtt/m/n/10 zip_files_in_folder() \T1/qtm/m/n/10 (\T1/qtm/m/it/10 in mod-
+ule un-
+ []
+
+
+Overfull \hbox (117.79227pt too wide) in paragraph at lines 657--659
+[]\T1/txtt/m/n/10 zip_res_folder \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave
+_modules.wave_parameters.wave_prog_parameters
+ []
+
+
+Overfull \hbox (75.79239pt too wide) in paragraph at lines 661--663
+[]\T1/txtt/m/n/10 zipped \T1/qtm/m/n/10 (\T1/qtm/m/it/10 un-duwave.wave_modules
+.wave_parameters.wave_prog_parameters
+ []
+
+[55] [56
+
+]) (./unduwave.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `unduwave.out' has not changed.
+(rerunfilecheck)             Checksum: 8042A4DFFD2E560440E2A7928184803B;12683.
+ ) 
+Here is how much of TeX's memory you used:
+ 17530 strings out of 475491
+ 315290 string characters out of 5782987
+ 1959975 words of memory out of 5000000
+ 38646 multiletter control sequences out of 15000+600000
+ 624562 words of font info for 95 fonts, out of 8000000 for 9000
+ 520 hyphenation exceptions out of 8191
+ 72i,12n,79p,1768b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/
+texmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public
+/tex-gyre/qhvbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></us
+r/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type
+1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/txfonts/tcxtt.pfb>
+Output written on unduwave.pdf (60 pages, 641820 bytes).
+PDF statistics:
+ 1768 PDF objects out of 2073 (max. 8388607)
+ 1574 compressed objects within 16 object streams
+ 514 named destinations out of 1000 (max. 500000)
+ 760 words of extra memory for PDF output out of 10000 (max. 10000000)
+

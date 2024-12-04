@@ -1,0 +1,89 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Contents}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Installation}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Linux}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Windows}{4}{subsection.1.1.2}%
+\contentsline {subsubsection}{Preliminaries}{4}{subsubsection*.3}%
+\contentsline {subsubsection}{Github and Cloning}{6}{subsubsection*.4}%
+\contentsline {subsubsection}{Test and Compilation}{6}{subsubsection*.5}%
+\contentsline {section}{\numberline {1.2}Quickguide}{8}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}General Things}{8}{subsection.1.2.1}%
+\contentsline {subsubsection}{The Coordinate System}{8}{subsubsection*.6}%
+\contentsline {subsection}{\numberline {1.2.2}First Run}{8}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}The Parameter Structures}{9}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Undu Modes}{12}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}User\sphinxhyphen {}defined B\sphinxhyphen {}Fields}{12}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Elliptical Undulator}{13}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}Simple Undulator with Endpoles}{13}{subsection.1.2.7}%
+\contentsline {subsection}{\numberline {1.2.8}Plotting and Results}{13}{subsection.1.2.8}%
+\contentsline {subsubsection}{Getting Results}{13}{subsubsection*.7}%
+\contentsline {subsubsection}{Plotting Results}{14}{subsubsection*.8}%
+\contentsline {paragraph}{2D Plots}{14}{paragraph*.9}%
+\contentsline {paragraph}{Merge Plots}{14}{paragraph*.10}%
+\contentsline {paragraph}{Log Plots}{15}{paragraph*.11}%
+\contentsline {paragraph}{Parametric Plots}{15}{paragraph*.12}%
+\contentsline {paragraph}{3D Plots}{15}{paragraph*.13}%
+\contentsline {paragraph}{Plot Flux Density Distributions}{17}{paragraph*.14}%
+\contentsline {section}{\numberline {1.3}API Reference}{17}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}unduwave}{17}{subsection.1.3.1}%
+\contentsline {subsubsection}{Subpackages}{17}{subsubsection*.16}%
+\contentsline {paragraph}{unduwave.api}{17}{paragraph*.17}%
+\contentsline {subparagraph}{Submodules}{17}{subparagraph*.18}%
+\contentsline {subparagraph}{unduwave.api.undu\_api\_root}{17}{subparagraph*.19}%
+\contentsline {subparagraph}{Classes}{18}{subparagraph*.20}%
+\contentsline {subparagraph}{Functions}{18}{subparagraph*.21}%
+\contentsline {subparagraph}{Module Contents}{18}{subparagraph*.22}%
+\contentsline {subparagraph}{unduwave.api.wave\_api\_root}{20}{subparagraph*.69}%
+\contentsline {subparagraph}{Classes}{20}{subparagraph*.70}%
+\contentsline {subparagraph}{Module Contents}{20}{subparagraph*.71}%
+\contentsline {paragraph}{unduwave.attribute\_classes}{21}{paragraph*.76}%
+\contentsline {subparagraph}{Submodules}{21}{subparagraph*.77}%
+\contentsline {subparagraph}{unduwave.attribute\_classes.attributes}{21}{subparagraph*.78}%
+\contentsline {subparagraph}{Classes}{21}{subparagraph*.79}%
+\contentsline {subparagraph}{Module Contents}{21}{subparagraph*.80}%
+\contentsline {paragraph}{unduwave.helpers}{22}{paragraph*.95}%
+\contentsline {subparagraph}{Submodules}{22}{subparagraph*.96}%
+\contentsline {subparagraph}{unduwave.helpers.bfield\_helpers}{22}{subparagraph*.97}%
+\contentsline {subparagraph}{Functions}{22}{subparagraph*.98}%
+\contentsline {subparagraph}{Module Contents}{23}{subparagraph*.99}%
+\contentsline {subparagraph}{unduwave.helpers.file\_folder\_helpers}{24}{subparagraph*.114}%
+\contentsline {subparagraph}{Functions}{24}{subparagraph*.115}%
+\contentsline {subparagraph}{Module Contents}{24}{subparagraph*.116}%
+\contentsline {paragraph}{unduwave.quantities}{26}{paragraph*.125}%
+\contentsline {subparagraph}{Submodules}{26}{subparagraph*.126}%
+\contentsline {subparagraph}{unduwave.quantities.quantities}{26}{subparagraph*.127}%
+\contentsline {subparagraph}{Classes}{26}{subparagraph*.128}%
+\contentsline {subparagraph}{Module Contents}{26}{subparagraph*.129}%
+\contentsline {paragraph}{unduwave.wave\_modules}{26}{paragraph*.135}%
+\contentsline {subparagraph}{Submodules}{26}{subparagraph*.136}%
+\contentsline {subparagraph}{unduwave.wave\_modules.wave\_control}{26}{subparagraph*.137}%
+\contentsline {subparagraph}{Attributes}{26}{subparagraph*.138}%
+\contentsline {subparagraph}{Classes}{27}{subparagraph*.139}%
+\contentsline {subparagraph}{Module Contents}{27}{subparagraph*.140}%
+\contentsline {subparagraph}{unduwave.wave\_modules.wave\_parameters}{27}{subparagraph*.144}%
+\contentsline {subparagraph}{Classes}{27}{subparagraph*.145}%
+\contentsline {subparagraph}{Module Contents}{27}{subparagraph*.146}%
+\contentsline {subparagraph}{unduwave.wave\_modules.wave\_postprocess}{31}{subparagraph*.226}%
+\contentsline {subparagraph}{Classes}{31}{subparagraph*.227}%
+\contentsline {subparagraph}{Module Contents}{31}{subparagraph*.228}%
+\contentsline {subparagraph}{unduwave.wave\_modules.wave\_prepare}{31}{subparagraph*.233}%
+\contentsline {subparagraph}{Classes}{31}{subparagraph*.234}%
+\contentsline {subparagraph}{Module Contents}{31}{subparagraph*.235}%
+\contentsline {subparagraph}{unduwave.wave\_modules.wave\_results}{32}{subparagraph*.239}%
+\contentsline {subparagraph}{Classes}{32}{subparagraph*.240}%
+\contentsline {subparagraph}{Module Contents}{32}{subparagraph*.241}%
+\contentsline {subsubsection}{Submodules}{33}{subsubsection*.251}%
+\contentsline {paragraph}{unduwave.constants}{33}{paragraph*.252}%
+\contentsline {subparagraph}{Attributes}{33}{subparagraph*.253}%
+\contentsline {subparagraph}{Module Contents}{33}{subparagraph*.254}%
+\contentsline {paragraph}{unduwave.unduwave\_incl}{33}{paragraph*.262}%
+\contentsline {subparagraph}{Attributes}{34}{subparagraph*.263}%
+\contentsline {subparagraph}{Functions}{34}{subparagraph*.264}%
+\contentsline {subparagraph}{Module Contents}{34}{subparagraph*.265}%
+\contentsline {subsubsection}{Attributes}{34}{subsubsection*.268}%
+\contentsline {subsubsection}{Classes}{35}{subsubsection*.269}%
+\contentsline {subsubsection}{Functions}{35}{subsubsection*.270}%
+\contentsline {subsubsection}{Package Contents}{35}{subsubsection*.271}%
+\contentsline {chapter}{\numberline {2}Indices and tables}{45}{chapter.2}%
+\contentsline {chapter}{Python Module Index}{47}{section*.425}%
+\contentsline {chapter}{Index}{49}{section*.426}%

@@ -7,6 +7,7 @@ from unduwave.unduwave_incl import *
 class wave_quantity :
 	def __init__(self,wave_api=None,name=None,description=None,unit=None,data=None,plot_name=None) :
 		"""
+		wave_api - reference to the wave_api class
 		name : name of the quantity
 		description: some basic description
 		unit : physical unit
@@ -25,6 +26,12 @@ class wave_quantity :
 	def plot_parametric_3d(self,x_quant,y_quant,title=None,file_name=None,nosave=False,nfig=None) :
 		"""
 		Basic plot of data, 2d, 3d
+
+		x_quant - the quantity plotted on the x-axis
+		y_quant - quantity for y-axis plot
+		title - title, if none is taken from description of this quantity
+
+		Draws a parametetric curve (x_quant,y_quant,self(x_quant,y_quant))
 		"""
 		if nfig is None :
 			fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
@@ -55,7 +62,10 @@ class wave_quantity :
 
 	def plot_over(self,x_quant,title=None,file_name=None,nosave=False,nfig=None,loglog=False) :
 		"""
-		Basic plot of data, 2d, 3d
+		Basic 2d plot of data
+
+		x_quant - the quantity to be on the x-axis
+		loglog - True if both axes to be logarithmic
 		"""
 		if nfig is None :
 			fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
@@ -93,6 +103,8 @@ class wave_quantity :
 		y_quant : quantity to be used as y-data
 		file_name : name under which to save plot
 		nosave: True if you do not want to save plot
+
+		Creates a 3D plot and a heat plot of the original data and of interpolated data.
 		"""
 
 		"""
@@ -185,8 +197,8 @@ class wave_quantity :
 		cmap = cmap.with_extremes(bad=cmap(0))
 		pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
 		fig.colorbar(pcm, ax=ax, label=f'{self._plot_name} [{self._unit}]', pad=0)                    
-		ax.set_xlabel(f'{x_quant._name} [{x_quant._unit}]', fontsize=12)
-		ax.set_ylabel(f'{y_quant._name} [{y_quant._unit}]', fontsize=12)
+		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=12)
+		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=12)
 		file_name_h = file_name.split('.png')[0]+'_heat.png'
 		if not nosave :
 			plt.savefig(file_name_h , bbox_inches='tight')
@@ -232,8 +244,8 @@ class wave_quantity :
 		cmap = cmap.with_extremes(bad=cmap(0))
 		pcm = ax.pcolormesh(Y_data_intrpltd,Z_data_intrpltd,Funs_intrpltd, cmap=cmap)
 		fig.colorbar(pcm, ax=ax, label=f'{self._plot_name} [{self._unit}]', pad=0)                    
-		ax.set_xlabel(f'{x_quant._name} [{x_quant._unit}]', fontsize=12)
-		ax.set_ylabel(f'{y_quant._name} [{y_quant._unit}]', fontsize=12)
+		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=12)
+		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=12)
 		file_name_heat_intr = file_name.split('.png')[0]+'_heat_interpolated.png'
 		if not nosave :
 			plt.savefig(file_name_heat_intr , bbox_inches='tight')

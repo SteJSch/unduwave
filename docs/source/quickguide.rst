@@ -378,6 +378,32 @@ To do 3D plots, do:
 
 Each call to plot_over_3d creates a 3D plot, a heat plot and plots of interpolated data. 
 
+| Here are some plotting examples:
+
+.. figure:: pics/3d_plot_orig.png
+   :scale: 50 %
+   :alt: map to buried treasure
+
+   Original 3D-plot of a power distribution.
+
+.. figure:: pics/3d_plot_interp.png
+   :scale: 50 %
+   :alt: map to buried treasure
+
+   Interpolated 3D-plot of the previous power distribution.
+
+.. figure:: pics/heat_plot_orig.png
+   :scale: 50 %
+   :alt: map to buried treasure
+
+   Original heat map of the above power distribution.
+
+.. figure:: pics/heat_plot_interp.png
+   :scale: 50 %
+   :alt: map to buried treasure
+
+   Interpolated heat map of the above power distribution.
+
 Plot Flux Density Distributions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

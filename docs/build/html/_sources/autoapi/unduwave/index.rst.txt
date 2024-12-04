@@ -815,19 +815,28 @@ Package Contents
 
    .. py:method:: find_load_flux_density_distribution(energies)
 
+      Finds the distribution that is closed to each energy in energies, loads y/z data and flux distribution and adds them to the
+      res_quantities list
+
+      energies - list of energies in eV at which flux distribution is to be plotted
+
+
 
    .. py:method:: find_load_flux_density_on_axis()
+
+      Loads on-axis flux-density
+
 
 
    .. py:method:: find_load_brilliance()
 
-      Loads power-distribution data
+      Loads brilliance data
 
 
 
    .. py:method:: find_load_flux()
 
-      Loads power-distribution data
+      Loads flux through pinhole
 
 
 

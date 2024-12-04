@@ -41,7 +41,7 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.quantities.quantities.wave_quantity" title="unduwave.quantities.quantities.wave_quantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave_quantity</span></code></a></p></td>
-<td><p>name : name of the quantity</p></td>
+<td><p>wave_api - reference to the wave_api class</p></td>
 </tr>
 </tbody>
 </table>
@@ -51,7 +51,8 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.quantities.quantities.wave_quantity">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.quantities.quantities.</span></span><span class="sig-name descname"><span class="pre">wave_quantity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.quantities.quantities.wave_quantity" title="Link to this definition">¶</a></dt>
-<dd><p>name : name of the quantity
+<dd><p>wave_api - reference to the wave_api class
+name : name of the quantity
 description: some basic description
 unit : physical unit
 data: data-object
@@ -60,12 +61,18 @@ plot_name: name shown in plot</p>
 <dt class="sig sig-object py" id="unduwave.quantities.quantities.wave_quantity.plot_parametric_3d">
 <span class="sig-name descname"><span class="pre">plot_parametric_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_quant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_quant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nosave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.quantities.quantities.wave_quantity.plot_parametric_3d" title="Link to this definition">¶</a></dt>
 <dd><p>Basic plot of data, 2d, 3d</p>
+<p>x_quant - the quantity plotted on the x-axis
+y_quant - quantity for y-axis plot
+title - title, if none is taken from description of this quantity</p>
+<p>Draws a parametetric curve (x_quant,y_quant,self(x_quant,y_quant))</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.quantities.quantities.wave_quantity.plot_over">
 <span class="sig-name descname"><span class="pre">plot_over</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_quant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nosave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.quantities.quantities.wave_quantity.plot_over" title="Link to this definition">¶</a></dt>
-<dd><p>Basic plot of data, 2d, 3d</p>
+<dd><p>Basic 2d plot of data</p>
+<p>x_quant - the quantity to be on the x-axis
+loglog - True if both axes to be logarithmic</p>
 </dd></dl>
 
 <dl class="py method">
@@ -76,6 +83,7 @@ x_quant : quantity to be used as x-data
 y_quant : quantity to be used as y-data
 file_name : name under which to save plot
 nosave: True if you do not want to save plot</p>
+<p>Creates a 3D plot and a heat plot of the original data and of interpolated data.</p>
 </dd></dl>
 
 <dl class="py method">

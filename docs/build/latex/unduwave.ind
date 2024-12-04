@@ -1,0 +1,665 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter {\sphinxsymbolsname}
+  \item \spxentry{\_\_add\_\_()}\spxextra{unduwave.api.undu\_api\_root.point\_coords method}, 
+		\hyperpage{18, 19}
+  \item \spxentry{\_\_repr\_\_()}\spxextra{unduwave.\_attribute method}, \hyperpage{37, 38}
+  \item \spxentry{\_\_repr\_\_()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}, 
+		\hyperpage{21}
+  \item \spxentry{\_\_str\_\_()}\spxextra{unduwave.\_attribute method}, \hyperpage{37, 38}
+  \item \spxentry{\_\_str\_\_()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}, 
+		\hyperpage{21}
+  \item \spxentry{\_\_sub\_\_()}\spxextra{unduwave.api.undu\_api\_root.point\_coords method}, 
+		\hyperpage{18, 19}
+  \item \spxentry{\_add\_attributes()}\spxextra{unduwave.\_attribute\_collection method}, 
+		\hyperpage{37, 38}
+  \item \spxentry{\_add\_attributes()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute\_collection method}, 
+		\hyperpage{22}
+  \item \spxentry{\_attribute}\spxextra{class in unduwave}, \hyperpage{36, 37}
+  \item \spxentry{\_attribute}\spxextra{class in unduwave.attribute\_classes.attributes}, 
+		\hyperpage{21}
+  \item \spxentry{\_attribute\_collection}\spxextra{class in unduwave}, \hyperpage{37, 38}
+  \item \spxentry{\_attribute\_collection}\spxextra{class in unduwave.attribute\_classes.attributes}, 
+		\hyperpage{21}
+
+  \indexspace
+  \bigletter A
+  \item \spxentry{add\_element()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{add\_element()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{add\_to\_clc()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{20}
+  \item \spxentry{add\_to\_clc()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{ahwpolHalbasy}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{ahwpolHalbasy}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+
+  \indexspace
+  \bigletter B
+  \item \spxentry{b0Halbasy}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{b0Halbasy}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{b0y}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{b0y}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{b0z}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{b0z}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{b\_type}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{b\_type}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{beam\_en}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{beam\_en}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{27}
+  \item \spxentry{betfunh}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{betfunh}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{betfunv}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{betfunv}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{bfield\_paras}\spxextra{class in unduwave}, \hyperpage{40}
+  \item \spxentry{bfield\_paras}\spxextra{class in unduwave.wave\_modules.wave\_parameters}, 
+		\hyperpage{29}
+  \item \spxentry{bsigy}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{bsigy}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{27}
+  \item \spxentry{bsigyp}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{bsigyp}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{bsigz}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{bsigz}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{27}
+  \item \spxentry{bsigzp}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{bsigzp}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{27}
+
+  \indexspace
+  \bigletter C
+  \item \spxentry{center\_b\_field\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{center\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{change\_segm()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{19}
+  \item \spxentry{change\_segm()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{checkIfDF\_Conv()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{checkIfList\_Conv()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{children()}\spxextra{unduwave.\_attribute\_collection method}, \hyperpage{37, 38}
+  \item \spxentry{children()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute\_collection method}, 
+		\hyperpage{22}
+  \item \spxentry{circumference}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{circumference}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{cleanup()}\spxextra{unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method}, 
+		\hyperpage{31}
+  \item \spxentry{cleanup()}\spxextra{unduwave.wave\_postprocess method}, \hyperpage{42}
+  \item \spxentry{cm\_inch}\spxextra{in module unduwave}, \hyperpage{35}, \hyperpage{37}, 
+		\hyperpage{41}
+  \item \spxentry{cm\_inch}\spxextra{in module unduwave.unduwave\_incl}, \hyperpage{34}
+  \item \spxentry{convert\_path\_to\_win()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}, 
+		\hyperpage{24}
+  \item \spxentry{convert\_x\_mm\_b\_T\_file\_to\_wave\_std()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{copy\_results()}\spxextra{unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method}, 
+		\hyperpage{31}
+  \item \spxentry{copy\_results()}\spxextra{unduwave.wave\_postprocess method}, \hyperpage{41}
+  \item \spxentry{create\_clc\_txt()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{20}
+  \item \spxentry{create\_edge\_points()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{19}
+  \item \spxentry{create\_fresh\_clc()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{create\_fresh\_clc()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{create\_fresh\_nam()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{create\_fresh\_nam()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{create\_magnetization\_unit\_vec()}\spxextra{in module unduwave.api.undu\_api\_root}, 
+		\hyperpage{18}
+  \item \spxentry{create\_wave\_input()}\spxextra{unduwave.wave\_modules.wave\_prepare.wave\_prepare method}, 
+		\hyperpage{31}
+  \item \spxentry{create\_wave\_input()}\spxextra{unduwave.wave\_prepare method}, \hyperpage{42}
+  \item \spxentry{current}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{current}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{27}
+  \item \spxentry{cut\_data\_support()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+
+  \indexspace
+  \bigletter D
+  \item \spxentry{del\_all\_files()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}, 
+		\hyperpage{25}
+  \item \spxentry{del\_files()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}, 
+		\hyperpage{25}
+  \item \spxentry{dir\_path}\spxextra{in module unduwave.wave\_modules.wave\_control}, 
+		\hyperpage{27}
+
+  \indexspace
+  \bigletter E
+  \item \spxentry{ebeam\_parameters}\spxextra{class in unduwave}, \hyperpage{38}
+  \item \spxentry{ebeam\_parameters}\spxextra{class in unduwave.wave\_modules.wave\_parameters}, 
+		\hyperpage{27}
+  \item \spxentry{ell\_shift}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{ell\_shift}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{emitt\_h}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{emitt\_h}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{emitt\_v}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{emitt\_v}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{espread}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{espread}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{extract\_summary()}\spxextra{unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method}, 
+		\hyperpage{31}
+  \item \spxentry{extract\_summary()}\spxextra{unduwave.wave\_postprocess method}, \hyperpage{42}
+
+  \indexspace
+  \bigletter F
+  \item \spxentry{fein\_const}\spxextra{in module unduwave}, \hyperpage{35}
+  \item \spxentry{fein\_const}\spxextra{in module unduwave.constants}, \hyperpage{33}
+  \item \spxentry{field\_files}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{field\_files}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{40}
+  \item \spxentry{field\_folder}\spxextra{unduwave.bfield\_paras attribute}, \hyperpage{40}
+  \item \spxentry{field\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.bfield\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{field\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{field\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{40}
+  \item \spxentry{find\_all\_files\_exptn()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}, 
+		\hyperpage{24}
+  \item \spxentry{find\_all\_mag\_blocks()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{19}
+  \item \spxentry{find\_all\_mag\_blocks()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{find\_all\_names()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{19}
+  \item \spxentry{find\_all\_names()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{find\_extrema()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{find\_files\_exptn()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}, 
+		\hyperpage{24}
+  \item \spxentry{find\_load\_brilliance()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}, 
+		\hyperpage{32}
+  \item \spxentry{find\_load\_brilliance()}\spxextra{unduwave.wave\_results method}, \hyperpage{42}
+  \item \spxentry{find\_load\_flux()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}, 
+		\hyperpage{32}
+  \item \spxentry{find\_load\_flux()}\spxextra{unduwave.wave\_results method}, \hyperpage{43}
+  \item \spxentry{find\_load\_flux\_density\_distribution()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}, 
+		\hyperpage{32}
+  \item \spxentry{find\_load\_flux\_density\_distribution()}\spxextra{unduwave.wave\_results method}, 
+		\hyperpage{42}
+  \item \spxentry{find\_load\_flux\_density\_on\_axis()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}, 
+		\hyperpage{32}
+  \item \spxentry{find\_load\_flux\_density\_on\_axis()}\spxextra{unduwave.wave\_results method}, 
+		\hyperpage{42}
+  \item \spxentry{find\_load\_power\_distribution()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}, 
+		\hyperpage{32}
+  \item \spxentry{find\_load\_power\_distribution()}\spxextra{unduwave.wave\_results method}, 
+		\hyperpage{43}
+  \item \spxentry{find\_load\_trajectory\_bfield\_data()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}, 
+		\hyperpage{32}
+  \item \spxentry{find\_load\_trajectory\_bfield\_data()}\spxextra{unduwave.wave\_results method}, 
+		\hyperpage{43}
+  \item \spxentry{find\_magn\_name()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{19}
+  \item \spxentry{find\_magn\_name()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{find\_maxima()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{find\_minima()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{freq\_high}\spxextra{unduwave.spectrometer\_paras attribute}, \hyperpage{39}
+  \item \spxentry{freq\_high}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}, 
+		\hyperpage{28}
+  \item \spxentry{freq\_low}\spxextra{unduwave.spectrometer\_paras attribute}, \hyperpage{39}
+  \item \spxentry{freq\_low}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}, 
+		\hyperpage{28}
+  \item \spxentry{freq\_num}\spxextra{unduwave.spectrometer\_paras attribute}, \hyperpage{39}
+  \item \spxentry{freq\_num}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}, 
+		\hyperpage{28}
+
+  \indexspace
+  \bigletter G
+  \item \spxentry{gauge\_b\_field\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{get()}\spxextra{unduwave.\_attribute method}, \hyperpage{36, 37}
+  \item \spxentry{get()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}, 
+		\hyperpage{21}
+  \item \spxentry{get\_center()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{get\_fac()}\spxextra{unduwave.\_attribute method}, \hyperpage{36, 37}
+  \item \spxentry{get\_fac()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}, 
+		\hyperpage{21}
+  \item \spxentry{get\_in\_name()}\spxextra{unduwave.\_attribute method}, \hyperpage{36, 37}
+  \item \spxentry{get\_in\_name()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}, 
+		\hyperpage{21}
+  \item \spxentry{get\_max\_extent()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{20}
+  \item \spxentry{get\_max\_extent()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{get\_para()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{get\_para()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{get\_result()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}, 
+		\hyperpage{32}
+  \item \spxentry{get\_result()}\spxextra{unduwave.wave\_results method}, \hyperpage{43}
+  \item \spxentry{get\_results()}\spxextra{unduwave.api.wave\_api\_root.wave\_api method}, 
+		\hyperpage{20}
+  \item \spxentry{get\_results()}\spxextra{unduwave.wave method}, \hyperpage{36}
+  \item \spxentry{get\_std\_bessy\_II\_paras()}\spxextra{unduwave.ebeam\_parameters method}, 
+		\hyperpage{39}
+  \item \spxentry{get\_std\_bessy\_II\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method}, 
+		\hyperpage{28}
+  \item \spxentry{get\_std\_bessy\_III\_paras()}\spxextra{unduwave.ebeam\_parameters method}, 
+		\hyperpage{38}
+  \item \spxentry{get\_std\_bessy\_III\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method}, 
+		\hyperpage{28}
+  \item \spxentry{get\_std\_para()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{get\_std\_para()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.bfield\_paras method}, \hyperpage{40}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.ebeam\_parameters method}, \hyperpage{39}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.screen\_parameters method}, \hyperpage{39}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.spectrometer\_paras method}, \hyperpage{39}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.undu\_paras method}, \hyperpage{40}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.bfield\_paras method}, 
+		\hyperpage{29}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method}, 
+		\hyperpage{28}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters method}, 
+		\hyperpage{28}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras method}, 
+		\hyperpage{29}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras method}, 
+		\hyperpage{29}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters method}, 
+		\hyperpage{30}
+  \item \spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_prog\_parameters method}, 
+		\hyperpage{41}
+
+  \indexspace
+  \bigletter H
+  \item \spxentry{hbar}\spxextra{in module unduwave}, \hyperpage{35}
+  \item \spxentry{hbar}\spxextra{in module unduwave.constants}, \hyperpage{33}
+
+  \indexspace
+  \bigletter I
+  \item \spxentry{iefold}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{iefold}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{iemit}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{iemit}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{ihisascii}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{ihisascii}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{in\_file\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{29}
+  \item \spxentry{in\_file\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{40}
+  \item \spxentry{in\_files}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{in\_files}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{40}
+  \item \spxentry{interpolate\_b\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{irbtab}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{irbtab}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{irbtabxyz}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{irbtabxyz}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{irbtabzy}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{irbtabzy}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{isigusr}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{isigusr}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+
+  \indexspace
+  \bigletter L
+  \item \spxentry{load\_b\_fields\_gap()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{load\_beff\_undumag\_file()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{load\_beff\_undumag\_file()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{load\_force\_undumag\_file()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{load\_force\_undumag\_file()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{load\_from\_res\_folder()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}, 
+		\hyperpage{32}
+  \item \spxentry{load\_from\_res\_folder()}\spxextra{unduwave.wave\_results method}, 
+		\hyperpage{42}
+  \item \spxentry{load\_on\_axis\_undumag\_file()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{load\_on\_axis\_undumag\_file()}\spxextra{unduwave.undu method}, \hyperpage{36}
+
+  \indexspace
+  \bigletter M
+  \item \spxentry{m\_el}\spxextra{in module unduwave}, \hyperpage{35}
+  \item \spxentry{m\_el}\spxextra{in module unduwave.constants}, \hyperpage{33}
+  \item \spxentry{mirror()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{20}
+  \item \spxentry{mirror()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{module}
+    \subitem \spxentry{unduwave}, \hyperpage{17}
+    \subitem \spxentry{unduwave.api}, \hyperpage{17}
+    \subitem \spxentry{unduwave.api.undu\_api\_root}, \hyperpage{17}
+    \subitem \spxentry{unduwave.api.wave\_api\_root}, \hyperpage{20}
+    \subitem \spxentry{unduwave.attribute\_classes}, \hyperpage{21}
+    \subitem \spxentry{unduwave.attribute\_classes.attributes}, \hyperpage{21}
+    \subitem \spxentry{unduwave.constants}, \hyperpage{33}
+    \subitem \spxentry{unduwave.helpers}, \hyperpage{22}
+    \subitem \spxentry{unduwave.helpers.bfield\_helpers}, \hyperpage{22}
+    \subitem \spxentry{unduwave.helpers.file\_folder\_helpers}, \hyperpage{24}
+    \subitem \spxentry{unduwave.quantities}, \hyperpage{26}
+    \subitem \spxentry{unduwave.quantities.quantities}, \hyperpage{26}
+    \subitem \spxentry{unduwave.unduwave\_incl}, \hyperpage{33}
+    \subitem \spxentry{unduwave.wave\_modules}, \hyperpage{26}
+    \subitem \spxentry{unduwave.wave\_modules.wave\_control}, \hyperpage{26}
+    \subitem \spxentry{unduwave.wave\_modules.wave\_parameters}, \hyperpage{27}
+    \subitem \spxentry{unduwave.wave\_modules.wave\_postprocess}, \hyperpage{31}
+    \subitem \spxentry{unduwave.wave\_modules.wave\_prepare}, \hyperpage{31}
+    \subitem \spxentry{unduwave.wave\_modules.wave\_results}, \hyperpage{32}
+  \item \spxentry{move\_it()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{20}
+  \item \spxentry{move\_it()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{mu0}\spxextra{in module unduwave}, \hyperpage{35}
+  \item \spxentry{mu0}\spxextra{in module unduwave.constants}, \hyperpage{33}
+  \item \spxentry{mv\_cp\_files()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}, 
+		\hyperpage{25}
+
+  \indexspace
+  \bigletter N
+  \item \spxentry{name}\spxextra{unduwave.\_attribute property}, \hyperpage{37}
+  \item \spxentry{name}\spxextra{unduwave.attribute\_classes.attributes.\_attribute property}, 
+		\hyperpage{21}
+  \item \spxentry{no\_copy}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{no\_copy}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{40}
+  \item \spxentry{nper}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{nper}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{nthreads}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{nthreads}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+
+  \indexspace
+  \bigletter P
+  \item \spxentry{perl\_x}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{perl\_x}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{pics\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{pics\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{40}
+  \item \spxentry{pinh\_h}\spxextra{unduwave.screen\_parameters attribute}, \hyperpage{39}
+  \item \spxentry{pinh\_h}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{pinh\_ny}\spxextra{unduwave.screen\_parameters attribute}, \hyperpage{39}
+  \item \spxentry{pinh\_ny}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{pinh\_nz}\spxextra{unduwave.screen\_parameters attribute}, \hyperpage{39}
+  \item \spxentry{pinh\_nz}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{pinh\_w}\spxextra{unduwave.screen\_parameters attribute}, \hyperpage{39}
+  \item \spxentry{pinh\_w}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{pinh\_x}\spxextra{unduwave.screen\_parameters attribute}, \hyperpage{39}
+  \item \spxentry{pinh\_x}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{pkHalbasy}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{39}
+  \item \spxentry{pkHalbasy}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{plot\_b\_field\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{plot\_over()}\spxextra{unduwave.quantities.quantities.wave\_quantity method}, 
+		\hyperpage{26}
+  \item \spxentry{plot\_over\_3d()}\spxextra{unduwave.quantities.quantities.wave\_quantity method}, 
+		\hyperpage{26}
+  \item \spxentry{plot\_parametric\_3d()}\spxextra{unduwave.quantities.quantities.wave\_quantity method}, 
+		\hyperpage{26}
+  \item \spxentry{point\_coords}\spxextra{class in unduwave.api.undu\_api\_root}, \hyperpage{18}
+  \item \spxentry{prepare\_b\_files\_for\_wave()}\spxextra{unduwave.wave\_modules.wave\_prepare.wave\_prepare method}, 
+		\hyperpage{32}
+  \item \spxentry{prepare\_b\_files\_for\_wave()}\spxextra{unduwave.wave\_prepare method}, 
+		\hyperpage{42}
+
+  \indexspace
+  \bigletter Q
+  \item \spxentry{q\_el}\spxextra{in module unduwave}, \hyperpage{35}
+  \item \spxentry{q\_el}\spxextra{in module unduwave.constants}, \hyperpage{33}
+
+  \indexspace
+  \bigletter R
+  \item \spxentry{R\_el}\spxextra{in module unduwave}, \hyperpage{35}
+  \item \spxentry{R\_el}\spxextra{in module unduwave.constants}, \hyperpage{33}
+  \item \spxentry{rdipol}\spxextra{unduwave.ebeam\_parameters attribute}, \hyperpage{38}
+  \item \spxentry{rdipol}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}, 
+		\hyperpage{28}
+  \item \spxentry{res\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{res\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{40}
+  \item \spxentry{res\_summary\_file}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{res\_summary\_file}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{40}
+  \item \spxentry{rotate()}\spxextra{in module unduwave.api.undu\_api\_root}, \hyperpage{19}
+  \item \spxentry{rotate()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{20}
+  \item \spxentry{rotate()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{run()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, \hyperpage{18}
+  \item \spxentry{run()}\spxextra{unduwave.api.wave\_api\_root.wave\_api method}, \hyperpage{20}
+  \item \spxentry{run()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{run()}\spxextra{unduwave.wave method}, \hyperpage{36}
+  \item \spxentry{run()}\spxextra{unduwave.wave\_control method}, \hyperpage{42}
+  \item \spxentry{run()}\spxextra{unduwave.wave\_modules.wave\_control.wave\_control method}, 
+		\hyperpage{27}
+
+  \indexspace
+  \bigletter S
+  \item \spxentry{save\_plot()}\spxextra{unduwave.quantities.quantities.wave\_quantity method}, 
+		\hyperpage{26}
+  \item \spxentry{save\_prepared\_b\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}, 
+		\hyperpage{23}
+  \item \spxentry{screen\_parameters}\spxextra{class in unduwave}, \hyperpage{39}
+  \item \spxentry{screen\_parameters}\spxextra{class in unduwave.wave\_modules.wave\_parameters}, 
+		\hyperpage{28}
+  \item \spxentry{set()}\spxextra{unduwave.\_attribute method}, \hyperpage{36, 37}
+  \item \spxentry{set()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}, 
+		\hyperpage{21}
+  \item \spxentry{set\_bessy\_II\_elliptical\_undu()}\spxextra{unduwave.api.wave\_api\_root.wave\_api method}, 
+		\hyperpage{20}
+  \item \spxentry{set\_bessy\_II\_elliptical\_undu()}\spxextra{unduwave.wave method}, 
+		\hyperpage{36}
+  \item \spxentry{set\_in\_name()}\spxextra{unduwave.\_attribute method}, \hyperpage{36, 37}
+  \item \spxentry{set\_in\_name()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}, 
+		\hyperpage{21}
+  \item \spxentry{set\_inactive()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{19}
+  \item \spxentry{set\_inactive()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{set\_magnetization()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}, 
+		\hyperpage{19}
+  \item \spxentry{set\_magnetization()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}, 
+		\hyperpage{19}
+  \item \spxentry{set\_name()}\spxextra{unduwave.\_attribute method}, \hyperpage{36, 37}
+  \item \spxentry{set\_name()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}, 
+		\hyperpage{21}
+  \item \spxentry{set\_para()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}, 
+		\hyperpage{18}
+  \item \spxentry{set\_para()}\spxextra{unduwave.undu method}, \hyperpage{36}
+  \item \spxentry{show\_all\_children()}\spxextra{unduwave.\_attribute\_collection method}, 
+		\hyperpage{37, 38}
+  \item \spxentry{show\_all\_children()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute\_collection method}, 
+		\hyperpage{22}
+  \item \spxentry{spec\_calc}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{spec\_calc}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{spectrometer\_paras}\spxextra{class in unduwave}, \hyperpage{39}
+  \item \spxentry{spectrometer\_paras}\spxextra{class in unduwave.wave\_modules.wave\_parameters}, 
+		\hyperpage{28}
+
+  \indexspace
+  \bigletter T
+  \item \spxentry{to\_scn()}\spxextra{in module unduwave}, \hyperpage{35}, \hyperpage{37}, 
+		\hyperpage{41}
+  \item \spxentry{to\_scn()}\spxextra{in module unduwave.unduwave\_incl}, \hyperpage{34}
+
+  \indexspace
+  \bigletter U
+  \item \spxentry{undu}\spxextra{class in unduwave}, \hyperpage{36}
+  \item \spxentry{undu}\spxextra{unduwave.spectrometer\_paras attribute}, \hyperpage{39}
+  \item \spxentry{undu}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}, 
+		\hyperpage{28}
+  \item \spxentry{undu\_api}\spxextra{class in unduwave.api.undu\_api\_root}, \hyperpage{18}
+  \item \spxentry{undu\_easy}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{undu\_easy}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{undu\_ellip}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{undu\_ellip}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{undu\_endp}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{undu\_endp}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{undu\_gap}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{undu\_gap}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{undu\_magnet\_block\_coords}\spxextra{class in unduwave.api.undu\_api\_root}, 
+		\hyperpage{19}
+  \item \spxentry{undu\_magnets}\spxextra{class in unduwave.api.undu\_api\_root}, \hyperpage{19}
+  \item \spxentry{undu\_mode}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{undu\_mode}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+  \item \spxentry{undu\_paras}\spxextra{class in unduwave}, \hyperpage{39}
+  \item \spxentry{undu\_paras}\spxextra{class in unduwave.wave\_modules.wave\_parameters}, 
+		\hyperpage{29}
+  \item \spxentry{undu\_type}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{undu\_type}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+  \item \spxentry{unduwave}
+    \subitem \spxentry{module}, \hyperpage{17}
+  \item \spxentry{unduwave.api}
+    \subitem \spxentry{module}, \hyperpage{17}
+  \item \spxentry{unduwave.api.undu\_api\_root}
+    \subitem \spxentry{module}, \hyperpage{17}
+  \item \spxentry{unduwave.api.wave\_api\_root}
+    \subitem \spxentry{module}, \hyperpage{20}
+  \item \spxentry{unduwave.attribute\_classes}
+    \subitem \spxentry{module}, \hyperpage{21}
+  \item \spxentry{unduwave.attribute\_classes.attributes}
+    \subitem \spxentry{module}, \hyperpage{21}
+  \item \spxentry{unduwave.constants}
+    \subitem \spxentry{module}, \hyperpage{33}
+  \item \spxentry{unduwave.helpers}
+    \subitem \spxentry{module}, \hyperpage{22}
+  \item \spxentry{unduwave.helpers.bfield\_helpers}
+    \subitem \spxentry{module}, \hyperpage{22}
+  \item \spxentry{unduwave.helpers.file\_folder\_helpers}
+    \subitem \spxentry{module}, \hyperpage{24}
+  \item \spxentry{unduwave.quantities}
+    \subitem \spxentry{module}, \hyperpage{26}
+  \item \spxentry{unduwave.quantities.quantities}
+    \subitem \spxentry{module}, \hyperpage{26}
+  \item \spxentry{unduwave.unduwave\_incl}
+    \subitem \spxentry{module}, \hyperpage{33}
+  \item \spxentry{unduwave.wave\_modules}
+    \subitem \spxentry{module}, \hyperpage{26}
+  \item \spxentry{unduwave.wave\_modules.wave\_control}
+    \subitem \spxentry{module}, \hyperpage{26}
+  \item \spxentry{unduwave.wave\_modules.wave\_parameters}
+    \subitem \spxentry{module}, \hyperpage{27}
+  \item \spxentry{unduwave.wave\_modules.wave\_postprocess}
+    \subitem \spxentry{module}, \hyperpage{31}
+  \item \spxentry{unduwave.wave\_modules.wave\_prepare}
+    \subitem \spxentry{module}, \hyperpage{31}
+  \item \spxentry{unduwave.wave\_modules.wave\_results}
+    \subitem \spxentry{module}, \hyperpage{32}
+  \item \spxentry{unzip\_zip\_in\_folder()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}, 
+		\hyperpage{25}
+
+  \indexspace
+  \bigletter V
+  \item \spxentry{v\_c}\spxextra{in module unduwave}, \hyperpage{35}
+  \item \spxentry{v\_c}\spxextra{in module unduwave.constants}, \hyperpage{33}
+
+  \indexspace
+  \bigletter W
+  \item \spxentry{wave}\spxextra{class in unduwave}, \hyperpage{35}
+  \item \spxentry{wave\_api}\spxextra{class in unduwave.api.wave\_api\_root}, \hyperpage{20}
+  \item \spxentry{wave\_control}\spxextra{class in unduwave}, \hyperpage{42}
+  \item \spxentry{wave\_control}\spxextra{class in unduwave.wave\_modules.wave\_control}, 
+		\hyperpage{27}
+  \item \spxentry{wave\_data\_res\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{wave\_data\_res\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{40}
+  \item \spxentry{wave\_ending\_copy}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{wave\_ending\_copy}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{41}
+  \item \spxentry{wave\_ending\_extract}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{wave\_ending\_extract}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{40}
+  \item \spxentry{wave\_files\_essentials}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{wave\_files\_essentials}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{41}
+  \item \spxentry{wave\_postprocess}\spxextra{class in unduwave}, \hyperpage{41}
+  \item \spxentry{wave\_postprocess}\spxextra{class in unduwave.wave\_modules.wave\_postprocess}, 
+		\hyperpage{31}
+  \item \spxentry{wave\_prepare}\spxextra{class in unduwave}, \hyperpage{42}
+  \item \spxentry{wave\_prepare}\spxextra{class in unduwave.wave\_modules.wave\_prepare}, 
+		\hyperpage{31}
+  \item \spxentry{wave\_prog\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{29}
+  \item \spxentry{wave\_prog\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{40}
+  \item \spxentry{wave\_prog\_parameters}\spxextra{class in unduwave}, \hyperpage{40}
+  \item \spxentry{wave\_prog\_parameters}\spxextra{class in unduwave.wave\_modules.wave\_parameters}, 
+		\hyperpage{29}
+  \item \spxentry{wave\_quantity}\spxextra{class in unduwave.quantities.quantities}, \hyperpage{26}
+  \item \spxentry{wave\_res\_copy\_behaviour}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{wave\_res\_copy\_behaviour}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{41}
+  \item \spxentry{wave\_results}\spxextra{class in unduwave}, \hyperpage{42}
+  \item \spxentry{wave\_results}\spxextra{class in unduwave.wave\_modules.wave\_results}, 
+		\hyperpage{32}
+  \item \spxentry{wigg}\spxextra{unduwave.spectrometer\_paras attribute}, \hyperpage{39}
+  \item \spxentry{wigg}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}, 
+		\hyperpage{28}
+
+  \indexspace
+  \bigletter X
+  \item \spxentry{xlHalbasy}\spxextra{unduwave.undu\_paras attribute}, \hyperpage{40}
+  \item \spxentry{xlHalbasy}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}, 
+		\hyperpage{29}
+
+  \indexspace
+  \bigletter Z
+  \item \spxentry{zip\_files\_in\_folder()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}, 
+		\hyperpage{25}
+  \item \spxentry{zip\_res\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{zip\_res\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}, 
+		\hyperpage{41}
+  \item \spxentry{zipped}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}, 
+		\hyperpage{30}
+  \item \spxentry{zipped}\spxextra{unduwave.wave\_prog\_parameters attribute}, \hyperpage{41}
+
+\end{sphinxtheindex}

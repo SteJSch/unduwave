@@ -42,9 +42,6 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.wave_modules.wave_results.wave_results" title="unduwave.wave_modules.wave_results.wave_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave_results</span></code></a></p></td>
 <td><p>Init wave-result class holding all the results</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.wave_modules.wave_results.ExtractAndPlot" title="unduwave.wave_modules.wave_results.ExtractAndPlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExtractAndPlot</span></code></a></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -63,23 +60,27 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.wave_modules.wave_results.wave_results.find_load_flux_density_distribution">
 <span class="sig-name descname"><span class="pre">find_load_flux_density_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energies</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_modules.wave_results.wave_results.find_load_flux_density_distribution" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Finds the distribution that is closed to each energy in energies, loads y/z data and flux distribution and adds them to the
+res_quantities list</p>
+<p>energies - list of energies in eV at which flux distribution is to be plotted</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.wave_modules.wave_results.wave_results.find_load_flux_density_on_axis">
 <span class="sig-name descname"><span class="pre">find_load_flux_density_on_axis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_modules.wave_results.wave_results.find_load_flux_density_on_axis" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Loads on-axis flux-density</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.wave_modules.wave_results.wave_results.find_load_brilliance">
 <span class="sig-name descname"><span class="pre">find_load_brilliance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_modules.wave_results.wave_results.find_load_brilliance" title="Link to this definition">¶</a></dt>
-<dd><p>Loads power-distribution data</p>
+<dd><p>Loads brilliance data</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.wave_modules.wave_results.wave_results.find_load_flux">
 <span class="sig-name descname"><span class="pre">find_load_flux</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_modules.wave_results.wave_results.find_load_flux" title="Link to this definition">¶</a></dt>
-<dd><p>Loads power-distribution data</p>
+<dd><p>Loads flux through pinhole</p>
 </dd></dl>
 
 <dl class="py method">
@@ -98,49 +99,6 @@
 <dt class="sig sig-object py" id="unduwave.wave_modules.wave_results.wave_results.get_result">
 <span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_modules.wave_results.wave_results.get_result" title="Link to this definition">¶</a></dt>
 <dd><p>Pass string “flux_dens”,… to get object containing data and some functionality</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="unduwave.wave_modules.wave_results.ExtractAndPlot">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.wave_modules.wave_results.</span></span><span class="sig-name descname"><span class="pre">ExtractAndPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_paras</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_modules.wave_results.ExtractAndPlot" title="Link to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="unduwave.wave_modules.wave_results.ExtractAndPlot.extract_wave_results">
-<span class="sig-name descname"><span class="pre">extract_wave_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_data_w_pics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_ex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_lines</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_modules.wave_results.ExtractAndPlot.extract_wave_results" title="Link to this definition">¶</a></dt>
-<dd><p>Extracts the desired results and returns a DataFrame with them.</p>
-<dl>
-<dt>Args:</dt><dd><dl class="simple">
-<dt>results (list): A list containing the desired result types. Valid options are:</dt><dd><ul class="simple">
-<li><p>‘traj_magn’: Extracts Trajectory and magnetic field data.</p></li>
-<li><p>‘power_distr’: Power distribution [W/mm^2].</p></li>
-<li><p>‘flux’: Flux.</p></li>
-<li><p>‘flux_dens’: Flux Density.</p></li>
-<li><p>‘flux_dens_distr’: Flux Density Distribution.</p></li>
-<li><p>‘power_dens_distr’: Power density distribution.</p></li>
-<li><p>‘brill’: Brilliance.</p></li>
-</ul>
-</dd>
-</dl>
-<p>plot (bool): Determines if loaded data is plotted or not.
-en_range (list): For distribution, gives the energy range over which the data is integrated.
-xlim (list): Sets the limits of the distribution plots in the horizontal direction.
-ylim (list): Sets the limits of the distribution plots in the vertical direction. For 2D plots, only xlim is considered if given.
-save_data_w_pics (bool): If True, saves the data for each plot alongside the picture.</p>
-</dd>
-<dt>Returns:</dt><dd><p>list: A list of the loaded DataFrames.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="unduwave.wave_modules.wave_results.ExtractAndPlot.load_plot_stokes_distrib">
-<span class="sig-name descname"><span class="pre">load_plot_stokes_distrib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_data_w_pics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power_distr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_ex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_modules.wave_results.ExtractAndPlot.load_plot_stokes_distrib" title="Link to this definition">¶</a></dt>
-<dd><p>loads stokes (flux-density) data from a folder, integrates the flux-density distribution over the en_range
-and cuts the plot horizontally and vertically to xlim and ylim, plots if plot = True and saves pic to save_folder
-returns the loaded and integrated data object
-If power_distr is True, then not the flux density but power density in the given energy
-range is calculated (multiplying all fluxes by the appropriate energies)</p>
 </dd></dl>
 
 </dd></dl>

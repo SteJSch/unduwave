@@ -533,7 +533,7 @@
 <div class="line">en_fd, flux_density - Energy at which flux density on axis is calculated and flux density on axis</div>
 </div>
 <div class="line-block">
-<div class="line">fd_y, fd_z, flux_density_distribution_{en} - the y and z coordinates of a given flux-density distribution (they are the same for all energies, so one pair suffices) and the actual flux density distribution - which contains the energy rounded to second decimal place. So, for example, at the energy 460 eV, the name would be: flux_density_distribution_460</div>
+<div class="line">fd_y, fd_z, flux_density_distribution_{en} - the y and z coordinates of a given flux-density distribution (they are the same for all energies, so one pair suffices) and the actual flux density distribution - which contains the energy rounded to second decimal place. So, for example, at the energy 460 eV, the name would be: flux_density_distribution_460.00</div>
 </div>
 </section>
 <section id="plotting-results">
@@ -601,6 +601,37 @@
 </pre></div>
 </div>
 <p>Each call to plot_over_3d creates a 3D plot, a heat plot and plots of interpolated data.</p>
+<div class="line-block">
+<div class="line">Here are some plotting examples:</div>
+</div>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="_images/3d_plot_orig.png"><img alt="map to buried treasure" src="_images/3d_plot_orig.png" style="width: 195.5px; height: 204.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Original 3D-plot of a power distribution.</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="_images/3d_plot_interp.png"><img alt="map to buried treasure" src="_images/3d_plot_interp.png" style="width: 195.5px; height: 208.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Interpolated 3D-plot of the previous power distribution.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="_images/heat_plot_orig.png"><img alt="map to buried treasure" src="_images/heat_plot_orig.png" style="width: 392.0px; height: 208.5px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Original heat map of the above power distribution.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id12">
+<a class="reference internal image-reference" href="_images/heat_plot_interp.png"><img alt="map to buried treasure" src="_images/heat_plot_interp.png" style="width: 385.5px; height: 208.5px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Interpolated heat map of the above power distribution.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="plot-flux-density-distributions">
 <h4><span class="section-number">2.8.2.6. </span>Plot Flux Density Distributions<a class="headerlink" href="#plot-flux-density-distributions" title="Link to this heading">¶</a></h4>
@@ -613,6 +644,7 @@
 <span class="linenos">6</span>     <span class="n">nfig</span><span class="o">=</span><span class="n">fd</span><span class="o">.</span><span class="n">plot_over_3d</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">fd_y</span><span class="p">,</span><span class="n">y_quant</span><span class="o">=</span><span class="n">fd_z</span><span class="p">,</span><span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">nosave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The call to find_load_flux_density_distribution searches for the closest distribution files to the energies specified and returns the corresponding energies it found as a list. From this returned list, the corresponding flux_densitie quantities can be returned and then plotted.</p>
 </section>
 </section>
 </section>

@@ -23,6 +23,7 @@ Module Contents
 .. py:class:: wave_quantity(wave_api=None, name=None, description=None, unit=None, data=None, plot_name=None)
 
    
+   wave_api - reference to the wave_api class
    name : name of the quantity
    description: some basic description
    unit : physical unit
@@ -34,11 +35,20 @@ Module Contents
 
       Basic plot of data, 2d, 3d
 
+      x_quant - the quantity plotted on the x-axis
+      y_quant - quantity for y-axis plot
+      title - title, if none is taken from description of this quantity
+
+      Draws a parametetric curve (x_quant,y_quant,self(x_quant,y_quant))
+
 
 
    .. py:method:: plot_over(x_quant, title=None, file_name=None, nosave=False, nfig=None, loglog=False)
 
-      Basic plot of data, 2d, 3d
+      Basic 2d plot of data
+
+      x_quant - the quantity to be on the x-axis
+      loglog - True if both axes to be logarithmic
 
 
 
@@ -49,6 +59,8 @@ Module Contents
       y_quant : quantity to be used as y-data
       file_name : name under which to save plot
       nosave: True if you do not want to save plot
+
+      Creates a 3D plot and a heat plot of the original data and of interpolated data.
 
 
 

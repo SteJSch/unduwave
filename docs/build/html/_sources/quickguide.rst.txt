@@ -291,7 +291,7 @@ Where string_identifier can be one of:
 
 | en_fd, flux_density - Energy at which flux density on axis is calculated and flux density on axis
 
-| fd_y, fd_z, flux_density_distribution_{en} - the y and z coordinates of a given flux-density distribution (they are the same for all energies, so one pair suffices) and the actual flux density distribution - which contains the energy rounded to second decimal place. So, for example, at the energy 460 eV, the name would be: flux_density_distribution_460
+| fd_y, fd_z, flux_density_distribution_{en} - the y and z coordinates of a given flux-density distribution (they are the same for all energies, so one pair suffices) and the actual flux density distribution - which contains the energy rounded to second decimal place. So, for example, at the energy 460 eV, the name would be: flux_density_distribution_460.00
 
 Plotting Results
 -------------------
@@ -378,6 +378,32 @@ To do 3D plots, do:
 
 Each call to plot_over_3d creates a 3D plot, a heat plot and plots of interpolated data. 
 
+| Here are some plotting examples:
+
+.. figure:: pics/3d_plot_orig.png
+   :scale: 50 %
+   :alt: map to buried treasure
+
+   Original 3D-plot of a power distribution.
+
+.. figure:: pics/3d_plot_interp.png
+   :scale: 50 %
+   :alt: map to buried treasure
+
+   Interpolated 3D-plot of the previous power distribution.
+
+.. figure:: pics/heat_plot_orig.png
+   :scale: 50 %
+   :alt: map to buried treasure
+
+   Original heat map of the above power distribution.
+
+.. figure:: pics/heat_plot_interp.png
+   :scale: 50 %
+   :alt: map to buried treasure
+
+   Interpolated heat map of the above power distribution.
+
 Plot Flux Density Distributions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -393,4 +419,4 @@ To plot the flux density distribution, you have to specify the energy at which y
    	fd = results.get_result(which=f'flux_density_distribution_{en:.2f}')
    	nfig=fd.plot_over_3d(x_quant=fd_y,y_quant=fd_z,file_name=None,nosave=False,nfig=nfig)
 
-
+The call to find_load_flux_density_distribution searches for the closest distribution files to the energies specified and returns the corresponding energies it found as a list. From this returned list, the corresponding flux_densitie quantities can be returned and then plotted.
