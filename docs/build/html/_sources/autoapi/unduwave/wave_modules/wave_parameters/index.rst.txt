@@ -1,0 +1,350 @@
+unduwave.wave_modules.wave_parameters
+=====================================
+
+.. py:module:: unduwave.wave_modules.wave_parameters
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.wave_modules.wave_parameters.ebeam_parameters
+   unduwave.wave_modules.wave_parameters.screen_parameters
+   unduwave.wave_modules.wave_parameters.spectrometer_paras
+   unduwave.wave_modules.wave_parameters.undu_paras
+   unduwave.wave_modules.wave_parameters.bfield_paras
+   unduwave.wave_modules.wave_parameters.wave_prog_parameters
+
+
+Module Contents
+---------------
+
+.. py:class:: ebeam_parameters
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Defining basic electron-beam parameters
+   beam_en - Beam energy in [GeV]
+   current - current in [A]
+   bsigz - horizontal beam size [m]
+   bsigzp - Horizontal beam divergence [rad]
+   bsigy - vertical beam size [m]
+   bsigyp - vertical beam divergence [rad]
+   espread - energy spread [%]
+   emitt_h/v - horizontal and vertical emittance [mrad]
+   betfunh/v - horizontal and vertical beta functions [m]
+   circumference - Ring circumference in [m]
+   rdipol - Bending radius of dipoles [m]
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: beam_en
+
+
+   .. py:attribute:: current
+
+
+   .. py:attribute:: bsigz
+
+
+   .. py:attribute:: bsigzp
+
+
+   .. py:attribute:: bsigy
+
+
+   .. py:attribute:: bsigyp
+
+
+   .. py:attribute:: espread
+
+
+   .. py:attribute:: emitt_h
+
+
+   .. py:attribute:: emitt_v
+
+
+   .. py:attribute:: betfunh
+
+
+   .. py:attribute:: betfunv
+
+
+   .. py:attribute:: circumference
+
+
+   .. py:attribute:: rdipol
+
+
+   .. py:method:: get_std_bessy_III_paras()
+
+
+   .. py:method:: get_std_bessy_II_paras()
+
+
+   .. py:method:: get_std_paras()
+
+
+.. py:class:: screen_parameters
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Basic screen parameters
+   pinh_w/h - width and height of pinhole [mm]
+   pinh_x - distance of pinhole from center of undu [m]
+   pinh_nz - number of points in z-direction
+   pinh_ny - number of points in y-direction
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: pinh_w
+
+
+   .. py:attribute:: pinh_h
+
+
+   .. py:attribute:: pinh_x
+
+
+   .. py:attribute:: pinh_nz
+
+
+   .. py:attribute:: pinh_ny
+
+
+   .. py:method:: get_std_paras()
+
+
+.. py:class:: spectrometer_paras
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Basic spectrometer parameters
+   freq_low/high - Energie at which to start/end spectrum calculation [eV]
+   freq_num - number of energies for which to calculate spectrum
+   undu - undulator-mode (whole trajectory is source of radiation - coherent)
+   wigg - wiggler-mode (only source-areas are considered and added incoherently)
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: freq_low
+
+
+   .. py:attribute:: freq_high
+
+
+   .. py:attribute:: freq_num
+
+
+   .. py:attribute:: undu
+
+
+   .. py:attribute:: wigg
+
+
+   .. py:method:: get_std_paras()
+
+
+.. py:class:: undu_paras
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Parameters controlling the generation of the B-Field
+
+   wave_prog_parameters.undu_endp = 1
+           pkHalbasy - K-Parameter of Machine
+           b0Halbasy - B-Amplitude of Machine (either pkHalbasy or this) [T]
+           xlHalbasy- period length in x-direction [m]
+           ahwpolHalbasy - number of main poles (odd number)
+
+   wave_prog_parameters.undu_ellip = 1
+           b0y - B-Amplitude in y - [T]
+           b0z - B-Amplitude in z - [T]
+           nper- numer of periods
+           perl_x - period length - [m]
+           ell_shift - shift, % of period
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: pkHalbasy
+
+
+   .. py:attribute:: b0Halbasy
+
+
+   .. py:attribute:: xlHalbasy
+
+
+   .. py:attribute:: ahwpolHalbasy
+
+
+   .. py:attribute:: undu_type
+
+
+   .. py:attribute:: b0y
+
+
+   .. py:attribute:: b0z
+
+
+   .. py:attribute:: nper
+
+
+   .. py:attribute:: perl_x
+
+
+   .. py:attribute:: ell_shift
+
+
+   .. py:method:: get_std_paras(undu_mode)
+
+      getting standard undu parameters
+      undu_mode - same as wave_prog_parameters.undu_mode
+
+
+
+.. py:class:: bfield_paras
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: field_folder
+
+
+   .. py:method:: get_std_paras()
+
+
+.. py:class:: wave_prog_parameters
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents standard parameters for wave simulations.
+
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: wave_prog_folder
+
+
+   .. py:attribute:: in_file_folder
+
+
+   .. py:attribute:: in_files
+
+
+   .. py:attribute:: field_folder
+
+
+   .. py:attribute:: field_files
+
+
+   .. py:attribute:: res_folder
+
+
+   .. py:attribute:: wave_data_res_folder
+
+
+   .. py:attribute:: pics_folder
+
+
+   .. py:attribute:: res_summary_file
+
+
+   .. py:attribute:: no_copy
+
+
+   .. py:attribute:: wave_ending_extract
+
+
+   .. py:attribute:: wave_ending_copy
+
+
+   .. py:attribute:: wave_files_essentials
+
+
+   .. py:attribute:: wave_res_copy_behaviour
+
+
+   .. py:attribute:: zip_res_folder
+
+
+   .. py:attribute:: nthreads
+
+
+   .. py:attribute:: zipped
+
+
+   .. py:attribute:: spec_calc
+
+
+   .. py:attribute:: iemit
+
+
+   .. py:attribute:: iefold
+
+
+   .. py:attribute:: isigusr
+
+
+   .. py:attribute:: ihisascii
+
+
+   .. py:attribute:: b_type
+
+
+   .. py:attribute:: irbtab
+
+
+   .. py:attribute:: irbtabzy
+
+
+   .. py:attribute:: irbtabxyz
+
+
+   .. py:attribute:: undu_easy
+
+
+   .. py:attribute:: undu_endp
+
+
+   .. py:attribute:: undu_gap
+
+
+   .. py:attribute:: undu_ellip
+
+
+   .. py:attribute:: undu_mode
+
+
+   .. py:method:: get_std_paras(undu_mode='undu_easy')
+
+      Getting standard wave-parameters depending on mode
+      - undu_mode = 'By' - takes by field data and runs with that
+      - undu_mode = 'Byz'
+      - undu_mode = 'Bxyz'
+      - undu_mode = 'undu_ellip' - standard elliptical undulator
+      - undu_mode = 'undu_easy'
+      - undu_mode = 'undu_endp'
+      - undu_mode = 'undu_gap'
+
+
+

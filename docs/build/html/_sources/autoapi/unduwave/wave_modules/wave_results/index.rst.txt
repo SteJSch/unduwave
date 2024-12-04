@@ -1,0 +1,102 @@
+unduwave.wave_modules.wave_results
+==================================
+
+.. py:module:: unduwave.wave_modules.wave_results
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.wave_modules.wave_results.wave_results
+   unduwave.wave_modules.wave_results.ExtractAndPlot
+
+
+Module Contents
+---------------
+
+.. py:class:: wave_results(wave_api)
+
+   
+   Init wave-result class holding all the results
+
+
+   .. py:method:: load_from_res_folder()
+
+      goes through folder and loads all results it can find, flux, flux_d, brilliance
+
+
+
+   .. py:method:: find_load_flux_density_distribution(energies)
+
+
+   .. py:method:: find_load_flux_density_on_axis()
+
+
+   .. py:method:: find_load_brilliance()
+
+      Loads power-distribution data
+
+
+
+   .. py:method:: find_load_flux()
+
+      Loads power-distribution data
+
+
+
+   .. py:method:: find_load_power_distribution()
+
+      Loads power-distribution data
+
+
+
+   .. py:method:: find_load_trajectory_bfield_data()
+
+      Loads trajectory-bfield data
+
+
+
+   .. py:method:: get_result(which)
+
+      Pass string "flux_dens",... to get object containing data and some functionality
+
+
+
+.. py:class:: ExtractAndPlot(wave_paras)
+
+   .. py:method:: extract_wave_results(results: list, plot: bool = False, en_range: list = [], xlim: list = [], ylim: list = [], save_data_w_pics: bool = False, list_ex: bool = True, vert_lines: list = [], add_str='')
+
+      Extracts the desired results and returns a DataFrame with them.
+
+      Args:
+              results (list): A list containing the desired result types. Valid options are:
+                      - 'traj_magn': Extracts Trajectory and magnetic field data.
+                      - 'power_distr': Power distribution [W/mm^2].
+                      - 'flux': Flux.
+                      - 'flux_dens': Flux Density.
+                      - 'flux_dens_distr': Flux Density Distribution.
+                      - 'power_dens_distr': Power density distribution.
+                      - 'brill': Brilliance.
+              plot (bool): Determines if loaded data is plotted or not.
+              en_range (list): For distribution, gives the energy range over which the data is integrated.
+              xlim (list): Sets the limits of the distribution plots in the horizontal direction.
+              ylim (list): Sets the limits of the distribution plots in the vertical direction. For 2D plots, only xlim is considered if given.
+              save_data_w_pics (bool): If True, saves the data for each plot alongside the picture.
+              
+      Returns:
+              list: A list of the loaded DataFrames.
+
+
+
+   .. py:method:: load_plot_stokes_distrib(folder, en_range=[], xlim=[], ylim=[], plot=True, save_folder='', save_data_w_pics=False, power_distr=False, list_ex=False)
+
+      loads stokes (flux-density) data from a folder, integrates the flux-density distribution over the en_range 
+      and cuts the plot horizontally and vertically to xlim and ylim, plots if plot = True and saves pic to save_folder
+      returns the loaded and integrated data object
+      If power_distr is True, then not the flux density but power density in the given energy
+      range is calculated (multiplying all fluxes by the appropriate energies)
+
+
+

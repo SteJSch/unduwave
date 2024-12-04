@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Installation &#8212; Unduwave v0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
+    <script src="_static/documentation_options.js?v=2fea6348"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Quickguide" href="quickguide.html" />
+    <link rel="prev" title="Welcome to UNDUWAVE DOCS" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="installation">
+<h1><span class="section-number">1. </span>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<section id="linux">
+<h2><span class="section-number">1.1. </span>Linux<a class="headerlink" href="#linux" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line">You need working git and python3 installations for thus guide to work.</div>
+</div>
+<p>Open a terminal in the folder where you want to have unduwave. Type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone --recursive https://github.com/SteJSch/unduwave</span>
+</pre></div>
+</div>
+<p>After everything is finished, you can go to the unduwave folder and run in a terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install -r requirements.txt</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">This installs all required packages (consider adding a virtual environment).</div>
+</div>
+<div class="line-block">
+<div class="line">After this, you can go the “scripts” subfolder and run:</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 example_wave.py</span>
+</pre></div>
+</div>
+<p>The script should run your first WAVE simulation.</p>
+<p>If you encounter errors, you may have to recompile WAVE.
+| To do that, first go to the folder “\bin” inside the “External-Software/WAVE” directory and delete all files. Then, in the terminal, do</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export WAVE_INCL=&quot;path/to/unduwave/&quot;</span>
+</pre></div>
+</div>
+<p>Then type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 python/make_wave.py</span>
+</pre></div>
+</div>
+<p>The compilation should now run. After that, go back to the scripts folder and re-run the “example_wave.py” file.</p>
+</section>
+<section id="windows">
+<h2><span class="section-number">1.2. </span>Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h2>
+<section id="preliminaries">
+<h3><span class="section-number">1.2.1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">¶</a></h3>
+<div class="line-block">
+<div class="line">First, read every step before you start doing things!</div>
+</div>
+<div class="line-block">
+<div class="line">Then, start by installing windows if you havent done that :)</div>
+</div>
+<p>Now, we will begin:</p>
+<div class="line-block">
+<div class="line">Download and install Github. For example from here: <a class="reference external" href="https://git-scm.com/downloads/win">Git</a> .</div>
+</div>
+<div class="line-block">
+<div class="line">Download and install Cygwin. For example from here: <a class="reference external" href="https://cygwin.com/install.html">Cygwin</a> .</div>
+</div>
+<div class="line-block">
+<div class="line">Keep the Cygwin installer file. If you need it to install additional packages later, you can just run the installer file to do that. During the installation, choose: “Install from Internet” when asked and choose some mirror that suites you.</div>
+</div>
+<div class="line-block">
+<div class="line">After the Cygwin installation, the package manager will automatically pop up:</div>
+</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/cygwin1.png"><img alt="map to buried treasure" src="_images/cygwin1.png" style="width: 636.0px; height: 397.5px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Cygwin package manager.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">Under “View” choose “Full”. Under “Search” search for the following packages:</div>
+</div>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/cygwin2.png"><img alt="map to buried treasure" src="_images/cygwin2.png" style="width: 636.0px; height: 397.5px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Cygwin packages to install.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Select the drop-down arrow to the right to select a version of a given program and to add it to the installation list. After you added all packages you can click “next” and the installation will start.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/cygwin3.png"><img alt="map to buried treasure" src="_images/cygwin3.png" style="width: 1027.5px; height: 552.5px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">How to choose to install a given package.</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">The installation may take a long time. Do some sports meanwhile to get your head free :D</div>
+</div>
+<div class="line-block">
+<div class="line">Once the installation is finished, go to the cygwin installation folder and double click on the “cygwin.bat” - Cygwin will be started the first time and does some setting-things. You can close the window afterwards if you like.</div>
+</div>
+<div class="line-block">
+<div class="line">Depending on how you run python programs, you may have to install python again separately. In this guide I will run the scripts from the windows powershell. Search in the windows-search window on the lower left for powershell, start it and type “python3”. If python3 is not installed, you will be redirected to the windows store where you can install it. After installation restart the powershell and type again “python3” - the python console should now open.</div>
+</div>
+</section>
+<section id="github-and-cloning">
+<h3><span class="section-number">1.2.2. </span>Github and Cloning<a class="headerlink" href="#github-and-cloning" title="Link to this heading">¶</a></h3>
+<p>In the installation folder of Cygwin, you will find a folder “home/user” with user being your user name.
+Navigate into this folder with windows-file browser, right click and select “Open Git Bash here”
+In the bash write:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone --recursive https://github.com/SteJSch/unduwave</span>
+</pre></div>
+</div>
+<p>If you do not have the Open Git Bash option on right-click, search for the git-bash in the windows search function and navigate inside of it to the right folder in the Cygwin main folder (using +cd folder1/folder2/…/)</p>
+<div class="line-block">
+<div class="line">If this worked, the folder unduwave should appear and all submodules (wave and undumag) should be initialized (in the External-Software folder in unduwave) This may take some time. Get a coffee (or tea).</div>
+</div>
+</section>
+<section id="test-and-compilation">
+<h3><span class="section-number">1.2.3. </span>Test and Compilation<a class="headerlink" href="#test-and-compilation" title="Link to this heading">¶</a></h3>
+<div class="line-block">
+<div class="line">Go to the folder “unduwave/External-Software” and open the file “where_is_cygwin_installation.txt” . In the first line, write the path of your cygwin installation (this is a hard hack, I know. But only temporary :) ). Use the format given, with the quotes and the path terminated by a backslash.</div>
+</div>
+<div class="line-block">
+<div class="line">In the second line, write the path where you put unduwave inside the “home/user/” folder inside cygwin. If unduwave lies at the “cygwin/home/user/” you can leave it empty</div>
+</div>
+<p>This will install the required python packages to run the scripts.</p>
+<div class="line-block">
+<div class="line">To test the installation, go to the folder “unduwave/” inside the windows powershell (this is what I used to start the python scripts). Start the powershell by searching for it in the windows search field (lower left corner) and then navigate to the correct folder inside the powershell using “cd folder1/folder2/…” command. Then do:</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install -r requirements.txt</span>
+</pre></div>
+</div>
+<p>This installs all the required python packages to run the scripts.</p>
+<div class="line-block">
+<div class="line">Then navigate to the sub-folder scripts and once you are there, do:</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 example_wave.py</span>
+</pre></div>
+</div>
+<p>If you are (very) lucky, the program will run, wave will be called and execute normally.
+Otherwise, you will have to compile WAVE and Undumag.</p>
+<div class="line-block">
+<div class="line">To do that, first go to the folder “\bin” inside the “unduwave\External-Software\WAVE” directory and delete all files.</div>
+</div>
+<div class="line-block">
+<div class="line">Then go to the main folder of your cygwin installation, double click on “cygwin.bat” - this opens the cygwin console</div>
+</div>
+<div class="line-block">
+<div class="line">You start at your cygwin home-folder (i.e. in “cygwin/home/user/”) and navigate to the folder “unduwave/External-Software/WAVE”. In the cygwin console then type:</div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export WAVE_INCL=&quot;\path\to\unduwave\External-Software\WAVE&quot;</span>
+</pre></div>
+</div>
+<p>Where you can use the relative path within you cygwin user directory. So, if unduwave lies in “C:\cygwin64\home\user\unduwave” you can simply write :</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export WAVE_INCL=&quot;unduwave\External-Software\WAVE&quot;</span>
+</pre></div>
+</div>
+<p>Then type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 python/make_wave.py</span>
+</pre></div>
+</div>
+<p>The compilation should run smoothly, might take a long time. Get yourself whatever you need, a beer or cacao.
+After it is done, go back to the script folder (in the windows powershell) and retry to run the “example_wave.py” file.</p>
+<p>If you are lucky, you now have a working unduwave version on you windows PC. If that installation guide was too much for you, perhaps you should consider changing to Linux :)</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Unduwave</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux">1.1. Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">1.2. Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickguide.html">2. Quickguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">3. API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to UNDUWAVE DOCS</a></li>
+      <li>Next: <a href="quickguide.html" title="next chapter"><span class="section-number">2. </span>Quickguide</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;CC BY-NC.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/installation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

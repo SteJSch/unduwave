@@ -1,0 +1,136 @@
+unduwave.helpers.bfield_helpers
+===============================
+
+.. py:module:: unduwave.helpers.bfield_helpers
+
+.. autoapi-nested-parse::
+
+   Contains the functionality for loading and processing b-field data
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.helpers.bfield_helpers.load_b_fields_gap
+   unduwave.helpers.bfield_helpers.checkIfList_Conv
+   unduwave.helpers.bfield_helpers.checkIfDF_Conv
+   unduwave.helpers.bfield_helpers.find_maxima
+   unduwave.helpers.bfield_helpers.find_minima
+   unduwave.helpers.bfield_helpers.find_extrema
+   unduwave.helpers.bfield_helpers.gauge_b_field_data
+   unduwave.helpers.bfield_helpers.center_b_field_data
+   unduwave.helpers.bfield_helpers.convert_x_mm_b_T_file_to_wave_std
+   unduwave.helpers.bfield_helpers.plot_b_field_data
+   unduwave.helpers.bfield_helpers.cut_data_support
+   unduwave.helpers.bfield_helpers.center_data
+   unduwave.helpers.bfield_helpers.save_prepared_b_data
+   unduwave.helpers.bfield_helpers.interpolate_b_data
+
+
+Module Contents
+---------------
+
+.. py:function:: load_b_fields_gap(folder, hints=[])
+
+   Load field files from "folder" containing files with fields for different gaps
+   The file format should be two rows, the first one 'x' in [mm], the second one 'By' [T]
+   The file-name format should be: file_name_front + 'gap_' + str(gap) + '_' + file_name_back + '.' + file_ending
+   Returns list of dictionaries: { 'gap' : gap,'data' : pd.DataFrame(data), 'file_name' : file_name }, where data is a panda dataframe with rows
+   "x" and "By"
+
+
+.. py:function:: checkIfList_Conv(data)
+
+   Takes a data object which can be either list of dics or dataframe and converts
+   it to a list
+
+
+.. py:function:: checkIfDF_Conv(data)
+
+   Takes a data object which can be either list of dics or dataframe and converts
+   it to a dataframe
+
+
+.. py:function:: find_maxima(data, lim, colx=0, coly=1)
+
+   finds maxima in data whose value is at least |val| >= lim
+   data is supposed to be a list of dictionaries or a panda dataframe 
+   colx and coly give the column index of the x and y data
+   returns a list containing 2 lists: one with x-coordinates and one 
+   with y-coordinates of the maxima positions
+
+
+.. py:function:: find_minima(data, lim, colx=0, coly=1)
+
+   finds minima in data whose value is at least |val| >= lim (lim>=0!)
+   data is supposed to be a list of dictionaries or a panda dataframe 
+   colx and coly give the column index of the x and y data
+   returns a list containing 2 lists: one with x-coordinates and one 
+   with y-coordinates of the minima positions
+
+
+.. py:function:: find_extrema(data, lim, colx=0, coly=1)
+
+   finds extrema in data whose value is at least |val| >= lim
+   data is supposed to be a list of dictionaries or a panda dataframe 
+   colx and coly give the column index of the x and y data
+   returns a list containing 2 lists: one with x-coordinates and one 
+   with y-coordinates of the extremal positions
+
+
+.. py:function:: gauge_b_field_data(b_fields, col, gauge_fac)
+
+   takes a list of b-fields as returned by load_b_fields_gap and col, the name of the 
+   data column of the data objects to gauge and the number gauge_fac
+   each element in the column col is then multiplied by gauge_fac
+
+
+.. py:function:: center_b_field_data(b_fields, lim_peak)
+
+   takes b-field data list loaded with load_b_fields_gap and centers each field 
+   according to the position of the first and last peak identified for which |peak| >= lim_peak
+
+
+.. py:function:: convert_x_mm_b_T_file_to_wave_std(folder_in, file_in, out_path)
+
+   Loads a file in folder_in called file_in with two cols: x[mm] and B[T] - no header to separator
+   and converts, depending on b_type, to wave std and copies to out_path (path+filename)
+
+
+.. py:function:: plot_b_field_data(b_fields, gaps_plt=[])
+
+.. py:function:: cut_data_support(b_fields, col_cut='x')
+
+   takes b-field data list loaded with load_b_fields_gap and
+   cuts the fields to the smallest common support in the column
+   col_cut - afterwards all fiel-data is defined on the same col-values
+
+
+.. py:function:: center_data(data, strat, colx=0, coly=1)
+
+   takes data - which is list of dics of dataframe - and centers it according to strategy in strat
+   possible strat vals:
+   { 'name' : 'peak', 'lim' : lim } - determines peaks of |val|>=lim and first and last one are centered
+   colx/y are the number of the x and y columns
+
+
+.. py:function:: save_prepared_b_data(b_fields, folder, name_add='')
+
+   takes b-field data list loaded with load_b_fields_gap, a folder and a string name_add 
+   and saves all b-field data into the folder, the files are named according ot the 
+   file_name propertie in the b_fields dictionaries with name_add added to the file names
+
+
+.. py:function:: interpolate_b_data(b_fields, gap, lim_peak, num_support_per_extrema=20)
+
+   interpolates b-field data for a given gap using already present dataframes for different gaps
+   takes b-field data list loaded with load_b_fields_gap, a gap number, the lim_peak value 
+   used for findind the extrema in the data (for determination of the number of periods)
+   and the number of support positions per extrema for the calculation of splines from the data
+   Returns a list containing a dictionary: { 'gap' : gap,'data' : pd.DataFrame(data), 'file_name' : file_name }, where data is a panda dataframe 
+   containing the interpolated data and file_name contains the value of the gap at which this data is determined
+
+

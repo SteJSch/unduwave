@@ -1,0 +1,140 @@
+unduwave.helpers.file_folder_helpers
+====================================
+
+.. py:module:: unduwave.helpers.file_folder_helpers
+
+.. autoapi-nested-parse::
+
+   Contains functionality for handling files.
+
+   Module to handle various file operations including finding, moving, copying, and deleting files.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.helpers.file_folder_helpers.convert_path_to_win
+   unduwave.helpers.file_folder_helpers.find_files_exptn
+   unduwave.helpers.file_folder_helpers.find_all_files_exptn
+   unduwave.helpers.file_folder_helpers.zip_files_in_folder
+   unduwave.helpers.file_folder_helpers.unzip_zip_in_folder
+   unduwave.helpers.file_folder_helpers.mv_cp_files
+   unduwave.helpers.file_folder_helpers.del_files
+   unduwave.helpers.file_folder_helpers.del_all_files
+
+
+Module Contents
+---------------
+
+.. py:function:: convert_path_to_win(path)
+
+   Takes a path and converts it to win-standard.
+   :param str path: The path.
+   :return: windows path
+
+
+.. py:function:: find_files_exptn(folder, hints=[], exptns=[])
+
+   Find files in the specified folder based on hints and exptns.
+
+   Args:
+           folder (str): The folder in which to search for files.
+           hints (list, optional): List of strings to search for in filenames. Default is [].
+           exptns (list, optional): List of strings to exclude from filenames. Default is [].
+
+   Returns:
+           list: List of filenames matching the criteria.
+
+
+.. py:function:: find_all_files_exptn(folder, exptns=[])
+
+   Find all files in a directory while excluding specified patterns.
+
+   Args:
+           folder (str): The folder in which to search for files.
+           exptns (list, optional): List of strings to exclude from filenames. Default is [].
+
+   Returns:
+           list: List of filenames matching the criteria.
+
+
+.. py:function:: zip_files_in_folder(folder_to_pack)
+
+   Zip all files in a specified folder.
+
+   Zips all files in the specified folder, names the zip as the folder name,
+   moves the resulting zip to the same directory, and deletes all other files in the directory.
+
+   Args:
+           folder_to_pack (str): The folder containing files to be zipped.
+
+
+.. py:function:: unzip_zip_in_folder(folder)
+
+   Unzip a zip file in the specified folder.
+
+   Looks for a zip file in the specified folder, unzips it there,
+   and returns the list of extracted zip files.
+
+   Args:
+           folder (str): The folder in which to search for and extract zip files.
+
+   Returns:
+           list: List of extracted zip filenames.
+
+
+.. py:function:: mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string='')
+
+   Move or copy files between folders based on specified criteria.
+
+   Moves or copies files whose name contains a string from hints,
+   excluding those whose name contains a string from the exptns list,
+   from folder_in to folder_out and appends add_string to the name.
+
+   Args:
+           hints (list): List of strings to search for in filenames.
+           exptns (list): List of strings to exclude from filenames.
+           folder_in (str): The source folder.
+           folder_out (str): The destination folder.
+           move (bool, optional): Whether to move (True) or copy (False) files. Default is True.
+           add_string (str, optional): String to append to the filenames. Default is ''.
+
+   Returns:
+           list: List of names of the moved or copied files (with add_string appended).
+
+
+.. py:function:: del_files(hints, exptns, folder)
+
+   Delete files from a specified folder based on specified criteria.
+
+   Deletes files whose name contains a string from hints,
+   excluding those whose name contains a string from the exptns list,
+   from the specified folder.
+
+   Args:
+           hints (list): List of strings to search for in filenames.
+           exptns (list): List of strings to exclude from filenames.
+           folder (str): The folder from which to delete files.
+
+   Returns:
+           list: List of names of the deleted files.
+
+
+.. py:function:: del_all_files(exptns, folder)
+
+   Delete all files from a specified folder.
+
+   Deletes all files in the specified folder, excluding those whose name
+   contains a string from the exptns list.
+
+   Args:
+           exptns (list): List of strings to exclude from filenames.
+           folder (str): The folder from which to delete files.
+
+   Returns:
+           list: List of names of the deleted files.
+
+
