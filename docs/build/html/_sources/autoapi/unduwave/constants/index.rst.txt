@@ -1,0 +1,52 @@
+unduwave.constants
+==================
+
+.. py:module:: unduwave.constants
+
+.. autoapi-nested-parse::
+
+   Contains physical constants for unduwave
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   unduwave.constants.fein_const
+   unduwave.constants.hbar
+   unduwave.constants.q_el
+   unduwave.constants.m_el
+   unduwave.constants.v_c
+   unduwave.constants.mu0
+   unduwave.constants.R_el
+
+
+Module Contents
+---------------
+
+.. py:data:: fein_const
+
+.. py:data:: hbar
+   :value: 1.054e-34
+
+
+.. py:data:: q_el
+   :value: 1.602e-19
+
+
+.. py:data:: m_el
+   :value: 9.109e-31
+
+
+.. py:data:: v_c
+   :value: 299792458
+
+
+.. py:data:: mu0
+   :value: 8.854e-12
+
+
+.. py:data:: R_el
+

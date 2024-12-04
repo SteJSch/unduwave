@@ -1,0 +1,15 @@
+unduwave.attribute_classes
+==========================
+
+.. py:module:: unduwave.attribute_classes
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/unduwave/attribute_classes/attributes/index
+
+

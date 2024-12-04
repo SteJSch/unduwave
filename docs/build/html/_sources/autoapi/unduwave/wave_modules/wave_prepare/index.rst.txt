@@ -1,0 +1,46 @@
+unduwave.wave_modules.wave_prepare
+==================================
+
+.. py:module:: unduwave.wave_modules.wave_prepare
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.wave_modules.wave_prepare.wave_prepare
+
+
+Module Contents
+---------------
+
+.. py:class:: wave_prepare(wave_api)
+
+   _summary_
+
+   Args:
+           wave_api (wave_api): Standard Parameters used for the simulation
+
+   Ini wave-prepare class for setting everything up for calcs
+
+
+   .. py:method:: create_wave_input()
+
+      Creates all the files needed as input fro Wave.
+
+      Loads the input file set in wave_paras, updates properties 
+      based on other wave_paras properties,and copies the 
+      resulting file to the WAVE program folder.
+
+
+
+   .. py:method:: prepare_b_files_for_wave()
+
+      Prepare the files for WAVE depending on the b type.
+              
+      Deoending on which b_type, copies and 
+      formats the b-field files needed
+
+
+
