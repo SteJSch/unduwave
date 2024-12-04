@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to APY DOCS
+Welcome to UNDUWAVE DOCS
 ==============================
 
-**Sphinx Template** is a Python Sphinx Template. Version: |release|
+This package provides basic functionality to run WAVE and Undumag from python. 
 
 .. note::
     This project is under active development. |
@@ -15,9 +15,11 @@ Contents
 --------
 
 .. toctree::
-    :maxdepth: 4
-    usage/installation
-    usage/quickstart
+    :maxdepth: 2
+    :numbered:
+    
+    installation
+    quickguide
 
 Indices and tables
 ==================

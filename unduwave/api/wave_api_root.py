@@ -13,7 +13,7 @@ class wave_api :
 	Wave API-class for controlling basic wave-functionality. 
 	Holds the basic parameter classes.
 	"""
-	def __init__(self,undu_mode='undu_easy') :
+	def __init__(self,undu_mode='undu_endp') :
 		"""
 		Initialize the WAVE parameters
 

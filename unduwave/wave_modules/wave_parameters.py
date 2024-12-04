@@ -242,7 +242,7 @@ class wave_prog_parameters(_attribute_collection):
 		self.nthreads.set(2)
 		self.zipped.set(False)
 		self.wave_res_copy_behaviour.set('copy_essentials')
-		self.zip_res_folder.set(1)
+		self.zip_res_folder.set(0)
 		self.iemit.set(0)
 		self.iefold.set(1)
 		self.isigusr.set(1)
