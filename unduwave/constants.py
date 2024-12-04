@@ -1,5 +1,5 @@
 """
-Contains the import statements for wavepy modules
+Contains physical constants for unduwave
 """
 
 import math

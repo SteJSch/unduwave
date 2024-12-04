@@ -1,5 +1,5 @@
 """
-Unduwave init
+Unduwave init statements
 """
 
 from unduwave.unduwave_incl import *

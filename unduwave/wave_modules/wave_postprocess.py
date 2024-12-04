@@ -7,10 +7,13 @@ class wave_postprocess:
 	A class for postprocessing WAVE files.
 	
 	Args:
-		wave_paras (StdParameters): An instance of the StdParameters class.
+		wave_api (StdParameters): An instance of the StdParameters class.
 	"""
 	
 	def __init__(self, wave_api):
+		"""
+		Takes external api and create postprocess class
+		"""
 		self._wave_api = wave_api
 
 	def copy_results(self):
@@ -45,6 +48,7 @@ class wave_postprocess:
 
 		if not os.path.exists(res_wave):
 			os.makedirs(res_wave)
+
 		files_moved = f_h.mv_cp_files(hints = wave_res_extract, exptns = wave_files_no_copy\
 				, folder_in = wave_folder + 'stage/', folder_out = res_wave, move = True, add_string = '')
 		files_copied = f_h.mv_cp_files(hints = wave_res_copy, exptns = wave_files_no_copy\
@@ -91,6 +95,22 @@ class wave_postprocess:
 				line_vals = wave_out_file[ind+1]
 				parts = line_vals.split('->')
 				harm = float(parts[-1])
+				summary.update( { 'Fund. Freq. [eV]' : harm } )
+			if line.find('1. harmonical [nm] and [eV]') >= 0 :
+				line_vals = wave_out_file[ind]
+				parts = line_vals.split('1. harmonical [nm] and [eV], omega [1/s]: ')
+				harms=parts[-1].split(' ')
+				ind_f = 0
+				for el in harms :
+					if len(el) > 0 :
+						try:
+							num = float(el.strip())
+							ind_f = ind_f + 1
+						except:
+							continue
+						if ind_f == 2 :
+							harm = num
+							break
 				summary.update( { 'Fund. Freq. [eV]' : harm } )
 			if line.find('Initial energy [GeV] and gamma:') >= 0 :
 				part_last = line.split('Initial energy [GeV] and gamma:')[-1]
