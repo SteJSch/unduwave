@@ -1,5 +1,5 @@
 """
-The basic api
+Wave api definitions
 """
 from unduwave.unduwave_incl import *
 from unduwave.wave_modules.wave_parameters import *
@@ -9,8 +9,22 @@ from unduwave.wave_modules.wave_postprocess import *
 from unduwave.wave_modules.wave_results import *
 
 class wave_api :
-	def __init__(self,undu_mode='undu_easy') :
+	"""
+	Wave API-class for controlling basic wave-functionality. 
+	Holds the basic parameter classes.
+	"""
+	def __init__(self,undu_mode='undu_endp') :
 		"""
+		Initialize the WAVE parameters
+
+		:param str undu_mode: can be one of the following: |
+			'By' : 	
+			'Byz' :	
+			'Bxyz' :
+			'undu_ellip' :
+			'undu_easy' :
+			'undu_endp' :
+			'undu_gap' :
 		"""
 
 		self._wave_prog_paras = wave_prog_parameters()
@@ -47,6 +61,9 @@ class wave_api :
 		post.cleanup()
 
 	def get_results(self) :
+		"""
+		Returns the results from a given simulation as result-object.
+		"""
 		results = wave_results(wave_api=self)
 		results.load_from_res_folder()
 		return results

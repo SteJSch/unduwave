@@ -1,3 +1,7 @@
+"""
+Definition of _attribute and _attribute_collection classes.
+"""
+
 from unduwave.unduwave_incl import *
 
 class _attribute:
@@ -8,32 +12,58 @@ class _attribute:
         value: Initial value of the attribute.
         name (str, optional): Name of the attribute.
     """
-    def __init__(self, value=None, name=None, wave_in_name = None,unit='',fac=None):
+    def __init__(self, value=None, name=None, in_name = None,unit='',fac=None):
+        """
+        Initialize an attribute.
+        :param value: The value held by this class
+        :param str name: Name of the attribute
+        :param str in_name: Name as used by Wave or Undumag
+        :param str unit: The physical unit of the quantity
+        'param float fac': gauging factor
+        """
         self._value = value
         self.set_name(name)
-        self._wave_in_name = wave_in_name
+        self._in_name = in_name
         self._unit=unit
         self._fac=fac
 
     def set(self, value):
+        """
+        Sets the value
+        """
         self._value = value
 
     def get(self):
+        """
+        Returns the value
+        """
         return self._value
 
     def get_fac(self):
+        """
+        Returns scaling factor
+        """
         if self._fac is None :
             return 1
         return self._fac
 
     def set_name(self,name) :
+        """
+        Setting the name
+        """
         self._name = name
 
-    def set_wave_in_name(self, wave_in_name):
-        self._wave_in_name = wave_in_name
+    def set_in_name(self, in_name):
+        """
+        Setting the in-name
+        """
+        self._in_name = in_name
 
-    def get_wave_in_name(self):
-        return self._wave_in_name
+    def get_in_name(self):
+        """
+        Returns in-name
+        """
+        return self._in_name
 
     @property
     def name(self):
@@ -48,15 +78,21 @@ class _attribute:
 class _attribute_collection:
     """
     Represents a collection of attributes with children.
-
-    Args:
-        b_type (str, optional): Type of the wave element.
+    This is a class containing attributes as class-members.
+    The class members are administered in unison.
     """
-    def __init__(self, b_type='By'):
+    def __init__(self):
+        """
+        Initialize the attribute collection
+        """
         self._children = []
         self._add_attributes()
 
     def _add_attributes(self):
+        """
+        Scans all class members, finds those of type _attribute and sets those 
+        as new attributes
+        """
         attributes = vars(self.__class__)
         for attr_name, attr_value in attributes.items():
             if isinstance(attr_value, _attribute):
@@ -67,8 +103,11 @@ class _attribute_collection:
                 self._children.append(getattr(self, attr_name))
 
     def show_all_children(self) : 
+        """
+        Prints the names of the children
+        """
         for child in self.children() :
-            print(f"Para {child.get_wave_in_name()}={child.get()}")
+            print(f"Para {child.get_in_name()}={child.get()}")
 
     def children(self):
         """

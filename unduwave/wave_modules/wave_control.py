@@ -9,17 +9,18 @@ except:
 	dir_path = os.getcwd()
 
 class wave_control():
-	"""API for the WAVE program
-
-	Args:
-		current_folder (str): _description_
-		wave_folder (str): _description_
+	"""
+	Internal API for the WAVE program
 	"""  
 	def __init__(self, wave_api,current_folder = None):
-	  
+		"""
+		Initialize the internal API
+		wave_api : external wave_api class
+		current_folder : folder to which you want to jump back after wave was run
+		"""	  
 		self._wave_api = wave_api
 		self.current_folder = current_folder
-		self.wave_folder    = self._wave_api._wave_prog_paras.wave_prog_folder.get()
+		self.wave_folder = self._wave_api._wave_prog_paras.wave_prog_folder.get()
 
 	def run(self):
 		"""Run Wave from the self.wave_folder.

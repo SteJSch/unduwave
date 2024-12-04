@@ -1,14 +1,17 @@
 from unduwave.unduwave_incl import *
 from unduwave.wave_modules.wave_parameters import *
+import unduwave.helpers.bfield_helpers as bfield
 
 class wave_prepare():
 	"""_summary_
 
 		Args:
-			wave_paras (wave_api): Standard Parameters used for the simulation
+			wave_api (wave_api): Standard Parameters used for the simulation
 	""" 
 	def __init__(self, wave_api):
-			   
+		"""
+		Ini wave-prepare class for setting everything up for calcs
+		"""
 		self._wave_api = wave_api	
 		self._all_paras = [ 
 			self._wave_api._spectrometer_paras, self._wave_api._ebeam_paras, 
@@ -38,11 +41,11 @@ class wave_prepare():
 			if line.find('=') >= 0 :
 				for para_list in self._all_paras :					
 					for para in para_list.children():
-						if not (para.get_wave_in_name() is None) : 
-							if line.find(f'{para.get_wave_in_name()}=') >= 0 :
-								stuff1 = line.split(f'{para.get_wave_in_name()}=')
+						if not (para.get_in_name() is None) : 
+							if line.find(f' {para.get_in_name()}=') >= 0 :
+								stuff1 = line.split(f'{para.get_in_name()}=')
 								stuff2 = stuff1[-1].split('!')
-								wave_in_file[ind] = stuff1[0]+f'{para.get_wave_in_name()}='+f'{para.get()*para.get_fac()}'+' !' + stuff2[-1]            
+								wave_in_file[ind] = stuff1[0]+f'{para.get_in_name()}='+f'{para.get()*para.get_fac()}'+' !' + stuff2[-1]
 		with open( wave_folder + 'stage/wave.in', 'w') as o_f:
 			for ind, line in enumerate(wave_in_file) :
 				o_f.write(line)
@@ -65,36 +68,24 @@ class wave_prepare():
 		if (b_type == 'Byz') or (b_type == 'Bxyz') : 
 			# last file is Bz
 			field_file = field_files[-1]
-			wpy_b.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/bz.dat' )
+			bfield.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/bz.dat' )
 			if b_type == 'Bxyz' :
 				# snd file is By
 				y_pos = 1
 				# first file is Bx
 				field_file = field_files[0]
-				wpy_b.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/bx.dat' )
+				bfield.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/bx.dat' )
 			field_file = field_files[y_pos]
-			wpy_b.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/btab.dat' )
+			bfield.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/btab.dat' )
 		elif (b_type == 'By') :
 			# first file is By
 			if len(field_files) > 0 :
 				field_file = field_files[0]
-				field_file = field_file.replace("(", "\(")
-				field_file = field_file.replace(")", "\)")    
+				field_file = field_file.replace("(", "\\(")
+				field_file = field_file.replace(")", "\\)")    
 				if os.name == 'nt' :
 					shutil.copyfile(field_folder + field_file, wave_folder + 'stage/')
 					shutil.move(wave_folder + 'stage/' + field_file, wave_folder + 'stage/btab.dat')
 				else:
 					os.system( 'cp ' + field_folder + field_file + ' ' + wave_folder + 'stage/' )
 					os.system( 'mv ' + wave_folder + 'stage/' + field_file + ' ' + wave_folder + 'stage/btab.dat' )
-
-
-
-	  # LUNF=    84       ! magnetic field
-
-	  # FILETB=     'btab.dat'
-	  # LUNTB=      85
-
-	  # FILETBZ= 'bz.dat' ! 1D table of magnetic field Bz
-	  # LUNTBZ=     70
-
-	  # FILETBX= 'bx.dat' ! 1D table of magnetic field Bz

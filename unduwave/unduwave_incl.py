@@ -1,5 +1,5 @@
 """
-Contains the import statements for wavepy modules
+Contains the import statements for undupy modules
 """
 import os
 import pandas as pd
@@ -25,6 +25,7 @@ from datetime import datetime
 from scipy import interpolate
 from scipy import integrate
 from scipy.integrate import nquad
+from scipy.interpolate import RectBivariateSpline
 from scipy.signal import find_peaks
 from matplotlib import cm
 from pathlib import Path
