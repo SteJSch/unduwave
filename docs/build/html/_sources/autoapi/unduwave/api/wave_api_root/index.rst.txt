@@ -1,0 +1,57 @@
+unduwave.api.wave_api_root
+==========================
+
+.. py:module:: unduwave.api.wave_api_root
+
+.. autoapi-nested-parse::
+
+   Wave api definitions
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.api.wave_api_root.wave_api
+
+
+Module Contents
+---------------
+
+.. py:class:: wave_api(undu_mode='undu_endp')
+
+   Wave API-class for controlling basic wave-functionality. 
+   Holds the basic parameter classes.
+
+   Initialize the WAVE parameters
+
+   :param str undu_mode: can be one of the following: |
+           'By' :  
+           'Byz' : 
+           'Bxyz' :
+           'undu_ellip' :
+           'undu_easy' :
+           'undu_endp' :
+           'undu_gap' :
+
+
+   .. py:method:: set_bessy_II_elliptical_undu(nperiods)
+
+      Sets standard settings for bessy II and some helical undulator
+
+
+
+   .. py:method:: run()
+
+      Runs wave with the given settings, prepares and postprocesses data
+
+
+
+   .. py:method:: get_results()
+
+      Returns the results from a given simulation as result-object.
+
+
+

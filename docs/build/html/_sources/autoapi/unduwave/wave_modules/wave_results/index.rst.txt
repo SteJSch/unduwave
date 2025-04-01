@@ -1,0 +1,74 @@
+unduwave.wave_modules.wave_results
+==================================
+
+.. py:module:: unduwave.wave_modules.wave_results
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.wave_modules.wave_results.wave_results
+
+
+Module Contents
+---------------
+
+.. py:class:: wave_results(wave_api)
+
+   
+   Init wave-result class holding all the results
+
+
+   .. py:method:: load_from_res_folder()
+
+      goes through folder and loads all results it can find, flux, flux_d, brilliance
+
+
+
+   .. py:method:: find_load_flux_density_distribution(energies)
+
+      Finds the distribution that is closed to each energy in energies, loads y/z data and flux distribution and adds them to the
+      res_quantities list
+
+      energies - list of energies in eV at which flux distribution is to be plotted
+
+
+
+   .. py:method:: find_load_flux_density_on_axis()
+
+      Loads on-axis flux-density
+
+
+
+   .. py:method:: find_load_brilliance()
+
+      Loads brilliance data
+
+
+
+   .. py:method:: find_load_flux()
+
+      Loads flux through pinhole
+
+
+
+   .. py:method:: find_load_power_distribution()
+
+      Loads power-distribution data
+
+
+
+   .. py:method:: find_load_trajectory_bfield_data()
+
+      Loads trajectory-bfield data
+
+
+
+   .. py:method:: get_result(which)
+
+      Pass string "flux_dens",... to get object containing data and some functionality
+
+
+

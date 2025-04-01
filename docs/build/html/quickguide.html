@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. Quickguide &#8212; Unduwave v0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
+    <script src="_static/documentation_options.js?v=2fea6348"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. API Reference" href="autoapi/index.html" />
+    <link rel="prev" title="1. Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="quickguide">
+<h1><span class="section-number">2. </span>Quickguide<a class="headerlink" href="#quickguide" title="Link to this heading">¶</a></h1>
+<section id="general-things">
+<h2><span class="section-number">2.1. </span>General Things<a class="headerlink" href="#general-things" title="Link to this heading">¶</a></h2>
+<section id="the-coordinate-system">
+<h3><span class="section-number">2.1.1. </span>The Coordinate System<a class="headerlink" href="#the-coordinate-system" title="Link to this heading">¶</a></h3>
+<p>The x coordinate is in longitudinal direction, i.e. along the beam. The y-direction is vertical and z is horizontal.</p>
+</section>
+</section>
+<section id="first-run">
+<h2><span class="section-number">2.2. </span>First Run<a class="headerlink" href="#first-run" title="Link to this heading">¶</a></h2>
+<p>First you have to tell python where unduwave is located. For this we do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;absolute/path/to/unduwave/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">This is a hack and will be soon changed by making the package installable. (It actually already is installable, but I did not test it and it may be buggy if used in this way)</div>
+</div>
+<p>To import unduwave, do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unduwave</span> <span class="k">as</span> <span class="nn">uw</span>
+</pre></div>
+</div>
+<p>To run a simple simulation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">wave</span> <span class="o">=</span> <span class="n">uw</span><span class="o">.</span><span class="n">wave</span><span class="p">(</span><span class="n">undu_mode</span><span class="o">=</span><span class="s1">&#39;undu_easy&#39;</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">wave_prog_paras</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">_wave_prog_paras</span>
+<span class="linenos">3</span><span class="n">wave_prog_paras</span><span class="o">.</span><span class="n">res_folder</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;res/&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">wave_prog_paras</span><span class="o">.</span><span class="n">spec_calc</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">wave</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">The first line creates a wave object which is used to control the parameter setting, the simulation and the creation of results. The parameter undu_mode determines what the undulator model is that is used in the background. “undu_easy” means a simple undulator model is used.</div>
+</div>
+<div class="line-block">
+<div class="line">The second line gives you the general program parameter object. Changing the elements of this class will change the corresponding parameter. The third line gives an example of that, changing the “res_folder” element of the wave program paramters.</div>
+</div>
+<div class="line-block">
+<div class="line">The fourth line sets the parameter “spec_calc” to 0, thereby switching off spectrum calculations. Only the magnetic fields and trajectories are generated.</div>
+</div>
+<div class="line-block">
+<div class="line">Line 5 runs the wave simulation.</div>
+</div>
+<div class="line-block">
+<div class="line">Congratulations, you just ran your first WAVE simulation in 5 lines of code.</div>
+</div>
+</section>
+<section id="the-parameter-structures">
+<h2><span class="section-number">2.3. </span>The Parameter Structures<a class="headerlink" href="#the-parameter-structures" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line">There are a couple of parameter structures that allow to control the program flow. These are _ebeam_parameters, _screen_parameters, _spectrometer_paras, _undu_paras and _wave_prog_parameters. These are accessible vie the wave-object returned by a “unduwave.wave()” call and can be changed via the set-method as seen in the example above.</div>
+</div>
+<p>The following tables show their contents.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">_ebeam_parameters</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description  (Vals)</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>beam_en</p></td>
+<td><p>Beam Energy</p></td>
+<td><p>GeV</p></td>
+</tr>
+<tr class="row-odd"><td><p>current</p></td>
+<td><p>Beam Current</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>bsigz</p></td>
+<td><p>horizontal beam size</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>bsigzp</p></td>
+<td><p>horizontal beam divergence</p></td>
+<td><p>rad</p></td>
+</tr>
+<tr class="row-even"><td><p>bsigy</p></td>
+<td><p>vertical beam size</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>bsigyp</p></td>
+<td><p>vertical beam divergence</p></td>
+<td><p>rad</p></td>
+</tr>
+<tr class="row-even"><td><p>espread</p></td>
+<td><p>Energy Spread</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-odd"><td><p>emitt_h</p></td>
+<td><p>Horizontal Emittance</p></td>
+<td><p>m rad</p></td>
+</tr>
+<tr class="row-even"><td><p>emitt_v</p></td>
+<td><p>Vertical Emittance</p></td>
+<td><p>m rad</p></td>
+</tr>
+<tr class="row-odd"><td><p>betfunh</p></td>
+<td><p>Horizontal Beta Function</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p>betfunv</p></td>
+<td><p>Vertical Beta Function</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>circumference</p></td>
+<td><p>Ring Circumference</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p>rdipol</p></td>
+<td><p>Bending Radius of Dipoles</p></td>
+<td><p>m</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">_screen_parameters</span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description  (Vals)</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pinh_w</p></td>
+<td><p>Pinhole Width(z)</p></td>
+<td><p>mm</p></td>
+</tr>
+<tr class="row-odd"><td><p>pinh_h</p></td>
+<td><p>Pinhole Height(y)</p></td>
+<td><p>mm</p></td>
+</tr>
+<tr class="row-even"><td><p>pinh_x</p></td>
+<td><p>Pinhole Position x</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>pinh_nz</p></td>
+<td><p>Number of horiz. Segments</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>pinh_ny</p></td>
+<td><p>Number of vert. Segments</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">_spectrometer_paras</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description (Vals)</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>freq_low</p></td>
+<td><p>Lowest Photon Energy</p></td>
+<td><p>eV</p></td>
+</tr>
+<tr class="row-odd"><td><p>freq_high</p></td>
+<td><p>Highest Photon Energy</p></td>
+<td><p>eV</p></td>
+</tr>
+<tr class="row-even"><td><p>freq_num</p></td>
+<td><p>Number of energies</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>undu</p></td>
+<td><p>Undulator Mode (0/1)</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>wigg</p></td>
+<td><p>Wiggler Mode   (0/1)</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The undulator mode means the electron is tracked through one period of the device and the radiation on the screen is calculated. The radiation from the other periods is added coherently.</p>
+<p>Wiggler mode means the source points on the trajectory are identified and only the radiation from those is considered and added up incoherently.</p>
+<p>If both modes are off, the expert mode is switched on. The whole trajectory is tracked and the radiation added together with appropriate phase-shifts between different points on the trajectory.</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">_undu_paras</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description (Vals)</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pkHalbasy</p></td>
+<td><p>K-Value</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>b0Halbasy</p></td>
+<td><p>B-Amplitude</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-even"><td><p>xlHalbasy</p></td>
+<td><p>Period Length</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>ahwpolHalbasy</p></td>
+<td><p>Number of Poles (2*periods+1)</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>b0y</p></td>
+<td><p>B-Amplt. vert.</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>b0z</p></td>
+<td><p>B-Amplt. hor.</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-even"><td><p>nper</p></td>
+<td><p>Num. Periods</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>perl_x</p></td>
+<td><p>Period length</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p>ell_shift</p></td>
+<td><p>Shift</p></td>
+<td><p>%</p></td>
+</tr>
+</tbody>
+</table>
+<p>Different parameters for setting simple undulator models. The first 4 are used in conjunction with “undu_mode=’undu_endp’”. The other 5 with “undu_mode=’undu_ellip’”.</p>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">_wave_prog_parameters</span><a class="headerlink" href="#id8" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description (Vals)</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>wave_prog_folder</p></td>
+<td><p>Folder where WAVE lies</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>in_file_folder</p></td>
+<td><p>Folder with WAVE in-files</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>in_files</p></td>
+<td><p>Name of wave-in file</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>field_folder</p></td>
+<td><p>Folder where field files lie</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>field_files</p></td>
+<td><p>List of magnetic field files</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>res_folder</p></td>
+<td><p>Main result folder</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>wave_data_res_folder</p></td>
+<td><p>Subfolder with WAVE-res-data</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>pics_folder</p></td>
+<td><p>Subfolder holding result pics</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>no_copy</p></td>
+<td><p>List of wave-results to not copy</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>wave_ending_extract</p></td>
+<td><p>File endings to move</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>wave_ending_copy</p></td>
+<td><p>File endings to copy</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>wave_files_essentials</p></td>
+<td><p>Essential files to move</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>nthreads</p></td>
+<td><p>Number of CPUs to use</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>wave_res_copy_behaviour</p></td>
+<td><p>Copy behaviour</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>iefold</p></td>
+<td><p>Fold spectrum (energy spread)</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>spec_calc</p></td>
+<td><p>Switch on/off spectrum calculation</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>undu_mode</p></td>
+<td><p>Undu mode</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="undu-modes">
+<h2><span class="section-number">2.4. </span>Undu Modes<a class="headerlink" href="#undu-modes" title="Link to this heading">¶</a></h2>
+<p>The different modes in which unduwave can be used are described. When creating a wave object via:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">wave</span> <span class="o">=</span> <span class="n">uw</span><span class="o">.</span><span class="n">wave</span><span class="p">(</span><span class="n">undu_mode</span><span class="o">=...</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">You can specify the mode in which you want to use wave. The mode tells wave basically where you want to get your magnetic field from. The following options are available at the moment: “By”, “Byz”, “undu_ellip” and “undu_endp”.</div>
+</div>
+<div class="line-block">
+<div class="line">The first two modes mean that you specify the magnetic field via files. The “undu_ellip” mode represents a simple elliptical undulator and “undu_endp” means a simple undulator with endpoles. See the following examples on how to specify the parameters for these use-cases.</div>
+</div>
+</section>
+<section id="user-defined-b-fields">
+<h2><span class="section-number">2.5. </span>User-defined B-Fields<a class="headerlink" href="#user-defined-b-fields" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;absolute/path/to/unduwave/&#39;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">unduwave</span> <span class="k">as</span> <span class="nn">uw</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">wave</span> <span class="o">=</span> <span class="n">uw</span><span class="o">.</span><span class="n">wave</span><span class="p">(</span><span class="n">undu_mode</span><span class="o">=</span><span class="s1">&#39;By&#39;</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="n">wave_prog_paras</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">_wave_prog_paras</span>
+<span class="linenos"> 8</span><span class="n">wave_prog_paras</span><span class="o">.</span><span class="n">field_files</span><span class="o">.</span><span class="n">set</span><span class="p">(</span> <span class="p">[</span> <span class="s1">&#39;field.dat&#39;</span> <span class="p">]</span> <span class="p">)</span><span class="c1"># The magnetic field files to be used in the simulation</span>
+<span class="linenos"> 9</span><span class="n">field_folder</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="linenos">10</span><span class="n">wave_prog_paras</span><span class="o">.</span><span class="n">field_folder</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">field_folder</span><span class="p">)</span><span class="c1"># Field Folder</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">wave</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">|</span></a>The wave object is first organized and from it the program parameters. Then the field file is specified and the folder it lies in. Then the simulation is run. The field file format is two columns separated by whitespaces. The first holding the x-position in mm and the second the magnetic induction in T.</p>
+<p>To load a By and Bz field,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;absolute/path/to/unduwave/&#39;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">unduwave</span> <span class="k">as</span> <span class="nn">uw</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">wave</span> <span class="o">=</span> <span class="n">uw</span><span class="o">.</span><span class="n">wave</span><span class="p">(</span><span class="n">undu_mode</span><span class="o">=</span><span class="s1">&#39;Byz&#39;</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="n">wave_prog_paras</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">_wave_prog_paras</span>
+<span class="linenos"> 8</span><span class="n">wave_prog_paras</span><span class="o">.</span><span class="n">field_files</span><span class="o">.</span><span class="n">set</span><span class="p">(</span> <span class="p">[</span> <span class="s1">&#39;by_tmp.dat&#39;</span><span class="p">,</span><span class="s1">&#39;bz_tmp.dat&#39;</span> <span class="p">]</span> <span class="p">)</span> <span class="c1"># First file y-second z-component of B</span>
+<span class="linenos"> 9</span><span class="n">field_folder</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="linenos">10</span><span class="n">wave_prog_paras</span><span class="o">.</span><span class="n">field_folder</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">field_folder</span><span class="p">)</span><span class="c1"># Field Folder</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">wave</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This specifies two field files, one for the vertical and one for the horizontal components.</p>
+</section>
+<section id="elliptical-undulator">
+<h2><span class="section-number">2.6. </span>Elliptical Undulator<a class="headerlink" href="#elliptical-undulator" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;absolute/path/to/unduwave/&#39;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">unduwave</span> <span class="k">as</span> <span class="nn">uw</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">wave</span> <span class="o">=</span> <span class="n">uw</span><span class="o">.</span><span class="n">wave</span><span class="p">(</span><span class="n">undu_mode</span><span class="o">=</span><span class="s1">&#39;undu_ellip&#39;</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="n">undu_paras</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">_undu_paras</span> <span class="c1"># getting parameter object</span>
+<span class="linenos"> 8</span><span class="n">undu_paras</span><span class="o">.</span><span class="n">b0y</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mf">1.18</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="n">undu_paras</span><span class="o">.</span><span class="n">b0z</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">undu_paras</span><span class="o">.</span><span class="n">nper</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="linenos">11</span><span class="n">undu_paras</span><span class="o">.</span><span class="n">perl_x</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mf">0.020</span><span class="p">)</span>
+<span class="linenos">12</span><span class="n">undu_paras</span><span class="o">.</span><span class="n">ell_shift</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="linenos">13</span><span class="n">wave</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>An elliptical undulator is created. The parameters are set - b0y and b0z - the vertical and horizontal B-amplitude. nper - the number of periods, perl_x - the period length and ell_shift the shift of the elliptical undulator in % of the period-length.</p>
+</section>
+<section id="simple-undulator-with-endpoles">
+<h2><span class="section-number">2.7. </span>Simple Undulator with Endpoles<a class="headerlink" href="#simple-undulator-with-endpoles" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;absolute/path/to/unduwave/&#39;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">unduwave</span> <span class="k">as</span> <span class="nn">uw</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">wave</span> <span class="o">=</span> <span class="n">uw</span><span class="o">.</span><span class="n">wave</span><span class="p">(</span><span class="n">undu_mode</span><span class="o">=</span><span class="s1">&#39;undu_endp&#39;</span><span class="p">)</span> <span class="c1"># Simple undulator model with endpoles</span>
+<span class="linenos"> 7</span><span class="n">undu_paras</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">_undu_paras</span> <span class="c1"># getting parameter object</span>
+<span class="linenos"> 8</span><span class="n">undu_paras</span><span class="o">.</span><span class="n">b0Halbasy</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="n">nperiods</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos">10</span><span class="n">undu_paras</span><span class="o">.</span><span class="n">ahwpolHalbasy</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">nperiods</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># we count the number of B-field peaks here - one extra for the end-fields (odd)</span>
+<span class="linenos">11</span><span class="n">undu_paras</span><span class="o">.</span><span class="n">xlHalbasy</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A simple undulator model with endpoles is created. We set the B-field amplitude b0Halbasy, the period-length xlHalbasy and the number of main poles. Given the number of periods, the number of poles is 2*n+1.</p>
+</section>
+<section id="plotting-and-results">
+<h2><span class="section-number">2.8. </span>Plotting and Results<a class="headerlink" href="#plotting-and-results" title="Link to this heading">¶</a></h2>
+<section id="getting-results">
+<h3><span class="section-number">2.8.1. </span>Getting Results<a class="headerlink" href="#getting-results" title="Link to this heading">¶</a></h3>
+<p>After a succesful simulation, get the results by doing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
+</pre></div>
+</div>
+<p>From the results object we can get the quantities wich were calculated. These include:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quant</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="n">string_identifier</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where string_identifier can be one of:</p>
+<div class="line-block">
+<div class="line">traj_x, traj_y, traj_z - The x,y,z values of the trajectory.</div>
+</div>
+<div class="line-block">
+<div class="line">By, Bz - y and z components of B</div>
+</div>
+<div class="line-block">
+<div class="line">power_y, power_z, power_distribution - The y and z coordinates for the power distribution on the screen and the values of the actual power distribution</div>
+</div>
+<div class="line-block">
+<div class="line">en_flux, flux - the energy values at which the flux through the pinhole was calculated and the flux itself</div>
+</div>
+<div class="line-block">
+<div class="line">en_brill, brill0, brill0e, brill0f, brill0ef - The energy values at which the Brilliance was calculated and the brilliance. brill0 - no energy spread and no emittance, brill0e - brilliance with energy spread, brill0f - brilliance with emittance folding, brill0ef - brilliance with energy spread and emittance.</div>
+</div>
+<div class="line-block">
+<div class="line">en_fd, flux_density - Energy at which flux density on axis is calculated and flux density on axis</div>
+</div>
+<div class="line-block">
+<div class="line">fd_y, fd_z, flux_density_distribution_{en} - the y and z coordinates of a given flux-density distribution (they are the same for all energies, so one pair suffices) and the actual flux density distribution - which contains the energy rounded to second decimal place. So, for example, at the energy 460 eV, the name would be: flux_density_distribution_460.00</div>
+</div>
+</section>
+<section id="plotting-results">
+<h3><span class="section-number">2.8.2. </span>Plotting Results<a class="headerlink" href="#plotting-results" title="Link to this heading">¶</a></h3>
+<section id="d-plots">
+<h4><span class="section-number">2.8.2.1. </span>2D Plots<a class="headerlink" href="#d-plots" title="Link to this heading">¶</a></h4>
+<p>Each quantities data is saved under quantity._data. Each quantity has a number of plotting routines. To do a simple 2D plot, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
+<span class="linenos">2</span><span class="n">traj_x</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;traj_x&#39;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="n">By</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;By&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">By</span><span class="o">.</span><span class="n">plot_over</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">traj_x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This plots the y-component of the B-field over the x-coordinate.</p>
+</section>
+<section id="merge-plots">
+<h4><span class="section-number">2.8.2.2. </span>Merge Plots<a class="headerlink" href="#merge-plots" title="Link to this heading">¶</a></h4>
+<p>To plot y and z components together, do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
+<span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
+<span class="linenos">3</span><span class="n">traj_x</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;traj_x&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">By</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;By&#39;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">By</span><span class="o">.</span><span class="n">plot_over</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">traj_x</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">,</span><span class="n">nosave</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">6</span><span class="n">Bz</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;Bz&#39;</span><span class="p">)</span>
+<span class="linenos">7</span><span class="n">nfig</span><span class="o">=</span><span class="n">Bz</span><span class="o">.</span><span class="n">plot_over</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">traj_x</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;B-Field&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will plot By and Bz into the same window, setting a title and returning the new nfig number which can be used in the next plotting command as an argument.</p>
+</section>
+<section id="log-plots">
+<h4><span class="section-number">2.8.2.3. </span>Log Plots<a class="headerlink" href="#log-plots" title="Link to this heading">¶</a></h4>
+<p>To plot logarithmic axes, do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
+<span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
+<span class="linenos">3</span><span class="n">en_flux</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;en_flux&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">flux</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;flux&#39;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">nfig</span><span class="o">=</span><span class="n">flux</span><span class="o">.</span><span class="n">plot_over</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">en_flux</span><span class="p">,</span><span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">nosave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">,</span><span class="n">loglog</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="parametric-plots">
+<h4><span class="section-number">2.8.2.4. </span>Parametric Plots<a class="headerlink" href="#parametric-plots" title="Link to this heading">¶</a></h4>
+<p>To do parametric plots, do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
+<span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
+<span class="linenos">3</span><span class="n">traj_x</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;traj_x&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">traj_y</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;traj_y&#39;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">traj_z</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;traj_z&#39;</span><span class="p">)</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="n">traj_y</span><span class="o">.</span><span class="n">plot_over</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">traj_x</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">,</span><span class="n">nosave</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">8</span><span class="n">nfig</span><span class="o">=</span><span class="n">traj_z</span><span class="o">.</span><span class="n">plot_over</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">traj_x</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Trajectory&#39;</span><span class="p">)</span>
+<span class="linenos">9</span><span class="n">nfig</span><span class="o">=</span><span class="n">traj_z</span><span class="o">.</span><span class="n">plot_parametric_3d</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">traj_x</span><span class="p">,</span><span class="n">y_quant</span><span class="o">=</span><span class="n">traj_y</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Trajectory&#39;</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h4><span class="section-number">2.8.2.5. </span>3D Plots<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h4>
+<p>To do 3D plots, do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
+<span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
+<span class="linenos">3</span><span class="n">power_z</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;power_z&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">power_y</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;power_y&#39;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">power_distro</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;power_distribution&#39;</span><span class="p">)</span>
+<span class="linenos">6</span><span class="n">nfig</span><span class="o">=</span><span class="n">power_distro</span><span class="o">.</span><span class="n">plot_over_3d</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">power_y</span><span class="p">,</span><span class="n">y_quant</span><span class="o">=</span><span class="n">power_z</span><span class="p">,</span><span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">nosave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Each call to plot_over_3d creates a 3D plot, a heat plot and plots of interpolated data.</p>
+<div class="line-block">
+<div class="line">Here are some plotting examples:</div>
+</div>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="_images/3d_plot_orig.png"><img alt="map to buried treasure" src="_images/3d_plot_orig.png" style="width: 195.5px; height: 204.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Original 3D-plot of a power distribution.</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="_images/3d_plot_interp.png"><img alt="map to buried treasure" src="_images/3d_plot_interp.png" style="width: 195.5px; height: 208.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Interpolated 3D-plot of the previous power distribution.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="_images/heat_plot_orig.png"><img alt="map to buried treasure" src="_images/heat_plot_orig.png" style="width: 392.0px; height: 208.5px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Original heat map of the above power distribution.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id12">
+<a class="reference internal image-reference" href="_images/heat_plot_interp.png"><img alt="map to buried treasure" src="_images/heat_plot_interp.png" style="width: 385.5px; height: 208.5px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Interpolated heat map of the above power distribution.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="plot-flux-density-distributions">
+<h4><span class="section-number">2.8.2.6. </span>Plot Flux Density Distributions<a class="headerlink" href="#plot-flux-density-distributions" title="Link to this heading">¶</a></h4>
+<p>To plot the flux density distribution, you have to specify the energy at which you want to do this.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
+<span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
+<span class="linenos">3</span><span class="n">flux_dens_distr_ens_loaded</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">find_load_flux_density_distribution</span><span class="p">(</span><span class="n">energies</span><span class="o">=</span><span class="p">[</span><span class="mi">460</span><span class="p">,</span><span class="mi">504</span><span class="p">])</span>
+<span class="linenos">4</span><span class="k">for</span> <span class="n">en</span> <span class="ow">in</span> <span class="n">flux_dens_distr_ens_loaded</span> <span class="p">:</span>
+<span class="linenos">5</span>     <span class="n">fd</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;flux_density_distribution_</span><span class="si">{</span><span class="n">en</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">6</span>     <span class="n">nfig</span><span class="o">=</span><span class="n">fd</span><span class="o">.</span><span class="n">plot_over_3d</span><span class="p">(</span><span class="n">x_quant</span><span class="o">=</span><span class="n">fd_y</span><span class="p">,</span><span class="n">y_quant</span><span class="o">=</span><span class="n">fd_z</span><span class="p">,</span><span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">nosave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">nfig</span><span class="o">=</span><span class="n">nfig</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The call to find_load_flux_density_distribution searches for the closest distribution files to the energies specified and returns the corresponding energies it found as a list. From this returned list, the corresponding flux_densitie quantities can be returned and then plotted.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Unduwave</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Quickguide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-things">2.1. General Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#first-run">2.2. First Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-parameter-structures">2.3. The Parameter Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#undu-modes">2.4. Undu Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-defined-b-fields">2.5. User-defined B-Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elliptical-undulator">2.6. Elliptical Undulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simple-undulator-with-endpoles">2.7. Simple Undulator with Endpoles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-and-results">2.8. Plotting and Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">3. API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter"><span class="section-number">1. </span>Installation</a></li>
+      <li>Next: <a href="autoapi/index.html" title="next chapter"><span class="section-number">3. </span>API Reference</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;CC BY-NC.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/quickguide.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

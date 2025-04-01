@@ -1,0 +1,389 @@
+\indexentry{module@\spxentry{module}!unduwave@\spxentry{unduwave}|hyperpage}{17}
+\indexentry{unduwave@\spxentry{unduwave}!module@\spxentry{module}|hyperpage}{17}
+\indexentry{module@\spxentry{module}!unduwave.api@\spxentry{unduwave.api}|hyperpage}{17}
+\indexentry{unduwave.api@\spxentry{unduwave.api}!module@\spxentry{module}|hyperpage}{17}
+\indexentry{module@\spxentry{module}!unduwave.api.undu\_api\_root@\spxentry{unduwave.api.undu\_api\_root}|hyperpage}{17}
+\indexentry{unduwave.api.undu\_api\_root@\spxentry{unduwave.api.undu\_api\_root}!module@\spxentry{module}|hyperpage}{17}
+\indexentry{create\_magnetization\_unit\_vec() (in module unduwave.api.undu\_api\_root)@\spxentry{create\_magnetization\_unit\_vec()}\spxextra{in module unduwave.api.undu\_api\_root}|hyperpage}{18}
+\indexentry{point\_coords (class in unduwave.api.undu\_api\_root)@\spxentry{point\_coords}\spxextra{class in unduwave.api.undu\_api\_root}|hyperpage}{18}
+\indexentry{\_\_sub\_\_() (unduwave.api.undu\_api\_root.point\_coords method)@\spxentry{\_\_sub\_\_()}\spxextra{unduwave.api.undu\_api\_root.point\_coords method}|hyperpage}{18}
+\indexentry{\_\_add\_\_() (unduwave.api.undu\_api\_root.point\_coords method)@\spxentry{\_\_add\_\_()}\spxextra{unduwave.api.undu\_api\_root.point\_coords method}|hyperpage}{18}
+\indexentry{undu\_api (class in unduwave.api.undu\_api\_root)@\spxentry{undu\_api}\spxextra{class in unduwave.api.undu\_api\_root}|hyperpage}{18}
+\indexentry{add\_element() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{add\_element()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{get\_para() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{get\_para()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{set\_para() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{set\_para()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{create\_fresh\_nam() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{create\_fresh\_nam()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{create\_fresh\_clc() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{create\_fresh\_clc()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{get\_std\_para() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{get\_std\_para()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{run() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{run()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{load\_on\_axis\_undumag\_file() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{load\_on\_axis\_undumag\_file()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{load\_force\_undumag\_file() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{load\_force\_undumag\_file()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{load\_beff\_undumag\_file() (unduwave.api.undu\_api\_root.undu\_api method)@\spxentry{load\_beff\_undumag\_file()}\spxextra{unduwave.api.undu\_api\_root.undu\_api method}|hyperpage}{18}
+\indexentry{point\_coords (class in unduwave.api.undu\_api\_root)@\spxentry{point\_coords}\spxextra{class in unduwave.api.undu\_api\_root}|hyperpage}{18}
+\indexentry{\_\_sub\_\_() (unduwave.api.undu\_api\_root.point\_coords method)@\spxentry{\_\_sub\_\_()}\spxextra{unduwave.api.undu\_api\_root.point\_coords method}|hyperpage}{19}
+\indexentry{\_\_add\_\_() (unduwave.api.undu\_api\_root.point\_coords method)@\spxentry{\_\_add\_\_()}\spxextra{unduwave.api.undu\_api\_root.point\_coords method}|hyperpage}{19}
+\indexentry{rotate() (in module unduwave.api.undu\_api\_root)@\spxentry{rotate()}\spxextra{in module unduwave.api.undu\_api\_root}|hyperpage}{19}
+\indexentry{undu\_magnets (class in unduwave.api.undu\_api\_root)@\spxentry{undu\_magnets}\spxextra{class in unduwave.api.undu\_api\_root}|hyperpage}{19}
+\indexentry{move\_it() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{move\_it()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{find\_magn\_name() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{find\_magn\_name()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{find\_all\_names() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{find\_all\_names()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{find\_all\_mag\_blocks() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{find\_all\_mag\_blocks()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{rotate() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{rotate()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{mirror() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{mirror()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{change\_segm() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{change\_segm()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{set\_inactive() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{set\_inactive()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{add\_to\_clc() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{add\_to\_clc()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{get\_max\_extent() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{get\_max\_extent()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{set\_magnetization() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{set\_magnetization()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{get\_center() (unduwave.api.undu\_api\_root.undu\_magnets method)@\spxentry{get\_center()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnets method}|hyperpage}{19}
+\indexentry{undu\_magnet\_block\_coords (class in unduwave.api.undu\_api\_root)@\spxentry{undu\_magnet\_block\_coords}\spxextra{class in unduwave.api.undu\_api\_root}|hyperpage}{19}
+\indexentry{find\_all\_names() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{find\_all\_names()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{19}
+\indexentry{find\_all\_mag\_blocks() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{find\_all\_mag\_blocks()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{19}
+\indexentry{set\_inactive() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{set\_inactive()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{19}
+\indexentry{change\_segm() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{change\_segm()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{19}
+\indexentry{find\_magn\_name() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{find\_magn\_name()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{19}
+\indexentry{set\_magnetization() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{set\_magnetization()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{19}
+\indexentry{create\_edge\_points() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{create\_edge\_points()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{19}
+\indexentry{move\_it() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{move\_it()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{20}
+\indexentry{rotate() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{rotate()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{20}
+\indexentry{mirror() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{mirror()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{20}
+\indexentry{add\_to\_clc() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{add\_to\_clc()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{20}
+\indexentry{create\_clc\_txt() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{create\_clc\_txt()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{20}
+\indexentry{get\_max\_extent() (unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method)@\spxentry{get\_max\_extent()}\spxextra{unduwave.api.undu\_api\_root.undu\_magnet\_block\_coords method}|hyperpage}{20}
+\indexentry{module@\spxentry{module}!unduwave.api.wave\_api\_root@\spxentry{unduwave.api.wave\_api\_root}|hyperpage}{20}
+\indexentry{unduwave.api.wave\_api\_root@\spxentry{unduwave.api.wave\_api\_root}!module@\spxentry{module}|hyperpage}{20}
+\indexentry{wave\_api (class in unduwave.api.wave\_api\_root)@\spxentry{wave\_api}\spxextra{class in unduwave.api.wave\_api\_root}|hyperpage}{20}
+\indexentry{set\_bessy\_II\_elliptical\_undu() (unduwave.api.wave\_api\_root.wave\_api method)@\spxentry{set\_bessy\_II\_elliptical\_undu()}\spxextra{unduwave.api.wave\_api\_root.wave\_api method}|hyperpage}{20}
+\indexentry{run() (unduwave.api.wave\_api\_root.wave\_api method)@\spxentry{run()}\spxextra{unduwave.api.wave\_api\_root.wave\_api method}|hyperpage}{20}
+\indexentry{get\_results() (unduwave.api.wave\_api\_root.wave\_api method)@\spxentry{get\_results()}\spxextra{unduwave.api.wave\_api\_root.wave\_api method}|hyperpage}{20}
+\indexentry{module@\spxentry{module}!unduwave.attribute\_classes@\spxentry{unduwave.attribute\_classes}|hyperpage}{21}
+\indexentry{unduwave.attribute\_classes@\spxentry{unduwave.attribute\_classes}!module@\spxentry{module}|hyperpage}{21}
+\indexentry{module@\spxentry{module}!unduwave.attribute\_classes.attributes@\spxentry{unduwave.attribute\_classes.attributes}|hyperpage}{21}
+\indexentry{unduwave.attribute\_classes.attributes@\spxentry{unduwave.attribute\_classes.attributes}!module@\spxentry{module}|hyperpage}{21}
+\indexentry{\_attribute (class in unduwave.attribute\_classes.attributes)@\spxentry{\_attribute}\spxextra{class in unduwave.attribute\_classes.attributes}|hyperpage}{21}
+\indexentry{set() (unduwave.attribute\_classes.attributes.\_attribute method)@\spxentry{set()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}|hyperpage}{21}
+\indexentry{get() (unduwave.attribute\_classes.attributes.\_attribute method)@\spxentry{get()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}|hyperpage}{21}
+\indexentry{get\_fac() (unduwave.attribute\_classes.attributes.\_attribute method)@\spxentry{get\_fac()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}|hyperpage}{21}
+\indexentry{set\_name() (unduwave.attribute\_classes.attributes.\_attribute method)@\spxentry{set\_name()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}|hyperpage}{21}
+\indexentry{set\_in\_name() (unduwave.attribute\_classes.attributes.\_attribute method)@\spxentry{set\_in\_name()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}|hyperpage}{21}
+\indexentry{get\_in\_name() (unduwave.attribute\_classes.attributes.\_attribute method)@\spxentry{get\_in\_name()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}|hyperpage}{21}
+\indexentry{name (unduwave.attribute\_classes.attributes.\_attribute property)@\spxentry{name}\spxextra{unduwave.attribute\_classes.attributes.\_attribute property}|hyperpage}{21}
+\indexentry{\_\_str\_\_() (unduwave.attribute\_classes.attributes.\_attribute method)@\spxentry{\_\_str\_\_()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}|hyperpage}{21}
+\indexentry{\_\_repr\_\_() (unduwave.attribute\_classes.attributes.\_attribute method)@\spxentry{\_\_repr\_\_()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute method}|hyperpage}{21}
+\indexentry{\_attribute\_collection (class in unduwave.attribute\_classes.attributes)@\spxentry{\_attribute\_collection}\spxextra{class in unduwave.attribute\_classes.attributes}|hyperpage}{21}
+\indexentry{\_add\_attributes() (unduwave.attribute\_classes.attributes.\_attribute\_collection method)@\spxentry{\_add\_attributes()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute\_collection method}|hyperpage}{22}
+\indexentry{show\_all\_children() (unduwave.attribute\_classes.attributes.\_attribute\_collection method)@\spxentry{show\_all\_children()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute\_collection method}|hyperpage}{22}
+\indexentry{children() (unduwave.attribute\_classes.attributes.\_attribute\_collection method)@\spxentry{children()}\spxextra{unduwave.attribute\_classes.attributes.\_attribute\_collection method}|hyperpage}{22}
+\indexentry{module@\spxentry{module}!unduwave.helpers@\spxentry{unduwave.helpers}|hyperpage}{22}
+\indexentry{unduwave.helpers@\spxentry{unduwave.helpers}!module@\spxentry{module}|hyperpage}{22}
+\indexentry{module@\spxentry{module}!unduwave.helpers.bfield\_helpers@\spxentry{unduwave.helpers.bfield\_helpers}|hyperpage}{22}
+\indexentry{unduwave.helpers.bfield\_helpers@\spxentry{unduwave.helpers.bfield\_helpers}!module@\spxentry{module}|hyperpage}{22}
+\indexentry{load\_b\_fields\_gap() (in module unduwave.helpers.bfield\_helpers)@\spxentry{load\_b\_fields\_gap()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{checkIfList\_Conv() (in module unduwave.helpers.bfield\_helpers)@\spxentry{checkIfList\_Conv()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{checkIfDF\_Conv() (in module unduwave.helpers.bfield\_helpers)@\spxentry{checkIfDF\_Conv()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{find\_maxima() (in module unduwave.helpers.bfield\_helpers)@\spxentry{find\_maxima()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{find\_minima() (in module unduwave.helpers.bfield\_helpers)@\spxentry{find\_minima()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{find\_extrema() (in module unduwave.helpers.bfield\_helpers)@\spxentry{find\_extrema()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{gauge\_b\_field\_data() (in module unduwave.helpers.bfield\_helpers)@\spxentry{gauge\_b\_field\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{center\_b\_field\_data() (in module unduwave.helpers.bfield\_helpers)@\spxentry{center\_b\_field\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{convert\_x\_mm\_b\_T\_file\_to\_wave\_std() (in module unduwave.helpers.bfield\_helpers)@\spxentry{convert\_x\_mm\_b\_T\_file\_to\_wave\_std()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{plot\_b\_field\_data() (in module unduwave.helpers.bfield\_helpers)@\spxentry{plot\_b\_field\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{cut\_data\_support() (in module unduwave.helpers.bfield\_helpers)@\spxentry{cut\_data\_support()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{center\_data() (in module unduwave.helpers.bfield\_helpers)@\spxentry{center\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{save\_prepared\_b\_data() (in module unduwave.helpers.bfield\_helpers)@\spxentry{save\_prepared\_b\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{interpolate\_b\_data() (in module unduwave.helpers.bfield\_helpers)@\spxentry{interpolate\_b\_data()}\spxextra{in module unduwave.helpers.bfield\_helpers}|hyperpage}{23}
+\indexentry{module@\spxentry{module}!unduwave.helpers.file\_folder\_helpers@\spxentry{unduwave.helpers.file\_folder\_helpers}|hyperpage}{24}
+\indexentry{unduwave.helpers.file\_folder\_helpers@\spxentry{unduwave.helpers.file\_folder\_helpers}!module@\spxentry{module}|hyperpage}{24}
+\indexentry{convert\_path\_to\_win() (in module unduwave.helpers.file\_folder\_helpers)@\spxentry{convert\_path\_to\_win()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}|hyperpage}{24}
+\indexentry{find\_files\_exptn() (in module unduwave.helpers.file\_folder\_helpers)@\spxentry{find\_files\_exptn()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}|hyperpage}{24}
+\indexentry{find\_all\_files\_exptn() (in module unduwave.helpers.file\_folder\_helpers)@\spxentry{find\_all\_files\_exptn()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}|hyperpage}{24}
+\indexentry{zip\_files\_in\_folder() (in module unduwave.helpers.file\_folder\_helpers)@\spxentry{zip\_files\_in\_folder()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}|hyperpage}{25}
+\indexentry{unzip\_zip\_in\_folder() (in module unduwave.helpers.file\_folder\_helpers)@\spxentry{unzip\_zip\_in\_folder()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}|hyperpage}{25}
+\indexentry{mv\_cp\_files() (in module unduwave.helpers.file\_folder\_helpers)@\spxentry{mv\_cp\_files()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}|hyperpage}{25}
+\indexentry{del\_files() (in module unduwave.helpers.file\_folder\_helpers)@\spxentry{del\_files()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}|hyperpage}{25}
+\indexentry{del\_all\_files() (in module unduwave.helpers.file\_folder\_helpers)@\spxentry{del\_all\_files()}\spxextra{in module unduwave.helpers.file\_folder\_helpers}|hyperpage}{25}
+\indexentry{module@\spxentry{module}!unduwave.quantities@\spxentry{unduwave.quantities}|hyperpage}{26}
+\indexentry{unduwave.quantities@\spxentry{unduwave.quantities}!module@\spxentry{module}|hyperpage}{26}
+\indexentry{module@\spxentry{module}!unduwave.quantities.quantities@\spxentry{unduwave.quantities.quantities}|hyperpage}{26}
+\indexentry{unduwave.quantities.quantities@\spxentry{unduwave.quantities.quantities}!module@\spxentry{module}|hyperpage}{26}
+\indexentry{wave\_quantity (class in unduwave.quantities.quantities)@\spxentry{wave\_quantity}\spxextra{class in unduwave.quantities.quantities}|hyperpage}{26}
+\indexentry{plot\_parametric\_3d() (unduwave.quantities.quantities.wave\_quantity method)@\spxentry{plot\_parametric\_3d()}\spxextra{unduwave.quantities.quantities.wave\_quantity method}|hyperpage}{26}
+\indexentry{plot\_over() (unduwave.quantities.quantities.wave\_quantity method)@\spxentry{plot\_over()}\spxextra{unduwave.quantities.quantities.wave\_quantity method}|hyperpage}{26}
+\indexentry{plot\_over\_3d() (unduwave.quantities.quantities.wave\_quantity method)@\spxentry{plot\_over\_3d()}\spxextra{unduwave.quantities.quantities.wave\_quantity method}|hyperpage}{26}
+\indexentry{save\_plot() (unduwave.quantities.quantities.wave\_quantity method)@\spxentry{save\_plot()}\spxextra{unduwave.quantities.quantities.wave\_quantity method}|hyperpage}{26}
+\indexentry{module@\spxentry{module}!unduwave.wave\_modules@\spxentry{unduwave.wave\_modules}|hyperpage}{26}
+\indexentry{unduwave.wave\_modules@\spxentry{unduwave.wave\_modules}!module@\spxentry{module}|hyperpage}{26}
+\indexentry{module@\spxentry{module}!unduwave.wave\_modules.wave\_control@\spxentry{unduwave.wave\_modules.wave\_control}|hyperpage}{26}
+\indexentry{unduwave.wave\_modules.wave\_control@\spxentry{unduwave.wave\_modules.wave\_control}!module@\spxentry{module}|hyperpage}{26}
+\indexentry{dir\_path (in module unduwave.wave\_modules.wave\_control)@\spxentry{dir\_path}\spxextra{in module unduwave.wave\_modules.wave\_control}|hyperpage}{27}
+\indexentry{wave\_control (class in unduwave.wave\_modules.wave\_control)@\spxentry{wave\_control}\spxextra{class in unduwave.wave\_modules.wave\_control}|hyperpage}{27}
+\indexentry{run() (unduwave.wave\_modules.wave\_control.wave\_control method)@\spxentry{run()}\spxextra{unduwave.wave\_modules.wave\_control.wave\_control method}|hyperpage}{27}
+\indexentry{module@\spxentry{module}!unduwave.wave\_modules.wave\_parameters@\spxentry{unduwave.wave\_modules.wave\_parameters}|hyperpage}{27}
+\indexentry{unduwave.wave\_modules.wave\_parameters@\spxentry{unduwave.wave\_modules.wave\_parameters}!module@\spxentry{module}|hyperpage}{27}
+\indexentry{ebeam\_parameters (class in unduwave.wave\_modules.wave\_parameters)@\spxentry{ebeam\_parameters}\spxextra{class in unduwave.wave\_modules.wave\_parameters}|hyperpage}{27}
+\indexentry{beam\_en (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{beam\_en}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{27}
+\indexentry{current (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{current}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{27}
+\indexentry{bsigz (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{bsigz}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{27}
+\indexentry{bsigzp (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{bsigzp}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{27}
+\indexentry{bsigy (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{bsigy}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{27}
+\indexentry{bsigyp (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{bsigyp}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{28}
+\indexentry{espread (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{espread}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{28}
+\indexentry{emitt\_h (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{emitt\_h}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{28}
+\indexentry{emitt\_v (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{emitt\_v}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{28}
+\indexentry{betfunh (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{betfunh}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{28}
+\indexentry{betfunv (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{betfunv}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{28}
+\indexentry{circumference (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{circumference}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{28}
+\indexentry{rdipol (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute)@\spxentry{rdipol}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters attribute}|hyperpage}{28}
+\indexentry{get\_std\_bessy\_III\_paras() (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method)@\spxentry{get\_std\_bessy\_III\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method}|hyperpage}{28}
+\indexentry{get\_std\_bessy\_II\_paras() (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method)@\spxentry{get\_std\_bessy\_II\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method}|hyperpage}{28}
+\indexentry{get\_std\_paras() (unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.ebeam\_parameters method}|hyperpage}{28}
+\indexentry{screen\_parameters (class in unduwave.wave\_modules.wave\_parameters)@\spxentry{screen\_parameters}\spxextra{class in unduwave.wave\_modules.wave\_parameters}|hyperpage}{28}
+\indexentry{pinh\_w (unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute)@\spxentry{pinh\_w}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}|hyperpage}{28}
+\indexentry{pinh\_h (unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute)@\spxentry{pinh\_h}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}|hyperpage}{28}
+\indexentry{pinh\_x (unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute)@\spxentry{pinh\_x}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}|hyperpage}{28}
+\indexentry{pinh\_nz (unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute)@\spxentry{pinh\_nz}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}|hyperpage}{28}
+\indexentry{pinh\_ny (unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute)@\spxentry{pinh\_ny}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters attribute}|hyperpage}{28}
+\indexentry{get\_std\_paras() (unduwave.wave\_modules.wave\_parameters.screen\_parameters method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.screen\_parameters method}|hyperpage}{28}
+\indexentry{spectrometer\_paras (class in unduwave.wave\_modules.wave\_parameters)@\spxentry{spectrometer\_paras}\spxextra{class in unduwave.wave\_modules.wave\_parameters}|hyperpage}{28}
+\indexentry{freq\_low (unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute)@\spxentry{freq\_low}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}|hyperpage}{28}
+\indexentry{freq\_high (unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute)@\spxentry{freq\_high}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}|hyperpage}{28}
+\indexentry{freq\_num (unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute)@\spxentry{freq\_num}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}|hyperpage}{28}
+\indexentry{undu (unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute)@\spxentry{undu}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}|hyperpage}{28}
+\indexentry{wigg (unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute)@\spxentry{wigg}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras attribute}|hyperpage}{28}
+\indexentry{get\_std\_paras() (unduwave.wave\_modules.wave\_parameters.spectrometer\_paras method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.spectrometer\_paras method}|hyperpage}{29}
+\indexentry{undu\_paras (class in unduwave.wave\_modules.wave\_parameters)@\spxentry{undu\_paras}\spxextra{class in unduwave.wave\_modules.wave\_parameters}|hyperpage}{29}
+\indexentry{pkHalbasy (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{pkHalbasy}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{b0Halbasy (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{b0Halbasy}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{xlHalbasy (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{xlHalbasy}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{ahwpolHalbasy (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{ahwpolHalbasy}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{undu\_type (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{undu\_type}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{b0y (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{b0y}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{b0z (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{b0z}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{nper (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{nper}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{perl\_x (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{perl\_x}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{ell\_shift (unduwave.wave\_modules.wave\_parameters.undu\_paras attribute)@\spxentry{ell\_shift}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras attribute}|hyperpage}{29}
+\indexentry{get\_std\_paras() (unduwave.wave\_modules.wave\_parameters.undu\_paras method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.undu\_paras method}|hyperpage}{29}
+\indexentry{bfield\_paras (class in unduwave.wave\_modules.wave\_parameters)@\spxentry{bfield\_paras}\spxextra{class in unduwave.wave\_modules.wave\_parameters}|hyperpage}{29}
+\indexentry{field\_folder (unduwave.wave\_modules.wave\_parameters.bfield\_paras attribute)@\spxentry{field\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.bfield\_paras attribute}|hyperpage}{29}
+\indexentry{get\_std\_paras() (unduwave.wave\_modules.wave\_parameters.bfield\_paras method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.bfield\_paras method}|hyperpage}{29}
+\indexentry{wave\_prog\_parameters (class in unduwave.wave\_modules.wave\_parameters)@\spxentry{wave\_prog\_parameters}\spxextra{class in unduwave.wave\_modules.wave\_parameters}|hyperpage}{29}
+\indexentry{wave\_prog\_folder (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{wave\_prog\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{29}
+\indexentry{in\_file\_folder (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{in\_file\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{29}
+\indexentry{in\_files (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{in\_files}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{field\_folder (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{field\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{field\_files (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{field\_files}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{res\_folder (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{res\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{wave\_data\_res\_folder (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{wave\_data\_res\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{pics\_folder (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{pics\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{res\_summary\_file (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{res\_summary\_file}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{no\_copy (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{no\_copy}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{wave\_ending\_extract (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{wave\_ending\_extract}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{wave\_ending\_copy (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{wave\_ending\_copy}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{wave\_files\_essentials (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{wave\_files\_essentials}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{wave\_res\_copy\_behaviour (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{wave\_res\_copy\_behaviour}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{zip\_res\_folder (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{zip\_res\_folder}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{nthreads (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{nthreads}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{zipped (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{zipped}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{spec\_calc (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{spec\_calc}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{iemit (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{iemit}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{iefold (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{iefold}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{isigusr (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{isigusr}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{ihisascii (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{ihisascii}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{b\_type (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{b\_type}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{irbtab (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{irbtab}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{irbtabzy (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{irbtabzy}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{irbtabxyz (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{irbtabxyz}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{undu\_easy (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{undu\_easy}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{undu\_endp (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{undu\_endp}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{undu\_gap (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{undu\_gap}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{undu\_ellip (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{undu\_ellip}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{undu\_mode (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute)@\spxentry{undu\_mode}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters attribute}|hyperpage}{30}
+\indexentry{get\_std\_paras() (unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_modules.wave\_parameters.wave\_prog\_parameters method}|hyperpage}{30}
+\indexentry{module@\spxentry{module}!unduwave.wave\_modules.wave\_postprocess@\spxentry{unduwave.wave\_modules.wave\_postprocess}|hyperpage}{31}
+\indexentry{unduwave.wave\_modules.wave\_postprocess@\spxentry{unduwave.wave\_modules.wave\_postprocess}!module@\spxentry{module}|hyperpage}{31}
+\indexentry{wave\_postprocess (class in unduwave.wave\_modules.wave\_postprocess)@\spxentry{wave\_postprocess}\spxextra{class in unduwave.wave\_modules.wave\_postprocess}|hyperpage}{31}
+\indexentry{copy\_results() (unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method)@\spxentry{copy\_results()}\spxextra{unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method}|hyperpage}{31}
+\indexentry{extract\_summary() (unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method)@\spxentry{extract\_summary()}\spxextra{unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method}|hyperpage}{31}
+\indexentry{cleanup() (unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method)@\spxentry{cleanup()}\spxextra{unduwave.wave\_modules.wave\_postprocess.wave\_postprocess method}|hyperpage}{31}
+\indexentry{module@\spxentry{module}!unduwave.wave\_modules.wave\_prepare@\spxentry{unduwave.wave\_modules.wave\_prepare}|hyperpage}{31}
+\indexentry{unduwave.wave\_modules.wave\_prepare@\spxentry{unduwave.wave\_modules.wave\_prepare}!module@\spxentry{module}|hyperpage}{31}
+\indexentry{wave\_prepare (class in unduwave.wave\_modules.wave\_prepare)@\spxentry{wave\_prepare}\spxextra{class in unduwave.wave\_modules.wave\_prepare}|hyperpage}{31}
+\indexentry{create\_wave\_input() (unduwave.wave\_modules.wave\_prepare.wave\_prepare method)@\spxentry{create\_wave\_input()}\spxextra{unduwave.wave\_modules.wave\_prepare.wave\_prepare method}|hyperpage}{31}
+\indexentry{prepare\_b\_files\_for\_wave() (unduwave.wave\_modules.wave\_prepare.wave\_prepare method)@\spxentry{prepare\_b\_files\_for\_wave()}\spxextra{unduwave.wave\_modules.wave\_prepare.wave\_prepare method}|hyperpage}{32}
+\indexentry{module@\spxentry{module}!unduwave.wave\_modules.wave\_results@\spxentry{unduwave.wave\_modules.wave\_results}|hyperpage}{32}
+\indexentry{unduwave.wave\_modules.wave\_results@\spxentry{unduwave.wave\_modules.wave\_results}!module@\spxentry{module}|hyperpage}{32}
+\indexentry{wave\_results (class in unduwave.wave\_modules.wave\_results)@\spxentry{wave\_results}\spxextra{class in unduwave.wave\_modules.wave\_results}|hyperpage}{32}
+\indexentry{load\_from\_res\_folder() (unduwave.wave\_modules.wave\_results.wave\_results method)@\spxentry{load\_from\_res\_folder()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}|hyperpage}{32}
+\indexentry{find\_load\_flux\_density\_distribution() (unduwave.wave\_modules.wave\_results.wave\_results method)@\spxentry{find\_load\_flux\_density\_distribution()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}|hyperpage}{32}
+\indexentry{find\_load\_flux\_density\_on\_axis() (unduwave.wave\_modules.wave\_results.wave\_results method)@\spxentry{find\_load\_flux\_density\_on\_axis()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}|hyperpage}{32}
+\indexentry{find\_load\_brilliance() (unduwave.wave\_modules.wave\_results.wave\_results method)@\spxentry{find\_load\_brilliance()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}|hyperpage}{32}
+\indexentry{find\_load\_flux() (unduwave.wave\_modules.wave\_results.wave\_results method)@\spxentry{find\_load\_flux()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}|hyperpage}{32}
+\indexentry{find\_load\_power\_distribution() (unduwave.wave\_modules.wave\_results.wave\_results method)@\spxentry{find\_load\_power\_distribution()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}|hyperpage}{32}
+\indexentry{find\_load\_trajectory\_bfield\_data() (unduwave.wave\_modules.wave\_results.wave\_results method)@\spxentry{find\_load\_trajectory\_bfield\_data()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}|hyperpage}{32}
+\indexentry{get\_result() (unduwave.wave\_modules.wave\_results.wave\_results method)@\spxentry{get\_result()}\spxextra{unduwave.wave\_modules.wave\_results.wave\_results method}|hyperpage}{32}
+\indexentry{module@\spxentry{module}!unduwave.constants@\spxentry{unduwave.constants}|hyperpage}{33}
+\indexentry{unduwave.constants@\spxentry{unduwave.constants}!module@\spxentry{module}|hyperpage}{33}
+\indexentry{fein\_const (in module unduwave.constants)@\spxentry{fein\_const}\spxextra{in module unduwave.constants}|hyperpage}{33}
+\indexentry{hbar (in module unduwave.constants)@\spxentry{hbar}\spxextra{in module unduwave.constants}|hyperpage}{33}
+\indexentry{q\_el (in module unduwave.constants)@\spxentry{q\_el}\spxextra{in module unduwave.constants}|hyperpage}{33}
+\indexentry{m\_el (in module unduwave.constants)@\spxentry{m\_el}\spxextra{in module unduwave.constants}|hyperpage}{33}
+\indexentry{v\_c (in module unduwave.constants)@\spxentry{v\_c}\spxextra{in module unduwave.constants}|hyperpage}{33}
+\indexentry{mu0 (in module unduwave.constants)@\spxentry{mu0}\spxextra{in module unduwave.constants}|hyperpage}{33}
+\indexentry{R\_el (in module unduwave.constants)@\spxentry{R\_el}\spxextra{in module unduwave.constants}|hyperpage}{33}
+\indexentry{module@\spxentry{module}!unduwave.unduwave\_incl@\spxentry{unduwave.unduwave\_incl}|hyperpage}{33}
+\indexentry{unduwave.unduwave\_incl@\spxentry{unduwave.unduwave\_incl}!module@\spxentry{module}|hyperpage}{33}
+\indexentry{cm\_inch (in module unduwave.unduwave\_incl)@\spxentry{cm\_inch}\spxextra{in module unduwave.unduwave\_incl}|hyperpage}{34}
+\indexentry{to\_scn() (in module unduwave.unduwave\_incl)@\spxentry{to\_scn()}\spxextra{in module unduwave.unduwave\_incl}|hyperpage}{34}
+\indexentry{cm\_inch (in module unduwave)@\spxentry{cm\_inch}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{to\_scn() (in module unduwave)@\spxentry{to\_scn()}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{fein\_const (in module unduwave)@\spxentry{fein\_const}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{hbar (in module unduwave)@\spxentry{hbar}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{q\_el (in module unduwave)@\spxentry{q\_el}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{m\_el (in module unduwave)@\spxentry{m\_el}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{v\_c (in module unduwave)@\spxentry{v\_c}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{mu0 (in module unduwave)@\spxentry{mu0}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{R\_el (in module unduwave)@\spxentry{R\_el}\spxextra{in module unduwave}|hyperpage}{35}
+\indexentry{wave (class in unduwave)@\spxentry{wave}\spxextra{class in unduwave}|hyperpage}{35}
+\indexentry{set\_bessy\_II\_elliptical\_undu() (unduwave.wave method)@\spxentry{set\_bessy\_II\_elliptical\_undu()}\spxextra{unduwave.wave method}|hyperpage}{36}
+\indexentry{run() (unduwave.wave method)@\spxentry{run()}\spxextra{unduwave.wave method}|hyperpage}{36}
+\indexentry{get\_results() (unduwave.wave method)@\spxentry{get\_results()}\spxextra{unduwave.wave method}|hyperpage}{36}
+\indexentry{undu (class in unduwave)@\spxentry{undu}\spxextra{class in unduwave}|hyperpage}{36}
+\indexentry{add\_element() (unduwave.undu method)@\spxentry{add\_element()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{get\_para() (unduwave.undu method)@\spxentry{get\_para()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{set\_para() (unduwave.undu method)@\spxentry{set\_para()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{create\_fresh\_nam() (unduwave.undu method)@\spxentry{create\_fresh\_nam()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{create\_fresh\_clc() (unduwave.undu method)@\spxentry{create\_fresh\_clc()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{get\_std\_para() (unduwave.undu method)@\spxentry{get\_std\_para()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{run() (unduwave.undu method)@\spxentry{run()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{load\_on\_axis\_undumag\_file() (unduwave.undu method)@\spxentry{load\_on\_axis\_undumag\_file()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{load\_force\_undumag\_file() (unduwave.undu method)@\spxentry{load\_force\_undumag\_file()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{load\_beff\_undumag\_file() (unduwave.undu method)@\spxentry{load\_beff\_undumag\_file()}\spxextra{unduwave.undu method}|hyperpage}{36}
+\indexentry{\_attribute (class in unduwave)@\spxentry{\_attribute}\spxextra{class in unduwave}|hyperpage}{36}
+\indexentry{set() (unduwave.\_attribute method)@\spxentry{set()}\spxextra{unduwave.\_attribute method}|hyperpage}{36}
+\indexentry{get() (unduwave.\_attribute method)@\spxentry{get()}\spxextra{unduwave.\_attribute method}|hyperpage}{36}
+\indexentry{get\_fac() (unduwave.\_attribute method)@\spxentry{get\_fac()}\spxextra{unduwave.\_attribute method}|hyperpage}{36}
+\indexentry{set\_name() (unduwave.\_attribute method)@\spxentry{set\_name()}\spxextra{unduwave.\_attribute method}|hyperpage}{36}
+\indexentry{set\_in\_name() (unduwave.\_attribute method)@\spxentry{set\_in\_name()}\spxextra{unduwave.\_attribute method}|hyperpage}{36}
+\indexentry{get\_in\_name() (unduwave.\_attribute method)@\spxentry{get\_in\_name()}\spxextra{unduwave.\_attribute method}|hyperpage}{36}
+\indexentry{name (unduwave.\_attribute property)@\spxentry{name}\spxextra{unduwave.\_attribute property}|hyperpage}{37}
+\indexentry{\_\_str\_\_() (unduwave.\_attribute method)@\spxentry{\_\_str\_\_()}\spxextra{unduwave.\_attribute method}|hyperpage}{37}
+\indexentry{\_\_repr\_\_() (unduwave.\_attribute method)@\spxentry{\_\_repr\_\_()}\spxextra{unduwave.\_attribute method}|hyperpage}{37}
+\indexentry{\_attribute\_collection (class in unduwave)@\spxentry{\_attribute\_collection}\spxextra{class in unduwave}|hyperpage}{37}
+\indexentry{\_add\_attributes() (unduwave.\_attribute\_collection method)@\spxentry{\_add\_attributes()}\spxextra{unduwave.\_attribute\_collection method}|hyperpage}{37}
+\indexentry{show\_all\_children() (unduwave.\_attribute\_collection method)@\spxentry{show\_all\_children()}\spxextra{unduwave.\_attribute\_collection method}|hyperpage}{37}
+\indexentry{children() (unduwave.\_attribute\_collection method)@\spxentry{children()}\spxextra{unduwave.\_attribute\_collection method}|hyperpage}{37}
+\indexentry{cm\_inch (in module unduwave)@\spxentry{cm\_inch}\spxextra{in module unduwave}|hyperpage}{37}
+\indexentry{to\_scn() (in module unduwave)@\spxentry{to\_scn()}\spxextra{in module unduwave}|hyperpage}{37}
+\indexentry{\_attribute (class in unduwave)@\spxentry{\_attribute}\spxextra{class in unduwave}|hyperpage}{37}
+\indexentry{set() (unduwave.\_attribute method)@\spxentry{set()}\spxextra{unduwave.\_attribute method}|hyperpage}{37}
+\indexentry{get() (unduwave.\_attribute method)@\spxentry{get()}\spxextra{unduwave.\_attribute method}|hyperpage}{37}
+\indexentry{get\_fac() (unduwave.\_attribute method)@\spxentry{get\_fac()}\spxextra{unduwave.\_attribute method}|hyperpage}{37}
+\indexentry{set\_name() (unduwave.\_attribute method)@\spxentry{set\_name()}\spxextra{unduwave.\_attribute method}|hyperpage}{37}
+\indexentry{set\_in\_name() (unduwave.\_attribute method)@\spxentry{set\_in\_name()}\spxextra{unduwave.\_attribute method}|hyperpage}{37}
+\indexentry{get\_in\_name() (unduwave.\_attribute method)@\spxentry{get\_in\_name()}\spxextra{unduwave.\_attribute method}|hyperpage}{37}
+\indexentry{name (unduwave.\_attribute property)@\spxentry{name}\spxextra{unduwave.\_attribute property}|hyperpage}{37}
+\indexentry{\_\_str\_\_() (unduwave.\_attribute method)@\spxentry{\_\_str\_\_()}\spxextra{unduwave.\_attribute method}|hyperpage}{38}
+\indexentry{\_\_repr\_\_() (unduwave.\_attribute method)@\spxentry{\_\_repr\_\_()}\spxextra{unduwave.\_attribute method}|hyperpage}{38}
+\indexentry{\_attribute\_collection (class in unduwave)@\spxentry{\_attribute\_collection}\spxextra{class in unduwave}|hyperpage}{38}
+\indexentry{\_add\_attributes() (unduwave.\_attribute\_collection method)@\spxentry{\_add\_attributes()}\spxextra{unduwave.\_attribute\_collection method}|hyperpage}{38}
+\indexentry{show\_all\_children() (unduwave.\_attribute\_collection method)@\spxentry{show\_all\_children()}\spxextra{unduwave.\_attribute\_collection method}|hyperpage}{38}
+\indexentry{children() (unduwave.\_attribute\_collection method)@\spxentry{children()}\spxextra{unduwave.\_attribute\_collection method}|hyperpage}{38}
+\indexentry{ebeam\_parameters (class in unduwave)@\spxentry{ebeam\_parameters}\spxextra{class in unduwave}|hyperpage}{38}
+\indexentry{beam\_en (unduwave.ebeam\_parameters attribute)@\spxentry{beam\_en}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{current (unduwave.ebeam\_parameters attribute)@\spxentry{current}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{bsigz (unduwave.ebeam\_parameters attribute)@\spxentry{bsigz}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{bsigzp (unduwave.ebeam\_parameters attribute)@\spxentry{bsigzp}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{bsigy (unduwave.ebeam\_parameters attribute)@\spxentry{bsigy}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{bsigyp (unduwave.ebeam\_parameters attribute)@\spxentry{bsigyp}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{espread (unduwave.ebeam\_parameters attribute)@\spxentry{espread}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{emitt\_h (unduwave.ebeam\_parameters attribute)@\spxentry{emitt\_h}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{emitt\_v (unduwave.ebeam\_parameters attribute)@\spxentry{emitt\_v}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{betfunh (unduwave.ebeam\_parameters attribute)@\spxentry{betfunh}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{betfunv (unduwave.ebeam\_parameters attribute)@\spxentry{betfunv}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{circumference (unduwave.ebeam\_parameters attribute)@\spxentry{circumference}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{rdipol (unduwave.ebeam\_parameters attribute)@\spxentry{rdipol}\spxextra{unduwave.ebeam\_parameters attribute}|hyperpage}{38}
+\indexentry{get\_std\_bessy\_III\_paras() (unduwave.ebeam\_parameters method)@\spxentry{get\_std\_bessy\_III\_paras()}\spxextra{unduwave.ebeam\_parameters method}|hyperpage}{38}
+\indexentry{get\_std\_bessy\_II\_paras() (unduwave.ebeam\_parameters method)@\spxentry{get\_std\_bessy\_II\_paras()}\spxextra{unduwave.ebeam\_parameters method}|hyperpage}{39}
+\indexentry{get\_std\_paras() (unduwave.ebeam\_parameters method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.ebeam\_parameters method}|hyperpage}{39}
+\indexentry{screen\_parameters (class in unduwave)@\spxentry{screen\_parameters}\spxextra{class in unduwave}|hyperpage}{39}
+\indexentry{pinh\_w (unduwave.screen\_parameters attribute)@\spxentry{pinh\_w}\spxextra{unduwave.screen\_parameters attribute}|hyperpage}{39}
+\indexentry{pinh\_h (unduwave.screen\_parameters attribute)@\spxentry{pinh\_h}\spxextra{unduwave.screen\_parameters attribute}|hyperpage}{39}
+\indexentry{pinh\_x (unduwave.screen\_parameters attribute)@\spxentry{pinh\_x}\spxextra{unduwave.screen\_parameters attribute}|hyperpage}{39}
+\indexentry{pinh\_nz (unduwave.screen\_parameters attribute)@\spxentry{pinh\_nz}\spxextra{unduwave.screen\_parameters attribute}|hyperpage}{39}
+\indexentry{pinh\_ny (unduwave.screen\_parameters attribute)@\spxentry{pinh\_ny}\spxextra{unduwave.screen\_parameters attribute}|hyperpage}{39}
+\indexentry{get\_std\_paras() (unduwave.screen\_parameters method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.screen\_parameters method}|hyperpage}{39}
+\indexentry{spectrometer\_paras (class in unduwave)@\spxentry{spectrometer\_paras}\spxextra{class in unduwave}|hyperpage}{39}
+\indexentry{freq\_low (unduwave.spectrometer\_paras attribute)@\spxentry{freq\_low}\spxextra{unduwave.spectrometer\_paras attribute}|hyperpage}{39}
+\indexentry{freq\_high (unduwave.spectrometer\_paras attribute)@\spxentry{freq\_high}\spxextra{unduwave.spectrometer\_paras attribute}|hyperpage}{39}
+\indexentry{freq\_num (unduwave.spectrometer\_paras attribute)@\spxentry{freq\_num}\spxextra{unduwave.spectrometer\_paras attribute}|hyperpage}{39}
+\indexentry{undu (unduwave.spectrometer\_paras attribute)@\spxentry{undu}\spxextra{unduwave.spectrometer\_paras attribute}|hyperpage}{39}
+\indexentry{wigg (unduwave.spectrometer\_paras attribute)@\spxentry{wigg}\spxextra{unduwave.spectrometer\_paras attribute}|hyperpage}{39}
+\indexentry{get\_std\_paras() (unduwave.spectrometer\_paras method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.spectrometer\_paras method}|hyperpage}{39}
+\indexentry{undu\_paras (class in unduwave)@\spxentry{undu\_paras}\spxextra{class in unduwave}|hyperpage}{39}
+\indexentry{pkHalbasy (unduwave.undu\_paras attribute)@\spxentry{pkHalbasy}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{39}
+\indexentry{b0Halbasy (unduwave.undu\_paras attribute)@\spxentry{b0Halbasy}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{xlHalbasy (unduwave.undu\_paras attribute)@\spxentry{xlHalbasy}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{ahwpolHalbasy (unduwave.undu\_paras attribute)@\spxentry{ahwpolHalbasy}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{undu\_type (unduwave.undu\_paras attribute)@\spxentry{undu\_type}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{b0y (unduwave.undu\_paras attribute)@\spxentry{b0y}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{b0z (unduwave.undu\_paras attribute)@\spxentry{b0z}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{nper (unduwave.undu\_paras attribute)@\spxentry{nper}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{perl\_x (unduwave.undu\_paras attribute)@\spxentry{perl\_x}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{ell\_shift (unduwave.undu\_paras attribute)@\spxentry{ell\_shift}\spxextra{unduwave.undu\_paras attribute}|hyperpage}{40}
+\indexentry{get\_std\_paras() (unduwave.undu\_paras method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.undu\_paras method}|hyperpage}{40}
+\indexentry{bfield\_paras (class in unduwave)@\spxentry{bfield\_paras}\spxextra{class in unduwave}|hyperpage}{40}
+\indexentry{field\_folder (unduwave.bfield\_paras attribute)@\spxentry{field\_folder}\spxextra{unduwave.bfield\_paras attribute}|hyperpage}{40}
+\indexentry{get\_std\_paras() (unduwave.bfield\_paras method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.bfield\_paras method}|hyperpage}{40}
+\indexentry{wave\_prog\_parameters (class in unduwave)@\spxentry{wave\_prog\_parameters}\spxextra{class in unduwave}|hyperpage}{40}
+\indexentry{wave\_prog\_folder (unduwave.wave\_prog\_parameters attribute)@\spxentry{wave\_prog\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{in\_file\_folder (unduwave.wave\_prog\_parameters attribute)@\spxentry{in\_file\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{in\_files (unduwave.wave\_prog\_parameters attribute)@\spxentry{in\_files}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{field\_folder (unduwave.wave\_prog\_parameters attribute)@\spxentry{field\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{field\_files (unduwave.wave\_prog\_parameters attribute)@\spxentry{field\_files}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{res\_folder (unduwave.wave\_prog\_parameters attribute)@\spxentry{res\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{wave\_data\_res\_folder (unduwave.wave\_prog\_parameters attribute)@\spxentry{wave\_data\_res\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{pics\_folder (unduwave.wave\_prog\_parameters attribute)@\spxentry{pics\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{res\_summary\_file (unduwave.wave\_prog\_parameters attribute)@\spxentry{res\_summary\_file}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{no\_copy (unduwave.wave\_prog\_parameters attribute)@\spxentry{no\_copy}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{wave\_ending\_extract (unduwave.wave\_prog\_parameters attribute)@\spxentry{wave\_ending\_extract}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{40}
+\indexentry{wave\_ending\_copy (unduwave.wave\_prog\_parameters attribute)@\spxentry{wave\_ending\_copy}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{wave\_files\_essentials (unduwave.wave\_prog\_parameters attribute)@\spxentry{wave\_files\_essentials}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{wave\_res\_copy\_behaviour (unduwave.wave\_prog\_parameters attribute)@\spxentry{wave\_res\_copy\_behaviour}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{zip\_res\_folder (unduwave.wave\_prog\_parameters attribute)@\spxentry{zip\_res\_folder}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{nthreads (unduwave.wave\_prog\_parameters attribute)@\spxentry{nthreads}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{zipped (unduwave.wave\_prog\_parameters attribute)@\spxentry{zipped}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{spec\_calc (unduwave.wave\_prog\_parameters attribute)@\spxentry{spec\_calc}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{iemit (unduwave.wave\_prog\_parameters attribute)@\spxentry{iemit}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{iefold (unduwave.wave\_prog\_parameters attribute)@\spxentry{iefold}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{isigusr (unduwave.wave\_prog\_parameters attribute)@\spxentry{isigusr}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{ihisascii (unduwave.wave\_prog\_parameters attribute)@\spxentry{ihisascii}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{b\_type (unduwave.wave\_prog\_parameters attribute)@\spxentry{b\_type}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{irbtab (unduwave.wave\_prog\_parameters attribute)@\spxentry{irbtab}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{irbtabzy (unduwave.wave\_prog\_parameters attribute)@\spxentry{irbtabzy}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{irbtabxyz (unduwave.wave\_prog\_parameters attribute)@\spxentry{irbtabxyz}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{undu\_easy (unduwave.wave\_prog\_parameters attribute)@\spxentry{undu\_easy}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{undu\_endp (unduwave.wave\_prog\_parameters attribute)@\spxentry{undu\_endp}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{undu\_gap (unduwave.wave\_prog\_parameters attribute)@\spxentry{undu\_gap}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{undu\_ellip (unduwave.wave\_prog\_parameters attribute)@\spxentry{undu\_ellip}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{undu\_mode (unduwave.wave\_prog\_parameters attribute)@\spxentry{undu\_mode}\spxextra{unduwave.wave\_prog\_parameters attribute}|hyperpage}{41}
+\indexentry{get\_std\_paras() (unduwave.wave\_prog\_parameters method)@\spxentry{get\_std\_paras()}\spxextra{unduwave.wave\_prog\_parameters method}|hyperpage}{41}
+\indexentry{cm\_inch (in module unduwave)@\spxentry{cm\_inch}\spxextra{in module unduwave}|hyperpage}{41}
+\indexentry{to\_scn() (in module unduwave)@\spxentry{to\_scn()}\spxextra{in module unduwave}|hyperpage}{41}
+\indexentry{wave\_postprocess (class in unduwave)@\spxentry{wave\_postprocess}\spxextra{class in unduwave}|hyperpage}{41}
+\indexentry{copy\_results() (unduwave.wave\_postprocess method)@\spxentry{copy\_results()}\spxextra{unduwave.wave\_postprocess method}|hyperpage}{41}
+\indexentry{extract\_summary() (unduwave.wave\_postprocess method)@\spxentry{extract\_summary()}\spxextra{unduwave.wave\_postprocess method}|hyperpage}{42}
+\indexentry{cleanup() (unduwave.wave\_postprocess method)@\spxentry{cleanup()}\spxextra{unduwave.wave\_postprocess method}|hyperpage}{42}
+\indexentry{wave\_prepare (class in unduwave)@\spxentry{wave\_prepare}\spxextra{class in unduwave}|hyperpage}{42}
+\indexentry{create\_wave\_input() (unduwave.wave\_prepare method)@\spxentry{create\_wave\_input()}\spxextra{unduwave.wave\_prepare method}|hyperpage}{42}
+\indexentry{prepare\_b\_files\_for\_wave() (unduwave.wave\_prepare method)@\spxentry{prepare\_b\_files\_for\_wave()}\spxextra{unduwave.wave\_prepare method}|hyperpage}{42}
+\indexentry{wave\_control (class in unduwave)@\spxentry{wave\_control}\spxextra{class in unduwave}|hyperpage}{42}
+\indexentry{run() (unduwave.wave\_control method)@\spxentry{run()}\spxextra{unduwave.wave\_control method}|hyperpage}{42}
+\indexentry{wave\_results (class in unduwave)@\spxentry{wave\_results}\spxextra{class in unduwave}|hyperpage}{42}
+\indexentry{load\_from\_res\_folder() (unduwave.wave\_results method)@\spxentry{load\_from\_res\_folder()}\spxextra{unduwave.wave\_results method}|hyperpage}{42}
+\indexentry{find\_load\_flux\_density\_distribution() (unduwave.wave\_results method)@\spxentry{find\_load\_flux\_density\_distribution()}\spxextra{unduwave.wave\_results method}|hyperpage}{42}
+\indexentry{find\_load\_flux\_density\_on\_axis() (unduwave.wave\_results method)@\spxentry{find\_load\_flux\_density\_on\_axis()}\spxextra{unduwave.wave\_results method}|hyperpage}{42}
+\indexentry{find\_load\_brilliance() (unduwave.wave\_results method)@\spxentry{find\_load\_brilliance()}\spxextra{unduwave.wave\_results method}|hyperpage}{42}
+\indexentry{find\_load\_flux() (unduwave.wave\_results method)@\spxentry{find\_load\_flux()}\spxextra{unduwave.wave\_results method}|hyperpage}{43}
+\indexentry{find\_load\_power\_distribution() (unduwave.wave\_results method)@\spxentry{find\_load\_power\_distribution()}\spxextra{unduwave.wave\_results method}|hyperpage}{43}
+\indexentry{find\_load\_trajectory\_bfield\_data() (unduwave.wave\_results method)@\spxentry{find\_load\_trajectory\_bfield\_data()}\spxextra{unduwave.wave\_results method}|hyperpage}{43}
+\indexentry{get\_result() (unduwave.wave\_results method)@\spxentry{get\_result()}\spxextra{unduwave.wave\_results method}|hyperpage}{43}

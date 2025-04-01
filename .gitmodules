@@ -1,0 +1,6 @@
+[submodule "External-Software/Undumag"]
+	path = External-Software/Undumag
+	url = https://github.com/MicScheer/Undumag
+[submodule "External-Software/WAVE"]
+	path = External-Software/WAVE
+	url = https://github.com/SteJSch/WAVE_tmp

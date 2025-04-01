@@ -1,0 +1,53 @@
+unduwave.wave_modules.wave_postprocess
+======================================
+
+.. py:module:: unduwave.wave_modules.wave_postprocess
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.wave_modules.wave_postprocess.wave_postprocess
+
+
+Module Contents
+---------------
+
+.. py:class:: wave_postprocess(wave_api)
+
+   A class for postprocessing WAVE files.
+
+   Args:
+           wave_api (StdParameters): An instance of the StdParameters class.
+
+   Takes external api and create postprocess class
+
+
+   .. py:method:: copy_results()
+
+      Cleans the wave-stage folder and copies the desired files to their location,
+      deletes non-desired files, and zips the results based on the wave_res_copy_behaviour setting.
+
+
+
+   .. py:method:: extract_summary(folder)
+
+      Extracts summary information from a WAVE run's files in the specified folder
+      and stores the results in the file self.wave_paras.res_summary_file within the folder.
+
+      Args:
+              folder (str): The folder containing the WAVE run files.
+
+
+
+   .. py:method:: cleanup()
+
+      Cleans up the WAVE run by removing the 'WAVE.mhb' file if it exists in the specified folder.
+
+      Args:
+              wave_folder (str): The folder containing the WAVE run files.
+
+
+

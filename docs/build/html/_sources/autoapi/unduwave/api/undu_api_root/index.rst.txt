@@ -1,0 +1,186 @@
+unduwave.api.undu_api_root
+==========================
+
+.. py:module:: unduwave.api.undu_api_root
+
+.. autoapi-nested-parse::
+
+   The basic api
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.api.undu_api_root.point_coords
+   unduwave.api.undu_api_root.undu_api
+   unduwave.api.undu_api_root.point_coords
+   unduwave.api.undu_api_root.undu_magnets
+   unduwave.api.undu_api_root.undu_magnet_block_coords
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.api.undu_api_root.create_magnetization_unit_vec
+   unduwave.api.undu_api_root.rotate
+
+
+Module Contents
+---------------
+
+.. py:function:: create_magnetization_unit_vec(magn_string)
+
+.. py:class:: point_coords(x=0.0, y=0.0, z=0.0)
+
+   .. py:method:: __sub__(pnt)
+
+
+   .. py:method:: __add__(pnt)
+
+
+.. py:class:: undu_api(undu_mode='undu_easy', res_folder='')
+
+   
+                   
+
+
+   .. py:method:: add_element(element)
+
+
+   .. py:method:: get_para()
+
+
+   .. py:method:: set_para(para)
+
+
+   .. py:method:: create_fresh_nam(file_lines, undu_paras=None)
+
+
+   .. py:method:: create_fresh_clc(file_lines, undu_paras=None)
+
+
+   .. py:method:: get_std_para()
+
+
+   .. py:method:: run(undu_paras=None, copy='', freate_fresh_clc=True)
+
+
+   .. py:method:: load_on_axis_undumag_file(file)
+
+
+   .. py:method:: load_force_undumag_file(file)
+
+
+   .. py:method:: load_beff_undumag_file(file)
+
+
+.. py:class:: point_coords(x=0.0, y=0.0, z=0.0)
+
+   .. py:method:: __sub__(pnt)
+
+
+   .. py:method:: __add__(pnt)
+
+
+.. py:function:: rotate(pnts, degrees, axis=point_coords(0, 0, 0), plane='yz')
+
+.. py:class:: undu_magnets(magnet_blocks)
+
+   Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
+   extent determination
+   magnet_blocks - list of undu_magnet_block_coords objects
+
+
+   .. py:method:: move_it(vec)
+
+
+   .. py:method:: find_magn_name(names, fnd_list=None)
+
+
+   .. py:method:: find_all_names(names=None)
+
+
+   .. py:method:: find_all_mag_blocks(mag_blocks=[])
+
+
+   .. py:method:: rotate(degrees, axis, plane='yz')
+
+
+   .. py:method:: mirror(coord='x')
+
+
+   .. py:method:: change_segm(segm_x, segm_y, segm_z, frac_y=None, frac_z=None)
+
+
+   .. py:method:: set_inactive()
+
+
+   .. py:method:: add_to_clc(clc_txt, magns_ignore=None)
+
+
+   .. py:method:: get_max_extent(maxs=None, mins=None)
+
+
+   .. py:method:: set_magnetization(magnetization, magn_unit_vec)
+
+
+   .. py:method:: get_center()
+
+
+.. py:class:: undu_magnet_block_coords(p_center, pnts=None, len_x=None, len_y=None, len_z=None, magnetization=None, magn_unit_vec=None, name='name', mother='mother', segm_x=1, segm_y=1, segm_z=1, frac_y=1, frac_z=1, material='mag', chamf=None)
+
+   Implements basic undumag magnet block
+   can be moved, mirrored, incorporated into undumag-clc and the extent can be calculated
+
+   material - "magnet" or "pole"
+   chamf - if some float - chamfer is added
+
+
+   .. py:method:: find_all_names(names=None)
+
+
+   .. py:method:: find_all_mag_blocks(mag_blocks=[])
+
+
+   .. py:method:: set_inactive()
+
+
+   .. py:method:: change_segm(segm_x, segm_y, segm_z, frac_y=None, frac_z=None)
+
+
+   .. py:method:: find_magn_name(names, fnd_list=None)
+
+
+   .. py:method:: set_magnetization(magnetization, magn_unit_vec)
+
+
+   .. py:method:: create_edge_points()
+
+
+   .. py:method:: move_it(vec)
+
+
+   .. py:method:: rotate(degrees, axis, plane='yz')
+
+
+   .. py:method:: mirror(coord='x')
+
+
+   .. py:method:: add_to_clc(clc_txt, magns_ignore=None)
+
+
+   .. py:method:: create_clc_txt()
+
+
+   .. py:method:: get_max_extent(maxs=None, mins=None)
+
+      determines the extent of this magnet block and compares to maxs and mins vals given, returns
+      the max and min vals
+
+
+
