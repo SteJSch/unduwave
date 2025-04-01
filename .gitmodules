@@ -1,6 +1,8 @@
 [submodule "External-Software/WAVE"]
 	path = External-Software/WAVE
 	url = https://github.com/SteJSch/WAVE_tmp
+	branch=master
 [submodule "External-Software/Undumag"]
 	path = External-Software/Undumag
 	url = https://github.com/MicScheer/UNDUMAG
+	branch=main
