@@ -206,6 +206,39 @@ Module Contents
    .. py:attribute:: ell_shift
 
 
+   .. py:attribute:: b0ellana
+
+
+   .. py:attribute:: nperella
+
+
+   .. py:attribute:: xlellana
+
+
+   .. py:attribute:: zlellana
+
+
+   .. py:attribute:: x0ellana
+
+
+   .. py:attribute:: gapell
+
+
+   .. py:attribute:: refgapell
+
+
+   .. py:attribute:: shellana
+
+
+   .. py:attribute:: rowshella
+
+
+   .. py:attribute:: iells2s3
+
+
+   .. py:attribute:: iellcoef
+
+
    .. py:method:: get_std_paras(undu_mode)
 
       getting standard undu parameters
@@ -308,10 +341,67 @@ Module Contents
    .. py:attribute:: ihisascii
 
 
+   .. py:attribute:: ntupgrid
+
+
+   .. py:attribute:: rayfile
+
+
+   .. py:attribute:: xstart
+
+
+   .. py:attribute:: ystart
+
+
+   .. py:attribute:: zstart
+
+
+   .. py:attribute:: vxin
+
+
+   .. py:attribute:: vyin
+
+
+   .. py:attribute:: vzin
+
+
+   .. py:attribute:: bxmapmin
+
+
+   .. py:attribute:: bxmapmax
+
+
+   .. py:attribute:: bxmapn
+
+
+   .. py:attribute:: bymapmin
+
+
+   .. py:attribute:: bymapmax
+
+
+   .. py:attribute:: bymapn
+
+
+   .. py:attribute:: bzmapmin
+
+
+   .. py:attribute:: bzmapmax
+
+
+   .. py:attribute:: bzmapn
+
+
    .. py:attribute:: b_type
 
 
    .. py:attribute:: irbtab
+
+
+   .. py:attribute:: irfileb0
+
+
+   .. py:attribute:: iwbmap
 
 
    .. py:attribute:: irbtabzy
@@ -330,6 +420,9 @@ Module Contents
 
 
    .. py:attribute:: undu_ellip
+
+
+   .. py:attribute:: undu_ellip_ana
 
 
    .. py:attribute:: undu_mode

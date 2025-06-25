@@ -82,7 +82,7 @@ ebeam_paras.emitt_v.set(15.4e-11)
 Run
 """
 
-# wave.run()
+wave.run()
 
 """
 Get Results and Plot

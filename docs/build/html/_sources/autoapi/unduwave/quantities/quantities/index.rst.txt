@@ -31,7 +31,13 @@ Module Contents
    plot_name: name shown in plot
 
 
-   .. py:method:: plot_parametric_3d(x_quant, y_quant, title=None, file_name=None, nosave=False, nfig=None)
+   .. py:method:: save_data(file)
+
+
+   .. py:method:: load_data(file, x_quant, y_quant=None)
+
+
+   .. py:method:: plot_parametric_3d(x_quant, y_quant, title=None, file_name=None, nosave=False, nfig=None, plot=True)
 
       Basic plot of data, 2d, 3d
 
@@ -43,7 +49,7 @@ Module Contents
 
 
 
-   .. py:method:: plot_over(x_quant, title=None, file_name=None, nosave=False, nfig=None, loglog=False)
+   .. py:method:: plot_over(x_quant, title=None, file_name=None, nosave=False, nfig=None, loglog=False, plot=True, leg=True, clear=False, dataFile=None, xlim=None, ylim=None)
 
       Basic 2d plot of data
 
@@ -52,7 +58,7 @@ Module Contents
 
 
 
-   .. py:method:: plot_over_3d(x_quant, y_quant, title=None, file_name=None, nosave=False, nfig=None)
+   .. py:method:: plot_over_3d(x_quant, y_quant, title=None, file_name=None, nosave=False, nfig=None, plot=True, zLabelAdd='', clear=False, dataFile=None)
 
       Plots 3D plots and heat plots of data
       x_quant : quantity to be used as x-data

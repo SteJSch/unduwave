@@ -13,5 +13,6 @@ from .wave_modules.wave_postprocess import wave_postprocess
 from .wave_modules.wave_prepare import wave_prepare
 from .wave_modules.wave_control import wave_control
 from .wave_modules.wave_results import wave_results
+from .wave_modules.bessy_III_paras import get_std_bessy_III_paras
 import unduwave.helpers.bfield_helpers as bfield
 import unduwave.helpers.file_folder_helpers as ff_h

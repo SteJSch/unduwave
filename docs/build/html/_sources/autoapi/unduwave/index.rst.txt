@@ -80,6 +80,7 @@ Functions
    unduwave.to_scn
    unduwave.to_scn
    unduwave.to_scn
+   unduwave.get_std_bessy_III_paras
 
 
 Package Contents
@@ -149,6 +150,9 @@ Package Contents
 
       Returns the results from a given simulation as result-object.
 
+
+
+   .. py:method:: get_summary()
 
 
 .. py:class:: undu(undu_mode='undu_easy', res_folder='')
@@ -570,6 +574,39 @@ Package Contents
    .. py:attribute:: ell_shift
 
 
+   .. py:attribute:: b0ellana
+
+
+   .. py:attribute:: nperella
+
+
+   .. py:attribute:: xlellana
+
+
+   .. py:attribute:: zlellana
+
+
+   .. py:attribute:: x0ellana
+
+
+   .. py:attribute:: gapell
+
+
+   .. py:attribute:: refgapell
+
+
+   .. py:attribute:: shellana
+
+
+   .. py:attribute:: rowshella
+
+
+   .. py:attribute:: iells2s3
+
+
+   .. py:attribute:: iellcoef
+
+
    .. py:method:: get_std_paras(undu_mode)
 
       getting standard undu parameters
@@ -672,10 +709,67 @@ Package Contents
    .. py:attribute:: ihisascii
 
 
+   .. py:attribute:: ntupgrid
+
+
+   .. py:attribute:: rayfile
+
+
+   .. py:attribute:: xstart
+
+
+   .. py:attribute:: ystart
+
+
+   .. py:attribute:: zstart
+
+
+   .. py:attribute:: vxin
+
+
+   .. py:attribute:: vyin
+
+
+   .. py:attribute:: vzin
+
+
+   .. py:attribute:: bxmapmin
+
+
+   .. py:attribute:: bxmapmax
+
+
+   .. py:attribute:: bxmapn
+
+
+   .. py:attribute:: bymapmin
+
+
+   .. py:attribute:: bymapmax
+
+
+   .. py:attribute:: bymapn
+
+
+   .. py:attribute:: bzmapmin
+
+
+   .. py:attribute:: bzmapmax
+
+
+   .. py:attribute:: bzmapn
+
+
    .. py:attribute:: b_type
 
 
    .. py:attribute:: irbtab
+
+
+   .. py:attribute:: irfileb0
+
+
+   .. py:attribute:: iwbmap
 
 
    .. py:attribute:: irbtabzy
@@ -694,6 +788,9 @@ Package Contents
 
 
    .. py:attribute:: undu_ellip
+
+
+   .. py:attribute:: undu_ellip_ana
 
 
    .. py:attribute:: undu_mode
@@ -736,7 +833,7 @@ Package Contents
 
 
 
-   .. py:method:: extract_summary(folder)
+   .. py:method:: extract_summary(folder=None)
 
       Extracts summary information from a WAVE run's files in the specified folder
       and stores the results in the file self.wave_paras.res_summary_file within the folder.
@@ -822,6 +919,12 @@ Package Contents
 
 
 
+   .. py:method:: find_load_stokes()
+
+      Loads on-axis flux-density
+
+
+
    .. py:method:: find_load_flux_density_on_axis()
 
       Loads on-axis flux-density
@@ -857,4 +960,6 @@ Package Contents
       Pass string "flux_dens",... to get object containing data and some functionality
 
 
+
+.. py:function:: get_std_bessy_III_paras(ebeam_paras)
 

@@ -36,6 +36,12 @@ Module Contents
 
 
 
+   .. py:method:: find_load_stokes()
+
+      Loads on-axis flux-density
+
+
+
    .. py:method:: find_load_flux_density_on_axis()
 
       Loads on-axis flux-density

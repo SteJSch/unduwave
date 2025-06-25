@@ -1,0 +1,19 @@
+unduwave.wave_modules.bessy_III_paras
+=====================================
+
+.. py:module:: unduwave.wave_modules.bessy_III_paras
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.wave_modules.bessy_III_paras.get_std_bessy_III_paras
+
+
+Module Contents
+---------------
+
+.. py:function:: get_std_bessy_III_paras(ebeam_paras)
+

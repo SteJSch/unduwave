@@ -55,3 +55,6 @@ Module Contents
 
 
 
+   .. py:method:: get_summary()
+
+
