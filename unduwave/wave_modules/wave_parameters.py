@@ -205,6 +205,8 @@ class wave_prog_parameters(_attribute_collection):
 	ntupgrid = _attribute(0,in_name='NTUPGRID')
 	rayfile = _attribute(0,in_name='IWFILRAY')
 	xstart = _attribute(9999.,in_name='XSTART')
+	xinter = _attribute(-9999.,in_name='XINTER')
+	xstop = _attribute(9999.,in_name='XSTOP')
 	ystart = _attribute(0.0,in_name='YSTART')
 	zstart = _attribute(0.0,in_name='ZSTART')
 	vxin = _attribute(1.0,in_name='VXIN')
