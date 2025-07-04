@@ -212,6 +212,9 @@ class wave_prog_parameters(_attribute_collection):
 	vxin = _attribute(1.0,in_name='VXIN')
 	vyin = _attribute(0.0,in_name='VYIN')
 	vzin = _attribute(0.0,in_name='VZIN')
+	"""
+	a comment
+	"""
 
 	bxmapmin = _attribute(9999.,in_name='XMAPMN')
 	bxmapmax = _attribute(9999.,in_name='XMAPMX')
