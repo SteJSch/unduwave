@@ -718,6 +718,12 @@ Package Contents
    .. py:attribute:: xstart
 
 
+   .. py:attribute:: xinter
+
+
+   .. py:attribute:: xstop
+
+
    .. py:attribute:: ystart
 
 
@@ -731,6 +737,9 @@ Package Contents
 
 
    .. py:attribute:: vzin
+
+      a comment
+
 
 
    .. py:attribute:: bxmapmin

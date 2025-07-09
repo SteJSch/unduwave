@@ -4,7 +4,7 @@ Installation
 ===============================
 Linux
 ===============================
-| You need working git and python3 installations for thus guide to work.
+| You need working git and python3 installations for this guide to work.
 
 Open a terminal in the folder where you want to have unduwave. Type:
 
@@ -20,7 +20,7 @@ After everything is finished, you can go to the unduwave folder and run in a ter
 
 | This installs all required packages (consider adding a virtual environment).
 
-| After this, you can go the "scripts" subfolder and run:
+| After this, you can open a terminal in the "scripts/First-Examples" subfolder - or navigate there from inside a terminal using the "cd" command - and run:
 
 .. code-block:: console
 
@@ -33,7 +33,7 @@ If you encounter errors, you may have to recompile WAVE.
 
 .. code-block:: console
 
-   export WAVE_INCL="path/to/unduwave/"
+   export WAVE_INCL="path/to/unduwave/External-Software/WAVE"
 
 Then type: 
 

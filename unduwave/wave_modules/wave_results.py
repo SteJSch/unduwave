@@ -11,6 +11,7 @@ class wave_results :
 		"""
 		self._wave_api = wave_api
 		self._res_quantities = []
+		self._summary=None
 		self._res_folder      = self._wave_api._wave_prog_paras.res_folder.get()
 		self._res_folder_wave = self._res_folder + self._wave_api._wave_prog_paras.wave_data_res_folder.get()
 		self._res_folder_pics = self._res_folder + self._wave_api._wave_prog_paras.pics_folder.get()
@@ -27,6 +28,96 @@ class wave_results :
 		self.find_load_brilliance()
 		self.find_load_flux_density_on_axis()
 		self.find_load_stokes()
+		self.extract_summary()
+
+	def extract_summary(self):
+		"""
+		Extracts summary information from a WAVE run's files in the specified folder
+		and stores the results in the file self.wave_paras.res_summary_file within the folder.
+
+		Args:
+			folder (str): The folder containing the WAVE run files.
+		"""
+		wave_out_file = []
+		with open(self._res_folder_wave+"/wave.out", 'r') as o_f:
+			# read an store all lines into list
+			wave_out_file = o_f.readlines()
+
+		summary = {}
+		gamma = 0
+		open_angle = 0
+		# power, fund freq, cone opening, pinhole width at observaion point
+		for ind, line in enumerate(wave_out_file) : 
+			if line.find('(X,Y,Z), width, height:') >= 0 :
+				line_vals = wave_out_file[ind+2]
+				vals = []
+				for elem in line_vals.split(' ') :
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						vals.append(float(elem))
+				summary.update( { 'pinhole_x [m]' : vals[0] } )
+			if line.find('K, lx, N of effective periodical device:') >= 0 :
+				line_vals = wave_out_file[ind+1]
+				vals = []
+				for elem in line_vals.split(' ') :
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						vals.append(float(elem))
+				summary.update( { 'Undu_Para' : vals[0] } )
+			if line.find('first harmonical [eV] (estimate)') >= 0 :
+				line_vals = wave_out_file[ind+1]
+				parts = line_vals.split('->')
+				harm = float(parts[-1])
+				summary.update( { 'Fund. Freq. [eV]' : harm } )
+			if line.find('Initial energy [GeV] and gamma:') >= 0 :
+				part_last = line.split('Initial energy [GeV] and gamma:')[-1]
+				vals = []
+				for elem in part_last.split(' ') :
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						vals.append(float(elem))
+				gamma = vals[-1]
+				open_angle = 1/gamma
+			if line.find('BYmax,BYmin:') >= 0 :
+				part_last = line.split('BYmax,BYmin:')[-1]
+				vals = []
+				for elem in part_last.split(' ') :
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						vals.append(float(elem))
+				summary.update( { 'bmax [T]' : vals[0] } )
+				summary.update( { 'bmin [T]' : vals[1] } )
+			if line.find('Power irradiated by the device [kWATT]:') >= 0 :
+				part_last = line.split('Power irradiated by the device [kWATT]:')[-1]
+				vals = []
+				for elem in part_last.split(' ') :
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						vals.append(float(elem))
+				power = vals[0]
+				summary.update( { 'power [kW]' : power } )
+			if line.find('1. magnetic integral [T-m]:') >= 0 :
+				part_last = line.split('1. magnetic integral [T-m]:')[-1]
+				vals = []
+				for elem in part_last.split(' ') :
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						vals.append(float(elem))
+				firstint = vals[1]
+				summary.update( { 'first_int [Tm]' : firstint } )
+			if line.find('2. mag. integral [T-m**2]:') >= 0 :
+				part_last = line.split('2. mag. integral [T-m**2]:')[-1]
+				vals = []
+				for elem in part_last.split(' ') :
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						vals.append(float(elem))
+				scndint = vals[1]
+				summary.update( { 'scnd_int [Tmm]' : scndint } )
+		summary.update( { 'gamma' : gamma } )
+		summary.update( { 'half opening angle [rad]' : open_angle } )
+		if 'pinhole_x [m]' in summary :
+			summary.update( { 'cone_radius_at_x [mm]' : math.tan( open_angle ) * summary['pinhole_x [m]'] * 1000 } )
+		self._summary=summary
+
+		pics_folder = self._wave_api._wave_prog_paras.res_folder.get()+self._wave_api._wave_prog_paras.pics_folder.get()
+		dataFile=f'{pics_folder}{self._wave_api._wave_prog_paras.res_summary_file.get()}'
+		with open( dataFile, 'w') as o_f:
+			for key, val in summary.items() :
+				o_f.write( key + ' : ' + str(val) + '\n' )
 
 	def find_load_flux_density_distribution(self, energies) : 
 		"""

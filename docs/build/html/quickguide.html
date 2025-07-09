@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Quickguide &#8212; Unduwave v0.0.1 documentation</title>
+    <title>3. Quickguide &#8212; Unduwave v0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
@@ -14,8 +14,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. API Reference" href="autoapi/index.html" />
-    <link rel="prev" title="1. Installation" href="installation.html" />
+    <link rel="next" title="4. API Reference" href="autoapi/index.html" />
+    <link rel="prev" title="2. Installation" href="installation.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -34,16 +34,16 @@
           <div class="body" role="main">
             
   <section id="quickguide">
-<h1><span class="section-number">2. </span>Quickguide<a class="headerlink" href="#quickguide" title="Link to this heading">¶</a></h1>
+<h1><span class="section-number">3. </span>Quickguide<a class="headerlink" href="#quickguide" title="Link to this heading">¶</a></h1>
 <section id="general-things">
-<h2><span class="section-number">2.1. </span>General Things<a class="headerlink" href="#general-things" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.1. </span>General Things<a class="headerlink" href="#general-things" title="Link to this heading">¶</a></h2>
 <section id="the-coordinate-system">
-<h3><span class="section-number">2.1.1. </span>The Coordinate System<a class="headerlink" href="#the-coordinate-system" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>The Coordinate System<a class="headerlink" href="#the-coordinate-system" title="Link to this heading">¶</a></h3>
 <p>The x coordinate is in longitudinal direction, i.e. along the beam. The y-direction is vertical and z is horizontal.</p>
 </section>
 </section>
 <section id="first-run">
-<h2><span class="section-number">2.2. </span>First Run<a class="headerlink" href="#first-run" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.2. </span>First Run<a class="headerlink" href="#first-run" title="Link to this heading">¶</a></h2>
 <p>First you have to tell python where unduwave is located. For this we do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -82,7 +82,7 @@
 </div>
 </section>
 <section id="the-parameter-structures">
-<h2><span class="section-number">2.3. </span>The Parameter Structures<a class="headerlink" href="#the-parameter-structures" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.3. </span>The Parameter Structures<a class="headerlink" href="#the-parameter-structures" title="Link to this heading">¶</a></h2>
 <div class="line-block">
 <div class="line">There are a couple of parameter structures that allow to control the program flow. These are _ebeam_parameters, _screen_parameters, _spectrometer_paras, _undu_paras and _wave_prog_parameters. These are accessible vie the wave-object returned by a “unduwave.wave()” call and can be changed via the set-method as seen in the example above.</div>
 </div>
@@ -419,7 +419,7 @@
 </table>
 </section>
 <section id="undu-modes">
-<h2><span class="section-number">2.4. </span>Undu Modes<a class="headerlink" href="#undu-modes" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Undu Modes<a class="headerlink" href="#undu-modes" title="Link to this heading">¶</a></h2>
 <p>The different modes in which unduwave can be used are described. When creating a wave object via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">wave</span> <span class="o">=</span> <span class="n">uw</span><span class="o">.</span><span class="n">wave</span><span class="p">(</span><span class="n">undu_mode</span><span class="o">=...</span><span class="p">)</span>
 </pre></div>
@@ -432,7 +432,7 @@
 </div>
 </section>
 <section id="user-defined-b-fields">
-<h2><span class="section-number">2.5. </span>User-defined B-Fields<a class="headerlink" href="#user-defined-b-fields" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.5. </span>User-defined B-Fields<a class="headerlink" href="#user-defined-b-fields" title="Link to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">os</span>
 <span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;absolute/path/to/unduwave/&#39;</span><span class="p">)</span>
@@ -466,7 +466,7 @@
 <p>This specifies two field files, one for the vertical and one for the horizontal components.</p>
 </section>
 <section id="elliptical-undulator">
-<h2><span class="section-number">2.6. </span>Elliptical Undulator<a class="headerlink" href="#elliptical-undulator" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.6. </span>Elliptical Undulator<a class="headerlink" href="#elliptical-undulator" title="Link to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">os</span>
 <span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;absolute/path/to/unduwave/&#39;</span><span class="p">)</span>
@@ -485,7 +485,7 @@
 <p>An elliptical undulator is created. The parameters are set - b0y and b0z - the vertical and horizontal B-amplitude. nper - the number of periods, perl_x - the period length and ell_shift the shift of the elliptical undulator in % of the period-length.</p>
 </section>
 <section id="simple-undulator-with-endpoles">
-<h2><span class="section-number">2.7. </span>Simple Undulator with Endpoles<a class="headerlink" href="#simple-undulator-with-endpoles" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.7. </span>Simple Undulator with Endpoles<a class="headerlink" href="#simple-undulator-with-endpoles" title="Link to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">os</span>
 <span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;absolute/path/to/unduwave/&#39;</span><span class="p">)</span>
@@ -502,9 +502,9 @@
 <p>A simple undulator model with endpoles is created. We set the B-field amplitude b0Halbasy, the period-length xlHalbasy and the number of main poles. Given the number of periods, the number of poles is 2*n+1.</p>
 </section>
 <section id="plotting-and-results">
-<h2><span class="section-number">2.8. </span>Plotting and Results<a class="headerlink" href="#plotting-and-results" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">3.8. </span>Plotting and Results<a class="headerlink" href="#plotting-and-results" title="Link to this heading">¶</a></h2>
 <section id="getting-results">
-<h3><span class="section-number">2.8.1. </span>Getting Results<a class="headerlink" href="#getting-results" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">3.8.1. </span>Getting Results<a class="headerlink" href="#getting-results" title="Link to this heading">¶</a></h3>
 <p>After a succesful simulation, get the results by doing:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
 </pre></div>
@@ -537,9 +537,9 @@
 </div>
 </section>
 <section id="plotting-results">
-<h3><span class="section-number">2.8.2. </span>Plotting Results<a class="headerlink" href="#plotting-results" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">3.8.2. </span>Plotting Results<a class="headerlink" href="#plotting-results" title="Link to this heading">¶</a></h3>
 <section id="d-plots">
-<h4><span class="section-number">2.8.2.1. </span>2D Plots<a class="headerlink" href="#d-plots" title="Link to this heading">¶</a></h4>
+<h4><span class="section-number">3.8.2.1. </span>2D Plots<a class="headerlink" href="#d-plots" title="Link to this heading">¶</a></h4>
 <p>Each quantities data is saved under quantity._data. Each quantity has a number of plotting routines. To do a simple 2D plot, you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
 <span class="linenos">2</span><span class="n">traj_x</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;traj_x&#39;</span><span class="p">)</span>
@@ -550,7 +550,7 @@
 <p>This plots the y-component of the B-field over the x-coordinate.</p>
 </section>
 <section id="merge-plots">
-<h4><span class="section-number">2.8.2.2. </span>Merge Plots<a class="headerlink" href="#merge-plots" title="Link to this heading">¶</a></h4>
+<h4><span class="section-number">3.8.2.2. </span>Merge Plots<a class="headerlink" href="#merge-plots" title="Link to this heading">¶</a></h4>
 <p>To plot y and z components together, do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
 <span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
@@ -564,7 +564,7 @@
 <p>This will plot By and Bz into the same window, setting a title and returning the new nfig number which can be used in the next plotting command as an argument.</p>
 </section>
 <section id="log-plots">
-<h4><span class="section-number">2.8.2.3. </span>Log Plots<a class="headerlink" href="#log-plots" title="Link to this heading">¶</a></h4>
+<h4><span class="section-number">3.8.2.3. </span>Log Plots<a class="headerlink" href="#log-plots" title="Link to this heading">¶</a></h4>
 <p>To plot logarithmic axes, do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
 <span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
@@ -575,7 +575,7 @@
 </div>
 </section>
 <section id="parametric-plots">
-<h4><span class="section-number">2.8.2.4. </span>Parametric Plots<a class="headerlink" href="#parametric-plots" title="Link to this heading">¶</a></h4>
+<h4><span class="section-number">3.8.2.4. </span>Parametric Plots<a class="headerlink" href="#parametric-plots" title="Link to this heading">¶</a></h4>
 <p>To do parametric plots, do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
 <span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
@@ -590,7 +590,7 @@
 </div>
 </section>
 <section id="id3">
-<h4><span class="section-number">2.8.2.5. </span>3D Plots<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h4>
+<h4><span class="section-number">3.8.2.5. </span>3D Plots<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h4>
 <p>To do 3D plots, do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
 <span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
@@ -634,7 +634,7 @@
 </figure>
 </section>
 <section id="plot-flux-density-distributions">
-<h4><span class="section-number">2.8.2.6. </span>Plot Flux Density Distributions<a class="headerlink" href="#plot-flux-density-distributions" title="Link to this heading">¶</a></h4>
+<h4><span class="section-number">3.8.2.6. </span>Plot Flux Density Distributions<a class="headerlink" href="#plot-flux-density-distributions" title="Link to this heading">¶</a></h4>
 <p>To plot the flux density distribution, you have to specify the energy at which you want to do this.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">nfig</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># telling it to start with figure number 0</span>
 <span class="linenos">2</span><span class="n">results</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span> <span class="c1"># Return Result Object</span>
@@ -668,27 +668,28 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Quickguide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#general-things">2.1. General Things</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#first-run">2.2. First Run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-parameter-structures">2.3. The Parameter Structures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#undu-modes">2.4. Undu Modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#user-defined-b-fields">2.5. User-defined B-Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#elliptical-undulator">2.6. Elliptical Undulator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#simple-undulator-with-endpoles">2.7. Simple Undulator with Endpoles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#plotting-and-results">2.8. Plotting and Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Quickguide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-things">3.1. General Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#first-run">3.2. First Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-parameter-structures">3.3. The Parameter Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#undu-modes">3.4. Undu Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-defined-b-fields">3.5. User-defined B-Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elliptical-undulator">3.6. Elliptical Undulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simple-undulator-with-endpoles">3.7. Simple Undulator with Endpoles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-and-results">3.8. Plotting and Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">3. API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">4. API Reference</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="installation.html" title="previous chapter"><span class="section-number">1. </span>Installation</a></li>
-      <li>Next: <a href="autoapi/index.html" title="next chapter"><span class="section-number">3. </span>API Reference</a></li>
+      <li>Previous: <a href="installation.html" title="previous chapter"><span class="section-number">2. </span>Installation</a></li>
+      <li>Next: <a href="autoapi/index.html" title="next chapter"><span class="section-number">4. </span>API Reference</a></li>
   </ul></li>
 </ul>
 </div>

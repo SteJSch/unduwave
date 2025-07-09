@@ -204,11 +204,11 @@ class wave_prog_parameters(_attribute_collection):
 	ihisascii = _attribute(111,in_name='IHISASCII')
 	ntupgrid = _attribute(0,in_name='NTUPGRID')
 	rayfile = _attribute(0,in_name='IWFILRAY')
-	xstart = _attribute(9999.,in_name='XSTART')
 	xinter = _attribute(-9999.,in_name='XINTER')
-	xstop = _attribute(9999.,in_name='XSTOP')
+	xstart = _attribute(9999.,in_name='XSTART')
 	ystart = _attribute(0.0,in_name='YSTART')
 	zstart = _attribute(0.0,in_name='ZSTART')
+	xstop = _attribute(9999.,in_name='XSTOP')
 	vxin = _attribute(1.0,in_name='VXIN')
 	vyin = _attribute(0.0,in_name='VYIN')
 	vzin = _attribute(0.0,in_name='VZIN')
@@ -252,10 +252,16 @@ class wave_prog_parameters(_attribute_collection):
 		- undu_mode = 'undu_endp'
 		- undu_mode = 'undu_gap'
 		"""
-		
-		dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/../../External-Software/WAVE/'))
-		self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/../UNDWAVE_IN_FILES/WAVE-In-Files/'))
+
+		#std-bad!		
+		# dir_path = os.path.dirname(os.path.realpath(__file__))
+		# self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/../../External-Software/WAVE/'))
+		# self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/../UNDWAVE_IN_FILES/WAVE-In-Files/'))
+		#for containerization?
+		dir_path='/var/lib/unduwave'
+		self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/External-Software/WAVE/'))
+		self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/unduwave/UNDWAVE_IN_FILES/WAVE-In-Files/'))
+
 		self.in_files.set({ 'By' : 'load_ext_on_axis_by_ALL_OUT.in', 
 							'Byz' : 'load_ext_on_axis_byz_ALL_OUT.in', 
 							'Bxyz' : 'load_ext_on_axis_bxyz_ALL_OUT.in', 

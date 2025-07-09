@@ -350,6 +350,12 @@ Module Contents
    .. py:attribute:: xstart
 
 
+   .. py:attribute:: xinter
+
+
+   .. py:attribute:: xstop
+
+
    .. py:attribute:: ystart
 
 
@@ -363,6 +369,9 @@ Module Contents
 
 
    .. py:attribute:: vzin
+
+      a comment
+
 
 
    .. py:attribute:: bxmapmin
