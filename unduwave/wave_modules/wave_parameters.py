@@ -253,14 +253,14 @@ class wave_prog_parameters(_attribute_collection):
 		- undu_mode = 'undu_gap'
 		"""
 
-		#std-bad!		
-		# dir_path = os.path.dirname(os.path.realpath(__file__))
-		# self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/../../External-Software/WAVE/'))
-		# self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/../UNDWAVE_IN_FILES/WAVE-In-Files/'))
+		#std-bad!
+		dir_path = os.path.dirname(os.path.realpath(__file__))
+		self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/../../External-Software/WAVE/'))
+		self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/../UNDWAVE_IN_FILES/WAVE-In-Files/'))
 		#for containerization?
-		dir_path='/var/lib/unduwave'
-		self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/External-Software/WAVE/'))
-		self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/unduwave/UNDWAVE_IN_FILES/WAVE-In-Files/'))
+		# dir_path='/var/lib/unduwave'
+		# self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/External-Software/WAVE/'))
+		# self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/unduwave/UNDWAVE_IN_FILES/WAVE-In-Files/'))
 
 		self.in_files.set({ 'By' : 'load_ext_on_axis_by_ALL_OUT.in', 
 							'Byz' : 'load_ext_on_axis_byz_ALL_OUT.in', 
