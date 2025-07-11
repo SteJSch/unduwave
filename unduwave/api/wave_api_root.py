@@ -67,9 +67,3 @@ class wave_api :
 		results = wave_results(wave_api=self)
 		results.load_from_res_folder()
 		return results
-
-	def get_summary(self) : 
-		if not hasattr(self, '_summary'):
-			post= wave_postprocess(wave_api=self)
-			self._summary = post.extract_summary(folder=None)
-		return self._summary
