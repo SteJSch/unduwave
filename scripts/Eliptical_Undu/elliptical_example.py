@@ -19,7 +19,7 @@ res_folder = dir_path+'/res/'
 """
 Getting wave
 """
-wave = uw.wave(undu_mode='undu_ellip')
+wave = uw.wave(wave_mode='undu_ellip')
 wave_prog_paras = wave._wave_prog_paras
 
 """

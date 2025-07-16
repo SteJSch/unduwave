@@ -116,13 +116,13 @@ class undu_paras(_attribute_collection):
 	"""
 	Parameters controlling the generation of the B-Field
 
-	wave_prog_parameters.undu_endp = 1
+	prog_parameters.undu_endp = 1
 		pkHalbasy - K-Parameter of Machine
 		b0Halbasy - B-Amplitude of Machine (either pkHalbasy or this) [T]
 		xlHalbasy- period length in x-direction [m]
 		ahwpolHalbasy - number of main poles (odd number)
 
-	wave_prog_parameters.undu_ellip = 1
+	prog_parameters.undu_ellip = 1
 		b0y - B-Amplitude in y - [T]
 		b0z - B-Amplitude in z - [T]
 		nper- numer of periods
@@ -153,12 +153,12 @@ class undu_paras(_attribute_collection):
 	iells2s3 = _attribute(0,in_name='IELLS2S3') # >=0: S3-MODE - parallel; <0: S2-MODE - antiparallel
 	iellcoef = _attribute(0,in_name='IELLCOEF') # !>0: read IELLCOEF Fourier coefficients from file ellana.coef, =<0: First and second coefficients only with C0=0.5 and C1=1.
 
-	def get_std_paras(self,undu_mode): 
+	def get_std_paras(self,wave_mode): 
 		"""
 		getting standard undu parameters
-		undu_mode - same as wave_prog_parameters.undu_mode
+		wave_mode - same as prog_parameters.wave_mode
 		"""
-		self.undu_type.set(undu_mode)
+		self.undu_type.set(wave_mode)
 		if self.undu_type.get() == 'undu_ellip' :
 			self.b0y.set(0.3)
 			self.b0z.set(1.0)
@@ -239,18 +239,18 @@ class wave_prog_parameters(_attribute_collection):
 	undu_gap = _attribute(0,in_name='KUNDUGAP') # undulator with analytic gap-variation
 	undu_ellip = _attribute(0,in_name='KELLIP') # elliptic undulator
 	undu_ellip_ana = _attribute(0,in_name='KELLANA') # elliptic undulator
-	undu_mode = _attribute('undu_easy') # wave mode
+	wave_mode = _attribute('undu_easy') # wave mode
 
-	def get_std_paras(self, undu_mode = 'undu_easy' ): 
+	def get_std_paras(self, wave_mode = 'undu_easy' ): 
 		"""
 		Getting standard wave-parameters depending on mode
-		- undu_mode = 'By' - takes by field data and runs with that
-		- undu_mode = 'Byz'
-		- undu_mode = 'Bxyz'
-		- undu_mode = 'undu_ellip' - standard elliptical undulator
-		- undu_mode = 'undu_easy'
-		- undu_mode = 'undu_endp'
-		- undu_mode = 'undu_gap'
+		- wave_mode = 'By' - takes by field data and runs with that
+		- wave_mode = 'Byz'
+		- wave_mode = 'Bxyz'
+		- wave_mode = 'undu_ellip' - standard elliptical undulator
+		- wave_mode = 'undu_easy'
+		- wave_mode = 'undu_endp'
+		- wave_mode = 'undu_gap'
 		"""
 
 		#std-bad!
@@ -293,7 +293,7 @@ class wave_prog_parameters(_attribute_collection):
 		self.iefold.set(1)
 		self.isigusr.set(1)
 		self.spec_calc.set(1) # boolean
-		self.undu_mode.set(undu_mode)
+		self.wave_mode.set(wave_mode)
 
 		self.b_type.set('none')
 		self.irbtab.set(0)
@@ -304,26 +304,26 @@ class wave_prog_parameters(_attribute_collection):
 		self.undu_gap.set(0)
 		self.undu_ellip.set(0)
 
-		if undu_mode == 'By' :
+		if wave_mode == 'By' :
 			self.b_type.set('By')
 			self.irbtab.set(-2)
-		elif undu_mode == 'Byz' :
+		elif wave_mode == 'Byz' :
 			self.b_type.set('Byz')
 			self.irbtabzy.set(1)
-		elif undu_mode == 'Bxyz' :
+		elif wave_mode == 'Bxyz' :
 			self.b_type.set('Bxyz')
 			self.irbtabxyz.set(1)
-		elif undu_mode == 'undu_ellip' :
+		elif wave_mode == 'undu_ellip' :
 			self.undu_ellip.set(1)
-		elif undu_mode == 'undu_easy' :
+		elif wave_mode == 'undu_easy' :
 			self.undu_easy.set(1)
-		elif undu_mode == 'undu_endp' :
+		elif wave_mode == 'undu_endp' :
 			self.undu_endp.set(1)
-		elif undu_mode == 'undu_gap' :
+		elif wave_mode == 'undu_gap' :
 			self.undu_gap.set(1)
-		elif undu_mode == 'undu_ellip_ana' :
+		elif wave_mode == 'undu_ellip_ana' :
 			self.undu_ellip_ana.set(1)
-		elif undu_mode == 'bmap' :
+		elif wave_mode == 'bmap' :
 			self.b_type.set('bmap')
 			self.ntupgrid.set(-1)
 			self.irfileb0.set(-6) # loading field map

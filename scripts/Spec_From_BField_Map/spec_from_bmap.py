@@ -17,7 +17,7 @@ res_folder=dir_path+'/res/' # Result-Folder
 field_dir=dir_path+'/field_map/' # Field-Map Folder
 field_file='field_map.map' # Field Map File
 
-wave = uw.wave(undu_mode='bmap') # Get a wave object for bmap-calculation
+wave = uw.wave(wave_mode='bmap') # Get a wave object for bmap-calculation
 
 waveparas = wave._wave_prog_paras
 waveparas.ihisascii.set(111) # extract all result-data

@@ -20,7 +20,7 @@ class wave_control():
 		"""	  
 		self._wave_api = wave_api
 		self.current_folder = current_folder
-		self.wave_folder = self._wave_api._wave_prog_paras.wave_prog_folder.get()
+		self.wave_folder = self._wave_api._prog_paras.wave_prog_folder.get()
 
 	def run(self):
 		"""Run Wave from the self.wave_folder.

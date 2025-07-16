@@ -5,8 +5,6 @@ import sys
 import math
 import numpy as np
 sys.path.insert(0, '../../../')
-sys.path.insert(0, '../')
-from bessy_III_paras import get_std_bessy_III_paras
 
 try :
 	# works when calling script with python3 script_file
@@ -23,7 +21,7 @@ res_folder = dir_path+'/res/'
 """
 Getting wave
 """
-wave = uw.wave(undu_mode='undu_endp') # Simple undulator model with endpoles
+wave = uw.wave(wave_mode='undu_endp') # Simple undulator model with endpoles
 wave_prog_paras = wave._wave_prog_paras
 
 """
@@ -76,7 +74,7 @@ screen_paras.pinh_h.set(40) # pinhole height mm
 Setting Beam Parameter
 """
 ebeam_paras = wave._ebeam_paras
-ebeam_paras = get_std_bessy_III_paras(ebeam_paras=ebeam_paras)
+ebeam_paras = ebeam_paras.get_std_bessy_III_paras()
 
 """
 Run

@@ -20,7 +20,7 @@ res_folder = dir_path+'/res/'
 Getting wave
 """
 
-wave = uw.wave(undu_mode='By')
+wave = uw.wave(wave_mode='By')
 wave_prog_paras = wave._wave_prog_paras
 ebeam_paras = wave._ebeam_paras
 

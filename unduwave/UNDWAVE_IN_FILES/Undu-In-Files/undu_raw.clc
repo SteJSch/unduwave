@@ -46,6 +46,11 @@ $Mcoating= 0.0 !0.014 ! coating of REC magnets
 1. 1. 0. 0. 0. !spacing and direction of arrangement, rotation angle
 1. 1. 1.                   !scaling and symmetry of magnetization vector
 
+*COILS START
+
+
+*COILS END
+
 & Materials
 2            ! number of material files
 1 1 1 undumag_mu_77K.dat

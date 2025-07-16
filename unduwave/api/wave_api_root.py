@@ -13,11 +13,11 @@ class wave_api :
 	Wave API-class for controlling basic wave-functionality. 
 	Holds the basic parameter classes.
 	"""
-	def __init__(self,undu_mode='undu_endp') :
+	def __init__(self,wave_mode='undu_endp') :
 		"""
 		Initialize the WAVE parameters
 
-		:param str undu_mode: can be one of the following: |
+		:param str wave_mode: can be one of the following: |
 			'By' : 	
 			'Byz' :	
 			'Bxyz' :
@@ -27,8 +27,8 @@ class wave_api :
 			'undu_gap' :
 		"""
 
-		self._wave_prog_paras = wave_prog_parameters()
-		self._wave_prog_paras.get_std_paras(undu_mode=undu_mode)
+		self._prog_paras = wave_prog_parameters()
+		self._prog_paras.get_std_paras(wave_mode=wave_mode)
 		self._ebeam_paras = ebeam_parameters()
 		self._ebeam_paras.get_std_paras()
 		self._screen_paras = screen_parameters()
@@ -38,7 +38,7 @@ class wave_api :
 		self._bfield_paras = bfield_paras()
 		self._bfield_paras.get_std_paras()
 		self._undu_paras = undu_paras()
-		self._undu_paras.get_std_paras(undu_mode=undu_mode)
+		self._undu_paras.get_std_paras(wave_mode=wave_mode)
 
 	def set_bessy_II_elliptical_undu(self,nperiods) :
 		"""

@@ -1,0 +1,174 @@
+
+* Lines written by undugui.py
+Mode Hybrid
+
+& User_Comment
+Planar Hybrid Undulator
+
+*------ Variables
+
+$PerLen = 20
+
+$white=0
+$black=1
+$red=2
+$green=3
+$blue=4
+$yellow=5
+$magenta=6
+$cyan=7
+
+$Br_Hybrid = 1.62
+$mu_Hybrid = 1.03
+$KsiPerp_Hybrid = 0.17
+$RECIndex_Hybrid = 1
+$IronIndex_Hybrid = 2
+$ColorMag_Hybrid = $red
+$ColorPol_Hybrid = $blue
+
+$FracDivY_Mag_Hybrid = 2.0
+$FracDivZ_Mag_Hybrid = 2.0
+
+$Mcoating= 0.014 ! coating of REC magnets
+
+* ######################## NEW #####################################
+
+* Magnet Definitions --------------------------------
+
+*########## Order of Poles and Magnets
+
+*PER START
+& Pole
+BlockChamf obj_0_pole_main obj_0_pole $ColorPol_Hybrid  !key, name, mother, color
+-8.549999999999999 -17.2705 -6.3095
+$IronIndex_Hybrid  !material index
+3.4 28.541 12.619 0.30  !dimensions 
+3 12 3 12 3  !segmentation
+ 
+& Pole
+Corners obj_0_pole_uside_l obj_0_pole $ColorPol_Hybrid  !key, name, mother, color
+-8.549999999999999 -6.999499999999998 -14.119
+$IronIndex_Hybrid  !material index
+3 1 1 1 1  !segmentation
+10
+-1.7 2.1875 -1.5
+-1.7 2.6875 -1.0
+-1.7 2.6875 1.5
+-1.7 -2.6875 1.5
+-1.7 -2.6875 -1.5
+1.7 2.1875 -1.5
+1.7 2.6875 -1.0
+1.7 2.6875 1.5
+1.7 -2.6875 1.5
+1.7 -2.6875 -1.5
+ 
+& Pole
+Corners obj_0_pole_lside_l obj_0_pole $ColorPol_Hybrid  !key, name, mother, color
+-8.549999999999999 -20.613999999999997 -14.119
+$IronIndex_Hybrid  !material index
+3 1 1 1 1  !segmentation
+6
+-1.7 -10.927 1.5
+0.0 -10.927 -1.5
+1.7 -10.927 1.5
+1.7 10.927 1.5
+0.0 10.927 -1.5
+-1.7 10.927 1.5
+ 
+& Magnet
+BlockChamf obj_1_mag_main obj_1_mag $ColorMag_Hybrid  !key, name, mother, color
+-3.3 -21.5 -12.25
+1.62 -1.0 0.0 0.0 $RECIndex_Hybrid  !length bc and comp. of magnetization, material index
+6.1 37.0 24.5 0.30  !dimensions 
+1 1 1 1 1  !segmentation
+ 
+& Magnet
+Corners obj_1_mag_sideL obj_1_mag $ColorMag_Hybrid  !key, name, mother, color
+-3.3 -28.65 -27.0
+1.62 -1.0 0.0 0.0 $RECIndex_Hybrid  !length bc and comp. of magnetization, material index
+1 1 1 1 1  !segmentation
+8
+-3.05 -11.35 -2.5
+-3.05 11.35 -2.5
+-3.05 -11.35 2.5
+-3.05 11.35 2.5
+3.05 -11.35 -2.5
+3.05 11.35 -2.5
+3.05 -11.35 2.5
+3.05 11.35 2.5
+ 
+& Pole
+BlockChamf obj_2_pole_main obj_2_pole $ColorPol_Hybrid  !key, name, mother, color
+1.95 -17.2705 -6.3095
+$IronIndex_Hybrid  !material index
+3.4 28.541 12.619 0.30  !dimensions 
+3 12 3 12 3  !segmentation
+ 
+& Pole
+Corners obj_2_pole_uside_l obj_2_pole $ColorPol_Hybrid  !key, name, mother, color
+1.95 -6.999499999999998 -14.119
+$IronIndex_Hybrid  !material index
+3 1 1 1 1  !segmentation
+10
+-1.7 2.1875 -1.5
+-1.7 2.6875 -1.0
+-1.7 2.6875 1.5
+-1.7 -2.6875 1.5
+-1.7 -2.6875 -1.5
+1.7 2.1875 -1.5
+1.7 2.6875 -1.0
+1.7 2.6875 1.5
+1.7 -2.6875 1.5
+1.7 -2.6875 -1.5
+ 
+& Pole
+Corners obj_2_pole_lside_l obj_2_pole $ColorPol_Hybrid  !key, name, mother, color
+1.95 -20.613999999999997 -14.119
+$IronIndex_Hybrid  !material index
+3 1 1 1 1  !segmentation
+6
+-1.7 -10.927 1.5
+0.0 -10.927 -1.5
+1.7 -10.927 1.5
+1.7 10.927 1.5
+0.0 10.927 -1.5
+-1.7 10.927 1.5
+ 
+& Magnet
+BlockChamf obj_3_mag_main obj_3_mag $ColorMag_Hybrid  !key, name, mother, color
+7.199999999999999 -21.5 -12.25
+1.62 1.0 0.0 0.0 $RECIndex_Hybrid  !length bc and comp. of magnetization, material index
+6.1 37.0 24.5 0.30  !dimensions 
+1 1 1 1 1  !segmentation
+ 
+& Magnet
+Corners obj_3_mag_sideL obj_3_mag $ColorMag_Hybrid  !key, name, mother, color
+7.199999999999999 -28.65 -27.0
+1.62 1.0 0.0 0.0 $RECIndex_Hybrid  !length bc and comp. of magnetization, material index
+1 1 1 1 1  !segmentation
+8
+-3.05 -11.35 -2.5
+-3.05 11.35 -2.5
+-3.05 -11.35 2.5
+-3.05 11.35 2.5
+3.05 -11.35 -2.5
+3.05 11.35 -2.5
+3.05 -11.35 2.5
+3.05 11.35 2.5
+ 
+
+*PER END
+
+& Module
+0. 0. 0.                   !offset of module
+1          !number of arrays within module
+1. 1. 0. 0. 0. !spacing and direction of arrangement, rotation angle
+1. 1. 1.                   !scaling and symmetry of magnetization vector
+
+& Materials
+2            ! number of material files
+1 1 1 undumag_mu_77K.dat
+2 2 3 Vanadium_Permendur_Radia.dat
+
+
+*************
