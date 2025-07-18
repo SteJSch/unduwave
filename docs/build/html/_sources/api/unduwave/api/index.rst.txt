@@ -1,0 +1,16 @@
+unduwave.api
+============
+
+.. py:module:: unduwave.api
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/unduwave/api/undu_api_root/index
+   /api/unduwave/api/wave_api_root/index
+
+

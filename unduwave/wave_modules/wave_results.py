@@ -131,7 +131,7 @@ class wave_results :
 		files = f_h.find_files_exptn(folder = self._res_folder_wave, hints = [file_name], exptns = [])
 		en_files = []
 		for file in files : 
-			data = pd.read_csv( self._res_folder_wave + file, skiprows=3,header=None, dtype=object, delim_whitespace=True)
+			data = pd.read_csv( self._res_folder_wave + file, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 			data.columns = [ "z", "y", "S0", "S1", "S2", "S3" ]
 			cols = data.columns
 			for col in cols:
@@ -452,7 +452,7 @@ class wave_results :
 		for filename in os.listdir(self._res_folder_wave):
 			if (filename.find('brilliance_3702') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=6,header=None, dtype=object, delim_whitespace=True)
+					data = pd.read_csv( self._res_folder_wave + filename, skiprows=6,header=None, dtype=object,delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "en", "b0", "b1", "b2", "b3", "b0f", "b1f", "b2f", "b3f", "b0e",\
@@ -515,7 +515,7 @@ class wave_results :
 		for filename in os.listdir(self._res_folder_wave):
 			if (filename.find('stokes_pinhole_emittance_espread') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delim_whitespace=True)
+					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ 'en', 'flux', 's1', 's2', 's3' ]
@@ -549,7 +549,7 @@ class wave_results :
 		for filename in os.listdir(self._res_folder_wave):
 			if (filename.find('irradiated_power_dist') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=2,header=None, dtype=object, delim_whitespace=True)
+					data = pd.read_csv( self._res_folder_wave + filename, skiprows=2,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "z", "y", "power" ]
@@ -593,7 +593,7 @@ class wave_results :
 
 			if (filename.find('trajectory.wva') >= 0) : 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delim_whitespace=True)
+					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "x", "y", "z", "Bx", "By", "Bz" ]

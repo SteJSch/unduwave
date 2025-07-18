@@ -15,10 +15,13 @@ Subpackages
 .. toctree::
    :maxdepth: 1
 
+   /autoapi/unduwave/analytical_module/index
    /autoapi/unduwave/api/index
    /autoapi/unduwave/attribute_classes/index
    /autoapi/unduwave/helpers/index
+   /autoapi/unduwave/optimization_module/index
    /autoapi/unduwave/quantities/index
+   /autoapi/unduwave/undu_modules/index
    /autoapi/unduwave/wave_modules/index
 
 
@@ -70,6 +73,10 @@ Classes
    unduwave.wave_prepare
    unduwave.wave_control
    unduwave.wave_results
+   unduwave.undu_postprocess
+   unduwave.undu_prepare
+   unduwave.undu_control
+   unduwave.undu_results
 
 
 Functions
@@ -80,64 +87,96 @@ Functions
    unduwave.to_scn
    unduwave.to_scn
    unduwave.to_scn
-   unduwave.get_std_bessy_III_paras
 
 
 Package Contents
 ----------------
 
+.. py:function:: to_scn(number: float, norm: bool = True)
+
+   Converts number to string using scientific notation
+
+   :param number: The number to convert
+   :param norm: If true, std scientific notation, False: With leading 0.
+   :return: The resulting string.
+
+
 .. py:data:: cm_inch
 
-.. py:function:: to_scn(number, norm=True)
-
-   converts number to scientific notation
+   Conversion factor cm to inch
 
 
 .. py:data:: fein_const
 
+   Fein Structure Constant
+
+
 .. py:data:: hbar
    :value: 1.054e-34
+
+
+   Planck's constant devided by 2 pi
 
 
 .. py:data:: q_el
    :value: 1.602e-19
 
 
+   Charge of electron, [C]
+
+
 .. py:data:: m_el
    :value: 9.109e-31
+
+
+   mass pf electron [kg]
 
 
 .. py:data:: v_c
    :value: 299792458
 
 
+   velocity of light [m/s]
+
+
 .. py:data:: mu0
    :value: 8.854e-12
 
 
+   Vacuum permittivity [F/m]
+
+
 .. py:data:: R_el
 
-.. py:class:: wave(undu_mode='undu_endp')
+   classical electron radius [m]
 
+
+.. py:class:: wave(wave_mode='undu_endp')
+
+   
    Wave API-class for controlling basic wave-functionality. 
    Holds the basic parameter classes.
 
-   Initialize the WAVE parameters
-
-   :param str undu_mode: can be one of the following: |
-           'By' :  
-           'Byz' : 
-           'Bxyz' :
-           'undu_ellip' :
-           'undu_easy' :
-           'undu_endp' :
-           'undu_gap' :
+   :param str wave_mode: can be one of the following.
+           'By','Byz',     'Bxyz', 'undu_ellip', 'undu_endp' :
 
 
-   .. py:method:: set_bessy_II_elliptical_undu(nperiods)
+   .. py:attribute:: _prog_paras
 
-      Sets standard settings for bessy II and some helical undulator
 
+   .. py:attribute:: _ebeam_paras
+
+
+   .. py:attribute:: _screen_paras
+
+
+   .. py:attribute:: _spectrometer_paras
+
+
+   .. py:attribute:: _bfield_paras
+
+
+   .. py:attribute:: _undu_paras
 
 
    .. py:method:: run()
@@ -152,43 +191,32 @@ Package Contents
 
 
 
-   .. py:method:: get_summary()
+.. py:class:: undu(undu_mode='from_clc_file')
+
+   Undumag API-class for controlling basic undumag-functionality. 
+   Holds the basic parameter classes.
+
+   Initialize the Undumag parameters
+
+   :param str undu_mode: can be one of the following: 'from_clc_file', 'from_undu_magns'
 
 
-.. py:class:: undu(undu_mode='undu_easy', res_folder='')
+   .. py:method:: run()
 
-   
-                   
-
-
-   .. py:method:: add_element(element)
+      Runs undumag with the given settings, prepares and postprocesses data
 
 
-   .. py:method:: get_para()
+
+   .. py:method:: load_clc_raw()
 
 
-   .. py:method:: set_para(para)
+   .. py:method:: set_force_calc(object)
 
 
-   .. py:method:: create_fresh_nam(file_lines, undu_paras=None)
+   .. py:method:: get_results()
 
+      Returns the results from a given simulation as result-object.
 
-   .. py:method:: create_fresh_clc(file_lines, undu_paras=None)
-
-
-   .. py:method:: get_std_para()
-
-
-   .. py:method:: run(undu_paras=None, copy='', freate_fresh_clc=True)
-
-
-   .. py:method:: load_on_axis_undumag_file(file)
-
-
-   .. py:method:: load_force_undumag_file(file)
-
-
-   .. py:method:: load_beff_undumag_file(file)
 
 
 .. py:class:: _attribute(value=None, name=None, in_name=None, unit='', fac=None)
@@ -286,11 +314,18 @@ Package Contents
 
 
 
+.. py:function:: to_scn(number: float, norm: bool = True)
+
+   Converts number to string using scientific notation
+
+   :param number: The number to convert
+   :param norm: If true, std scientific notation, False: With leading 0.
+   :return: The resulting string.
+
+
 .. py:data:: cm_inch
 
-.. py:function:: to_scn(number, norm=True)
-
-   converts number to scientific notation
+   Conversion factor cm to inch
 
 
 .. py:class:: _attribute(value=None, name=None, in_name=None, unit='', fac=None)
@@ -396,13 +431,13 @@ Package Contents
    Defining basic electron-beam parameters
    beam_en - Beam energy in [GeV]
    current - current in [A]
-   bsigz - horizontal beam size [m]
-   bsigzp - Horizontal beam divergence [rad]
-   bsigy - vertical beam size [m]
-   bsigyp - vertical beam divergence [rad]
+   beamSizeHor - horizontal beam size [m]
+   beamDiveHor - Horizontal beam divergence [rad]
+   beamSizeVer - vertical beam size [m]
+   beamDiveVer - vertical beam divergence [rad]
    espread - energy spread [%]
-   emitt_h/v - horizontal and vertical emittance [mrad]
-   betfunh/v - horizontal and vertical beta functions [m]
+   emittanceHor/Ver - horizontal and vertical emittance [mrad]
+   betaFunctionHor/Ver - horizontal and vertical beta functions [m]
    circumference - Ring circumference in [m]
    rdipol - Bending radius of dipoles [m]
 
@@ -412,34 +447,40 @@ Package Contents
    .. py:attribute:: beam_en
 
 
+   .. py:attribute:: gammaFactor
+
+
+   .. py:attribute:: betaFactor
+
+
    .. py:attribute:: current
 
 
-   .. py:attribute:: bsigz
+   .. py:attribute:: beamSizeHor
 
 
-   .. py:attribute:: bsigzp
+   .. py:attribute:: beamDiveHor
 
 
-   .. py:attribute:: bsigy
+   .. py:attribute:: beamSizeVer
 
 
-   .. py:attribute:: bsigyp
+   .. py:attribute:: beamDiveVer
 
 
    .. py:attribute:: espread
 
 
-   .. py:attribute:: emitt_h
+   .. py:attribute:: emittanceHor
 
 
-   .. py:attribute:: emitt_v
+   .. py:attribute:: emittanceVer
 
 
-   .. py:attribute:: betfunh
+   .. py:attribute:: betaFunctionHor
 
 
-   .. py:attribute:: betfunv
+   .. py:attribute:: betaFunctionVer
 
 
    .. py:attribute:: circumference
@@ -457,33 +498,36 @@ Package Contents
    .. py:method:: get_std_paras()
 
 
+   .. py:method:: update_values()
+
+
 .. py:class:: screen_parameters
 
    Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
 
    Basic screen parameters
-   pinh_w/h - width and height of pinhole [mm]
-   pinh_x - distance of pinhole from center of undu [m]
-   pinh_nz - number of points in z-direction
-   pinh_ny - number of points in y-direction
+   screen_extent_hor/vert - width and height of pinhole [mm]
+   screen_pos_x - distance of pinhole from center of undu [m]
+   screen_segm_hor - number of points in z-direction
+   screen_segm_vert - number of points in y-direction
 
    Initialize the attribute collection
 
 
-   .. py:attribute:: pinh_w
+   .. py:attribute:: screen_extent_hor
 
 
-   .. py:attribute:: pinh_h
+   .. py:attribute:: screen_extent_vert
 
 
-   .. py:attribute:: pinh_x
+   .. py:attribute:: screen_pos_x
 
 
-   .. py:attribute:: pinh_nz
+   .. py:attribute:: screen_segm_hor
 
 
-   .. py:attribute:: pinh_ny
+   .. py:attribute:: screen_segm_vert
 
 
    .. py:method:: get_std_paras()
@@ -495,27 +539,27 @@ Package Contents
 
 
    Basic spectrometer parameters
-   freq_low/high - Energie at which to start/end spectrum calculation [eV]
-   freq_num - number of energies for which to calculate spectrum
-   undu - undulator-mode (whole trajectory is source of radiation - coherent)
-   wigg - wiggler-mode (only source-areas are considered and added incoherently)
+   spectrum_min_energy, spectrum_max_energy - Energie at which to start/end spectrum calculation [eV]
+   spectrum_n_energies - number of energies for which to calculate spectrum
+   spectrum_undu_mode - undulator-mode (whole trajectory is source of radiation - coherent)
+   spectrum_wigg_mode - wiggler-mode (only source-areas are considered and added incoherently)
 
    Initialize the attribute collection
 
 
-   .. py:attribute:: freq_low
+   .. py:attribute:: spectrum_min_energy
 
 
-   .. py:attribute:: freq_high
+   .. py:attribute:: spectrum_max_energy
 
 
-   .. py:attribute:: freq_num
+   .. py:attribute:: spectrum_n_energies
 
 
-   .. py:attribute:: undu
+   .. py:attribute:: spectrum_undu_mode
 
 
-   .. py:attribute:: wigg
+   .. py:attribute:: spectrum_wigg_mode
 
 
    .. py:method:: get_std_paras()
@@ -528,90 +572,84 @@ Package Contents
 
    Parameters controlling the generation of the B-Field
 
-   wave_prog_parameters.undu_endp = 1
-           pkHalbasy - K-Parameter of Machine
-           b0Halbasy - B-Amplitude of Machine (either pkHalbasy or this) [T]
-           xlHalbasy- period length in x-direction [m]
-           ahwpolHalbasy - number of main poles (odd number)
+   prog_parameters.undu_endp = 1
+           planarUnduK - K-Parameter of Machine
+           planarUnduB0 - B-Amplitude of Machine (either planarUnduK or this) [T]
+           planarUnduPerLength- period length in x-direction [m]
+           planarUnduNumPeriods - number of b-field peaks - each period contributes 2, the endpoles 3 -> odd number
 
-   wave_prog_parameters.undu_ellip = 1
-           b0y - B-Amplitude in y - [T]
-           b0z - B-Amplitude in z - [T]
-           nper- numer of periods
-           perl_x - period length - [m]
-           ell_shift - shift, % of period
+   prog_parameters.undu_ellip = 1
+           elliptUnduB0Y - B-Amplitude in y - [T]
+           elliptUnduB0Z - B-Amplitude in z - [T]
+           elliptUnduNumPeriods- numer of periods
+           elliptUnduPerLength - period length - [m]
+           elliptUnduPerShift - shift, % of period
 
    Initialize the attribute collection
 
 
-   .. py:attribute:: pkHalbasy
+   .. py:attribute:: planarUnduK
 
 
-   .. py:attribute:: b0Halbasy
+   .. py:attribute:: planarUnduB0
 
 
-   .. py:attribute:: xlHalbasy
+   .. py:attribute:: planarUnduPerLength
 
 
-   .. py:attribute:: ahwpolHalbasy
+   .. py:attribute:: planarUnduNumPeriods
 
 
    .. py:attribute:: undu_type
 
 
-   .. py:attribute:: b0y
+   .. py:attribute:: elliptUnduB0Y
 
 
-   .. py:attribute:: b0z
+   .. py:attribute:: elliptUnduB0Z
 
 
-   .. py:attribute:: nper
+   .. py:attribute:: elliptUnduNumPeriods
 
 
-   .. py:attribute:: perl_x
+   .. py:attribute:: elliptUnduPerLength
 
 
-   .. py:attribute:: ell_shift
+   .. py:attribute:: elliptUnduPerShift
 
 
-   .. py:attribute:: b0ellana
+   .. py:attribute:: bEffY
 
 
-   .. py:attribute:: nperella
+   .. py:attribute:: bEffZ
 
 
-   .. py:attribute:: xlellana
+   .. py:attribute:: unduParameterKY
 
 
-   .. py:attribute:: zlellana
+   .. py:attribute:: unduParameterKZ
 
 
-   .. py:attribute:: x0ellana
+   .. py:attribute:: shift
 
 
-   .. py:attribute:: gapell
+   .. py:attribute:: periodLength
 
 
-   .. py:attribute:: refgapell
+   .. py:attribute:: numPeriods
 
 
-   .. py:attribute:: shellana
+   .. py:attribute:: lengthEndPeriodsRelative
 
 
-   .. py:attribute:: rowshella
-
-
-   .. py:attribute:: iells2s3
-
-
-   .. py:attribute:: iellcoef
-
-
-   .. py:method:: get_std_paras(undu_mode)
+   .. py:method:: get_std_paras(wave_mode, ebeam, thetaObservation=0.0)
 
       getting standard undu parameters
-      undu_mode - same as wave_prog_parameters.undu_mode
+      wave_mode - same as prog_parameters.wave_mode
 
+
+
+   .. py:method:: update_values(ebeam, thetaObservation=0.0)
 
 
 .. py:class:: bfield_paras
@@ -694,16 +732,16 @@ Package Contents
    .. py:attribute:: zipped
 
 
-   .. py:attribute:: spec_calc
+   .. py:attribute:: calc_spectrum
 
 
-   .. py:attribute:: iemit
+   .. py:attribute:: calc_emittance
 
 
-   .. py:attribute:: iefold
+   .. py:attribute:: calc_energy_fold
 
 
-   .. py:attribute:: isigusr
+   .. py:attribute:: emittance_fold_with_sigmas
 
 
    .. py:attribute:: ihisascii
@@ -715,58 +753,31 @@ Package Contents
    .. py:attribute:: rayfile
 
 
-   .. py:attribute:: xstart
+   .. py:attribute:: electron_intermediate_x
 
 
-   .. py:attribute:: xinter
+   .. py:attribute:: electron_x0
 
 
-   .. py:attribute:: xstop
+   .. py:attribute:: electron_y0
 
 
-   .. py:attribute:: ystart
+   .. py:attribute:: electron_z0
 
 
-   .. py:attribute:: zstart
+   .. py:attribute:: electron_end_x
 
 
-   .. py:attribute:: vxin
+   .. py:attribute:: electron_vx0
 
 
-   .. py:attribute:: vyin
+   .. py:attribute:: electron_vy0
 
 
-   .. py:attribute:: vzin
+   .. py:attribute:: electron_vz0
 
-      a comment
+      Writing Field-Maps
 
-
-
-   .. py:attribute:: bxmapmin
-
-
-   .. py:attribute:: bxmapmax
-
-
-   .. py:attribute:: bxmapn
-
-
-   .. py:attribute:: bymapmin
-
-
-   .. py:attribute:: bymapmax
-
-
-   .. py:attribute:: bymapn
-
-
-   .. py:attribute:: bzmapmin
-
-
-   .. py:attribute:: bzmapmax
-
-
-   .. py:attribute:: bzmapn
 
 
    .. py:attribute:: b_type
@@ -802,27 +813,34 @@ Package Contents
    .. py:attribute:: undu_ellip_ana
 
 
-   .. py:attribute:: undu_mode
+   .. py:attribute:: wave_mode
 
 
-   .. py:method:: get_std_paras(undu_mode='undu_easy')
+   .. py:method:: get_std_paras(wave_mode='undu_easy')
 
       Getting standard wave-parameters depending on mode
-      - undu_mode = 'By' - takes by field data and runs with that
-      - undu_mode = 'Byz'
-      - undu_mode = 'Bxyz'
-      - undu_mode = 'undu_ellip' - standard elliptical undulator
-      - undu_mode = 'undu_easy'
-      - undu_mode = 'undu_endp'
-      - undu_mode = 'undu_gap'
+      - wave_mode = 'By' - takes by field data and runs with that
+      - wave_mode = 'Byz'
+      - wave_mode = 'Bxyz'
+      - wave_mode = 'undu_ellip' - standard elliptical undulator
+      - wave_mode = 'undu_easy'
+      - wave_mode = 'undu_endp'
+      - wave_mode = 'undu_gap'
 
+
+
+.. py:function:: to_scn(number: float, norm: bool = True)
+
+   Converts number to string using scientific notation
+
+   :param number: The number to convert
+   :param norm: If true, std scientific notation, False: With leading 0.
+   :return: The resulting string.
 
 
 .. py:data:: cm_inch
 
-.. py:function:: to_scn(number, norm=True)
-
-   converts number to scientific notation
+   Conversion factor cm to inch
 
 
 .. py:class:: wave_postprocess(wave_api)
@@ -839,16 +857,6 @@ Package Contents
 
       Cleans the wave-stage folder and copies the desired files to their location,
       deletes non-desired files, and zips the results based on the wave_res_copy_behaviour setting.
-
-
-
-   .. py:method:: extract_summary(folder=None)
-
-      Extracts summary information from a WAVE run's files in the specified folder
-      and stores the results in the file self.wave_paras.res_summary_file within the folder.
-
-      Args:
-              folder (str): The folder containing the WAVE run files.
 
 
 
@@ -919,6 +927,16 @@ Package Contents
 
 
 
+   .. py:method:: extract_summary()
+
+      Extracts summary information from a WAVE run's files in the specified folder
+      and stores the results in the file self.wave_paras.res_summary_file within the folder.
+
+      Args:
+              folder (str): The folder containing the WAVE run files.
+
+
+
    .. py:method:: find_load_flux_density_distribution(energies)
 
       Finds the distribution that is closed to each energy in energies, loads y/z data and flux distribution and adds them to the
@@ -970,5 +988,111 @@ Package Contents
 
 
 
-.. py:function:: get_std_bessy_III_paras(ebeam_paras)
+.. py:class:: undu_postprocess(undu_api)
+
+   A class for postprocessing Undumag files.
+
+   Args:
+           undu_api 
+
+   Takes external api and create postprocess class
+
+
+   .. py:method:: copy_results()
+
+      Cleans the undumag-stage folder and copies the desired files to their location,
+      deletes non-desired files, and zips the results based on the undu_res_copy_behaviour setting.
+
+
+
+   .. py:method:: cleanup()
+
+      Cleans up the Undumag run
+
+
+
+
+.. py:class:: undu_prepare(undu_api)
+
+   _summary_
+
+   Args:
+           undu_api (undu_api): Standard Parameters used for the simulation
+
+   Ini wave-prepare class for setting everything up for calcs
+
+
+   .. py:method:: create_fresh_clc()
+
+      Writes/Wrote the clc file from some parameter list - but this is deprecated for now
+
+
+
+   .. py:method:: create_fresh_nam()
+
+      Updates the nam file from parameters.
+
+      Loads the input file set in undu_paras, updates properties 
+      based on other undu_paras properties,and copies the 
+      resulting file to the Undu program folder.
+
+
+
+   .. py:method:: create_undu_input()
+
+      Creates all the files needed as input for Undumag.
+
+
+
+.. py:class:: undu_control(undu_api, current_folder=None)
+
+   Internal API for the WAVE program
+
+   Initialize the internal API
+   undu_api : external wave_api class
+   current_folder : folder to which you want to jump back after wave was run
+
+
+   .. py:method:: run(copy=None, freate_fresh_clc=True)
+
+
+.. py:class:: undu_results(undu_api: int)
+
+   
+   This class is for this and that
+
+   :param parameter1: my favorite int
+   :param parameter2: my favorite class
+
+
+   .. py:method:: load_from_res_folder()
+
+      This fun is for this and that
+
+      :param parameter1: my favorite int
+      :param parameter2: my favorite class
+      :return: returns some nothing
+
+
+
+   .. py:method:: load_field_map()
+
+
+   .. py:method:: load_field_profile()
+
+
+   .. py:method:: load_on_axis_undumag_file()
+
+
+   .. py:method:: load_force_undumag_file()
+
+
+   .. py:method:: extract_summary()
+
+
+   .. py:method:: get_result(which)
+
+      Pass string "flux_dens",... to get object containing data and some functionality
+
+
 

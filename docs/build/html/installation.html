@@ -1,42 +1,93 @@
+
+
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Installation &mdash; Unduwave v0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
 
-    <title>2. Installation &#8212; Unduwave v0.0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
-    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
-    <script src="_static/documentation_options.js?v=2fea6348"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2fea6348"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. Quickguide" href="quickguide.html" />
-    <link rel="prev" title="1. Introduction" href="introduction.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
+    <link rel="prev" title="1. Introduction" href="introduction.html" /> 
+</head>
 
-  
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux">2.1. Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">2.2. Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preliminaries">2.2.1. Preliminaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-and-cloning">2.2.2. Github and Cloning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-and-compilation">2.2.3. Test and Compilation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickguide.html">3. Quickguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unduwave.analytical_module.ana_undu.html">4. C2C Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unduwave/index.html">5. API Reference</a></li>
+</ul>
 
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="installation">
-<h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
 <section id="linux">
-<h2><span class="section-number">2.1. </span>Linux<a class="headerlink" href="#linux" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">You need working git and python3 installations for this guide to work.</div>
 </div>
@@ -70,9 +121,9 @@
 <p>The compilation should now run. After that, go back to the scripts folder and re-run the “example_wave.py” file.</p>
 </section>
 <section id="windows">
-<h2><span class="section-number">2.2. </span>Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h2>
 <section id="preliminaries">
-<h3><span class="section-number">2.2.1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">2.2.1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line">First, read every step before you start doing things!</div>
 </div>
@@ -96,7 +147,7 @@
 <a class="reference internal image-reference" href="_images/cygwin1.png"><img alt="map to buried treasure" src="_images/cygwin1.png" style="width: 636.0px; height: 397.5px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Cygwin package manager.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Cygwin package manager.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="line-block">
@@ -106,7 +157,7 @@
 <a class="reference internal image-reference" href="_images/cygwin2.png"><img alt="map to buried treasure" src="_images/cygwin2.png" style="width: 636.0px; height: 397.5px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Cygwin packages to install.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Cygwin packages to install.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Select the drop-down arrow to the right to select a version of a given program and to add it to the installation list. After you added all packages you can click “next” and the installation will start.</p>
@@ -114,7 +165,7 @@
 <a class="reference internal image-reference" href="_images/cygwin3.png"><img alt="map to buried treasure" src="_images/cygwin3.png" style="width: 1027.5px; height: 552.5px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">How to choose to install a given package.</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+<p><span class="caption-text">How to choose to install a given package.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="line-block">
@@ -128,7 +179,7 @@
 </div>
 </section>
 <section id="github-and-cloning">
-<h3><span class="section-number">2.2.2. </span>Github and Cloning<a class="headerlink" href="#github-and-cloning" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">2.2.2. </span>Github and Cloning<a class="headerlink" href="#github-and-cloning" title="Link to this heading"></a></h3>
 <p>In the installation folder of Cygwin, you will find a folder “home/user” with user being your user name.
 Navigate into this folder with windows-file browser, right click and select “Open Git Bash here”
 In the bash write:</p>
@@ -141,7 +192,7 @@ In the bash write:</p>
 </div>
 </section>
 <section id="test-and-compilation">
-<h3><span class="section-number">2.2.3. </span>Test and Compilation<a class="headerlink" href="#test-and-compilation" title="Link to this heading">¶</a></h3>
+<h3><span class="section-number">2.2.3. </span>Test and Compilation<a class="headerlink" href="#test-and-compilation" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line">Go to the folder “unduwave/External-Software” and open the file “where_is_cygwin_installation.txt” . In the first line, write the path of your cygwin installation (this is a hard hack, I know. But only temporary :) ). Use the format given, with the quotes and the path terminated by a backslash.</div>
 </div>
@@ -192,78 +243,34 @@ After it is done, go back to the script folder (in the windows powershell) and r
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quickguide.html" class="btn btn-neutral float-right" title="3. Quickguide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Unduwave</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#linux">2.1. Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#windows">2.2. Windows</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="quickguide.html">3. Quickguide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">4. API Reference</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="introduction.html" title="previous chapter"><span class="section-number">1. </span>Introduction</a></li>
-      <li>Next: <a href="quickguide.html" title="next chapter"><span class="section-number">3. </span>Quickguide</a></li>
-  </ul></li>
-</ul>
-</div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &#169;CC BY-NC.
-      
-      |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
-      
-      |
-      <a href="_sources/installation.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

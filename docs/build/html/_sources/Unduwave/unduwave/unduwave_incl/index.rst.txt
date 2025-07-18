@@ -1,0 +1,44 @@
+unduwave.unduwave_incl
+======================
+
+.. py:module:: unduwave.unduwave_incl
+
+.. autoapi-nested-parse::
+
+   Contains the import statements for undupy modules
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   unduwave.unduwave_incl.cm_inch
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.unduwave_incl.to_scn
+
+
+Module Contents
+---------------
+
+.. py:function:: to_scn(number, norm = True)
+
+   Converts number to string using scientific notation
+
+   :param number: The number to convert
+   :param norm: If true, std scientific notation, False: With leading 0.
+   :return: The resulting string.
+
+
+.. py:data:: cm_inch
+
+   Conversion factor cm to inch
+
+

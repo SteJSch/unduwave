@@ -1,0 +1,25 @@
+unduwave.analytical_module
+==========================
+
+.. py:module:: unduwave.analytical_module
+
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /Unduwave/unduwave/analytical_module/ana_undu/index
+   /Unduwave/unduwave/analytical_module/ana_wave/index
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /Unduwave/unduwave/analytical_module/analytic_structures/index
+
+

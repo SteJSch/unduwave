@@ -1,0 +1,102 @@
+unduwave.analytical_module.analytic_structures
+==============================================
+
+.. py:module:: unduwave.analytical_module.analytic_structures
+
+.. autoapi-nested-parse::
+
+   Contains functionality for handling files.
+
+   Module to handle various file operations including finding, moving, copying, and deleting files.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.analytic_structures.ana_undulator
+
+
+Module Contents
+---------------
+
+.. py:class:: ana_undulator(bEff, periodLength, numPeriods, lengthEndPeriodsRelative=0.0, ebeam=None, thetaObservation=0.0, unduK=None)
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: bEff
+
+
+   .. py:attribute:: periodLength
+
+
+   .. py:attribute:: numPeriods
+
+
+   .. py:attribute:: lengthEndPeriodsRelative
+
+
+   .. py:attribute:: undulatorLength
+
+
+   .. py:attribute:: undulatorWaveNum
+
+
+   .. py:attribute:: undulatorParameterK
+
+
+   .. py:attribute:: reducedBeta
+
+
+   .. py:attribute:: undulatorFrequency
+
+
+   .. py:attribute:: undulatorPeriodTime
+
+
+   .. py:attribute:: reducedGamma
+
+
+   .. py:attribute:: reducedUndulatorParameterK
+
+
+   .. py:attribute:: maxDeflection
+
+
+   .. py:attribute:: maxAngle
+
+
+   .. py:attribute:: naturalOpeningAngle
+
+
+   .. py:attribute:: properFrequencyWeak
+
+
+   .. py:attribute:: properFrequencyStrong
+
+
+   .. py:attribute:: firstHarmEnergyWeak
+
+
+   .. py:attribute:: firstHarmEnergyStrong
+
+
+   .. py:attribute:: thetaObservation
+
+
+   .. py:method:: update_non_beam_values()
+
+
+   .. py:method:: update_values(ebeam, thetaObservation=0.0)
+
+

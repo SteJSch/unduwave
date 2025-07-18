@@ -1,0 +1,13 @@
+unduwave.analytical_module.ana_undu.analytic_undulator
+======================================================
+
+.. py:module:: unduwave.analytical_module.ana_undu.analytic_undulator
+
+.. autoapi-nested-parse::
+
+   Contains functionality for handling files.
+
+   Module to handle various file operations including finding, moving, copying, and deleting files.
+
+
+

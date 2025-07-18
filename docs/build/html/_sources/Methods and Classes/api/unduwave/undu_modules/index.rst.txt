@@ -1,0 +1,21 @@
+unduwave.undu_modules
+=====================
+
+.. py:module:: unduwave.undu_modules
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /Methods and Classes/api/unduwave/undu_modules/undu_coils/index
+   /Methods and Classes/api/unduwave/undu_modules/undu_control/index
+   /Methods and Classes/api/unduwave/undu_modules/undu_magnets/index
+   /Methods and Classes/api/unduwave/undu_modules/undu_parameters/index
+   /Methods and Classes/api/unduwave/undu_modules/undu_postprocess/index
+   /Methods and Classes/api/unduwave/undu_modules/undu_prepare/index
+   /Methods and Classes/api/unduwave/undu_modules/undu_results/index
+
+

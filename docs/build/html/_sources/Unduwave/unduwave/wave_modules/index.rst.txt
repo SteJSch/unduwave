@@ -1,0 +1,19 @@
+unduwave.wave_modules
+=====================
+
+.. py:module:: unduwave.wave_modules
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /Unduwave/unduwave/wave_modules/wave_control/index
+   /Unduwave/unduwave/wave_modules/wave_parameters/index
+   /Unduwave/unduwave/wave_modules/wave_postprocess/index
+   /Unduwave/unduwave/wave_modules/wave_prepare/index
+   /Unduwave/unduwave/wave_modules/wave_results/index
+
+

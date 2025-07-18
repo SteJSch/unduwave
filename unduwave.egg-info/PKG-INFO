@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: unduwave
 Version: 0.1
 Summary: Functionality for WAVE and Undumag from python
@@ -20,5 +20,13 @@ Requires-Dist: numpy
 Requires-Dist: pandas
 Requires-Dist: h5py
 Requires-Dist: scipy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
 
 long_description

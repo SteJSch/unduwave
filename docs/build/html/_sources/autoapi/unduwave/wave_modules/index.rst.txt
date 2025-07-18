@@ -10,7 +10,6 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
-   /autoapi/unduwave/wave_modules/bessy_III_paras/index
    /autoapi/unduwave/wave_modules/wave_control/index
    /autoapi/unduwave/wave_modules/wave_parameters/index
    /autoapi/unduwave/wave_modules/wave_postprocess/index

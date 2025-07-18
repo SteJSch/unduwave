@@ -1,0 +1,49 @@
+unduwave.undu_modules.undu_prepare
+==================================
+
+.. py:module:: unduwave.undu_modules.undu_prepare
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_prepare.undu_prepare
+
+
+Module Contents
+---------------
+
+.. py:class:: undu_prepare(undu_api)
+
+   _summary_
+
+   Args:
+           undu_api (undu_api): Standard Parameters used for the simulation
+
+   Ini wave-prepare class for setting everything up for calcs
+
+
+   .. py:method:: create_fresh_clc()
+
+      Writes/Wrote the clc file from some parameter list - but this is deprecated for now
+
+
+
+   .. py:method:: create_fresh_nam()
+
+      Updates the nam file from parameters.
+
+      Loads the input file set in undu_paras, updates properties 
+      based on other undu_paras properties,and copies the 
+      resulting file to the Undu program folder.
+
+
+
+   .. py:method:: create_undu_input()
+
+      Creates all the files needed as input for Undumag.
+
+
+

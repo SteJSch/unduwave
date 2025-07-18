@@ -2,50 +2,55 @@ from unduwave.unduwave_incl import *
 from unduwave.attribute_classes.attributes import _attribute
 from unduwave.attribute_classes.attributes import _attribute_collection
 import unduwave.helpers.file_folder_helpers as f_h
+import unduwave.constants as uc
+from unduwave.analytical_module import analytic_structures as anas
 
 class ebeam_parameters(_attribute_collection):
 	"""
 	Defining basic electron-beam parameters
 	beam_en - Beam energy in [GeV]
 	current - current in [A]
-	bsigz - horizontal beam size [m]
-	bsigzp - Horizontal beam divergence [rad]
-	bsigy - vertical beam size [m]
-	bsigyp - vertical beam divergence [rad]
+	beamSizeHor - horizontal beam size [m]
+	beamDiveHor - Horizontal beam divergence [rad]
+	beamSizeVer - vertical beam size [m]
+	beamDiveVer - vertical beam divergence [rad]
 	espread - energy spread [%]
-	emitt_h/v - horizontal and vertical emittance [mrad]
-	betfunh/v - horizontal and vertical beta functions [m]
+	emittanceHor/Ver - horizontal and vertical emittance [mrad]
+	betaFunctionHor/Ver - horizontal and vertical beta functions [m]
 	circumference - Ring circumference in [m]
 	rdipol - Bending radius of dipoles [m]
 	"""
 	beam_en = _attribute(0,in_name='DMYENERGY')
+	gammaFactor = _attribute(0)
+	betaFactor = _attribute(0)
 	current = _attribute(0,in_name='DMYCUR')
-	bsigz = _attribute(0,in_name='BSIGZ(1)') # horizontal beam size [m]
-	bsigzp = _attribute(0,in_name='BSIGZP(1)') # hor beam divergence rad
-	bsigy = _attribute(0,in_name='BSIGY(1)') # Ver beam size m
-	bsigyp = _attribute(0,in_name='BSIGYP(1)') # ver beam divergence rad
+	beamSizeHor = _attribute(0,in_name='BSIGZ(1)') # horizontal beam size [m]
+	beamDiveHor = _attribute(0,in_name='BSIGZP(1)') # hor beam divergence rad
+	beamSizeVer = _attribute(0,in_name='BSIGY(1)') # Ver beam size m
+	beamDiveVer = _attribute(0,in_name='BSIGYP(1)') # ver beam divergence rad
 	espread = _attribute(0,in_name='ESPREAD') # ver beam divergence rad
-	emitt_h = _attribute(0,in_name='EPS0H')
-	emitt_v = _attribute(0,in_name='EPS0V')
-	betfunh = _attribute(0,in_name='BETFUN')
-	betfunv = _attribute(0,in_name='BETFUNV')
+	emittanceHor = _attribute(0,in_name='EPS0H')
+	emittanceVer = _attribute(0,in_name='EPS0V')
+	betaFunctionHor = _attribute(0,in_name='BETFUN')
+	betaFunctionVer = _attribute(0,in_name='BETFUNV')
 	circumference = _attribute(240,in_name='UMFANG')
 	rdipol = _attribute(4.359,in_name='RDIPOL')
 
 	def get_std_bessy_III_paras(self) :
 		self.beam_en.set(2.5) # Beam energy in [GeV]
 		self.current.set(0.3) # current in [A]
-		self.bsigz.set(275e-6) # horizontal beam size [m]
-		self.bsigzp.set(28.1e-6) # Horizontal beam divergence [rad]
-		self.bsigy.set(22.5e-6) # vertical beam size [m]
-		self.bsigyp.set(6.8e-6) # vertical beam divergence [rad]
+		self.beamSizeHor.set(275e-6) # horizontal beam size [m]
+		self.beamDiveHor.set(28.1e-6) # Horizontal beam divergence [rad]
+		self.beamSizeVer.set(22.5e-6) # vertical beam size [m]
+		self.beamDiveVer.set(6.8e-6) # vertical beam divergence [rad]
 		self.espread.set(0.963e-3) # energy spread [%]
-		self.emitt_h.set(9.804e-11) #  horizontal  emittance [mrad]
-		self.emitt_v.set(1.961e-12) #  vertical emittance [mrad]
-		self.betfunh.set(0) #  horizontal beta functions [m]
-		self.betfunv.set(0) #  vertical beta functions [m]
+		self.emittanceHor.set(9.804e-11) #  horizontal  emittance [mrad]
+		self.emittanceVer.set(1.961e-12) #  vertical emittance [mrad]
+		self.betaFunctionHor.set(0) #  horizontal beta functions [m]
+		self.betaFunctionVer.set(0) #  vertical beta functions [m]
 		self.circumference.set(350) # Ring circumference in [m]
 		self.rdipol.set(2.78) # Bending radius of dipoles [m]
+		self.update_values()
 		return self
 
 	def get_std_bessy_II_paras(self) :
@@ -54,118 +59,200 @@ class ebeam_parameters(_attribute_collection):
 	def get_std_paras(self): 
 		self.beam_en.set(1.722) # Beam energy in [GeV]
 		self.current.set(0.3) # current in [A]
-		self.bsigz.set(275e-6) # horizontal beam size [m]
-		self.bsigzp.set(28.1e-6) # Horizontal beam divergence [rad]
-		self.bsigy.set(22.5e-6) # vertical beam size [m]
-		self.bsigyp.set(6.8e-6) # vertical beam divergence [rad]
+		self.beamSizeHor.set(275e-6) # horizontal beam size [m]
+		self.beamDiveHor.set(28.1e-6) # Horizontal beam divergence [rad]
+		self.beamSizeVer.set(22.5e-6) # vertical beam size [m]
+		self.beamDiveVer.set(6.8e-6) # vertical beam divergence [rad]
 		self.espread.set(1e-3) # energy spread [%]
-		self.emitt_h.set(7.7e-9) #  horizontal  emittance [mrad]
-		self.emitt_v.set(15.4e-11) #  vertical emittance [mrad]
-		self.betfunh.set(0) #  horizontal beta functions [m]
-		self.betfunv.set(0) #  vertical beta functions [m]
+		self.emittanceHor.set(7.7e-9) #  horizontal  emittance [mrad]
+		self.emittanceVer.set(15.4e-11) #  vertical emittance [mrad]
+		self.betaFunctionHor.set(0) #  horizontal beta functions [m]
+		self.betaFunctionVer.set(0) #  vertical beta functions [m]
 		self.circumference.set(240) # Ring circumference in [m]
 		self.rdipol.set(4.359) # Bending radius of dipoles [m]
-
+		self.update_values()
 		return self
+
+	def update_values(self) : 
+		self.gammaFactor.set( self.beam_en.get()*1e9*uc.q_el/(uc.m_el*uc.v_c**2) )
+		self.betaFactor.set( math.sqrt( 1 - 1 / self.gammaFactor.get() ) )
 
 class screen_parameters(_attribute_collection):
 	"""
 	Basic screen parameters
-	pinh_w/h - width and height of pinhole [mm]
-	pinh_x - distance of pinhole from center of undu [m]
-	pinh_nz - number of points in z-direction
-	pinh_ny - number of points in y-direction
+	screen_extent_hor/vert - width and height of pinhole [mm]
+	screen_pos_x - distance of pinhole from center of undu [m]
+	screen_segm_hor - number of points in z-direction
+	screen_segm_vert - number of points in y-direction
 	"""
-	pinh_w = _attribute(0,in_name='PINW',fac=1e-3)
-	pinh_h = _attribute(0,in_name='PINH',fac=1e-3)
-	pinh_x = _attribute(0,in_name='PINCEN(1)')
-	pinh_nz = _attribute(0,in_name='MPINZ')
-	pinh_ny = _attribute(0,in_name='MPINY')
+	screen_extent_hor = _attribute(0,in_name='PINW',fac=1e-3)
+	screen_extent_vert = _attribute(0,in_name='PINH',fac=1e-3)
+	screen_pos_x = _attribute(0,in_name='PINCEN(1)')
+	screen_segm_hor = _attribute(0,in_name='MPINZ')
+	screen_segm_vert = _attribute(0,in_name='MPINY')
 
 	def get_std_paras(self): 
-		self.pinh_w.set(3) # [mm]
-		self.pinh_h.set(3) # [mm]
-		self.pinh_x.set(10) # [m]
-		self.pinh_nz.set(10) # 
-		self.pinh_ny.set(10) # 
+		self.screen_extent_hor.set(3) # [mm]
+		self.screen_extent_vert.set(3) # [mm]
+		self.screen_pos_x.set(10) # [m]
+		self.screen_segm_hor.set(10) # 
+		self.screen_segm_vert.set(10) # 
 		return self
 
 class spectrometer_paras(_attribute_collection):
 	"""
 	Basic spectrometer parameters
-	freq_low/high - Energie at which to start/end spectrum calculation [eV]
-	freq_num - number of energies for which to calculate spectrum
-	undu - undulator-mode (whole trajectory is source of radiation - coherent)
-	wigg - wiggler-mode (only source-areas are considered and added incoherently)
+	spectrum_min_energy, spectrum_max_energy - Energie at which to start/end spectrum calculation [eV]
+	spectrum_n_energies - number of energies for which to calculate spectrum
+	spectrum_undu_mode - undulator-mode (whole trajectory is source of radiation - coherent)
+	spectrum_wigg_mode - wiggler-mode (only source-areas are considered and added incoherently)
 	"""
-	freq_low = _attribute(0,in_name='FREQLOW')
-	freq_high = _attribute(0,in_name='FREQHIG')
-	freq_num = _attribute(0,in_name='NINTFREQ')
-	undu = _attribute(0,in_name='IUNDULATOR')
-	wigg = _attribute(0,in_name='IWIGGLER')
+	spectrum_min_energy = _attribute(0,in_name='FREQLOW')
+	spectrum_max_energy = _attribute(0,in_name='FREQHIG')
+	spectrum_n_energies = _attribute(0,in_name='NINTFREQ')
+	spectrum_undu_mode = _attribute(0,in_name='IUNDULATOR')
+	spectrum_wigg_mode = _attribute(0,in_name='IWIGGLER')
 
 	def get_std_paras(self): 
-		self.freq_low.set(300) # eV
-		self.freq_high.set(500) # eV
-		self.freq_num.set(5) # 
-		self.undu.set(0) # undu-mode
-		self.wigg.set(0) # wiggler-mode
+		self.spectrum_min_energy.set(300) # eV
+		self.spectrum_max_energy.set(500) # eV
+		self.spectrum_n_energies.set(5) # 
+		self.spectrum_undu_mode.set(0) # undu-mode
+		self.spectrum_wigg_mode.set(0) # wiggler-mode
 		return self
 
 class undu_paras(_attribute_collection):
 	"""
 	Parameters controlling the generation of the B-Field
 
-	wave_prog_parameters.undu_endp = 1
-		pkHalbasy - K-Parameter of Machine
-		b0Halbasy - B-Amplitude of Machine (either pkHalbasy or this) [T]
-		xlHalbasy- period length in x-direction [m]
-		ahwpolHalbasy - number of main poles (odd number)
+	prog_parameters.undu_endp = 1
+		planarUnduK - K-Parameter of Machine
+		planarUnduB0 - B-Amplitude of Machine (either planarUnduK or this) [T]
+		planarUnduPerLength- period length in x-direction [m]
+		planarUnduNumPeriods - number of b-field peaks - each period contributes 2, the endpoles 3 -> odd number
 
-	wave_prog_parameters.undu_ellip = 1
-		b0y - B-Amplitude in y - [T]
-		b0z - B-Amplitude in z - [T]
-		nper- numer of periods
-		perl_x - period length - [m]
-		ell_shift - shift, % of period
+	prog_parameters.undu_ellip = 1
+		elliptUnduB0Y - B-Amplitude in y - [T]
+		elliptUnduB0Z - B-Amplitude in z - [T]
+		elliptUnduNumPeriods- numer of periods
+		elliptUnduPerLength - period length - [m]
+		elliptUnduPerShift - shift, % of period
 	"""
-	pkHalbasy = _attribute(0.0,in_name='PKHALBASY')
-	b0Halbasy = _attribute(1.0,in_name='B0HALBASY')
-	xlHalbasy = _attribute(0.018,in_name='ZLHALBASY')
-	ahwpolHalbasy = _attribute(5,in_name='AHWPOL')
-	undu_type = _attribute("undu_ellip")
 
-	b0y = _attribute(0,in_name='B0ELLIPV') # magn. field strength amplitude in vertical direction
-	b0z = _attribute(0,in_name='B0ELLIPH') # magn. field strength amplitude in horizontal direction
-	nper = _attribute(0,in_name='PERELLIP') # number of periods
-	perl_x = _attribute(0,in_name='XLELLIP') # period length
-	ell_shift = _attribute(0.25,in_name='ELLSHFT') # shift between the two magnetic arrays in fractions of one period
+	# Simple planar Undulator with endpoles
+	planarUnduK = _attribute(0.0,in_name='PKHALBASY')
+	planarUnduB0 = _attribute(1.0,in_name='B0HALBASY')
+	planarUnduPerLength = _attribute(0.018,in_name='ZLHALBASY')
+	planarUnduNumPeriods = _attribute(5,in_name='AHWPOL')
+	undu_type = _attribute()
 
-	b0ellana = _attribute(1.0,in_name='B0ELLANA') # Field Amplitude
-	nperella = _attribute(10,in_name='NPERELLA') # num of periods
-	xlellana = _attribute(0.02,in_name='XLELLANA') # period length in x in m
-	zlellana = _attribute(10,in_name='ZLELLANA') # period length in z ??? in m
-	x0ellana = _attribute(10,in_name='X0ELLANA') # x0 [m], distance of magnet center from device axis
-	gapell = _attribute(0.06,in_name='GAPELL') # gap [m]
-	refgapell = _attribute(0.06,in_name='REFGAPELL') # refrence gap [m] ?
-	shellana = _attribute(0.0,in_name='SHELLANA') # shift in units of zlellana
-	rowshella = _attribute(0.00,in_name='ROWSHELLA') # additional row shift of lower rows in units of zlellana
-	iells2s3 = _attribute(0,in_name='IELLS2S3') # >=0: S3-MODE - parallel; <0: S2-MODE - antiparallel
-	iellcoef = _attribute(0,in_name='IELLCOEF') # !>0: read IELLCOEF Fourier coefficients from file ellana.coef, =<0: First and second coefficients only with C0=0.5 and C1=1.
+	# Simple elliptic undulator
+	elliptUnduB0Y = _attribute(0,in_name='B0ELLIPV') # magn. field strength amplitude in vertical direction
+	elliptUnduB0Z = _attribute(0,in_name='B0ELLIPH') # magn. field strength amplitude in horizontal direction
+	elliptUnduNumPeriods = _attribute(0,in_name='PERELLIP') # number of periods
+	elliptUnduPerLength = _attribute(0,in_name='XLELLIP') # period length
+	elliptUnduPerShift = _attribute(0.25,in_name='ELLSHFT') # shift between the two magnetic arrays in fractions of one period
 
-	def get_std_paras(self,undu_mode): 
+	bEffY = _attribute()
+	bEffZ = _attribute()
+	unduParameterKY = _attribute()
+	unduParameterKZ = _attribute()
+	shift = _attribute()
+	periodLength = _attribute(0.02)
+	numPeriods = _attribute(78)
+	lengthEndPeriodsRelative = _attribute(1.5)
+
+	# elliptic undulator with endpoles
+	# b0ellana = _attribute(1.0,in_name='B0ELLANA') # Field Amplitude
+	# nperella = _attribute(10,in_name='NPERELLA') # num of periods
+	# xlellana = _attribute(0.02,in_name='XLELLANA') # period length in x in m
+	# zlellana = _attribute(10,in_name='ZLELLANA') # period length in z ??? in m
+	# x0ellana = _attribute(10,in_name='X0ELLANA') # x0 [m], distance of magnet center from device axis
+	# gapell = _attribute(0.06,in_name='GAPELL') # gap [m]
+	# refgapell = _attribute(0.06,in_name='REFGAPELL') # refrence gap [m] ?
+	# shellana = _attribute(0.0,in_name='SHELLANA') # shift in units of zlellana
+	# rowshella = _attribute(0.00,in_name='ROWSHELLA') # additional row shift of lower rows in units of zlellana
+	# iells2s3 = _attribute(0,in_name='IELLS2S3') # >=0: S3-MODE - parallel; <0: S2-MODE - antiparallel
+	# iellcoef = _attribute(0,in_name='IELLCOEF') # !>0: read IELLCOEF Fourier coefficients from file ellana.coef, =<0: First and second coefficients only with C0=0.5 and C1=1.
+
+	def get_std_paras(self,wave_mode,ebeam,thetaObservation=0.0): 
 		"""
 		getting standard undu parameters
-		undu_mode - same as wave_prog_parameters.undu_mode
+		wave_mode - same as prog_parameters.wave_mode
 		"""
-		self.undu_type.set(undu_mode)
-		if self.undu_type.get() == 'undu_ellip' :
-			self.b0y.set(0.3)
-			self.b0z.set(1.0)
-			self.nper.set(5)
-			self.perl_x.set(0.02)
-			self.ell_shift.set(0.25)
+		self.undu_type.set(wave_mode)
+
+		self.bEffY.set(1)
+		self.bEffZ.set(None)
+		self.unduParameterKY.set(None)
+		self.unduParameterKZ.set(None)
+		self.shift.set(0.0)
+		self.periodLength.set(0.02)
+		self.numPeriods.set(78)
+		self.lengthEndPeriodsRelative.set(1.5)
+		self.update_values(ebeam=ebeam,thetaObservation=thetaObservation)
 		return self
+
+	def update_values(self,ebeam,thetaObservation=0.0) :
+		self._anasy=None
+		self._anasz=None
+		if not (self.bEffY.get() is None) :
+			self._anasy=anas.ana_undulator(
+				bEff=self.bEffY.get(),
+				periodLength=self.periodLength.get(),
+				numPeriods=self.numPeriods.get(),
+				lengthEndPeriodsRelative=self.lengthEndPeriodsRelative.get(),
+				ebeam=ebeam,
+				thetaObservation=thetaObservation
+				)
+		elif not (self.unduParameterKY.get() is None) :
+			self._anasy=anas.ana_undulator(
+				bEff=None,
+				unduK=self.unduParameterKY.get(),
+				periodLength=self.periodLength.get(),
+				numPeriods=self.numPeriods.get(),
+				lengthEndPeriodsRelative=self.lengthEndPeriodsRelative.get(),
+				ebeam=ebeam,
+				thetaObservation=thetaObservation
+				)
+		if not self._anasy is None :
+			self.bEffY.set(self._anasy.bEff.get())
+			self.unduParameterKY.set(self._anasy.undulatorParameterK.get())
+		if not (self.bEffZ.get() is None) :
+			self._anasz=anas.ana_undulator(
+				bEff=self.bEffZ.get(),
+				periodLength=self.periodLength.get(),
+				numPeriods=self.numPeriods.get(),
+				lengthEndPeriodsRelative=self.lengthEndPeriodsRelative.get(),
+				ebeam=ebeam,
+				thetaObservation=thetaObservation
+				)
+		elif not (self.unduParameterKZ.get() is None) :
+			self._anasz=anas.ana_undulator(
+				bEff=None,
+				unduK=self.unduParameterKZ.get(),
+				periodLength=self.periodLength.get(),
+				numPeriods=self.numPeriods.get(),
+				lengthEndPeriodsRelative=self.lengthEndPeriodsRelative.get(),
+				ebeam=ebeam,
+				thetaObservation=thetaObservation
+				)
+		if not self._anasz is None :
+			self.bEffZ.set(self._anasz.bEff.get())
+			self.unduParameterKZ.set(self._anasz.undulatorParameterK.get())
+		if self.undu_type.get() == 'undu_ellip' :
+			self.elliptUnduB0Y.set(self.bEffY.get())
+			self.elliptUnduB0Z.set(self.bEffZ.get())
+			self.elliptUnduPerShift.set(self.shift.get())
+			self.elliptUnduNumPeriods.set(2*self.numPeriods.get()+1) # we count the number of B-field peaks here - one extra for the end-fields (odd)
+			self.elliptUnduPerLength.set(self.periodLength.get())
+		elif self.undu_type.get() == 'undu_endp' :
+			if not (self.bEffY.get() is None) :
+				self.planarUnduB0.set(self.bEffY.get())
+			elif not (self.unduParameterKY.get() is None) :
+				self.planarUnduK.set(self.unduParameterKY.get())
+			self.planarUnduNumPeriods.set(2*self.numPeriods.get()+1) # we count the number of B-field peaks here - one extra for the end-fields (odd)
+			self.planarUnduPerLength.set(self.periodLength.get())
 
 class bfield_paras(_attribute_collection):
 	field_folder = _attribute('/')
@@ -197,29 +284,34 @@ class wave_prog_parameters(_attribute_collection):
 	zip_res_folder = _attribute(1)
 	nthreads = _attribute(2,in_name='MTHREADS')
 	zipped = _attribute(True)
-	spec_calc = _attribute(False,in_name='ISPEC')
-	iemit = _attribute(0,in_name='IEMIT')
-	iefold = _attribute(1,in_name='IEFOLD')
-	isigusr = _attribute(1,in_name='ISIGUSR')
+	calc_spectrum = _attribute(False,in_name='ISPEC')
+	calc_emittance = _attribute(0,in_name='IEMIT')
+	calc_energy_fold = _attribute(1,in_name='IEFOLD')
+	emittance_fold_with_sigmas = _attribute(1,in_name='ISIGUSR')
 	ihisascii = _attribute(111,in_name='IHISASCII')
 	ntupgrid = _attribute(0,in_name='NTUPGRID')
 	rayfile = _attribute(0,in_name='IWFILRAY')
-	xstart = _attribute(9999.,in_name='XSTART')
-	ystart = _attribute(0.0,in_name='YSTART')
-	zstart = _attribute(0.0,in_name='ZSTART')
-	vxin = _attribute(1.0,in_name='VXIN')
-	vyin = _attribute(0.0,in_name='VYIN')
-	vzin = _attribute(0.0,in_name='VZIN')
+	electron_intermediate_x = _attribute(-9999.,in_name='XINTER')
+	electron_x0 = _attribute(9999.,in_name='XSTART')
+	electron_y0 = _attribute(0.0,in_name='YSTART')
+	electron_z0 = _attribute(0.0,in_name='ZSTART')
+	electron_end_x = _attribute(9999.,in_name='XSTOP')
+	electron_vx0 = _attribute(1.0,in_name='VXIN')
+	electron_vy0 = _attribute(0.0,in_name='VYIN')
+	electron_vz0 = _attribute(0.0,in_name='VZIN')
 
-	bxmapmin = _attribute(9999.,in_name='XMAPMN')
-	bxmapmax = _attribute(9999.,in_name='XMAPMX')
-	bxmapn = _attribute(-9999,in_name='NMAPX')
-	bymapmin = _attribute(9999.,in_name='YMAPMN')
-	bymapmax = _attribute(9999.,in_name='YMAPMX')
-	bymapn = _attribute(-9999,in_name='NMAPY')
-	bzmapmin = _attribute(9999.,in_name='ZMAPMN')
-	bzmapmax = _attribute(9999.,in_name='ZMAPMX')
-	bzmapn = _attribute(-9999,in_name='NMAPZ')
+	"""
+	Writing Field-Maps
+	"""
+	# bxmapmin = _attribute(9999.,in_name='XMAPMN')
+	# bxmapmax = _attribute(9999.,in_name='XMAPMX')
+	# bxmapn = _attribute(-9999,in_name='NMAPX')
+	# bymapmin = _attribute(9999.,in_name='YMAPMN')
+	# bymapmax = _attribute(9999.,in_name='YMAPMX')
+	# bymapn = _attribute(-9999,in_name='NMAPY')
+	# bzmapmin = _attribute(9999.,in_name='ZMAPMN')
+	# bzmapmax = _attribute(9999.,in_name='ZMAPMX')
+	# bzmapn = _attribute(-9999,in_name='NMAPZ')
 
 	# undu_type = _attribute('')
 
@@ -234,23 +326,29 @@ class wave_prog_parameters(_attribute_collection):
 	undu_gap = _attribute(0,in_name='KUNDUGAP') # undulator with analytic gap-variation
 	undu_ellip = _attribute(0,in_name='KELLIP') # elliptic undulator
 	undu_ellip_ana = _attribute(0,in_name='KELLANA') # elliptic undulator
-	undu_mode = _attribute('undu_easy') # wave mode
+	wave_mode = _attribute('undu_easy') # wave mode
 
-	def get_std_paras(self, undu_mode = 'undu_easy' ): 
+	def get_std_paras(self, wave_mode = 'undu_easy' ): 
 		"""
 		Getting standard wave-parameters depending on mode
-		- undu_mode = 'By' - takes by field data and runs with that
-		- undu_mode = 'Byz'
-		- undu_mode = 'Bxyz'
-		- undu_mode = 'undu_ellip' - standard elliptical undulator
-		- undu_mode = 'undu_easy'
-		- undu_mode = 'undu_endp'
-		- undu_mode = 'undu_gap'
+		- wave_mode = 'By' - takes by field data and runs with that
+		- wave_mode = 'Byz'
+		- wave_mode = 'Bxyz'
+		- wave_mode = 'undu_ellip' - standard elliptical undulator
+		- wave_mode = 'undu_easy'
+		- wave_mode = 'undu_endp'
+		- wave_mode = 'undu_gap'
 		"""
-		
+
+		#std-bad!
 		dir_path = os.path.dirname(os.path.realpath(__file__))
 		self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/../../External-Software/WAVE/'))
 		self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/../UNDWAVE_IN_FILES/WAVE-In-Files/'))
+		#for containerization?
+		# dir_path='/var/lib/unduwave'
+		# self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/External-Software/WAVE/'))
+		# self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/unduwave/UNDWAVE_IN_FILES/WAVE-In-Files/'))
+
 		self.in_files.set({ 'By' : 'load_ext_on_axis_by_ALL_OUT.in', 
 							'Byz' : 'load_ext_on_axis_byz_ALL_OUT.in', 
 							'Bxyz' : 'load_ext_on_axis_bxyz_ALL_OUT.in', 
@@ -278,11 +376,11 @@ class wave_prog_parameters(_attribute_collection):
 		self.zipped.set(False)
 		self.wave_res_copy_behaviour.set('copy_essentials')
 		self.zip_res_folder.set(0)
-		self.iemit.set(0)
-		self.iefold.set(1)
-		self.isigusr.set(1)
-		self.spec_calc.set(1) # boolean
-		self.undu_mode.set(undu_mode)
+		self.calc_emittance.set(0)
+		self.calc_energy_fold.set(1)
+		self.emittance_fold_with_sigmas.set(1)
+		self.calc_spectrum.set(1) # boolean
+		self.wave_mode.set(wave_mode)
 
 		self.b_type.set('none')
 		self.irbtab.set(0)
@@ -293,26 +391,26 @@ class wave_prog_parameters(_attribute_collection):
 		self.undu_gap.set(0)
 		self.undu_ellip.set(0)
 
-		if undu_mode == 'By' :
+		if wave_mode == 'By' :
 			self.b_type.set('By')
 			self.irbtab.set(-2)
-		elif undu_mode == 'Byz' :
+		elif wave_mode == 'Byz' :
 			self.b_type.set('Byz')
 			self.irbtabzy.set(1)
-		elif undu_mode == 'Bxyz' :
+		elif wave_mode == 'Bxyz' :
 			self.b_type.set('Bxyz')
 			self.irbtabxyz.set(1)
-		elif undu_mode == 'undu_ellip' :
+		elif wave_mode == 'undu_ellip' :
 			self.undu_ellip.set(1)
-		elif undu_mode == 'undu_easy' :
+		elif wave_mode == 'undu_easy' :
 			self.undu_easy.set(1)
-		elif undu_mode == 'undu_endp' :
+		elif wave_mode == 'undu_endp' :
 			self.undu_endp.set(1)
-		elif undu_mode == 'undu_gap' :
+		elif wave_mode == 'undu_gap' :
 			self.undu_gap.set(1)
-		elif undu_mode == 'undu_ellip_ana' :
+		elif wave_mode == 'undu_ellip_ana' :
 			self.undu_ellip_ana.set(1)
-		elif undu_mode == 'bmap' :
+		elif wave_mode == 'bmap' :
 			self.b_type.set('bmap')
 			self.ntupgrid.set(-1)
 			self.irfileb0.set(-6) # loading field map

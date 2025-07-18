@@ -170,7 +170,7 @@ The different modes in which unduwave can be used are described. When creating a
    
 | You can specify the mode in which you want to use wave. The mode tells wave basically where you want to get your magnetic field from. The following options are available at the moment: "By", "Byz", "undu_ellip" and "undu_endp". 
 
-| The first two modes mean that you specify the magnetic field via files. The "undu_ellip" mode represents a simple elliptical undulator and "undu_endp" means a simple undulator with endpoles. See the following examples on how to specify the parameters for these use-cases.
+| The first two modes mean that you specify the magnetic field via files. The "undu_ellip" mode represents a simple elliptical undulator and "undu_endp" means a simple undulator with endpoles - in these modes the magnetic field is created analytically according to the set options. See the following examples on how to specify the parameters for these use-cases.
 
 ==================================
 User-defined B-Fields

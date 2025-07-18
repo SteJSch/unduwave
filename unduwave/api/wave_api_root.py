@@ -9,42 +9,29 @@ from unduwave.wave_modules.wave_postprocess import *
 from unduwave.wave_modules.wave_results import *
 
 class wave_api :
-	"""
-	Wave API-class for controlling basic wave-functionality. 
-	Holds the basic parameter classes.
-	"""
+
+	_prog_paras = wave_prog_parameters()
+	_ebeam_paras = ebeam_parameters()
+	_screen_paras = screen_parameters()
+	_spectrometer_paras = spectrometer_paras()
+	_bfield_paras = bfield_paras()
+	_undu_paras = undu_paras()
+
 	def __init__(self,wave_mode='undu_endp') :
 		"""
-		Initialize the WAVE parameters
+		Wave API-class for controlling basic wave-functionality. 
+		Holds the basic parameter classes.
 
-		:param str wave_mode: can be one of the following: |
-			'By' : 	
-			'Byz' :	
-			'Bxyz' :
-			'undu_ellip' :
-			'undu_easy' :
-			'undu_endp' :
-			'undu_gap' :
+		:param str wave_mode: can be one of the following
+			'bfield', 'undu_ellip', 'undu_endp' :
 		"""
 
-		self._prog_paras = wave_prog_parameters()
 		self._prog_paras.get_std_paras(wave_mode=wave_mode)
-		self._ebeam_paras = ebeam_parameters()
 		self._ebeam_paras.get_std_paras()
-		self._screen_paras = screen_parameters()
 		self._screen_paras.get_std_paras()
-		self._spectrometer_paras = spectrometer_paras()
 		self._spectrometer_paras.get_std_paras()
-		self._bfield_paras = bfield_paras()
 		self._bfield_paras.get_std_paras()
-		self._undu_paras = undu_paras()
-		self._undu_paras.get_std_paras(wave_mode=wave_mode)
-
-	def set_bessy_II_elliptical_undu(self,nperiods) :
-		"""
-		Sets standard settings for bessy II and some helical undulator
-		"""
-		pass
+		self._undu_paras.get_std_paras(wave_mode=wave_mode,ebeam=self._ebeam_paras)
 
 	def run(self) :
 		"""

@@ -1,0 +1,49 @@
+unduwave.undu_modules.undu_coils
+================================
+
+.. py:module:: unduwave.undu_modules.undu_coils
+
+.. autoapi-nested-parse::
+
+   Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that 
+   returns an instance of that class
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_coils.undu_coils
+   unduwave.undu_modules.undu_coils.coil
+
+
+Module Contents
+---------------
+
+.. py:class:: undu_coils(coils, api=None)
+
+   .. py:method:: move_it(vec)
+
+
+   .. py:method:: add_to_clc(clc_txt)
+
+
+   .. py:method:: set_all_apis()
+
+
+.. py:class:: coil(coil_type, current, center_coords, normal_vec, rot_angle, length, inner_z, outer_z, inner_radius, height, n_vert, n_hor, n_rad, filling=None, n_windings=None, api=None)
+
+   .. py:method:: set_api(api)
+
+
+   .. py:method:: add_to_clc()
+
+
+   .. py:method:: move_it(vec)
+
+
+   .. py:method:: create_clc_txt()
+
+

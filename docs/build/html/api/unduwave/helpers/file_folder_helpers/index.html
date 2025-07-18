@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>unduwave.helpers.file_folder_helpers &#8212; Unduwave v0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../../../_static/documentation_options.js?v=2fea6348"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-unduwave.helpers.file_folder_helpers">
+<span id="unduwave-helpers-file-folder-helpers"></span><h1>unduwave.helpers.file_folder_helpers<a class="headerlink" href="#module-unduwave.helpers.file_folder_helpers" title="Link to this heading">¶</a></h1>
+<p>Contains functionality for handling files.</p>
+<p>Module to handle various file operations including finding, moving, copying, and deleting files.</p>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.convert_path_to_win" title="unduwave.helpers.file_folder_helpers.convert_path_to_win"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_path_to_win</span></code></a>(path)</p></td>
+<td><p>Takes a path and converts it to win-standard.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.find_files_exptn" title="unduwave.helpers.file_folder_helpers.find_files_exptn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_files_exptn</span></code></a>(folder[, hints, exptns])</p></td>
+<td><p>Find files in the specified folder based on hints and exptns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.find_all_files_exptn" title="unduwave.helpers.file_folder_helpers.find_all_files_exptn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_all_files_exptn</span></code></a>(folder[, exptns])</p></td>
+<td><p>Find all files in a directory while excluding specified patterns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.zip_files_in_folder" title="unduwave.helpers.file_folder_helpers.zip_files_in_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zip_files_in_folder</span></code></a>(folder_to_pack)</p></td>
+<td><p>Zip all files in a specified folder.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.unzip_zip_in_folder" title="unduwave.helpers.file_folder_helpers.unzip_zip_in_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unzip_zip_in_folder</span></code></a>(folder)</p></td>
+<td><p>Unzip a zip file in the specified folder.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.mv_cp_files" title="unduwave.helpers.file_folder_helpers.mv_cp_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mv_cp_files</span></code></a>(hints, exptns, folder_in, folder_out[, ...])</p></td>
+<td><p>Move or copy files between folders based on specified criteria.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.del_files" title="unduwave.helpers.file_folder_helpers.del_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_files</span></code></a>(hints, exptns, folder)</p></td>
+<td><p>Delete files from a specified folder based on specified criteria.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.del_all_files" title="unduwave.helpers.file_folder_helpers.del_all_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_all_files</span></code></a>(exptns, folder)</p></td>
+<td><p>Delete all files from a specified folder.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.convert_path_to_win">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">convert_path_to_win</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.convert_path_to_win" title="Link to this definition">¶</a></dt>
+<dd><p>Takes a path and converts it to win-standard.
+:param str path: The path.
+:return: windows path</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.find_files_exptn">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">find_files_exptn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.find_files_exptn" title="Link to this definition">¶</a></dt>
+<dd><p>Find files in the specified folder based on hints and exptns.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder (str): The folder in which to search for files.
+hints (list, optional): List of strings to search for in filenames. Default is [].
+exptns (list, optional): List of strings to exclude from filenames. Default is [].</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of filenames matching the criteria.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.find_all_files_exptn">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">find_all_files_exptn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.find_all_files_exptn" title="Link to this definition">¶</a></dt>
+<dd><p>Find all files in a directory while excluding specified patterns.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder (str): The folder in which to search for files.
+exptns (list, optional): List of strings to exclude from filenames. Default is [].</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of filenames matching the criteria.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.zip_files_in_folder">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">zip_files_in_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_to_pack</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.zip_files_in_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Zip all files in a specified folder.</p>
+<p>Zips all files in the specified folder, names the zip as the folder name,
+moves the resulting zip to the same directory, and deletes all other files in the directory.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder_to_pack (str): The folder containing files to be zipped.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.unzip_zip_in_folder">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">unzip_zip_in_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.unzip_zip_in_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Unzip a zip file in the specified folder.</p>
+<p>Looks for a zip file in the specified folder, unzips it there,
+and returns the list of extracted zip files.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder (str): The folder in which to search for and extract zip files.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of extracted zip filenames.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.mv_cp_files">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">mv_cp_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">move</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.mv_cp_files" title="Link to this definition">¶</a></dt>
+<dd><p>Move or copy files between folders based on specified criteria.</p>
+<p>Moves or copies files whose name contains a string from hints,
+excluding those whose name contains a string from the exptns list,
+from folder_in to folder_out and appends add_string to the name.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>hints (list): List of strings to search for in filenames.
+exptns (list): List of strings to exclude from filenames.
+folder_in (str): The source folder.
+folder_out (str): The destination folder.
+move (bool, optional): Whether to move (True) or copy (False) files. Default is True.
+add_string (str, optional): String to append to the filenames. Default is ‘’.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of names of the moved or copied files (with add_string appended).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.del_files">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">del_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.del_files" title="Link to this definition">¶</a></dt>
+<dd><p>Delete files from a specified folder based on specified criteria.</p>
+<p>Deletes files whose name contains a string from hints,
+excluding those whose name contains a string from the exptns list,
+from the specified folder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>hints (list): List of strings to search for in filenames.
+exptns (list): List of strings to exclude from filenames.
+folder (str): The folder from which to delete files.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of names of the deleted files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.del_all_files">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">del_all_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exptns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.del_all_files" title="Link to this definition">¶</a></dt>
+<dd><p>Delete all files from a specified folder.</p>
+<p>Deletes all files in the specified folder, excluding those whose name
+contains a string from the exptns list.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>exptns (list): List of strings to exclude from filenames.
+folder (str): The folder from which to delete files.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of names of the deleted files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">Unduwave</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickguide.html">3. Quickguide</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;CC BY-NC.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../../../_sources/api/unduwave/helpers/file_folder_helpers/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

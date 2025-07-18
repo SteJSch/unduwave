@@ -1,6 +1,6 @@
 from unduwave.unduwave_incl import *
 from unduwave.wave_modules.wave_parameters import *
-import unduwave.helpers.bfield_helpers as bfield
+import unduwave.analytical_module.ana_undu.bfield as bfield
 
 class wave_prepare():
 	"""_summary_
@@ -16,7 +16,12 @@ class wave_prepare():
 		self._all_paras = [ 
 			self._wave_api._spectrometer_paras, self._wave_api._ebeam_paras, 
 			self._wave_api._screen_paras, self._wave_api._bfield_paras, 
-			self._wave_api._undu_paras, self._wave_api._wave_prog_paras ]
+			self._wave_api._undu_paras, self._wave_api._prog_paras ]
+		self._wave_api._prog_paras.update_values(
+			bfield_paras=self._wave_api._bfield_paras
+			)
+		self._wave_api._ebeam_paras.update_values()
+		self._wave_api._undu_paras.update_values(ebeam=self._wave_api._ebeam_paras)
 
 	def create_wave_input(self):
 		"""Creates all the files needed as input fro Wave.
@@ -56,13 +61,36 @@ class wave_prepare():
 		Deoending on which b_type, copies and 
 		formats the b-field files needed
 		"""
-		b_type = self._wave_api._prog_paras.b_type.get()
+		b_type = self._wave_api._bfield_paras.field_type.get()
 		if b_type == 'none' :
 			return
 
 		wave_folder = self._wave_api._prog_paras.wave_prog_folder.get()
-		field_files = self._wave_api._prog_paras.field_files.get()
-		field_folder = self._wave_api._prog_paras.field_folder.get()
+		bfield = self._wave_api._bfield_paras.bfield.get()
+		# field_files = self._wave_api._prog_paras.field_files.get()
+		# field_folder = self._wave_api._prog_paras.field_folder.get()
+
+		if b_type == 'By' :
+			bfield.write_field_std(
+				file=wave_folder + 'stage/btab.dat',
+				unitsXB=None
+				)
+		elif b_type == 'Byz' :
+			bfield.write_field_waveByz(
+				filey=wave_folder+'stage/btab.dat',
+				filez=wave_folder+'stage/bz.dat',
+				unitsXB=None
+				)
+		elif b_type == 'Bxyz' :
+			bfield.write_field_waveByz(
+				filex=wave_folder+'stage/bx.dat',
+				filey=wave_folder+'stage/btab.dat',
+				filez=wave_folder+'stage/bz.dat',
+				unitsXB=None
+				)
+		pdb.set_trace()
+		return
+
 		# except for Bxyz, By is first field file
 		y_pos = 0
 		if (b_type == 'Byz') or (b_type == 'Bxyz') : 

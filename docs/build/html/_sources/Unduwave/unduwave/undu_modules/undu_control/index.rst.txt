@@ -1,0 +1,39 @@
+unduwave.undu_modules.undu_control
+==================================
+
+.. py:module:: unduwave.undu_modules.undu_control
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_control.dir_path
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_control.undu_control
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:class:: undu_control(undu_api, current_folder=None)
+
+   Internal API for the WAVE program
+
+   Initialize the internal API
+   undu_api : external wave_api class
+   current_folder : folder to which you want to jump back after wave was run
+
+
+   .. py:method:: run(copy=None, freate_fresh_clc=True)
+
+

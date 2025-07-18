@@ -2,6 +2,9 @@
 Undumag api definitions
 """
 from unduwave.unduwave_incl import *
+
+# import unduwave.undu_parameters as undu_parameters
+
 from unduwave.undu_modules.undu_parameters import *
 from unduwave.undu_modules.undu_prepare import *
 from unduwave.undu_modules.undu_control import *
@@ -44,13 +47,13 @@ class undu_api :
 
 	def set_force_calc(self,object) :
 		center_coord, maxs, mins = object.get_max_extent()
-		self._prog_paras.iforce.set(1)
-		self._prog_paras.ubfcenx.set(center_coord._x)
-		self._prog_paras.ubfceny.set(center_coord._y)
-		self._prog_paras.ubfcenz.set(center_coord._z)
-		self._prog_paras.ubflenx.set(maxs[0]-mins[0])
-		self._prog_paras.ubfleny.set(maxs[1]-mins[1])
-		self._prog_paras.ubflenz.set(maxs[2]-mins[2])
+		self._prog_paras.calc_force.set(1)
+		self._prog_paras.force_box_center_x.set(center_coord._x)
+		self._prog_paras.force_box_center_y.set(center_coord._y)
+		self._prog_paras.force_box_center_z.set(center_coord._z)
+		self._prog_paras.force_box_len_x.set(maxs[0]-mins[0])
+		self._prog_paras.force_box_len_y.set(maxs[1]-mins[1])
+		self._prog_paras.force_box_len_z.set(maxs[2]-mins[2])
 
 	def get_results(self) :
 		"""

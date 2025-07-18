@@ -1,6 +1,5 @@
 from unduwave.unduwave_incl import *
 from unduwave.undu_modules.undu_parameters import *
-import unduwave.helpers.bfield_helpers as bfield
 
 class undu_prepare():
 	"""_summary_

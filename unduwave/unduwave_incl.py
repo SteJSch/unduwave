@@ -1,6 +1,21 @@
 """
 Contains the import statements for undupy modules
 """
+
+def to_scn(number : float,norm: bool=True):
+	"""
+	Converts number to string using scientific notation
+
+	:param number: The number to convert
+	:param norm: If true, std scientific notation, False: With leading 0.
+	:return: The resulting string.
+	"""
+	if norm : 
+		return '{:.5E}'.format(number)
+	else :
+		a, b = '{:.4E}'.format(number).split('E')
+		return '{:.5f}E{:+03d}'.format(float(a)/10, int(b)+1)
+
 import os
 import pandas as pd
 import h5py
@@ -32,15 +47,9 @@ from pathlib import Path
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 from mpl_toolkits.mplot3d import Axes3D
 import time
+from mayavi import mlab
 random.seed(datetime.now().timestamp())
 cm_inch = 1/2.54
-
-def to_scn(number,norm=True):
-	"""
-	converts number to scientific notation
-	"""
-	if norm : 
-		return '{:.5E}'.format(number)
-	else :
-		a, b = '{:.4E}'.format(number).split('E')
-		return '{:.5f}E{:+03d}'.format(float(a)/10, int(b)+1)
+"""
+Conversion factor cm to inch
+"""

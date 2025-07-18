@@ -16,7 +16,9 @@ class wave_prepare():
 		self._all_paras = [ 
 			self._wave_api._spectrometer_paras, self._wave_api._ebeam_paras, 
 			self._wave_api._screen_paras, self._wave_api._bfield_paras, 
-			self._wave_api._undu_paras, self._wave_api._wave_prog_paras ]
+			self._wave_api._undu_paras, self._wave_api._prog_paras ]
+		self._wave_api._ebeam_paras.update_values()
+		self._wave_api._undu_paras.update_values(ebeam=self._wave_api._ebeam_paras)
 
 	def create_wave_input(self):
 		"""Creates all the files needed as input fro Wave.
@@ -26,10 +28,10 @@ class wave_prepare():
 		resulting file to the WAVE program folder.
 		"""
 
-		wave_folder   = self._wave_api._wave_prog_paras.wave_prog_folder.get()
-		inp_folder    = self._wave_api._wave_prog_paras.in_file_folder.get()
-		b_type        = self._wave_api._wave_prog_paras.b_type.get()
-		configFile_in = self._wave_api._wave_prog_paras.in_files.get()[b_type]
+		wave_folder   = self._wave_api._prog_paras.wave_prog_folder.get()
+		inp_folder    = self._wave_api._prog_paras.in_file_folder.get()
+		b_type        = self._wave_api._prog_paras.b_type.get()
+		configFile_in = self._wave_api._prog_paras.in_files.get()[b_type]
 		# open the configuration file
 		wave_in_file = []
 		with open(inp_folder+configFile_in, 'r') as o_f:
@@ -56,13 +58,13 @@ class wave_prepare():
 		Deoending on which b_type, copies and 
 		formats the b-field files needed
 		"""
-		b_type = self._wave_api._wave_prog_paras.b_type.get()
+		b_type = self._wave_api._prog_paras.b_type.get()
 		if b_type == 'none' :
 			return
 
-		wave_folder = self._wave_api._wave_prog_paras.wave_prog_folder.get()
-		field_files = self._wave_api._wave_prog_paras.field_files.get()
-		field_folder = self._wave_api._wave_prog_paras.field_folder.get()
+		wave_folder = self._wave_api._prog_paras.wave_prog_folder.get()
+		field_files = self._wave_api._prog_paras.field_files.get()
+		field_folder = self._wave_api._prog_paras.field_folder.get()
 		# except for Bxyz, By is first field file
 		y_pos = 0
 		if (b_type == 'Byz') or (b_type == 'Bxyz') : 
