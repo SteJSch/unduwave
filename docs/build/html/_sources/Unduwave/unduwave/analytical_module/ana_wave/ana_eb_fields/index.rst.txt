@@ -11,6 +11,14 @@ unduwave.analytical_module.ana_wave.ana_eb_fields
 
 
 
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_wave.ana_eb_fields.aspectrum
+
+
 Functions
 ---------
 
@@ -18,10 +26,9 @@ Functions
 
    unduwave.analytical_module.ana_wave.ana_eb_fields.compare_sum_res
    unduwave.analytical_module.ana_wave.ana_eb_fields.bessel_sum
-   unduwave.analytical_module.ana_wave.ana_eb_fields.electr_field_full
-   unduwave.analytical_module.ana_wave.ana_eb_fields.flux_at_order_m
-   unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strong_time_fourier
-   unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strongU
+   unduwave.analytical_module.ana_wave.ana_eb_fields.xyz_from_spherical
+   unduwave.analytical_module.ana_wave.ana_eb_fields.spherical_coord_from_xyz
+   unduwave.analytical_module.ana_wave.ana_eb_fields.make_coords
 
 
 Module Contents
@@ -31,11 +38,37 @@ Module Contents
 
 .. py:function:: bessel_sum(type, order_m, arg_a, arg_b, accur=0.001)
 
-.. py:function:: electr_field_full(times, obs_pnt, undu_paras, beam_paras)
+.. py:function:: xyz_from_spherical(rs, thetas, phis)
 
-.. py:function:: flux_at_order_m(harmOrder, undu_paras, beam_paras)
+.. py:function:: spherical_coord_from_xyz(xs, ys, zs)
 
-.. py:function:: electric_field_strong_time_fourier(time, arg_a, arg_b, order, theta, phi, undu_paras, beam_paras)
+.. py:function:: make_coords(fun, coords1, coords2)
 
-.. py:function:: electric_field_strongU(time, theta, phi, undu_paras, beam_paras, accur=0.001)
+   Takes 2 lists of coordinates for which fun is evaluated. Fun is expected to give back cartesian coordinates of a point.
+   Returns 3 2d-arrays containing the grid coordinates
+
+
+.. py:class:: aspectrum(ebeam, undulator)
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+
+   .. py:method:: spectral_fun(omega, order)
+
+
+   .. py:method:: fun_transv(theta, phi)
+
+
+   .. py:method:: fun_transv_ultra_rel(theta, phi)
+
+
+   .. py:method:: flux_strong_undu(x, y, z, omega, order)
+
 

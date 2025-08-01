@@ -5,8 +5,7 @@ unduwave.undu_modules.undu_coils
 
 .. autoapi-nested-parse::
 
-   Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that 
-   returns an instance of that class
+   Defining the functionality to representations of current-carrying coils.
 
 
 
@@ -24,26 +23,89 @@ Module Contents
 
 .. py:class:: undu_coils(coils, api=None)
 
+   
+   A container class containing a list of coil objects which are to be created and simulated with Undumag.
+   :param list coils: A list of coil objects.
+   :param api: The undu_api object carrying out the simulations.
+   :type api: undu_api or None
+
+
    .. py:method:: move_it(vec)
 
+      Moving the center of the coil by vector vec.
 
-   .. py:method:: add_to_clc(clc_txt)
+      :param list vec: A list containing the (x,y,z) components of the translation vector vec.
 
-
-   .. py:method:: set_all_apis()
-
-
-.. py:class:: coil(coil_type, current, center_coords, normal_vec, rot_angle, length, inner_z, outer_z, inner_radius, height, n_vert, n_hor, n_rad, filling=None, n_windings=None, api=None)
-
-   .. py:method:: set_api(api)
 
 
    .. py:method:: add_to_clc()
 
+      Add all daughter coils to the Undumag clc file for simulation.
+
+
+
+   .. py:method:: set_all_apis()
+
+      Sets all daughter coil-api objects to the api object of this collection.
+
+
+
+.. py:class:: coil(coil_type, current, center_coords, normal_vec, rot_angle, length, inner_z, outer_z, inner_radius, height, n_vert, n_hor, n_rad, filling=None, n_windings=None, api=None)
+
+   
+   Coil class representing a currect carrying coil.
+   :param str coil_type: The type of coil. Can be one of the following: 
+
+           Rectangular: A coil with 90° edges. 
+
+           RectWindings: A coil with rounded edges. 
+
+   :param float current: The current in the coil [mA]
+   :param undu_magnets.point_coords center_coords: The 3 center coordinates. [mm]
+   :param undu_magnets.point_coords normal_vec: Normal vector. The opening in the middle of the coil lies perpendicular to normal_vec. A normal_vec along (0,1,0) is the standard to which the parameter names refer!
+   :param float rot_angle: angle by which coil is rotated aroung normal_vec?
+   :param float length: Extension in x-direction. [mm]
+   :param float inner_z: Extension in z-direction of hole inside coil. [mm]
+   :param float outer_z: Extension in z-direction of full coil. The difference of outer and inner z determines the width of the coils running around the central hole. [mm]
+   :param float inner_radius: The inner radius of the curvature of the coil edges. [mm]
+   :param float height: The extent of the coil in y-direction. [mm]
+   :param float n_vert,n_hor,n_rad: Number of segmentations.
+   :param filling: The percentage of the cross-section of the coil being filled with current carrying wire
+   :type filling: float or None
+   :param int n_windings: The number of coils in a cross-section
+   :type n_windings: int or None
+   :param api: The undu_api object carrying out the simulations.
+   :type api: undu_api or None
+
+
+   .. py:method:: set_api(api)
+
+      Setting the internal api if it is not None
+
+      :param undu_api api: The api object.
+
+
+
+   .. py:method:: add_to_clc()
+
+      Gets the clc-text for this coil and adds it to the api._prog_paras.in_file_clc_lines list.
+      The in_file_clc_lines lines object can be initialized or, if empty, will be initialized via the api.
+
+
 
    .. py:method:: move_it(vec)
 
+      Translates the center of the voil by the vector vec. 
+
+      :param undu_magnets.point_coords vec: The translation vector.
+
+
 
    .. py:method:: create_clc_txt()
+
+      Creates the actual clc text from the object's parameters
+
+      :return list: The list containing str representing the content of the undumag clc file
+
 
 

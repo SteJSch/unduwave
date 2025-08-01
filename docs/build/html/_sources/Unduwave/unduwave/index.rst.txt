@@ -157,8 +157,8 @@ Package Contents
    Wave API-class for controlling basic wave-functionality. 
    Holds the basic parameter classes.
 
-   :param str wave_mode: can be one of the following.
-           'By','Byz',     'Bxyz', 'undu_ellip', 'undu_endp' :
+   :param str wave_mode: can be one of the following
+           'bfield', 'undu_ellip', 'undu_endp' :
 
 
    .. py:attribute:: _prog_paras
@@ -193,24 +193,38 @@ Package Contents
 
 .. py:class:: undu(undu_mode='from_clc_file')
 
+   
    Undumag API-class for controlling basic undumag-functionality. 
-   Holds the basic parameter classes.
 
-   Initialize the Undumag parameters
+   :param str undu_mode: Determines the basic mode by which a magnet structure is
+   constructed. Can be one of the following: 
 
-   :param str undu_mode: can be one of the following: 'from_clc_file', 'from_undu_magns'
+                   'from_clc_file': The magnet structure is read from an Undumag .clc file. 
+
+                   'from_undu_magns': A model of the magnet structure is constructed using 
+                   the undu_magns classes. 
+
 
 
    .. py:method:: run()
 
-      Runs undumag with the given settings, prepares and postprocesses data
+      Runs undumag with the given settings, prepares and postprocesses data.
 
 
 
    .. py:method:: load_clc_raw()
 
+      Loads a raw-clc file template from the folder set in prog_paras.in_file_folder+prog_paras.in_file_clc_raw.
+      After loading prog_paras.in_file_clc_lines holds the list representation of the file in form of a list of strings.
+
+
 
    .. py:method:: set_force_calc(object)
+
+      Prepares the parameter list for calculation of force on the undu_magnets object object.
+
+      :param undu_magnets object: An undu_magnets object (i.e. a collection of magnets) on which the force is to be calculated.
+
 
 
    .. py:method:: get_results()
@@ -667,7 +681,17 @@ Package Contents
    .. py:attribute:: field_folder
 
 
-   .. py:method:: get_std_paras()
+   .. py:attribute:: bfield
+
+
+   .. py:attribute:: field_type
+
+      Possible Types: 
+      By / Byz / Bxyz / Bmap
+
+
+
+   .. py:method:: get_std_paras(bfield=None)
 
 
 .. py:class:: wave_prog_parameters
@@ -829,6 +853,9 @@ Package Contents
 
 
 
+   .. py:method:: update_values(bfield_paras=None)
+
+
 .. py:function:: to_scn(number, norm = True)
 
    Converts number to string using scientific notation
@@ -893,7 +920,7 @@ Package Contents
 
       Prepare the files for WAVE depending on the b type.
               
-      Deoending on which b_type, copies and 
+      Depending on which b_type, copies and 
       formats the b-field files needed
 
 
@@ -1046,14 +1073,18 @@ Package Contents
 
 .. py:class:: undu_control(undu_api, current_folder=None)
 
-   Internal API for the WAVE program
+   
+   An object for controling undumag, allowing to run simulations
 
-   Initialize the internal API
-   undu_api : external wave_api class
-   current_folder : folder to which you want to jump back after wave was run
+   :param undu_api undu_api: external wave_api class
+   :param current_folder: folder to which you want to jump back after wave was run
+   :type current_folder: str or None
 
 
-   .. py:method:: run(copy=None, freate_fresh_clc=True)
+   .. py:method:: run()
+
+      Run an undumag simulation
+
 
 
 .. py:class:: undu_results(undu_api)

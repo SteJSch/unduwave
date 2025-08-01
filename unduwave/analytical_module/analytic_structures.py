@@ -13,6 +13,7 @@ import unduwave.constants as uc
 class ana_undulator(_attribute_collection) :
 
 	bEff = _attribute(1)
+	bEff2 = _attribute(0)
 	periodLength = _attribute(0.02)
 	numPeriods = _attribute(78)
 	lengthEndPeriodsRelative = _attribute(2*1.5)
@@ -35,7 +36,16 @@ class ana_undulator(_attribute_collection) :
 	firstHarmEnergyStrong = _attribute()
 	thetaObservation = _attribute()
 
-	def __init__(self,bEff,periodLength,numPeriods,lengthEndPeriodsRelative=0.0,ebeam=None,thetaObservation=0.0,unduK=None) :
+	def __init__(self,
+			bEff,
+			periodLength,
+			numPeriods,
+			bEff2=0.0,
+			lengthEndPeriodsRelative=0.0,
+			ebeam=None,
+			thetaObservation=0.0,
+			unduK=None
+			) :
 		self.bEff.set(bEff)
 		self.periodLength.set(periodLength)
 		self.numPeriods.set(numPeriods)
@@ -49,14 +59,17 @@ class ana_undulator(_attribute_collection) :
 	def update_non_beam_values(self) :
 		self.undulatorLength.set( self.periodLength.get()*(self.numPeriods.get()+self.lengthEndPeriodsRelative.get()) )
 		self.undulatorWaveNum.set( 2 * math.pi / ( self.periodLength.get() ) )
-		if (self.bEff.get() is None) :
-			if not(self.undulatorParameterK.get() is None) :
-				self.bEff.set(self.undulatorParameterK.get()*uc.m_el * uc.v_c * self.undulatorWaveNum.get()/uc.q_el)
-			else :
-				print("Warning: ana_undulator:update_values - No B and no K given")
-				return
+		if not(self.undulatorParameterK.get() is None) :
+			self.bEff.set(self.undulatorParameterK.get()*uc.m_el * uc.v_c * self.undulatorWaveNum.get()/uc.q_el)
+		elif (self.bEff.get() is None) :
+			print("Warning: ana_undulator:update_values - No B and no K given")
+			return
 		else :
-			self.undulatorParameterK.set( uc.q_el * self.bEff.get() / ( uc.m_el * uc.v_c * self.undulatorWaveNum.get() ))
+			k1=uc.q_el * self.bEff.get() / ( uc.m_el * uc.v_c * self.undulatorWaveNum.get() )
+			if not (self.bEff2.get() is None) :
+				k2=uc.q_el * self.bEff2.get() / ( uc.m_el * uc.v_c * self.undulatorWaveNum.get() )
+				k1=math.sqrt(k1**2+k2**2)
+			self.undulatorParameterK.set(k1)
 
 	def update_values(self,ebeam,thetaObservation=0.0) :
 		self.update_non_beam_values()

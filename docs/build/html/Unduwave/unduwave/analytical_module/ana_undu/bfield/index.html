@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.1.1.1.1.1.2. unduwave.analytical_module.ana_undu.bfield &mdash; Unduwave v0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=2fea6348"></script>
+      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.1.1.1.1.2. unduwave.analytical_module.ana_wave" href="../../ana_wave/index.html" />
+    <link rel="prev" title="4.1.1.1.1.1.1.1. unduwave.analytical_module.ana_undu.analytic_undulator" href="../analytic_undulator/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../quickguide.html">3. Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">4. API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">4.1. unduwave</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../index.html#subpackages">4.1.1. Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../index.html">4.1.1.1. unduwave.analytical_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/index.html">4.1.1.2. unduwave.api</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../attribute_classes/index.html">4.1.1.3. unduwave.attribute_classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../helpers/index.html">4.1.1.4. unduwave.helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../optimization_module/index.html">4.1.1.5. unduwave.optimization_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../quantities/index.html">4.1.1.6. unduwave.quantities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../undu_modules/index.html">4.1.1.7. unduwave.undu_modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../wave_modules/index.html">4.1.1.8. unduwave.wave_modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#submodules">4.1.2. Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#attributes">4.1.3. Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#classes">4.1.4. Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#functions">4.1.5. Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#package-contents">4.1.6. Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html"><span class="section-number">4. </span>API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html"><span class="section-number">4.1. </span>unduwave</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="section-number">4.1.1.1. </span>unduwave.analytical_module</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">4.1.1.1.1.1. </span>unduwave.analytical_module.ana_undu</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1.1.1.1.1.1.2. </span>unduwave.analytical_module.ana_undu.bfield</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/Unduwave/unduwave/analytical_module/ana_undu/bfield/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-unduwave.analytical_module.ana_undu.bfield">
+<span id="unduwave-analytical-module-ana-undu-bfield"></span><h1><span class="section-number">4.1.1.1.1.1.1.2. </span>unduwave.analytical_module.ana_undu.bfield<a class="headerlink" href="#module-unduwave.analytical_module.ana_undu.bfield" title="Link to this heading"></a></h1>
+<p>Contains the functionality for loading and processing b-field data</p>
+<section id="classes">
+<h2><span class="section-number">4.1.1.1.1.1.1.2.1. </span>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.bfield" title="unduwave.analytical_module.ana_undu.bfield.bfield"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfield</span></code></a></p></td>
+<td><p>Holds the bfield data</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2><span class="section-number">4.1.1.1.1.1.1.2.2. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.convert_x_mm_b_T_file_to_wave_std" title="unduwave.analytical_module.ana_undu.bfield.convert_x_mm_b_T_file_to_wave_std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_x_mm_b_T_file_to_wave_std</span></code></a>(folder_in, file_in, ...)</p></td>
+<td><p>Loads a file in folder_in called file_in with two cols: x[mm] and B[T] - no header to separator</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.interpolate_bfield_data" title="unduwave.analytical_module.ana_undu.bfield.interpolate_bfield_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate_bfield_data</span></code></a>(b_fields, val, colInt[, coly, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.load_b_fields" title="unduwave.analytical_module.ana_undu.bfield.load_b_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_b_fields</span></code></a>(folder[, hints, undu_file])</p></td>
+<td><p>Load field files from &quot;folder&quot; containing files with fields for different gaps</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.load_undu_b_fields" title="unduwave.analytical_module.ana_undu.bfield.load_undu_b_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_undu_b_fields</span></code></a>(folder[, hints, exptns])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.make_bf_para_list" title="unduwave.analytical_module.ana_undu.bfield.make_bf_para_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_bf_para_list</span></code></a>(bfields[, para_name])</p></td>
+<td><p>Creates a dictionary containing the bfields under 'field' and the parameter para_name under the key para_name</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.plot_b_field_data" title="unduwave.analytical_module.ana_undu.bfield.plot_b_field_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_b_field_data</span></code></a>(b_fields[, col_names, col_val_plt])</p></td>
+<td><p>Plots all the fields in list b_fields, if col_names and col_val_plt are given, then only the fields which parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.interpolate_b_data" title="unduwave.analytical_module.ana_undu.bfield.interpolate_b_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate_b_data</span></code></a>(b_fields, gap, lim_peak[, ...])</p></td>
+<td><p>interpolates b-field data for a given gap using already present dataframes for different gaps</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.cut_data_support" title="unduwave.analytical_module.ana_undu.bfield.cut_data_support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cut_data_support</span></code></a>(bfs[, col_cut])</p></td>
+<td><p>takes b-field data list loaded with load_b_fields_gap and</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.create_harm_field" title="unduwave.analytical_module.ana_undu.bfield.create_harm_field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_harm_field</span></code></a>(period, amplitude, deltaX[, ...])</p></td>
+<td><p>Creates a sine field: amplitude*sin( k_per * x + phase_shift ) for all x lying in interval deltaX,</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.bfield.create_field_with_ends" title="unduwave.analytical_module.ana_undu.bfield.create_field_with_ends"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_field_with_ends</span></code></a>(period_length, amplY, nperiods)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2><span class="section-number">4.1.1.1.1.1.1.2.3. </span>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.convert_x_mm_b_T_file_to_wave_std">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">convert_x_mm_b_T_file_to_wave_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.convert_x_mm_b_T_file_to_wave_std" title="Link to this definition"></a></dt>
+<dd><p>Loads a file in folder_in called file_in with two cols: x[mm] and B[T] - no header to separator
+and converts, depending on b_type, to wave std and copies to out_path (path+filename)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.interpolate_bfield_data">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">interpolate_bfield_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colInt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_supports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.interpolate_bfield_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.load_b_fields">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">load_b_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undu_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.load_b_fields" title="Link to this definition"></a></dt>
+<dd><p>Load field files from “folder” containing files with fields for different gaps
+The file format should be two rows, the first one ‘x’ in [mm], the second one ‘By’ [T]
+The file-name format should be: file_name_front + ‘<a href="#id3"><span class="problematic" id="id4">gap_</span></a>’ + str(gap) + ‘_’ + file_name_back + ‘.’ + file_ending, eg: foo_gap_4.5_v1.csv
+Returns list of dictionaries: { ‘gap’ : gap,’data’ : pd.DataFrame(data), ‘file_name’ : file_name }, where data is a panda dataframe with rows
+“x” and “By”</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.load_undu_b_fields">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">load_undu_b_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.load_undu_b_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.make_bf_para_list">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">make_bf_para_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bfields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">para_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gap'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.make_bf_para_list" title="Link to this definition"></a></dt>
+<dd><p>Creates a dictionary containing the bfields under ‘field’ and the parameter para_name under the key para_name
+para_name needs to be defined in para of bf’s!</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.plot_b_field_data">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">plot_b_field_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gap'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_val_plt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.plot_b_field_data" title="Link to this definition"></a></dt>
+<dd><p>Plots all the fields in list b_fields, if col_names and col_val_plt are given, then only the fields which parameter
+col_names is equal to some value in col_val_plt list.
+e.g. : plot all fields with gap 15 or 20</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.interpolate_b_data">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">interpolate_b_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lim_peak</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_support_per_extrema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.interpolate_b_data" title="Link to this definition"></a></dt>
+<dd><p>interpolates b-field data for a given gap using already present dataframes for different gaps
+takes b-field data list loaded with load_b_fields_gap, a gap number, the lim_peak value
+used for findind the extrema in the data (for determination of the number of periods)
+and the number of support positions per extrema for the calculation of splines from the data
+Returns a list containing a dictionary: { ‘gap’ : gap,’data’ : pd.DataFrame(data), ‘file_name’ : file_name }, where data is a panda dataframe
+containing the interpolated data and file_name contains the value of the gap at which this data is determined</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.cut_data_support">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">cut_data_support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.cut_data_support" title="Link to this definition"></a></dt>
+<dd><p>takes b-field data list loaded with load_b_fields_gap and
+cuts the fields to the smallest common support in the column
+col_cut - afterwards all fiel-data is defined on the same col-values</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.create_harm_field">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">create_harm_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amplitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deltaX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_pnts_per_period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.create_harm_field" title="Link to this definition"></a></dt>
+<dd><p>Creates a sine field: amplitude*sin( k_per * x + phase_shift ) for all x lying in interval deltaX,
+creates bfield class filled with data, with num_pnts_per_period pnts per period in deltaX</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.create_field_with_ends">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">create_field_with_ends</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">period_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amplY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nperiods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_pnts_per_period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amplZ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gaugeY</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gaugeZ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.create_field_with_ends" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.bfield.</span></span><span class="sig-name descname"><span class="pre">bfield</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unitsXB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.001,</span> <span class="pre">1.0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Holds the bfield data</p>
+<p>Initialize the attribute collection</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.bx">
+<span class="sig-name descname"><span class="pre">bx</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.bx" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.by">
+<span class="sig-name descname"><span class="pre">by</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.by" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.bz">
+<span class="sig-name descname"><span class="pre">bz</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.bz" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.xvals">
+<span class="sig-name descname"><span class="pre">xvals</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.xvals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.yvals">
+<span class="sig-name descname"><span class="pre">yvals</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.yvals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.zvals">
+<span class="sig-name descname"><span class="pre">zvals</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.zvals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.write_field">
+<span class="sig-name descname"><span class="pre">write_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'std'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unitsXB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filez</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.write_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.write_field_unduOut">
+<span class="sig-name descname"><span class="pre">write_field_unduOut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unitsXB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.write_field_unduOut" title="Link to this definition"></a></dt>
+<dd><p>UndumagOut file Units are mm for the length and T for B</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.write_field_std">
+<span class="sig-name descname"><span class="pre">write_field_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unitsConv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whatStr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.write_field_std" title="Link to this definition"></a></dt>
+<dd><p>UndumagOut file Units are mm for the length and T for B</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.write_field_waveByz">
+<span class="sig-name descname"><span class="pre">write_field_waveByz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filez</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unitsXB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.write_field_waveByz" title="Link to this definition"></a></dt>
+<dd><p>UndumagOut file Units are mm for the length and T for B</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.write_field_waveBxyz">
+<span class="sig-name descname"><span class="pre">write_field_waveBxyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filez</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unitsXB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.write_field_waveBxyz" title="Link to this definition"></a></dt>
+<dd><p>UndumagOut file Units are mm for the length and T for B</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.write_field_map_wave">
+<span class="sig-name descname"><span class="pre">write_field_map_wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unitsXB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.write_field_map_wave" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.load_field_from_file">
+<span class="sig-name descname"><span class="pre">load_field_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldMap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unduFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radiaFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skiprows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.load_field_from_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.clone_me">
+<span class="sig-name descname"><span class="pre">clone_me</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.clone_me" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.load_field_from_radia">
+<span class="sig-name descname"><span class="pre">load_field_from_radia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.load_field_from_radia" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.get_para">
+<span class="sig-name descname"><span class="pre">get_para</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.get_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.set_para">
+<span class="sig-name descname"><span class="pre">set_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">para</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.set_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.get_std_para">
+<span class="sig-name descname"><span class="pre">get_std_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.get_std_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.save_data">
+<span class="sig-name descname"><span class="pre">save_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.save_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.make_child_para">
+<span class="sig-name descname"><span class="pre">make_child_para</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.make_child_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.get_gap_from_filename">
+<span class="sig-name descname"><span class="pre">get_gap_from_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.get_gap_from_filename" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.plot_data">
+<span class="sig-name descname"><span class="pre">plot_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colY</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_para</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.plot_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.get_period_length_frm_zeros">
+<span class="sig-name descname"><span class="pre">get_period_length_frm_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zeros</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.get_period_length_frm_zeros" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.make_ana">
+<span class="sig-name descname"><span class="pre">make_ana</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lim_peak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.make_ana" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.calc_beff">
+<span class="sig-name descname"><span class="pre">calc_beff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prd_lngth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.calc_beff" title="Link to this definition"></a></dt>
+<dd><p>This Function only works for very special use cases! In general we would have to add full fourier analysis
+and determination of the phase of the reconstructed function..</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.get_field_integrals_obj">
+<span class="sig-name descname"><span class="pre">get_field_integrals_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.get_field_integrals_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.get_integral_data">
+<span class="sig-name descname"><span class="pre">get_integral_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intrvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.get_integral_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.move">
+<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.move" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.gauge_b_field_data">
+<span class="sig-name descname"><span class="pre">gauge_b_field_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gauge_fac</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.gauge_b_field_data" title="Link to this definition"></a></dt>
+<dd><p>takes a list of b-fields as returned by load_b_fields_gap and col, the name of the
+data column of the data objects to gauge and the number gauge_fac
+each element in the column col is then multiplied by gauge_fac</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.get_cntrd_bf">
+<span class="sig-name descname"><span class="pre">get_cntrd_bf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lim_peak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.get_cntrd_bf" title="Link to this definition"></a></dt>
+<dd><p>takes b-field data list loaded with load_b_fields_gap and centers each field
+according to the position of the first and last peak identified for which <a href="#id1"><span class="problematic" id="id2">|peak|</span></a> &gt;= lim_peak</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.convert_x_mm_b_T_file_to_wave_std">
+<span class="sig-name descname"><span class="pre">convert_x_mm_b_T_file_to_wave_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.convert_x_mm_b_T_file_to_wave_std" title="Link to this definition"></a></dt>
+<dd><p>Loads a file in folder_in called file_in with two cols: x[mm] and B[T] - no header to separator
+and converts, depending on b_type, to wave std and copies to out_path (path+filename)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.save_prepared_b_data">
+<span class="sig-name descname"><span class="pre">save_prepared_b_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.save_prepared_b_data" title="Link to this definition"></a></dt>
+<dd><p>takes b-field data list loaded with load_b_fields_gap, a folder and a string name_add
+and saves all b-field data into the folder, the files are named according ot the
+file_name propertie in the b_fields dictionaries with name_add added to the file names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.normalize_data">
+<span class="sig-name descname"><span class="pre">normalize_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'extrema'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.normalize_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.field_integrals">
+<span class="sig-name descname"><span class="pre">field_integrals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.field_integrals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.integrate_fld">
+<span class="sig-name descname"><span class="pre">integrate_fld</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[None,</span> <span class="pre">None]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.integrate_fld" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.extract_avrg_period">
+<span class="sig-name descname"><span class="pre">extract_avrg_period</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prds_to_avrg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_rel_chng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lim_peak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.extract_avrg_period" title="Link to this definition"></a></dt>
+<dd><p>Extracts prds_to_avrg number of periods btwn zero-crossings in region where min_rel_chng is not exceeded by the
+neighbouring extrema. Averages the extracted periods.
+Analyze-field should have been performed beforehand</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.compare_fields">
+<span class="sig-name descname"><span class="pre">compare_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.compare_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.extract_amplitude">
+<span class="sig-name descname"><span class="pre">extract_amplitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lim_peak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.extract_amplitude" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.integrate_zeros">
+<span class="sig-name descname"><span class="pre">integrate_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.integrate_zeros" title="Link to this definition"></a></dt>
+<dd><p>Check if mirror symmetrie there - center, calc area, compare</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.glue_bf">
+<span class="sig-name descname"><span class="pre">glue_bf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'front'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.glue_bf" title="Link to this definition"></a></dt>
+<dd><p>Glues the field bf to this field adding it either to the front or back (=pos)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.reverse_field">
+<span class="sig-name descname"><span class="pre">reverse_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.reverse_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.get_field_interval">
+<span class="sig-name descname"><span class="pre">get_field_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intrvl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.get_field_interval" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.cut_bf">
+<span class="sig-name descname"><span class="pre">cut_bf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lim_peak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.cut_bf" title="Link to this definition"></a></dt>
+<dd><p>Cuts the field at pos, returns both parts as separate bfields with interpolated data vals</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.plot_fld">
+<span class="sig-name descname"><span class="pre">plot_fld</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plt_extrm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.plot_fld" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.local_averages">
+<span class="sig-name descname"><span class="pre">local_averages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intrvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nperiods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perlength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_it</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.local_averages" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.add_field">
+<span class="sig-name descname"><span class="pre">add_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">middle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.add_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.calc_regression_B">
+<span class="sig-name descname"><span class="pre">calc_regression_B</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'black'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linestyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'--'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nperiods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intrvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_it</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.calc_regression_B" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.plot_diffs">
+<span class="sig-name descname"><span class="pre">plot_diffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.plot_diffs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.find_best_gauge_factor">
+<span class="sig-name descname"><span class="pre">find_best_gauge_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.find_best_gauge_factor" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.plot_intgrls">
+<span class="sig-name descname"><span class="pre">plot_intgrls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.plot_intgrls" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.plot_zeros">
+<span class="sig-name descname"><span class="pre">plot_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'By'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.plot_zeros" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.bfield.bfield.plot_rel_diffs">
+<span class="sig-name descname"><span class="pre">plot_rel_diffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.bfield.bfield.plot_rel_diffs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../analytic_undulator/index.html" class="btn btn-neutral float-left" title="4.1.1.1.1.1.1.1. unduwave.analytical_module.ana_undu.analytic_undulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../ana_wave/index.html" class="btn btn-neutral float-right" title="4.1.1.1.1.2. unduwave.analytical_module.ana_wave" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

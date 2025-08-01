@@ -264,7 +264,17 @@ Module Contents
    .. py:attribute:: field_folder
 
 
-   .. py:method:: get_std_paras()
+   .. py:attribute:: bfield
+
+
+   .. py:attribute:: field_type
+
+      Possible Types: 
+      By / Byz / Bxyz / Bmap
+
+
+
+   .. py:method:: get_std_paras(bfield=None)
 
 
 .. py:class:: wave_prog_parameters
@@ -424,5 +434,8 @@ Module Contents
       - wave_mode = 'undu_endp'
       - wave_mode = 'undu_gap'
 
+
+
+   .. py:method:: update_values(bfield_paras=None)
 
 

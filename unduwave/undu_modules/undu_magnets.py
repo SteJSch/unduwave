@@ -1,6 +1,5 @@
 """
-Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that 
-returns an instance of that class
+Undu_magnet definitions allowing to construct a 3D magnetic system comprissed of magnet blocks (w/o chamfers)
 """
 
 from unduwave.unduwave_incl import *
@@ -11,11 +10,23 @@ from unduwave.quantities.quantities import *
 class point_coords : 
 
 	def __init__(self,x=0.0,y=0.0,z=0.0) : 
+		"""
+		Initializes simple 3d vector class
+
+		:param float x: x-component
+		:param float y: y-component
+		:param float z: z-component
+		"""
 		self._x = x
 		self._y = y
 		self._z = z
 
 	def __sub__(self,pnt) :
+		"""
+		Substraction of vector pnt
+
+		:param point_coords pnt: vector to substract
+		"""
 		point = point_coords()
 		point._x = self._x-pnt._x
 		point._y = self._y-pnt._y
@@ -23,6 +34,11 @@ class point_coords :
 		return point
 
 	def __add__(self,pnt) :
+		"""
+		Addition of vector pnt
+
+		:param point_coords pnt: vector to add
+		"""
 		point = point_coords()
 		point._x = self._x+pnt._x
 		point._y = self._y+pnt._y
@@ -30,6 +46,14 @@ class point_coords :
 		return point
 
 def rotate(pnts,degrees,axis=point_coords(0,0,0),plane='yz'):
+	"""
+	Takes a list of vectors and rotates them (their component in the yz-plane).
+	The x-component of the vectors remains unchanged. Returns the rotated vectors
+
+	:param list pnts: List of point_coords to be rotated
+	:param float degrees: Degrees by which to rotate [°]
+	:param 
+	"""
 	pnts_tmp = copy.deepcopy(pnts)
 	degrees_rad = 2*math.pi*degrees/360
 	new_pnts = []

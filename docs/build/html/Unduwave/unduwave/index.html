@@ -258,7 +258,7 @@
 <td><p>_summary_</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_control" title="unduwave.undu_control"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_control</span></code></a></p></td>
-<td><p>Internal API for the WAVE program</p></td>
+<td><p>An object for controling undumag, allowing to run simulations</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_results" title="unduwave.undu_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_results</span></code></a></p></td>
 <td><p>This class is for this and that</p></td>
@@ -356,8 +356,8 @@
 Holds the basic parameter classes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>wave_mode</strong> (<em>str</em>) – can be one of the following.
-‘By’,’Byz’,     ‘Bxyz’, ‘undu_ellip’, ‘undu_endp’ :</p>
+<dd class="field-odd"><p><strong>wave_mode</strong> (<em>str</em>) – can be one of the following
+‘bfield’, ‘undu_ellip’, ‘undu_endp’ :</p>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -407,29 +407,41 @@ Holds the basic parameter classes.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.undu">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">undu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'from_clc_file'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu" title="Link to this definition"></a></dt>
-<dd><p>Undumag API-class for controlling basic undumag-functionality.
-Holds the basic parameter classes.</p>
-<p>Initialize the Undumag parameters</p>
+<dd><p>Undumag API-class for controlling basic undumag-functionality.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>undu_mode</strong> (<em>str</em>) – can be one of the following: ‘from_clc_file’, ‘from_undu_magns’</p>
+<dd class="field-odd"><p><strong>undu_mode</strong> (<em>str</em>) – Determines the basic mode by which a magnet structure is</p>
 </dd>
 </dl>
+<p>constructed. Can be one of the following:</p>
+<blockquote>
+<div><p>‘from_clc_file’: The magnet structure is read from an Undumag .clc file.</p>
+<p>‘from_undu_magns’: A model of the magnet structure is constructed using
+the undu_magns classes.</p>
+</div></blockquote>
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu.run" title="Link to this definition"></a></dt>
-<dd><p>Runs undumag with the given settings, prepares and postprocesses data</p>
+<dd><p>Runs undumag with the given settings, prepares and postprocesses data.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu.load_clc_raw">
 <span class="sig-name descname"><span class="pre">load_clc_raw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu.load_clc_raw" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Loads a raw-clc file template from the folder set in prog_paras.in_file_folder+prog_paras.in_file_clc_raw.
+After loading prog_paras.in_file_clc_lines holds the list representation of the file in form of a list of strings.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu.set_force_calc">
 <span class="sig-name descname"><span class="pre">set_force_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu.set_force_calc" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Prepares the parameter list for calculation of force on the undu_magnets object object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>object</strong> (<a class="reference internal" href="undu_modules/undu_magnets/index.html#unduwave.undu_modules.undu_magnets.undu_magnets" title="unduwave.undu_modules.undu_magnets.undu_magnets"><em>undu_magnets</em></a>) – An undu_magnets object (i.e. a collection of magnets) on which the force is to be calculated.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu.get_results">
@@ -992,9 +1004,21 @@ The class members are administered in unison.</p>
 <span class="sig-name descname"><span class="pre">field_folder</span></span><a class="headerlink" href="#unduwave.bfield_paras.field_folder" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.bfield_paras.bfield">
+<span class="sig-name descname"><span class="pre">bfield</span></span><a class="headerlink" href="#unduwave.bfield_paras.bfield" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.bfield_paras.field_type">
+<span class="sig-name descname"><span class="pre">field_type</span></span><a class="headerlink" href="#unduwave.bfield_paras.field_type" title="Link to this definition"></a></dt>
+<dd><p>Possible Types:
+By / Byz / Bxyz / Bmap</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.bfield_paras.get_std_paras">
-<span class="sig-name descname"><span class="pre">get_std_paras</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.bfield_paras.get_std_paras" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_std_paras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bfield</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.bfield_paras.get_std_paras" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1239,6 +1263,11 @@ The class members are administered in unison.</p>
 - wave_mode = ‘undu_gap’</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_prog_parameters.update_values">
+<span class="sig-name descname"><span class="pre">update_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bfield_paras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_prog_parameters.update_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py function">
@@ -1314,7 +1343,7 @@ resulting file to the WAVE program folder.</p>
 <dt class="sig sig-object py" id="unduwave.wave_prepare.prepare_b_files_for_wave">
 <span class="sig-name descname"><span class="pre">prepare_b_files_for_wave</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_prepare.prepare_b_files_for_wave" title="Link to this definition"></a></dt>
 <dd><p>Prepare the files for WAVE depending on the b type.</p>
-<p>Deoending on which b_type, copies and
+<p>Depending on which b_type, copies and
 formats the b-field files needed</p>
 </dd></dl>
 
@@ -1468,14 +1497,20 @@ resulting file to the Undu program folder.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.undu_control">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">undu_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_control" title="Link to this definition"></a></dt>
-<dd><p>Internal API for the WAVE program</p>
-<p>Initialize the internal API
-undu_api : external wave_api class
-current_folder : folder to which you want to jump back after wave was run</p>
+<dd><p>An object for controling undumag, allowing to run simulations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>undu_api</strong> (<a class="reference internal" href="api/undu_api_root/index.html#unduwave.api.undu_api_root.undu_api" title="unduwave.api.undu_api_root.undu_api"><em>undu_api</em></a>) – external wave_api class</p></li>
+<li><p><strong>current_folder</strong> (<em>str</em><em> or </em><em>None</em>) – folder to which you want to jump back after wave was run</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_control.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freate_fresh_clc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_control.run" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_control.run" title="Link to this definition"></a></dt>
+<dd><p>Run an undumag simulation</p>
+</dd></dl>
 
 </dd></dl>
 

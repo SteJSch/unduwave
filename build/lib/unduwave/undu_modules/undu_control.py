@@ -1,3 +1,7 @@
+"""
+Functionality for running the Undumag simulation
+"""
+
 from unduwave.unduwave_incl import *
 import unduwave.helpers.file_folder_helpers as f_h
 
@@ -9,20 +13,22 @@ except:
 	dir_path = os.getcwd()
 
 class undu_control():
-	"""
-	Internal API for the WAVE program
-	"""  
 	def __init__(self, undu_api,current_folder = None):
 		"""
-		Initialize the internal API
-		undu_api : external wave_api class
-		current_folder : folder to which you want to jump back after wave was run
+		An object for controling undumag, allowing to run simulations
+
+		:param undu_api undu_api: external wave_api class
+		:param current_folder: folder to which you want to jump back after wave was run
+		:type current_folder: str or None
 		"""	  
 		self._undu_api = undu_api
 		self._current_folder = current_folder
 		self._undu_folder = self._undu_api._prog_paras.undumag_prog_folder.get()
 
-	def run( self, copy = None, freate_fresh_clc = True ) : 
+	def run( self ) : 
+		"""
+		Run an undumag simulation
+		"""
 		os.chdir(self._undu_folder + 'stage/' )
 		if os.name == 'nt' :
 			with open(f_h.convert_path_to_win(dir_path+'/../../External-Software/where_is_cygwin_installation.txt'), 'r') as o_f:

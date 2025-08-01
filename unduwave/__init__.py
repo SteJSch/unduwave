@@ -19,6 +19,7 @@ from .wave_modules.wave_results import wave_results
 # import unduwave.helpers.bfield_helpers as bfield
 
 import unduwave.helpers.file_folder_helpers as ff_h
+from unduwave.helpers.file_folder_helpers import loadBessyIIundulatorList
 import unduwave.undu_modules.undu_parameters as undu_parameters
 from .undu_modules.undu_postprocess import undu_postprocess
 from .undu_modules.undu_prepare import undu_prepare

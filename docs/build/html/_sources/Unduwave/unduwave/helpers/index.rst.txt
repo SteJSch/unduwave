@@ -10,7 +10,6 @@ Submodules
 .. toctree::
    :maxdepth: 1
 
-   /Unduwave/unduwave/helpers/bfield_helpers/index
    /Unduwave/unduwave/helpers/file_folder_helpers/index
 
 

@@ -6,6 +6,11 @@ Module to handle various file operations including finding, moving, copying, and
 
 from unduwave.unduwave_incl import *
 
+def load_from_json_list(self,file) :
+	with open(file,'r') as target:
+		my_list = json.load(target)
+	return my_list
+
 def convert_path_to_win(path) :
 	"""
 	Takes a path and converts it to win-standard.

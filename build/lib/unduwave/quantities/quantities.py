@@ -64,11 +64,12 @@ class quantity :
 		plt.ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=12),
 		ax.set_zlabel(f'{self._plot_name} {self._unit}', fontsize=12)
 		ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
-		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
+		pics_folder='pics/'
 		if file_name is None :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_parametric.png'
 			else:
+				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_parametric.png'
 		else:
 			file_name=pics_folder+file_name
@@ -218,11 +219,12 @@ class quantity :
 		ax.zaxis.get_offset_text().set_fontsize(8)
 		plt.tight_layout()
 
-		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
+		pics_folder='pics/'
 		if file_name is None :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 			else:
+				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 		else:
 			file_name=pics_folder+file_name

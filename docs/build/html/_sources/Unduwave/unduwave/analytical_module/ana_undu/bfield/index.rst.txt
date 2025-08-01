@@ -1,0 +1,310 @@
+unduwave.analytical_module.ana_undu.bfield
+==========================================
+
+.. py:module:: unduwave.analytical_module.ana_undu.bfield
+
+.. autoapi-nested-parse::
+
+   Contains the functionality for loading and processing b-field data
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.bfield.bfield
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.bfield.convert_x_mm_b_T_file_to_wave_std
+   unduwave.analytical_module.ana_undu.bfield.interpolate_bfield_data
+   unduwave.analytical_module.ana_undu.bfield.load_b_fields
+   unduwave.analytical_module.ana_undu.bfield.load_undu_b_fields
+   unduwave.analytical_module.ana_undu.bfield.make_bf_para_list
+   unduwave.analytical_module.ana_undu.bfield.plot_b_field_data
+   unduwave.analytical_module.ana_undu.bfield.interpolate_b_data
+   unduwave.analytical_module.ana_undu.bfield.cut_data_support
+   unduwave.analytical_module.ana_undu.bfield.create_harm_field
+   unduwave.analytical_module.ana_undu.bfield.create_field_with_ends
+
+
+Module Contents
+---------------
+
+.. py:function:: convert_x_mm_b_T_file_to_wave_std(folder_in, file_in, out_path)
+
+   Loads a file in folder_in called file_in with two cols: x[mm] and B[T] - no header to separator
+   and converts, depending on b_type, to wave std and copies to out_path (path+filename)
+
+
+.. py:function:: interpolate_bfield_data(b_fields, val, colInt, coly='By', num_supports=1000)
+
+.. py:function:: load_b_fields(folder, hints=[], undu_file=False)
+
+   Load field files from "folder" containing files with fields for different gaps
+   The file format should be two rows, the first one 'x' in [mm], the second one 'By' [T]
+   The file-name format should be: file_name_front + 'gap_' + str(gap) + '_' + file_name_back + '.' + file_ending, eg: foo_gap_4.5_v1.csv
+   Returns list of dictionaries: { 'gap' : gap,'data' : pd.DataFrame(data), 'file_name' : file_name }, where data is a panda dataframe with rows
+   "x" and "By"
+
+
+.. py:function:: load_undu_b_fields(folder, hints=[], exptns=[])
+
+.. py:function:: make_bf_para_list(bfields, para_name='gap')
+
+   Creates a dictionary containing the bfields under 'field' and the parameter para_name under the key para_name
+   para_name needs to be defined in para of bf's!
+
+
+.. py:function:: plot_b_field_data(b_fields, col_names='gap', col_val_plt=[])
+
+   Plots all the fields in list b_fields, if col_names and col_val_plt are given, then only the fields which parameter
+   col_names is equal to some value in col_val_plt list.
+   e.g. : plot all fields with gap 15 or 20
+
+
+.. py:function:: interpolate_b_data(b_fields, gap, lim_peak, num_support_per_extrema=20, colx='x', coly='By')
+
+   interpolates b-field data for a given gap using already present dataframes for different gaps
+   takes b-field data list loaded with load_b_fields_gap, a gap number, the lim_peak value 
+   used for findind the extrema in the data (for determination of the number of periods)
+   and the number of support positions per extrema for the calculation of splines from the data
+   Returns a list containing a dictionary: { 'gap' : gap,'data' : pd.DataFrame(data), 'file_name' : file_name }, where data is a panda dataframe 
+   containing the interpolated data and file_name contains the value of the gap at which this data is determined
+
+
+.. py:function:: cut_data_support(bfs, col_cut='x')
+
+   takes b-field data list loaded with load_b_fields_gap and
+   cuts the fields to the smallest common support in the column
+   col_cut - afterwards all fiel-data is defined on the same col-values
+
+
+.. py:function:: create_harm_field(period, amplitude, deltaX, phase_shift=0, num_pnts_per_period=100, colx='x', coly='By')
+
+   Creates a sine field: amplitude*sin( k_per * x + phase_shift ) for all x lying in interval deltaX, 
+   creates bfield class filled with data, with num_pnts_per_period pnts per period in deltaX
+
+
+.. py:function:: create_field_with_ends(period_length, amplY, nperiods, num_pnts_per_period=100, amplZ=0, shift=0, gaugeY=1.0, gaugeZ=-1.0)
+
+.. py:class:: bfield(data=None, unitsXB=[0.001, 1.0])
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Holds the bfield data
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: bx
+
+
+   .. py:attribute:: by
+
+
+   .. py:attribute:: bz
+
+
+   .. py:attribute:: xvals
+
+
+   .. py:attribute:: yvals
+
+
+   .. py:attribute:: zvals
+
+
+   .. py:method:: write_field(file, cols, outType='std', unitsXB=None, filez=None, filex=None)
+
+
+   .. py:method:: write_field_unduOut(file, unitsXB=None)
+
+      UndumagOut file Units are mm for the length and T for B
+
+
+
+   .. py:method:: write_field_std(file, unitsConv=None, whatStr='')
+
+      UndumagOut file Units are mm for the length and T for B
+
+
+
+   .. py:method:: write_field_waveByz(filey, filez, unitsXB=None)
+
+      UndumagOut file Units are mm for the length and T for B
+
+
+
+   .. py:method:: write_field_waveBxyz(filex, filey, filez, unitsXB=None)
+
+      UndumagOut file Units are mm for the length and T for B
+
+
+
+   .. py:method:: write_field_map_wave(file, unitsXB=None)
+
+
+   .. py:method:: load_field_from_file(file, fieldMap=False, cols=None, unduFile=False, radiaFile=False, header=None, skiprows=None)
+
+
+   .. py:method:: clone_me()
+
+
+   .. py:method:: load_field_from_radia(file)
+
+
+   .. py:method:: get_para()
+
+
+   .. py:method:: set_para(para)
+
+
+   .. py:method:: get_std_para(b_type=None)
+
+
+   .. py:method:: save_data(file)
+
+
+   .. py:method:: make_child_para()
+
+
+   .. py:method:: get_gap_from_filename(file)
+
+
+   .. py:method:: plot_data(colX='x', colY='By', fig=None, label_para=None)
+
+
+   .. py:method:: get_period_length_frm_zeros(zeros=None)
+
+
+   .. py:method:: make_ana(lim_peak=None, colx='x', coly='By')
+
+
+   .. py:method:: calc_beff(prd_lngth, n_max=10, colx='x', coly='By')
+
+      This Function only works for very special use cases! In general we would have to add full fourier analysis
+      and determination of the phase of the reconstructed function..
+
+
+
+   .. py:method:: get_field_integrals_obj(colx='x', coly='By')
+
+
+   .. py:method:: get_integral_data(colx='x', coly='By', intrvl=None)
+
+
+   .. py:method:: move(dist)
+
+
+   .. py:method:: gauge_b_field_data(col, gauge_fac)
+
+      takes a list of b-fields as returned by load_b_fields_gap and col, the name of the 
+      data column of the data objects to gauge and the number gauge_fac
+      each element in the column col is then multiplied by gauge_fac
+
+
+
+   .. py:method:: get_cntrd_bf(lim_peak=None, colx='x', coly='By')
+
+      takes b-field data list loaded with load_b_fields_gap and centers each field 
+      according to the position of the first and last peak identified for which |peak| >= lim_peak
+
+
+
+   .. py:method:: convert_x_mm_b_T_file_to_wave_std(file_in, out_path)
+
+      Loads a file in folder_in called file_in with two cols: x[mm] and B[T] - no header to separator
+      and converts, depending on b_type, to wave std and copies to out_path (path+filename)
+
+
+
+   .. py:method:: save_prepared_b_data(folder, name_add='')
+
+      takes b-field data list loaded with load_b_fields_gap, a folder and a string name_add 
+      and saves all b-field data into the folder, the files are named according ot the 
+      file_name propertie in the b_fields dictionaries with name_add added to the file names
+
+
+
+   .. py:method:: normalize_data(strat='extrema', colx='x', coly='By')
+
+
+   .. py:method:: field_integrals(xs, spline=None)
+
+
+   .. py:method:: integrate_fld(xs=[None, None], colx='x', coly='By')
+
+
+   .. py:method:: extract_avrg_period(prds_to_avrg=3, min_rel_chng=0.01, lim_peak=None, colx='x', coly='By')
+
+      Extracts prds_to_avrg number of periods btwn zero-crossings in region where min_rel_chng is not exceeded by the 
+      neighbouring extrema. Averages the extracted periods.
+      Analyze-field should have been performed beforehand
+
+
+
+   .. py:method:: compare_fields(bf, colx='x', coly='By')
+
+
+   .. py:method:: extract_amplitude(lim_peak=None, colx='x', coly='By')
+
+
+   .. py:method:: integrate_zeros(colx='x', coly='By')
+
+      Check if mirror symmetrie there - center, calc area, compare
+
+
+
+   .. py:method:: glue_bf(bf, pos='front', colx='x', coly='By')
+
+      Glues the field bf to this field adding it either to the front or back (=pos)
+
+
+
+   .. py:method:: reverse_field(colx='x', coly='By')
+
+
+   .. py:method:: get_field_interval(intrvl, colx='x', coly='By')
+
+
+   .. py:method:: cut_bf(pos, lim_peak=None, colx='x', coly='By')
+
+      Cuts the field at pos, returns both parts as separate bfields with interpolated data vals
+
+
+
+   .. py:method:: plot_fld(colx='x', coly='By', title=None, plt_extrm=False, folder='', add='', fun=None, nfig=None, plot=True, save=False, filename=None)
+
+
+   .. py:method:: local_averages(intrvl=None, nperiods=None, perlength=None, colx='x', coly='By', plot_it=True, add='', nfig=None)
+
+
+   .. py:method:: add_field(field, colx='x', middle=None)
+
+
+   .. py:method:: calc_regression_B(nfig=None, color='black', linestyle='--', nperiods=None, add='', intrvl=None, plot_it=True)
+
+
+   .. py:method:: plot_diffs(bf, colx='x', coly='By', xlims=[], folder='', add='', fun=None)
+
+
+   .. py:method:: find_best_gauge_factor(bf)
+
+
+   .. py:method:: plot_intgrls(colx='x', coly='By', folder='', add='', nfig=None, save=False, plot=True, title=None, filename=None)
+
+
+   .. py:method:: plot_zeros(colx='x', coly='By')
+
+
+   .. py:method:: plot_rel_diffs()
+
+

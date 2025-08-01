@@ -12,6 +12,7 @@ except:
 	dir_path = os.getcwd()
 
 import unduwave as uw
+import unduwave.bfield.bfield as uwBfield
 
 field_folder = f'/'
 res_folder = dir_path+'/res/'
@@ -20,36 +21,56 @@ res_folder = dir_path+'/res/'
 Getting wave
 """
 
-bfield=uw.bfield.bfield()
+wave = uw.wave(wave_mode='bfield')
+
+"""
+Loading and setting a BField
+"""
+
+# Loading a file with x [mm] and By [T]
+
+# bfield=uw.bfield.bfield(
+# 	unitsXB=[0.001,1.0] # setting the units
+# 	)
+
+# bfield.load_field_from_file(
+# 			file=dir_path+'/field_by_mm_T.dat', 
+# 			fieldMap=False,
+# 			cols=['x','By'],
+# 			unduFile = False, 
+# 			radiaFile=False,
+# 			header=None,
+# 			skiprows=None,
+# 		)
+
+# Loading a file with x [m] and By [kT]
+
+bfield=uw.bfield.bfield(
+	unitsXB=[1.0,1000.0] # setting the units
+	)
+
 bfield.load_field_from_file(
-			file=dir_path+'/field.dat', 
-			# file=dir_path+'/ana_map.map', 
+			file=dir_path+'/field_by_m_kT.dat', 
 			fieldMap=False,
-			cols=None,#['x','y','z','Bx','By','Bz'],
-			unduFile = True, 
+			cols=['x','By'],
+			unduFile = False, 
 			radiaFile=False,
 			header=None,
-			skiprows=range(0,6),
+			skiprows=None,
 		)
 
-# bfield.write_field_map_unduOut(file=dir_path+'/test.dat')
-# pdb.set_trace()
+# make the field known to wave
 
-wave = uw.wave(wave_mode='bfield')
-wave_prog_paras = wave._prog_paras
-ebeam_paras = wave._ebeam_paras
-
-bfield_paras = wave._bfield_paras
-bfield_paras.bfield.set(bfield)
-bfield_paras.field_type.set('Byz')
+bfield_paras = wave._bfield_paras # get bfield paras
+bfield_paras.bfield.set(bfield) # set the bfield
+bfield_paras.field_type.set('By') # tell wave which part of bfield to use for simu
 
 """
 Setting Program Parameter
 """
 
+wave_prog_paras = wave._prog_paras
 wave_prog_paras.res_folder.set(res_folder)
-# wave_prog_paras.field_files.set( [ 'field.dat' ] )# The magnetic field files to be used in the simulation
-# wave_prog_paras.field_folder.set(dir_path+field_folder)# Field Folder
 wave_prog_paras.calc_spectrum.set(True)
 wave_prog_paras.nthreads.set(6)
 
@@ -87,6 +108,7 @@ undu_paras.elliptUnduPerShift.set(0.5)
 Setting Beam Parameter
 """
 
+ebeam_paras = wave._ebeam_paras
 ebeam_paras.beam_en.set(1.722) # [GeV]
 ebeam_paras.current.set(0.3) # [A]
 ebeam_paras.beamSizeHor.set(275e-6) # 

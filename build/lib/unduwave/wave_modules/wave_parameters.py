@@ -175,6 +175,29 @@ class undu_paras(_attribute_collection):
 	# iells2s3 = _attribute(0,in_name='IELLS2S3') # >=0: S3-MODE - parallel; <0: S2-MODE - antiparallel
 	# iellcoef = _attribute(0,in_name='IELLCOEF') # !>0: read IELLCOEF Fourier coefficients from file ellana.coef, =<0: First and second coefficients only with C0=0.5 and C1=1.
 
+	def set_paras_from_undu_list(self, listFile, unduName) :
+		fullList=f_h.load_from_json_list(listFile)
+		indFnd=None
+		for indEl, el in enumerate(fullList) : 
+			if el['name'] == unduName :
+				indFnd=indEl
+				break
+		if not (indFnd is None) :
+			unduFnd=fullList[indFnd]
+			if type == 'Apple II' : # elliptical undu
+				self.undu_type.set("undu_ellip")
+				self.bEffY.set(unduFnd['beffy [T]'])
+				self.bEffZ.set(unduFnd['beffz [T]'])
+				self.periodLength.set(unduFnd['period length [mm]'])
+				self.numPeriods.set(unduFnd['periods'])
+			else : # planar (hybrid)
+				self.undu_type.set("undu_endp")
+				self.bEffY.set(unduFnd['beffy [T]'])
+				self.periodLength.set(unduFnd['period length [mm]'])
+				self.numPeriods.set(unduFnd['periods'])
+		else:
+			print(f"ana_undulator: set_paras_from_undu_list: Undulator {unduName} not found in list.")
+
 	def get_std_paras(self,wave_mode,ebeam,thetaObservation=0.0): 
 		"""
 		getting standard undu parameters
@@ -256,9 +279,17 @@ class undu_paras(_attribute_collection):
 
 class bfield_paras(_attribute_collection):
 	field_folder = _attribute('/')
+	bfield=_attribute()
+	field_type=_attribute()
+	"""
+	Possible Types: 
+	By / Byz / Bxyz / Bmap
+	"""
 
-	def get_std_paras(self): 	
+	def get_std_paras(self,bfield=None): 	
 		self.field_folder.set("/")
+		self.bfield.set(bfield)
+		self.field_type.set('By')
 
 class wave_prog_parameters(_attribute_collection):
 	"""
@@ -391,29 +422,34 @@ class wave_prog_parameters(_attribute_collection):
 		self.undu_gap.set(0)
 		self.undu_ellip.set(0)
 
-		if wave_mode == 'By' :
-			self.b_type.set('By')
-			self.irbtab.set(-2)
-		elif wave_mode == 'Byz' :
-			self.b_type.set('Byz')
-			self.irbtabzy.set(1)
-		elif wave_mode == 'Bxyz' :
-			self.b_type.set('Bxyz')
-			self.irbtabxyz.set(1)
-		elif wave_mode == 'undu_ellip' :
-			self.undu_ellip.set(1)
-		elif wave_mode == 'undu_easy' :
-			self.undu_easy.set(1)
-		elif wave_mode == 'undu_endp' :
-			self.undu_endp.set(1)
-		elif wave_mode == 'undu_gap' :
-			self.undu_gap.set(1)
-		elif wave_mode == 'undu_ellip_ana' :
-			self.undu_ellip_ana.set(1)
-		elif wave_mode == 'bmap' :
-			self.b_type.set('bmap')
-			self.ntupgrid.set(-1)
-			self.irfileb0.set(-6) # loading field map
+	def update_values(self,bfield_paras=None) :
+
+		wave_mode=self.wave_mode.get()
+		if wave_mode == 'bfield' :
+			if not bfield_paras is None :
+				field_type=bfield_paras.field_type.get()
+			else :
+				return
+			if field_type == 'By' :
+				self.irbtab.set(-2)
+			elif field_type == 'Byz' :
+				self.irbtabzy.set(1)
+			elif field_type == 'Bxyz' :
+				self.irbtabxyz.set(1)
+			elif field_type == 'bmap' :
+				self.ntupgrid.set(-1)
+				self.irfileb0.set(-6) # loading field map
+		else :
+			if wave_mode == 'undu_ellip' :
+				self.undu_ellip.set(1)
+			elif wave_mode == 'undu_easy' :
+				self.undu_easy.set(1)
+			elif wave_mode == 'undu_endp' :
+				self.undu_endp.set(1)
+			elif wave_mode == 'undu_gap' :
+				self.undu_gap.set(1)
+			elif wave_mode == 'undu_ellip_ana' :
+				self.undu_ellip_ana.set(1)
 
 		return self
 

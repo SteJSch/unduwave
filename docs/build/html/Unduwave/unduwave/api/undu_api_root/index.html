@@ -116,29 +116,41 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.api.undu_api_root.undu_api">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.api.undu_api_root.</span></span><span class="sig-name descname"><span class="pre">undu_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'from_clc_file'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.api.undu_api_root.undu_api" title="Link to this definition"></a></dt>
-<dd><p>Undumag API-class for controlling basic undumag-functionality.
-Holds the basic parameter classes.</p>
-<p>Initialize the Undumag parameters</p>
+<dd><p>Undumag API-class for controlling basic undumag-functionality.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>undu_mode</strong> (<em>str</em>) – can be one of the following: ‘from_clc_file’, ‘from_undu_magns’</p>
+<dd class="field-odd"><p><strong>undu_mode</strong> (<em>str</em>) – Determines the basic mode by which a magnet structure is</p>
 </dd>
 </dl>
+<p>constructed. Can be one of the following:</p>
+<blockquote>
+<div><p>‘from_clc_file’: The magnet structure is read from an Undumag .clc file.</p>
+<p>‘from_undu_magns’: A model of the magnet structure is constructed using
+the undu_magns classes.</p>
+</div></blockquote>
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.api.undu_api_root.undu_api.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.api.undu_api_root.undu_api.run" title="Link to this definition"></a></dt>
-<dd><p>Runs undumag with the given settings, prepares and postprocesses data</p>
+<dd><p>Runs undumag with the given settings, prepares and postprocesses data.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.api.undu_api_root.undu_api.load_clc_raw">
 <span class="sig-name descname"><span class="pre">load_clc_raw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.api.undu_api_root.undu_api.load_clc_raw" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Loads a raw-clc file template from the folder set in prog_paras.in_file_folder+prog_paras.in_file_clc_raw.
+After loading prog_paras.in_file_clc_lines holds the list representation of the file in form of a list of strings.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.api.undu_api_root.undu_api.set_force_calc">
 <span class="sig-name descname"><span class="pre">set_force_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.api.undu_api_root.undu_api.set_force_calc" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Prepares the parameter list for calculation of force on the undu_magnets object object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>object</strong> (<a class="reference internal" href="../../undu_modules/undu_magnets/index.html#unduwave.undu_modules.undu_magnets.undu_magnets" title="unduwave.undu_modules.undu_magnets.undu_magnets"><em>undu_magnets</em></a>) – An undu_magnets object (i.e. a collection of magnets) on which the force is to be calculated.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.api.undu_api_root.undu_api.get_results">

@@ -21,7 +21,7 @@ class wave_prepare():
 			bfield_paras=self._wave_api._bfield_paras
 			)
 		self._wave_api._ebeam_paras.update_values()
-		self._wave_api._undu_paras.update_values(ebeam=self._wave_api._ebeam_paras)
+		self._wave_api._undu_paras.update_values()
 
 	def create_wave_input(self):
 		"""Creates all the files needed as input fro Wave.
@@ -58,7 +58,7 @@ class wave_prepare():
 	def prepare_b_files_for_wave(self):
 		"""Prepare the files for WAVE depending on the b type.
 			
-		Deoending on which b_type, copies and 
+		Depending on which b_type, copies and 
 		formats the b-field files needed
 		"""
 		b_type = self._wave_api._bfield_paras.field_type.get()
@@ -67,13 +67,19 @@ class wave_prepare():
 
 		wave_folder = self._wave_api._prog_paras.wave_prog_folder.get()
 		bfield = self._wave_api._bfield_paras.bfield.get()
+		if bfield is None :
+			return
 		# field_files = self._wave_api._prog_paras.field_files.get()
 		# field_folder = self._wave_api._prog_paras.field_folder.get()
 
 		if b_type == 'By' :
+			unitsConv=None
+			if not ( bfield._unitsXB is None ) :
+				unitsConv = [ bfield._unitsXB[0]/0.001, bfield._unitsXB[1]/1.0 ]
 			bfield.write_field_std(
 				file=wave_folder + 'stage/btab.dat',
-				unitsXB=None
+				unitsConv=unitsConv,
+				whatStr='By',
 				)
 		elif b_type == 'Byz' :
 			bfield.write_field_waveByz(
@@ -88,43 +94,9 @@ class wave_prepare():
 				filez=wave_folder+'stage/bz.dat',
 				unitsXB=None
 				)
-		pdb.set_trace()
-		return
-
-		# except for Bxyz, By is first field file
-		y_pos = 0
-		if (b_type == 'Byz') or (b_type == 'Bxyz') : 
-			# last file is Bz
-			field_file = field_files[-1]
-			bfield.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/bz.dat' )
-			if b_type == 'Bxyz' :
-				# snd file is By
-				y_pos = 1
-				# first file is Bx
-				field_file = field_files[0]
-				bfield.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/bx.dat' )
-			field_file = field_files[y_pos]
-			bfield.convert_x_mm_b_T_file_to_wave_std( folder_in = field_folder, file_in = field_file, out_path = wave_folder + 'stage/btab.dat' )
-		elif (b_type == 'By') :
-			# first file is By
-			if len(field_files) > 0 :
-				field_file = field_files[0]
-				field_file = field_file.replace("(", "\\(")
-				field_file = field_file.replace(")", "\\)")    
-				if os.name == 'nt' :
-					shutil.copyfile(field_folder + field_file, wave_folder + 'stage/')
-					shutil.move(wave_folder + 'stage/' + field_file, wave_folder + 'stage/btab.dat')
-				else:
-					os.system( 'cp ' + field_folder + field_file + ' ' + wave_folder + 'stage/' )
-					os.system( 'mv ' + wave_folder + 'stage/' + field_file + ' ' + wave_folder + 'stage/btab.dat' )
-		elif (b_type=='bmap') :
-				field_file = field_files[-1]
-				field_file = field_file.replace("(", "\\(")
-				field_file = field_file.replace(")", "\\)")    
-				if os.name == 'nt' :
-					shutil.copyfile(field_folder + field_file, wave_folder + 'stage/')
-					shutil.move(wave_folder + 'stage/' + field_file, wave_folder + 'stage/bmap.ntup')
-				else:
-					os.system( 'cp ' + field_folder + field_file + ' ' + wave_folder + 'stage/' )
-					os.system( 'mv ' + wave_folder + 'stage/' + field_file + ' ' + wave_folder + 'stage/bmap.ntup' )
+		elif b_type == 'bmap' :
+			bfield.write_field_map_wave(
+				file=wave_folder + 'stage/bmap.ntup',
+				unitsXB=None
+				)
 

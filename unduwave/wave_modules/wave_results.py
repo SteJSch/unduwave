@@ -30,6 +30,11 @@ class wave_results :
 		self.find_load_stokes()
 		self.extract_summary()
 
+	def writeSummary(self) :
+		summary=self._summary
+		print("WAVE Simulation")
+		print("")
+
 	def extract_summary(self):
 		"""
 		Extracts summary information from a WAVE run's files in the specified folder
@@ -416,15 +421,11 @@ class wave_results :
 
 		for filename in os.listdir(self._res_folder_wave):
 			if (filename.find('selected_s0_e_(folded)_x_1_e_6_180000') >= 0): 
-				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, sep='\\s+')
-				except:
-					return
+				data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, sep='\\s+')
 				data.columns = [ 'en', 'flux_dens' ]
 				cols = data.columns
 				for col in cols:
 					data[col] = data[col].astype(float)
-				data = data[ data['flux_dens'] > 1e9 ]
 				data['en'] = data['en'].apply( lambda x : x * 1e-3 )
 
 				en_fd = quantity(

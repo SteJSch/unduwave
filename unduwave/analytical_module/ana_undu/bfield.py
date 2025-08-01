@@ -7,279 +7,195 @@ import unduwave.quantities.quantities as quantities
 from unduwave.attribute_classes.attributes import _attribute
 from unduwave.attribute_classes.attributes import _attribute_collection
 
-def convert_x_mm_b_T_file_to_wave_std( folder_in, file_in, out_path ) : 
+def checkIfDF_Conv(data) : 
 	"""
-	Loads a file in folder_in called file_in with two cols: x[mm] and B[T] - no header to separator
-	and converts, depending on b_type, to wave std and copies to out_path (path+filename)
+	Takes a data object which can be either list of dics or dataframe and converts
+	it to a dataframe
 	"""
-	data = pd.read_csv( folder_in+file_in, dtype=object, header = None,delimiter=r"\s+" )
-	data.columns = [ "x", "B" ]
-	for col in data.columns:
-		data[col] = data[col].astype(float)
+	isDF = True
+	if not isinstance(data,pd.DataFrame) : 
+		isDF = False
+		return [ isDF, pd.DataFrame(data) ]
+	else :
+		return [ isDF, data ]
 
-	data['x'] = data['x'].apply( lambda x : x*1e-3 )
-	data.to_csv(out_path,index=False, header = None, sep = ' ')
-
-	lines = []
-	with open(out_path, 'r') as o_f:
-		# read an store all lines into list
-		lines = o_f.readlines()
-	lines.insert(0,str(len(data))+'\n')
-	lines.insert(0,'1.0 1.0\n')
-	lines.insert(0,'Comment\n')
-	with open( out_path, 'w') as o_f:
-		for ind, line in enumerate(lines) :
-			o_f.write(line)
-
-def interpolate_bfield_data(b_fields, val, colInt, coly = 'By',num_supports=1000) :
-
-	xmin = b_fields[0]['data']['x'].min()
-	xmax = b_fields[0]['data']['x'].max()
-	for field in b_fields : 
-		if field['data']['x'].min() < xmin :
-			xmin = field['data']['x'].min()
-		if field['data']['x'].max() > xmax :
-			xmax = field['data']['x'].max()
-	support_x = np.linspace( xmin, xmax, num= int((xmax-xmin)+1) )
-	interp_data = []
-	for field in b_fields : 
-		x_vals = field['data']['x'].to_list()
-		y_vals = field['data'][coly].to_list()
-		spline = CubicSpline(x_vals, y_vals)
-		spline_supp_vals = spline( support_x )
-		interp_data.append( { colInt : field[colInt], 'spline' : spline, 'supp_vals' : spline_supp_vals } )
-
-	supp_list = []
-	for ind, supp in enumerate(support_x) :
-		supp_list.append( { 'ind' : ind, 'x' : supp, 'gB' : [] } )
-		for interp in interp_data : 
-			supp_list[-1]['gB'].append( { colInt : interp[colInt], 'Bg' : interp['supp_vals'][ind] } )
-
-	num_gaps = len(b_fields)
-	num_gaps_spline = num_gaps * 10
-	for supp in supp_list : 
-		g_data = pd.DataFrame(supp['gB'])
-		g_vals = g_data[colInt].to_list()
-		b_vals = g_data['Bg'].to_list()
-		g_spline = CubicSpline(g_vals, b_vals)
-		supp.update( { 'g_spline' : g_spline } )
-
-	data_for_g = []
-	for supp in supp_list : 
-		data_for_g.append( { 'x' : supp['x'], coly : supp['g_spline'](val) } )
-	data_for_g = pd.DataFrame(data_for_g)
-	g_spline = CubicSpline( support_x, data_for_g[coly] )
-
-	y_vals = g_spline(support_x)
-	data_df = pd.DataFrame({'x':support_x,coly:y_vals})
-	field = bfield(data=data_df)
-	ret = { 
-		colInt : val, 
-		'bfield' : field,
-		'data' : data_df
-	} 
-	return ret
-
-def load_b_fields(folder, hints = [], undu_file = False) : 
+def find_maxima(data, lim = None, colx = 0, coly = 1) : 
 	"""
-	Load field files from "folder" containing files with fields for different gaps
-	The file format should be two rows, the first one 'x' in [mm], the second one 'By' [T]
-	The file-name format should be: file_name_front + 'gap_' + str(gap) + '_' + file_name_back + '.' + file_ending, eg: foo_gap_4.5_v1.csv
-	Returns list of dictionaries: { 'gap' : gap,'data' : pd.DataFrame(data), 'file_name' : file_name }, where data is a panda dataframe with rows
-	"x" and "By"
+	finds maxima in data whose value is at least |val| >= lim
+	data is supposed to be a list of dictionaries or a panda dataframe 
+	colx and coly give the column index of the x and y data
+	returns a list containing 2 lists: one with x-coordinates and one 
+	with y-coordinates of the maxima positions
 	"""
-	data_ret = []
-	files = f_h.find_files_exptn(folder = folder, hints = hints, exptns = [])
-	fields = []
-	for file in files :
-		bf = bfield(file = folder + '/' + file, undu_file = undu_file)
-		fields.append({ 'field' : bf, 'gap' : bf.get_para()['gap'] })
-	sort_fields = make_bf_para_list( bfields = fields, para_name = 'gap'  )
-	return ana.sort_data_list( data_l = sort_fields, key = 'gap'  )
+	[isDF, data_in] = checkIfDF_Conv(data = data)	
+	if isinstance(colx,str) and isinstance(coly,str) : 
+		colx = data.columns.get_loc(colx)
+		coly = data.columns.get_loc(coly)
 
-def load_undu_b_fields(folder, hints = [], exptns = []) : 
-	data_ret = []
-	files = f_h.find_files_exptn(folder = folder, hints = hints, exptns = exptns)
-	fields = []
-	for file in files :
-		bf = bfield(file = folder + '/' + file, undu_file = True)
-		fields.append(bf)
-	return fields
+	if lim is None :
+		vals = data[data.columns[coly]].to_list()
+		max_val = max(vals)
+		min_val = min(vals)
+		lim = (max_val - min_val) * 0.001
 
-def make_bf_para_list( bfields, para_name = 'gap'  ) :
+	xCol = data_in[ data_in.columns[colx] ].to_list()
+	yCol = data_in[ data_in.columns[coly] ].to_list()
+	peaks, properties = find_peaks( x = yCol )
+	pltY = [ yCol[ind] for ind in peaks if abs(yCol[ind]) >= lim ]
+	pltX = [ xCol[ind] for ind in peaks if abs(yCol[ind]) >= lim ]
+
+	df_Res = pd.DataFrame(
+	{'x': pltX,
+	 'y': pltY
+	})	
+	df_Res = df_Res.sort_values(by=['x'])
+	return [ df_Res[ df_Res.columns[0] ].to_list(), df_Res[ df_Res.columns[1] ].to_list() ]
+
+def find_minima(data, lim = None, colx = 0, coly = 1) : 
 	"""
-	Creates a dictionary containing the bfields under 'field' and the parameter para_name under the key para_name
-	para_name needs to be defined in para of bf's!
+	finds minima in data whose value is at least |val| >= lim (lim>=0!)
+	data is supposed to be a list of dictionaries or a panda dataframe 
+	colx and coly give the column index of the x and y data
+	returns a list containing 2 lists: one with x-coordinates and one 
+	with y-coordinates of the minima positions
 	"""
-	fields = []
-	for field in bfields :
-		if field is dict :
-			fields.append({ 'field' : field['field'], para_name : field['field'].get_para()[para_name] })
-		else :
-			fields.append({ 'field' : field, para_name : field.get_para()[para_name] })
-	return fields
+	[isDF, data_in] = checkIfDF_Conv(data = data)
 
-def plot_b_field_data( b_fields, col_names = 'gap', col_val_plt = [] ) :
+	if isinstance(colx,str) and isinstance(coly,str) : 
+		colx = data.columns.get_loc(colx)
+		coly = data.columns.get_loc(coly)
+
+	xCol = data_in[ data_in.columns[colx] ].to_list()
+	yCol = data_in[ data_in.columns[coly] ].to_list()
+
+	min_yCol = [ -elem for elem in yCol ]
+
+	Lowpeaks, properties = find_peaks( x = min_yCol )
+
+	if lim is None :
+		m_pltY = [ -min_yCol[ind] for ind in Lowpeaks ]
+		m_pltX = [ xCol[ind] for ind in Lowpeaks ]
+	else :
+		m_pltY = [ -min_yCol[ind] for ind in Lowpeaks if abs(min_yCol[ind]) >= lim ]
+		m_pltX = [ xCol[ind] for ind in Lowpeaks if abs(min_yCol[ind]) >= lim ]
+
+	df_Res = pd.DataFrame(
+	{'x': m_pltX,
+	 'y': m_pltY
+	})
+	df_Res = df_Res.sort_values(by=['x'])
+	return [ df_Res[ df_Res.columns[0] ].to_list(), df_Res[ df_Res.columns[1] ].to_list() ]
+
+def find_extrema(data, lim = None, colx = 0, coly = 1) : 
 	"""
-	Plots all the fields in list b_fields, if col_names and col_val_plt are given, then only the fields which parameter
-	col_names is equal to some value in col_val_plt list.
-	e.g. : plot all fields with gap 15 or 20
+	finds extrema in data whose value is at least |val| >= lim
+	data is supposed to be a list of dictionaries or a panda dataframe 
+	colx and coly give the column index of the x and y data
+	returns a list containing 2 lists: one with x-coordinates and one 
+	with y-coordinates of the extremal positions
 	"""
-	fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
-	for b_field in b_fields :
-		b_field = b_field['field']
-		plt_it = True
-		if len(col_val_plt) > 0 :
-			plt_it = False
-			for val in col_val_plt : 
-				if b_field.get_para()[col_names] == val :
-					plt_it = True
-					break
-		if plt_it :
-			b_field.plot_data(colX = 'x', colY = 'By', fig = fig, label_para = col_names)
-	fig.suptitle("Magnetic Field", fontsize=14)
-	plt.xlabel('x [mm]', fontsize=12),
-	plt.ylabel('Magnetic Field [T]', fontsize=12)
-	ax = plt.gca()
-	ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))	
-	plt.draw()
+	if isinstance(colx,str) and isinstance(coly,str) : 
+		colx = data.columns.get_loc(colx)
+		coly = data.columns.get_loc(coly)
 
-def interpolate_b_data(b_fields, gap, lim_peak, num_support_per_extrema = 20, colx = 'x', coly = 'By') :
+	[isDF, data_in] = checkIfDF_Conv(data = data)
+
+	if lim is None :
+		vals = data[data.columns[coly]].to_list()
+		max_val = max(vals)
+		min_val = min(vals)
+		lim = (max_val - min_val) * 0.01
+
+	[maximaX, maximaY ] = find_maxima(data = data, lim = lim, colx = colx, coly = coly)
+	[minimaX, minimaY ] = find_minima(data = data, lim = lim, colx = colx, coly = coly)
+
+	df_Res = pd.DataFrame(
+	{'x': maximaX+minimaX,
+	 'y': maximaY+minimaY
+	})
+	df_Res = df_Res.sort_values(by=['x'])
+	return [ df_Res[ df_Res.columns[0] ].to_list(), df_Res[ df_Res.columns[1] ].to_list() ]
+
+def center_data(data, strat = { 'name' : 'extrema', 'lim' : 0.01 }, colx = 0, coly = 1) : 
 	"""
-	interpolates b-field data for a given gap using already present dataframes for different gaps
-	takes b-field data list loaded with load_b_fields_gap, a gap number, the lim_peak value 
-	used for findind the extrema in the data (for determination of the number of periods)
-	and the number of support positions per extrema for the calculation of splines from the data
-	Returns a list containing a dictionary: { 'gap' : gap,'data' : pd.DataFrame(data), 'file_name' : file_name }, where data is a panda dataframe 
-	containing the interpolated data and file_name contains the value of the gap at which this data is determined
+	takes data - which is list of dics of dataframe - and centers it according to strategy in strat
+	possible strat vals:
+	{ 'name' : 'peak', 'lim' : lim } - determines peaks of |val|>=lim and first and last one are centered
+	colx/y are the number of the x and y columns
 	"""
-	fields_cut = []
-	for field in b_fields :
-		field = field['field']
-		[field_cut, x_min, x_max] = field.cut_data_support(col_cut = colx)
-		fields_cut.append(field_cut)
+	xCen = 0.0
+	if isinstance(colx,str) and isinstance(coly,str) : 
+		colx = data.columns.get_loc(colx)
+		coly = data.columns.get_loc(coly)
+	if strat['name'] == 'extrema' : 
+		lim = strat['lim']
+		[x, y] = find_extrema(data = data, lim = lim, colx = colx, coly = coly)
+		if ( len(x) < 2 ) or ( len(y) < 2 ) :
+			print("No or not enough (2) peaks found - abort")
+			return
+		xCen = (x[-1] + x[0])/2
+	[isDF, data_DF] = checkIfDF_Conv(data = data)
+	data_DF = data_DF.copy()
+	data_DF[ data_DF.columns[colx] ] = data_DF[ data_DF.columns[colx] ].apply( lambda x : x - xCen )
+	# print("Center at: ",xCen)
+	if not isDF : 
+		return data_DF.to_dict('records')   
+	return data_DF
 
-	num_ex = []
-	for field in fields_cut : 
-		[ex_x, ex_y] = ana.find_extrema(data = field.data, lim = lim_peak, colx = colx, coly = coly)
-		num_ex.append( len(ex_x) )
-	max_num_ex = max(num_ex)
-	num_supports = max_num_ex * num_support_per_extrema
-	support_x = np.linspace( x_min, x_max, num=num_supports)
-	interp_data = []
-	for field in fields_cut : 
-		x_vals = field.data[colx].to_list()
-		y_vals = field.data[coly].to_list()
-		spline = CubicSpline(x_vals, y_vals)
-		spline_supp_vals = spline( support_x )
-		interp_data.append( { 'gap' : field.get_para()['gap'], 'spline' : spline, 'supp_vals' : spline_supp_vals } )
-
-	supp_list = []
-	for ind, supp in enumerate(support_x) :
-		supp_list.append( { 'ind' : ind, 'x' : supp, 'gB' : [] } )
-		for interp in interp_data : 
-			supp_list[-1]['gB'].append( { 'gap' : interp['gap'], 'Bg' : interp['supp_vals'][ind] } )
-
-	num_gaps = len(b_fields)
-	num_gaps_spline = num_gaps * 10
-	for supp in supp_list : 
-		g_data = pd.DataFrame(supp['gB'])
-		g_vals = g_data['gap'].to_list()
-		b_vals = g_data['Bg'].to_list()
-		g_spline = CubicSpline(g_vals, b_vals)
-		supp.update( { 'g_spline' : g_spline } )
-
-	data_for_g = []
-	for supp in supp_list : 
-		data_for_g.append( { colx : supp['x'], coly : supp['g_spline'](gap) } )
-	data_for_g = pd.DataFrame(data_for_g)
-	g_spline = CubicSpline( support_x, data_for_g['By'] )
-	intrp_f = b_fields[-1]['field'].clone_me()
-	para = intrp_f.get_para()
-	para.update( { 'gap' : gap } )
-	para.update( { 'file' : 'interp_b_field_gap_'+str(gap)+'_.dat' } )
-	intrp_f.set_para( para )
-	intrp_f.data = data_for_g
-	return intrp_f
-
-def cut_data_support(bfs, col_cut = 'x') : 
-	"""
-	takes b-field data list loaded with load_b_fields_gap and
-	cuts the fields to the smallest common support in the column
-	col_cut - afterwards all fiel-data is defined on the same col-values
-	"""
-	b_field_x_small = None
-	b_field_x_high = None
-	bfs_r = []
-	for bf in bfs :
-		bf = bf.clone_me()
-		x_vals = bf.data[col_cut].to_list()
-		if b_field_x_high is None :
-			b_field_x_high = x_vals[-1]
-		else : 
-			if x_vals[-1] < b_field_x_high : 
-				b_field_x_high = x_vals[-1]
-		if b_field_x_small is None :
-			b_field_x_small = x_vals[0]
-		else : 
-			if x_vals[0] > b_field_x_small : 
-				b_field_x_small = x_vals[0]
-
-		bf.data = bf.data[ (bf.data[col_cut] >= b_field_x_small) & \
-					(bf.data[col_cut] <= b_field_x_high) ]
-		bfs_r.append(bf)
-	return [ bfs_r, b_field_x_small, b_field_x_high]
-
-def create_harm_field( period, amplitude, deltaX, phase_shift = 0, num_pnts_per_period = 100, colx = 'x', coly = 'By' ) : 
-	"""
-	Creates a sine field: amplitude*sin( k_per * x + phase_shift ) for all x lying in interval deltaX, 
-	creates bfield class filled with data, with num_pnts_per_period pnts per period in deltaX
-	"""
-	length = deltaX[-1] - deltaX[0]
-	numPer = length / period
-	xpnts = np.linspace( deltaX[0], deltaX[-1], (int)(numPer*num_pnts_per_period) )
-	data = []
-	for pnt in xpnts : 
-		data.append( { colx : pnt, coly : amplitude*math.sin( 2*math.pi/period * pnt + phase_shift ) } )
-	bf_r = bfield()
-	bf_r = bf_r.create_field_from_data( data = pd.DataFrame(data) )
-	return bf_r
-
-def create_field_with_ends(period_length,amplY,nperiods,num_pnts_per_period=100,amplZ=0,shift=0,gaugeY=1.0,gaugeZ=-1.0) :
+def create_field_with_ends(
+		period_length,
+		amplitude,
+		nperiods,
+		num_pnts_per_period=100,
+		colx = 'x', 
+		coly = 'By',
+		unitsXB=[0.001,1.0],
+		shift=0,
+		) :
 	bfield=create_harm_field( 
-		period=period_length, 
-		amplitude=amplY, 
+		periodLength=period_length, 
+		amplitude=amplitude, 
 		deltaX=[0,period_length*nperiods], 
-		phase_shift = 0, num_pnts_per_period = num_pnts_per_period, 
-		colx = 'x', coly = 'By' 
+		phase_shift = 0.0, 
+		num_pnts_per_period = num_pnts_per_period, 
+		colx = colx, coly = coly,
+		unitsXB=unitsXB,
 		)
 	be1=create_harm_field( 
-		period=period_length,
-		amplitude=amplY*0.25, 
+		periodLength=period_length,
+		amplitude=amplitude*0.25, 
 		deltaX=[0,period_length/2.0], 
-		phase_shift = 0, num_pnts_per_period = num_pnts_per_period/2.0, 
-		colx = 'x', coly = 'By' 
+		phase_shift = 0, 
+		num_pnts_per_period = num_pnts_per_period/2.0, 
+		colx = colx, coly = coly,
+		unitsXB=unitsXB,
 		)
 	be2=create_harm_field( 
-		period=period_length, 
-		amplitude=amplY*0.75, 
+		periodLength=period_length, 
+		amplitude=amplitude*0.75, 
 		deltaX=[0,period_length/2.0], 
-		phase_shift = math.pi, num_pnts_per_period = num_pnts_per_period/2.0, 
-		colx = 'x', coly = 'By' 
+		phase_shift = math.pi, 
+		num_pnts_per_period = num_pnts_per_period/2.0, 
+		colx = colx, coly = coly,
+		unitsXB=unitsXB,
 		)
 	be3=create_harm_field( 
-		period=period_length, 
-		amplitude=amplY*0.75, 
+		periodLength=period_length, 
+		amplitude=amplitude*0.75, 
 		deltaX=[0,period_length/2.0], 
-		phase_shift = 0, num_pnts_per_period = num_pnts_per_period/2.0, 
-		colx = 'x', coly = 'By' 
+		phase_shift = 0, 
+		num_pnts_per_period = num_pnts_per_period/2.0, 
+		colx = colx, coly = coly,
+		unitsXB=unitsXB,
 		)
 	be4=create_harm_field( 
-		period=period_length, 
-		amplitude=amplY*0.25, 
+		periodLength=period_length, 
+		amplitude=amplitude*0.25, 
 		deltaX=[0,period_length/2.0], 
-		phase_shift = math.pi, num_pnts_per_period = num_pnts_per_period/2.0, 
-		colx = 'x', coly = 'By' 
+		phase_shift = math.pi, 
+		num_pnts_per_period = num_pnts_per_period/2.0, 
+		colx = colx, coly = coly,
+		unitsXB=unitsXB,
 		)
 
 	bfully=be1.glue_bf( bf=be2, pos = 'back', colx = 'x', coly = 'By') 
@@ -289,108 +205,56 @@ def create_field_with_ends(period_length,amplY,nperiods,num_pnts_per_period=100,
 	bfully=bfully.get_cntrd_bf(lim_peak = None, colx = 'x', coly = 'By' )
 	bfully=bfully.gauge_b_field_data(col='By',gauge_fac=gaugeY)
 
-	if not (amplZ == 0) :
-		bfieldz=create_harm_field( 
-			period=period_length, 
-			amplitude=amplZ, 
-			deltaX=[0,period_length*nperiods], 
-			phase_shift = 0, num_pnts_per_period = num_pnts_per_period, 
-			colx = 'x', coly = 'Bz' 
-			)
-		be1z=create_harm_field( 
-			period=period_length, 
-			amplitude=amplZ*0.25, 
-			deltaX=[0,period_length/2.0], 
-			phase_shift = 0, num_pnts_per_period = num_pnts_per_period/2.0, 
-			colx = 'x', coly = 'Bz' 
-			)
-		be2z=create_harm_field( 
-			period=period_length, 
-			amplitude=amplZ*0.75, 
-			deltaX=[0,period_length/2.0], 
-			phase_shift = math.pi, num_pnts_per_period = num_pnts_per_period/2.0, 
-			colx = 'x', coly = 'Bz' 
-			)
-		be3z=create_harm_field( 
-			period=period_length, 
-			amplitude=amplZ*0.75, 
-			deltaX=[0,period_length/2.0], 
-			phase_shift = 0, num_pnts_per_period = num_pnts_per_period/2.0, 
-			colx = 'x', coly = 'Bz' 
-			)
-		be4z=create_harm_field( 
-			period=period_length, 
-			amplitude=amplZ*0.25, 
-			deltaX=[0,period_length/2.0], 
-			phase_shift = math.pi, num_pnts_per_period = num_pnts_per_period/2.0, 
-			colx = 'x', coly = 'Bz' 
-			)
+	# if not (amplZ == 0) :
+		# bfieldz=create_harm_field( 
+		# 	period=period_length, 
+		# 	amplitude=amplZ, 
+		# 	deltaX=[0,period_length*nperiods], 
+		# 	phase_shift = 0, num_pnts_per_period = num_pnts_per_period, 
+		# 	colx = 'x', coly = 'Bz' 
+		# 	)
+		# be1z=create_harm_field( 
+		# 	period=period_length, 
+		# 	amplitude=amplZ*0.25, 
+		# 	deltaX=[0,period_length/2.0], 
+		# 	phase_shift = 0, num_pnts_per_period = num_pnts_per_period/2.0, 
+		# 	colx = 'x', coly = 'Bz' 
+		# 	)
+		# be2z=create_harm_field( 
+		# 	period=period_length, 
+		# 	amplitude=amplZ*0.75, 
+		# 	deltaX=[0,period_length/2.0], 
+		# 	phase_shift = math.pi, num_pnts_per_period = num_pnts_per_period/2.0, 
+		# 	colx = 'x', coly = 'Bz' 
+		# 	)
+		# be3z=create_harm_field( 
+		# 	period=period_length, 
+		# 	amplitude=amplZ*0.75, 
+		# 	deltaX=[0,period_length/2.0], 
+		# 	phase_shift = 0, num_pnts_per_period = num_pnts_per_period/2.0, 
+		# 	colx = 'x', coly = 'Bz' 
+		# 	)
+		# be4z=create_harm_field( 
+		# 	period=period_length, 
+		# 	amplitude=amplZ*0.25, 
+		# 	deltaX=[0,period_length/2.0], 
+		# 	phase_shift = math.pi, num_pnts_per_period = num_pnts_per_period/2.0, 
+		# 	colx = 'x', coly = 'Bz' 
+		# 	)
 
-		bfullz=be1z.glue_bf( bf=be2z, pos = 'back', colx = 'x', coly = 'Bz') 
-		bfullz=bfullz.glue_bf( bf=bfieldz, pos = 'back', colx = 'x', coly = 'Bz') 
-		bfullz=bfullz.glue_bf( bf=be3z, pos = 'back', colx = 'x', coly = 'Bz') 
-		bfullz=bfullz.glue_bf( bf=be4z, pos = 'back', colx = 'x', coly = 'Bz') 
-		bfullz=bfullz.get_cntrd_bf(lim_peak = None, colx = 'x', coly = 'Bz' )
-		bfullz.move(dist=shift)
-		bfullz=bfullz.gauge_b_field_data(col='Bz',gauge_fac=gaugeZ)
-	return bfully, bfullz
+		# bfullz=be1z.glue_bf( bf=be2z, pos = 'back', colx = 'x', coly = 'Bz') 
+		# bfullz=bfullz.glue_bf( bf=bfieldz, pos = 'back', colx = 'x', coly = 'Bz') 
+		# bfullz=bfullz.glue_bf( bf=be3z, pos = 'back', colx = 'x', coly = 'Bz') 
+		# bfullz=bfullz.glue_bf( bf=be4z, pos = 'back', colx = 'x', coly = 'Bz') 
+		# bfullz=bfullz.get_cntrd_bf(lim_peak = None, colx = 'x', coly = 'Bz' )
+		# bfullz.move(dist=shift)
+		# bfullz=bfullz.gauge_b_field_data(col='Bz',gauge_fac=gaugeZ)
+	return bfully
 
-# funs to manipulate bfield lists
-# interpolate, e.g., min bfield, 
-
-class bfield(_attribute_collection) : 
+class bfield() : 
 	"""
 	Holds the bfield data
 	"""
-
-	bx = quantities.quantity(
-		api=None,
-		data=None,
-		name=f"B$_x$",
-		plot_name=f'Bx',
-		description=f'Magnetic Field Bx',
-		unit='T',
-		)
-	by = quantities.quantity(
-		api=None,
-		data=None,
-		name=f"B$_y$",
-		plot_name=f'By',
-		description=f'Magnetic Field By',
-		unit='T',
-		)
-	bz = quantities.quantity(
-		api=None,
-		data=None,
-		name=f"B$_z$",
-		plot_name=f'Bz',
-		description=f'Magnetic Field Bz',
-		unit='T',
-		)
-	xvals = quantities.quantity(
-		api=None,
-		data=None,
-		name=f"x",
-		plot_name=f'x',
-		description=f'x coordinate',
-		unit='m',
-		)
-	yvals = quantities.quantity(
-		api=None,
-		data=None,
-		name=f"y",
-		plot_name=f'y',
-		description=f'y coordinate',
-		unit='m',
-		)
-	zvals = quantities.quantity(
-		api=None,
-		data=None,
-		name=f"z",
-		plot_name=f'z',
-		description=f'z coordinate',
-		unit='m',
-		)
 
 	def __init__(self, 
 			data = None,
@@ -399,6 +263,154 @@ class bfield(_attribute_collection) :
 		super().__init__()
 		self._data=data
 		self._unitsXB=unitsXB
+
+		self.bx = quantities.quantity(
+			api=None,
+			data=None,
+			name=f"B$_x$",
+			plot_name=f'Bx',
+			description=f'Magnetic Field Bx',
+			unit='T',
+			)
+		self.by = quantities.quantity(
+			api=None,
+			data=None,
+			name=f"B$_y$",
+			plot_name=f'By',
+			description=f'Magnetic Field By',
+			unit='T',
+			)
+		self.bz = quantities.quantity(
+			api=None,
+			data=None,
+			name=f"B$_z$",
+			plot_name=f'Bz',
+			description=f'Magnetic Field Bz',
+			unit='T',
+			)
+		self.xvals = quantities.quantity(
+			api=None,
+			data=None,
+			name=f"x",
+			plot_name=f'x',
+			description=f'x coordinate',
+			unit='m',
+			)
+		self.yvals = quantities.quantity(
+			api=None,
+			data=None,
+			name=f"y",
+			plot_name=f'y',
+			description=f'y coordinate',
+			unit='m',
+			)
+		self.zvals = quantities.quantity(
+			api=None,
+			data=None,
+			name=f"z",
+			plot_name=f'z',
+			description=f'z coordinate',
+			unit='m',
+			)
+
+	"""
+	bfield class
+
+	has x,y,z,bx,by,bz
+
+	if has x: 
+		find new x before, with right interval
+		find new x after
+
+		loop new x+oldx+newx make harm bm, add to bm already there
+
+		loop new xs :
+			add 0 for all other bs
+	"""
+
+	def create_harm_field(
+			self,
+			periodLength, 
+			amplitude, 
+			deltaX, 
+			phase_shift = 0, 
+			num_pnts_per_period = 100, 
+			colx = 'x', 
+			coly = 'By',
+			unitsXB=[0.001,1.0],
+			) : 
+		"""
+		Creates a sine field: amplitude*sin( k_per * x + phase_shift ) for all x lying in interval deltaX, 
+		creates bfield class filled with data, with num_pnts_per_period pnts per period in deltaX
+		"""
+
+
+		length = deltaX[-1] - deltaX[0]
+		numPer = length / periodLength
+
+		xValsHave=self.xvals._data
+		if len(xValsHave) > 0 :
+			smllDlt=xValsHave[1]-xValsHave[0]
+
+			newXSmall=[]
+			if deltaX[0] < xValsHave[0] :
+				xstart=xValsHave[0]
+				while True :
+					xstart=xstart-smllDlt
+					newXSmall.append(xstart)
+					if start<=deltaX[0] :
+						break
+			newXBig=[]
+			if deltaX[-1] > xValsHave[-1] :
+				xstart=xValsHave[-1]
+				while True :
+					xstart=xstart+smllDlt
+					newXBig.append(xstart)
+					if start>=deltaX[-1] :
+						break
+			xpnts=newXSmall+xValsHave+newXBig
+		else :
+			xpnts = np.linspace( deltaX[0], deltaX[-1], (int)(numPer*num_pnts_per_period) )
+
+		if coly == 'By' :
+			bAdd=self.by
+			bInd=[self.bx,self.bz]
+		elif coly == 'Bz' :
+			bAdd=self.bz
+			bInd=[self.bx,self.by]
+		else :
+			bAdd=self.bx
+			bInd=[self.by,self.bz]
+
+		data = []
+		for pnt in xpnts : 
+			added=False
+			val=0
+			if pnt >= deltaX[0] : 
+				if pnt <= deltaX[-1] :
+					val= amplitude*math.sin( 2*math.pi/periodLength * pnt + phase_shift ) 
+			# if len(xValsHave) > 1 :
+			# 	if pnt >= xValsHave[0] :
+			# 		if pnt <= xValsHave[-1] :
+			# 			addVal = 
+			if not added :
+				data.append({ colx : pnt, coly : 0 })
+
+		data=pd.DataFrame(data)
+		coord=bf_r.xvals
+		bv=bf_r.bx
+		if colx == 'y' :
+			coord=bf_r.yvals
+		elif colx == 'z' :
+			coord=bf_r.zvals
+		if coly == 'By' :
+			bv=bf_r.by
+		elif coly == 'Bz' :
+			bv=bf_r.bz
+		coord._data=data[colx].to_list()
+		bv._data=data[coly].to_list()
+
+		return bf_r
 
 	def write_field(self,
 			file,
@@ -439,22 +451,53 @@ class bfield(_attribute_collection) :
 		b_z=self.bz._data
 		with open( file, 'w') as o_f:
 			for ind, xval in enumerate(x_vals) :
-				o_f.write(f"  {xval*unitConvX:.4g}   {b_y[ind]*unitConvB:.4g}   {b_z[ind]*unitConvB:.4g}   0.0000000E+000   0.0000000E+000   0.0000000E+000   0.0000000E+000          0\n")		
+				o_f.write(f"  {xval*unitConvX:.4f}   {b_y[ind]*unitConvB:.4f}   {b_z[ind]*unitConvB:.4f}   0.0000000E+000   0.0000000E+000   0.0000000E+000   0.0000000E+000          0\n")		
 
-	def write_field_std(self,file,unitsXB=None) :
+	def write_field_std(self,file,unitsConv=None, whatStr='') :
 		"""
 
 		UndumagOut file Units are mm for the length and T for B
 		"""
-		if unitsXB is None :
-			unitsXB=self._unitsXB
-		unitConvX=unitsXB[0]/0.001
-		unitConvB=unitsXB[1]/1
+		if unitsConv is None :
+			unitConvX=1.0
+			unitConvB=1.0
+		else:
+			unitConvX=unitsConv[0]
+			unitConvB=unitsConv[1]
 		x_vals=self.xvals._data
 		b_y = self.by._data
+		b_z = self.bz._data
+		b_x = self.bx._data
+		doBx=False
+		if not (b_x is None) :
+			if len(b_x) > 0 :
+				doBx = True
+		doBy=False
+		if not (b_y is None) :
+			if len(b_y) > 0 :
+				doBy = True
+		doBz=False
+		if not (b_z is None) :
+			if len(b_z) > 0 :
+				doBz = True
+		if len(whatStr) > 0 :
+			if not ('Bx' in whatStr) :
+				doBx=False
+			if not ('By' in whatStr) :
+				doBx=False
+			if not ('Bz' in whatStr) :
+				doBz=False
 		with open( file, 'w') as o_f:
 			for ind, xval in enumerate(x_vals) :
-				o_f.write(f"{xval*unitConvX:.4g} {b_y[ind]*unitConvB:.4g}\n")
+				lineStr=f"{xval*unitConvX:.4f}"
+				if doBx :
+					lineStr=lineStr + f" {b_x[ind]*unitConvB:.4f}"
+				if doBy :
+					lineStr=lineStr + f" {b_y[ind]*unitConvB:.4f}"
+				if doBz :
+					lineStr=lineStr + f" {b_z[ind]*unitConvB:.4f}"
+				lineStr=lineStr+'\n'
+				o_f.write(lineStr)
 
 	def write_field_waveByz(self,filey,filez,unitsXB=None) :
 		"""
@@ -469,17 +512,17 @@ class bfield(_attribute_collection) :
 		b_y = self.by._data
 		b_z = self.bz._data
 		with open( filey, 'w') as o_f:
-			o_f.write(str(len(x_vals))+'\n')
-			o_f.write('1.0 1.0\n')
 			o_f.write('Comment\n')
+			o_f.write('1.0 1.0\n')
+			o_f.write(str(len(x_vals))+'\n')
 			for ind, xval in enumerate(x_vals) :
-				o_f.write(f"{xval*unitConvX:.4g} {b_y[ind]*unitConvB:.4g}\n")
+				o_f.write(f"{xval*unitConvX:.4f} {b_y[ind]*unitConvB:.4f}\n")
 		with open( filez, 'w') as o_f:
-			o_f.write(str(len(x_vals))+'\n')
-			o_f.write('1.0 1.0\n')
 			o_f.write('Comment\n')
+			o_f.write('1.0 1.0\n')
+			o_f.write(str(len(x_vals))+'\n')
 			for ind, xval in enumerate(x_vals) :
-				o_f.write(f"{xval*unitConvX:.4g} {b_z[ind]*unitConvB:.4g}\n")
+				o_f.write(f"{xval*unitConvX:.4f} {b_z[ind]*unitConvB:.4f}\n")
 
 	def write_field_waveBxyz(self,filex,filey,filez,unitsXB=None) :
 		"""
@@ -495,36 +538,61 @@ class bfield(_attribute_collection) :
 		b_y = self.by._data
 		b_z = self.bz._data
 		with open( filex, 'w') as o_f:
-			o_f.write(str(len(x_vals))+'\n')
-			o_f.write('1.0 1.0\n')
 			o_f.write('Comment\n')
+			o_f.write('1.0 1.0\n')
+			o_f.write(str(len(x_vals))+'\n')
 			for ind, xval in enumerate(x_vals) :
-				o_f.write(f"{xval*unitConvX:.4g} {b_x[ind]*unitConvB:.4g}\n")
+				o_f.write(f"{xval*unitConvX:.4f} {b_x[ind]*unitConvB:.4f}\n")
 		with open( filey, 'w') as o_f:
-			o_f.write(str(len(x_vals))+'\n')
-			o_f.write('1.0 1.0\n')
 			o_f.write('Comment\n')
+			o_f.write('1.0 1.0\n')
+			o_f.write(str(len(x_vals))+'\n')
 			for ind, xval in enumerate(x_vals) :
-				o_f.write(f"{xval*unitConvX:.4g} {b_y[ind]*unitConvB:.4g}\n")
+				o_f.write(f"{xval*unitConvX:.4f} {b_y[ind]*unitConvB:.4f}\n")
 		with open( filez, 'w') as o_f:
-			o_f.write(str(len(x_vals))+'\n')
-			o_f.write('1.0 1.0\n')
 			o_f.write('Comment\n')
+			o_f.write('1.0 1.0\n')
+			o_f.write(str(len(x_vals))+'\n')
 			for ind, xval in enumerate(x_vals) :
-				o_f.write(f"{xval*unitConvX:.4g} {b_z[ind]*unitConvB:.4g}\n")
+				o_f.write(f"{xval*unitConvX:.4f} {b_z[ind]*unitConvB:.4f}\n")
 
-	def write_field_map_wave(file) :
+	def write_field_map_wave(self,file,unitsXB=None) :
+		if unitsXB is None :
+			unitsXB=self._unitsXB
+		unitConvX=unitsXB[0]/1 # xyz in wave field map are in m
+		unitConvB=unitsXB[1]/1
 
-		with open( f"{folder}field_out.map", 'w') as o_f:
+		x_vals=self.xvals._data
+		y_vals=self.yvals._data
+		z_vals=self.zvals._data
+		b_x = self.bx._data
+		b_y = self.by._data
+		b_z = self.bz._data
+
+		shape=x_vals.shape
+		nx=shape[0]
+		ny=shape[1]
+		nz=shape[2]
+		nlines=nx*ny*nz
+
+		xn=x_vals.reshape(nlines)
+		yn=y_vals.reshape(nlines)
+		zn=z_vals.reshape(nlines)
+		bxn=b_x.reshape(nlines)
+		byn=b_y.reshape(nlines)
+		bzn=b_z.reshape(nlines)
+		with open( file, 'w') as o_f:
 
 			o_f.write('! WAVE: x y z Bx By Bz with x as long. beam axis\n')
-			o_f.write('@ date (yyyy.month.day) and time = 2025.06.25 18:59:58\n')
-			o_f.write('@ run =           960\n')
+			o_f.write('@ date (yyyy.month.day) and time =  2025.06.25 18:59:58\n')
+			o_f.write('@ run =           1\n')
 			o_f.write('@ comment = WAVE.EXAMPLE\n')
 			o_f.write('@ scaling = 1.0 1.0 1.0 1.0 1.0 1.0\n')
 			o_f.write('@ offset = 0.0, 0.0, 0.0 0.0 0.0 0.0\n')
-			for ind, line in enumerate(bMap) :
-				o_f.write(f"  {line['x']:.2f}  {line['y']:.2f}  {line['z']:.2f}  {line['Bx']:.2f}  {line['By']:.2f}  {line['Bz']:.2f}\n")		
+			for indx, xval in enumerate(np.unique(x_vals)) :
+				for indy, yval in enumerate(np.unique(y_vals)) :
+					for indz, zval in enumerate(np.unique(z_vals)) :
+						o_f.write(f"  {xval*unitConvX:.4f}  {yval*unitConvX:.4f}  {zval*unitConvX:.4f}  {b_x[indx,indy,indz]*unitConvB:.4f}  {b_y[indx,indy,indz]*unitConvB:.4f}  {b_z[indx,indy,indz]*unitConvB:.4f}\n")		
 
 	def load_field_from_file(self,
 			file, 
@@ -578,6 +646,7 @@ class bfield(_attribute_collection) :
 			bxGrid=np.array(data['Bx'].to_list()).reshape((nxmap,nymap,nzmap))
 			byGrid=np.array(data['By'].to_list()).reshape((nxmap,nymap,nzmap))
 			bzGrid=np.array(data['Bz'].to_list()).reshape((nxmap,nymap,nzmap))
+
 			self.xvals._data=xGrid
 			self.yvals._data=yGrid
 			self.zvals._data=zGrid
@@ -606,81 +675,89 @@ class bfield(_attribute_collection) :
 		if 'Bz' in cols :
 			self.bz._data=data['Bz'].to_list()
 
+	def move(self,dist) : 
+		new_x = []
+		for el in self.xvals._data :
+			new_x.append(el+dist)
+		self.xvals._data = new_x
+
+	def getData(self,colx = 'x', coly = 'By' ):
+		coord=self.xvals
+		bv=self.bx
+		if colx == 'y' :
+			coord=self.yvals
+		elif colx == 'z' :
+			coord=self.zvals
+		if coly == 'by' :
+			bv=self.by
+		elif coly == 'bz' :
+			bv=self.bz
+		return pd.DataFrame( {colx:coord._data, coly:bv._data} )
+
+	def setData(self,data,colx = 'x', coly = 'By' ):
+		coord=self.xvals
+		bv=self.bx
+		if colx == 'y' :
+			coord=self.yvals
+		elif colx == 'z' :
+			coord=self.zvals
+		if coly == 'by' :
+			bv=self.by
+		elif coly == 'bz' :
+			bv=self.bz
+		coord._data=data[colx].to_list()
+		bv._data=data[coly].to_list()
+
+	def center_bf(self, colx = 'x', coly = 'By' ) : 
+		"""
+		takes b-field data list loaded with load_b_fields_gap and centers each field 
+		according to the position of the first and last peak identified for which |peak| >= lim_peak
+		"""
+		data=self.getData(colx=colx,coly=coly)
+		data_cntr = center_data(
+				data = data, 
+				strat = { 'name' : 'extrema', 'lim' : None } , 
+				colx = colx, coly = coly
+				)
+		self.setData(data=data_cntr,colx = colx, coly = coly )
+
+	def glue_bf(self, bf, pos = 'front', colx = 'x', coly = 'By') : 
+		"""
+		Glues the field bf to this field adding it either to the front or back (=pos)
+		"""
+		mydataBeg=self.xvals._data[0]
+		mydataEnd=self.xvals._data[-1]
+		bfdataBeg=bf.xvals._data[0]
+		bfdataEnd=bf.xvals._data[-1]
+		if pos == 'front' : 
+			my_pos = self.xvals._data[0]
+			bf_pos = bfdata[-1][colx]
+			my_ind = 0
+			bf_ind = -1
+			delta = my_pos - bf_pos #- 1
+		elif pos == 'back' : 
+			my_pos = mydata[-1][colx]
+			bf_pos = bfdata[0][colx]
+			my_ind = -1
+			bf_ind = 0
+			delta = my_pos - bf_pos #+ 1
+		for line in bfdata :
+			line[colx] = line[colx] + delta
+		# average
+		avrg = 0.5*(mydata[my_ind][coly] + bfdata[bf_ind][coly] )
+		mydata.pop( my_ind )
+		bfdata[bf_ind][coly] = avrg
+		full_data = mydata+bfdata
+		full_data_df = pd.DataFrame( full_data )
+		full_data_df = full_data_df.sort_values(by=[colx])
+		bf_r_pa = self.make_child_para()
+		bf_r = self.create_field_from_data( data = full_data_df, para = bf_r_pa)
+		return bf_r
+
 	def clone_me(self) : 
 		bf = bfield()
-		bf.data = copy.deepcopy(self.data)
-		bf.set_para(self.get_para())
+		bf = copy.deepcopy(self)
 		return bf
-
-	def load_field_from_radia(self, file) :
-		self.load_field_from_file(file=file)
-
-		#data in radia coordinates
-		# self.data.columns = ['x','y','z','Bx','By','Bz','B','Hx','Hy','Hz','H','Mx',
-		# 		'My','Mz','M']
-
-		# undu_x->radia_y,...,y->z,z->x
-		#data in undu coordinates
-		self.data.columns = ['z','x','y','Bz','Bx','By','B','Hz','Hx','Hy','H','Mz',
-				'Mx','My','M']
-
-# 		'By','Bz','intBy','intBz','int2By','int2Bz','quark']
-# str(x)+ " " + str(y)+ " " + str(z)+ " " \
-#         + str(Bx)+ " " + str(By)+ " " + str(Bz)+ " " + str(B)+ " " \
-#         + str(Hx)+ " " + str(Hy)+ " " + str(Hz)+ " " + str(H)+ " " \
-#         + str(Mx)+ " " + str(My)+ " " + str(Mz)+ " " + str(M) + NL
-
-	def get_para(self) : 
-		return self.para
-
-	def set_para(self, para) : 
-		self.para = dict(para)
-	
-	def get_std_para(self, b_type = None ) : 
-		if b_type is None : 
-			b_type = self.type_On_Axis_By
-		para = { 'type' : b_type, 'spline_num_pnts' : 1000, 'gap' : None, 'file' : None, 'undu_file' : False, 'extrema' : None, 'numPer' : None, \
-				'minima' : None, 'maxima' : None , 'zeros' : None, 'diffs_min' : None, 'diffs_max' : None, 'spline' : None, 'frst_int_spline' : None, 'scnd_int_spline' : None, \
-				'frst_int' : None, 'scnd_int' : None, 'prd_lngth' : None, 'strt_end_prdc' : None, 'frst_int_end_strct' : None,\
-				'frst_int_prdc' : None }
-		return para
-
-	def save_data(self, file) : 
-		self.data.to_csv( file , index = False, sep = ' ' )
-
-	def make_child_para(self) : 
-		para = self.get_para()
-		new_para = self.get_std_para()
-		new_para['type'] = para['type']
-		new_para['spline_num_pnts'] = para['spline_num_pnts']
-		new_para['gap'] = para['gap']
-		new_para['file'] = para['file']
-		new_para['undu_file'] = para['undu_file']
-		return new_para
-
-	def get_gap_from_filename(self, file) : 
-		gap_str = file.split( 'gap_' )
-		gap = None
-		if len(gap_str) > 1 : 
-			gap = float(gap_str[-1].split('_')[0])
-		return gap
-
-	def plot_data(self, colX = 'x', colY = 'By', fig = None, label_para = None) :
-		end_s = False
-		if fig is None :  
-			end_s = True
-			fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)			
-		data = self.data
-		if not (label_para is None ) :
-			plt.plot(data[colX],data[colY], '-', label = label_para+'='+str(self.get_para()[label_para]))
-		else :
-			plt.plot(data[colX],data[colY], '-')
-		if end_s :
-			fig.suptitle("Magnetic Field", fontsize=14)
-			plt.xlabel('x [mm]', fontsize=12)
-			plt.ylabel('Magnetic Field [T]', fontsize=12)
-			plt.pause(0.25)
-			plt.ion()
 
 	def get_period_length_frm_zeros(self, zeros=None) :
 		if zeros is None :
@@ -928,12 +1005,6 @@ class bfield(_attribute_collection) :
 		second_data = { 'x' : xs, 'intB2' : snd_int_data }
 		return first_data, second_data
 
-	def move(self,dist) : 
-		new_x = []
-		for el in self.data['x'].to_list() :
-			new_x.append(el+dist)
-		self.data['x'] = new_x
-
 	def gauge_b_field_data(self, col, gauge_fac ) : 
 		"""
 		takes a list of b-fields as returned by load_b_fields_gap and col, the name of the 
@@ -942,15 +1013,6 @@ class bfield(_attribute_collection) :
 		"""
 		bf = self.clone_me()
 		bf.data[col] = bf.data[col].apply( lambda x: x*gauge_fac )
-		return bf
-
-	def get_cntrd_bf(self, lim_peak = None, colx = 'x', coly = 'By' ) : 
-		"""
-		takes b-field data list loaded with load_b_fields_gap and centers each field 
-		according to the position of the first and last peak identified for which |peak| >= lim_peak
-		"""
-		bf = self.clone_me()
-		bf.data = ana.center_data(data = self.data, strat = { 'name' : 'extrema', 'lim' : lim_peak } , colx = colx, coly = coly)
 		return bf
 
 	def convert_x_mm_b_T_file_to_wave_std(self, file_in, out_path ) : 
@@ -1169,62 +1231,6 @@ class bfield(_attribute_collection) :
 			ar = self.integrate_fld(xs = intrvl, colx = colx, coly = coly)
 			ars.append(ar)
 		return ars
-
-	def glue_bf(self, bf, pos = 'front', colx = 'x', coly = 'By') : 
-		"""
-		Glues the field bf to this field adding it either to the front or back (=pos)
-		"""
-		mydata = self.data.to_dict('records')
-		bfdata = bf.data.to_dict('records')
-		mydataBeg=mydata[0]['x']
-		mydataEnd=mydata[-1]['x']
-		bfdataBeg=bfdata[0]['x']
-		bfdataEnd=bfdata[-1]['x']
-		# if bfdataBeg >= mydataBeg :
-		# 	if bfdataBeg <= mydataEnd :
-
-		# 		if bfdataEnd <= mydataEnd :
-		# 			return self
-
-		# 		for bfdata_i, bfda in enumerate(bfdata) :
-		# 			if bfda['x'] > mydataEnd :
-		# 				bfdata=bfdata[bfdata_i:]
-		# 				break
-		# elif bfdataEnd >= mydataBeg :
-		# 	if bfdataEnd <= mydataEnd :
-
-		# 		if bfdataBeg >= mydataBeg :
-		# 			return self
-
-		# 		for bfdata_i, bfda in enumerate(bfdata) :
-		# 			if bfda['x'] == mydataBeg :
-		# 				bfdata=bfdata[:bfdata_i]
-		# 				break
-		# pdb.set_trace()
-		if pos == 'front' : 
-			my_pos = mydata[0][colx]
-			bf_pos = bfdata[-1][colx]
-			my_ind = 0
-			bf_ind = -1
-			delta = my_pos - bf_pos #- 1
-		elif pos == 'back' : 
-			my_pos = mydata[-1][colx]
-			bf_pos = bfdata[0][colx]
-			my_ind = -1
-			bf_ind = 0
-			delta = my_pos - bf_pos #+ 1
-		for line in bfdata : 
-			line[colx] = line[colx] + delta
-		# average
-		avrg = 0.5*(mydata[my_ind][coly] + bfdata[bf_ind][coly] )
-		mydata.pop( my_ind )
-		bfdata[bf_ind][coly] = avrg
-		full_data = mydata+bfdata
-		full_data_df = pd.DataFrame( full_data )
-		full_data_df = full_data_df.sort_values(by=[colx])
-		bf_r_pa = self.make_child_para()
-		bf_r = self.create_field_from_data( data = full_data_df, para = bf_r_pa)
-		return bf_r
 
 	def reverse_field(self, colx = 'x', coly = 'By') : 
 		data = self.data.copy()

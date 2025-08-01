@@ -100,6 +100,7 @@
              
   <section id="module-unduwave.undu_modules.undu_control">
 <span id="unduwave-undu-modules-undu-control"></span><h1><span class="section-number">4.1.1.7.1.2. </span>unduwave.undu_modules.undu_control<a class="headerlink" href="#module-unduwave.undu_modules.undu_control" title="Link to this heading"></a></h1>
+<p>Functionality for running the Undumag simulation</p>
 <section id="attributes">
 <h2><span class="section-number">4.1.1.7.1.2.1. </span>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
 <table class="autosummary longtable docutils align-default">
@@ -115,7 +116,7 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_control.undu_control" title="unduwave.undu_modules.undu_control.undu_control"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_control</span></code></a></p></td>
-<td><p>Internal API for the WAVE program</p></td>
+<td><p>An object for controling undumag, allowing to run simulations</p></td>
 </tr>
 </tbody>
 </table>
@@ -130,14 +131,20 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_control.undu_control">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_control.</span></span><span class="sig-name descname"><span class="pre">undu_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_control.undu_control" title="Link to this definition"></a></dt>
-<dd><p>Internal API for the WAVE program</p>
-<p>Initialize the internal API
-undu_api : external wave_api class
-current_folder : folder to which you want to jump back after wave was run</p>
+<dd><p>An object for controling undumag, allowing to run simulations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>undu_api</strong> (<a class="reference internal" href="../../api/undu_api_root/index.html#unduwave.api.undu_api_root.undu_api" title="unduwave.api.undu_api_root.undu_api"><em>undu_api</em></a>) – external wave_api class</p></li>
+<li><p><strong>current_folder</strong> (<em>str</em><em> or </em><em>None</em>) – folder to which you want to jump back after wave was run</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_control.undu_control.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freate_fresh_clc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_control.undu_control.run" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_control.undu_control.run" title="Link to this definition"></a></dt>
+<dd><p>Run an undumag simulation</p>
+</dd></dl>
 
 </dd></dl>
 

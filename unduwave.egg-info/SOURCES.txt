@@ -3004,6 +3004,7 @@ unduwave/analytical_module/__init__.py
 unduwave/analytical_module/analytic_structures.py
 unduwave/analytical_module/ana_undu/__init__.py
 unduwave/analytical_module/ana_undu/analytic_undulator.py
+unduwave/analytical_module/ana_undu/bfield.py
 unduwave/analytical_module/ana_wave/__init__.py
 unduwave/analytical_module/ana_wave/ana_eb_fields.py
 unduwave/api/__init__.py
@@ -3012,7 +3013,6 @@ unduwave/api/wave_api_root.py
 unduwave/attribute_classes/__init__.py
 unduwave/attribute_classes/attributes.py
 unduwave/helpers/__init__.py
-unduwave/helpers/bfield_helpers.py
 unduwave/helpers/file_folder_helpers.py
 unduwave/optimization_module/__init__.py
 unduwave/quantities/__init__.py

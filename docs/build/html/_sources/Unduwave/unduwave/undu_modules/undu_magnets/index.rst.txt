@@ -5,8 +5,7 @@ unduwave.undu_modules.undu_magnets
 
 .. autoapi-nested-parse::
 
-   Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that 
-   returns an instance of that class
+   Undu_magnet definitions allowing to construct a 3D magnetic system comprissed of magnet blocks (w/o chamfers)
 
 
 
@@ -38,13 +37,39 @@ Module Contents
 
 .. py:class:: point_coords(x=0.0, y=0.0, z=0.0)
 
+   
+   Initializes simple 3d vector class
+
+   :param float x: x-component
+   :param float y: y-component
+   :param float z: z-component
+
+
    .. py:method:: __sub__(pnt)
+
+      Substraction of vector pnt
+
+      :param point_coords pnt: vector to substract
+
 
 
    .. py:method:: __add__(pnt)
 
+      Addition of vector pnt
+
+      :param point_coords pnt: vector to add
+
+
 
 .. py:function:: rotate(pnts, degrees, axis=point_coords(0, 0, 0), plane='yz')
+
+   Takes a list of vectors and rotates them (their component in the yz-plane).
+   The x-component of the vectors remains unchanged. Returns the rotated vectors
+
+   :param list pnts: List of point_coords to be rotated
+   :param float degrees: Degrees by which to rotate [°]
+   :param 
+
 
 .. py:class:: undu_magnets(magnet_blocks, api=None)
 

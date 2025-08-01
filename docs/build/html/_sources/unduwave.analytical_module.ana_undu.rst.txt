@@ -1,7 +1,7 @@
-C2C Endpoints
+TEST
 =============
 
-Get C2C Trade History (USER_DATA)
+TEST
 ---------------------------------
 .. automodule:: unduwave.analytical_module.analytic_structures
     :members:

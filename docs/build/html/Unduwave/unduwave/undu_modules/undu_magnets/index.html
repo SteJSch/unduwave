@@ -100,14 +100,13 @@
              
   <section id="module-unduwave.undu_modules.undu_magnets">
 <span id="unduwave-undu-modules-undu-magnets"></span><h1><span class="section-number">4.1.1.7.1.3. </span>unduwave.undu_modules.undu_magnets<a class="headerlink" href="#module-unduwave.undu_modules.undu_magnets" title="Link to this heading"></a></h1>
-<p>Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that
-returns an instance of that class</p>
+<p>Undu_magnet definitions allowing to construct a 3D magnetic system comprissed of magnet blocks (w/o chamfers)</p>
 <section id="classes">
 <h2><span class="section-number">4.1.1.7.1.3.1. </span>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">point_coords</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Initializes simple 3d vector class</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.undu_magnets" title="unduwave.undu_modules.undu_magnets.undu_magnets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_magnets</span></code></a></p></td>
 <td><p>Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,</p></td>
@@ -123,7 +122,7 @@ returns an instance of that class</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.rotate" title="unduwave.undu_modules.undu_magnets.rotate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate</span></code></a>(pnts, degrees[, axis, plane])</p></td>
-<td><p></p></td>
+<td><p>Takes a list of vectors and rotates them (their component in the yz-plane).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.get_magn_ignore" title="unduwave.undu_modules.undu_magnets.get_magn_ignore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_magn_ignore</span></code></a>(n_magn_ignore, ignore_level[, ...])</p></td>
 <td><p>n_magn_ignore : number of magnet to be ignored</p></td>
@@ -148,22 +147,55 @@ returns an instance of that class</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.point_coords">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">point_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.point_coords" title="Link to this definition"></a></dt>
-<dd><dl class="py method">
+<dd><p>Initializes simple 3d vector class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – x-component</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – y-component</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – z-component</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.point_coords.__sub__">
 <span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.point_coords.__sub__" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Substraction of vector pnt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pnt</strong> (<a class="reference internal" href="#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><em>point_coords</em></a>) – vector to substract</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.point_coords.__add__">
 <span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.point_coords.__add__" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Addition of vector pnt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pnt</strong> (<a class="reference internal" href="#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><em>point_coords</em></a>) – vector to add</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.rotate">
 <span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrees</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">point_coords(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'yz'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.rotate" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Takes a list of vectors and rotates them (their component in the yz-plane).
+The x-component of the vectors remains unchanged. Returns the rotated vectors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pnts</strong> (<em>list</em>) – List of point_coords to be rotated</p></li>
+<li><p><strong>degrees</strong> (<em>float</em>) – Degrees by which to rotate [°]</p></li>
+</ul>
+</dd>
+</dl>
+<p>:param</p>
+</dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets">

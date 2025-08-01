@@ -22,8 +22,8 @@ class wave_api :
 		Wave API-class for controlling basic wave-functionality. 
 		Holds the basic parameter classes.
 
-		:param str wave_mode: can be one of the following.
-			'By','Byz',	'Bxyz',	'undu_ellip', 'undu_endp' :
+		:param str wave_mode: can be one of the following
+			'bfield', 'undu_ellip', 'undu_endp' :
 		"""
 
 		self._prog_paras.get_std_paras(wave_mode=wave_mode)

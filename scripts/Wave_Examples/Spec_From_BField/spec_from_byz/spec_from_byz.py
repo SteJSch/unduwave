@@ -2,7 +2,7 @@
 import os
 import pdb
 import sys
-sys.path.insert(0, '../../../../')
+# sys.path.insert(0, '../../../../')
 
 try :
 	# works when calling script with python3 script_file
@@ -20,17 +20,70 @@ res_folder = dir_path+'/res/'
 Getting wave
 """
 
-wave = uw.wave(wave_mode='Byz')
-wave_prog_paras = wave._prog_paras
-ebeam_paras = wave._ebeam_paras
+wave = uw.wave(wave_mode='bfield')
+
+"""
+Loading and setting a BField
+"""
+
+bfield=uw.bfield.bfield(
+	unitsXB=[0.001,1.0] # setting the units
+	)
+
+# Loading 2 files, one with x [mm] and By [T], the other with x and Bz
+
+# bfield.load_field_from_file(
+# 			file=dir_path+'/by_tmp.dat', 
+# 			fieldMap=False,
+# 			cols=['x','By'],
+# 			unduFile = False, 
+# 			radiaFile=False,
+# 			header=None,
+# 			skiprows=None,
+# 		)
+
+# bfield.load_field_from_file(
+# 			file=dir_path+'/bz_tmp.dat', 
+# 			fieldMap=False,
+# 			cols=['x','Bz'],
+# 			unduFile = False, 
+# 			radiaFile=False,
+# 			header=None,
+# 			skiprows=None,
+# 		)
+
+# Combining the data to one file
+
+# bfield.write_field_std(
+# 	file=dir_path+'/file_combine.dat',
+# 	unitsConv=None, 
+# 	whatStr='xByBz' # tell bfield which cols to write
+# 	)
+
+# Load the field from the combined file.
+
+bfield.load_field_from_file(
+			file=dir_path+'/file_combine.dat', 
+			fieldMap=False,
+			cols=['x','By','Bz'],
+			unduFile = False, 
+			radiaFile=False,
+			header=None,
+			skiprows=None,
+		)
+
+# make the field known to wave
+
+bfield_paras = wave._bfield_paras # get bfield paras
+bfield_paras.bfield.set(bfield) # set the bfield
+bfield_paras.field_type.set('Byz') # tell wave which part of bfield to use for simu
 
 """
 Setting Program Parameter
 """
 
+wave_prog_paras = wave._prog_paras
 wave_prog_paras.res_folder.set(res_folder)
-wave_prog_paras.field_files.set( [ 'by_tmp.dat','bz_tmp.dat' ] )# The magnetic field files to be used in the simulation
-wave_prog_paras.field_folder.set(dir_path+field_folder)# Field Folder
 wave_prog_paras.calc_spectrum.set(True)
 wave_prog_paras.nthreads.set(6)
 
@@ -39,7 +92,7 @@ Setting Spectrometer Parameter
 """
 
 spectrometer_paras = wave._spectrometer_paras
-spectrometer_paras.spectrum_n_energies.set(100)
+spectrometer_paras.spectrum_n_energies.set(10)
 spectrometer_paras.spectrum_min_energy.set(100)
 spectrometer_paras.spectrum_max_energy.set(500)
 spectrometer_paras.spectrum_undu_mode.set(0)
@@ -68,6 +121,7 @@ undu_paras.elliptUnduPerShift.set(0.5)
 Setting Beam Parameter
 """
 
+ebeam_paras = wave._ebeam_paras
 ebeam_paras.beam_en.set(1.722) # [GeV]
 ebeam_paras.current.set(0.3) # [A]
 ebeam_paras.beamSizeHor.set(275e-6) # 
@@ -77,6 +131,7 @@ ebeam_paras.beamDiveVer.set(6.8e-6) #
 ebeam_paras.espread.set(1e-3) # 
 ebeam_paras.emittanceHor.set(7.7e-9)
 ebeam_paras.emittanceVer.set(15.4e-11)
+ebeam_paras.update_values()
 
 """
 Run

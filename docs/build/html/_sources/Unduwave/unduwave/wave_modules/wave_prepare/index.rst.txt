@@ -39,7 +39,7 @@ Module Contents
 
       Prepare the files for WAVE depending on the b type.
               
-      Deoending on which b_type, copies and 
+      Depending on which b_type, copies and 
       formats the b-field files needed
 
 

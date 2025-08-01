@@ -100,17 +100,16 @@
              
   <section id="module-unduwave.undu_modules.undu_coils">
 <span id="unduwave-undu-modules-undu-coils"></span><h1><span class="section-number">4.1.1.7.1.1. </span>unduwave.undu_modules.undu_coils<a class="headerlink" href="#module-unduwave.undu_modules.undu_coils" title="Link to this heading"></a></h1>
-<p>Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that
-returns an instance of that class</p>
+<p>Defining the functionality to representations of current-carrying coils.</p>
 <section id="classes">
 <h2><span class="section-number">4.1.1.7.1.1.1. </span>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_coils.undu_coils" title="unduwave.undu_modules.undu_coils.undu_coils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_coils</span></code></a></p></td>
-<td><p></p></td>
+<td><p>A container class containing a list of coil objects which are to be created and simulated with Undumag.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_coils.coil" title="unduwave.undu_modules.undu_coils.coil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coil</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Coil class representing a currect carrying coil.</p></td>
 </tr>
 </tbody>
 </table>
@@ -120,45 +119,102 @@ returns an instance of that class</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.undu_coils">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_coils.</span></span><span class="sig-name descname"><span class="pre">undu_coils</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coils</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils" title="Link to this definition"></a></dt>
-<dd><dl class="py method">
+<dd><p>A container class containing a list of coil objects which are to be created and simulated with Undumag.
+:param list coils: A list of coil objects.
+:param api: The undu_api object carrying out the simulations.
+:type api: undu_api or None</p>
+<dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.undu_coils.move_it">
 <span class="sig-name descname"><span class="pre">move_it</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils.move_it" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Moving the center of the coil by vector vec.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vec</strong> (<em>list</em>) – A list containing the (x,y,z) components of the translation vector vec.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.undu_coils.add_to_clc">
-<span class="sig-name descname"><span class="pre">add_to_clc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clc_txt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils.add_to_clc" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">add_to_clc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils.add_to_clc" title="Link to this definition"></a></dt>
+<dd><p>Add all daughter coils to the Undumag clc file for simulation.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.undu_coils.set_all_apis">
 <span class="sig-name descname"><span class="pre">set_all_apis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils.set_all_apis" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Sets all daughter coil-api objects to the api object of this collection.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_coils.</span></span><span class="sig-name descname"><span class="pre">coil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coil_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal_vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_vert</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_hor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_rad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_windings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil" title="Link to this definition"></a></dt>
-<dd><dl class="py method">
+<dd><p>Coil class representing a currect carrying coil.
+:param str coil_type: The type of coil. Can be one of the following:</p>
+<blockquote>
+<div><p>Rectangular: A coil with 90° edges.</p>
+<p>RectWindings: A coil with rounded edges.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current</strong> (<em>float</em>) – The current in the coil [mA]</p></li>
+<li><p><strong>center_coords</strong> (<a class="reference internal" href="../undu_magnets/index.html#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><em>undu_magnets.point_coords</em></a>) – The 3 center coordinates. [mm]</p></li>
+<li><p><strong>normal_vec</strong> (<a class="reference internal" href="../undu_magnets/index.html#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><em>undu_magnets.point_coords</em></a>) – Normal vector. The opening in the middle of the coil lies perpendicular to normal_vec. A normal_vec along (0,1,0) is the standard to which the parameter names refer!</p></li>
+<li><p><strong>rot_angle</strong> (<em>float</em>) – angle by which coil is rotated aroung normal_vec?</p></li>
+<li><p><strong>length</strong> (<em>float</em>) – Extension in x-direction. [mm]</p></li>
+<li><p><strong>inner_z</strong> (<em>float</em>) – Extension in z-direction of hole inside coil. [mm]</p></li>
+<li><p><strong>outer_z</strong> (<em>float</em>) – Extension in z-direction of full coil. The difference of outer and inner z determines the width of the coils running around the central hole. [mm]</p></li>
+<li><p><strong>inner_radius</strong> (<em>float</em>) – The inner radius of the curvature of the coil edges. [mm]</p></li>
+<li><p><strong>height</strong> (<em>float</em>) – The extent of the coil in y-direction. [mm]</p></li>
+<li><p><strong>n_vert</strong><strong>,</strong><strong>n_hor</strong><strong>,</strong><strong>n_rad</strong> (<em>float</em>) – Number of segmentations.</p></li>
+<li><p><strong>filling</strong> (<em>float</em><em> or </em><em>None</em>) – The percentage of the cross-section of the coil being filled with current carrying wire</p></li>
+<li><p><strong>n_windings</strong> (<em>int</em><em> or </em><em>None</em>) – The number of coils in a cross-section</p></li>
+<li><p><strong>api</strong> (<a class="reference internal" href="../../api/undu_api_root/index.html#unduwave.api.undu_api_root.undu_api" title="unduwave.api.undu_api_root.undu_api"><em>undu_api</em></a><em> or </em><em>None</em>) – The undu_api object carrying out the simulations.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil.set_api">
 <span class="sig-name descname"><span class="pre">set_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil.set_api" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Setting the internal api if it is not None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>api</strong> (<a class="reference internal" href="../../api/undu_api_root/index.html#unduwave.api.undu_api_root.undu_api" title="unduwave.api.undu_api_root.undu_api"><em>undu_api</em></a>) – The api object.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil.add_to_clc">
 <span class="sig-name descname"><span class="pre">add_to_clc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil.add_to_clc" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Gets the clc-text for this coil and adds it to the api._prog_paras.in_file_clc_lines list.
+The in_file_clc_lines lines object can be initialized or, if empty, will be initialized via the api.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil.move_it">
 <span class="sig-name descname"><span class="pre">move_it</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil.move_it" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Translates the center of the voil by the vector vec.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vec</strong> (<a class="reference internal" href="../undu_magnets/index.html#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><em>undu_magnets.point_coords</em></a>) – The translation vector.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil.create_clc_txt">
 <span class="sig-name descname"><span class="pre">create_clc_txt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil.create_clc_txt" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Creates the actual clc text from the object’s parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return list<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The list containing str representing the content of the undumag clc file</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
