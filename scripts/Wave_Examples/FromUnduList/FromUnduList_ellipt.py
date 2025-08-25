@@ -36,9 +36,21 @@ ebeam_paras.get_std_bessy_II_paras()
 
 bessyIIlist=uw.loadBessyIIundulatorList()
 
-bfieldEnds=uw.bfield.create_field_with_ends(
+bfieldEnds=uw.bfield.bfield(
+		unitsXB=[0.001,1.0],
+	)
+
+bfieldEnds.create_harm_field(
 		period_length=0.03,
 		amplitude=1,
+		numPer=20, 
+		phase_shift = 0, 
+		num_pnts_per_period = 100, 
+		colx = 'x', 
+		coly = 'By',
+		) 
+
+bfieldEnds=uw.bfield.create_field_with_ends(
 		nperiods=20,
 		num_pnts_per_period=100,
 		colx = 'x', 

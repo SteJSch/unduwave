@@ -257,11 +257,9 @@ class bfield() :
 	"""
 
 	def __init__(self, 
-			data = None,
 			unitsXB=[0.001,1.0],
 			) :
 		super().__init__()
-		self._data=data
 		self._unitsXB=unitsXB
 
 		self.bx = quantities.quantity(
@@ -332,21 +330,19 @@ class bfield() :
 			self,
 			periodLength, 
 			amplitude, 
-			deltaX, 
+			numPer, 
 			phase_shift = 0, 
 			num_pnts_per_period = 100, 
 			colx = 'x', 
 			coly = 'By',
-			unitsXB=[0.001,1.0],
 			) : 
 		"""
 		Creates a sine field: amplitude*sin( k_per * x + phase_shift ) for all x lying in interval deltaX, 
 		creates bfield class filled with data, with num_pnts_per_period pnts per period in deltaX
 		"""
 
-
+		deltaX=[ -numPer*period_length/2.0, numPer*period_length/2.0 ]
 		length = deltaX[-1] - deltaX[0]
-		numPer = length / periodLength
 
 		xValsHave=self.xvals._data
 		if len(xValsHave) > 0 :
