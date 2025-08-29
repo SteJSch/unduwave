@@ -184,7 +184,7 @@ class quantity :
 		z_data=copy.deepcopy(np.unique(y_quant._data))
 		z_data.sort()
 		fun_data=copy.deepcopy(np.array(self._data))
-		Y_data,Z_data = np.meshgrid(z_data,y_data)
+		Y_data,Z_data = np.meshgrid(y_data,z_data)
 
 		"""
 		Creating interpolated data
@@ -218,6 +218,9 @@ class quantity :
 		znew = np.linspace(min(z_data), max(z_data), lenz*4)
 
 		Funs_intrpltd = interpol_f(ynew,znew)
+		Funs_intrpltd=Funs_intrpltd.T
+		Funs_intrpltd=Funs_intrpltd.reshape(len(znew),len(ynew))
+
 		Y_data_intrpltd,Z_data_intrpltd = np.meshgrid(ynew, znew)
 
 		"""
@@ -237,9 +240,10 @@ class quantity :
 			fig.suptitle(title, fontsize=12, y=yTitlePos)
 		ax = fig.add_subplot(111, projection='3d')
 
-		Funs=fun_data.reshape(len(y_data),len(z_data))
-		Funs=Funs.T
-		ax.plot_trisurf(Y_data.flatten(), Z_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
+		Funs=fun_data.reshape(len(z_data),len(y_data))
+
+		ax.plot_trisurf(Z_data.flatten(), Y_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
+		# ax.plot_trisurf(Y_data.flatten(), Z_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
 		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.set_zlabel(zLabelAdd+f'{self._plot_name} [{self._unit}]', fontsize=8)
@@ -280,6 +284,7 @@ class quantity :
 		plt.tight_layout()
 		cmap = plt.colormaps["plasma"]
 		cmap = cmap.with_extremes(bad=cmap(0))
+
 		pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
 		# pcm = ax.pcolormesh(Z_data,Y_data,Funs, cmap=cmap)
 		cb=fig.colorbar(pcm, ax=ax, label=f'{self._plot_name}\n [{self._unit}]')                    
@@ -321,7 +326,7 @@ class quantity :
 			fig.suptitle(title, fontsize=12, y=yTitlePos)
 		ax = fig.add_subplot(111, projection='3d')
 
-		Funs_intrpltd=Funs_intrpltd.T
+		# Funs_intrpltd=Funs_intrpltd.T
 		ax.plot_trisurf(Y_data_intrpltd.flatten(), Z_data_intrpltd.flatten(), Funs_intrpltd.flatten(), cmap=cm.jet, linewidth=0.2)
 		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
@@ -355,7 +360,8 @@ class quantity :
 		plt.tight_layout()
 		cmap = plt.colormaps["plasma"]
 		cmap = cmap.with_extremes(bad=cmap(0))
-		pcm = ax.pcolormesh(Y_data_intrpltd,Z_data_intrpltd,Funs_intrpltd, cmap=cmap)
+		pcm = ax.pcolormesh(Z_data_intrpltd,Y_data_intrpltd,Funs_intrpltd, cmap=cmap)
+		# pcm = ax.pcolormesh(Y_data_intrpltd,Z_data_intrpltd,Funs_intrpltd, cmap=cmap)
 		cb=fig.colorbar(pcm, ax=ax, label=f'{self._plot_name}\n [{self._unit}]', pad=0)                    
 		axCb = cb.ax
 		text = axCb.yaxis.label
