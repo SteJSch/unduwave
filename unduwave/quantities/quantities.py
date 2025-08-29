@@ -81,7 +81,21 @@ class quantity :
 		nfig=nfig+1
 		return nfig
 
-	def plot_over(self,x_quant,title=None,file_name=None,nosave=False,nfig=None,loglog=False,plot=True,leg=True,clear=False,dataFile=None,xlim=None,ylim=None) :
+	def plot_over(self,
+			x_quant,
+			title=None,
+			file_name=None,
+			nosave=False,
+			nfig=None,
+			loglog=False,
+			plot=True,
+			leg=True,
+			clear=False,
+			dataFile=None,
+			xlim=None,
+			ylim=None,
+			addPicsFolder=True,
+			) :
 		"""
 		Basic 2d plot of data
 
@@ -123,22 +137,35 @@ class quantity :
 			else:
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}.png'
 		else:
-			file_name=pics_folder+file_name
+			if addPicsFolder:
+				file_name=pics_folder+file_name
 		if not nosave :
-			plt.savefig(file_name , bbox_inches='tight')
+			try:
+				plt.savefig(file_name , bbox_inches='tight')
+			except:
+				pdb.set_trace()
 		if dataFile is None:
 			dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}.dat'
-		try:
-			pd.DataFrame({'x':x_quant._data,'y':self._data}).to_csv(dataFile, sep = ' ',header=['x','y'], index=False)
-		except:
-			pdb.set_trace()
+		pd.DataFrame({'x':x_quant._data,'y':self._data}).to_csv(dataFile, sep = ' ',header=['x','y'], index=False)
 		if plot :
 			plt.draw()
 			plt.ion()
 		nfig=nfig+1
 		return nfig
 
-	def plot_over_3d(self,x_quant,y_quant,title=None,file_name=None,nosave=False,nfig=None,plot=True,zLabelAdd='',clear=False,dataFile=None) :
+	def plot_over_3d(self,
+			x_quant,
+			y_quant,
+			title=None,
+			file_name=None,
+			nosave=False,
+			nfig=None,
+			plot=True,
+			zLabelAdd='',
+			clear=False,
+			dataFile=None,
+			addPicsFolder=True,
+			) :
 		"""
 		Plots 3D plots and heat plots of data
 		x_quant : quantity to be used as x-data
@@ -185,8 +212,10 @@ class quantity :
 			Fun_data_intr[ind_g,ind_s] = val
 
 		interpol_f = RectBivariateSpline(y_data,z_data, Fun_data_intr )
-		ynew = np.linspace(min(y_data), max(y_data), 150)
-		znew = np.linspace(min(z_data), max(z_data), 150)
+		leny=len(y_data)
+		lenz=len(z_data)
+		ynew = np.linspace(min(y_data), max(y_data), leny*4)
+		znew = np.linspace(min(z_data), max(z_data), lenz*4)
 
 		Funs_intrpltd = interpol_f(ynew,znew)
 		Y_data_intrpltd,Z_data_intrpltd = np.meshgrid(ynew, znew)
@@ -209,10 +238,10 @@ class quantity :
 		ax = fig.add_subplot(111, projection='3d')
 
 		Funs=fun_data.reshape(len(y_data),len(z_data))
-
+		Funs=Funs.T
 		ax.plot_trisurf(Y_data.flatten(), Z_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
-		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.set_zlabel(zLabelAdd+f'{self._plot_name} [{self._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		ax.set_box_aspect(aspect=None, zoom=0.7)
@@ -227,7 +256,8 @@ class quantity :
 				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 		else:
-			file_name=pics_folder+file_name
+			if addPicsFolder :
+				file_name=pics_folder+file_name
 		if not nosave :
 			plt.savefig(file_name   , bbox_inches='tight')
 			# if dataFile is None:
@@ -251,6 +281,7 @@ class quantity :
 		cmap = plt.colormaps["plasma"]
 		cmap = cmap.with_extremes(bad=cmap(0))
 		pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
+		# pcm = ax.pcolormesh(Z_data,Y_data,Funs, cmap=cmap)
 		cb=fig.colorbar(pcm, ax=ax, label=f'{self._plot_name}\n [{self._unit}]')                    
 
 		axCb = cb.ax
@@ -290,6 +321,7 @@ class quantity :
 			fig.suptitle(title, fontsize=12, y=yTitlePos)
 		ax = fig.add_subplot(111, projection='3d')
 
+		Funs_intrpltd=Funs_intrpltd.T
 		ax.plot_trisurf(Y_data_intrpltd.flatten(), Z_data_intrpltd.flatten(), Funs_intrpltd.flatten(), cmap=cm.jet, linewidth=0.2)
 		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)

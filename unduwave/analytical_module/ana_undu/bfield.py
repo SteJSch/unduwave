@@ -435,7 +435,6 @@ class bfield() :
 
 	def write_field_unduOut(self,file,unitsXB=None) :
 		"""
-
 		UndumagOut file Units are mm for the length and T for B
 		"""
 		if unitsXB is None :
@@ -677,7 +676,7 @@ class bfield() :
 			new_x.append(el+dist)
 		self.xvals._data = new_x
 
-	def getData(self,colx = 'x', coly = 'By' ):
+	def getData(self,colx = 'x', coly = 'by' ):
 		coord=self.xvals
 		bv=self.bx
 		if colx == 'y' :
@@ -690,7 +689,7 @@ class bfield() :
 			bv=self.bz
 		return pd.DataFrame( {colx:coord._data, coly:bv._data} )
 
-	def setData(self,data,colx = 'x', coly = 'By' ):
+	def setData(self,data,colx = 'x', coly = 'by' ):
 		coord=self.xvals
 		bv=self.bx
 		if colx == 'y' :

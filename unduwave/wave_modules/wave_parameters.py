@@ -95,6 +95,8 @@ class screen_parameters(_attribute_collection):
 	screen_extent_hor = _attribute(0,in_name='PINW',fac=1e-3)
 	screen_extent_vert = _attribute(0,in_name='PINH',fac=1e-3)
 	screen_pos_x = _attribute(0,in_name='PINCEN(1)')
+	screen_pos_y = _attribute(9999.,in_name='PINCEN(2)')
+	screen_pos_z = _attribute(9999.,in_name='PINCEN(3)')
 	screen_segm_hor = _attribute(0,in_name='MPINZ')
 	screen_segm_vert = _attribute(0,in_name='MPINY')
 

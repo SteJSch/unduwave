@@ -565,7 +565,7 @@ class wave_results :
 					data=data['z'].to_list(),
 					name="power_z",
 					plot_name="z",
-					description='z-Longitudinal Position',
+					description='z-horizontal Position',
 					unit='mm',
 					)
 				y_power_d = quantity(
