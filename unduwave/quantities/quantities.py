@@ -140,10 +140,7 @@ class quantity :
 			if addPicsFolder:
 				file_name=pics_folder+file_name
 		if not nosave :
-			try:
-				plt.savefig(file_name , bbox_inches='tight')
-			except:
-				pdb.set_trace()
+			plt.savefig(file_name , bbox_inches='tight')
 		if dataFile is None:
 			dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}.dat'
 		pd.DataFrame({'x':x_quant._data,'y':self._data}).to_csv(dataFile, sep = ' ',header=['x','y'], index=False)
@@ -183,6 +180,13 @@ class quantity :
 		y_data.sort()
 		z_data=copy.deepcopy(np.unique(y_quant._data))
 		z_data.sort()
+		if not (len(z_data)*len(y_data) == len(x_quant._data)) :
+			y_quant0 = y_quant._data[0]
+			ind=1
+			while y_quant._data[ind] == y_quant0 :
+				ind=ind+1
+			z_data=y_quant._data[0:ind]
+			y_data=x_quant._data[::len(z_data)]
 		fun_data=copy.deepcopy(np.array(self._data))
 		Y_data,Z_data = np.meshgrid(y_data,z_data)
 
@@ -239,9 +243,10 @@ class quantity :
 		else :
 			fig.suptitle(title, fontsize=12, y=yTitlePos)
 		ax = fig.add_subplot(111, projection='3d')
-
-		Funs=fun_data.reshape(len(z_data),len(y_data))
-
+		try:
+			Funs=fun_data.reshape(len(z_data),len(y_data))
+		except:
+			pdb.set_trace()
 		ax.plot_trisurf(Z_data.flatten(), Y_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
 		# ax.plot_trisurf(Y_data.flatten(), Z_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
 		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
@@ -264,9 +269,9 @@ class quantity :
 				file_name=pics_folder+file_name
 		if not nosave :
 			plt.savefig(file_name   , bbox_inches='tight')
-			# if dataFile is None:
-			# 	dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.dat'
-			# pd.DataFrame({'x':x_quant._data,'y':y_quant._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
+			if dataFile is None:
+				dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.dat'
+			pd.DataFrame({'x':x_quant._data,'y':y_quant._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
 
 		if nfig is None :
 			fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
@@ -285,8 +290,8 @@ class quantity :
 		cmap = plt.colormaps["plasma"]
 		cmap = cmap.with_extremes(bad=cmap(0))
 
-		pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
-		# pcm = ax.pcolormesh(Z_data,Y_data,Funs, cmap=cmap)
+		# pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
+		pcm = ax.pcolormesh(Z_data,Y_data,Funs, cmap=cmap)
 		cb=fig.colorbar(pcm, ax=ax, label=f'{self._plot_name}\n [{self._unit}]')                    
 
 		axCb = cb.ax
@@ -296,17 +301,17 @@ class quantity :
 		font = matplotlib.font_manager.FontProperties(size=8)
 		text.set_font_properties(font)
 
-		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		file_name_h = file_name.split('.png')[0]+'_heat.png'
 		if not nosave :
 			plt.savefig(file_name_h , bbox_inches='tight')
-			# if dataFile is None:
-			# 	dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_heat.dat'
-			# else:
-			# 	dataFile=dataFile+'_heat.dat'
-			# pd.DataFrame({'x':x_quant._data,'y':y_data._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
+			if dataFile is None:
+				dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_heat.dat'
+			else:
+				dataFile=dataFile+'_heat.dat'
+			pd.DataFrame({'x':x_quant._data,'y':y_quant._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
 
 		"""
 		Plotting Interpolated 3D and Heat
@@ -370,8 +375,8 @@ class quantity :
 		font = matplotlib.font_manager.FontProperties(size=8)
 		text.set_font_properties(font)
 
-		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		file_name_heat_intr = file_name.split('.png')[0]+'_heat_interpolated.png'
 		if not nosave :

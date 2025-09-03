@@ -558,8 +558,8 @@ class wave_results :
 				for col in cols:
 					data[col] = data[col].astype(float)
 
-				data['z'] = data['z'].apply( lambda x : round(x,2) )
-				data['y'] = data['y'].apply( lambda x : round(x,2) )
+				# data['z'] = data['z'].apply( lambda x : round(x,2) )
+				# data['y'] = data['y'].apply( lambda x : round(x,2) )
 				z_power_d = quantity(
 					api=self._wave_api,
 					data=data['z'].to_list(),
