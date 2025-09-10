@@ -96,6 +96,14 @@ class wave_results :
 						vals.append(float(elem))
 				power = vals[0]
 				summary.update( { 'power [kW]' : power } )
+			if line.find('Power through pinhole [W]:') >= 0 :
+				powLine=wave_out_file[ind+2].split(' ')
+				for i, elem in reversed(list(enumerate(powLine))):
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						powLine=elem
+						break
+				powLine=float(powLine)*1e-3
+				summary.update( { 'power Aperture [kW]' : powLine } )
 			if line.find('1. magnetic integral [T-m]:') >= 0 :
 				part_last = line.split('1. magnetic integral [T-m]:')[-1]
 				vals = []

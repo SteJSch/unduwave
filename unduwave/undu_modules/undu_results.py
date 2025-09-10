@@ -34,7 +34,6 @@ class undu_results :
 		:return: returns some nothing
 		"""
 
-
 		self.load_on_axis_undumag_file()
 		self.load_field_profile()
 		self.load_field_map()

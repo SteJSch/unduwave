@@ -563,8 +563,8 @@ class bfield() :
 		b_x = self.bx._data
 		b_y = self.by._data
 		b_z = self.bz._data
-
 		shape=x_vals.shape
+
 		nx=shape[0]
 		ny=shape[1]
 		nz=shape[2]
@@ -931,16 +931,16 @@ class bfield() :
 		return beff
 
 	def get_field_integrals_obj(self, colx = 'x', coly = 'By') : 
-		para = self.get_para()
+		# para = self.get_para()
 
-		numPer = para['numPer']
-		if not (numPer is None) :
-			if numPer > 0 :
-				spline_pnts = numPer*300
-			else :
-				spline_pnts = 300
-		else: 
-			spline_pnts = 3000
+		# numPer = para['numPer']
+		# if not (numPer is None) :
+		# 	if numPer > 0 :
+		# 		spline_pnts = numPer*300
+		# 	else :
+		# 		spline_pnts = 300
+		# else: 
+		# 	spline_pnts = 3000
 
 		xs = np.linspace( self.data[colx].to_list()[0], self.data[colx].to_list()[-1], spline_pnts )
 		fst_int = para['frst_int_spline']
@@ -1054,16 +1054,16 @@ class bfield() :
 		return bf_nrmlzd
 
 	def field_integrals( self,xs, spline = None ) : 
-		numPer = self.get_para()['numPer']
-		if spline is None : 
-			spline = self.get_para()['spline']
-		if not ( numPer is None ) :
-			if numPer > 0 :
-				integr_limit =  400 * numPer
-			else :
-				integr_limit = 400
-		else :
-			integr_limit =  10000
+		# numPer = self.get_para()['numPer']
+		# if spline is None : 
+		# 	spline = self.get_para()['spline']
+		# if not ( numPer is None ) :
+		# 	if numPer > 0 :
+		# 		integr_limit =  400 * numPer
+		# 	else :
+		# 		integr_limit = 400
+		# else :
+		integr_limit =  10000
 		cs_1st_int = ana.create_indefinite_integral_cs( spline = spline, xs = xs, integr_limit = integr_limit) 
 		cs_2nd_int = ana.create_indefinite_integral_cs( spline = cs_1st_int, xs = xs, integr_limit = integr_limit)
 		return [ cs_1st_int, cs_2nd_int ]
