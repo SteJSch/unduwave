@@ -1,0 +1,199 @@
+unduwave.undu_modules.undu_magnets
+==================================
+
+.. py:module:: unduwave.undu_modules.undu_magnets
+
+.. autoapi-nested-parse::
+
+   Undu_magnet definitions allowing to construct a 3D magnetic system comprissed of magnet blocks (w/o chamfers)
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_magnets.point_coords
+   unduwave.undu_modules.undu_magnets.undu_magnets
+   unduwave.undu_modules.undu_magnets.undu_magnet_block_coords
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_magnets.rotate
+   unduwave.undu_modules.undu_magnets.get_magn_ignore
+   unduwave.undu_modules.undu_magnets.create_magnetization_unit_vec
+   unduwave.undu_modules.undu_magnets.get_magnet_period
+   unduwave.undu_modules.undu_magnets.get_magnet_struct
+   unduwave.undu_modules.undu_magnets.calculate_forces_ue51
+
+
+Module Contents
+---------------
+
+.. py:class:: point_coords(x=0.0, y=0.0, z=0.0)
+
+   
+   Initializes simple 3d vector class
+
+   :param float x: x-component
+   :param float y: y-component
+   :param float z: z-component
+
+
+   .. py:method:: __sub__(pnt)
+
+      Substraction of vector pnt
+
+      :param point_coords pnt: vector to substract
+
+
+
+   .. py:method:: __add__(pnt)
+
+      Addition of vector pnt
+
+      :param point_coords pnt: vector to add
+
+
+
+.. py:function:: rotate(pnts, degrees, axis=point_coords(0, 0, 0), plane='yz')
+
+   Takes a list of vectors and rotates them (their component in the yz-plane).
+   The x-component of the vectors remains unchanged. Returns the rotated vectors
+
+   :param list pnts: List of point_coords to be rotated
+   :param float degrees: Degrees by which to rotate [°]
+   :param 
+
+
+.. py:class:: undu_magnets(magnet_blocks, api=None)
+
+   Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
+   extent determination
+   magnet_blocks - list of undu_magnet_block_coords objects
+
+
+   .. py:method:: set_all_apis()
+
+
+   .. py:method:: move_it(vec)
+
+
+   .. py:method:: find_magn_name(names, fnd_list=None)
+
+
+   .. py:method:: find_all_names(names=None)
+
+
+   .. py:method:: find_all_mag_blocks(mag_blocks=[])
+
+
+   .. py:method:: rotate(degrees, axis, plane='yz')
+
+
+   .. py:method:: mirror(coord='x')
+
+
+   .. py:method:: change_segm(segm_x, segm_y, segm_z, frac_y=None, frac_z=None)
+
+
+   .. py:method:: set_inactive()
+
+
+   .. py:method:: add_to_clc(magns_ignore=None)
+
+
+   .. py:method:: get_max_extent(maxs=None, mins=None)
+
+
+   .. py:method:: set_magnetization(magnetization, magn_unit_vec)
+
+
+   .. py:method:: get_center()
+
+
+.. py:class:: undu_magnet_block_coords(p_center, pnts=None, len_x=None, len_y=None, len_z=None, magnetization=None, magn_unit_vec=None, name='name', mother='mother', segm_x=1, segm_y=1, segm_z=1, frac_y=1, frac_z=1, material='mag', chamf=None, api=None)
+
+   Implements basic undumag magnet block
+   can be moved, mirrored, incorporated into undumag-clc and the extent can be calculated
+
+   material - "magnet" or "pole"
+   chamf - if some float - chamfer is added
+
+
+   .. py:method:: set_api(api)
+
+
+   .. py:method:: find_all_names(names=None)
+
+
+   .. py:method:: find_all_mag_blocks(mag_blocks=[])
+
+
+   .. py:method:: set_inactive()
+
+
+   .. py:method:: change_segm(segm_x, segm_y, segm_z, frac_y=None, frac_z=None)
+
+
+   .. py:method:: find_magn_name(names, fnd_list=None)
+
+
+   .. py:method:: set_magnetization(magnetization, magn_unit_vec)
+
+
+   .. py:method:: create_edge_points()
+
+
+   .. py:method:: move_it(vec)
+
+
+   .. py:method:: rotate(degrees, axis, plane='yz')
+
+
+   .. py:method:: mirror(coord='x')
+
+
+   .. py:method:: add_to_clc(magns_ignore=None)
+
+
+   .. py:method:: create_clc_txt()
+
+
+   .. py:method:: get_max_extent(maxs=None, mins=None)
+
+      determines the extent of this magnet block and compares to maxs and mins vals given, returns
+      the max and min vals
+
+
+
+.. py:function:: get_magn_ignore(n_magn_ignore, ignore_level, magns_ignore=[])
+
+   n_magn_ignore : number of magnet to be ignored
+   ignore_level : 'u'/'l' - upper or lower rows
+
+
+.. py:function:: create_magnetization_unit_vec(magn_string)
+
+.. py:function:: get_magnet_period(magn_collection, denominator, nperiod, n_el_per_period=4, offset=0)
+
+.. py:function:: get_magnet_struct(magn_collection, denominator, magn_nums=[])
+
+   Returns list of all objects whose name contains one of: 
+   { denominator and str(magn_nums[i]) | forall i}
+
+
+.. py:function:: calculate_forces_ue51(load_clc_file, ueparas, center, magnetizations, undu_p, undu, shifts, rows, periods, blocks, mags, add='')
+
+   if row, period, block or mag are empty lists, it means they are all to be taken together
+   i.e. : if mag=[], all magnets [0,1] are to be taken together for each block defined - block forces
+              block =[], so all blocks in a given period together - period forces
+              period=[], all periods in a given row together - row-forces
+              row=[], whole machine
+
+

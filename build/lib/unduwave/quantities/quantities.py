@@ -6,17 +6,17 @@ from unduwave.unduwave_incl import *
 from matplotlib.pylab import matplotlib
 from matplotlib.ticker import ScalarFormatter
 
-class wave_quantity :
-	def __init__(self,wave_api=None,name=None,description=None,unit=None,data=None,plot_name=None) :
+class quantity :
+	def __init__(self,api=None,name=None,description=None,unit=None,data=None,plot_name=None) :
 		"""
-		wave_api - reference to the wave_api class
+		api - reference to the api class (wave or undu)
 		name : name of the quantity
 		description: some basic description
 		unit : physical unit
 		data: data-object
 		plot_name: name shown in plot
 		"""
-		self._wave_api = wave_api
+		self._api = api
 		self._name = name
 		self._description = description
 		self._unit = unit
@@ -64,11 +64,12 @@ class wave_quantity :
 		plt.ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=12),
 		ax.set_zlabel(f'{self._plot_name} {self._unit}', fontsize=12)
 		ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
-		pics_folder = self._wave_api._wave_prog_paras.res_folder.get()+self._wave_api._wave_prog_paras.pics_folder.get()
+		pics_folder='pics/'
 		if file_name is None :
-			if self._wave_api is None :
+			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_parametric.png'
 			else:
+				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_parametric.png'
 		else:
 			file_name=pics_folder+file_name
@@ -115,9 +116,9 @@ class wave_quantity :
 		plt.xticks(fontsize=8)
 		if leg:
 			ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
-		pics_folder = self._wave_api._wave_prog_paras.res_folder.get()+self._wave_api._wave_prog_paras.pics_folder.get()
+		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 		if file_name is None :
-			if self._wave_api is None :
+			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}.png'
 			else:
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}.png'
@@ -127,7 +128,10 @@ class wave_quantity :
 			plt.savefig(file_name , bbox_inches='tight')
 		if dataFile is None:
 			dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}.dat'
-		pd.DataFrame({'x':x_quant._data,'y':self._data}).to_csv(dataFile, sep = ' ',header=['x','y'], index=False)
+		try:
+			pd.DataFrame({'x':x_quant._data,'y':self._data}).to_csv(dataFile, sep = ' ',header=['x','y'], index=False)
+		except:
+			pdb.set_trace()
 		if plot :
 			plt.draw()
 			plt.ion()
@@ -215,11 +219,12 @@ class wave_quantity :
 		ax.zaxis.get_offset_text().set_fontsize(8)
 		plt.tight_layout()
 
-		pics_folder = self._wave_api._wave_prog_paras.res_folder.get()+self._wave_api._wave_prog_paras.pics_folder.get()
+		pics_folder='pics/'
 		if file_name is None :
-			if self._wave_api is None :
+			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 			else:
+				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 		else:
 			file_name=pics_folder+file_name

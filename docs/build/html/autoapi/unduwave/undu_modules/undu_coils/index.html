@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>unduwave.undu_modules.undu_coils &#8212; Unduwave v0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../../../_static/documentation_options.js?v=2fea6348"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-unduwave.undu_modules.undu_coils">
+<span id="unduwave-undu-modules-undu-coils"></span><h1>unduwave.undu_modules.undu_coils<a class="headerlink" href="#module-unduwave.undu_modules.undu_coils" title="Link to this heading">¶</a></h1>
+<p>Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that
+returns an instance of that class</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_coils.undu_coils" title="unduwave.undu_modules.undu_coils.undu_coils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_coils</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_coils.coil" title="unduwave.undu_modules.undu_coils.coil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coil</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.undu_coils">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_coils.</span></span><span class="sig-name descname"><span class="pre">undu_coils</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coils</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.undu_coils.move_it">
+<span class="sig-name descname"><span class="pre">move_it</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils.move_it" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.undu_coils.add_to_clc">
+<span class="sig-name descname"><span class="pre">add_to_clc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clc_txt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils.add_to_clc" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.undu_coils.set_all_apis">
+<span class="sig-name descname"><span class="pre">set_all_apis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.undu_coils.set_all_apis" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_coils.</span></span><span class="sig-name descname"><span class="pre">coil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coil_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal_vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_vert</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_hor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_rad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_windings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil.set_api">
+<span class="sig-name descname"><span class="pre">set_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil.set_api" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil.add_to_clc">
+<span class="sig-name descname"><span class="pre">add_to_clc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil.add_to_clc" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil.move_it">
+<span class="sig-name descname"><span class="pre">move_it</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil.move_it" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_coils.coil.create_clc_txt">
+<span class="sig-name descname"><span class="pre">create_clc_txt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_coils.coil.create_clc_txt" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">Unduwave</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickguide.html">3. Quickguide</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;CC BY-NC.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../../../_sources/autoapi/unduwave/undu_modules/undu_coils/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

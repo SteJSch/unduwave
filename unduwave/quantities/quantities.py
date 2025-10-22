@@ -6,17 +6,17 @@ from unduwave.unduwave_incl import *
 from matplotlib.pylab import matplotlib
 from matplotlib.ticker import ScalarFormatter
 
-class wave_quantity :
-	def __init__(self,wave_api=None,name=None,description=None,unit=None,data=None,plot_name=None) :
+class quantity :
+	def __init__(self,api=None,name=None,description=None,unit=None,data=None,plot_name=None) :
 		"""
-		wave_api - reference to the wave_api class
+		api - reference to the api class (wave or undu)
 		name : name of the quantity
 		description: some basic description
 		unit : physical unit
 		data: data-object
 		plot_name: name shown in plot
 		"""
-		self._wave_api = wave_api
+		self._api = api
 		self._name = name
 		self._description = description
 		self._unit = unit
@@ -39,7 +39,17 @@ class wave_quantity :
 			header=[self._name,x_quant._name,y_quant._name]
 		dfd.to_csv( file , index = False, sep = ' ', header=header )
 
-	def plot_parametric_3d(self,x_quant,y_quant,title=None,file_name=None,nosave=False,nfig=None,plot=True) :
+	def plot_parametric_3d(self,
+				x_quant,
+				y_quant,
+				title=None,
+				file_name=None,
+				nosave=False,
+				nfig=None,
+				plot=True,
+				clear=False,
+				addPicsFolder=True
+				) :
 		"""
 		Basic plot of data, 2d, 3d
 
@@ -52,23 +62,34 @@ class wave_quantity :
 		if nfig is None :
 			fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
 		else :
-			fig = plt.figure(nfig,figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
+			fig = plt.figure(nfig,figsize=(2*13*cm_inch, 2*6.5*cm_inch), dpi=2*150)
+		if clear:
+			plt.clf()
 		ax = fig.add_subplot(projection='3d')
 		ax.plot(x_quant._data,y_quant._data,self._data, '-', label = self._name)
-		ax.set_box_aspect(aspect=None, zoom=0.8)
+		ax.set_box_aspect(aspect=None, zoom=0.7)
 		if title is None :
 			fig.suptitle(self._description, fontsize=14)
 		else :
 			fig.suptitle(title, fontsize=14)
-		plt.xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=12),
-		plt.ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=12),
-		ax.set_zlabel(f'{self._plot_name} {self._unit}', fontsize=12)
-		ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
-		pics_folder = self._wave_api._wave_prog_paras.res_folder.get()+self._wave_api._wave_prog_paras.pics_folder.get()
+
+		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_zlabel(f'{self._plot_name} {self._unit}', fontsize=8)
+		ax.yaxis.get_offset_text().set_fontsize(6)
+		ax.xaxis.get_offset_text().set_fontsize(6)
+
+		# plt.tight_layout()
+		ax.tick_params(axis='both', which='major', labelsize=4)
+		# ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
+		ax.zaxis.get_offset_text().set_fontsize(6)
+		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
+		# pics_folder='pics/'
 		if file_name is None :
-			if self._wave_api is None :
+			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_parametric.png'
 			else:
+				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_parametric.png'
 		else:
 			file_name=pics_folder+file_name
@@ -80,7 +101,21 @@ class wave_quantity :
 		nfig=nfig+1
 		return nfig
 
-	def plot_over(self,x_quant,title=None,file_name=None,nosave=False,nfig=None,loglog=False,plot=True,leg=True,clear=False,dataFile=None,xlim=None,ylim=None) :
+	def plot_over(self,
+			x_quant,
+			title=None,
+			file_name=None,
+			nosave=False,
+			nfig=None,
+			loglog=False,
+			plot=True,
+			leg=True,
+			clear=False,
+			dataFile=None,
+			xlim=None,
+			ylim=None,
+			addPicsFolder=True,
+			) :
 		"""
 		Basic 2d plot of data
 
@@ -115,14 +150,15 @@ class wave_quantity :
 		plt.xticks(fontsize=8)
 		if leg:
 			ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
-		pics_folder = self._wave_api._wave_prog_paras.res_folder.get()+self._wave_api._wave_prog_paras.pics_folder.get()
+		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 		if file_name is None :
-			if self._wave_api is None :
+			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}.png'
 			else:
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}.png'
 		else:
-			file_name=pics_folder+file_name
+			if addPicsFolder:
+				file_name=pics_folder+file_name
 		if not nosave :
 			plt.savefig(file_name , bbox_inches='tight')
 		if dataFile is None:
@@ -134,7 +170,19 @@ class wave_quantity :
 		nfig=nfig+1
 		return nfig
 
-	def plot_over_3d(self,x_quant,y_quant,title=None,file_name=None,nosave=False,nfig=None,plot=True,zLabelAdd='',clear=False,dataFile=None) :
+	def plot_over_3d(self,
+			x_quant,
+			y_quant,
+			title=None,
+			file_name=None,
+			nosave=False,
+			nfig=None,
+			plot=True,
+			zLabelAdd='',
+			clear=False,
+			dataFile=None,
+			addPicsFolder=True,
+			) :
 		"""
 		Plots 3D plots and heat plots of data
 		x_quant : quantity to be used as x-data
@@ -152,8 +200,15 @@ class wave_quantity :
 		y_data.sort()
 		z_data=copy.deepcopy(np.unique(y_quant._data))
 		z_data.sort()
+		if not (len(z_data)*len(y_data) == len(x_quant._data)) :
+			y_quant0 = y_quant._data[0]
+			ind=1
+			while y_quant._data[ind] == y_quant0 :
+				ind=ind+1
+			z_data=y_quant._data[0:ind]
+			y_data=x_quant._data[::len(z_data)]
 		fun_data=copy.deepcopy(np.array(self._data))
-		Y_data,Z_data = np.meshgrid(z_data,y_data)
+		Y_data,Z_data = np.meshgrid(y_data,z_data)
 
 		"""
 		Creating interpolated data
@@ -181,10 +236,15 @@ class wave_quantity :
 			Fun_data_intr[ind_g,ind_s] = val
 
 		interpol_f = RectBivariateSpline(y_data,z_data, Fun_data_intr )
-		ynew = np.linspace(min(y_data), max(y_data), 150)
-		znew = np.linspace(min(z_data), max(z_data), 150)
+		leny=len(y_data)
+		lenz=len(z_data)
+		ynew = np.linspace(min(y_data), max(y_data), leny*4)
+		znew = np.linspace(min(z_data), max(z_data), lenz*4)
 
 		Funs_intrpltd = interpol_f(ynew,znew)
+		Funs_intrpltd=Funs_intrpltd.T
+		Funs_intrpltd=Funs_intrpltd.reshape(len(znew),len(ynew))
+
 		Y_data_intrpltd,Z_data_intrpltd = np.meshgrid(ynew, znew)
 
 		"""
@@ -203,31 +263,35 @@ class wave_quantity :
 		else :
 			fig.suptitle(title, fontsize=12, y=yTitlePos)
 		ax = fig.add_subplot(111, projection='3d')
-
-		Funs=fun_data.reshape(len(y_data),len(z_data))
-
-		ax.plot_trisurf(Y_data.flatten(), Z_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
-		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		try:
+			Funs=fun_data.reshape(len(z_data),len(y_data))
+		except:
+			pdb.set_trace()
+		ax.plot_trisurf(Z_data.flatten(), Y_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
+		# ax.plot_trisurf(Y_data.flatten(), Z_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
+		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.set_zlabel(zLabelAdd+f'{self._plot_name} [{self._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		ax.set_box_aspect(aspect=None, zoom=0.7)
 		ax.zaxis.get_offset_text().set_fontsize(8)
 		plt.tight_layout()
 
-		pics_folder = self._wave_api._wave_prog_paras.res_folder.get()+self._wave_api._wave_prog_paras.pics_folder.get()
+		pics_folder='pics/'
 		if file_name is None :
-			if self._wave_api is None :
+			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 			else:
+				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 		else:
-			file_name=pics_folder+file_name
+			if addPicsFolder :
+				file_name=pics_folder+file_name
 		if not nosave :
 			plt.savefig(file_name   , bbox_inches='tight')
-			# if dataFile is None:
-			# 	dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.dat'
-			# pd.DataFrame({'x':x_quant._data,'y':y_quant._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
+			if dataFile is None:
+				dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.dat'
+			pd.DataFrame({'x':x_quant._data,'y':y_quant._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
 
 		if nfig is None :
 			fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
@@ -245,7 +309,9 @@ class wave_quantity :
 		plt.tight_layout()
 		cmap = plt.colormaps["plasma"]
 		cmap = cmap.with_extremes(bad=cmap(0))
-		pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
+
+		# pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
+		pcm = ax.pcolormesh(Z_data,Y_data,Funs, cmap=cmap)
 		cb=fig.colorbar(pcm, ax=ax, label=f'{self._plot_name}\n [{self._unit}]')                    
 
 		axCb = cb.ax
@@ -255,17 +321,17 @@ class wave_quantity :
 		font = matplotlib.font_manager.FontProperties(size=8)
 		text.set_font_properties(font)
 
-		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		file_name_h = file_name.split('.png')[0]+'_heat.png'
 		if not nosave :
 			plt.savefig(file_name_h , bbox_inches='tight')
-			# if dataFile is None:
-			# 	dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_heat.dat'
-			# else:
-			# 	dataFile=dataFile+'_heat.dat'
-			# pd.DataFrame({'x':x_quant._data,'y':y_data._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
+			if dataFile is None:
+				dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_heat.dat'
+			else:
+				dataFile=dataFile+'_heat.dat'
+			pd.DataFrame({'x':x_quant._data,'y':y_quant._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
 
 		"""
 		Plotting Interpolated 3D and Heat
@@ -285,6 +351,7 @@ class wave_quantity :
 			fig.suptitle(title, fontsize=12, y=yTitlePos)
 		ax = fig.add_subplot(111, projection='3d')
 
+		# Funs_intrpltd=Funs_intrpltd.T
 		ax.plot_trisurf(Y_data_intrpltd.flatten(), Z_data_intrpltd.flatten(), Funs_intrpltd.flatten(), cmap=cm.jet, linewidth=0.2)
 		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
@@ -318,7 +385,8 @@ class wave_quantity :
 		plt.tight_layout()
 		cmap = plt.colormaps["plasma"]
 		cmap = cmap.with_extremes(bad=cmap(0))
-		pcm = ax.pcolormesh(Y_data_intrpltd,Z_data_intrpltd,Funs_intrpltd, cmap=cmap)
+		pcm = ax.pcolormesh(Z_data_intrpltd,Y_data_intrpltd,Funs_intrpltd, cmap=cmap)
+		# pcm = ax.pcolormesh(Y_data_intrpltd,Z_data_intrpltd,Funs_intrpltd, cmap=cmap)
 		cb=fig.colorbar(pcm, ax=ax, label=f'{self._plot_name}\n [{self._unit}]', pad=0)                    
 		axCb = cb.ax
 		text = axCb.yaxis.label
@@ -327,8 +395,8 @@ class wave_quantity :
 		font = matplotlib.font_manager.FontProperties(size=8)
 		text.set_font_properties(font)
 
-		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		file_name_heat_intr = file_name.split('.png')[0]+'_heat_interpolated.png'
 		if not nosave :

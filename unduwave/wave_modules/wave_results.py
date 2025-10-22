@@ -12,9 +12,9 @@ class wave_results :
 		self._wave_api = wave_api
 		self._res_quantities = []
 		self._summary=None
-		self._res_folder      = self._wave_api._wave_prog_paras.res_folder.get()
-		self._res_folder_wave = self._res_folder + self._wave_api._wave_prog_paras.wave_data_res_folder.get()
-		self._res_folder_pics = self._res_folder + self._wave_api._wave_prog_paras.pics_folder.get()
+		self._res_folder      = self._wave_api._prog_paras.res_folder.get()
+		self._res_folder_wave = self._res_folder + self._wave_api._prog_paras.wave_data_res_folder.get()
+		self._res_folder_pics = self._res_folder + self._wave_api._prog_paras.pics_folder.get()
 		if not os.path.exists(self._res_folder_pics):
 			os.makedirs(self._res_folder_pics)
 
@@ -29,6 +29,11 @@ class wave_results :
 		self.find_load_flux_density_on_axis()
 		self.find_load_stokes()
 		self.extract_summary()
+
+	def writeSummary(self) :
+		summary=self._summary
+		print("WAVE Simulation")
+		print("")
 
 	def extract_summary(self):
 		"""
@@ -91,6 +96,14 @@ class wave_results :
 						vals.append(float(elem))
 				power = vals[0]
 				summary.update( { 'power [kW]' : power } )
+			if line.find('Power through pinhole [W]:') >= 0 :
+				powLine=wave_out_file[ind+2].split(' ')
+				for i, elem in reversed(list(enumerate(powLine))):
+					if (len(elem) > 0) and not (elem == '\n') and not ( elem == ' ')  :
+						powLine=elem
+						break
+				powLine=float(powLine)*1e-3
+				summary.update( { 'power Aperture [kW]' : powLine } )
 			if line.find('1. magnetic integral [T-m]:') >= 0 :
 				part_last = line.split('1. magnetic integral [T-m]:')[-1]
 				vals = []
@@ -113,8 +126,8 @@ class wave_results :
 			summary.update( { 'cone_radius_at_x [mm]' : math.tan( open_angle ) * summary['pinhole_x [m]'] * 1000 } )
 		self._summary=summary
 
-		pics_folder = self._wave_api._wave_prog_paras.res_folder.get()+self._wave_api._wave_prog_paras.pics_folder.get()
-		dataFile=f'{pics_folder}{self._wave_api._wave_prog_paras.res_summary_file.get()}'
+		pics_folder = self._wave_api._prog_paras.res_folder.get()+self._wave_api._prog_paras.pics_folder.get()
+		dataFile=f'{pics_folder}{self._wave_api._prog_paras.res_summary_file.get()}'
 		with open( dataFile, 'w') as o_f:
 			for key, val in summary.items() :
 				o_f.write( key + ' : ' + str(val) + '\n' )
@@ -131,7 +144,7 @@ class wave_results :
 		files = f_h.find_files_exptn(folder = self._res_folder_wave, hints = [file_name], exptns = [])
 		en_files = []
 		for file in files : 
-			data = pd.read_csv( self._res_folder_wave + file, skiprows=3,header=None, dtype=object, delim_whitespace=True)
+			data = pd.read_csv( self._res_folder_wave + file, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 			data.columns = [ "z", "y", "S0", "S1", "S2", "S3" ]
 			cols = data.columns
 			for col in cols:
@@ -169,45 +182,45 @@ class wave_results :
 				stoke_axis_2.append( { 'en':en, 's2' : data[indFnd]['S2'] } )
 				stoke_axis_3.append( { 'en':en, 's3' : data[indFnd]['S3'] } )
 
-		s_on_axis_en = wave_quantity(
-			wave_api=self._wave_api,
+		s_on_axis_en = quantity(
+			api=self._wave_api,
 			data=pd.DataFrame(stoke_axis_0)['en'].to_list(),
 			name=f"s_on_axis_en",
 			plot_name=f'Stokes On Axis Energy',
 			description=f'Stokes On Axis Energy',
 			unit='eV',
 			)
-		s0_on_axis = wave_quantity(
-			wave_api=self._wave_api,
+		s0_on_axis = quantity(
+			api=self._wave_api,
 			data=pd.DataFrame(stoke_axis_0)['s0'].to_list(),
 			name=f"s0_on_axis",
 			plot_name=f'S0 On Axis',
 			description=f'S0 On Axis',
-			unit='$\\dot{N}_\\gamma/(0.1\%\cdot BW\cdot mm^2 )$\t',
+			unit='$\\dot{N}_\\gamma/(0.1\\%\\cdot BW\\cdot mm^2 )$\t',
 			)
-		s1_on_axis = wave_quantity(
-			wave_api=self._wave_api,
+		s1_on_axis = quantity(
+			api=self._wave_api,
 			data=pd.DataFrame(stoke_axis_1)['s1'].to_list(),
 			name=f"s1_on_axis",
 			plot_name=f'S1 On Axis',
 			description=f'S1 On Axis',
-			unit='$\\dot{N}_\\gamma/(0.1\%\cdot BW\cdot mm^2 )$\t',
+			unit='$\\dot{N}_\\gamma/(0.1\\%\\cdot BW\\cdot mm^2 )$\t',
 			)
-		s2_on_axis = wave_quantity(
-			wave_api=self._wave_api,
+		s2_on_axis = quantity(
+			api=self._wave_api,
 			data=pd.DataFrame(stoke_axis_2)['s2'].to_list(),
 			name=f"s2_on_axis",
 			plot_name=f'S2 On Axis',
 			description=f'S2 On Axis',
-			unit='$\\dot{N}_\\gamma/(0.1\%\cdot BW\cdot mm^2 )$\t',
+			unit='$\\dot{N}_\\gamma/(0.1\\%\\cdot BW\\cdot mm^2 )$\t',
 			)
-		s3_on_axis = wave_quantity(
-			wave_api=self._wave_api,
+		s3_on_axis = quantity(
+			api=self._wave_api,
 			data=pd.DataFrame(stoke_axis_3)['s3'].to_list(),
 			name=f"s3_on_axis",
 			plot_name=f'S3 On Axis',
 			description=f'S3 On Axis',
-			unit='$\\dot{N}_\\gamma/(0.1\%\cdot BW\cdot mm^2 )$\t',
+			unit='$\\dot{N}_\\gamma/(0.1\\%\\cdot BW\\cdot mm^2 )$\t',
 			)
 		self._res_quantities = self._res_quantities + [s_on_axis_en,s0_on_axis,s1_on_axis,s2_on_axis,s3_on_axis] 
 
@@ -232,16 +245,16 @@ class wave_results :
 			if not yz_loaded :
 				data['z'] = data['z'].apply( lambda x : round(x,2) )
 				data['y'] = data['y'].apply( lambda x : round(x,2) )
-				z_fluxd_dis = wave_quantity(
-					wave_api=self._wave_api,
+				z_fluxd_dis = quantity(
+					api=self._wave_api,
 					data=data['z'].to_list(),
 					name="fd_z",
 					plot_name="z",
 					description='z-Longitudinal Position',
 					unit='mm',
 					)
-				y_fluxd_dis = wave_quantity(
-					wave_api=self._wave_api,
+				y_fluxd_dis = quantity(
+					api=self._wave_api,
 					data=data['y'].to_list(),
 					plot_name="y",
 					name="fd_y",
@@ -251,37 +264,37 @@ class wave_results :
 				self._res_quantities = self._res_quantities + [z_fluxd_dis,y_fluxd_dis] 
 
 				yz_loaded = True
-			flux_dens = wave_quantity(
-				wave_api=self._wave_api,
+			flux_dens = quantity(
+				api=self._wave_api,
 				data=data['S0'].to_list(),
 				name=f"flux_density_distribution_{ens_loaded[-1]:.2f}",
 				plot_name=f'Flux Density Distribution',
 				description=f'Flux Density Distribution \n $E={ens_loaded[-1]:.2f}$ eV',
-				unit='$\\dot{N}_\\gamma/(0.1\%\cdot BW\cdot mm^2 )$\t',
+				unit='$\\dot{N}_\\gamma/(0.1\\%\\cdot BW\\cdot mm^2 )$\t',
 				)
-			s1_dens = wave_quantity(
-				wave_api=self._wave_api,
+			s1_dens = quantity(
+				api=self._wave_api,
 				data=data['S1'].to_list(),
 				name=f"s1_distribution_{ens_loaded[-1]:.2f}",
 				plot_name=f'S1 Distribution',
 				description=f'S1 Distribution \n $E={ens_loaded[-1]:.2f}$ eV',
-				unit='$\\dot{N}_\\gamma/(0.1\%\cdot BW\cdot mm^2 )$\t',
+				unit='$\\dot{N}_\\gamma/(0.1\\%\\cdot BW\\cdot mm^2 )$\t',
 				)
-			s2_dens = wave_quantity(
-				wave_api=self._wave_api,
+			s2_dens = quantity(
+				api=self._wave_api,
 				data=data['S2'].to_list(),
 				name=f"s2_distribution_{ens_loaded[-1]:.2f}",
 				plot_name=f'S2 Distribution',
 				description=f'S2 Distribution \n $E={ens_loaded[-1]:.2f}$ eV',
-				unit='$\\dot{N}_\\gamma/(0.1\%\cdot BW\cdot mm^2 )$\t',
+				unit='$\\dot{N}_\\gamma/(0.1\\%\\cdot BW\\cdot mm^2 )$\t',
 				)
-			s3_dens = wave_quantity(
-				wave_api=self._wave_api,
+			s3_dens = quantity(
+				api=self._wave_api,
 				data=data['S3'].to_list(),
 				name=f"s3_distribution_{ens_loaded[-1]:.2f}",
 				plot_name=f'S3 Distribution',
 				description=f'S3 Distribution \n $E={ens_loaded[-1]:.2f}$ eV',
-				unit='$\\dot{N}_\\gamma/(0.1\%\cdot BW\cdot mm^2 )$\t',
+				unit='$\\dot{N}_\\gamma/(0.1\\%\\cdot BW\\cdot mm^2 )$\t',
 				)
 			self._res_quantities = self._res_quantities + [flux_dens,s1_dens,s2_dens,s3_dens] 
 
@@ -304,16 +317,16 @@ class wave_results :
 				# data = data[ data['flux_dens'] > 1e9 ]
 				data['en'] = data['en'].apply( lambda x : x * 1e-3 )
 
-				en_s0 = wave_quantity(
-					wave_api=self._wave_api,
+				en_s0 = quantity(
+					api=self._wave_api,
 					data=data['en'].to_list(),
 					name="en_s0",
 					plot_name="E",
 					description='Photon Energy',
 					unit='keV',
 					)
-				s0 = wave_quantity(
-					wave_api=self._wave_api,
+				s0 = quantity(
+					api=self._wave_api,
 					data=data['s0'].to_list(),
 					plot_name="Stokes Flux - S0",
 					name="stokes_para_0",
@@ -333,16 +346,16 @@ class wave_results :
 				# data = data[ data['flux_dens'] > 1e9 ]
 				data['en'] = data['en'].apply( lambda x : x * 1e-3 )
 
-				en_s1 = wave_quantity(
-					wave_api=self._wave_api,
+				en_s1 = quantity(
+					api=self._wave_api,
 					data=data['en'].to_list(),
 					name="en_s1",
 					plot_name="E",
 					description='Photon Energy',
 					unit='keV',
 					)
-				s1 = wave_quantity(
-					wave_api=self._wave_api,
+				s1 = quantity(
+					api=self._wave_api,
 					data=data['s1'].to_list(),
 					plot_name="Stokes Flux - S1",
 					name="stokes_para_1",
@@ -362,16 +375,16 @@ class wave_results :
 				# data = data[ data['flux_dens'] > 1e9 ]
 				data['en'] = data['en'].apply( lambda x : x * 1e-3 )
 
-				en_s2 = wave_quantity(
-					wave_api=self._wave_api,
+				en_s2 = quantity(
+					api=self._wave_api,
 					data=data['en'].to_list(),
 					name="en_s2",
 					plot_name="E",
 					description='Photon Energy',
 					unit='keV',
 					)
-				s2 = wave_quantity(
-					wave_api=self._wave_api,
+				s2 = quantity(
+					api=self._wave_api,
 					data=data['s2'].to_list(),
 					plot_name="Stokes Flux - S2",
 					name="stokes_para_2",
@@ -391,16 +404,16 @@ class wave_results :
 				# data = data[ data['flux_dens'] > 1e9 ]
 				data['en'] = data['en'].apply( lambda x : x * 1e-3 )
 
-				en_s3 = wave_quantity(
-					wave_api=self._wave_api,
+				en_s3 = quantity(
+					api=self._wave_api,
 					data=data['en'].to_list(),
 					name="en_s3",
 					plot_name="E",
 					description='Photon Energy',
 					unit='keV',
 					)
-				s3 = wave_quantity(
-					wave_api=self._wave_api,
+				s3 = quantity(
+					api=self._wave_api,
 					data=data['s3'].to_list(),
 					plot_name="Stokes Flux - S3",
 					name="stokes_para_3",
@@ -416,27 +429,23 @@ class wave_results :
 
 		for filename in os.listdir(self._res_folder_wave):
 			if (filename.find('selected_s0_e_(folded)_x_1_e_6_180000') >= 0): 
-				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, sep='\\s+')
-				except:
-					return
+				data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, sep='\\s+')
 				data.columns = [ 'en', 'flux_dens' ]
 				cols = data.columns
 				for col in cols:
 					data[col] = data[col].astype(float)
-				data = data[ data['flux_dens'] > 1e9 ]
 				data['en'] = data['en'].apply( lambda x : x * 1e-3 )
 
-				en_fd = wave_quantity(
-					wave_api=self._wave_api,
+				en_fd = quantity(
+					api=self._wave_api,
 					data=data['en'].to_list(),
 					name="en_fd",
 					plot_name="E",
 					description='Photon Energy',
 					unit='keV',
 					)
-				fd = wave_quantity(
-					wave_api=self._wave_api,
+				fd = quantity(
+					api=self._wave_api,
 					data=data['flux_dens'].to_list(),
 					plot_name="Flux Density",
 					name="flux_density",
@@ -452,7 +461,7 @@ class wave_results :
 		for filename in os.listdir(self._res_folder_wave):
 			if (filename.find('brilliance_3702') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=6,header=None, dtype=object, delim_whitespace=True)
+					data = pd.read_csv( self._res_folder_wave + filename, skiprows=6,header=None, dtype=object,delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "en", "b0", "b1", "b2", "b3", "b0f", "b1f", "b2f", "b3f", "b0e",\
@@ -466,45 +475,45 @@ class wave_results :
 				data['b0f'] = data['b0f'].apply( lambda x : x*1e-12 )
 				data['b0ef'] = data['b0ef'].apply( lambda x : x*1e-12 )
 
-				en_brill = wave_quantity(
-					wave_api=self._wave_api,
+				en_brill = quantity(
+					api=self._wave_api,
 					data=data['en'].to_list(),
 					name="en_brill",
 					plot_name="E",
 					description='Photon Energy',
 					unit='keV',
 					)
-				brill0 = wave_quantity(
-					wave_api=self._wave_api,
+				brill0 = quantity(
+					api=self._wave_api,
 					data=data['b0'].to_list(),
 					plot_name="B0",
 					name="brill0",
 					description='Brilliance - No E-Spread,No Emittance',
-					unit='$\dot{N}_\gamma/(0.1\% \cdot BW \cdot mm^2 \cdot mrad^2)$',
+					unit='$\\dot{N}_\\gamma/(0.1\\% \\cdot BW \\cdot mm^2 \\cdot mrad^2)$',
 					)
-				brill0e = wave_quantity(
-					wave_api=self._wave_api,
+				brill0e = quantity(
+					api=self._wave_api,
 					data=data['b0e'].to_list(),
 					plot_name="B0e",
 					name="brill0e",
 					description='Brilliance - W. E-Spread,No Emittance',
-					unit='$\dot{N}_\gamma/(0.1\% \cdot BW \cdot mm^2 \cdot mrad^2)$',
+					unit='$\\dot{N}_\\gamma/(0.1\\% \\cdot BW \\cdot mm^2 \\cdot mrad^2)$',
 					)
-				brill0ef = wave_quantity(
-					wave_api=self._wave_api,
+				brill0ef = quantity(
+					api=self._wave_api,
 					data=data['b0ef'].to_list(),
 					plot_name="B0ef",
 					name="brill0ef",
 					description='Brilliance - W. E-Spread and Emittance',
-					unit='$\dot{N}_\gamma/(0.1\% \cdot BW \cdot mm^2 \cdot mrad^2)$',
+					unit='$\\dot{N}_\\gamma/(0.1\\% \\cdot BW \\cdot mm^2 \\cdot mrad^2)$',
 					)
-				brill0f = wave_quantity(
-					wave_api=self._wave_api,
+				brill0f = quantity(
+					api=self._wave_api,
 					data=data['b0f'].to_list(),
 					plot_name="B0f",
 					name="brill0f",
 					description='Brilliance - No E-Spread, W. Emittance',
-					unit='$\dot{N}_\gamma/(0.1\% \cdot BW \cdot mm^2 \cdot mrad^2)$',
+					unit='$\\dot{N}_\\gamma/(0.1\\% \\cdot BW \\cdot mm^2 \\cdot mrad^2)$',
 					)
 				self._res_quantities = self._res_quantities + [en_brill,brill0,brill0e,brill0ef,brill0f] 
 
@@ -515,7 +524,7 @@ class wave_results :
 		for filename in os.listdir(self._res_folder_wave):
 			if (filename.find('stokes_pinhole_emittance_espread') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delim_whitespace=True)
+					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ 'en', 'flux', 's1', 's2', 's3' ]
@@ -524,16 +533,16 @@ class wave_results :
 					data[col] = data[col].astype(float)
 				data['en'] = data['en'].apply( lambda x : x * 1e-3 )
 
-				en_flux = wave_quantity(
-					wave_api=self._wave_api,
+				en_flux = quantity(
+					api=self._wave_api,
 					data=data['en'].to_list(),
 					name="en_flux",
 					plot_name="E",
 					description='Photon Energy',
 					unit='keV',
 					)
-				flux = wave_quantity(
-					wave_api=self._wave_api,
+				flux = quantity(
+					api=self._wave_api,
 					data=data['flux'].to_list(),
 					plot_name="Flux",
 					name="flux",
@@ -549,7 +558,7 @@ class wave_results :
 		for filename in os.listdir(self._res_folder_wave):
 			if (filename.find('irradiated_power_dist') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=2,header=None, dtype=object, delim_whitespace=True)
+					data = pd.read_csv( self._res_folder_wave + filename, skiprows=2,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "z", "y", "power" ]
@@ -557,26 +566,26 @@ class wave_results :
 				for col in cols:
 					data[col] = data[col].astype(float)
 
-				data['z'] = data['z'].apply( lambda x : round(x,2) )
-				data['y'] = data['y'].apply( lambda x : round(x,2) )
-				z_power_d = wave_quantity(
-					wave_api=self._wave_api,
+				# data['z'] = data['z'].apply( lambda x : round(x,2) )
+				# data['y'] = data['y'].apply( lambda x : round(x,2) )
+				z_power_d = quantity(
+					api=self._wave_api,
 					data=data['z'].to_list(),
 					name="power_z",
 					plot_name="z",
-					description='z-Longitudinal Position',
+					description='z-horizontal Position',
 					unit='mm',
 					)
-				y_power_d = wave_quantity(
-					wave_api=self._wave_api,
+				y_power_d = quantity(
+					api=self._wave_api,
 					data=data['y'].to_list(),
 					plot_name="y",
 					name="power_y",
 					description='y-Vertical Position',
 					unit='mm',
 					)
-				power_d = wave_quantity(
-					wave_api=self._wave_api,
+				power_d = quantity(
+					api=self._wave_api,
 					data=data['power'].to_list(),
 					name="power_distribution",
 					plot_name='Power Distribution',
@@ -593,7 +602,7 @@ class wave_results :
 
 			if (filename.find('trajectory.wva') >= 0) : 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delim_whitespace=True)
+					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "x", "y", "z", "Bx", "By", "Bz" ]
@@ -602,48 +611,48 @@ class wave_results :
 					data[col] = data[col].astype(float)
 				# data = data.to_dict('records')
 
-				x_quant = wave_quantity(
-					wave_api=self._wave_api,
+				x_quant = quantity(
+					api=self._wave_api,
 					data=data['x'].to_list(),
 					plot_name="x",
 					name='traj_x',
 					description='x-Longitudinal Position',
 					unit='m',
 					)
-				y_quant = wave_quantity(
-					wave_api=self._wave_api,
+				y_quant = quantity(
+					api=self._wave_api,
 					data=data['y'].to_list(),
 					plot_name="y",
 					name='traj_y',
 					description='$y$-Vertical Position',
 					unit='m',
 					)
-				z_quant = wave_quantity(
-					wave_api=self._wave_api,
+				z_quant = quantity(
+					api=self._wave_api,
 					data=data['z'].to_list(),
 					plot_name="$z$",
 					name='traj_z',
 					description='$z$-Horizontal Position',
 					unit='m',
 					)
-				Bx_quant = wave_quantity(
-					wave_api=self._wave_api,
+				Bx_quant = quantity(
+					api=self._wave_api,
 					data=data['Bx'].to_list(),
 					name="Bx",
 					plot_name='$B_x$',
 					description='$B_x$-Longitudinal Magnetic Induction',
 					unit='T',
 					)
-				By_quant = wave_quantity(
-					wave_api=self._wave_api,
+				By_quant = quantity(
+					api=self._wave_api,
 					data=data['By'].to_list(),
 					name="By",
 					plot_name='$B_y$',
 					description='$B_y$-Vertical Magnetic Induction',
 					unit='T',
 					)
-				Bz_quant = wave_quantity(
-					wave_api=self._wave_api,
+				Bz_quant = quantity(
+					api=self._wave_api,
 					data=data['Bz'].to_list(),
 					name="Bz",
 					plot_name='$B_z$',

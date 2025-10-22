@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.1.7.1.3. unduwave.undu_modules.undu_magnets &mdash; Unduwave v0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=2fea6348"></script>
+      <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="4.1.1.7.1.4. unduwave.undu_modules.undu_parameters" href="../undu_parameters/index.html" />
+    <link rel="prev" title="4.1.1.7.1.2. unduwave.undu_modules.undu_control" href="../undu_control/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickguide.html">3. Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">4. API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">4.1. unduwave</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#subpackages">4.1.1. Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../analytical_module/index.html">4.1.1.1. unduwave.analytical_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/index.html">4.1.1.2. unduwave.api</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../attribute_classes/index.html">4.1.1.3. unduwave.attribute_classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../helpers/index.html">4.1.1.4. unduwave.helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../optimization_module/index.html">4.1.1.5. unduwave.optimization_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quantities/index.html">4.1.1.6. unduwave.quantities</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">4.1.1.7. unduwave.undu_modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../wave_modules/index.html">4.1.1.8. unduwave.wave_modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#submodules">4.1.2. Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#attributes">4.1.3. Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#classes">4.1.4. Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#functions">4.1.5. Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#package-contents">4.1.6. Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html"><span class="section-number">4. </span>API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="section-number">4.1. </span>unduwave</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">4.1.1.7. </span>unduwave.undu_modules</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1.1.7.1.3. </span>unduwave.undu_modules.undu_magnets</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/Unduwave/unduwave/undu_modules/undu_magnets/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-unduwave.undu_modules.undu_magnets">
+<span id="unduwave-undu-modules-undu-magnets"></span><h1><span class="section-number">4.1.1.7.1.3. </span>unduwave.undu_modules.undu_magnets<a class="headerlink" href="#module-unduwave.undu_modules.undu_magnets" title="Link to this heading"></a></h1>
+<p>Undu_magnet definitions allowing to construct a 3D magnetic system comprissed of magnet blocks (w/o chamfers)</p>
+<section id="classes">
+<h2><span class="section-number">4.1.1.7.1.3.1. </span>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">point_coords</span></code></a></p></td>
+<td><p>Initializes simple 3d vector class</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.undu_magnets" title="unduwave.undu_modules.undu_magnets.undu_magnets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_magnets</span></code></a></p></td>
+<td><p>Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords" title="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_magnet_block_coords</span></code></a></p></td>
+<td><p>Implements basic undumag magnet block</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2><span class="section-number">4.1.1.7.1.3.2. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.rotate" title="unduwave.undu_modules.undu_magnets.rotate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate</span></code></a>(pnts, degrees[, axis, plane])</p></td>
+<td><p>Takes a list of vectors and rotates them (their component in the yz-plane).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.get_magn_ignore" title="unduwave.undu_modules.undu_magnets.get_magn_ignore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_magn_ignore</span></code></a>(n_magn_ignore, ignore_level[, ...])</p></td>
+<td><p>n_magn_ignore : number of magnet to be ignored</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.create_magnetization_unit_vec" title="unduwave.undu_modules.undu_magnets.create_magnetization_unit_vec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_magnetization_unit_vec</span></code></a>(magn_string)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.get_magnet_period" title="unduwave.undu_modules.undu_magnets.get_magnet_period"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_magnet_period</span></code></a>(magn_collection, denominator, nperiod)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.get_magnet_struct" title="unduwave.undu_modules.undu_magnets.get_magnet_struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_magnet_struct</span></code></a>(magn_collection, denominator[, ...])</p></td>
+<td><p>Returns list of all objects whose name contains one of:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_modules.undu_magnets.calculate_forces_ue51" title="unduwave.undu_modules.undu_magnets.calculate_forces_ue51"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_forces_ue51</span></code></a>(load_clc_file, ueparas, center, ...)</p></td>
+<td><p>if row, period, block or mag are empty lists, it means they are all to be taken together</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2><span class="section-number">4.1.1.7.1.3.3. </span>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.point_coords">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">point_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.point_coords" title="Link to this definition"></a></dt>
+<dd><p>Initializes simple 3d vector class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – x-component</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – y-component</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – z-component</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.point_coords.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.point_coords.__sub__" title="Link to this definition"></a></dt>
+<dd><p>Substraction of vector pnt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pnt</strong> (<a class="reference internal" href="#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><em>point_coords</em></a>) – vector to substract</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.point_coords.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.point_coords.__add__" title="Link to this definition"></a></dt>
+<dd><p>Addition of vector pnt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pnt</strong> (<a class="reference internal" href="#unduwave.undu_modules.undu_magnets.point_coords" title="unduwave.undu_modules.undu_magnets.point_coords"><em>point_coords</em></a>) – vector to add</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.rotate">
+<span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrees</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">point_coords(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'yz'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.rotate" title="Link to this definition"></a></dt>
+<dd><p>Takes a list of vectors and rotates them (their component in the yz-plane).
+The x-component of the vectors remains unchanged. Returns the rotated vectors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pnts</strong> (<em>list</em>) – List of point_coords to be rotated</p></li>
+<li><p><strong>degrees</strong> (<em>float</em>) – Degrees by which to rotate [°]</p></li>
+</ul>
+</dd>
+</dl>
+<p>:param</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">undu_magnets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magnet_blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets" title="Link to this definition"></a></dt>
+<dd><p>Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
+extent determination
+magnet_blocks - list of undu_magnet_block_coords objects</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.set_all_apis">
+<span class="sig-name descname"><span class="pre">set_all_apis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.set_all_apis" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.move_it">
+<span class="sig-name descname"><span class="pre">move_it</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.move_it" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.find_magn_name">
+<span class="sig-name descname"><span class="pre">find_magn_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fnd_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.find_magn_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.find_all_names">
+<span class="sig-name descname"><span class="pre">find_all_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.find_all_names" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.find_all_mag_blocks">
+<span class="sig-name descname"><span class="pre">find_all_mag_blocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mag_blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.find_all_mag_blocks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.rotate">
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">degrees</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'yz'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.rotate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.mirror">
+<span class="sig-name descname"><span class="pre">mirror</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.mirror" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.change_segm">
+<span class="sig-name descname"><span class="pre">change_segm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segm_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segm_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segm_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.change_segm" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.set_inactive">
+<span class="sig-name descname"><span class="pre">set_inactive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.set_inactive" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.add_to_clc">
+<span class="sig-name descname"><span class="pre">add_to_clc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magns_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.add_to_clc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.get_max_extent">
+<span class="sig-name descname"><span class="pre">get_max_extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.get_max_extent" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.set_magnetization">
+<span class="sig-name descname"><span class="pre">set_magnetization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magnetization</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magn_unit_vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.set_magnetization" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnets.get_center">
+<span class="sig-name descname"><span class="pre">get_center</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnets.get_center" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">undu_magnet_block_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p_center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pnts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnetization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magn_unit_vec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mother</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mother'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segm_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segm_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segm_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mag'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chamf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords" title="Link to this definition"></a></dt>
+<dd><p>Implements basic undumag magnet block
+can be moved, mirrored, incorporated into undumag-clc and the extent can be calculated</p>
+<p>material - “magnet” or “pole”
+chamf - if some float - chamfer is added</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.set_api">
+<span class="sig-name descname"><span class="pre">set_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.set_api" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.find_all_names">
+<span class="sig-name descname"><span class="pre">find_all_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.find_all_names" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.find_all_mag_blocks">
+<span class="sig-name descname"><span class="pre">find_all_mag_blocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mag_blocks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.find_all_mag_blocks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.set_inactive">
+<span class="sig-name descname"><span class="pre">set_inactive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.set_inactive" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.change_segm">
+<span class="sig-name descname"><span class="pre">change_segm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segm_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segm_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segm_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.change_segm" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.find_magn_name">
+<span class="sig-name descname"><span class="pre">find_magn_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fnd_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.find_magn_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.set_magnetization">
+<span class="sig-name descname"><span class="pre">set_magnetization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magnetization</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magn_unit_vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.set_magnetization" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.create_edge_points">
+<span class="sig-name descname"><span class="pre">create_edge_points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.create_edge_points" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.move_it">
+<span class="sig-name descname"><span class="pre">move_it</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.move_it" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.rotate">
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">degrees</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'yz'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.rotate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.mirror">
+<span class="sig-name descname"><span class="pre">mirror</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.mirror" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.add_to_clc">
+<span class="sig-name descname"><span class="pre">add_to_clc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magns_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.add_to_clc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.create_clc_txt">
+<span class="sig-name descname"><span class="pre">create_clc_txt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.create_clc_txt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.get_max_extent">
+<span class="sig-name descname"><span class="pre">get_max_extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.undu_magnet_block_coords.get_max_extent" title="Link to this definition"></a></dt>
+<dd><p>determines the extent of this magnet block and compares to maxs and mins vals given, returns
+the max and min vals</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.get_magn_ignore">
+<span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">get_magn_ignore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_magn_ignore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magns_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.get_magn_ignore" title="Link to this definition"></a></dt>
+<dd><p>n_magn_ignore : number of magnet to be ignored
+ignore_level : ‘u’/’l’ - upper or lower rows</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.create_magnetization_unit_vec">
+<span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">create_magnetization_unit_vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magn_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.create_magnetization_unit_vec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.get_magnet_period">
+<span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">get_magnet_period</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magn_collection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">denominator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nperiod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_el_per_period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.get_magnet_period" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.get_magnet_struct">
+<span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">get_magnet_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magn_collection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">denominator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magn_nums</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.get_magnet_struct" title="Link to this definition"></a></dt>
+<dd><p>Returns list of all objects whose name contains one of:
+{ denominator and str(magn_nums[i]) | forall i}</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.undu_modules.undu_magnets.calculate_forces_ue51">
+<span class="sig-prename descclassname"><span class="pre">unduwave.undu_modules.undu_magnets.</span></span><span class="sig-name descname"><span class="pre">calculate_forces_ue51</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_clc_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ueparas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnetizations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undu_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shifts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periods</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_modules.undu_magnets.calculate_forces_ue51" title="Link to this definition"></a></dt>
+<dd><p>if row, period, block or mag are empty lists, it means they are all to be taken together
+i.e. : if mag=[], all magnets [0,1] are to be taken together for each block defined - block forces</p>
+<blockquote>
+<div><p>block =[], so all blocks in a given period together - period forces
+period=[], all periods in a given row together - row-forces
+row=[], whole machine</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../undu_control/index.html" class="btn btn-neutral float-left" title="4.1.1.7.1.2. unduwave.undu_modules.undu_control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../undu_parameters/index.html" class="btn btn-neutral float-right" title="4.1.1.7.1.4. unduwave.undu_modules.undu_parameters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

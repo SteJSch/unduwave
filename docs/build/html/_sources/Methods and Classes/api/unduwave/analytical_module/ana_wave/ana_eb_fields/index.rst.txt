@@ -1,0 +1,41 @@
+unduwave.analytical_module.ana_wave.ana_eb_fields
+=================================================
+
+.. py:module:: unduwave.analytical_module.ana_wave.ana_eb_fields
+
+.. autoapi-nested-parse::
+
+   Contains functionality for handling files.
+
+   Module to handle various file operations including finding, moving, copying, and deleting files.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_wave.ana_eb_fields.compare_sum_res
+   unduwave.analytical_module.ana_wave.ana_eb_fields.bessel_sum
+   unduwave.analytical_module.ana_wave.ana_eb_fields.electr_field_full
+   unduwave.analytical_module.ana_wave.ana_eb_fields.flux_at_order_m
+   unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strong_time_fourier
+   unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strongU
+
+
+Module Contents
+---------------
+
+.. py:function:: compare_sum_res(new_res, old_res)
+
+.. py:function:: bessel_sum(type, order_m, arg_a, arg_b, accur=0.001)
+
+.. py:function:: electr_field_full(times, obs_pnt, undu_paras, beam_paras)
+
+.. py:function:: flux_at_order_m(harmOrder, undu_paras, beam_paras)
+
+.. py:function:: electric_field_strong_time_fourier(time, arg_a, arg_b, order, theta, phi, undu_paras, beam_paras)
+
+.. py:function:: electric_field_strongU(time, theta, phi, undu_paras, beam_paras, accur=0.001)
+

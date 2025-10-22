@@ -6,6 +6,22 @@ Module to handle various file operations including finding, moving, copying, and
 
 from unduwave.unduwave_incl import *
 
+try :
+	# works when calling script with python3 script_file
+	dir_path = os.path.dirname(os.path.realpath(__file__))
+except:
+	# works when calling script with exec from python console
+	dir_path = os.getcwd()
+
+def loadBessyIIundulatorList() :
+	file=dir_path+f"/../undulatorsBessyII/undulatoren_bessy_II.json"
+	return load_from_json_list(file=file)
+
+def load_from_json_list(file=None) :
+	with open(file,'r') as target:
+		my_list = json.load(target)
+	return my_list
+
 def convert_path_to_win(path) :
 	"""
 	Takes a path and converts it to win-standard.
@@ -47,8 +63,8 @@ def find_files_exptn(folder, hints=[], exptns=[]):
 						nope = True
 						break
 			if not nope:
-				filename_rpl = filename.replace("(", "\(")
-				filename_rpl = filename_rpl.replace(")", "\)")
+				filename_rpl = filename.replace("(", "\\(")
+				filename_rpl = filename_rpl.replace(")", "\\)")
 				files.append(filename_rpl)
 	return files
 
@@ -73,8 +89,8 @@ def find_all_files_exptn(folder, exptns=[]):
 					nope = True
 					break
 		if not nope:
-			filename_rpl = filename.replace("(", "\(")
-			filename_rpl = filename_rpl.replace(")", "\)")
+			filename_rpl = filename.replace("(", "\\(")
+			filename_rpl = filename_rpl.replace(")", "\\)")
 			files.append(filename_rpl)
 	return files
 

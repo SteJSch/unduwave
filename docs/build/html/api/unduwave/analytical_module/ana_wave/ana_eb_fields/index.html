@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>unduwave.analytical_module.ana_wave.ana_eb_fields &#8212; Unduwave v0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../../../../_static/documentation_options.js?v=2fea6348"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-unduwave.analytical_module.ana_wave.ana_eb_fields">
+<span id="unduwave-analytical-module-ana-wave-ana-eb-fields"></span><h1>unduwave.analytical_module.ana_wave.ana_eb_fields<a class="headerlink" href="#module-unduwave.analytical_module.ana_wave.ana_eb_fields" title="Link to this heading">¶</a></h1>
+<p>Contains functionality for handling files.</p>
+<p>Module to handle various file operations including finding, moving, copying, and deleting files.</p>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.compare_sum_res" title="unduwave.analytical_module.ana_wave.ana_eb_fields.compare_sum_res"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare_sum_res</span></code></a>(new_res, old_res)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.bessel_sum" title="unduwave.analytical_module.ana_wave.ana_eb_fields.bessel_sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bessel_sum</span></code></a>(type, order_m, arg_a, arg_b[, accur])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.electr_field_full" title="unduwave.analytical_module.ana_wave.ana_eb_fields.electr_field_full"><code class="xref py py-obj docutils literal notranslate"><span class="pre">electr_field_full</span></code></a>(times, obs_pnt, undu_paras, beam_paras)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.flux_at_order_m" title="unduwave.analytical_module.ana_wave.ana_eb_fields.flux_at_order_m"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flux_at_order_m</span></code></a>(harmOrder, undu_paras, beam_paras)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strong_time_fourier" title="unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strong_time_fourier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">electric_field_strong_time_fourier</span></code></a>(time, arg_a, arg_b, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strongU" title="unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strongU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">electric_field_strongU</span></code></a>(time, theta, phi, undu_paras, ...)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_wave.ana_eb_fields.compare_sum_res">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_wave.ana_eb_fields.</span></span><span class="sig-name descname"><span class="pre">compare_sum_res</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_res</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.compare_sum_res" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_wave.ana_eb_fields.bessel_sum">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_wave.ana_eb_fields.</span></span><span class="sig-name descname"><span class="pre">bessel_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.bessel_sum" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_wave.ana_eb_fields.electr_field_full">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_wave.ana_eb_fields.</span></span><span class="sig-name descname"><span class="pre">electr_field_full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">times</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_pnt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undu_paras</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beam_paras</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.electr_field_full" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_wave.ana_eb_fields.flux_at_order_m">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_wave.ana_eb_fields.</span></span><span class="sig-name descname"><span class="pre">flux_at_order_m</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">harmOrder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undu_paras</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beam_paras</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.flux_at_order_m" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strong_time_fourier">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_wave.ana_eb_fields.</span></span><span class="sig-name descname"><span class="pre">electric_field_strong_time_fourier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undu_paras</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beam_paras</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strong_time_fourier" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strongU">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_wave.ana_eb_fields.</span></span><span class="sig-name descname"><span class="pre">electric_field_strongU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undu_paras</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beam_paras</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_wave.ana_eb_fields.electric_field_strongU" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">Unduwave</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../quickguide.html">3. Quickguide</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;CC BY-NC.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../../../../_sources/api/unduwave/analytical_module/ana_wave/ana_eb_fields/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

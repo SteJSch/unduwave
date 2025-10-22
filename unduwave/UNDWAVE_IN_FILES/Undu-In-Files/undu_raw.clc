@@ -24,6 +24,7 @@ $KsiPerp_Hybrid = 0.0!0.17
 $RECIndex_Hybrid = 1
 $IronIndex_Hybrid = 2
 $ColorMag_Hybrid = $red
+$ColorPol_Hybrid = $blue
 
 $FracDivY_Mag_Hybrid = 2.0
 $FracDivZ_Mag_Hybrid = 2.0
@@ -45,6 +46,11 @@ $Mcoating= 0.0 !0.014 ! coating of REC magnets
 1          !number of arrays within module
 1. 1. 0. 0. 0. !spacing and direction of arrangement, rotation angle
 1. 1. 1.                   !scaling and symmetry of magnetization vector
+
+*COILS START
+
+
+*COILS END
 
 & Materials
 2            ! number of material files

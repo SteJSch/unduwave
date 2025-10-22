@@ -1,0 +1,64 @@
+unduwave.api.undu_api_root
+==========================
+
+.. py:module:: unduwave.api.undu_api_root
+
+.. autoapi-nested-parse::
+
+   Undumag api definitions
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.api.undu_api_root.undu_api
+
+
+Module Contents
+---------------
+
+.. py:class:: undu_api(undu_mode='from_clc_file')
+
+   
+   Undumag API-class for controlling basic undumag-functionality. 
+
+   :param str undu_mode: Determines the basic mode by which a magnet structure is
+   constructed. Can be one of the following: 
+
+                   'from_clc_file': The magnet structure is read from an Undumag .clc file. 
+
+                   'from_undu_magns': A model of the magnet structure is constructed using 
+                   the undu_magns classes. 
+
+
+
+   .. py:method:: run()
+
+      Runs undumag with the given settings, prepares and postprocesses data.
+
+
+
+   .. py:method:: load_clc_raw()
+
+      Loads a raw-clc file template from the folder set in prog_paras.in_file_folder+prog_paras.in_file_clc_raw.
+      After loading prog_paras.in_file_clc_lines holds the list representation of the file in form of a list of strings.
+
+
+
+   .. py:method:: set_force_calc(object)
+
+      Prepares the parameter list for calculation of force on the undu_magnets object object.
+
+      :param undu_magnets object: An undu_magnets object (i.e. a collection of magnets) on which the force is to be calculated.
+
+
+
+   .. py:method:: get_results()
+
+      Returns the results from a given simulation as result-object.
+
+
+

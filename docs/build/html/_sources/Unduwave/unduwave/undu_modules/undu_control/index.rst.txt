@@ -1,0 +1,48 @@
+unduwave.undu_modules.undu_control
+==================================
+
+.. py:module:: unduwave.undu_modules.undu_control
+
+.. autoapi-nested-parse::
+
+   Functionality for running the Undumag simulation
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_control.dir_path
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_control.undu_control
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:class:: undu_control(undu_api, current_folder=None)
+
+   
+   An object for controling undumag, allowing to run simulations
+
+   :param undu_api undu_api: external wave_api class
+   :param current_folder: folder to which you want to jump back after wave was run
+   :type current_folder: str or None
+
+
+   .. py:method:: run()
+
+      Run an undumag simulation
+
+
+

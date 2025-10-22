@@ -1,0 +1,118 @@
+unduwave.attribute_classes.attributes
+=====================================
+
+.. py:module:: unduwave.attribute_classes.attributes
+
+.. autoapi-nested-parse::
+
+   Definition of _attribute and _attribute_collection classes.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.attribute_classes.attributes._attribute
+   unduwave.attribute_classes.attributes._attribute_collection
+
+
+Module Contents
+---------------
+
+.. py:class:: _attribute(value=None, name=None, in_name=None, unit='', fac=None)
+
+   Represents an attribute with a value.
+
+   Args:
+       value: Initial value of the attribute.
+       name (str, optional): Name of the attribute.
+
+   Initialize an attribute.
+   :param value: The value held by this class
+   :param str name: Name of the attribute
+   :param str in_name: Name as used by Wave or Undumag
+   :param str unit: The physical unit of the quantity
+   'param float fac': gauging factor
+
+
+   .. py:method:: set(value)
+
+      Sets the value
+
+
+
+   .. py:method:: get()
+
+      Returns the value
+
+
+
+   .. py:method:: get_fac()
+
+      Returns scaling factor
+
+
+
+   .. py:method:: set_name(name)
+
+      Setting the name
+
+
+
+   .. py:method:: set_in_name(in_name)
+
+      Setting the in-name
+
+
+
+   .. py:method:: get_in_name()
+
+      Returns in-name
+
+
+
+   .. py:property:: name
+
+
+   .. py:method:: __str__()
+
+      Return str(self).
+
+
+
+   .. py:method:: __repr__()
+
+      Return repr(self).
+
+
+
+.. py:class:: _attribute_collection
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+
+   .. py:method:: _add_attributes()
+
+      Scans all class members, finds those of type _attribute and sets those 
+      as new attributes
+
+
+
+   .. py:method:: show_all_children()
+
+      Prints the names of the children
+
+
+
+   .. py:method:: children()
+
+      Yields the children of the _attribute_collection.
+
+
+

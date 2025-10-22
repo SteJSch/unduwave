@@ -1,0 +1,74 @@
+unduwave.analytical_module.ana_wave.ana_eb_fields
+=================================================
+
+.. py:module:: unduwave.analytical_module.ana_wave.ana_eb_fields
+
+.. autoapi-nested-parse::
+
+   Contains functionality for handling files.
+
+   Module to handle various file operations including finding, moving, copying, and deleting files.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_wave.ana_eb_fields.aspectrum
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_wave.ana_eb_fields.compare_sum_res
+   unduwave.analytical_module.ana_wave.ana_eb_fields.bessel_sum
+   unduwave.analytical_module.ana_wave.ana_eb_fields.xyz_from_spherical
+   unduwave.analytical_module.ana_wave.ana_eb_fields.spherical_coord_from_xyz
+   unduwave.analytical_module.ana_wave.ana_eb_fields.make_coords
+
+
+Module Contents
+---------------
+
+.. py:function:: compare_sum_res(new_res, old_res)
+
+.. py:function:: bessel_sum(type, order_m, arg_a, arg_b, accur=0.001)
+
+.. py:function:: xyz_from_spherical(rs, thetas, phis)
+
+.. py:function:: spherical_coord_from_xyz(xs, ys, zs)
+
+.. py:function:: make_coords(fun, coords1, coords2)
+
+   Takes 2 lists of coordinates for which fun is evaluated. Fun is expected to give back cartesian coordinates of a point.
+   Returns 3 2d-arrays containing the grid coordinates
+
+
+.. py:class:: aspectrum(ebeam, undulator)
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+
+   .. py:method:: spectral_fun(omega, order)
+
+
+   .. py:method:: fun_transv(theta, phi)
+
+
+   .. py:method:: fun_transv_ultra_rel(theta, phi)
+
+
+   .. py:method:: flux_strong_undu(x, y, z, omega, order)
+
+

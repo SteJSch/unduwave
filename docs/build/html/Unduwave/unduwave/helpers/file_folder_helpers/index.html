@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.1.4.1.1. unduwave.helpers.file_folder_helpers &mdash; Unduwave v0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=2fea6348"></script>
+      <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="4.1.1.5. unduwave.optimization_module" href="../../optimization_module/index.html" />
+    <link rel="prev" title="4.1.1.4. unduwave.helpers" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickguide.html">3. Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">4. API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">4.1. unduwave</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#subpackages">4.1.1. Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../analytical_module/index.html">4.1.1.1. unduwave.analytical_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/index.html">4.1.1.2. unduwave.api</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../attribute_classes/index.html">4.1.1.3. unduwave.attribute_classes</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">4.1.1.4. unduwave.helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../optimization_module/index.html">4.1.1.5. unduwave.optimization_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quantities/index.html">4.1.1.6. unduwave.quantities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../undu_modules/index.html">4.1.1.7. unduwave.undu_modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../wave_modules/index.html">4.1.1.8. unduwave.wave_modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#submodules">4.1.2. Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#attributes">4.1.3. Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#classes">4.1.4. Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#functions">4.1.5. Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#package-contents">4.1.6. Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html"><span class="section-number">4. </span>API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><span class="section-number">4.1. </span>unduwave</a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">4.1.1.4. </span>unduwave.helpers</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1.1.4.1.1. </span>unduwave.helpers.file_folder_helpers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/Unduwave/unduwave/helpers/file_folder_helpers/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-unduwave.helpers.file_folder_helpers">
+<span id="unduwave-helpers-file-folder-helpers"></span><h1><span class="section-number">4.1.1.4.1.1. </span>unduwave.helpers.file_folder_helpers<a class="headerlink" href="#module-unduwave.helpers.file_folder_helpers" title="Link to this heading"></a></h1>
+<p>Contains functionality for handling files.</p>
+<p>Module to handle various file operations including finding, moving, copying, and deleting files.</p>
+<section id="functions">
+<h2><span class="section-number">4.1.1.4.1.1.1. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.convert_path_to_win" title="unduwave.helpers.file_folder_helpers.convert_path_to_win"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_path_to_win</span></code></a>(path)</p></td>
+<td><p>Takes a path and converts it to win-standard.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.find_files_exptn" title="unduwave.helpers.file_folder_helpers.find_files_exptn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_files_exptn</span></code></a>(folder[, hints, exptns])</p></td>
+<td><p>Find files in the specified folder based on hints and exptns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.find_all_files_exptn" title="unduwave.helpers.file_folder_helpers.find_all_files_exptn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_all_files_exptn</span></code></a>(folder[, exptns])</p></td>
+<td><p>Find all files in a directory while excluding specified patterns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.zip_files_in_folder" title="unduwave.helpers.file_folder_helpers.zip_files_in_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zip_files_in_folder</span></code></a>(folder_to_pack)</p></td>
+<td><p>Zip all files in a specified folder.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.unzip_zip_in_folder" title="unduwave.helpers.file_folder_helpers.unzip_zip_in_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unzip_zip_in_folder</span></code></a>(folder)</p></td>
+<td><p>Unzip a zip file in the specified folder.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.mv_cp_files" title="unduwave.helpers.file_folder_helpers.mv_cp_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mv_cp_files</span></code></a>(hints, exptns, folder_in, folder_out[, ...])</p></td>
+<td><p>Move or copy files between folders based on specified criteria.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.del_files" title="unduwave.helpers.file_folder_helpers.del_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_files</span></code></a>(hints, exptns, folder)</p></td>
+<td><p>Delete files from a specified folder based on specified criteria.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.helpers.file_folder_helpers.del_all_files" title="unduwave.helpers.file_folder_helpers.del_all_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_all_files</span></code></a>(exptns, folder)</p></td>
+<td><p>Delete all files from a specified folder.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2><span class="section-number">4.1.1.4.1.1.2. </span>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.convert_path_to_win">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">convert_path_to_win</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.convert_path_to_win" title="Link to this definition"></a></dt>
+<dd><p>Takes a path and converts it to win-standard.
+:param str path: The path.
+:return: windows path</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.find_files_exptn">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">find_files_exptn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.find_files_exptn" title="Link to this definition"></a></dt>
+<dd><p>Find files in the specified folder based on hints and exptns.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder (str): The folder in which to search for files.
+hints (list, optional): List of strings to search for in filenames. Default is [].
+exptns (list, optional): List of strings to exclude from filenames. Default is [].</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of filenames matching the criteria.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.find_all_files_exptn">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">find_all_files_exptn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.find_all_files_exptn" title="Link to this definition"></a></dt>
+<dd><p>Find all files in a directory while excluding specified patterns.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder (str): The folder in which to search for files.
+exptns (list, optional): List of strings to exclude from filenames. Default is [].</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of filenames matching the criteria.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.zip_files_in_folder">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">zip_files_in_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_to_pack</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.zip_files_in_folder" title="Link to this definition"></a></dt>
+<dd><p>Zip all files in a specified folder.</p>
+<p>Zips all files in the specified folder, names the zip as the folder name,
+moves the resulting zip to the same directory, and deletes all other files in the directory.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder_to_pack (str): The folder containing files to be zipped.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.unzip_zip_in_folder">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">unzip_zip_in_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.unzip_zip_in_folder" title="Link to this definition"></a></dt>
+<dd><p>Unzip a zip file in the specified folder.</p>
+<p>Looks for a zip file in the specified folder, unzips it there,
+and returns the list of extracted zip files.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder (str): The folder in which to search for and extract zip files.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of extracted zip filenames.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.mv_cp_files">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">mv_cp_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">move</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.mv_cp_files" title="Link to this definition"></a></dt>
+<dd><p>Move or copy files between folders based on specified criteria.</p>
+<p>Moves or copies files whose name contains a string from hints,
+excluding those whose name contains a string from the exptns list,
+from folder_in to folder_out and appends add_string to the name.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>hints (list): List of strings to search for in filenames.
+exptns (list): List of strings to exclude from filenames.
+folder_in (str): The source folder.
+folder_out (str): The destination folder.
+move (bool, optional): Whether to move (True) or copy (False) files. Default is True.
+add_string (str, optional): String to append to the filenames. Default is ‘’.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of names of the moved or copied files (with add_string appended).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.del_files">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">del_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exptns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.del_files" title="Link to this definition"></a></dt>
+<dd><p>Delete files from a specified folder based on specified criteria.</p>
+<p>Deletes files whose name contains a string from hints,
+excluding those whose name contains a string from the exptns list,
+from the specified folder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>hints (list): List of strings to search for in filenames.
+exptns (list): List of strings to exclude from filenames.
+folder (str): The folder from which to delete files.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of names of the deleted files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.helpers.file_folder_helpers.del_all_files">
+<span class="sig-prename descclassname"><span class="pre">unduwave.helpers.file_folder_helpers.</span></span><span class="sig-name descname"><span class="pre">del_all_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exptns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.helpers.file_folder_helpers.del_all_files" title="Link to this definition"></a></dt>
+<dd><p>Delete all files from a specified folder.</p>
+<p>Deletes all files in the specified folder, excluding those whose name
+contains a string from the exptns list.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>exptns (list): List of strings to exclude from filenames.
+folder (str): The folder from which to delete files.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of names of the deleted files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="4.1.1.4. unduwave.helpers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../optimization_module/index.html" class="btn btn-neutral float-right" title="4.1.1.5. unduwave.optimization_module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

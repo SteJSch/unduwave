@@ -22,7 +22,7 @@ def load_b_fields_gap(folder, hints = []) :
 			if gap.find('.dat') >= 0 :
 				gap = gap.split('.dat')[0]
 			gap = float(gap)
-			data = pd.read_csv( folder+file, dtype=object, delim_whitespace=True, header = None )
+			data = pd.read_csv( folder+file, dtype=object,delimiter=r"\s+", header = None )
 			pdb.set_trace()
 			data.columns = [ "x", "By" ]
 			for col in data.columns:
@@ -146,7 +146,7 @@ def convert_x_mm_b_T_file_to_wave_std( folder_in, file_in, out_path ) :
 	Loads a file in folder_in called file_in with two cols: x[mm] and B[T] - no header to separator
 	and converts, depending on b_type, to wave std and copies to out_path (path+filename)
 	"""
-	data = pd.read_csv( folder_in+file_in, dtype=object, header = None, delim_whitespace=True )
+	data = pd.read_csv( folder_in+file_in, dtype=object, header = None,delimiter=r"\s+" )
 	data.columns = [ "x", "B" ]
 	for col in data.columns:
 		data[col] = data[col].astype(float)

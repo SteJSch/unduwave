@@ -1,18 +1,20 @@
+++++++++++++++++
 Quickguide
-=================
+++++++++++++++++
 
-==================================
+WAVE
+================
+
 General Things
-==================================
+-------------------------------
 
 The Coordinate System
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The x coordinate is in longitudinal direction, i.e. along the beam. The y-direction is vertical and z is horizontal. 
 
-=================
 First Run
-=================
+-------------------------------
 
 First you have to tell python where unduwave is located. For this we do:
 
@@ -51,9 +53,8 @@ To run a simple simulation:
 
 | Congratulations, you just ran your first WAVE simulation in 5 lines of code.
 
-==================================
 The Parameter Structures
-==================================
+-------------------------------
 
 | There are a couple of parameter structures that allow to control the program flow. These are _ebeam_parameters, _screen_parameters, _spectrometer_paras, _undu_paras and _wave_prog_parameters. These are accessible vie the wave-object returned by a "unduwave.wave()" call and can be changed via the set-method as seen in the example above.
 
@@ -157,9 +158,8 @@ Different parameters for setting simple undulator models. The first 4 are used i
    =======================  ==================================    ===============
 
 
-==================================
 Undu Modes
-==================================
+-------------------------------
 
 The different modes in which unduwave can be used are described. When creating a wave object via:
 
@@ -170,11 +170,11 @@ The different modes in which unduwave can be used are described. When creating a
    
 | You can specify the mode in which you want to use wave. The mode tells wave basically where you want to get your magnetic field from. The following options are available at the moment: "By", "Byz", "undu_ellip" and "undu_endp". 
 
-| The first two modes mean that you specify the magnetic field via files. The "undu_ellip" mode represents a simple elliptical undulator and "undu_endp" means a simple undulator with endpoles. See the following examples on how to specify the parameters for these use-cases.
+| The first two modes mean that you specify the magnetic field via files. The "undu_ellip" mode represents a simple elliptical undulator and "undu_endp" means a simple undulator with endpoles - in these modes the magnetic field is created analytically according to the set options. See the following examples on how to specify the parameters for these use-cases.
 
-==================================
+
 User-defined B-Fields
-==================================
+-------------------------------
 
 .. code-block:: python
    :linenos:
@@ -214,9 +214,8 @@ To load a By and Bz field,
 
 This specifies two field files, one for the vertical and one for the horizontal components.
 
-==================================
 Elliptical Undulator
-==================================
+-------------------------------
 
 .. code-block:: python
    :linenos:
@@ -237,9 +236,8 @@ Elliptical Undulator
 
 An elliptical undulator is created. The parameters are set - b0y and b0z - the vertical and horizontal B-amplitude. nper - the number of periods, perl_x - the period length and ell_shift the shift of the elliptical undulator in % of the period-length.
    
-==================================
 Simple Undulator with Endpoles
-==================================
+----------------------------------
 
 .. code-block:: python
    :linenos:
@@ -258,12 +256,11 @@ Simple Undulator with Endpoles
    
 A simple undulator model with endpoles is created. We set the B-field amplitude b0Halbasy, the period-length xlHalbasy and the number of main poles. Given the number of periods, the number of poles is 2*n+1. 
 
-==================================
 Plotting and Results
-==================================
+-------------------------------
 
 Getting Results
--------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After a succesful simulation, get the results by doing:
 
@@ -293,11 +290,8 @@ Where string_identifier can be one of:
 
 | fd_y, fd_z, flux_density_distribution_{en} - the y and z coordinates of a given flux-density distribution (they are the same for all energies, so one pair suffices) and the actual flux density distribution - which contains the energy rounded to second decimal place. So, for example, at the energy 460 eV, the name would be: flux_density_distribution_460.00
 
-Plotting Results
--------------------
-
-2D Plots
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Plotting 2D Results
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Each quantities data is saved under quantity._data. Each quantity has a number of plotting routines. To do a simple 2D plot, you can do:
 

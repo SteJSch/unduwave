@@ -1,0 +1,62 @@
+unduwave.api.wave_api_root
+==========================
+
+.. py:module:: unduwave.api.wave_api_root
+
+.. autoapi-nested-parse::
+
+   Wave api definitions
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.api.wave_api_root.wave_api
+
+
+Module Contents
+---------------
+
+.. py:class:: wave_api(wave_mode='undu_endp')
+
+   
+   Wave API-class for controlling basic wave-functionality. 
+   Holds the basic parameter classes.
+
+   :param str wave_mode: can be one of the following
+           'bfield', 'undu_ellip', 'undu_endp' :
+
+
+   .. py:attribute:: _prog_paras
+
+
+   .. py:attribute:: _ebeam_paras
+
+
+   .. py:attribute:: _screen_paras
+
+
+   .. py:attribute:: _spectrometer_paras
+
+
+   .. py:attribute:: _bfield_paras
+
+
+   .. py:attribute:: _undu_paras
+
+
+   .. py:method:: run()
+
+      Runs wave with the given settings, prepares and postprocesses data
+
+
+
+   .. py:method:: get_results()
+
+      Returns the results from a given simulation as result-object.
+
+
+

@@ -1,0 +1,204 @@
+unduwave.undu_modules.undu_parameters
+=====================================
+
+.. py:module:: unduwave.undu_modules.undu_parameters
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_parameters.undu_prog_parameters
+
+
+Module Contents
+---------------
+
+.. py:class:: undu_prog_parameters
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents standard parameters for undumag simulations.
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: undumag_prog_folder
+
+
+   .. py:attribute:: in_file_folder
+
+
+   .. py:attribute:: in_file_nam
+
+
+   .. py:attribute:: in_file_clc
+
+
+   .. py:attribute:: in_file_clc_raw
+
+
+   .. py:attribute:: in_file_clc_lines
+
+
+   .. py:attribute:: copy_clc_folder
+
+
+   .. py:attribute:: undu_mode
+
+
+   .. py:attribute:: res_folder
+
+
+   .. py:attribute:: undu_data_res_folder
+
+
+   .. py:attribute:: pics_folder
+
+
+   .. py:attribute:: res_summary_file
+
+
+   .. py:attribute:: no_copy
+
+
+   .. py:attribute:: undu_ending_extract
+
+
+   .. py:attribute:: undu_ending_copy
+
+
+   .. py:attribute:: undu_files_essentials
+
+
+   .. py:attribute:: zipped
+
+
+   .. py:attribute:: undu_res_copy_behaviour
+
+
+   .. py:attribute:: zip_res_folder
+
+
+   .. py:attribute:: nthreads
+
+
+   .. py:attribute:: writeGeometry
+
+
+   .. py:attribute:: plotGeometry
+
+
+   .. py:attribute:: convergence_iron_residuals
+
+
+   .. py:attribute:: convergence_relative_b
+
+
+   .. py:attribute:: beff_number_x
+
+
+   .. py:attribute:: create_z_sym
+
+
+   .. py:attribute:: create_x_sym
+
+
+   .. py:attribute:: create_y_sym
+
+
+   .. py:attribute:: bmap_dx
+
+
+   .. py:attribute:: bmap_z_min
+
+
+   .. py:attribute:: bmap_z_max
+
+
+   .. py:attribute:: bmap_nz
+
+
+   .. py:attribute:: bmap_x_min
+
+
+   .. py:attribute:: bmap_x_max
+
+
+   .. py:attribute:: bmap_nx
+
+
+   .. py:attribute:: bmap_y_min
+
+
+   .. py:attribute:: bmap_y_max
+
+
+   .. py:attribute:: bmap_ny
+
+
+   .. py:attribute:: calc_force
+
+
+   .. py:attribute:: plot_force
+
+
+   .. py:attribute:: force_box_center_x
+
+
+   .. py:attribute:: force_box_center_y
+
+
+   .. py:attribute:: force_box_center_z
+
+
+   .. py:attribute:: force_box_len_x
+
+
+   .. py:attribute:: force_box_len_y
+
+
+   .. py:attribute:: force_box_len_z
+
+
+   .. py:attribute:: force_segm_x
+
+
+   .. py:attribute:: force_segm_y
+
+
+   .. py:attribute:: force_segm_z
+
+
+   .. py:attribute:: center_magnet_struct
+
+
+   .. py:attribute:: bmap_not_inside_magn
+
+
+   .. py:attribute:: bmap_not_inside_pol
+
+
+   .. py:attribute:: kurad
+
+
+   .. py:attribute:: force_box_segm_y_distro
+
+
+   .. py:attribute:: kpreset
+
+
+   .. py:attribute:: matrix
+
+
+   .. py:attribute:: undu_mode
+
+
+   .. py:method:: get_std_paras(undu_mode='from_clc_file')
+
+                      
+
+
+
