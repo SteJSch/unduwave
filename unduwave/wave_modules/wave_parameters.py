@@ -367,6 +367,21 @@ class wave_prog_parameters(_attribute_collection):
 		self.calc_emittance = _attribute(1,in_name='IFOLD')
 		self.calc_energy_fold = _attribute(1,in_name='IEFOLD')
 		self.emittance_fold_with_sigmas = _attribute(1,in_name='ISIGUSR')
+		self.ipin=_attribute(1,in_name='IPIN') # calculate spectrum in pinhole?
+		self.observationPnts=_attribute(0,in_name='IRFILOB') # to calc spectrum for list of observation pnts
+		self.observationFile=_attribute('')
+		self.powerOutputObsrvtnPnts=_attribute(0,in_name='IWFILPOW')
+		self.cx1=_attribute(9999.,in_name='CX1')
+		self.cy1=_attribute(9999.,in_name='CY1')
+		self.cz1=_attribute(9999.,in_name='CZ1')
+		self.wc1=_attribute(9999.,in_name='WID1')
+		self.hc1=_attribute(9999.,in_name='HIG1')
+		self.cx2=_attribute(9999.,in_name='CX2')
+		self.cy2=_attribute(9999.,in_name='CY2')
+		self.cz2=_attribute(9999.,in_name='CZ2')
+		self.wc2=_attribute(9999.,in_name='WID2')
+		self.hc2=_attribute(9999.,in_name='HIG2')
+
 		self.source_point_calc = _attribute(9999.,in_name='WGWINFC')
 		self.ihisascii = _attribute(111,in_name='IHISASCII')
 		self.ntupgrid = _attribute(0,in_name='NTUPGRID')
@@ -455,7 +470,7 @@ class wave_prog_parameters(_attribute_collection):
 		self.wave_ending_copy.set([ 'in' ])
 		self.wave_files_essentials.set([ 
 				'stokes_dist_emittance_espread', 'trajectory',
-				'irradiated_power_dist', 'brilliance_3702', 
+				'irradiated_power_dist', 'brilliance_3702', 'wave.pow',
 				'photon_flux_(pinhole)_48000','wave_ray.dat', 'bmap.dat', 'btab.fou',
 				'selected_s0_e_(folded)_x_1_e_6_180000', 'wave.out','WAVE.mhb' ])
 		self.nthreads.set(2)

@@ -61,14 +61,15 @@ class wave_prepare():
 		Depending on which b_type, copies and 
 		formats the b-field files needed
 		"""
-		wave_mode = self._wave_api._prog_paras.wave_mode.get()
+		wave_paras=self._wave_api._prog_paras
+		wave_mode = wave_paras.wave_mode.get()
 
-		wave_folder = self._wave_api._prog_paras.wave_prog_folder.get()
+		wave_folder = wave_paras.wave_prog_folder.get()
 		# field_files = self._wave_api._prog_paras.field_files.get()
 		# field_folder = self._wave_api._prog_paras.field_folder.get()
 
 		if wave_mode == 'four' :
-			fourIn=self._wave_api._prog_paras.four_file.get()
+			fourIn=wave_paras.four_file.get()
 			os.system( 'cp ' + fourIn + ' ' + wave_folder + 'stage/btab.fou')
 		elif wave_mode=='bfield' :
 			b_type = self._wave_api._bfield_paras.field_type.get()
@@ -104,4 +105,8 @@ class wave_prepare():
 					file=wave_folder + 'stage/bmap.ntup',
 					unitsXB=None
 					)
-		# pdb.set_trace()	
+		if wave_paras.observationPnts.get() == 1 :
+			obsrvtnFile=wave_paras.observationFile.get()
+			os.system( 'cp ' + obsrvtnFile + ' ' + wave_folder + 'stage/observ.in')
+
+		pdb.set_trace()	
