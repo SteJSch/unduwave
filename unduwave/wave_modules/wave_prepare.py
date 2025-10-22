@@ -109,4 +109,4 @@ class wave_prepare():
 			obsrvtnFile=wave_paras.observationFile.get()
 			os.system( 'cp ' + obsrvtnFile + ' ' + wave_folder + 'stage/observ.in')
 
-		pdb.set_trace()	
+		# pdb.set_trace()	
