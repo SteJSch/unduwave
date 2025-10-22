@@ -39,7 +39,17 @@ class quantity :
 			header=[self._name,x_quant._name,y_quant._name]
 		dfd.to_csv( file , index = False, sep = ' ', header=header )
 
-	def plot_parametric_3d(self,x_quant,y_quant,title=None,file_name=None,nosave=False,nfig=None,plot=True) :
+	def plot_parametric_3d(self,
+				x_quant,
+				y_quant,
+				title=None,
+				file_name=None,
+				nosave=False,
+				nfig=None,
+				plot=True,
+				clear=False,
+				addPicsFolder=True
+				) :
 		"""
 		Basic plot of data, 2d, 3d
 
@@ -52,19 +62,29 @@ class quantity :
 		if nfig is None :
 			fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
 		else :
-			fig = plt.figure(nfig,figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
+			fig = plt.figure(nfig,figsize=(2*13*cm_inch, 2*6.5*cm_inch), dpi=2*150)
+		if clear:
+			plt.clf()
 		ax = fig.add_subplot(projection='3d')
 		ax.plot(x_quant._data,y_quant._data,self._data, '-', label = self._name)
-		ax.set_box_aspect(aspect=None, zoom=0.8)
+		ax.set_box_aspect(aspect=None, zoom=0.7)
 		if title is None :
 			fig.suptitle(self._description, fontsize=14)
 		else :
 			fig.suptitle(title, fontsize=14)
-		plt.xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=12),
-		plt.ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=12),
-		ax.set_zlabel(f'{self._plot_name} {self._unit}', fontsize=12)
-		ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
-		pics_folder='pics/'
+
+		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_zlabel(f'{self._plot_name} {self._unit}', fontsize=8)
+		ax.yaxis.get_offset_text().set_fontsize(6)
+		ax.xaxis.get_offset_text().set_fontsize(6)
+
+		# plt.tight_layout()
+		ax.tick_params(axis='both', which='major', labelsize=4)
+		# ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
+		ax.zaxis.get_offset_text().set_fontsize(6)
+		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
+		# pics_folder='pics/'
 		if file_name is None :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_parametric.png'

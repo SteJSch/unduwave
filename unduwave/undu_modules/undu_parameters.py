@@ -8,65 +8,67 @@ class undu_prog_parameters(_attribute_collection):
 	Represents standard parameters for undumag simulations.
 	"""
 
-	undumag_prog_folder = _attribute('')
-	in_file_folder = _attribute('')
-	in_file_nam = _attribute('')
-	in_file_clc = _attribute('')
-	in_file_clc_raw = _attribute('')
-	in_file_clc_lines = _attribute('')
-	copy_clc_folder = _attribute('')
-	undu_mode = _attribute('')
+	def __init__(self) :
+		self.undumag_prog_folder = _attribute('')
+		self.in_file_folder = _attribute('')
+		self.in_file_nam = _attribute('')
+		self.in_file_clc = _attribute('')
+		self.in_file_clc_raw = _attribute('')
+		self.in_file_clc_lines = _attribute('')
+		self.copy_clc_folder = _attribute('')
+		self.undu_mode = _attribute('')
 
-	res_folder = _attribute('')
-	undu_data_res_folder = _attribute('')
-	pics_folder = _attribute('')
-	res_summary_file = _attribute('')
-	no_copy = _attribute([])
-	undu_ending_extract = _attribute([])
-	undu_ending_copy = _attribute([])
-	undu_files_essentials = _attribute([])
-	zipped = _attribute(False)
-	undu_res_copy_behaviour = _attribute('')
-	zip_res_folder = _attribute(0)
+		self.res_folder = _attribute('')
+		self.undu_data_res_folder = _attribute('')
+		self.pics_folder = _attribute('')
+		self.res_summary_file = _attribute('')
+		self.no_copy = _attribute([])
+		self.undu_ending_extract = _attribute([])
+		self.undu_ending_copy = _attribute([])
+		self.undu_files_essentials = _attribute([])
+		self.zipped = _attribute(False)
+		self.undu_res_copy_behaviour = _attribute('')
+		self.zip_res_folder = _attribute(0)
 
-	nthreads = _attribute(1,in_name='nuthreads') # Number of threads to use
-	writeGeometry = _attribute(1,in_name='iundugeo') # write geometry file, < 0 -> stop after writing
-	plotGeometry = _attribute(1,in_name='iunduplot') # plot geometry, < 0 -> stop after plotting
-	convergence_iron_residuals = _attribute(1,in_name='resiron') # convergence criterion, if iron-residual rms < convergence_iron_reiduals -> stop
-	convergence_relative_b = _attribute(1,in_name='hconv') # convergence criterion, if rel. change of b-field less, stop
-	beff_number_x = _attribute(1,in_name='nxbeff') # number of points at which to calc beff
-	create_z_sym = _attribute(1,in_name='izsym') # mirror at x-y plane
-	create_x_sym = _attribute(1,in_name='ixsym') # mirror at z-y plane
-	create_y_sym = _attribute(1,in_name='iysym') # mirror at x-z plane
-	bmap_dx = _attribute(1,in_name='dxmap') # step size for field map in x
-	bmap_z_min = _attribute(1,in_name='zmapmin')
-	bmap_z_max = _attribute(1,in_name='zmapmax')
-	bmap_nz = _attribute(1,in_name='nzmap')
-	bmap_x_min = _attribute(1,in_name='xmapmin')
-	bmap_x_max = _attribute(1,in_name='xmapmax')
-	bmap_nx = _attribute(1,in_name='nxmap')
-	bmap_y_min = _attribute(1,in_name='ymapmin')
-	bmap_y_max = _attribute(1,in_name='ymapmax')
-	bmap_ny = _attribute(1,in_name='nymap')
-	calc_force = _attribute(1,in_name='iforce')
-	plot_force = _attribute(1,in_name='iplforce')
-	force_box_center_x = _attribute(1,in_name='ubfcenx')
-	force_box_center_y = _attribute(1,in_name='ubfceny')
-	force_box_center_z = _attribute(1,in_name='ubfcenz')
-	force_box_len_x = _attribute(1,in_name='ubflenx')
-	force_box_len_y = _attribute(1,in_name='ubfleny')
-	force_box_len_z = _attribute(1,in_name='ubflenz')
-	force_segm_x = _attribute(1,in_name='mbforcex')
-	force_segm_y = _attribute(1,in_name='mbforcey')
-	force_segm_z = _attribute(1,in_name='mbforcez')
-	center_magnet_struct = _attribute(1,in_name='kxcenter') # center magnetic struct
-	bmap_not_inside_magn = _attribute(1,in_name='knomagmap')
-	bmap_not_inside_pol = _attribute(1,in_name='knopolmap')
-	kurad = _attribute(1,in_name='kurad')
-	force_box_segm_y_distro = _attribute(1,in_name='ndivfboxy')
-	kpreset = _attribute(1,in_name='kpreset')
-	matrix = _attribute(1,in_name='matrix') # setting matrix mode (>1, calc and write interaction matrix,<0 read from file)
-	undu_mode = _attribute('')
+		self.nthreads = _attribute(1,in_name='nuthreads') # Number of threads to use
+		self.writeGeometry = _attribute(1,in_name='iundugeo') # write geometry file, < 0 -> stop after writing
+		self.plotGeometry = _attribute(1,in_name='iunduplot') # plot geometry, < 0 -> stop after plotting
+		self.convergence_iron_residuals = _attribute(1,in_name='resiron') # convergence criterion, if iron-residual rms < convergence_iron_reiduals -> stop
+		self.convergence_relative_b = _attribute(1,in_name='hconv') # convergence criterion, if rel. change of b-field less, stop
+		self.beff_number_x = _attribute(1,in_name='nxbeff') # number of points at which to calc beff
+		self.create_z_sym = _attribute(1,in_name='izsym') # mirror at x-y plane
+		self.create_x_sym = _attribute(1,in_name='ixsym') # mirror at z-y plane
+		self.create_y_sym = _attribute(1,in_name='iysym') # mirror at x-z plane
+		self.bmap_dx = _attribute(1,in_name='dxmap') # step size for field map in x
+		self.bmap_z_min = _attribute(1,in_name='zmapmin')
+		self.bmap_z_max = _attribute(1,in_name='zmapmax')
+		self.bmap_nz = _attribute(1,in_name='nzmap')
+		self.bmap_x_min = _attribute(1,in_name='xmapmin')
+		self.bmap_x_max = _attribute(1,in_name='xmapmax')
+		self.bmap_nx = _attribute(1,in_name='nxmap')
+		self.bmap_y_min = _attribute(1,in_name='ymapmin')
+		self.bmap_y_max = _attribute(1,in_name='ymapmax')
+		self.bmap_ny = _attribute(1,in_name='nymap')
+		self.calc_force = _attribute(1,in_name='iforce')
+		self.plot_force = _attribute(1,in_name='iplforce')
+		self.force_box_center_x = _attribute(1,in_name='ubfcenx')
+		self.force_box_center_y = _attribute(1,in_name='ubfceny')
+		self.force_box_center_z = _attribute(1,in_name='ubfcenz')
+		self.force_box_len_x = _attribute(1,in_name='ubflenx')
+		self.force_box_len_y = _attribute(1,in_name='ubfleny')
+		self.force_box_len_z = _attribute(1,in_name='ubflenz')
+		self.force_segm_x = _attribute(1,in_name='mbforcex')
+		self.force_segm_y = _attribute(1,in_name='mbforcey')
+		self.force_segm_z = _attribute(1,in_name='mbforcez')
+		self.center_magnet_struct = _attribute(1,in_name='kxcenter') # center magnetic struct
+		self.bmap_not_inside_magn = _attribute(1,in_name='knomagmap')
+		self.bmap_not_inside_pol = _attribute(1,in_name='knopolmap')
+		self.kurad = _attribute(1,in_name='kurad')
+		self.force_box_segm_y_distro = _attribute(1,in_name='ndivfboxy')
+		self.kpreset = _attribute(1,in_name='kpreset')
+		self.matrix = _attribute(1,in_name='matrix') # setting matrix mode (>1, calc and write interaction matrix,<0 read from file)
+		self.undu_mode = _attribute('')
+		super().__init__()
 
 	def get_std_paras(self, undu_mode = 'from_clc_file' ): 
 		"""

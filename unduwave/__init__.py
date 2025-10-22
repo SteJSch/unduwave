@@ -10,6 +10,7 @@ from unduwave.api.undu_api_root import undu_api as undu
 from .attribute_classes.attributes import *
 import unduwave.quantities.quantities as quantities
 from .analytical_module.ana_undu import bfield as bfield
+from .analytical_module.ana_undu import undulator as undulator
 from .wave_modules.wave_parameters import *
 from .wave_modules.wave_postprocess import wave_postprocess
 from .wave_modules.wave_prepare import wave_prepare
@@ -25,9 +26,9 @@ from .undu_modules.undu_postprocess import undu_postprocess
 from .undu_modules.undu_prepare import undu_prepare
 from .undu_modules.undu_control import undu_control
 from .undu_modules.undu_results import undu_results
-from .undu_modules.undu_results import undu_results
 
 import unduwave.undu_modules.undu_magnets as undu_magnets
+import unduwave.undu_modules.undu_representation as undu_representation
 from .analytical_module.ana_wave import ana_eb_fields as ana_eb
-from .analytical_module import analytic_structures as anas
+from .analytical_module.ana_undu import undulator as undulator
 

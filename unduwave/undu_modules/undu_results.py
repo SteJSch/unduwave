@@ -160,7 +160,7 @@ class undu_results :
 
 		byInt2_quant = quantity(
 			api=self._undu_api,
-			data=data['x'].to_list(),
+			data=data['int2By'].to_list(),
 			plot_name="2. Integral B$_y$",
 			name='intBy2',
 			description='second integral By',
@@ -169,7 +169,7 @@ class undu_results :
 
 		bzInt2_quant = quantity(
 			api=self._undu_api,
-			data=data['x'].to_list(),
+			data=data['int2Bz'].to_list(),
 			plot_name="2. Integral B$_z$",
 			name='intBz2',
 			description='second integral Bz',

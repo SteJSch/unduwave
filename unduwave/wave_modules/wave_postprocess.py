@@ -24,6 +24,7 @@ class wave_postprocess:
 		#'copy_all', 'copy_none' - only writes res_summary, 'copy_essentials' 
 		wave_folder    = self._wave_api._prog_paras.wave_prog_folder.get()
 		res_folder     = self._wave_api._prog_paras.res_folder.get()
+		os.makedirs(os.path.dirname(res_folder), exist_ok=True)
 		res_wave       = res_folder + self._wave_api._prog_paras.wave_data_res_folder.get()
 		copy_behav     = self._wave_api._prog_paras.wave_res_copy_behaviour.get()
 		zip_res_folder = self._wave_api._prog_paras.zip_res_folder.get()

@@ -25,6 +25,7 @@ v_c = 299792458
 velocity of light [m/s]
 """
 mu0=8.854e-12 
+eps0=8.854e-12 
 """
 Vacuum permittivity [F/m]
 """

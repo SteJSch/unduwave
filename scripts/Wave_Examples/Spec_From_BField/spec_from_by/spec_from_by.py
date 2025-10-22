@@ -1,8 +1,7 @@
-
 import os
 import pdb
 import sys
-# sys.path.insert(0, '../../../../')
+sys.path.insert(0, '../../../../')
 
 try :
 	# works when calling script with python3 script_file
@@ -12,7 +11,6 @@ except:
 	dir_path = os.getcwd()
 
 import unduwave as uw
-import unduwave.bfield.bfield as uwBfield
 
 field_folder = f'/'
 res_folder = dir_path+'/res/'
@@ -58,7 +56,7 @@ bfield.load_field_from_file(
 			header=None,
 			skiprows=None,
 		)
-
+pdb.set_trace()
 # make the field known to wave
 
 bfield_paras = wave._bfield_paras # get bfield paras
@@ -73,6 +71,7 @@ wave_prog_paras = wave._prog_paras
 wave_prog_paras.res_folder.set(res_folder)
 wave_prog_paras.calc_spectrum.set(True)
 wave_prog_paras.nthreads.set(6)
+wave_prog_paras.calc_emittance.set(1)
 
 """
 Setting Spectrometer Parameter

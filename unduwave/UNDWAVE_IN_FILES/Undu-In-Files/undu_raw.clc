@@ -24,6 +24,7 @@ $KsiPerp_Hybrid = 0.0!0.17
 $RECIndex_Hybrid = 1
 $IronIndex_Hybrid = 2
 $ColorMag_Hybrid = $red
+$ColorPol_Hybrid = $blue
 
 $FracDivY_Mag_Hybrid = 2.0
 $FracDivZ_Mag_Hybrid = 2.0

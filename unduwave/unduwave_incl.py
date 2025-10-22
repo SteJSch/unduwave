@@ -15,6 +15,13 @@ def to_scn(number : float,norm: bool=True):
 	else :
 		a, b = '{:.4E}'.format(number).split('E')
 		return '{:.5f}E{:+03d}'.format(float(a)/10, int(b)+1)
+		
+def combine_strings(str_add,str_add_to) : 
+	if str_add_to == '':
+		str_add_to = f'{str_add}'
+	else:
+		str_add_to=str_add_to+f'_{str_add}'	
+	return str_add_to
 
 import os
 import pandas as pd

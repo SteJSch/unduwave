@@ -61,42 +61,47 @@ class wave_prepare():
 		Depending on which b_type, copies and 
 		formats the b-field files needed
 		"""
-		b_type = self._wave_api._bfield_paras.field_type.get()
-		if b_type == 'none' :
-			return
+		wave_mode = self._wave_api._prog_paras.wave_mode.get()
 
 		wave_folder = self._wave_api._prog_paras.wave_prog_folder.get()
-		bfield = self._wave_api._bfield_paras.bfield.get()
-		if bfield is None :
-			return
 		# field_files = self._wave_api._prog_paras.field_files.get()
 		# field_folder = self._wave_api._prog_paras.field_folder.get()
 
-		if b_type == 'By' :
-			unitsConv=None
-			if not ( bfield._unitsXB is None ) :
-				unitsConv = [ bfield._unitsXB[0]/0.001, bfield._unitsXB[1]/1.0 ]
-			bfield.write_field_std(
-				file=wave_folder + 'stage/btab.dat',
-				unitsConv=unitsConv,
-				whatStr='By',
-				)
-		elif b_type == 'Byz' :
-			bfield.write_field_waveByz(
-				filey=wave_folder+'stage/btab.dat',
-				filez=wave_folder+'stage/bz.dat',
-				unitsXB=None
-				)
-		elif b_type == 'Bxyz' :
-			bfield.write_field_waveByz(
-				filex=wave_folder+'stage/bx.dat',
-				filey=wave_folder+'stage/btab.dat',
-				filez=wave_folder+'stage/bz.dat',
-				unitsXB=None
-				)
-		elif b_type == 'bmap' :
-			bfield.write_field_map_wave(
-				file=wave_folder + 'stage/bmap.ntup',
-				unitsXB=None
-				)
-
+		if wave_mode == 'four' :
+			fourIn=self._wave_api._prog_paras.four_file.get()
+			os.system( 'cp ' + fourIn + ' ' + wave_folder + 'stage/btab.fou')
+		elif wave_mode=='bfield' :
+			b_type = self._wave_api._bfield_paras.field_type.get()
+			bfield = self._wave_api._bfield_paras.bfield.get()
+			if b_type == 'none' :
+				return
+			if bfield is None :
+				return
+			if b_type == 'By' :
+				# unitsConv=None
+				# if not ( bfield._unitsXB is None ) :
+				# 	unitsConv = [ bfield._unitsXB[0]/0.001, bfield._unitsXB[1]/1.0 ]
+				bfield.write_field_std(
+					file=wave_folder + 'stage/btab.dat',
+					unitsConv=bfield._unitsXB,
+					whatStr='By',
+					)
+			elif b_type == 'Byz' :
+				bfield.write_field_waveByz(
+					filey=wave_folder+'stage/btab.dat',
+					filez=wave_folder+'stage/bz.dat',
+					unitsXB=None
+					)
+			elif b_type == 'Bxyz' :
+				bfield.write_field_waveByz(
+					filex=wave_folder+'stage/bx.dat',
+					filey=wave_folder+'stage/btab.dat',
+					filez=wave_folder+'stage/bz.dat',
+					unitsXB=None
+					)
+			elif b_type == 'bmap' :
+				bfield.write_field_map_wave(
+					file=wave_folder + 'stage/bmap.ntup',
+					unitsXB=None
+					)
+		# pdb.set_trace()	

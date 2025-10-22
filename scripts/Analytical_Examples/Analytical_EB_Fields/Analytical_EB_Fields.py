@@ -28,7 +28,7 @@ period_length = 0.02 # m
 nperiods = 250
 b0_y = 1
 
-aundu=uw.anas.ana_undulator(
+aundu=uw.anas.undulator(
 	bEff=b0_y,
 	periodLength=period_length,
 	numPeriods=nperiods,
