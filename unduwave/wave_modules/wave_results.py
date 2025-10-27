@@ -590,7 +590,7 @@ class wave_results :
 					name="power_distribution",
 					plot_name='Power Distribution',
 					description='Total Power Distribution',
-					unit='$W/m^2$',
+					unit='$W/mm^2$',
 					)
 				self._res_quantities = self._res_quantities + [z_power_d,y_power_d,power_d] 
 

@@ -202,6 +202,18 @@ class bfield() :
 					for indz, zval in enumerate(np.unique(z_vals)) :
 						o_f.write(f"  {xval*unitConvX}  {yval*unitConvX}  {zval*unitConvX}  {bvals[indx,indy,indz,0]*unitConvB}  {bvals[indx,indy,indz,1]*unitConvB}  {bvals[indx,indy,indz,2]*unitConvB}\n")		
 
+	def fromQuants(self,
+			xQuant,
+			byQuant,
+			bzQuant=None,
+			) :
+		self.xvals=np.array( xQuant._data )
+		nvals=len(self.xvals)
+		self.bvals=np.zeros((nvals,3))
+		self.bvals[:,1]=np.array( byQuant._data )
+		if not (bzQuant is None) :
+			self.bvals[:,2]=np.array( bzQuant._data )
+
 	def load_field_from_file(self,
 			file, 
 			fieldMap=False,
@@ -565,50 +577,56 @@ class bfield() :
 
 		data_x = self.get_xvals(colx=colx)
 		data_y = self.bvals[:,1]
-		in_spline = CubicSpline(data_x , data_y)
-		xs = np.linspace( -1/2*prd_lngth, 1/2*prd_lngth, 1000 )
-		ys = in_spline(xs)
-		# plt.plot(xs,ys, label = 'Original Data Cut')
-		# plt.plot(data_x,data_y, label = 'Original Data-By')
-		b0=quad( in_spline, -1/2*prd_lngth, 1/2*prd_lngth, limit = integr_limit )[0]
-		bs=[]
-		bc=[]
-		for i in range(1,n_max+1) :
+		data_z = self.bvals[:,2]
+		datas=[data_y,data_z]
+		beffs=[]
 
-			xs_sin = np.sin(2*math.pi*xs/prd_lngth*i) #+math.pi/2.0
-			xs_cos = np.cos(2*math.pi*xs/prd_lngth*i) #+math.pi/2.0
-			new_data_s = []
-			new_data_c = []
-			for ind_by, by in enumerate(ys) : 
-				new_val_s = 2/prd_lngth*by*xs_sin[ind_by]
-				new_val_c = 2/prd_lngth*by*xs_cos[ind_by]
-				new_data_s.append(new_val_s)
-				new_data_c.append(new_val_c)
-			# pdb.set_trace()
-			# plt.plot(xs,new_data, label = f'{i}')
+		for dataB in datas :
+			in_spline = CubicSpline(data_x , dataB)
+			xs = np.linspace( -1/2*prd_lngth, 1/2*prd_lngth, 1000 )
+			ys = in_spline(xs)
+			# plt.plot(xs,ys, label = 'Original Data Cut')
+			# plt.plot(data_x,dataB, label = 'Original Data-By')
+			b0=quad( in_spline, -1/2*prd_lngth, 1/2*prd_lngth, limit = integr_limit )[0]
+			bs=[]
+			bc=[]
+			for i in range(1,n_max+1) :
 
-			cspline_sine = CubicSpline(xs , new_data_s)
-			cspline_cos = CubicSpline(xs , new_data_c)
-			int_val_s=quad( cspline_sine, xs[0], xs[-1], limit = integr_limit )[0]
-			int_val_c=quad( cspline_cos, xs[0], xs[-1], limit = integr_limit )[0]
-			bs.append(int_val_s)
-			bc.append(int_val_c)
-		beff = b0**2
-		for ind,tmp in enumerate(bs) :
-			beff = beff + (tmp**2+bc[ind]**2)/(ind+1)**2
-		beff=math.sqrt(beff)
+				xs_sin = np.sin(2*math.pi*xs/prd_lngth*i) #+math.pi/2.0
+				xs_cos = np.cos(2*math.pi*xs/prd_lngth*i) #+math.pi/2.0
+				new_data_s = []
+				new_data_c = []
+				for ind_by, by in enumerate(ys) : 
+					new_val_s = 2/prd_lngth*by*xs_sin[ind_by]
+					new_val_c = 2/prd_lngth*by*xs_cos[ind_by]
+					new_data_s.append(new_val_s)
+					new_data_c.append(new_val_c)
+				# pdb.set_trace()
+				# plt.plot(xs,new_data, label = f'{i}')
+
+				cspline_sine = CubicSpline(xs , new_data_s)
+				cspline_cos = CubicSpline(xs , new_data_c)
+				int_val_s=quad( cspline_sine, xs[0], xs[-1], limit = integr_limit )[0]
+				int_val_c=quad( cspline_cos, xs[0], xs[-1], limit = integr_limit )[0]
+				bs.append(int_val_s)
+				bc.append(int_val_c)
+			beff = b0**2
+			for ind,tmp in enumerate(bs) :
+				beff = beff + (tmp**2+bc[ind]**2)/(ind+1)**2
+			beff=math.sqrt(beff)
+			beffs.append(beff)
 
 		# re-calc fourier data
-		re_data = []
-		eff_field = []
-		for ind_x, x_val in enumerate(xs) : 
-			val = b0
-			for i in range(1,n_max+1) :
-				ampl=math.sqrt(bs[i-1]**2+bc[i-1]**2)
-				phs=math.atan2(bs[i-1],bc[i-1])
-				val = val + ampl*np.cos((i)*2*math.pi/prd_lngth*x_val+phs)
-			re_data.append(val)
-			eff_field.append( beff*np.sin(2*math.pi/prd_lngth*x_val+phs) )
+		# re_data = []
+		# eff_field = []
+		# for ind_x, x_val in enumerate(xs) : 
+		# 	val = b0
+		# 	for i in range(1,n_max+1) :
+		# 		ampl=math.sqrt(bs[i-1]**2+bc[i-1]**2)
+		# 		phs=math.atan2(bs[i-1],bc[i-1])
+		# 		val = val + ampl*np.cos((i)*2*math.pi/prd_lngth*x_val+phs)
+		# 	re_data.append(val)
+		# 	eff_field.append( beff*np.sin(2*math.pi/prd_lngth*x_val+phs) )
 		# plt.plot(xs,re_data, label = f'Reconstructed from Fourier')
 		# plt.plot(xs,eff_field, label = f'Effective Field')
 
@@ -620,8 +638,8 @@ class bfield() :
 		# plt.ion()
 		# if coly == 'Bz' :
 		# 	pdb.set_trace()
-
-		return beff
+		beffFull=math.sqrt(beffs[0]**2+beffs[1]**2)
+		return beffFull, beffs
 
 	def getFieldIntegrals(self, colx = 'x') : 
 

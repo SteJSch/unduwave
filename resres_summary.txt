@@ -1,0 +1,13 @@
+Beff : 0.367778659
+Keff : 1.09921682
+firstHarm : 548.779602
+ByInt1 : -0.4685269
+ByInt2 : -58.4242897
+BzInt1 : 0.0
+BzInt2 : 0.0
+ByMin : -0.280788422
+ByMax : 0.248520866
+ByEff : 0.367778659
+BzMin : 0.0
+BzMax : 0.0
+BzEff : 0.0

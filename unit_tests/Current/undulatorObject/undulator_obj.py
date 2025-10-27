@@ -32,6 +32,7 @@ class undulatorObject(unittest.TestCase) :
 		undu_prog_paras.create_y_sym.set(0)
 		undu_prog_paras.bmap_nz.set(10)
 		undu_prog_paras.bmap_nx.set(10)
+		undu_prog_paras.nthreads.set(15)
 		undu_prog_paras.center_magnet_struct.set(0)
 
 		undu_center = undu_magnets.point_coords(x=0.0,y=0.0,z=0.0)
@@ -77,15 +78,17 @@ class undulatorObject(unittest.TestCase) :
 			len_y_main=15, 
 			len_z_main=35, 
 			segm_x=2,
-			segm_y=2,
+			segm_y=3,
 			segm_z=3,
+			frac_y=2,
+			frac_z=3,
 			material="pol", #"mag","pol", 'NiCuFoil'
 		)
 		polParas._len_y_side=6
 		polParas._len_z_side=5
 
 		magnetCenter=undu_magnets.point_coords()
-		magnetCenter._z=polParas._len_z_main/2.0-magnParas._len_z_main/2.0
+		# magnetCenter._z=polParas._len_z_main/2.0-magnParas._len_z_main/2.0
 		myMagnet=undu_representation.magnetRepresentation(
 			center=magnetCenter,
 			magnParas=magnParas,
@@ -101,29 +104,49 @@ class undulatorObject(unittest.TestCase) :
 			magnFun=myMagnFunComplex
 			)
 
+		undulatorMagMag=undu_representation.unduRepresentation(
+			gap = 5.0, 
+			shift=10,
+			glueSlit = 1.0, 
+			keeperSlit=2.0, 
+			rowSlit=1.0, 
+			nperiods = 3,
+			unduType='ellipt', # "planar", 'ellipt' 
+			magnetsPerKeeper=[myMagnet,myMagnet],
+			endMagnets=[myMagnet],
+			)
 		undulatorMagPol=undu_representation.unduRepresentation(
 			gap = 5.0, 
 			shift=0.0,
 			glueSlit = 1.0, 
 			keeperSlit=2.0, 
 			rowSlit=1.0, 
-			nperiods = 3,
+			nperiods = 5,
 			unduType='planar', # "planar", 'ellipt' 
 			magnetsPerKeeper=[myMagnet,myPol],
 			endMagnets=[myMagnet,myPol],
 			)
-		undulatorRepresentation=undulatorMagPol
+		undulatorRepresentation=undulatorMagMag# undulatorMagMag, undulatorMagPol
 		undulator=undulatorRepresentation.createUndulator(
 			center=undu_magnets.point_coords(), 
 			magnetizations=[1.22,1.33],
 			magnSeq=['-x','-y','+x','+y'], 
 			nameCore='',
-			onlyLL=True,
+			onlyLL=False,
 			)
 		undulator.add_to_clc(api=undu)
 
 		unduObj=uw.undulator.undulatorObj()
-		unduObj.fromRepres(undulatorRepres=undulator)
+		unduObj.fromRepres(
+			undulatorRepres=undulator,
+			periodLength=None,
+			nPeriods=None,
+			unduAPI=None,
+			setSym=True,
+			simulate=True,
+			beffs=None,
+			resFolder=res_folder_full,
+			) 
 
 		pdb.set_trace()
 

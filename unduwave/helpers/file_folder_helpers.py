@@ -154,7 +154,7 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 	"""
 	files_load = find_files_exptn(folder=folder_in, hints=hints, exptns=exptns)
 	mvd_names = []
-	for file_load in files_load:
+	for indf, file_load in enumerate(files_load):
 		file_splt = file_load.split('.')
 		if len(file_splt) > 1:
 			end_f = '.' + file_splt[-1]

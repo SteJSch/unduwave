@@ -2,6 +2,7 @@
 Defining Undulator
 """
 
+import unduwave as unduwave
 from unduwave.unduwave_incl import *
 from unduwave.attribute_classes.attributes import _attribute
 from unduwave.attribute_classes.attributes import _attribute_collection
@@ -30,24 +31,67 @@ class undulatorObj(_attribute_collection) :
 		"""
 		pass
 
-	def fromRepres(self,undulatorRepres) :
+	def fromRepres(self,
+			undulatorRepres,
+			periodLength=None,
+			nPeriods=None,
+			unduAPI=None,
+			setSym=True,
+			simulate=True,
+			beffs=None,
+			resFolder=None,
+			) :
 		"""
 		tries to get data from the clc-representation for undumag?
 		"""
-		periodLength=undulatorRepres.get_period_length()
+		self._undulatorGeoMatRepres=undulatorRepres
+		if periodLength is None :
+			periodLength=self._undulatorGeoMatRepres.get_period_length()
+		center, maxs, mins=self._undulatorGeoMatRepres.get_max_extent(maxs=None,mins=None)
+		lenX=maxs[0]-mins[0]
+		if nPeriods is None :
+			nPeriods=int(lenX/periodLength)
+
+		if (beffs is None) and simulate :
+
+			if unduAPI is None :
+				unduAPI = unduwave.undu(undu_mode='from_undu_magns')
+			if resFolder is None :
+				print("ERROR: fromRepres: In order to simulate, you have to set a result folder")
+				return
+			self.setUndumag(unduAPI=unduAPI,setSym=setSym)
+			undu_prog_paras = unduAPI._prog_paras
+			undu_prog_paras.res_folder.set(resFolder)
+			undu_prog_paras.plotGeometry.set(1)
+			self._undulatorGeoMatRepres.add_to_clc(api=unduAPI)
+			# unduAPI.run()
+			results = unduAPI.get_results()
+			trajx = results.get_result(which='trajx')
+			by = results.get_result(which='by')
+			bz = results.get_result(which='bz')
+			bfield=unduwave.bfield.bfield(
+				unitsXB=[0.001,1.0] # setting the units
+				)
+			bfield.fromQuants(
+				xQuant=trajx,
+				byQuant=by,
+				bzQuant=bz,
+				)
+			bfield.plot_fld()
+			beffFull, beffs = bfield.calc_beff(prd_lngth=periodLength, n_max = 10,colx = 'x')
+			pdb.set_trace()
+
 		self._undulatorCharacter=undulatorCharacterization(
-			bEffY=0.0,
+			bEffY=beffs[0],
 			periodLength=periodLength,
-			numPeriods=0.0,
-			bEffZ=0.0,
+			numPeriods=nPeriods,
+			bEffZ=beffs[1],
 			lengthEndPeriodsRelative=0.0,
 			ebeam=None,
 			thetaObservation=0.0,
 			unduKY=0.0,
 			unduKZ=0.0
 			)
-		print(f"period: {period}")
-		pdb.set_trace()
 
 	def fromCharacter(self,undulatorRepres) :
 		"""
@@ -77,11 +121,33 @@ class undulatorObj(_attribute_collection) :
 		"""
 		pass
 
-	def setUndumag(self,undu) :
+	def setUndumag(self,unduAPI,setSym=True) :
 		"""
 		sets undumag paras, bfield range, symmetries?
+		since we want to simulate with undumag, we need the undulatorRepres
 		"""
-		pass
+		if self._undulatorGeoMatRepres is None :
+			print("No undulator representation set")
+			return
+		periodLength=self._undulatorGeoMatRepres.get_period_length()
+		center, maxs, mins=self._undulatorGeoMatRepres.get_max_extent(maxs=None,mins=None)
+		lenX=maxs[0]-mins[0]
+		undu_prog_paras = unduAPI._prog_paras
+		undu_prog_paras.bmap_x_min.set(mins[0]-5*periodLength)
+		undu_prog_paras.bmap_x_max.set(maxs[0]+5*periodLength)
+		if setSym :
+			if mins[1] <= 0 :
+				if maxs[1] <= 0 :
+					undu_prog_paras.create_y_sym.set(1)
+			elif mins[1] >= 0 :
+				if maxs[1] >= 0 :
+					undu_prog_paras.create_y_sym.set(1)
+			if mins[2] <= 0 :
+				if maxs[2] <= 0 :
+					undu_prog_paras.create_z_sym.set(1)
+			elif mins[2] >= 0 :
+				if maxs[2] >= 0 :
+					undu_prog_paras.create_z_sym.set(1)
 
 	def setWAVE(self,wave) :
 		"""

@@ -311,6 +311,7 @@ class unduRepresentation() :
 				self._nperiods*self.getPeriodLength()/2.0-\
 				self._keeperSlit-endMagnLengthL-self._glueSlit
 		reversedEndMagn=list(reversed(self._endMagnets))
+		reversedEndMagn=self._endMagnets
 		endMagR1=reversedEndMagn[0%len(self._endMagnets)]
 		endMagR2=reversedEndMagn[1%len(self._endMagnets)]
 		endMagnLengthR=endMagR1._magnParas._len_x_main+\
@@ -412,7 +413,7 @@ class unduRepresentation() :
 			z=-rowSlit/2.0
 			)
 		llRow.move_it(vec=v_move_ll)
-		if onlyLL :
+		if onlyLL or (self._unduType=='planar') :
 			blocks = [llRow]
 			return undu_magnets.undu_magnets(magnet_blocks=blocks)
 

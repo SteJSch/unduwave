@@ -25,6 +25,8 @@ class undu_postprocess:
 		undu_folder    = self._undu_api._prog_paras.undumag_prog_folder.get()
 		res_folder     = self._undu_api._prog_paras.res_folder.get()
 		res_undu       = res_folder + self._undu_api._prog_paras.undu_data_res_folder.get()
+		os.makedirs(os.path.dirname(res_folder), exist_ok=True)
+		os.makedirs(os.path.dirname(res_undu), exist_ok=True)
 		copy_behav     = self._undu_api._prog_paras.undu_res_copy_behaviour.get()
 		zip_res_folder = self._undu_api._prog_paras.zip_res_folder.get()
 		files_dont_del = []

@@ -200,15 +200,34 @@ class quantity :
 		y_data.sort()
 		z_data=copy.deepcopy(np.unique(y_quant._data))
 		z_data.sort()
-		if not (len(z_data)*len(y_data) == len(x_quant._data)) :
-			y_quant0 = y_quant._data[0]
-			ind=1
-			while y_quant._data[ind] == y_quant0 :
-				ind=ind+1
-			z_data=y_quant._data[0:ind]
-			y_data=x_quant._data[::len(z_data)]
+		# if not (len(z_data)*len(y_data) == len(x_quant._data)) :
+		# 	y_quant0 = y_quant._data[0]
+		# 	ind=1
+		# 	while y_quant._data[ind] == y_quant0 :
+		# 		ind=ind+1
+		# 	z_data=y_quant._data[0:ind]
+		# 	y_data=x_quant._data[::len(z_data)]
 		fun_data=copy.deepcopy(np.array(self._data))
-		Y_data,Z_data = np.meshgrid(y_data,z_data)
+		Y_data,Z_data = np.meshgrid(y_data,z_data,indexing='ij')
+
+		"""
+		Creating data obj
+		"""
+		Funs = np.zeros( (len(y_data), len(z_data)) )
+		for ind, val in enumerate(self._data) :
+			y_val = x_quant._data[ind]
+			z_val = y_quant._data[ind]
+			ind_g = 0
+			ind_s = 0
+			for ind_gt, gap_f in enumerate(y_data):
+				if gap_f == y_val :
+					ind_g = ind_gt
+					break
+			for ind_st, shift_f in enumerate(z_data):
+				if shift_f == z_val :
+					ind_s = ind_st
+					break
+			Funs[ind_g,ind_s] = val
 
 		"""
 		Creating interpolated data
@@ -217,7 +236,6 @@ class quantity :
 		Y_data_intr = np.zeros( (len(y_data), len(z_data)) )
 		Z_data_intr = np.zeros( (len(y_data), len(z_data)) )
 		Fun_data_intr = np.zeros( (len(y_data), len(z_data)) )
-
 		for ind, val in enumerate(fun_data.tolist()) :
 			y_val = x_quant._data[ind]
 			z_val = y_quant._data[ind]
@@ -242,10 +260,10 @@ class quantity :
 		znew = np.linspace(min(z_data), max(z_data), lenz*4)
 
 		Funs_intrpltd = interpol_f(ynew,znew)
-		Funs_intrpltd=Funs_intrpltd.T
-		Funs_intrpltd=Funs_intrpltd.reshape(len(znew),len(ynew))
+		# Funs_intrpltd=Funs_intrpltd.T
+		# Funs_intrpltd=Funs_intrpltd.reshape(len(znew),len(ynew))
 
-		Y_data_intrpltd,Z_data_intrpltd = np.meshgrid(ynew, znew)
+		Y_data_intrpltd,Z_data_intrpltd = np.meshgrid(ynew, znew,indexing='ij')
 
 		"""
 		Plotting Original 3D and Heat
@@ -263,14 +281,13 @@ class quantity :
 		else :
 			fig.suptitle(title, fontsize=12, y=yTitlePos)
 		ax = fig.add_subplot(111, projection='3d')
-		try:
-			Funs=fun_data.reshape(len(z_data),len(y_data))
-		except:
-			pdb.set_trace()
-		ax.plot_trisurf(Z_data.flatten(), Y_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
-		# ax.plot_trisurf(Y_data.flatten(), Z_data.flatten(), Funs.flatten(), cmap=cm.jet, linewidth=0.2)
-		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		# try:
+		# 	Funs=fun_data.reshape(len(y_data),len(z_data ))
+		# except:
+		# 	pdb.set_trace()
+		ax.plot_trisurf(x_quant._data, y_quant._data, fun_data, cmap=cm.jet, linewidth=0.2)
+		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.set_zlabel(zLabelAdd+f'{self._plot_name} [{self._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		ax.set_box_aspect(aspect=None, zoom=0.7)
@@ -307,11 +324,12 @@ class quantity :
 		ax = plt.gca()
 
 		plt.tight_layout()
+
 		cmap = plt.colormaps["plasma"]
 		cmap = cmap.with_extremes(bad=cmap(0))
 
 		# pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
-		pcm = ax.pcolormesh(Z_data,Y_data,Funs, cmap=cmap)
+		pcm = ax.pcolormesh(Y_data,Z_data,Funs, cmap=cmap)
 		cb=fig.colorbar(pcm, ax=ax, label=f'{self._plot_name}\n [{self._unit}]')                    
 
 		axCb = cb.ax
@@ -321,8 +339,8 @@ class quantity :
 		font = matplotlib.font_manager.FontProperties(size=8)
 		text.set_font_properties(font)
 
-		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		file_name_h = file_name.split('.png')[0]+'_heat.png'
 		if not nosave :
@@ -385,7 +403,7 @@ class quantity :
 		plt.tight_layout()
 		cmap = plt.colormaps["plasma"]
 		cmap = cmap.with_extremes(bad=cmap(0))
-		pcm = ax.pcolormesh(Z_data_intrpltd,Y_data_intrpltd,Funs_intrpltd, cmap=cmap)
+		pcm = ax.pcolormesh(Y_data_intrpltd,Z_data_intrpltd,Funs_intrpltd, cmap=cmap)
 		# pcm = ax.pcolormesh(Y_data_intrpltd,Z_data_intrpltd,Funs_intrpltd, cmap=cmap)
 		cb=fig.colorbar(pcm, ax=ax, label=f'{self._plot_name}\n [{self._unit}]', pad=0)                    
 		axCb = cb.ax
@@ -395,8 +413,8 @@ class quantity :
 		font = matplotlib.font_manager.FontProperties(size=8)
 		text.set_font_properties(font)
 
-		ax.set_ylabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
-		ax.set_xlabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
+		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		file_name_heat_intr = file_name.split('.png')[0]+'_heat_interpolated.png'
 		if not nosave :
@@ -406,7 +424,6 @@ class quantity :
 		else:
 			dataFile=dataFile+'_heat_interpolated.dat'
 		pd.DataFrame({'x':Y_data_intrpltd.flatten(),'y':Z_data_intrpltd.flatten(),'z':Funs_intrpltd.flatten()}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
-
 		if plot :
 			plt.draw()
 			plt.ion()

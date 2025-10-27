@@ -182,7 +182,7 @@ class undulatorTests(unittest.TestCase) :
 		# 	return undu_magnets.undu_magnets(magnet_blocks=[main_block])
 
 		magnetCenter=undu_magnets.point_coords()
-		magnetCenter._z=polParas._len_z_main/2.0-magnParas._len_z_main/2.0
+		# magnetCenter._z=polParas._len_z_main/2.0-magnParas._len_z_main/2.0
 		myMagnet=undu_representation.magnetRepresentation(
 			center=magnetCenter,
 			magnParas=magnParas,
@@ -221,7 +221,7 @@ class undulatorTests(unittest.TestCase) :
 			magnetsPerKeeper=[myMagnet,myMagnet],
 			endMagnets=[myMagnet],
 			)
-		undulatorRepresentation=undulatorMagPol
+		undulatorRepresentation=undulatorMagMag # undulatorMagMag, undulatorMagPol
 
 		# keeperCenter=undu_magnets.point_coords(x=0.0,y=-magnParas._len_y_main/2.0,z=-magnParas._len_z_main/2.0)
 		# keeper=undulatorMagPol.createKeeper(
@@ -266,7 +266,7 @@ class undulatorTests(unittest.TestCase) :
 			magnetizations=[1.22,1.33],
 			magnSeq=['-x','-y','+x','+y'], 
 			nameCore='',
-			onlyLL=True,
+			onlyLL=False,
 			)
 		undulator.add_to_clc(api=undu)
 

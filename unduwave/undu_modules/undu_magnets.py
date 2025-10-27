@@ -239,6 +239,7 @@ class undu_magnets :
 		period=-1
 		if fnd :
 			period=posMagn[indEnd]['magn']._p_center._x-posMagn[indStrt]['magn']._p_center._x
+		pdb.set_trace()
 		return period
 
 class undu_magnet_block_coords :
