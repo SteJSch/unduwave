@@ -24,7 +24,7 @@ class undu_api :
 		self._prog_paras = undu_prog_parameters()
 		self._prog_paras.get_std_paras(undu_mode=undu_mode)
 
-	def run(self) :
+	def run(self,add='') :
 		"""
 		Runs undumag with the given settings, prepares and postprocesses data.
 		"""
@@ -36,7 +36,7 @@ class undu_api :
 		undu_instance = undu_control(undu_api=self,current_folder=script_folder)
 		undu_instance.run() # run the simulation
 		post= undu_postprocess(undu_api=self) # create class for postprocessing
-		post.copy_results()
+		post.copy_results(add=add)
 		post.cleanup()
 
 	def load_clc_raw(self) :

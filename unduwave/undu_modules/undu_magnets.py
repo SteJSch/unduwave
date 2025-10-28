@@ -9,9 +9,9 @@ from unduwave.quantities.quantities import *
 
 class magnetParameters : 
 	def __init__( self,
-				len_x_main, 
-				len_y_main, 
-				len_z_main, 
+				len_x_main=None, 
+				len_y_main=None, 
+				len_z_main=None, 
 				magnetization=1.0,
 				magn_unit_vec='+x',
 				segm_x=1,
@@ -208,13 +208,20 @@ class undu_magnets :
 			center_res._z = 0.5*(center_res._z+center._z)
 		return center_res
 
-	def get_period_length(self) : 
+	def get_period_length(self,name_hints=['ll']) : 
 		"""
 		n_magn / n_magn_per_per = n_per
 		"""
 		names=self.find_all_names()
 		posMagn=[]
 		for name in names :
+			take=True
+			for hint in name_hints :
+				if not (name.find(hint) >= 0) :
+					take=False
+					break
+			if not take:
+				continue
 			magn=self.find_magn_name(names=[name])[-1]
 			posMagn.append({'magn':magn,'pos': magn._p_center._x })
 		posMagn=pd.DataFrame(posMagn).sort_values(by=['pos']).to_dict('records')
@@ -239,7 +246,6 @@ class undu_magnets :
 		period=-1
 		if fnd :
 			period=posMagn[indEnd]['magn']._p_center._x-posMagn[indStrt]['magn']._p_center._x
-		pdb.set_trace()
 		return period
 
 class undu_magnet_block_coords :

@@ -374,6 +374,7 @@ class undulatorTests(unittest.TestCase) :
 					skiprows=None,
 				)
 		beff=unduBfield.calc_beff(prd_lngth=undulatorMagMag.getPeriodLength())
+		
 		anaUndu=uw.undulator.undulator(
 			bEffY=beff,
 			periodLength=undulatorMagMag.getPeriodLength()*0.001,

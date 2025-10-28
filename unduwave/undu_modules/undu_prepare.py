@@ -30,6 +30,8 @@ class undu_prepare():
 			clc_lines=undu_paras.in_file_clc_lines.get()
 			with open( undu_folder + 'stage/undumag.clc', 'w') as o_f:
 				for ind, line in enumerate(clc_lines) :
+					if line.find('$PerLen = ')>=0 :
+						line=f'$PerLen = {undu_paras.periodLength.get()*1e3:.4f}'
 					o_f.write(line)
 
 	def create_fresh_nam( self ) :

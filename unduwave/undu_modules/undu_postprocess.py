@@ -16,7 +16,7 @@ class undu_postprocess:
 		"""
 		self._undu_api = undu_api
 
-	def copy_results(self):
+	def copy_results(self,add=''):
 		"""
 		Cleans the undumag-stage folder and copies the desired files to their location,
 		deletes non-desired files, and zips the results based on the undu_res_copy_behaviour setting.
@@ -51,9 +51,9 @@ class undu_postprocess:
 		if not os.path.exists(res_undu):
 			os.makedirs(res_undu)
 		files_moved = f_h.mv_cp_files(hints = undu_res_extract, exptns = undu_files_no_copy\
-				, folder_in = undu_folder + 'stage/', folder_out = res_undu, move = True, add_string = '')
+				, folder_in = undu_folder + 'stage/', folder_out = res_undu, move = True, add_string = add)
 		files_copied = f_h.mv_cp_files(hints = undu_res_copy, exptns = undu_files_no_copy\
-				, folder_in = undu_folder + 'stage/', folder_out = res_undu, move = False, add_string = '')
+				, folder_in = undu_folder + 'stage/', folder_out = res_undu, move = False, add_string = add)
 		f_h.del_files(hints = files_del, exptns = files_dont_del, folder = undu_folder + 'stage/')
 		# if zip_res_folder : 
 		#     f_h.zip_files_in_folder(folder_to_pack = res_undu)
