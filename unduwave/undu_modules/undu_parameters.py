@@ -3,6 +3,33 @@ from unduwave.attribute_classes.attributes import _attribute
 from unduwave.attribute_classes.attributes import _attribute_collection
 import unduwave.helpers.file_folder_helpers as f_h
 
+def load_old_para(folder=None,file='para.txt') : 
+	para={}
+	with open(folder+file) as para_file:
+		line_num = 0
+		for line in para_file :
+			if line_num == 0 : 
+				line_num = line_num + 1
+				continue
+			newline = line.rstrip("\n").split("\t")
+			name = newline[0]				
+			val = newline[1]
+			try:
+				para.update({name : int(val)})
+			except:
+				try : 
+					para.update({name : float(val)})
+				except : 
+					a = str(val)
+					if a == 'False' : 
+						val = False
+					elif a == 'True' : 
+						val = True
+					elif a == 'None' :
+						val = None
+					para.update({name : val})
+	return para
+
 class undu_prog_parameters(_attribute_collection):
 	"""
 	Represents standard parameters for undumag simulations.
@@ -30,6 +57,7 @@ class undu_prog_parameters(_attribute_collection):
 		self.undu_res_copy_behaviour = _attribute('')
 		self.zip_res_folder = _attribute(0)
 
+		self.periodLength =_attribute(0)
 		self.nthreads = _attribute(1,in_name='nuthreads') # Number of threads to use
 		self.writeGeometry = _attribute(1,in_name='iundugeo') # write geometry file, < 0 -> stop after writing
 		self.plotGeometry = _attribute(1,in_name='iunduplot') # plot geometry, < 0 -> stop after plotting
@@ -125,6 +153,7 @@ class undu_prog_parameters(_attribute_collection):
 		self.copy_clc_folder.set('')
 
 		self.nthreads.set(6)
+		self.periodLength.set(0.02)
 		self.writeGeometry.set(0)
 		self.plotGeometry.set(0)
 		self.convergence_iron_residuals.set(1.0e-4)

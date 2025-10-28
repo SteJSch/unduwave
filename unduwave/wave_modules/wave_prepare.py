@@ -117,6 +117,9 @@ class wave_prepare():
 					)
 		if wave_paras.observationPnts.get() == 1 :
 			obsrvtnFile=wave_paras.observationFile.get()
-			os.system( 'cp ' + obsrvtnFile + ' ' + wave_folder + 'stage/observ.in')
+			shutil.copyfile(
+				f_h.convert_path_to_win(obsrvtnFile), 
+				f_h.convert_path_to_win(wave_folder + 'stage/observ.in')
+				)
 
 		# pdb.set_trace()	

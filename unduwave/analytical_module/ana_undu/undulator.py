@@ -18,12 +18,16 @@ def getUnduObjFromBField(bfield) :
 
 class undulatorObj(_attribute_collection) :
 
-	def __init__(self):
+	def __init__(self,ebeam=None):
 		self._undulatorGeoMatParas=None
 		self._undulatorCharacter=None
 		self._undulatorGeoMatRepres=None
+		self._ebeam=ebeam
 		self._anaCharacter=undulatorCharacterization()
 		self._numCharacter=undulatorCharacterization()
+
+	def setEbeam(self,ebeam) :
+		self._ebeam=ebeam
 
 	def fromBField(self,bfield) :
 		"""
@@ -77,17 +81,16 @@ class undulatorObj(_attribute_collection) :
 				byQuant=by,
 				bzQuant=bz,
 				)
-			bfield.plot_fld()
-			beffFull, beffs = bfield.calc_beff(prd_lngth=periodLength, n_max = 10,colx = 'x')
-			pdb.set_trace()
+			# bfield.plot_fld()
+			beffFull, beffs = bfield.calc_beff(prd_lngth=periodLength, n_max = 20,colx = 'x')
 
 		self._undulatorCharacter=undulatorCharacterization(
 			bEffY=beffs[0],
-			periodLength=periodLength,
+			periodLength=periodLength*1e-3,
 			numPeriods=nPeriods,
 			bEffZ=beffs[1],
 			lengthEndPeriodsRelative=0.0,
-			ebeam=None,
+			ebeam=self._ebeam,
 			thetaObservation=0.0,
 			unduKY=0.0,
 			unduKZ=0.0
@@ -133,6 +136,7 @@ class undulatorObj(_attribute_collection) :
 		center, maxs, mins=self._undulatorGeoMatRepres.get_max_extent(maxs=None,mins=None)
 		lenX=maxs[0]-mins[0]
 		undu_prog_paras = unduAPI._prog_paras
+		undu_prog_paras.periodLength.set(periodLength*1e-3)
 		undu_prog_paras.bmap_x_min.set(mins[0]-5*periodLength)
 		undu_prog_paras.bmap_x_max.set(maxs[0]+5*periodLength)
 		if setSym :

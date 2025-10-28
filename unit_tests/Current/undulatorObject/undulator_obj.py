@@ -24,6 +24,9 @@ class undulatorObject(unittest.TestCase) :
 		res_folder='res'
 		res_folder_full=dir_path+f'/{res_folder}/'
 
+		ebeam = uw.ebeam_parameters()
+		ebeam.get_std_bessy_II_paras()
+
 		undu = uw.undu(undu_mode='from_undu_magns')
 		undu_prog_paras = undu._prog_paras
 		undu_prog_paras.res_folder.set(res_folder_full)
@@ -136,7 +139,9 @@ class undulatorObject(unittest.TestCase) :
 			)
 		undulator.add_to_clc(api=undu)
 
-		unduObj=uw.undulator.undulatorObj()
+		unduObj=uw.undulator.undulatorObj(
+			ebeam=ebeam
+			)
 		unduObj.fromRepres(
 			undulatorRepres=undulator,
 			periodLength=None,
