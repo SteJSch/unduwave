@@ -16,6 +16,15 @@ class undu_prepare():
 			self._undu_api._prog_paras 
 			]
 
+		curr_main_folder= self._undu_api._prog_paras.undumag_curr_folder.get()
+
+		src_dir = self._undu_api._prog_paras.undumag_prog_folder()/'bin'
+		undu_exe_dir = curr_main_folder / 'bin'
+		shutil.copytree(src_dir, undu_exe_dir, dirs_exist_ok=True)
+		src_dir = self._undu_api._prog_paras.undumag_stage_folder()
+		undu_stage_dir = curr_main_folder / 'stage'
+		shutil.copytree(src_dir, undu_stage_dir, dirs_exist_ok=True)			
+
 	def update_materials_section_in_clc(self,clc_lines) :
 		undu_paras = self._undu_api._prog_paras
 		n_clc_lines=[]
@@ -44,17 +53,17 @@ class undu_prepare():
 		Writes/Wrote the clc file from some parameter list - but this is deprecated for now
 		"""
 		undu_paras = self._undu_api._prog_paras
-		undu_folder= undu_paras.undumag_prog_folder.get()
+		undu_folder= undu_paras.undumag_curr_folder.get()
 		if undu_paras.undu_mode.get() == 'from_clc_file' : 
 			if len(undu_paras.copy_clc_folder.get()) > 0 : 
-				clcFile=undu_paras.copy_clc_folder.get()+undu_paras.in_file_clc.get()
-				os.system( 'cp ' + clcFile + ' ' + undu_folder + 'stage/undumag.clc' )
+				clcFile=undu_paras.copy_clc_folder.get()/undu_paras.in_file_clc.get()
+				shutil.copy2(clcFile, undu_folder / 'stage/undumag.clc')
 		elif undu_paras.undu_mode.get() == 'from_undu_magns' :
 			clc_lines=undu_paras.in_file_clc_lines.get()
 			clc_lines=self.update_materials_section_in_clc(clc_lines=clc_lines)
 			undu_paras.in_file_clc_lines.set(clc_lines)
 
-			with open( undu_folder + 'stage/undumag.clc', 'w') as o_f:
+			with open( undu_folder / 'stage/undumag.clc', 'w') as o_f:
 				for ind, line in enumerate(clc_lines) :
 					if line.find('$PerLen = ')>=0 :
 						line=f'$PerLen = {undu_paras.periodLength.get()*1e3:.4f}'
@@ -72,12 +81,12 @@ class undu_prepare():
 		"""
 		undu_paras = self._undu_api._prog_paras
 
-		undu_folder   = self._undu_api._prog_paras.undumag_prog_folder.get()
+		undu_folder   = self._undu_api._prog_paras.undumag_curr_folder.get()
 		inp_folder    = self._undu_api._prog_paras.in_file_folder.get()
 		configFile_in = self._undu_api._prog_paras.in_file_nam.get()
 		# open the configuration file
 		undu_in_file = []
-		with open(inp_folder+configFile_in, 'r') as o_f:
+		with open(inp_folder/configFile_in, 'r') as o_f:
 			# read an store all lines into list
 			undu_in_file = o_f.readlines()
 
@@ -91,32 +100,29 @@ class undu_prepare():
 								stuff1 = line.split(f'{para.get_in_name()}=')
 								stuff2 = stuff1[-1].split('!')
 								undu_in_file[ind] = stuff1[0]+f'{para.get_in_name()}='+f'{para.get()*para.get_fac()}'+' !' + stuff2[-1]
-		with open( undu_folder + 'stage/undumag.nam', 'w') as o_f:
+		with open( undu_folder / 'stage/undumag.nam', 'w') as o_f:
 			for ind, line in enumerate(undu_in_file) :
 				o_f.write(line)
 
 	def prepare_material_files(self) : 
 		undu_paras = self._undu_api._prog_paras
 
-		undu_folder   = self._undu_api._prog_paras.undumag_prog_folder.get()
+		undu_folder   = self._undu_api._prog_paras.undumag_curr_folder.get()
 
 		for material in undu_paras.magnetic_materials() : 
 
 			material.write_undumag_material_file(
-				folder=undu_folder + f'stage/',
+				folder=undu_folder / f'stage/',
 				)
 
 	def prepare_radia_file(self) :
-		undu_folder   = self._undu_api._prog_paras.undumag_prog_folder.get()
+		undu_folder   = self._undu_api._prog_paras.undumag_curr_folder.get()
 
-		radia_py=self._undu_api._prog_paras.in_file_folder.get()+"undumag_proc_msh_radia.py"
+		radia_py=self._undu_api._prog_paras.in_file_folder.get()/"undumag_proc_msh_radia.py"
 		if not os.path.isfile(radia_py) :
 			return
 		else :
-			shutil.copyfile(
-				f_h.convert_path_to_win(radia_py), 
-				f_h.convert_path_to_win(undu_folder + f'stage/undumag_proc_msh_radia.py')
-				)
+			shutil.copyfile(radia_py,undu_folder / f'stage/undumag_proc_msh_radia.py')
 
 	def create_undu_input(self):
 		"""

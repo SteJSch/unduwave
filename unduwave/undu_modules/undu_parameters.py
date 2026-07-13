@@ -65,6 +65,8 @@ class undu_prog_parameters(_attribute_collection):
 
 	def __init__(self) :
 		self.undumag_prog_folder = _attribute('')
+		self.undumag_stage_folder = _attribute('')
+		self.undumag_curr_folder = _attribute('')
 		self.in_file_folder = _attribute('')
 
 		self.material_files_std_folders = _attribute([])
@@ -165,10 +167,12 @@ class undu_prog_parameters(_attribute_collection):
 		"""
 		"""
 
-		self.undumag_prog_folder.set(ROOT_DIR+f_h.convert_path_to_win('/External-Software/UNDUMAG/'))
-		self.in_file_folder.set(ROOT_DIR+f_h.convert_path_to_win('/UNDWAVE_IN_FILES/Undu-In-Files/'))
+		self.undumag_curr_folder.set(Path(''))
+		self.undumag_prog_folder.set(ROOT_DIR/"External-Software"/"UNDUMAG")
+		self.undumag_stage_folder.set(ROOT_DIR/'External-Software'/'pristine_stages'/'undu')
+		self.in_file_folder.set(ROOT_DIR/"UNDWAVE_IN_FILES"/"Undu-In-Files")
 
-		self.material_files_std_folders.set([ROOT_DIR+f_h.convert_path_to_win('/MATERIAL_FILES/')])
+		self.material_files_std_folders.set([ROOT_DIR/"MATERIAL_FILES"])
 		self.magnetic_materials = _attribute([])
 
 		self.load_all_magnetic_material_files_from_folders(
@@ -180,8 +184,8 @@ class undu_prog_parameters(_attribute_collection):
 		self.in_file_clc_raw.set('undu_raw.clc')
 		self.undu_mode.set(undu_mode)
 
-		self.res_folder.set('')
-		self.undu_data_res_folder.set('')
+		self.res_folder.set(Path(''))
+		self.undu_data_res_folder.set(Path('undu_res'))
 		self.pics_folder.set('')
 		self.res_summary_file.set('res_summary.txt')
 		self.no_copy.set(['WAVE_CODE.DAT', 'undumag_mu_77K.dat', 'undumag_mu_300K.dat',
@@ -218,7 +222,7 @@ class undu_prog_parameters(_attribute_collection):
 		self.undu_res_copy_behaviour.set('copy_essentials')
 		self.zip_res_folder.set(0)
 		self.in_file_clc_lines.set([])
-		self.copy_clc_folder.set('')
+		self.copy_clc_folder.set(Path(''))
 
 		self.nthreads.set(6)
 		self.periodLength.set(0.02)

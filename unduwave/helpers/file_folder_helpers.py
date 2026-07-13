@@ -174,9 +174,9 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 				pdb.set_trace()
 		else:
 			if move:
-				os.system('mv ' + folder_in + file_load + ' ' + folder_out + new_file_name)
+				os.system('mv ' + str(Path(folder_in)/Path(file_load)) + ' ' + str(Path(folder_out)/Path(new_file_name)))
 			else:
-				os.system('cp ' + folder_in + file_load + ' ' + folder_out + new_file_name)
+				os.system('cp ' + str(Path(folder_in)/Path(file_load)) + ' ' + str(Path(folder_out)/Path(new_file_name)))
 	return mvd_names
 
 def del_files(hints, exptns, folder):
@@ -201,12 +201,7 @@ def del_files(hints, exptns, folder):
 	del_names = []
 	for file_del in files_del:
 		del_names.append(file_del)
-		if os.name == 'nt' :
-			file_del = file_del.replace('\\)',')')
-			file_del = file_del.replace('\\(','(')
-			os.remove(convert_path_to_win(folder + file_del))
-		else:
-			os.system('rm ' + folder + file_del)
+		os.remove(Path(folder)/Path(file_del))
 	return del_names
 
 def del_all_files(exptns, folder):
@@ -227,10 +222,5 @@ def del_all_files(exptns, folder):
 	del_names = []
 	for file_del in files_del:
 		del_names.append(file_del)
-		if os.name == 'nt' :
-			file_del = file_del.replace('\\)',')')
-			file_del = file_del.replace('\\(','(')
-			os.remove(convert_path_to_win(folder + file_del))
-		else:
-			os.system('rm ' + folder + file_del)
+		os.remove(Path(folder)/Path(file_del))
 	return del_names

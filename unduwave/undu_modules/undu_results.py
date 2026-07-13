@@ -25,8 +25,8 @@ class undu_results :
 		self._res_folder_pics=None
 		if not (self._undu_api is None) :
 			self._res_folder      = self._undu_api._prog_paras.res_folder.get()
-			self._res_folder_undu = self._res_folder + self._undu_api._prog_paras.undu_data_res_folder.get()
-			self._res_folder_pics = self._res_folder + self._undu_api._prog_paras.pics_folder.get()
+			self._res_folder_undu = self._res_folder/self._undu_api._prog_paras.undu_data_res_folder.get()
+			self._res_folder_pics = self._res_folder/self._undu_api._prog_paras.pics_folder.get()
 			if not os.path.exists(self._res_folder_pics):
 				os.makedirs(self._res_folder_pics)
 
@@ -63,7 +63,7 @@ class undu_results :
 			)
 
 			map_bfield.load_field_from_file(
-				file=res_folder+files[0], 
+				file=res_folder/files[0], 
 				fieldMap=True,
 				unduFile = True, 
 				radiaFile=False,
@@ -71,7 +71,7 @@ class undu_results :
 				skiprows=None,
 			)
 
-			# data = pd.read_csv( res_folder+files[0], skiprows=range(0, 3), dtype=object, delimiter=r"\s+",header=None)
+			# data = pd.read_csv( res_folder/files[0], skiprows=range(0, 3), dtype=object, delimiter=r"\s+",header=None)
 			# data.columns = [ 'imoth', 'imag', 'mat', 'ityp', 'matmod', 'x', 'y', 'z', 'Bx', 'By', 'Bz', 'B', 'Hx', 'Hy', 'Hz', 'H', 'Mx', 'My', 'Mz', 'M', 'BxDip', 'ByDip', 'BzDip', 'ifail', 'kfail', 'cmag', 'cmoth' ]
 			# cols_float = ['x', 'y', 'z', 'Bx', 'By', 'Bz']
 			# for col in cols_float:
@@ -93,7 +93,7 @@ class undu_results :
 		if len(files) < 1 :
 			return
 		try :
-			data = pd.read_csv( self._res_folder_undu+files[0], skiprows=3, dtype=object, delimiter=r"\s+")
+			data = pd.read_csv( self._res_folder_undu/files[0], skiprows=3, dtype=object, delimiter=r"\s+")
 		except: 
 			return
 		data.columns = [ 'x', 'y', 'z', 'Bx', 'By', 'Bz' ]
@@ -134,7 +134,7 @@ class undu_results :
 		files = f_h.find_files_exptn(folder = self._res_folder_undu, hints = [file_name], exptns = [])
 		if len(files) < 1 :
 			return
-		data = pd.read_csv( self._res_folder_undu+files[0], dtype=object, delimiter=r"\s+")
+		data = pd.read_csv( self._res_folder_undu/files[0], dtype=object, delimiter=r"\s+")
 		data.columns = ['x','By','Bz','intBy','intBz','int2By','int2Bz','quark']
 		cols = data.columns
 		for col in cols:
@@ -222,7 +222,7 @@ class undu_results :
 		files = f_h.find_files_exptn(folder = self._res_folder_undu, hints = [file_name], exptns = [])
 		if len(files) < 1 :
 			return
-		with open(self._res_folder_undu+files[-1], 'r') as o_f:
+		with open(self._res_folder_undu/files[-1], 'r') as o_f:
 			# read an store all lines into list
 			out_file_lines_tmp = o_f.readlines()
 		for ind, line in enumerate(out_file_lines_tmp) : 
@@ -252,7 +252,7 @@ class undu_results :
 			return
 		# loop all resulting files we want to save
 		out_file_lines_tmp = []
-		with open(self._res_folder_undu+files[-1], 'r') as o_f:
+		with open(self._res_folder_undu/files[-1], 'r') as o_f:
 			# read an store all lines into list
 			out_file_lines_tmp = o_f.readlines()
 		ind_f = -1
@@ -317,7 +317,7 @@ class undu_results :
 		self._summary=res
 
 		dataFile=f'{self._undu_api._prog_paras.res_summary_file.get()}'
-		with open( self._undu_api._prog_paras.res_folder.get()+dataFile, 'w') as o_f:
+		with open( self._undu_api._prog_paras.res_folder.get()/dataFile, 'w') as o_f:
 			for key, val in res.items() :
 				o_f.write( key + ' : ' + str(val) + '\n' )
 

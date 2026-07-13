@@ -36,25 +36,30 @@ class undu_api :
 		"""
 		Runs undumag with the given settings, prepares and postprocesses data.
 		"""
-		prep = undu_prepare(undu_api=self) # create prepare class
-		prep.create_undu_input() # creating and copying undumag input
+		with tempfile.TemporaryDirectory() as temp_dir:
 
-		script_folder = os.getcwd()
-		# create control class
-		undu_instance = undu_control(undu_api=self,current_folder=script_folder)
-		undu_instance.run() # run the simulation
-		post= undu_postprocess(undu_api=self) # create class for postprocessing
-		post.copy_results(add=add)
-		post.cleanup()
-		touchedFiles=post.copy_results(add=add)
-		post.cleanup(add=add,touchedFiles=touchedFiles)
+			curr_main_folder= Path(temp_dir)/'UNDUMAG'
+
+			self._prog_paras.undumag_curr_folder.set(curr_main_folder)
+
+			prep = undu_prepare(undu_api=self) # create prepare class
+			prep.create_undu_input() # creating and copying undumag input
+
+			# create control class
+			undu_instance = undu_control(undu_api=self)
+			undu_instance.run() # run the simulation
+			post= undu_postprocess(undu_api=self) # create class for postprocessing
+			post.copy_results(add=add)
+			post.cleanup()
+			touchedFiles=post.copy_results(add=add)
+			post.cleanup(add=add,touchedFiles=touchedFiles)
 
 	def load_clc_raw(self) :
 		"""
 		Loads a raw-clc file template from the folder set in prog_paras.in_file_folder+prog_paras.in_file_clc_raw.
 		After loading prog_paras.in_file_clc_lines holds the list representation of the file in form of a list of strings.
 		"""
-		clc_raw=self._prog_paras.in_file_folder.get()+self._prog_paras.in_file_clc_raw.get()
+		clc_raw=self._prog_paras.in_file_folder.get()/self._prog_paras.in_file_clc_raw.get()
 		with open(clc_raw, 'r') as o_f:
 			load_clc = o_f.readlines()
 		self._prog_paras.in_file_clc_lines.set(load_clc)

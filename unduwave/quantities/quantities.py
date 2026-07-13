@@ -158,7 +158,7 @@ class quantity :
 		plt.xticks(fontsize=8)
 		if leg:
 			ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
-		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
+		pics_folder = self._api._prog_paras.res_folder.get()/self._api._prog_paras.pics_folder.get()
 		if file_name is None :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}.png'
@@ -166,14 +166,14 @@ class quantity :
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}.png'
 		else:
 			if addPicsFolder:
-				file_name=pics_folder+file_name
+				file_name=pics_folder/file_name
 		if not nosave :
 			plt.savefig(file_name , bbox_inches='tight')
 			if dataFile is None:
 				dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}.dat'
 			elif dataFile is True:
 				if addPicsFolder:
-					dataFile=pics_folder+dataFile
+					dataFile=pics_folder/dataFile
 		# plt.axvline(x=5.61)
 		if type(dataFile) is str :
 			pd.DataFrame({'x':x_quant._data,'y':self._data}).to_csv(dataFile, sep = ' ',header=['x','y'], index=False)
@@ -317,11 +317,11 @@ class quantity :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 			else:
-				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
+				pics_folder = self._api._prog_paras.res_folder.get()/self._api._prog_paras.pics_folder.get()
 				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 		else:
 			if addPicsFolder :
-				file_name=pics_folder+file_name
+				file_name=pics_folder/file_name
 		if not nosave :
 			plt.savefig(file_name   , bbox_inches='tight')
 			if dataFile is None:
@@ -402,7 +402,7 @@ class quantity :
 		if dataFile is None:
 			dataFile3d=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3D_interpolated.dat'
 		else:
-			dataFile3d=dataFile+'_3d_interpolated.dat'
+			dataFile3d=dataFile/'_3d_interpolated.dat'
 		pd.DataFrame({'x':Y_data_intrpltd.flatten(),'y':Z_data_intrpltd.flatten(),'z':Funs_intrpltd.flatten()}).to_csv(dataFile3d, sep = ' ',header=['x','y','z'], index=False)
 
 		if nfig is None :
@@ -440,7 +440,7 @@ class quantity :
 		if dataFile is None:
 			dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_heat_interpolated.dat'
 		else:
-			dataFile=dataFile+'_heat_interpolated.dat'
+			dataFile=dataFile/'_heat_interpolated.dat'
 		pd.DataFrame({'x':Y_data_intrpltd.flatten(),'y':Z_data_intrpltd.flatten(),'z':Funs_intrpltd.flatten()}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
 
 		if not (xCutPlot is None) :

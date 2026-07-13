@@ -23,6 +23,8 @@ import shutil
 import random
 from scipy.interpolate import CubicSpline
 from scipy.integrate import quad
+import tempfile
+from pathlib import Path
 from datetime import datetime
 from scipy import interpolate
 from scipy import integrate
@@ -67,4 +69,4 @@ def combine_strings(str_add,str_add_to) :
 		str_add_to=str_add_to+f'_{str_add}'	
 	return str_add_to
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) # This is your Project Root
+ROOT_DIR = Path(__file__).resolve().parent
