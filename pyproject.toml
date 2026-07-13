@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unduwave"
+version = "0.1.0"
+requires-python = ">=3.9"
+description = "Functionality for WAVE and Undumag from python"
+readme = "README.md"
+license = { text = "MIT" }
+
+dependencies = [
+  "numpy",
+  "pandas",
+  "h5py",
+  "scipy",
+  "matplotlib"
+]
+
+authors = [
+  { name = "Stefan Schäfer", email = "stefan.schaefer@helmholtz-berlin.de" }
+]
+
+maintainers = [
+  { name = "Stefan Schäfer", email = "stefan.schaefer@helmholtz-berlin.de" }
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["unduwave*"]
+namespaces = false

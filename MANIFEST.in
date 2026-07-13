@@ -1,0 +1,9 @@
+graft unduwave
+prune unduwave/External-Software
+prune unduwave/External-Software/*
+graft unduwave/External-Software/WAVE/bin
+graft unduwave/External-Software/WAVE/stage
+graft unduwave/External-Software/UNDUMAG/bin
+graft unduwave/External-Software/UNDUMAG/stage
+global-exclude __pycache__ *.pyc *.pyo
+

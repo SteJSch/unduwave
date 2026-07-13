@@ -1,0 +1,19 @@
+*KEEP,MGSQC.
+
+      INTEGER NMGSQP,mmag,nmgsq
+      PARAMETER(NMGSQP=100)
+
+      CHARACTER(5) CTYP(NMGSQP) !see also bmagseq
+
+      DOUBLE PRECISION PMAG(20,NMGSQP),COZ(2,NMGSQP+1)
+     &  ,CORR(NMGSQP),uebounds(2,nmgsqp),
+     &  dibounds(2,nmgsqp),
+     &  dhbounds(2,nmgsqp),
+     &  qfbounds(2,nmgsqp),
+     &  sxbounds(2,nmgsqp),
+     &  bmsqbounds(2),rotmg(7,10,nmgsqp)
+
+      COMMON/MGSQC/PMAG,COZ,CORR,dibounds,dhbounds,
+     &  uebounds,qfbounds,sxbounds,rotmg,
+     &  bmsqbounds,mmag,nmgsq,CTYP
+

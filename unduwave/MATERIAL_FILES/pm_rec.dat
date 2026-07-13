@@ -1,0 +1,4 @@
+type: magnet
+id: pm_rec
+ksi_Par and ksi_Per # parallel and perpendicular (to easy axis) susceptibilities
+0.03 0.17
