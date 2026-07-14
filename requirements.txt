@@ -2,7 +2,5 @@ numpy
 pandas
 h5py
 scipy
-datetime
-pathlib
+PyYAML
 matplotlib
-yaml
