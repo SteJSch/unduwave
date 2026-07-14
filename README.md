@@ -1,29 +1,39 @@
 # unduwave
-Undupy is a python wrapper providing an API to use Wave and Undumag with python.
 
-### Installation
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8365068.svg)](https://doi.org/10.5281/zenodo.8365068)
+[![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-submission/issues/115)
+
+## What unduwave does
+
+Short description here using non-technical language that describes what your package does.
+
+## How to install unduwave
+
+:::{todo}
+- when i add more to the pyos package this can use that readme>
+:::
+
+To install this package run:
+
+`python -m pip install unduwave`
+
+## Get started using unduwave
+
+Here add a quick code demo showing a user how to use the package after it is installed.
+
+```python
+>>> from pyospackage.add_numbers import add_num
+>>> add_num(1, 2)
+3
+
 ```
-pip3 install unduwave
-```
 
-### Get started
-Example for the usage of undupy.
+You can also add any links to tutorials in your documentation here.
 
-installation:
+## How to cite unduwave
 
-git clone https://github
-install requirements with pip3 -r requirements.txt
-if you get error: ImportError: DLL load failes while importing _cext,
-go to
-https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version
+citation information here
 
-and download redistributable package and install 
+## Version
 
-
-```Python
-from apy import my_lib
-
-lib = my_lib()
-res=lib.mult(6)
-print(res)
-```
+- Current Version: 1.0.0
