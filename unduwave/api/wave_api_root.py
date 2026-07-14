@@ -37,15 +37,19 @@ class wave_api :
 		"""
 		Runs wave with the given settings, prepares and postprocesses data
 		"""
-		prep = wave_prepare(wave_api=self)
-		prep.create_wave_input()
-		prep.prepare_b_files_for_wave()
-		script_folder = os.getcwd()
-		wave_instance = wave_control(wave_api=self,current_folder=script_folder)
-		wave_instance.run()
-		post= wave_postprocess(wave_api=self)
-		post.copy_results(add=add)
-		post.cleanup()
+		with tempfile.TemporaryDirectory() as temp_dir:
+
+			curr_main_folder= Path(temp_dir)/'WAVE'
+			self._prog_paras.wave_curr_folder.set(curr_main_folder)
+
+			prep = wave_prepare(wave_api=self)
+			prep.create_wave_input()
+			prep.prepare_b_files_for_wave()
+			wave_instance = wave_control(wave_api=self)
+			wave_instance.run()
+			post= wave_postprocess(wave_api=self)
+			post.copy_results(add=add)
+			post.cleanup()
 
 	def get_results(self,add='') :
 		"""

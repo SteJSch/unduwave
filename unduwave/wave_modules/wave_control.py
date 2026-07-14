@@ -19,8 +19,7 @@ class wave_control():
 		current_folder : folder to which you want to jump back after wave was run
 		"""	  
 		self._wave_api = wave_api
-		self.current_folder = current_folder
-		self.wave_folder = self._wave_api._prog_paras.wave_prog_folder.get()
+		self.wave_folder = self._wave_api._prog_paras.wave_prog_folder()
 
 	def run(self):
 		"""Run Wave from the self.wave_folder.
@@ -30,16 +29,13 @@ class wave_control():
 		"""
 		update paras
 		"""
+
+		wave_folder = Path(self._wave_api._prog_paras.wave_curr_folder())
 		self._wave_api._undu_paras.update_values()
 		self._wave_api._ebeam_paras.update_values()
-		os.chdir(self.wave_folder + 'stage/' )
+		os.chdir(wave_folder/'stage/' )
 		if os.name == 'nt' :
-			with open(f_h.convert_path_to_win(dir_path+'/../../External-Software/where_is_cygwin_installation.txt'), 'r') as o_f:
-				cygwinfile = o_f.readlines()
-			wherecyg = f_h.convert_path_to_win(cygwinfile[0].replace("'","").strip())
-			whereundupy = f_h.convert_path_to_win(cygwinfile[1].replace("'","").strip())
-			subprocess.call(f"{wherecyg}bin\\bash.exe --login -c 'cd {whereundupy}unduwave/External-Software/WAVE/stage; ../bin/wave.exe'")
+			os.system("../bin/wave_win.exe")
 		else:
 			os.system("../bin/wave.exe")        
-		if not (self.current_folder is None):
-			os.chdir(self.current_folder )
+		os.chdir(ROOT_DIR)

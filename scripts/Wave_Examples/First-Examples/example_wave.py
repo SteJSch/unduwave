@@ -4,7 +4,6 @@ Easy example script that just runs wave
 import pdb
 import sys
 import os
-sys.path.insert(0, '../../../')
 
 """
 Get the directory of this file

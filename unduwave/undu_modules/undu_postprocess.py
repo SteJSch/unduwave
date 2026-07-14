@@ -23,11 +23,11 @@ class undu_postprocess:
 		deletes non-desired files, and zips the results based on the undu_res_copy_behaviour setting.
 		"""
 		#'copy_all', 'copy_none' - only writes res_summary, 'copy_essentials' 
-		undu_folder    = self._undu_api._prog_paras.undumag_prog_folder.get()
+		undu_folder    = self._undu_api._prog_paras.undumag_curr_folder.get()
 		res_folder     = self._undu_api._prog_paras.res_folder.get()
-		res_undu       = res_folder + self._undu_api._prog_paras.undu_data_res_folder.get()
-		os.makedirs(os.path.dirname(res_folder), exist_ok=True)
-		os.makedirs(os.path.dirname(res_undu), exist_ok=True)
+		res_undu       = res_folder / self._undu_api._prog_paras.undu_data_res_folder.get()
+		os.makedirs(res_folder, exist_ok=True)
+		os.makedirs(res_undu, exist_ok=True)
 		copy_behav     = self._undu_api._prog_paras.undu_res_copy_behaviour.get()
 		zip_res_folder = self._undu_api._prog_paras.zip_res_folder.get()
 		files_dont_del = []
@@ -51,15 +51,16 @@ class undu_postprocess:
 
 		if not os.path.exists(res_undu):
 			os.makedirs(res_undu)
+
 		files_moved = f_h.mv_cp_files(hints = undu_res_extract, exptns = undu_files_no_copy\
-				, folder_in = undu_folder + 'stage/', folder_out = res_undu, move = True, add_string = add)
+				, folder_in = undu_folder / 'stage/', folder_out = res_undu, move = True, add_string = add)
 		files_copied = f_h.mv_cp_files(hints = undu_res_copy, exptns = undu_files_no_copy\
-				, folder_in = undu_folder + 'stage/', folder_out = res_undu, move = False, add_string = add)
-		f_h.del_files(hints = files_del, exptns = files_dont_del, folder = undu_folder + 'stage/')
+				, folder_in = undu_folder / 'stage/', folder_out = res_undu, move = False, add_string = add)
+		f_h.del_files(hints = files_del, exptns = files_dont_del, folder = undu_folder / 'stage/')
 
 		for file_m in files_moved :
 			if file_m.find('undumag_msh_radia') >= 0 :
-				self.process_radia_out(radia_file=res_undu+file_m,add=add)
+				self.process_radia_out(radia_file=res_undu/file_m,add=add)
 		# if zip_res_folder : 
 		#     f_h.zip_files_in_folder(folder_to_pack = res_undu)
 		return files_moved + files_copied
@@ -147,14 +148,15 @@ class undu_postprocess:
 			if file.find('.map') >= 0 :
 				mapFile=file
 				break
+
 		if mapFile is None :
 			return
 
 		prog_paras=self._undu_api._prog_paras
 		res_folder     = prog_paras.res_folder.get()
-		res_undu       = res_folder + prog_paras.undu_data_res_folder.get()
+		res_undu       = res_folder / prog_paras.undu_data_res_folder.get()
 
-		mapFile=res_undu+mapFile
+		mapFile=res_undu/mapFile
 		if not (mapFile is None) :
 			if os.path.isfile(mapFile) :
 
@@ -164,7 +166,7 @@ class undu_postprocess:
 				bmap=bfield.bfield(
 					unitsXB=[1e-3,1.0] # setting the units
 					)
-				mapOutFile=mapFile.split('.map')[0]+'_cleared.map'
+				mapOutFile=str(mapFile).split('.map')[0]+'_cleared.map'
 				bmap.load_clear_undu_map(
 					mapFile=mapFile,
 					vHor=horInt,

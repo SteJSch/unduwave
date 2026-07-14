@@ -24,6 +24,15 @@ class wave_prepare():
 		self._wave_api._ebeam_paras.update_values()
 		self._wave_api._undu_paras.update_values()
 
+		curr_main_folder= self._wave_api._prog_paras.wave_curr_folder.get()
+
+		src_dir = self._wave_api._prog_paras.wave_prog_folder()/'bin'
+		wave_exe_dir = curr_main_folder / 'bin'
+		shutil.copytree(src_dir, wave_exe_dir, dirs_exist_ok=True)
+		src_dir = self._wave_api._prog_paras.wave_stage_folder()
+		wave_stage_dir = curr_main_folder / 'stage'
+		shutil.copytree(src_dir, wave_stage_dir, dirs_exist_ok=True)
+
 	def create_wave_input(self):
 		"""Creates all the files needed as input fro Wave.
 		
@@ -32,13 +41,13 @@ class wave_prepare():
 		resulting file to the WAVE program folder.
 		"""
 
-		wave_folder   = self._wave_api._prog_paras.wave_prog_folder.get()
+		wave_folder   = self._wave_api._prog_paras.wave_curr_folder.get()
 		inp_folder    = self._wave_api._prog_paras.in_file_folder.get()
 		b_type        = self._wave_api._prog_paras.b_type.get()
 		configFile_in = self._wave_api._prog_paras.in_files.get()[b_type]
 		# open the configuration file
 		wave_in_file = []
-		with open(inp_folder+configFile_in, 'r') as o_f:
+		with open(Path(inp_folder)/Path(configFile_in), 'r') as o_f:
 			# read an store all lines into list
 			wave_in_file = o_f.readlines()
 
@@ -54,8 +63,9 @@ class wave_prepare():
 								try:
 									wave_in_file[ind] = stuff1[0]+f'{para.get_in_name()}='+f'{para.get()*para.get_fac()}'+' !' + stuff2[-1]
 								except:
+									print("Error when setting wave in file parameters")
 									pdb.set_trace()
-		with open( wave_folder + 'stage/wave.in', 'w') as o_f:
+		with open( wave_folder / 'stage/wave.in', 'w') as o_f:
 			for ind, line in enumerate(wave_in_file) :
 				o_f.write(line)
 
@@ -67,7 +77,7 @@ class wave_prepare():
 		"""
 		wave_paras=self._wave_api._prog_paras
 		wave_mode = wave_paras.wave_mode.get()
-		wave_folder = wave_paras.wave_prog_folder.get()
+		wave_folder = Path(wave_paras.wave_curr_folder.get())
 		# field_files = self._wave_api._prog_paras.field_files.get()
 		# field_folder = self._wave_api._prog_paras.field_folder.get()
 
@@ -75,10 +85,7 @@ class wave_prepare():
 			fourIn=wave_paras.four_file.get()
 			# fourInFile = os.path.basename(fourIn)
 			# fourInDirec=os.path.dirname(fourIn)+os.sep
-			shutil.copyfile(
-				f_h.convert_path_to_win(fourIn), 
-				f_h.convert_path_to_win(wave_folder + 'stage/btab.fou')
-				)
+			shutil.copyfile(Path(fourIn)/Path(wave_folder)/'stage/btab.fou')
 
 		elif wave_mode=='bfield' :
 			b_type = self._wave_api._bfield_paras.field_type.get()
@@ -92,47 +99,38 @@ class wave_prepare():
 				# if not ( bfield._unitsXB is None ) :
 				# 	unitsConv = [ bfield._unitsXB[0]/0.001, bfield._unitsXB[1]/1.0 ]
 				bfield.write_field_std(
-					file=wave_folder + 'stage/btab.dat',
+					file=wave_folder/'stage/btab.dat',
 					unitsXB=[0.001,1.0],
 					whatStr='By',
 					)
 			elif b_type == 'Byz' :
 				bfield.write_field_waveByz(
-					filey=wave_folder+'stage/btab.dat',
-					filez=wave_folder+'stage/bz.dat',
+					filey=wave_folder/'stage/btab.dat',
+					filez=wave_folder/'stage/bz.dat',
 					unitsXB=None
 					)
 			elif b_type == 'Bxyz' :
 				bfield.write_field_waveByz(
-					filex=wave_folder+'stage/bx.dat',
-					filey=wave_folder+'stage/btab.dat',
-					filez=wave_folder+'stage/bz.dat',
+					filex=wave_folder/'stage/bx.dat',
+					filey=wave_folder/'stage/btab.dat',
+					filez=wave_folder/'stage/bz.dat',
 					unitsXB=None
 					)
 			elif b_type == 'bmap' :
 
 				bfield.write_field(
-					file=wave_folder + 'stage/bmap.ntup',
+					file=Path(wave_folder)/'stage/bmap.ntup',
 					outType='bmapWAVE',
 					)
 		if wave_paras.observationPnts.get() == 1 :
 			obsrvtnFile=wave_paras.observationFile.get()
-			shutil.copyfile(
-				f_h.convert_path_to_win(obsrvtnFile), 
-				f_h.convert_path_to_win(wave_folder + 'stage/observ.in')
-				)
+			shutil.copyfile(Path(obsrvtnFile),Path(wave_folder)/'stage/observ.in')
 
 		if wave_paras.magseq() == 1 :
 			seqFile=wave_paras.magseqFile.get()
-			shutil.copyfile(
-				f_h.convert_path_to_win(seqFile), 
-				f_h.convert_path_to_win(wave_folder + 'stage/magseq.in')
-				)
+			shutil.copyfile(Path(seqFile),Path(wave_folder)/'stage/magseq.in')
 		if wave_paras.applyFilter() == 1 :
 			filterFile=wave_paras.filterFile.get()
-			shutil.copyfile(
-				f_h.convert_path_to_win(filterFile), 
-				f_h.convert_path_to_win(wave_folder + 'stage/gold.eff')
-				)
+			shutil.copyfile(Path(filterFile),Path(wave_folder) + 'stage/gold.eff')
 
 

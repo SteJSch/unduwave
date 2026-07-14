@@ -13,23 +13,22 @@ except:
 	dir_path = os.getcwd()
 
 class undu_control():
-	def __init__(self, undu_api,current_folder = None):
+	def __init__(self, undu_api):
 		"""
 		An object for controling undumag, allowing to run simulations
 
 		:param undu_api undu_api: external wave_api class
 		:param current_folder: folder to which you want to jump back after wave was run
 		:type current_folder: str or None
-		"""	  
+		"""
 		self._undu_api = undu_api
-		self._current_folder = current_folder
-		self._undu_folder = self._undu_api._prog_paras.undumag_prog_folder.get()
+		self._undu_folder = self._undu_api._prog_paras.undumag_curr_folder.get()
 
 	def run( self ) : 
 		"""
 		Run an undumag simulation
 		"""
-		os.chdir(self._undu_folder + 'stage/' )
+		os.chdir(self._undu_folder / 'stage/' )
 		if os.name == 'nt' :
 			with open(f_h.convert_path_to_win(dir_path+'/../../External-Software/where_is_cygwin_installation.txt'), 'r') as o_f:
 				cygwinfile = o_f.readlines()
@@ -38,6 +37,4 @@ class undu_control():
 			subprocess.call(f"{wherecyg}bin\\bash.exe --login -c 'cd {whereundupy}unduwave/External-Software/Undumag/stage; ../bin/undumag.exe'")        
 		else:
 			os.system("../bin/undumag.exe")        
-		if not (self._current_folder is None):
-			os.chdir(self._current_folder )
 

@@ -434,7 +434,7 @@ class bfield(quantities.quantity) :
 			vHor,
 			vVert, 
 			mapOutName,
-			) :
+			):
 		"""
 		if mapOut None the mapFile will be replaced
 		"""
