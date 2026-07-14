@@ -2,6 +2,8 @@ name: Install test
 
 on:
   push:
+      - master
+      - develop
   pull_request:
 
 jobs:
