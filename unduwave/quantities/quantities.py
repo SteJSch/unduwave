@@ -158,7 +158,7 @@ class quantity :
 		plt.xticks(fontsize=8)
 		if leg:
 			ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
-		pics_folder = self._api._prog_paras.res_folder.get()/self._api._prog_paras.pics_folder.get()
+		pics_folder = Path(self._api._prog_paras.res_folder())/Path(self._api._prog_paras.pics_folder())
 		if file_name is None :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}.png'

@@ -345,6 +345,10 @@ class wave_prog_parameters(_attribute_collection):
 	"""
 
 	def __init__(self) :
+
+		self.wave_curr_folder = _attribute('')
+		self.wave_stage_folder = _attribute('')
+
 		self.wave_prog_folder = _attribute('')
 		self.in_file_folder = _attribute('')
 		self.in_files = _attribute({})
@@ -445,10 +449,11 @@ class wave_prog_parameters(_attribute_collection):
 		- wave_mode = 'undu_gap'
 		"""
 
-		#std-bad!
-		dir_path = os.path.dirname(os.path.realpath(__file__))
-		self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/../../External-Software/WAVE/'))
-		self.in_file_folder.set(dir_path+f_h.convert_path_to_win('/../UNDWAVE_IN_FILES/WAVE-In-Files/'))
+		self.wave_prog_folder.set(ROOT_DIR/'External-Software/WAVE/')
+		self.in_file_folder.set(ROOT_DIR/'UNDWAVE_IN_FILES/WAVE-In-Files')
+		self.wave_curr_folder.set(Path(''))
+		self.wave_stage_folder.set(ROOT_DIR/'External-Software'/'pristine_stages'/'wave')
+
 		#for containerization?
 		# dir_path='/var/lib/unduwave'
 		# self.wave_prog_folder.set(dir_path+f_h.convert_path_to_win('/External-Software/WAVE/'))

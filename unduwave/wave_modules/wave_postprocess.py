@@ -22,10 +22,10 @@ class wave_postprocess:
 		deletes non-desired files, and zips the results based on the wave_res_copy_behaviour setting.
 		"""
 		#'copy_all', 'copy_none' - only writes res_summary, 'copy_essentials' 
-		wave_folder    = self._wave_api._prog_paras.wave_prog_folder.get()
-		res_folder     = self._wave_api._prog_paras.res_folder.get()
+		wave_folder    = Path(self._wave_api._prog_paras.wave_curr_folder.get())
+		res_folder     = Path(self._wave_api._prog_paras.res_folder.get())
 		os.makedirs(os.path.dirname(res_folder), exist_ok=True)
-		res_wave       = res_folder + self._wave_api._prog_paras.wave_data_res_folder.get()
+		res_wave       = res_folder/Path(self._wave_api._prog_paras.wave_data_res_folder.get())
 		copy_behav     = self._wave_api._prog_paras.wave_res_copy_behaviour.get()
 		zip_res_folder = self._wave_api._prog_paras.zip_res_folder.get()
 		files_dont_del = []
@@ -51,10 +51,10 @@ class wave_postprocess:
 			os.makedirs(res_wave)
 
 		files_moved = f_h.mv_cp_files(hints = wave_res_extract, exptns = wave_files_no_copy\
-				, folder_in = wave_folder + 'stage/', folder_out = res_wave, move = True, add_string = add)
+				, folder_in = wave_folder/'stage/', folder_out = res_wave, move = True, add_string = add)
 		files_copied = f_h.mv_cp_files(hints = wave_res_copy, exptns = wave_files_no_copy\
-				, folder_in = wave_folder + 'stage/', folder_out = res_wave, move = False, add_string = add)
-		f_h.del_files(hints = files_del, exptns = files_dont_del, folder = wave_folder + 'stage/')
+				, folder_in = wave_folder/'stage/', folder_out = res_wave, move = False, add_string = add)
+		f_h.del_files(hints = files_del, exptns = files_dont_del, folder = wave_folder/'stage/')
 		# if zip_res_folder : 
 		#     f_h.zip_files_in_folder(folder_to_pack = res_wave)
 		return files_moved + files_copied
@@ -66,7 +66,7 @@ class wave_postprocess:
 		Args:
 			wave_folder (str): The folder containing the WAVE run files.
 		"""
-		wave_folder    = self._wave_api._prog_paras.wave_prog_folder.get()
+		wave_folder    = Path(self._wave_api._prog_paras.wave_prog_folder.get())
 		wave_mbh_file = os.path.join(wave_folder, 'stage', 'WAVE.mhb')
 		if os.path.exists(wave_mbh_file):
 			os.remove(wave_mbh_file)

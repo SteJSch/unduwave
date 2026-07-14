@@ -12,9 +12,9 @@ class wave_results :
 		self._wave_api = wave_api
 		self._res_quantities = []
 		self._summary=None
-		self._res_folder      = self._wave_api._prog_paras.res_folder.get()
-		self._res_folder_wave = self._res_folder + self._wave_api._prog_paras.wave_data_res_folder.get()
-		self._res_folder_pics = self._res_folder + self._wave_api._prog_paras.pics_folder.get()
+		self._res_folder      = Path(self._wave_api._prog_paras.res_folder.get())
+		self._res_folder_wave = self._res_folder/Path(self._wave_api._prog_paras.wave_data_res_folder.get())
+		self._res_folder_pics = self._res_folder/Path(self._wave_api._prog_paras.pics_folder.get())
 		if not os.path.exists(self._res_folder_pics):
 			os.makedirs(self._res_folder_pics)
 
@@ -45,7 +45,7 @@ class wave_results :
 		"""
 		wave_out_file = []
 		try:
-			with open(self._res_folder_wave+f"wave{add}.out", 'r') as o_f:
+			with open(self._res_folder_wave/f"wave{add}.out", 'r') as o_f:
 				# read an store all lines into list
 				wave_out_file = o_f.readlines()
 		except:
@@ -128,7 +128,7 @@ class wave_results :
 			summary.update( { 'cone_radius_at_x [mm]' : math.tan( open_angle ) * summary['pinhole_x [m]'] * 1000 } )
 		self._summary=summary
 
-		pics_folder = self._wave_api._prog_paras.res_folder.get()+self._wave_api._prog_paras.pics_folder.get()
+		pics_folder = self._res_folder/self._res_folder_pics
 		dataFile=f'{pics_folder}{self._wave_api._prog_paras.res_summary_file.get()}'
 		with open( dataFile, 'w') as o_f:
 			for key, val in summary.items() :
@@ -153,13 +153,13 @@ class wave_results :
 			files=filesTmp
 		en_files = []
 		for file in files : 
-			data = pd.read_csv( self._res_folder_wave + file, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
+			data = pd.read_csv( self._res_folder_wave/file, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 			data.columns = [ "z", "y", "S0", "S1", "S2", "S3" ]
 			cols = data.columns
 			for col in cols:
 				data[col] = data[col].astype(float)            
 			file_lines = []
-			with open(self._res_folder_wave+file, 'r') as o_f:
+			with open(self._res_folder_wave/file, 'r') as o_f:
 				file_lines = o_f.readlines()
 			energy_file = float(file_lines[2].split(':')[-1])
 			en_files.append( { 'en' : energy_file, 'file' : file, 'data' : data } )
@@ -319,7 +319,7 @@ class wave_results :
 					continue
 			if (filename.find('s0_e_(pinhole__folded)_80000') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, sep='\\s+')
+					data = pd.read_csv( self._res_folder_wave/filename, skiprows=3,header=None, dtype=object, sep='\\s+')
 				except:
 					return
 				data.columns = [ 'en', 's0' ]
@@ -377,7 +377,7 @@ class wave_results :
 				self._res_quantities = self._res_quantities + [en_s1,s1] 
 			if (filename.find('s2_e_(pinhole__folded)_82000') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, sep='\\s+')
+					data = pd.read_csv( self._res_folder_wave/filename, skiprows=3,header=None, dtype=object, sep='\\s+')
 				except:
 					return
 				data.columns = [ 'en', 's2' ]
@@ -406,7 +406,7 @@ class wave_results :
 				self._res_quantities = self._res_quantities + [en_s2,s2] 
 			if (filename.find('s3_e_(pinhole__folded)_83000') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, sep='\\s+')
+					data = pd.read_csv( self._res_folder_wave/filename, skiprows=3,header=None, dtype=object, sep='\\s+')
 				except:
 					return
 				data.columns = [ 'en', 's3' ]
@@ -444,7 +444,7 @@ class wave_results :
 				if filename.find(add)<0:
 					continue
 			if (filename.find('selected_s0_e_(folded)_x_1_e_6_180000') >= 0): 
-				data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, sep='\\s+')
+				data = pd.read_csv( self._res_folder_wave/filename, skiprows=3,header=None, dtype=object, sep='\\s+')
 				data.columns = [ 'en', 'flux_dens' ]
 				cols = data.columns
 				for col in cols:
@@ -479,7 +479,7 @@ class wave_results :
 					continue
 			if (filename.find('brilliance_3702') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=6,header=None, dtype=object,delimiter=r"\s+")
+					data = pd.read_csv( self._res_folder_wave/filename, skiprows=6,header=None, dtype=object,delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "en", "b0", "b1", "b2", "b3", "b0f", "b1f", "b2f", "b3f", "b0e",\
@@ -545,7 +545,7 @@ class wave_results :
 					continue
 			if (filename.find('stokes_pinhole_emittance_espread') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
+					data = pd.read_csv( self._res_folder_wave/filename, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ 'en', 'flux', 's1', 's2', 's3' ]
@@ -584,7 +584,7 @@ class wave_results :
 
 				powLines=[]
 
-				with open( self._res_folder_wave + filename) as f:
+				with open( self._res_folder_wave/filename) as f:
 					lines = f.readlines()
 				indStrt=None
 				start=False
@@ -666,7 +666,7 @@ class wave_results :
 
 			if (filename.find('irradiated_power_dist') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=2,header=None, dtype=object, delimiter=r"\s+")
+					data = pd.read_csv( self._res_folder_wave/filename, skiprows=2,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "z", "y", "power" ]
@@ -704,7 +704,7 @@ class wave_results :
 
 			if (filename.find(f'wave{add}.pow') >= 0): 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=2,header=None, dtype=object, delimiter=r"\s+")
+					data = pd.read_csv( self._res_folder_wave/filename, skiprows=2,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "x", "y", "z", "power", "powerSpectral", "powerSpectral_Emit", "powerGrazing" ]
@@ -768,7 +768,7 @@ class wave_results :
 
 			if (filename.find(f'trajectory{add}.wva') >= 0) : 
 				try:
-					data = pd.read_csv( self._res_folder_wave + filename, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
+					data = pd.read_csv( self._res_folder_wave/filename, skiprows=3,header=None, dtype=object, delimiter=r"\s+")
 				except:
 					return
 				data.columns = [ "x", "y", "z", "Bx", "By", "Bz" ]

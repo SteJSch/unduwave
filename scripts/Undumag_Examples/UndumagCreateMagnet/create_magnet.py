@@ -23,6 +23,13 @@ undu_prog_paras = undu._prog_paras
 undu_prog_paras.res_folder.set(res_folder_full)
 undu_prog_paras.plotGeometry.set(1)
 undu_prog_paras.create_z_sym.set(0)
+
+undu_prog_paras.bmap_z_min.set(-10)
+undu_prog_paras.bmap_z_max.set(10)
+undu_prog_paras.bmap_y_min.set(0)
+undu_prog_paras.bmap_y_max.set(0)
+
+undu_prog_paras.bmap_ny.set(1)
 undu_prog_paras.bmap_nz.set(10)
 undu_prog_paras.bmap_nx.set(10)
 
@@ -49,7 +56,7 @@ magnObject = undu_blocks.undumagBlockObject(
 
 undu.set_magnet_objects(magn_objects=magnObject)
 
-# undu.run()
+undu.run()
 
 results = undu.get_results()
 
@@ -124,15 +131,15 @@ nfig=BzProfile.plot_over(
 	title=f'Profile of B$_y$ and B$_z$',
 	)
 
-# bmap.plot_fld_map(
-# 	bWhat='By', # "Bx", "By" or "Bz"
-# 	xPos=None,
-# 	yPos=0.0,
-# 	zPos=None,
-# 	nfig=nfig,
-# 	filename=res_folder_full/"bymap.png",
-# 	title="By Map",
-# 	)
+bmap.plot_fld_map(
+	bWhat='By', # "Bx", "By" or "Bz"
+	xPos=None,
+	yPos=0.0,
+	zPos=None,
+	nfig=nfig,
+	filename=res_folder_full/"bymap.png",
+	title="By Map",
+	)
 
 pdb.set_trace()
 

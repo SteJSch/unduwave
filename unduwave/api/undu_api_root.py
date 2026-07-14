@@ -49,8 +49,6 @@ class undu_api :
 			undu_instance = undu_control(undu_api=self)
 			undu_instance.run() # run the simulation
 			post= undu_postprocess(undu_api=self) # create class for postprocessing
-			post.copy_results(add=add)
-			post.cleanup()
 			touchedFiles=post.copy_results(add=add)
 			post.cleanup(add=add,touchedFiles=touchedFiles)
 

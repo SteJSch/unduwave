@@ -148,6 +148,7 @@ class undu_postprocess:
 			if file.find('.map') >= 0 :
 				mapFile=file
 				break
+
 		if mapFile is None :
 			return
 
