@@ -15,8 +15,6 @@ import pickle
 import scipy as scipy
 import scipy.special as ss
 import matplotlib.pyplot as plt
-# import apy.src.helpers.physical_constants as pc
-# from apy.src.helpers import plot_helpers as plt_h
 import sys
 import subprocess
 import shutil
@@ -38,9 +36,10 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.interpolate import RegularGridInterpolator
 import time
-#from mayavi import mlab
 import yaml
 import multiprocessing
+
+#from mayavi import mlab
 random.seed(datetime.now().timestamp())
 cm_inch = 1/2.54
 
