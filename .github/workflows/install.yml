@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - develop
   pull_request:
 
 jobs:
@@ -45,3 +44,8 @@ jobs:
         shell: bash
         run: |
           python -c "import unduwave; print('unduwave imported successfully')"
+          
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -s unit_tests -p "test_*.py" -v          
+          

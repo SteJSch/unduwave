@@ -470,9 +470,9 @@ class wave_prog_parameters(_attribute_collection):
 		self.four_file.set('')
 		self.field_files.set([])
 		self.res_folder.set('')
-		self.wave_data_res_folder.set('data/')
-		self.pics_folder.set('pics/')
-		self.res_summary_file.set('res_summary.txt')
+		self.wave_data_res_folder.set(Path('wave_res/'))
+		self.pics_folder.set(Path('pics/'))
+		self.res_summary_file.set(Path('res_summary.txt'))
 		self.no_copy.set(['WAVE_CODE.DAT', 'undumag_mu_77K.dat', 'undumag_mu_300K.dat',
 								'iron_muinf_sat-2.34.dat', 'Vanadium_Permendur_Radia', #'WAVE.mhb' 
 								])
