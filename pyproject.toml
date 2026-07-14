@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unduwave"
-version = "0.7.0"
+version = "0.8.0"
 requires-python = ">=3.9"
 description = "Functionality for WAVE and Undumag from python"
 readme = "README.md"
@@ -36,7 +36,7 @@ include = ["unduwave*"]
 namespaces = false
 
 [tool.bumpver]
-current_version = "0.7.0"
+current_version = "0.8.0"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message  = "Bump version {old_version} -> {new_version}"
 commit          = true
