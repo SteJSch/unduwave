@@ -29,8 +29,14 @@ class undu_control():
 		Run an undumag simulation
 		"""
 		os.chdir(self._undu_folder / 'stage/' )
-		if os.name == 'nt' :
-			os.system("../bin/undumag_win.exe")        
-		else:
-			os.system("../bin/undumag.exe")        
+
+		exe = self._undu_folder / "bin" / ("undumag_win.exe" if os.name == "nt" else "undumag.exe")
+		subprocess.run([str(exe)], check=True)
+
+		os.chdir(ROOT_DIR)
+
+		# if os.name == 'nt' :
+		# 	os.system("../bin/undumag_win.exe")        
+		# else:
+		# 	os.system("../bin/undumag.exe")        
 
