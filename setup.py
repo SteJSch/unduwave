@@ -75,7 +75,7 @@ class build_py(_build_py):
 
 setup(
 	name="unduwave",
-	version="0.9.0",
+	version="0.9.1",
 	package_dir={"": "."},
 	packages=find_packages(where=".", include=["unduwave*"]),
 	include_package_data=False,
