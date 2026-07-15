@@ -715,6 +715,7 @@ def wave_compile():
 
   scom = 'cd ' + pathmain + ' && ' \
   'gfortran -O2 -cpp' + \
+  ' -static-libgfortran -static-libgcc' + \
   ' -fopenmp' + \
   ' -fcheck=bounds' + \
   ' -fbacktrace' + \
@@ -743,14 +744,6 @@ def wave_compile():
   ' ..' + Sepp + 'lib' + Sepp + 'libmshplt_modules.a'
   #endif
 
-  for dll in dlls:
-    path = subprocess.check_output(
-        ['x86_64-w64-mingw32-gfortran-win32', f"-print-file-name={dll}"],
-        text=True
-    ).strip()
-    if Path(path).exists():
-      shutil.copy2(path, WI + 'bin' + Sepp + dll)
-  
   if Idry: print(scom,"\n")
   else:
     if Iverbose: print('\n',scom)

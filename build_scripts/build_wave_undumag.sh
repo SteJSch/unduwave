@@ -5,6 +5,8 @@ b_flag=''
 files=''
 verbose='false'
 buildWAVE='false'
+buildWAVEW='false'
+buildWAVEL='false'
 buildUndu='false'
 buildUNDUWAVE='false'
 
@@ -38,6 +40,14 @@ if [ "$do_flag" == bu ]; then
 fi
 if [ "$do_flag" == bw ]; then
 	buildWAVE='true'
+	buildWAVEL='true'
+	buildWAVEW='true'
+fi	
+if [ "$do_flag" == bwl ]; then
+	buildWAVEL='true'
+fi	
+if [ "$do_flag" == bww ]; then
+	buildWAVEW='true'
 fi	
 if [ "$do_flag" == bpy ]; then
 	buildUNDUWAVE='true'
@@ -51,7 +61,7 @@ fi
 if [ "$buildUndu" == 'true' ]; then
 	echo "Building Undumag For Windows"
 	pwd=$PWD
-	direc_undu=$pwd'/../External-Software/UNDUMAG'
+	direc_undu=$pwd'/../unduwave/External-Software/UNDUMAG'
 	cd $direc_undu
 	cd lib
 	rm *
@@ -65,21 +75,26 @@ if [ "$buildUndu" == 'true' ]; then
 	cd ..
 	python3 python/make_undumag.py	
 fi
-if [ "$buildWAVE" == 'true' ]; then
+if [ "$buildWAVEL" == 'true' ]; then
+	echo "Building WAVE For Linux"
+	pwd=$PWD
+	direc_wave=$pwd'/../unduwave/External-Software/WAVE'
+	cd $direc_wave
+	cd lib
+	rm *
+	cd ..
+	python3 python/make_wave.py	
+fi
+if [ "$buildWAVEW" == 'true' ]; then
 	echo "Building WAVE For Windows"
 	pwd=$PWD
-	direc_wave=$pwd'/../External-Software/WAVE'
+	direc_wave=$pwd'/../unduwave/External-Software/WAVE'
 	cd $direc_wave
 	cd lib
 	rm *
 	cd ..
 	cp $pwd/make_wave_win2.py $direc_wave/python/
 	python3 python/make_wave_win2.py
-	echo "Building WAVE For Linux"
-	cd lib
-	rm *
-	cd ..
-	python3 python/make_wave.py	
 fi
 if [ "$buildUNDUWAVE" == 'true' ]; then
 	pwd=$PWD
