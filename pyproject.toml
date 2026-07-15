@@ -50,4 +50,5 @@ push            = false
 ]
 "setup.py" = ['version="{pep440_version}",']
 "README.md" = ['- Current Version: {pep440_version}']
+"docs/source/conf.py" = ["release = 'v{version}'"]
 
