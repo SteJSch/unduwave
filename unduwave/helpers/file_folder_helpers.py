@@ -187,7 +187,10 @@ def del_files(hints, exptns, folder):
 	del_names = []
 	for file_del in files_del:
 		del_names.append(file_del)
-		os.remove(Path(folder)/Path(file_del))
+		try:
+			os.remove(Path(folder)/Path(file_del))
+		except :
+			pass
 	return del_names
 
 def del_all_files(exptns, folder):
@@ -208,5 +211,8 @@ def del_all_files(exptns, folder):
 	del_names = []
 	for file_del in files_del:
 		del_names.append(file_del)
-		os.remove(Path(folder)/Path(file_del))
+		try:
+			os.remove(Path(folder)/Path(file_del))
+		except :
+			pass
 	return del_names
