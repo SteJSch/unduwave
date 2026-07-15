@@ -54,9 +54,9 @@ def find_files_exptn(folder, hints=[], exptns=[]):
 						nope = True
 						break
 			if not nope:
-				filename_rpl = filename.replace("(", "\\(")
-				filename_rpl = filename_rpl.replace(")", "\\)")
-				files.append(filename_rpl)
+				# filename = filename.replace("(", "\\(")
+				# filename = filename.replace(")", "\\)")
+				files.append(filename)
 	return files
 
 def find_all_files_exptn(folder, exptns=[]):
@@ -80,9 +80,9 @@ def find_all_files_exptn(folder, exptns=[]):
 					nope = True
 					break
 		if not nope:
-			filename_rpl = filename.replace("(", "\\(")
-			filename_rpl = filename_rpl.replace(")", "\\)")
-			files.append(filename_rpl)
+			# filename = filename.replace("(", "\\(")
+			# filename = filename.replace(")", "\\)")
+			files.append(filename)
 	return files
 
 def zip_files_in_folder(folder_to_pack):
@@ -158,25 +158,11 @@ def mv_cp_files(hints, exptns, folder_in, folder_out, move=True, add_string=''):
 		new_file_name = file_front + add_string + end_f
 		mvd_names.append(new_file_name)
 
-		if os.name == 'nt' :
-			file_load = file_load.replace('\\(','(')
-			file_load = file_load.replace('\\)',')')
-			new_file_name = new_file_name.replace('\\)',')')
-			new_file_name = new_file_name.replace('\\(','(')
-			try:
-				if move:
-					shutil.move(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
-				else:
-					shutil.copyfile(convert_path_to_win(folder_in + file_load), convert_path_to_win(folder_out + new_file_name))
-			except:
-				print(convert_path_to_win(folder_in + file_load))
-				print(convert_path_to_win(folder_out + new_file_name))				
-				pdb.set_trace()
+		if move:
+			shutil.move(Path(folder_in)/Path(file_load), Path(folder_out)/Path(new_file_name))
 		else:
-			if move:
-				os.system('mv ' + str(Path(folder_in)/Path(file_load)) + ' ' + str(Path(folder_out)/Path(new_file_name)))
-			else:
-				os.system('cp ' + str(Path(folder_in)/Path(file_load)) + ' ' + str(Path(folder_out)/Path(new_file_name)))
+			shutil.copyfile(Path(folder_in)/Path(file_load), Path(folder_out)/Path(new_file_name))
+
 	return mvd_names
 
 def del_files(hints, exptns, folder):
@@ -201,8 +187,6 @@ def del_files(hints, exptns, folder):
 	del_names = []
 	for file_del in files_del:
 		del_names.append(file_del)
-		file_del = file_del.replace("\\(", "(")
-		file_del = file_del.replace("\\)", ")")
 		os.remove(Path(folder)/Path(file_del))
 	return del_names
 
@@ -224,7 +208,5 @@ def del_all_files(exptns, folder):
 	del_names = []
 	for file_del in files_del:
 		del_names.append(file_del)
-		file_del = file_del.replace("\\(", "(")
-		file_del = file_del.replace("\\)", ")")
 		os.remove(Path(folder)/Path(file_del))
 	return del_names
