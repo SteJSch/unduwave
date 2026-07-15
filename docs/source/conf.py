@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.abspath("../.."))
 project = 'Unduwave'
 copyright = 'CC BY-NC'
 author = 'Stefan J. Schäfer'
-release = 'v0.0.1'
+release = 'v0.9.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

@@ -21,4 +21,4 @@ citation information here
 
 ## Version
 
-- Current Version: 0.9.1
+- Current Version: 0.9.2
