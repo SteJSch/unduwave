@@ -714,7 +714,7 @@ def wave_compile():
   #else: forcomp(scom)
 
   scom = 'cd ' + pathmain + ' && ' \
-  'gfortran -O2 -cpp' + \
+  'gfortran -W -t -O2 -cpp' + \
   ' -static-libgfortran -static-libgcc' + \
   ' -fopenmp' + \
   ' -fcheck=bounds' + \
