@@ -15,12 +15,18 @@ WHITELIST = [
 	("WAVE", "stage"),
 	("UNDUMAG", "bin"),
 	("UNDUMAG", "stage"),
+	("pristine_stages", ""),
 ]
 
 EXTRA_ROOT = ROOT / PACKAGE_NAME 
 EXTRA_FOLDERS = [
 	"MATERIAL_FILES",
 	"UNDWAVE_IN_FILES",
+]
+
+EXTRAP_ROOT = ROOT / PACKAGE_NAME  / "External-Software"
+EXTRAP_FOLDERS = [
+	"pristine_stages",
 ]
 
 class build_py(_build_py):
@@ -33,6 +39,12 @@ class build_py(_build_py):
 		for rel_dir in EXTRA_FOLDERS:
 			src_dir = EXTRA_ROOT / rel_dir
 			dst_dir = Path(self.build_lib) / "unduwave" / rel_dir
+			shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
+
+		for rel_dir in EXTRAP_FOLDERS:
+			
+			src_dir = EXTRAP_ROOT / rel_dir
+			dst_dir = Path(self.build_lib) / "unduwave" / "External-Software" / rel_dir
 			shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
 
 	def copy_external_files(self):
@@ -52,7 +64,7 @@ class build_py(_build_py):
 				/ software
 				/ subdir
 			)
-
+			
 			for src_path in src_dir.rglob("*"):
 				if src_path.is_file():
 					rel = src_path.relative_to(src_dir)
