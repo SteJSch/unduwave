@@ -11,7 +11,6 @@ import pdb
 from os import listdir
 from os.path import isfile, join
 
-
 def Quit(*args, delay=0):
   #reakpoint()
   nargs =  len(args)
@@ -744,6 +743,14 @@ def wave_compile():
   ' ..' + Sepp + 'lib' + Sepp + 'libmshplt_modules.a'
   #endif
 
+  for dll in dlls:
+    path = subprocess.check_output(
+        ['x86_64-w64-mingw32-gfortran-win32', f"-print-file-name={dll}"],
+        text=True
+    ).strip()
+    if Path(path).exists():
+      shutil.copy2(path, WI + 'bin' + Sepp + dll)
+  
   if Idry: print(scom,"\n")
   else:
     if Iverbose: print('\n',scom)
