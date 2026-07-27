@@ -1,20 +1,18 @@
 
 import os
 import pdb
+from pathlib import Path
 import sys
-sys.path.insert(0, '../../../')
+import unduwave as uw
 
 try :
 	# works when calling script with python3 script_file
-	dir_path = os.path.dirname(os.path.realpath(__file__))
+	dir_path = Path(os.path.dirname(os.path.realpath(__file__)))
 except:
 	# works when calling script with exec from python console
-	dir_path = os.getcwd()
+	dir_path = Path(os.getcwd())
 
-import unduwave as uw
-
-field_folder = f'/'
-res_folder = dir_path+'/res/'
+res_folder = dir_path/'res/'
 
 """
 Getting wave
@@ -34,8 +32,8 @@ Setting Spectrometer Parameter
 """
 
 spectrometer_paras = wave._spectrometer_paras
-spectrometer_paras.spectrum_n_energies.set(100)
-spectrometer_paras.spectrum_min_energy.set(100)
+spectrometer_paras.spectrum_n_energies.set(10)
+spectrometer_paras.spectrum_min_energy.set(400)
 spectrometer_paras.spectrum_max_energy.set(500)
 spectrometer_paras.spectrum_undu_mode.set(1)
 
@@ -43,8 +41,8 @@ spectrometer_paras.spectrum_undu_mode.set(1)
 Setting Screen Parameter
 """
 screen_paras = wave._screen_paras
-screen_paras.screen_segm_hor.set(30) 
-screen_paras.screen_segm_vert.set(30)
+screen_paras.screen_segm_hor.set(11) 
+screen_paras.screen_segm_vert.set(11)
 screen_paras.screen_extent_hor.set(40) # pinhole width mm
 screen_paras.screen_extent_vert.set(40) # pinhole height mm
 
@@ -53,11 +51,11 @@ Setting Undulator Parameter
 """
 
 undu_paras = wave._undu_paras # getting parameter object
-undu_paras.elliptUnduB0Y.set(1.18)
-undu_paras.elliptUnduB0Z.set(0.0)
+undu_paras.bEffY.set(1.18)
+undu_paras.bEffZ.set(0.5)
 undu_paras.elliptUnduNumPeriods.set(10)
 undu_paras.elliptUnduPerLength.set(0.020)
-undu_paras.elliptUnduPerShift.set(0.5)
+undu_paras.elliptUnduPerShift.set(0.0)
 
 """
 Setting Beam Parameter

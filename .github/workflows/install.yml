@@ -31,7 +31,7 @@ jobs:
       - name: Upgrade packaging tools
         run: |
           python -m pip install --upgrade pip build
-
+          
       - name: Build package
         run: |
           python -m build
@@ -45,3 +45,8 @@ jobs:
         shell: bash
         run: |
           python -c "import unduwave; print('unduwave imported successfully')"
+          
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -s unit_tests -p "test_*.py" -v          
+          

@@ -2,7 +2,7 @@
 Quickguide
 ++++++++++++++++
 
-WAVE
+Spectrum calculations
 ================
 
 General Things
@@ -11,20 +11,10 @@ General Things
 The Coordinate System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The x coordinate is in longitudinal direction, i.e. along the beam. The y-direction is vertical and z is horizontal. 
+The x coordinate is in longitudinal direction, i.e. along the design orbit of the beam. The y-direction is the vertical- and z is horizontal direction. 
 
 First Run
 -------------------------------
-
-First you have to tell python where unduwave is located. For this we do:
-
-.. code-block:: python
-
-   import sys
-   import os
-   sys.path.insert(0, 'absolute/path/to/unduwave/')
-
-| This is a hack and will be soon changed by making the package installable. (It actually already is installable, but I did not test it and it may be buggy if used in this way)
 
 To import unduwave, do:
 

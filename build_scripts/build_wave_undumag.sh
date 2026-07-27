@@ -1,10 +1,16 @@
 #!/bin/bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 do_flag=''
 b_flag=''
 files=''
 verbose='false'
 buildWAVE='false'
+buildWAVEW='false'
+buildWAVEL='false'
+buildUNDUW='false'
+buildUNDUL='false'
 buildUndu='false'
 buildUNDUWAVE='false'
 
@@ -12,6 +18,7 @@ print_usage() {
   printf 'Usage: %s -d buw|bu|bw|bpy|bpya\n' "$0"
   printf '  -d  buw - build undumag and wave, bu - build undumag, bw - build wave,\n'
   printf '      bpy - build the python project, bpya - build all external and python\n'
+  printf '      bu - build the python project, bpya - build all external and python\n'
   exit 1
 }
 
@@ -35,9 +42,25 @@ if [ "$do_flag" == buw ]; then
 fi
 if [ "$do_flag" == bu ]; then
 	buildUndu='true'
+	buildUNDUL='true'
+	buildUNDUW='true'
+fi
+if [ "$do_flag" == bul ]; then
+	buildUNDUL='true'
+fi
+if [ "$do_flag" == buw ]; then
+	buildUNDUW='true'
 fi
 if [ "$do_flag" == bw ]; then
 	buildWAVE='true'
+	buildWAVEL='true'
+	buildWAVEW='true'
+fi	
+if [ "$do_flag" == bwl ]; then
+	buildWAVEL='true'
+fi	
+if [ "$do_flag" == bww ]; then
+	buildWAVEW='true'
 fi	
 if [ "$do_flag" == bpy ]; then
 	buildUNDUWAVE='true'
@@ -48,10 +71,9 @@ if [ "$do_flag" == bpya ]; then
 	buildUndu='true'
 fi
 
-if [ "$buildUndu" == 'true' ]; then
+if [ "$buildUNDUW" == 'true' ]; then
 	echo "Building Undumag For Windows"
-	pwd=$PWD
-	direc_undu=$pwd'/../External-Software/UNDUMAG'
+	direc_undu=$SCRIPT_DIR'/../unduwave/External-Software/UNDUMAG'
 	cd $direc_undu
 	cd lib
 	rm *
@@ -59,31 +81,36 @@ if [ "$buildUndu" == 'true' ]; then
 	cp $pwd/compile_undumag_incl_win.sh $direc_undu/shell/
 	cp $pwd/make_undumag_win2.py $direc_undu/python/
 	python3 python/make_undumag_win2.py
+if [ "$buildUNDUL" == 'true' ]; then
 	echo "Building Undumag For Linux"
+	direc_undu=$SCRIPT_DIR'/../unduwave/External-Software/UNDUMAG'
+	cd $direc_undu
 	cd lib
 	rm *
 	cd ..
 	python3 python/make_undumag.py	
 fi
-if [ "$buildWAVE" == 'true' ]; then
+if [ "$buildWAVEL" == 'true' ]; then
+	echo "Building WAVE For Linux"
+	direc_wave=$SCRIPT_DIR'/../unduwave/External-Software/WAVE'
+	cd $direc_wave
+	cd lib
+	rm *
+	cd ..
+	python3 python/make_wave.py	
+fi
+if [ "$buildWAVEW" == 'true' ]; then
 	echo "Building WAVE For Windows"
-	pwd=$PWD
-	direc_wave=$pwd'/../External-Software/WAVE'
+	direc_wave=$SCRIPT_DIR'/../unduwave/External-Software/WAVE'
 	cd $direc_wave
 	cd lib
 	rm *
 	cd ..
 	cp $pwd/make_wave_win2.py $direc_wave/python/
 	python3 python/make_wave_win2.py
-	echo "Building WAVE For Linux"
-	cd lib
-	rm *
-	cd ..
-	python3 python/make_wave.py	
 fi
 if [ "$buildUNDUWAVE" == 'true' ]; then
-	pwd=$PWD
-	direc_unduwave=$pwd'/../'
+	direc_unduwave=$SCRIPT_DIR'/../'
 	cd $direc_unduwave
 	python3 -m build
 	python3 -m pip install --editable .

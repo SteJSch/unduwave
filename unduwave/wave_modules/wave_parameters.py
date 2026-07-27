@@ -3,7 +3,7 @@ from unduwave.attribute_classes.attributes import _attribute
 from unduwave.attribute_classes.attributes import _attribute_collection
 import unduwave.helpers.file_folder_helpers as f_h
 import unduwave.constants as uc
-from unduwave.analytical_module import analytic_structures as anas
+from unduwave.analytical_module.ana_undu import undulator
 
 try :
 	# works when calling script with python3 script_file
@@ -11,6 +11,9 @@ try :
 except:
 	# works when calling script with exec from python console
 	dir_path = os.getcwd()
+
+class waveParaError(Exception) :
+	pass
 
 class ebeam_parameters(_attribute_collection):
 	"""
@@ -145,7 +148,7 @@ class spectrometer_paras(_attribute_collection):
 
 class undu_paras(_attribute_collection):
 	"""
-	Parameters controlling the generation of the B-Field
+	Parameters controlling the generation of the B-Field inside WAVE
 
 	prog_parameters.undu_endp = 1
 		planarUnduK - K-Parameter of Machine
@@ -183,7 +186,6 @@ class undu_paras(_attribute_collection):
 		self.bEffZ = _attribute()
 		self.unduParameterKY = _attribute()
 		self.unduParameterKZ = _attribute()
-		self.shift = _attribute()
 		self.periodLength = _attribute(None)
 		self.numPeriods = _attribute(None)
 		self.lengthEndPeriodsRelative = _attribute(None)
@@ -237,7 +239,6 @@ class undu_paras(_attribute_collection):
 		self.bEffZ.set(None)
 		self.unduParameterKY.set(None)
 		self.unduParameterKZ.set(None)
-		self.shift.set(0.0)
 		self.periodLength.set(0.02)
 		self.numPeriods.set(78)
 		self.lengthEndPeriodsRelative.set(1.5)
@@ -246,80 +247,80 @@ class undu_paras(_attribute_collection):
 		return self
 
 	def update_values(self,thetaObservation=0.0) :
-		self._anasy=None
-		self._anasz=None
-		if not (self.unduParameterKY.get() is None) :
-			self._anasy=anas.ana_undulator(
-				bEff=None,
-				unduK=self.unduParameterKY.get(),
-				periodLength=self.periodLength.get(),
-				numPeriods=self.numPeriods.get(),
-				lengthEndPeriodsRelative=self.lengthEndPeriodsRelative.get(),
-				ebeam=self.ebeam.get(),
-				thetaObservation=thetaObservation
-				)
-		elif not (self.bEffY.get() is None) :
-			self._anasy=anas.ana_undulator(
-				bEff=self.bEffY.get(),
-				periodLength=self.periodLength.get(),
-				numPeriods=self.numPeriods.get(),
-				lengthEndPeriodsRelative=self.lengthEndPeriodsRelative.get(),
-				ebeam=self.ebeam.get(),
-				thetaObservation=thetaObservation
-				)
-		if not (self.unduParameterKZ.get() is None) :
-			self._anasz=anas.ana_undulator(
-				bEff=None,
-				unduK=self.unduParameterKZ.get(),
-				periodLength=self.periodLength.get(),
-				numPeriods=self.numPeriods.get(),
-				lengthEndPeriodsRelative=self.lengthEndPeriodsRelative.get(),
-				ebeam=self.ebeam.get(),
-				thetaObservation=thetaObservation
-				)
-		elif not (self.bEffZ.get() is None) :
-			self._anasz=anas.ana_undulator(
-				bEff=self.bEffZ.get(),
-				periodLength=self.periodLength.get(),
-				numPeriods=self.numPeriods.get(),
-				lengthEndPeriodsRelative=self.lengthEndPeriodsRelative.get(),
-				ebeam=self.ebeam.get(),
-				thetaObservation=thetaObservation
-				)
-		if self.undu_type.get() == 'undu_ellip' :
-			shift=self.shift.get()
-			bEffY=self.bEffY.get()
-			if (bEffY is None) and (not (self._anasy is None)) :
-				bEffY=self._anasy.bEff.get()
-			bEffZ=self.bEffZ.get()
-			if (bEffZ is None) and (not (self._anasz is None)) :
-				bEffZ=self._anasz.bEff.get()
+
+		try: 
+			if self.bEffY() is None :
+				if self.bEffZ() is None :
+					if self.unduParameterKZ() is None :
+						if self.unduParameterKY() is None :
+							raise waveParaError(f"wave parameters: bEffY,bEffZ,unduParameterKZ or unduParameterKY have to be given")
+			if not (self.bEffY() is None) :
+				if not (self.unduParameterKY() is None) :
+					self.unduParameterKY.set(None)
+			if not (self.bEffZ() is None) :
+				if not (self.unduParameterKZ() is None) :
+					self.unduParameterKZ.set(None)
+			if self.elliptUnduPerShift() is None :
+				if self.undu_type=='undu_ellip' :
+					raise waveParaError(f"wave parameters: shift have to be given for elliptical mode")
+			if self.periodLength() is None :
+				raise waveParaError(f"wave parameters: periodLength has to be given")
+			if self.numPeriods() is None :
+				raise waveParaError(f"wave parameters: numPeriods has to be given")
+			if self.ebeam() is None :
+				raise waveParaError(f"wave parameters: ebeam has to be given")
+		except waveParaError as e: 
+			print(e)
+
+		myUndu=undulator.undulatorCharacterization(
+			bEffY=self.bEffY(),
+			periodLength=self.periodLength(),
+			numPeriods=self.numPeriods(),
+			bEffZ=self.bEffZ(),
+			lengthEndPeriodsRelative=1.5,
+			ebeam=self.ebeam(),
+			thetaObservation=0.0,
+			unduKY=self.unduParameterKY(),
+			unduKZ=self.unduParameterKZ(),
+			)
+
+		self.bEffY.set(myUndu.bEffY())
+		self.bEffZ.set(myUndu.bEffZ())
+		beff=myUndu.bEff()
+		self.unduParameterKY.set(myUndu.undulatorParameterKY())
+		self.unduParameterKZ.set(myUndu.undulatorParameterKZ())
+		kval=myUndu.undulatorParameterK()
+		if (self.undu_type == 'undu_ellip') or (self.undu_type=='undu_ellip_ana') :
+
+			shift=self.elliptUnduPerShift()
 			if shift == 0.0 :
-				self.elliptUnduB0Y.set(bEffY)
+				self.elliptUnduB0Y.set(self.bEffY())
 				self.elliptUnduB0Z.set(0.0)
 			elif shift==0.25 :
-				self.elliptUnduB0Y.set(bEffY)
-				self.elliptUnduB0Z.set(bEffZ)
+				self.elliptUnduB0Y.set(self.bEffY())
+				self.elliptUnduB0Z.set(self.bEffZ())
 			elif shift==-0.5 : # antiparallel in this crazy world
 				self.shift.set(0.0)
-				self.elliptUnduB0Y.set(bEffY)
-				self.elliptUnduB0Z.set(bEffY)
+				self.elliptUnduB0Y.set(self.bEffY())
+				self.elliptUnduB0Z.set(self.bEffY())
 			elif shift==0.5 :
 				self.elliptUnduB0Y.set(0.0)
-				self.elliptUnduB0Z.set(bEffZ)
+				self.elliptUnduB0Z.set(self.bEffZ())
 			elif shift==0.75:
-				self.elliptUnduB0Y.set(bEffY)
-				self.elliptUnduB0Z.set(bEffZ)
-			self.elliptUnduPerShift.set(self.shift.get())
-			self.elliptUnduNumPeriods.set(self.numPeriods.get()) 
-			self.elliptUnduPerLength.set(self.periodLength.get())
-		elif self.undu_type.get() == 'undu_endp' :
-			if not (self.bEffY.get() is None) :
-				self.planarUnduB0.set(self.bEffY.get())
-			elif not (self.unduParameterKY.get() is None) :
-				self.planarUnduK.set(self.unduParameterKY.get())
-			self.planarUnduNumPeriods.set(2*self.numPeriods.get()+1) # we count the number of B-field peaks here - one extra for the end-fields (odd)
-			self.planarUnduPerLength.set(self.periodLength.get())
+				self.elliptUnduB0Y.set(self.bEffY())
+				self.elliptUnduB0Z.set(self.bEffZ())
+			self.elliptUnduNumPeriods.set(self.numPeriods())
+			self.elliptUnduPerLength.set(self.periodLength())
+
+		elif (self.undu_type == 'undu_easy') or (self.undu_type == 'undu_endp')\
+				or (self.undu_type == 'undu_gap') :
+			self.planarUnduK.set(None)
+			self.planarUnduB0.set(self.bEffY())
+			self.planarUnduPerLength.set(self.periodLength())
+			if (self.undu_type == 'undu_endp') :
+				self.planarUnduNumPeriods.set(2*self.numPeriods.get()+1) # we count the number of B-field peaks here - one extra for the end-fields (odd)
+			else:
+				self.planarUnduNumPeriods.set(self.numPeriods())
 
 class bfield_paras(_attribute_collection):
 
@@ -470,9 +471,9 @@ class wave_prog_parameters(_attribute_collection):
 		self.four_file.set('')
 		self.field_files.set([])
 		self.res_folder.set('')
-		self.wave_data_res_folder.set('data/')
-		self.pics_folder.set('pics/')
-		self.res_summary_file.set('res_summary.txt')
+		self.wave_data_res_folder.set(Path('wave_res/'))
+		self.pics_folder.set(Path('pics/'))
+		self.res_summary_file.set(Path('res_summary.txt'))
 		self.no_copy.set(['WAVE_CODE.DAT', 'undumag_mu_77K.dat', 'undumag_mu_300K.dat',
 								'iron_muinf_sat-2.34.dat', 'Vanadium_Permendur_Radia', #'WAVE.mhb' 
 								])

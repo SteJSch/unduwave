@@ -276,7 +276,6 @@ class undulator(undu_blocks.undumagObjectList) :
 		beff=None,
 		shift_range=np.array([0.0,0.0]),
 		center=np.array([0.0,0.0,0.0]),
-		symmetries=[],
 		construct_quadrants=['ll','lr','ul','ur'],
 		api=None,
 		name='',
@@ -296,7 +295,6 @@ class undulator(undu_blocks.undumagObjectList) :
 			self._gap_range=gap_range
 			self._gap=gap
 			self._shift=shift
-			self._symmetries=symmetries
 			self._accelerator=accelerator
 			self._shift_range=shift_range
 			self._period_length=period_length
@@ -398,7 +396,6 @@ class undulator(undu_blocks.undumagObjectList) :
 			'period_lengths' : self._period_length,
 			'nperiods' : self._nperiods,
 			'shift_range' : self._shift_range,
-			'symmetries': self._symmetries,
 			'beff' : self._beff,
 			'geometry' : {
 				'rows' : rowDicts,
@@ -407,7 +404,17 @@ class undulator(undu_blocks.undumagObjectList) :
 		return unduDict
 
 	@staticmethod
-	def loadFromDict(name,file=None,dictParas=None,gap=None,nperiods=None,shift=None,shifts=None,symmetries=None,api=None) :
+	def loadFromDict(
+			name,
+			file=None,
+			dictParas=None,
+			gap=None,
+			nperiods=None,
+			shift=None,
+			shifts=None,
+			api=None,
+			construct_quadrants=['ll','lr','ul','ur'],
+			) :
 		if file is None : 
 			if dictParas is None :
 				return
@@ -441,8 +448,6 @@ class undulator(undu_blocks.undumagObjectList) :
 				nperiods=nperiods,
 				)
 			rows.append(rowl)
-		if (symmetries is None) : 
-			symmetries=dictParas['symmetries']
 
 		undulatorLoad=undulator(
 			rows=rows,
@@ -453,12 +458,12 @@ class undulator(undu_blocks.undumagObjectList) :
 			shift=shift,
 			shift_range=dictParas['shift_range'],
 			center=np.array(dictParas['center']),
-			symmetries=symmetries,
 			api=api,
 			name=dictParas['name'],
 			parentName=dictParas['parentName'],
 			accelerator=dictParas['accelerator'],
 			shifts=shifts,
+			construct_quadrants=construct_quadrants,
 			# nperiods=nperiods,
 		)
 		return undulatorLoad

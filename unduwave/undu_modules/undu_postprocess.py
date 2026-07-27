@@ -174,4 +174,4 @@ class undu_postprocess:
 					mapOutName=mapOutFile,
 					)
 
-				shutil.move(f_h.convert_path_to_win(mapOutFile), f_h.convert_path_to_win(mapFile))
+				shutil.move(Path(mapOutFile), Path(mapFile))

@@ -34,8 +34,14 @@ class wave_control():
 		self._wave_api._undu_paras.update_values()
 		self._wave_api._ebeam_paras.update_values()
 		os.chdir(wave_folder/'stage/' )
-		if os.name == 'nt' :
-			os.system("../bin/wave_win.exe")
-		else:
-			os.system("../bin/wave.exe")        
+		exe = wave_folder / "bin" / ("wave_win.exe" if os.name == "nt" else "wave.exe")
+		subprocess.run([str(exe)], check=True)
+
+		# if os.name == 'nt' :
+		# 	exe = wave_folder / "bin" / ("wave_win.exe" if os.name == "nt" else "wave.exe")
+		# 	subprocess.run([str(exe)], check=True)
+		# 	os.system("../bin/wave_win.exe")
+		# else:
+		# 	os.system("../bin/wave.exe")        
+
 		os.chdir(ROOT_DIR)

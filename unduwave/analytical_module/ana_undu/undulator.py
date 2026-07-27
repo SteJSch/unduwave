@@ -232,6 +232,15 @@ class undulatorCharacterization(_attribute_collection) :
 		"""
 		Setting
 		"""
+		if bEffY is None :
+			bEffY=0.0
+		if bEffZ is None :
+			bEffZ=0.0
+		if unduKY is None :
+			unduKY=0.0
+		if unduKZ is None :
+			unduKZ=0.0
+
 		self.bEffY.set(bEffY)
 		self.bEffZ.set(bEffZ)
 		self.periodLength.set(periodLength)
@@ -254,14 +263,15 @@ class undulatorCharacterization(_attribute_collection) :
 			return
 		self.undulatorLength.set( self.periodLength.get()*(self.numPeriods.get()+self.lengthEndPeriodsRelative.get()) )
 		self.undulatorWaveNum.set( 2 * math.pi / ( self.periodLength.get() ) )
-		if not (self.undulatorParameterKY.get() is None) :
-			if not(self.undulatorParameterKY.get() == 0.0) :
+		if (not (self.undulatorParameterKY.get() is None)) and \
+				not(self.undulatorParameterKY.get() == 0.0) :
 				self.bEffY.set(self.undulatorParameterKY.get()*uc.m_el * uc.v_c * self.undulatorWaveNum.get()/uc.q_el)
 		elif not (self.bEffY.get() is None) :
 			ky=uc.q_el * self.bEffY.get() / ( uc.m_el * uc.v_c * self.undulatorWaveNum.get() )
 			self.undulatorParameterKY.set(ky)
-		if not (self.undulatorParameterKZ.get() is None) :
-			self.bEffZ.set(self.undulatorParameterKZ.get()*uc.m_el * uc.v_c * self.undulatorWaveNum.get()/uc.q_el)
+		if (not (self.undulatorParameterKZ.get() is None)) and \
+				not(self.undulatorParameterKZ.get() == 0.0) :
+				self.bEffZ.set(self.undulatorParameterKZ.get()*uc.m_el * uc.v_c * self.undulatorWaveNum.get()/uc.q_el)
 		elif not (self.bEffZ.get() is None) :
 			kz=uc.q_el * self.bEffZ.get() / ( uc.m_el * uc.v_c * self.undulatorWaveNum.get() )
 			self.undulatorParameterKZ.set(kz)

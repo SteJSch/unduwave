@@ -91,16 +91,16 @@ class quantity :
 		ax.tick_params(axis='both', which='major', labelsize=4)
 		# ax.legend(loc='best', bbox_to_anchor=(0.8, 0.5, 0.0, 0.0))  
 		ax.zaxis.get_offset_text().set_fontsize(6)
-		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
+		pics_folder = Path(self._api._prog_paras.res_folder.get())/Path(self._api._prog_paras.pics_folder.get())
 		# pics_folder='pics/'
 		if file_name is None :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_parametric.png'
 			else:
-				pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
-				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_parametric.png'
+				pics_folder = Path(self._api._prog_paras.res_folder.get())/Path(self._api._prog_paras.pics_folder.get())
+				file_name = pics_folder/f'{self._name}_over_{x_quant._name}_parametric.png'
 		else:
-			file_name=pics_folder+file_name
+			file_name=pics_folder/file_name
 		if not nosave :
 			plt.savefig(file_name , bbox_inches='tight')
 		if plot :
@@ -163,14 +163,14 @@ class quantity :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}.png'
 			else:
-				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}.png'
+				file_name = pics_folder/f'{self._name}_over_{x_quant._name}.png'
 		else:
 			if addPicsFolder:
 				file_name=pics_folder/file_name
 		if not nosave :
 			plt.savefig(file_name , bbox_inches='tight')
 			if dataFile is None:
-				dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}.dat'
+				dataFile=pics_folder/f'{self._name}_over_{x_quant._name}.dat'
 			elif dataFile is True:
 				if addPicsFolder:
 					dataFile=pics_folder/dataFile
@@ -311,21 +311,21 @@ class quantity :
 		ax.zaxis.get_offset_text().set_fontsize(8)
 		plt.tight_layout()
 
-		pics_folder = self._api._prog_paras.res_folder.get()+self._api._prog_paras.pics_folder.get()
+		pics_folder = Path(self._api._prog_paras.res_folder.get())/Path(self._api._prog_paras.pics_folder.get())
 		# pics_folder='pics/'
 		if file_name is None :
 			if self._api is None :
 				file_name = f'{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 			else:
-				pics_folder = self._api._prog_paras.res_folder.get()/self._api._prog_paras.pics_folder.get()
-				file_name = f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
+				pics_folder = Path(self._api._prog_paras.res_folder.get())/Path(self._api._prog_paras.pics_folder.get())
+				file_name = pics_folder/f'{self._name}_over_{x_quant._name}_{y_quant._name}_3d.png'
 		else:
 			if addPicsFolder :
 				file_name=pics_folder/file_name
 		if not nosave :
 			plt.savefig(file_name   , bbox_inches='tight')
 			if dataFile is None:
-				dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3d.dat'
+				dataFile=pics_folder/f'{self._name}_over_{x_quant._name}_{y_quant._name}_3d.dat'
 			pd.DataFrame({'x':x_quant._data,'y':y_quant._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
 
 		if nfig is None :
@@ -360,13 +360,13 @@ class quantity :
 		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
-		file_name_h = file_name.split('.png')[0]+'_heat.png'
+		file_name_h = str(file_name).split('.png')[0]+'_heat.png'
 		if not nosave :
 			plt.savefig(file_name_h , bbox_inches='tight')
 			if dataFile is None:
-				dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_heat.dat'
+				dataFile=pics_folder/f'{self._name}_over_{x_quant._name}_{y_quant._name}_heat.dat'
 			else:
-				dataFile=dataFile+'_heat.dat'
+				dataFile=str(dataFile)+'_heat.dat'
 			pd.DataFrame({'x':x_quant._data,'y':y_quant._data,'z':self._data}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
 
 		"""
@@ -396,14 +396,17 @@ class quantity :
 		ax.tick_params(axis='both', which='major', labelsize=8)
 		plt.tight_layout()
 		ax.set_box_aspect(aspect=None, zoom=0.7)
-		file_name_3d_intr = file_name.split('.png')[0]+'_interpolated.png'
+		file_name_3d_intr = str(file_name).split('.png')[0]+'_interpolated.png'
 		if not nosave :
 			plt.savefig(file_name_3d_intr   , bbox_inches='tight')
 		if dataFile is None:
-			dataFile3d=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_3D_interpolated.dat'
+			dataFile3d=pics_folder/f'{self._name}_over_{x_quant._name}_{y_quant._name}_3D_interpolated.dat'
 		else:
-			dataFile3d=dataFile/'_3d_interpolated.dat'
-		pd.DataFrame({'x':Y_data_intrpltd.flatten(),'y':Z_data_intrpltd.flatten(),'z':Funs_intrpltd.flatten()}).to_csv(dataFile3d, sep = ' ',header=['x','y','z'], index=False)
+			dataFile3d=Path(str(dataFile)+'_3d_interpolated.dat')
+		try:
+			pd.DataFrame({'x':Y_data_intrpltd.flatten(),'y':Z_data_intrpltd.flatten(),'z':Funs_intrpltd.flatten()}).to_csv(dataFile3d, sep = ' ',header=['x','y','z'], index=False)
+		except:
+			pdb.set_trace()
 
 		if nfig is None :
 			fig = plt.figure(figsize=(13*cm_inch, 6.5*cm_inch), dpi=150)
@@ -434,13 +437,13 @@ class quantity :
 		ax.set_ylabel(f'{y_quant._plot_name} [{y_quant._unit}]', fontsize=8)
 		ax.set_xlabel(f'{x_quant._plot_name} [{x_quant._unit}]', fontsize=8)
 		ax.tick_params(axis='both', which='major', labelsize=8)
-		file_name_heat_intr = file_name.split('.png')[0]+'_heat_interpolated.png'
+		file_name_heat_intr = str(file_name).split('.png')[0]+'_heat_interpolated.png'
 		if not nosave :
 			plt.savefig(file_name_heat_intr , bbox_inches='tight')
 		if dataFile is None:
-			dataFile=f'{pics_folder}{self._name}_over_{x_quant._name}_{y_quant._name}_heat_interpolated.dat'
+			dataFile=pics_folder/f'{self._name}_over_{x_quant._name}_{y_quant._name}_heat_interpolated.dat'
 		else:
-			dataFile=dataFile/'_heat_interpolated.dat'
+			dataFile=Path(str(dataFile)+'_heat_interpolated.dat')
 		pd.DataFrame({'x':Y_data_intrpltd.flatten(),'y':Z_data_intrpltd.flatten(),'z':Funs_intrpltd.flatten()}).to_csv(dataFile, sep = ' ',header=['x','y','z'], index=False)
 
 		if not (xCutPlot is None) :
@@ -498,8 +501,8 @@ class quantity :
 			plt.xticks(fontsize=8)
 			plt.plot(yPlots,funsPlot, '-')
 			# plt.plot(zPlots,funsPlot, '-')
-			file_name_cut = file_name.split('.png')[0]+'_cut.png'
-			data_file_name_cut = file_name.split('.dat')[0]+'_cut.dat'
+			file_name_cut = str(file_name).split('.png')[0]+'_cut.png'
+			data_file_name_cut = str(file_name).split('.dat')[0]+'_cut.dat'
 			plt.savefig(file_name_cut , bbox_inches='tight')
 			# pd.DataFrame({'x':zPlots,'funs':funsPlot}).to_csv(data_file_name_cut, sep = ' ',header=['x','funs'], index=False)
 			pd.DataFrame({'x':yPlots,'funs':funsPlot}).to_csv(data_file_name_cut, sep = ' ',header=['x','funs'], index=False)
