@@ -5,9 +5,7 @@ Installation
 Via PIP
 ===============================
 
-| You need a working git and python3 installations for this guide to work.
-
-You can install unduwave simply via pip by typing:
+You can install unduwave on linux and windows simply via pip by typing:
 
 .. code-block:: console
 
@@ -18,14 +16,6 @@ After everything is finished, you can import unduwave via:
 .. code-block:: console
 
    import unduwave as uw
-
-| After this, you can open a terminal in the "scripts/First-Examples" subfolder - or navigate there from inside a terminal using the "cd" command - and run:
-
-.. code-block:: console
-
-   python3 example_wave.py 
-
-The script should run your first WAVE simulation.
 
 ===============================
 Via github
@@ -45,5 +35,20 @@ Navigate to the package folder and build the dist via:
    python -m pip install . 
 
 This should build and install unduwave as a python package on your system.
-   
+
+===============================
+Test the installation
+===============================
+
+git repository: https://github.com/SteJSch/unduwave
+
+The git repository contains a script folder which you can download. Run the scripts in the "scripts/Wave_Examples/First-Examples" folder.
+
+For example by:   
+
+.. code-block:: console
+
+   python3 example_wave.py 
+
+Your first simulation should run.
 

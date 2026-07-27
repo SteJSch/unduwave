@@ -972,6 +972,7 @@ class bfield(quantities.quantity) :
 		nfuns=nfuns.reshape((len(xs),len(ys),len(zs),nfuns.shape[-1]))
 
 		# print("here2")
+
 		line_intgrls=grid.grid_line_integrals_calc(
 			funs=nfuns, 
 			xvals=longPnts,
@@ -1061,7 +1062,6 @@ class bfield(quantities.quantity) :
 			method='harmonic',# 'full', 'harmonic',
 			beamEnGeV=1, # Beam Energy in GeV
 			) :
-
 
 		facKicks=-1e-6*1/2*(uc.v_c*1e-9/beamEnGeV)**2
 

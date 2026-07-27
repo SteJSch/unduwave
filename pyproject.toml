@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unduwave"
-version = "0.9.2"
+version = "0.9.1"
 requires-python = ">=3.9"
 description = "Functionality for WAVE and Undumag from python"
 readme = "README.md"
-license = { text = "MIT" }
+license = { text = "GPL-3.0-or-later" }
 
 dependencies = [
   "numpy",
@@ -37,7 +37,7 @@ include = ["unduwave*"]
 namespaces = false
 
 [tool.bumpver]
-current_version = "0.9.2"
+current_version = "0.9.1"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message  = "Bump version {old_version} -> {new_version}"
 commit          = true

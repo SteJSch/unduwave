@@ -706,7 +706,7 @@ class grid_interpolator :
 					indxE=indx
 					break
 			if indxE is None :
-				indxE=len(xvals)
+				indxE=len(data._g_xvals)
 			elif indxE < 0 :
 				indxE=0
 
@@ -723,7 +723,7 @@ class grid_interpolator :
 					indyE=indy
 					break
 			if indyE is None :
-				indyE=len(yvals)
+				indyE=len(data._g_yvals)
 			elif indyE < 0 :
 				indyE=0
 
@@ -740,7 +740,7 @@ class grid_interpolator :
 					indzE=indz
 					break
 			if indzE is None :
-				indzE=len(zvals)
+				indzE=len(data._g_zvals)
 
 		nfuns=data._g_funs[indx0:indxE,indy0:indyE,indz0:indzE,:]
 
