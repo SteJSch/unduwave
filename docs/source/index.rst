@@ -20,7 +20,7 @@ Contents
     introduction
     installation
     quickguide
-    autoapi/Unduwave/index
+    Unduwave/index
     
 Indices and tables
 ==================

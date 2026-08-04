@@ -8,8 +8,11 @@
 
 import os
 import sys
+from pathlib import Path
 
-sys.path.insert(0, os.path.abspath("../.."))
+here = Path(__file__).resolve().parent
+
+sys.path.insert(0, os.path.abspath(here/"../.."))
 
 project = 'Unduwave'
 copyright = 'CC BY-NC'
@@ -20,7 +23,7 @@ release = 'v0.9.2'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ['autoapi.extension','sphinx.ext.autodoc','sphinx_rtd_theme']
-autoapi_dirs = ['../../unduwave/']  # Relative path to the Python package to document
+autoapi_dirs = [here/'../../unduwave/']  # Relative path to the Python package to document
 autoapi_ignore = ['*UNDWAVE_IN_FILES*','undumag_proc_msh_radia.py','*archive*','*External-Software*']
 autoapi_python_class_content = 'both'
 autoapi_root = 'Unduwave'
