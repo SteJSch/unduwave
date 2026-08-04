@@ -18,7 +18,8 @@ autoapi_dirs = [os.path.dirname(unduwave.__file__)]
 
 print(autoapi_dirs)
 print("package exists:", os.path.exists(unduwave.__file__))
-
+print("package exists:", os.path.exists(unduwave.wave_modules.wave_control.py.__file__))
+#
 project = 'Unduwave'
 copyright = 'CC BY-NC'
 author = 'Stefan J. Schäfer'
