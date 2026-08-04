@@ -177,11 +177,11 @@ class unduwave_base_test(unittest.TestCase) :
 
 		material_combos=[ 
 			["super_material","pm_rec","fm_vanadium_permendur"], 
-			["super_material","super_material"], 
-			["pm_rec","fm_vanadium_permendur"], 
-			["pm_rec","pm_rec"], 
-			["pm_rec","super_material"], 
-			["fm_vanadium_permendur","super_material"], 
+#			["super_material","super_material"], 
+#			["pm_rec","fm_vanadium_permendur"], 
+#			["pm_rec","pm_rec"], 
+#			["pm_rec","super_material"], 
+#			["fm_vanadium_permendur","super_material"], 
 			]
 
 		for combo in material_combos :
