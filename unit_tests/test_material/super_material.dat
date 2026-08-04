@@ -1,0 +1,4 @@
+type: magnet
+id: super_material
+ksi_Par and ksi_Per # parallel and perpendicular (to easy axis) susceptibilities
+0.08 0.44
