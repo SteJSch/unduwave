@@ -16,9 +16,10 @@ sys.path.insert(0, os.path.abspath(here/"../.."))
 import unduwave
 autoapi_dirs = [os.path.dirname(unduwave.__file__)]
 
-print(autoapi_dirs)
-print("package exists:", os.path.exists(unduwave.__file__))
-print("package exists:", os.path.exists(unduwave.wave_modules.undu_control.__file__))
+#print(autoapi_dirs)
+print(Path(unduwave.__file__))
+#print("package exists:", os.path.exists(unduwave.__file__))
+#print("package exists:", os.path.exists(unduwave.wave_modules.undu_control.__file__))
 #
 project = 'Unduwave'
 copyright = 'CC BY-NC'
