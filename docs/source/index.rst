@@ -20,7 +20,7 @@ Contents
     introduction
     installation
     quickguide
-    Unduwave/index
+    unduwave/index
     
 Indices and tables
 ==================
