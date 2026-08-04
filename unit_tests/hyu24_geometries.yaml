@@ -1,0 +1,54 @@
+# one-sided Clamps
+#     ___
+#  __|   |
+# |______|
+#
+
+# =============================================================================
+# MAGNET/POLE SHAPE DEFINITIONS
+# =============================================================================
+periodic_magnet:
+  form_type: 'oneSidedClamps'          # types: 'square', 'oneSidedClamps', 'cpmuStdPole', 'twoSidedClamps_a/b'
+  main_block_dimensions: [50.0, 35.0, 7.1]  # [width, height, thickness] in mm (thickness calculated automatically)  
+  clamp_cutout: [5.0,12.3,7.1] # dimensions of clamps to be cut-out of full blocks, upper left corner if object viewed in x-y plane
+  chamf: 0.3 # chamfer in up- and down-stream direction
+  fracs: [1,1]
+  segms: [4,2,4]
+ 
+end_magnet_1:
+  form_type: 'oneSidedClamps'    # types: 'square', 'oneSidedClamps', 'cpmuStdPole' , 'twoSidedClamps_a/b'
+  main_block_dimensions: [50.0, 29.0, 7.9]  # [width, height, thickness] in mm (thickness calculated automatically)  
+  clamp_cutout: [5.0,9.1,7.9] # dimensions of clamps to be cut-out of full blocks, upper left corner if object viewed in x-y plane
+  chamf: 0.3 # chamfer in up- and down-stream direction
+  fracs: [1,1]
+  segms: [4,2,4]
+ 
+end_magnet_2:
+  form_type: 'square'    # types: 'square', 'oneSidedClamps', 'cpmuStdPole', 'twoSidedClamps_a/b'
+  main_block_dimensions: [50.0, 18.1, 6.5]  # [width, height, thickness] in mm (thickness calculated automatically)  
+  chamf: 0.3 # chamfer in up- and down-stream direction
+  fracs: [1,1]
+  segms: [4,2,4]
+
+periodic_pole:
+  form_type: 'cpmuStdPole'  # types: 'square', 'oneSidedClamps', 'cpmuStdPole', 'twoSidedClamps_a/b'
+  main_block_dimensions: [34.0,30.0,4.4]  
+  lPolMSY: 2.84
+  lPolSZ: 3.0
+  lPolLSY: 18.0
+  lPolMChamf: 0.5  
+  chamf: 0.3
+  fracs: [6,12]
+  segms: [6,12,4]
+
+end_pole:
+  form_type: 'cpmuStdPole'      # types: 'square', 'oneSidedClamps', 'cpmuStdPole', 'twoSidedClamps_a/b'
+  main_block_dimensions: [34.0,35.0,2.2]  
+  lPolMSY: 2.84
+  lPolSZ: 3.0
+  lPolLSY: 23.0
+  lPolMChamf: 0.5  
+  chamf: 0.3
+  fracs: [6,12]
+  segms: [6,12,4]
+

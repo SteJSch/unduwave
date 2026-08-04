@@ -29,6 +29,7 @@ class undu_api :
 	def set_magnet_objects(self,magn_objects=None) :
 		if magn_objects is None :
 			return
+		self._prog_paras.load_all_magnetic_material_files_from_folders()
 		self.magn_objects=magn_objects
 		self.magn_objects.add_to_clc(api=self)
 

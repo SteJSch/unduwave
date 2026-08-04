@@ -39,7 +39,7 @@ import time
 import yaml
 import multiprocessing
 
-#from mayavi import mlab
+# from mayavi import mlab
 random.seed(datetime.now().timestamp())
 cm_inch = 1/2.54
 
@@ -67,5 +67,11 @@ def combine_strings(str_add,str_add_to) :
 	else:
 		str_add_to=str_add_to+f'_{str_add}'	
 	return str_add_to
+
+def unit_velocity_from_trans_angles(hor_angle, vert_angle) :
+	velVert=math.sin(vert_angle)
+	velHor=math.sin(hor_angle)*math.cos(vert_angle)
+	velLong=math.sqrt(1-velVert**2-velHor**2)
+	return [velLong,velVert,velHor]
 
 ROOT_DIR = Path(__file__).resolve().parent

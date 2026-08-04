@@ -137,7 +137,7 @@ class undu_prog_parameters(_attribute_collection):
 	def load_all_magnetic_material_files_from_folders(self,folders=None) :
 		if folders is None :
 			folders=self.material_files_std_folders()
-		for folder in folders :
+		for folder in folders[::-1] :
 			directory = os.fsencode(folder)
 				
 			for file in os.listdir(directory):

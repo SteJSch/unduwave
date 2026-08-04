@@ -1,0 +1,26 @@
+ * Run:
+           2
+ * XminBeff XmaxBeff:
+  -11.7369995       18.2630005    
+ * ByMin, ByMax, (ByMax-ByMin)/2, ByEff:
+  -1.03648067       1.03647804       1.03647935       1.05016541    
+ * BzMin, BzMax, (BzMax-BzMin)/2, BzEff:
+  -7.38830073E-03   7.61692505E-03   7.50261312E-03   1.01247160E-02
+ * Beff = Sqrt( ByEff**2 + BzEff**2 ), Keff, 1. Harm. [eV]:
+   1.05021417       2.94270015       176.182358    
+ * ByInt1, BzInt1, ByInt2, BzInt2:
+   1.09019726E-04  -6.79019795E-05  -28.1289692      -1.77265499E-02
+ * ByInt1Inf, BzInt1Inf:
+  -1.88596211E-02  -3.13190408E-02
+ * ByMin, ByMax, (ByMax-ByMin)/2, ByEff, without recovered points:
+  -1.03648067       1.03647804       1.03647935       1.05016541    
+ * BzMin, BzMax, (BzMax-BzMin)/2, BzEff, without recovered points:
+  -7.38830073E-03   7.61692505E-03   7.50261312E-03   1.01247160E-02
+ * Beff = Sqrt( ByEff**2 + BzEff**2 ), without recovered points:
+   1.05021417    
+ * ByInt1, BzInt1, ByInt2, BzInt2, without recovered points:
+   1.09019726E-04  -6.79019795E-05  -28.1289692      -1.77265499E-02
+ External field [T]:
+   0.00000000       0.00000000       0.00000000    
+ 1. Integrals ByI and BzI [Tmm] of external field:
+   0.00000000       0.00000000    

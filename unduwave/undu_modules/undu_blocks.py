@@ -21,9 +21,7 @@ class magnetic_material(_attribute_collection) :
 			ksi_perp=None,
 			magnetization_data=None,
 			magnetization_file=None,
-			loadedMaterialList=None,
 			) :
-
 
 		self._base_material_type=_attribute(base_material_type)
 		self._material_id=_attribute(material_id)
@@ -111,7 +109,7 @@ class magnetic_material(_attribute_collection) :
 				indList=ind
 				break
 		if not fnd :
-			theList.append(other)
+			theList.insert(0,other)
 			indList=len(theList)-1
 		return theList, indList
 
@@ -286,7 +284,6 @@ class undumagObjectList :
 			with open(file, 'r') as fileYAML:
 				unduDict = yaml.safe_load(fileYAML)
 		except: 
-			pdb.set_trace()
 			return []
 		return unduDict
 
@@ -447,6 +444,7 @@ class undumagObjectList :
 		"""
 		n_magn / n_magn_per_per = n_per
 		"""
+
 		if self._api is None :
 			return -1
 		names=self.find_all_names()

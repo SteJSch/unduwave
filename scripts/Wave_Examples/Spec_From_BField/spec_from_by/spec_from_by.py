@@ -1,167 +1,172 @@
-import os
-import pdb
-import sys
-sys.path.insert(0, '../../../../')
+import unduwave as uw
+from unduwave.unduwave_incl import *
+from unduwave import undulatorComponents
+from unduwave import undu_blocks
+from unduwave import magneticObjectGeometries
 
 try :
 	# works when calling script with python3 script_file
-	dir_path = os.path.dirname(os.path.realpath(__file__))
+	dir_path = Path(os.path.dirname(os.path.realpath(__file__)))
 except:
 	# works when calling script with exec from python console
-	dir_path = os.getcwd()
+	dir_path = Path(os.getcwd())
 
-import unduwave as uw
+if __name__ == '__main__':
 
-field_folder = f'/'
-res_folder = dir_path+'/res/'
+	res_folder = dir_path/'res/'
 
-"""
-Getting wave
-"""
+	"""
+	Getting wave
+	"""
 
-wave = uw.wave(wave_mode='bfield')
+	wave = uw.wave(wave_mode='bfield')
 
-"""
-Loading and setting a BField
-"""
+	"""
+	Loading and setting a BField
+	"""
 
-# Loading a file with x [mm] and By [T]
+	# Loading a file with x [mm] and By [T]
 
-# bfield=uw.bfield.bfield(
-# 	unitsXB=[0.001,1.0] # setting the units
-# 	)
+	bfield=uw.bfield.bfield(
+		unitsXB=[0.001,1.0] # setting the units
+		)
 
-# bfield.load_field_from_file(
-# 			file=dir_path+'/field_by_mm_T.dat', 
-# 			fieldMap=False,
-# 			cols=['x','By'],
-# 			unduFile = False, 
-# 			radiaFile=False,
-# 			header=None,
-# 			skiprows=None,
-# 		)
+	bfield.load_field_from_file(
+				file=dir_path/'field_by_mm_T.dat', 
+				fieldMap=False,
+				cols=['x','By'],
+				unduFile = False, 
+				radiaFile=False,
+				header=None,
+				skiprows=None,
+			)
 
-# Loading a file with x [m] and By [kT]
+	# make the field known to wave
 
-bfield=uw.bfield.bfield(
-	unitsXB=[1.0,1e3] # setting the units
-	)
+	bfield_paras = wave._bfield_paras # get bfield paras
+	bfield_paras.bfield.set(bfield) # set the bfield
+	bfield_paras.field_type.set('By') # tell wave which part of bfield to use for simu
 
-bfield.load_field_from_file(
-	file=dir_path+'/field_by_m_kT.dat', 
-	fieldMap=False,
-	cols=['x','By'],
-	unduFile = False, 
-	radiaFile=False,
-	header=None,
-	skiprows=None,
-)
+	"""
+	Setting Program Parameter
+	"""
 
-# make the field known to wave
+	wave_prog_paras = wave._prog_paras
+	wave_prog_paras.res_folder.set(res_folder)
+	wave_prog_paras.calc_spectrum.set(True)
+	wave_prog_paras.nthreads.set(6)
+	wave_prog_paras.calc_emittance.set(1)
 
-bfield_paras = wave._bfield_paras # get bfield paras
-bfield_paras.bfield.set(bfield) # set the bfield
-bfield_paras.field_type.set('By') # tell wave which part of bfield to use for simu
+	"""
+	Setting Spectrometer Parameter
+	"""
 
-"""
-Setting Program Parameter
-"""
+	spectrometer_paras = wave._spectrometer_paras
+	spectrometer_paras.spectrum_n_energies.set(101)
+	spectrometer_paras.spectrum_min_energy.set(250)
+	spectrometer_paras.spectrum_max_energy.set(1000)
+	spectrometer_paras.spectrum_undu_mode.set(0)
 
-wave_prog_paras = wave._prog_paras
-wave_prog_paras.res_folder.set(res_folder)
-wave_prog_paras.calc_spectrum.set(True)
-wave_prog_paras.nthreads.set(6)
-wave_prog_paras.calc_emittance.set(1)
+	"""
+	Setting Screen Parameter
+	"""
+	screen_paras = wave._screen_paras
+	screen_paras.screen_segm_hor.set(30) 
+	screen_paras.screen_segm_vert.set(30)
+	screen_paras.screen_extent_hor.set(40) # pinhole width mm
+	screen_paras.screen_extent_vert.set(40) # pinhole height mm
 
-"""
-Setting Spectrometer Parameter
-"""
+	"""
+	Setting Beam Parameter
+	"""
 
-spectrometer_paras = wave._spectrometer_paras
-spectrometer_paras.spectrum_n_energies.set(10)
-spectrometer_paras.spectrum_min_energy.set(100)
-spectrometer_paras.spectrum_max_energy.set(500)
-spectrometer_paras.spectrum_undu_mode.set(0)
+	ebeam_paras = wave._ebeam_paras
+	ebeam_paras.beam_en.set(1.722) # [GeV]
+	ebeam_paras.current.set(0.3) # [A]
+	ebeam_paras.beamSizeHor.set(275e-6) # 
+	ebeam_paras.beamDiveHor.set(28.1e-6) #
+	ebeam_paras.beamSizeVer.set(22.5e-6) # 
+	ebeam_paras.beamDiveVer.set(6.8e-6) # 
+	ebeam_paras.espread.set(1e-3) # 
+	ebeam_paras.emittanceHor.set(7.7e-9)
+	ebeam_paras.emittanceVer.set(15.4e-11)
 
-"""
-Setting Screen Parameter
-"""
-screen_paras = wave._screen_paras
-screen_paras.screen_segm_hor.set(30) 
-screen_paras.screen_segm_vert.set(30)
-screen_paras.screen_extent_hor.set(40) # pinhole width mm
-screen_paras.screen_extent_vert.set(40) # pinhole height mm
+	"""
+	Analyze the loaded field:
+		- getting the effective field and the energy of the first harmonic
+	"""
+	prd_lengths=bfield.find_period_length()
+	beffGrid, data_y, data_z, longIntrvl=bfield.calc_beff_grid(
+		prd_lngth=prd_lengths[0],
+		nlongs=None,
+		longIntrvl=None,
+		)
+	beff=beffGrid._g_funs[0,0,0,1]
+	undulator=uw.undulator.undulatorCharacterization(
+		bEffY=beff,
+		periodLength=prd_lengths[0],
+		numPeriods=7,
+		bEffZ=0.0,
+		ebeam=ebeam_paras,
+		)
+	firstHarmEnergy=undulator.firstHarmEnergyStrong()
+	print(f"beff: {beff:.2f} T, periodLength: {prd_lengths[0]:.4f} m, \n firstHarmEnergy: {firstHarmEnergy:.2f} eV")
 
-"""
-Setting Beam Parameter
-"""
+	"""
+	Run
+	"""
 
-ebeam_paras = wave._ebeam_paras
-ebeam_paras.beam_en.set(1.722) # [GeV]
-ebeam_paras.current.set(0.3) # [A]
-ebeam_paras.beamSizeHor.set(275e-6) # 
-ebeam_paras.beamDiveHor.set(28.1e-6) #
-ebeam_paras.beamSizeVer.set(22.5e-6) # 
-ebeam_paras.beamDiveVer.set(6.8e-6) # 
-ebeam_paras.espread.set(1e-3) # 
-ebeam_paras.emittanceHor.set(7.7e-9)
-ebeam_paras.emittanceVer.set(15.4e-11)
+	wave.run()
 
-"""
-Run
-"""
+	"""
+	Get Results and Plot
+	"""
 
-wave.run()
+	results = wave.get_results()
+	nfig=0
 
-"""
-Get Results and Plot
-"""
+	traj_x = results.get_result(which='traj_x')
+	traj_y = results.get_result(which='traj_y')
+	traj_z = results.get_result(which='traj_z')
 
-results = wave.get_results()
-nfig=0
+	traj_y.plot_over(x_quant=traj_x,nfig=nfig,nosave=True)
+	nfig=traj_z.plot_over(x_quant=traj_x,nfig=nfig)
 
-traj_x = results.get_result(which='traj_x')
-traj_y = results.get_result(which='traj_y')
-traj_z = results.get_result(which='traj_z')
+	nfig=traj_y.plot_over(x_quant=traj_z,nfig=nfig)
 
-traj_y.plot_over(x_quant=traj_x,nfig=nfig,nosave=True)
-nfig=traj_z.plot_over(x_quant=traj_x,nfig=nfig)
+	By = results.get_result(which='By')
+	By.plot_over(x_quant=traj_x,nfig=nfig,nosave=True)
+	Bz = results.get_result(which='Bz')
+	nfig=Bz.plot_over(x_quant=traj_x,nfig=nfig)
 
-nfig=traj_y.plot_over(x_quant=traj_z,nfig=nfig)
+	power_z = results.get_result(which='power_z')
+	power_y = results.get_result(which='power_y')
+	power_distro = results.get_result(which='power_distribution')
+	nfig=power_distro.plot_over_3d(x_quant=power_z,y_quant=power_y,file_name=None,nosave=False,nfig=nfig)
 
-By = results.get_result(which='By')
-By.plot_over(x_quant=traj_x,nfig=nfig,nosave=True)
-Bz = results.get_result(which='Bz')
-nfig=Bz.plot_over(x_quant=traj_x,nfig=nfig)
+	en_flux = results.get_result(which='en_flux')
+	flux = results.get_result(which='flux')
+	nfig=flux.plot_over(x_quant=en_flux,file_name=None,nosave=False,nfig=nfig,loglog=False)
 
-power_z = results.get_result(which='power_z')
-power_y = results.get_result(which='power_y')
-power_distro = results.get_result(which='power_distribution')
-nfig=power_distro.plot_over_3d(x_quant=power_y,y_quant=power_z,file_name=None,nosave=False,nfig=nfig)
+	en_brill = results.get_result(which='en_brill')
+	brill0 = results.get_result(which='brill0')
+	brill0e = results.get_result(which='brill0e')
+	brill0f = results.get_result(which='brill0f')
+	brill0ef = results.get_result(which='brill0ef')
+	brill0.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=False)
+	brill0e.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=False)
+	brill0f.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=False)
+	nfig=brill0ef.plot_over(x_quant=en_brill,nfig=nfig,loglog=False)
 
-en_flux = results.get_result(which='en_flux')
-flux = results.get_result(which='flux')
-nfig=flux.plot_over(x_quant=en_flux,file_name=None,nosave=False,nfig=nfig,loglog=True)
+	en_fd = results.get_result(which='en_fd')
+	flux_density_onaxis = results.get_result(which='flux_density')
+	nfig=flux_density_onaxis.plot_over(x_quant=en_fd,nfig=nfig,loglog=False)
 
-en_brill = results.get_result(which='en_brill')
-brill0 = results.get_result(which='brill0')
-brill0e = results.get_result(which='brill0e')
-brill0f = results.get_result(which='brill0f')
-brill0ef = results.get_result(which='brill0ef')
-brill0.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=True)
-brill0e.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=True)
-brill0f.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=True)
-nfig=brill0ef.plot_over(x_quant=en_brill,nfig=nfig,loglog=True)
+	flux_dens_distr_ens_loaded = results.find_load_flux_density_distribution(energies=[int(firstHarmEnergy)])
+	fd_y = results.get_result(which='fd_y')
+	fd_z = results.get_result(which='fd_z')
+	for en in flux_dens_distr_ens_loaded :
+		fd = results.get_result(which=f'flux_density_distribution_{en:.2f}')
+		nfig=fd.plot_over_3d(x_quant=fd_z,y_quant=fd_y,file_name=None,nosave=False,nfig=nfig)
 
-en_fd = results.get_result(which='en_fd')
-flux_density_onaxis = results.get_result(which='flux_density')
-nfig=flux_density_onaxis.plot_over(x_quant=en_fd,nfig=nfig,loglog=True)
-
-flux_dens_distr_ens_loaded = results.find_load_flux_density_distribution(energies=[414])
-fd_y = results.get_result(which='fd_y')
-fd_z = results.get_result(which='fd_z')
-for en in flux_dens_distr_ens_loaded :
-	fd = results.get_result(which=f'flux_density_distribution_{en:.2f}')
-	nfig=fd.plot_over_3d(x_quant=fd_y,y_quant=fd_z,file_name=None,nosave=False,nfig=nfig)
-
-pdb.set_trace()
+	pdb.set_trace()

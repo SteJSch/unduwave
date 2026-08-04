@@ -1,27 +1,21 @@
-
-import pdb
-import sys
-import os
-import math
-sys.path.insert(0, '../../../')
+import unduwave as uw
+from unduwave import undu_blocks
+from unduwave import undulatorComponents
+from unduwave.unduwave_incl import *
 
 try :
 	# works when calling script with python3 script_file
-	dir_path = os.path.dirname(os.path.realpath(__file__))
+	dir_path = Path(os.path.dirname(os.path.realpath(__file__)))
 except:
 	# works when calling script with exec from python console
-	dir_path = os.getcwd()
-
-import unduwave as uw
-from unduwave import undu_blocks
-import numpy as np 
+	dir_path = Path(os.getcwd())
 
 res_folder='res'
-res_folder_full=dir_path+f'/{res_folder}/'
+res_folder_full=dir_path/f'{res_folder}/'
 
 undu = uw.undu()
 undu_prog_paras = undu._prog_paras
-undu_prog_paras.res_folder.set(res_folder+'/')
+undu_prog_paras.res_folder.set(res_folder_full)
 undu_prog_paras.plotGeometry.set(1)
 undu_prog_paras.create_z_sym.set(0)
 undu_prog_paras.bmap_nz.set(10)
@@ -90,7 +84,7 @@ magn_paras=undu_blocks.magParameters(
 	frac_y=1,
 	frac_z=1,
 	chamf=0.3,
-	material_id="pm_rec_77K",
+	material_id="pm_rec",
 )
 
 magnObject = undu_blocks.undumagBlockObject(
@@ -189,7 +183,7 @@ bmap.plot_fld_map(
 	yPos=0.0,
 	zPos=None,
 	nfig=nfig,
-	filename=res_folder_full+"bymap.png",
+	filename=res_folder_full/"bymap.png",
 	title="By Map",
 	)
 

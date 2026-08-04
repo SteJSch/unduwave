@@ -55,7 +55,7 @@ class undu_prepare():
 		undu_paras = self._undu_api._prog_paras
 		undu_folder= undu_paras.undumag_curr_folder.get()
 		if undu_paras.undu_mode.get() == 'from_clc_file' : 
-			if len(undu_paras.copy_clc_folder.get()) > 0 : 
+			if len(str(undu_paras.copy_clc_folder.get())) > 0 : 
 				clcFile=undu_paras.copy_clc_folder.get()/undu_paras.in_file_clc.get()
 				shutil.copy2(clcFile, undu_folder / 'stage/undumag.clc')
 		elif undu_paras.undu_mode.get() == 'from_undu_magns' :

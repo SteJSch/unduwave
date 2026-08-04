@@ -1,20 +1,14 @@
-
-import os
-import pdb
-import sys
-# sys.path.insert(0, '../../../../')
+import unduwave as uw
+from unduwave.unduwave_incl import *
 
 try :
 	# works when calling script with python3 script_file
-	dir_path = os.path.dirname(os.path.realpath(__file__))
+	dir_path = Path(os.path.dirname(os.path.realpath(__file__)))
 except:
 	# works when calling script with exec from python console
-	dir_path = os.getcwd()
+	dir_path = Path(os.getcwd())
 
-import unduwave as uw
-
-field_folder = f'/'
-res_folder = dir_path+'/res/'
+res_folder = dir_path/'res/'
 
 """
 Getting wave
@@ -32,45 +26,45 @@ bfield=uw.bfield.bfield(
 
 # Loading 2 files, one with x [mm] and By [T], the other with x and Bz
 
-# bfield.load_field_from_file(
-# 			file=dir_path+'/by_tmp.dat', 
-# 			fieldMap=False,
-# 			cols=['x','By'],
-# 			unduFile = False, 
-# 			radiaFile=False,
-# 			header=None,
-# 			skiprows=None,
-# 		)
-
-# bfield.load_field_from_file(
-# 			file=dir_path+'/bz_tmp.dat', 
-# 			fieldMap=False,
-# 			cols=['x','Bz'],
-# 			unduFile = False, 
-# 			radiaFile=False,
-# 			header=None,
-# 			skiprows=None,
-# 		)
-
-# Combining the data to one file
-
-# bfield.write_field_std(
-# 	file=dir_path+'/file_combine.dat',
-# 	unitsConv=None, 
-# 	whatStr='xByBz' # tell bfield which cols to write
-# 	)
-
-# Load the field from the combined file.
-
 bfield.load_field_from_file(
-			file=dir_path+'/file_combine.dat', 
+			file=dir_path/'by_tmp.dat', 
 			fieldMap=False,
-			cols=['x','By','Bz'],
+			cols=['x','By'],
 			unduFile = False, 
 			radiaFile=False,
 			header=None,
 			skiprows=None,
 		)
+
+bfield.load_field_from_file(
+			file=dir_path/'bz_tmp.dat', 
+			fieldMap=False,
+			cols=['x','Bz'],
+			unduFile = False, 
+			radiaFile=False,
+			header=None,
+			skiprows=None,
+		)
+
+# Combining the data to one file
+
+# bfield.write_field_std(
+# 	file=dir_path/'file_combine.dat',
+# 	unitsXB=None, 
+# 	whatStr='xByBz' # tell bfield which cols to write
+# 	)
+
+# Load the field from the combined file.
+
+# bfield.load_field_from_file(
+# 			file=dir_path/'file_combine.dat', 
+# 			fieldMap=False,
+# 			cols=['x','By','Bz'],
+# 			unduFile = False, 
+# 			radiaFile=False,
+# 			header=None,
+# 			skiprows=None,
+# 		)
 
 # make the field known to wave
 

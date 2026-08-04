@@ -1,8 +1,4 @@
 Usage
 =====
 
-=================
-Quickstart
-=================
 
-Start things.

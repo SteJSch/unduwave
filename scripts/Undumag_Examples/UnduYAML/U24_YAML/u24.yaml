@@ -1,0 +1,35 @@
+# =============================================================================
+# GENERAL PARAMETERS
+# =============================================================================
+general:
+  origin: [0.0, 0.0, 0.0]              # Origin of the device in [X, Y, Z] coordinates
+  coordinate_names: ['X', 'Y', 'Z']    # Coordinate system labels, X-horizontal, Y-vertical, Z-longitudinal - inconsequential until now
+  symmetries: ['X','Y']                # Normal directions to symmetrie planes - geometry definitions are such that full undulator is only created after application of these symmetry operations
+
+# =============================================================================
+# UNDULATOR PARAMETERS
+# =============================================================================
+undulator:
+  name: "u24"
+  type: "Planar"  # Undulator type: "APPLE" or "Planar-Hybrid" or 'Planar'
+  accelerator: "BESSYII" # Name of the accelerator
+  periods: 73            # Number of periods in the undulator
+  minimum_gap: 5.5       # Minimum designed gap in mm
+#  shim_mp: 0.0           # Gap between magnets and poles in a row (Z) in mm
+#  shim_pm: 0.5           # Gap between poles and magnets in a row (Z) in mm
+  shim_m: 0.0            # Shim Between Magnets
+  period_length: 24.0    # Primary period length in mm
+  magnetization_first_magnet: [0.0,0.0,-1.0] # the magnetization vector of first periodic magnet on lower beam
+
+# =============================================================================
+# Geometry Definitions
+# =============================================================================
+geometry_info_file: "u24_geometries.yaml" # the definition file for the geometries
+material_file_folder: ""     # if custom material files are used
+
+periodic_magnet: # name of the geometry definition in the geometry_info_file
+  geometry: "periodic_magnet_geo"
+  material_id: 'pm_rec' # "pm_rec" - permanent magnet material, "fm_vanadium_permendur" - ferromagnetic pole material
+  remanence: 1.58  # Block remanence in T (1.21 * 1.344 for cryogenic grade)
+
+

@@ -1,0 +1,515 @@
+
+* Lines written by undugui.py
+Mode Hybrid
+
+& User_Comment
+Planar Hybrid Undulator
+
+*------ Variables
+
+$PerLen = 24.0000
+$white=0
+$black=1
+$red=2
+$green=3
+$blue=4
+$yellow=5
+$magenta=6
+$cyan=7
+
+$Br_Hybrid = 1.62
+$mu_Hybrid = 1.0!1.03
+$KsiPerp_Hybrid = 0.0!0.17
+$RECIndex_Hybrid = 1
+$IronIndex_Hybrid = 2
+$ColorMag_Hybrid = $red
+$ColorPol_Hybrid = $blue
+
+$FracDivY_Mag_Hybrid = 2.0
+$FracDivZ_Mag_Hybrid = 2.0
+
+$Mcoating=0.014
+* ######################## NEW #####################################
+
+* Magnet Definitions --------------------------------
+
+*########## Order of Poles and Magnets
+
+*PER START
+& Magnet
+BlockChamf CPMU24_llR_row1_endUS_1 CPMU24_llR_row1_endUS $ColorMag_Hybrid  !key, name, mother, color
+-52.3 -28.95 -6.25
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+6.5 18.1 12.5 0.30  !dimensions 
+4 2 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_endUS_2_main CPMU24_llR_row1_endUS_2 $ColorPol_Hybrid  !key, name, mother, color
+-47.95 -20.5 -8.5
+2  !material index
+2.2 35.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_endUS_2_uside_l CPMU24_llR_row1_endUS_2 $ColorPol_Hybrid  !key, name, mother, color
+-47.95 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-1.1 0.9199999999999999 -1.5
+-1.1 1.42 -1.0
+-1.1 1.42 1.5
+-1.1 -1.42 1.5
+-1.1 -1.42 -1.5
+1.1 0.9199999999999999 -1.5
+1.1 1.42 -1.0
+1.1 1.42 1.5
+1.1 -1.42 1.5
+1.1 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_endUS_2_lside_l CPMU24_llR_row1_endUS_2 $ColorPol_Hybrid  !key, name, mother, color
+-47.95 -26.5 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-1.1 -11.5 1.5
+0.0 -11.5 -1.5
+1.1 -11.5 1.5
+1.1 11.5 1.5
+0.0 11.5 -1.5
+-1.1 11.5 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_endUS_3_main CPMU24_llR_row1_endUS_3 $ColorMag_Hybrid  !key, name, mother, color
+-42.4 -23.5 -10.0
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.9 29.0 20.0 0.30  !dimensions 
+4 2 2 1 1  !segmentation
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_endUS_3_sideL CPMU24_llR_row1_endUS_3 $ColorMag_Hybrid  !key, name, mother, color
+-42.4 -28.05 -22.5
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.9 19.9 5.0 0.30  !dimensions 
+4 1 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_period1_1_main CPMU24_llR_row1_period1_1 $ColorPol_Hybrid  !key, name, mother, color
+-36.25 -18.0 -8.5
+2  !material index
+4.4 30.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_period1_1_uside_l CPMU24_llR_row1_period1_1 $ColorPol_Hybrid  !key, name, mother, color
+-36.25 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-2.2 0.9199999999999999 -1.5
+-2.2 1.42 -1.0
+-2.2 1.42 1.5
+-2.2 -1.42 1.5
+-2.2 -1.42 -1.5
+2.2 0.9199999999999999 -1.5
+2.2 1.42 -1.0
+2.2 1.42 1.5
+2.2 -1.42 1.5
+2.2 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_period1_1_lside_l CPMU24_llR_row1_period1_1 $ColorPol_Hybrid  !key, name, mother, color
+-36.25 -24.0 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-2.2 -9.0 1.5
+0.0 -9.0 -1.5
+2.2 -9.0 1.5
+2.2 9.0 1.5
+0.0 9.0 -1.5
+-2.2 9.0 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period1_2_main CPMU24_llR_row1_period1_2 $ColorMag_Hybrid  !key, name, mother, color
+-30.000000000000004 -20.43 -10.0
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 35.0 20.0 0.30  !dimensions 
+4 2 2 1 1  !segmentation
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period1_2_sideL CPMU24_llR_row1_period1_2 $ColorMag_Hybrid  !key, name, mother, color
+-30.000000000000004 -26.58 -22.5
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 22.7 5.0 0.30  !dimensions 
+4 1 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_period1_3_main CPMU24_llR_row1_period1_3 $ColorPol_Hybrid  !key, name, mother, color
+-24.250000000000004 -18.0 -8.5
+2  !material index
+4.4 30.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_period1_3_uside_l CPMU24_llR_row1_period1_3 $ColorPol_Hybrid  !key, name, mother, color
+-24.250000000000004 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-2.2 0.9199999999999999 -1.5
+-2.2 1.42 -1.0
+-2.2 1.42 1.5
+-2.2 -1.42 1.5
+-2.2 -1.42 -1.5
+2.2 0.9199999999999999 -1.5
+2.2 1.42 -1.0
+2.2 1.42 1.5
+2.2 -1.42 1.5
+2.2 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_period1_3_lside_l CPMU24_llR_row1_period1_3 $ColorPol_Hybrid  !key, name, mother, color
+-24.250000000000004 -24.0 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-2.2 -9.0 1.5
+0.0 -9.0 -1.5
+2.2 -9.0 1.5
+2.2 9.0 1.5
+0.0 9.0 -1.5
+-2.2 9.0 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period1_4_main CPMU24_llR_row1_period1_4 $ColorMag_Hybrid  !key, name, mother, color
+-18.000000000000004 -20.43 -10.0
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 35.0 20.0 0.30  !dimensions 
+4 2 2 1 1  !segmentation
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period1_4_sideL CPMU24_llR_row1_period1_4 $ColorMag_Hybrid  !key, name, mother, color
+-18.000000000000004 -26.58 -22.5
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 22.7 5.0 0.30  !dimensions 
+4 1 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_period2_1_main CPMU24_llR_row1_period2_1 $ColorPol_Hybrid  !key, name, mother, color
+-12.250000000000004 -18.0 -8.5
+2  !material index
+4.4 30.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_period2_1_uside_l CPMU24_llR_row1_period2_1 $ColorPol_Hybrid  !key, name, mother, color
+-12.250000000000004 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-2.2 0.9199999999999999 -1.5
+-2.2 1.42 -1.0
+-2.2 1.42 1.5
+-2.2 -1.42 1.5
+-2.2 -1.42 -1.5
+2.2 0.9199999999999999 -1.5
+2.2 1.42 -1.0
+2.2 1.42 1.5
+2.2 -1.42 1.5
+2.2 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_period2_1_lside_l CPMU24_llR_row1_period2_1 $ColorPol_Hybrid  !key, name, mother, color
+-12.250000000000004 -24.0 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-2.2 -9.0 1.5
+0.0 -9.0 -1.5
+2.2 -9.0 1.5
+2.2 9.0 1.5
+0.0 9.0 -1.5
+-2.2 9.0 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period2_2_main CPMU24_llR_row1_period2_2 $ColorMag_Hybrid  !key, name, mother, color
+-6.000000000000003 -20.43 -10.0
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 35.0 20.0 0.30  !dimensions 
+4 2 2 1 1  !segmentation
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period2_2_sideL CPMU24_llR_row1_period2_2 $ColorMag_Hybrid  !key, name, mother, color
+-6.000000000000003 -26.58 -22.5
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 22.7 5.0 0.30  !dimensions 
+4 1 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_period2_3_main CPMU24_llR_row1_period2_3 $ColorPol_Hybrid  !key, name, mother, color
+-0.25000000000000266 -18.0 -8.5
+2  !material index
+4.4 30.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_period2_3_uside_l CPMU24_llR_row1_period2_3 $ColorPol_Hybrid  !key, name, mother, color
+-0.25000000000000266 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-2.2 0.9199999999999999 -1.5
+-2.2 1.42 -1.0
+-2.2 1.42 1.5
+-2.2 -1.42 1.5
+-2.2 -1.42 -1.5
+2.2 0.9199999999999999 -1.5
+2.2 1.42 -1.0
+2.2 1.42 1.5
+2.2 -1.42 1.5
+2.2 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_period2_3_lside_l CPMU24_llR_row1_period2_3 $ColorPol_Hybrid  !key, name, mother, color
+-0.25000000000000266 -24.0 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-2.2 -9.0 1.5
+0.0 -9.0 -1.5
+2.2 -9.0 1.5
+2.2 9.0 1.5
+0.0 9.0 -1.5
+-2.2 9.0 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period2_4_main CPMU24_llR_row1_period2_4 $ColorMag_Hybrid  !key, name, mother, color
+5.9999999999999964 -20.43 -10.0
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 35.0 20.0 0.30  !dimensions 
+4 2 2 1 1  !segmentation
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period2_4_sideL CPMU24_llR_row1_period2_4 $ColorMag_Hybrid  !key, name, mother, color
+5.9999999999999964 -26.58 -22.5
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 22.7 5.0 0.30  !dimensions 
+4 1 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_period3_1_main CPMU24_llR_row1_period3_1 $ColorPol_Hybrid  !key, name, mother, color
+11.749999999999996 -18.0 -8.5
+2  !material index
+4.4 30.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_period3_1_uside_l CPMU24_llR_row1_period3_1 $ColorPol_Hybrid  !key, name, mother, color
+11.749999999999996 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-2.2 0.9199999999999999 -1.5
+-2.2 1.42 -1.0
+-2.2 1.42 1.5
+-2.2 -1.42 1.5
+-2.2 -1.42 -1.5
+2.2 0.9199999999999999 -1.5
+2.2 1.42 -1.0
+2.2 1.42 1.5
+2.2 -1.42 1.5
+2.2 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_period3_1_lside_l CPMU24_llR_row1_period3_1 $ColorPol_Hybrid  !key, name, mother, color
+11.749999999999996 -24.0 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-2.2 -9.0 1.5
+0.0 -9.0 -1.5
+2.2 -9.0 1.5
+2.2 9.0 1.5
+0.0 9.0 -1.5
+-2.2 9.0 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period3_2_main CPMU24_llR_row1_period3_2 $ColorMag_Hybrid  !key, name, mother, color
+17.999999999999996 -20.43 -10.0
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 35.0 20.0 0.30  !dimensions 
+4 2 2 1 1  !segmentation
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period3_2_sideL CPMU24_llR_row1_period3_2 $ColorMag_Hybrid  !key, name, mother, color
+17.999999999999996 -26.58 -22.5
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 22.7 5.0 0.30  !dimensions 
+4 1 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_period3_3_main CPMU24_llR_row1_period3_3 $ColorPol_Hybrid  !key, name, mother, color
+23.749999999999996 -18.0 -8.5
+2  !material index
+4.4 30.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_period3_3_uside_l CPMU24_llR_row1_period3_3 $ColorPol_Hybrid  !key, name, mother, color
+23.749999999999996 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-2.2 0.9199999999999999 -1.5
+-2.2 1.42 -1.0
+-2.2 1.42 1.5
+-2.2 -1.42 1.5
+-2.2 -1.42 -1.5
+2.2 0.9199999999999999 -1.5
+2.2 1.42 -1.0
+2.2 1.42 1.5
+2.2 -1.42 1.5
+2.2 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_period3_3_lside_l CPMU24_llR_row1_period3_3 $ColorPol_Hybrid  !key, name, mother, color
+23.749999999999996 -24.0 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-2.2 -9.0 1.5
+0.0 -9.0 -1.5
+2.2 -9.0 1.5
+2.2 9.0 1.5
+0.0 9.0 -1.5
+-2.2 9.0 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period3_4_main CPMU24_llR_row1_period3_4 $ColorMag_Hybrid  !key, name, mother, color
+29.999999999999996 -20.43 -10.0
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 35.0 20.0 0.30  !dimensions 
+4 2 2 1 1  !segmentation
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_period3_4_sideL CPMU24_llR_row1_period3_4 $ColorMag_Hybrid  !key, name, mother, color
+29.999999999999996 -26.58 -22.5
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.1 22.7 5.0 0.30  !dimensions 
+4 1 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_endDS_1_main CPMU24_llR_row1_endDS_1 $ColorPol_Hybrid  !key, name, mother, color
+35.75 -18.0 -8.5
+2  !material index
+4.4 30.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_endDS_1_uside_l CPMU24_llR_row1_endDS_1 $ColorPol_Hybrid  !key, name, mother, color
+35.75 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-2.2 0.9199999999999999 -1.5
+-2.2 1.42 -1.0
+-2.2 1.42 1.5
+-2.2 -1.42 1.5
+-2.2 -1.42 -1.5
+2.2 0.9199999999999999 -1.5
+2.2 1.42 -1.0
+2.2 1.42 1.5
+2.2 -1.42 1.5
+2.2 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_endDS_1_lside_l CPMU24_llR_row1_endDS_1 $ColorPol_Hybrid  !key, name, mother, color
+35.75 -24.0 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-2.2 -9.0 1.5
+0.0 -9.0 -1.5
+2.2 -9.0 1.5
+2.2 9.0 1.5
+0.0 9.0 -1.5
+-2.2 9.0 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_endDS_2_main CPMU24_llR_row1_endDS_2 $ColorMag_Hybrid  !key, name, mother, color
+42.4 -23.5 -10.0
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.9 29.0 20.0 0.30  !dimensions 
+4 2 2 1 1  !segmentation
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_endDS_2_sideL CPMU24_llR_row1_endDS_2 $ColorMag_Hybrid  !key, name, mother, color
+42.4 -28.05 -22.5
+1.58 0.0 1.0 0.0 1  !length bc and comp. of magnetization, material index
+7.9 19.9 5.0 0.30  !dimensions 
+4 1 1 1 1  !segmentation
+ 
+& Pole
+BlockChamf CPMU24_llR_row1_endDS_3_main CPMU24_llR_row1_endDS_3 $ColorPol_Hybrid  !key, name, mother, color
+47.449999999999996 -20.5 -8.5
+2  !material index
+2.2 35.0 17.0 0.30  !dimensions 
+4 12 3 12 3  !segmentation
+ 
+& Pole
+Corners CPMU24_llR_row1_endDS_3_uside_l CPMU24_llR_row1_endDS_3 $ColorPol_Hybrid  !key, name, mother, color
+47.449999999999996 -13.58 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+10
+-1.1 0.9199999999999999 -1.5
+-1.1 1.42 -1.0
+-1.1 1.42 1.5
+-1.1 -1.42 1.5
+-1.1 -1.42 -1.5
+1.1 0.9199999999999999 -1.5
+1.1 1.42 -1.0
+1.1 1.42 1.5
+1.1 -1.42 1.5
+1.1 -1.42 -1.5
+ 
+& Pole
+Corners CPMU24_llR_row1_endDS_3_lside_l CPMU24_llR_row1_endDS_3 $ColorPol_Hybrid  !key, name, mother, color
+47.449999999999996 -26.5 -18.5
+2  !material index
+4 1 1 1 1  !segmentation
+6
+-1.1 -11.5 1.5
+0.0 -11.5 -1.5
+1.1 -11.5 1.5
+1.1 11.5 1.5
+0.0 11.5 -1.5
+-1.1 11.5 1.5
+ 
+& Magnet
+BlockChamf CPMU24_llR_row1_endDS_4 CPMU24_llR_row1_endDS $ColorMag_Hybrid  !key, name, mother, color
+52.3 -28.95 -6.25
+1.58 0.0 -1.0 0.0 1  !length bc and comp. of magnetization, material index
+6.5 18.1 12.5 0.30  !dimensions 
+4 2 1 1 1  !segmentation
+ 
+
+*PER END
+
+& Module
+0. 0. 0.                   !offset of module
+1          !number of arrays within module
+1. 1. 0. 0. 0. !spacing and direction of arrangement, rotation angle
+1. 1. 1.                   !scaling and symmetry of magnetization vector
+
+*COILS START
+
+
+*COILS END
+
+& Materials
+2            ! number of material files
+1 1 1 pm_rec.dat
+2 2 3 fm_vanadium_permendur.dat

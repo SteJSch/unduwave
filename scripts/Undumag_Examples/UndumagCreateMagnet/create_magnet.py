@@ -1,12 +1,7 @@
-
-import pdb
-import sys
-import os
-from pathlib import Path
-
 import unduwave as uw
 from unduwave import undu_blocks
-import numpy as np
+from unduwave import undulatorComponents
+from unduwave.unduwave_incl import *
 
 try :
 	# works when calling script with python3 script_file
@@ -24,8 +19,8 @@ undu_prog_paras.res_folder.set(res_folder_full)
 undu_prog_paras.plotGeometry.set(1)
 undu_prog_paras.create_z_sym.set(0)
 
-undu_prog_paras.bmap_z_min.set(-10)
-undu_prog_paras.bmap_z_max.set(10)
+undu_prog_paras.bmap_z_min.set(-20)
+undu_prog_paras.bmap_z_max.set(20)
 undu_prog_paras.bmap_y_min.set(0)
 undu_prog_paras.bmap_y_max.set(0)
 
@@ -52,6 +47,7 @@ magnObject = undu_blocks.undumagBlockObject(
 	magnParas=magn_paras,
 	name='MyMagnet',
 	parentName='',
+	api=undu,
 	)
 
 undu.set_magnet_objects(magn_objects=magnObject)
