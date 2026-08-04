@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>create_magnet &mdash; Unduwave v0.9.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=518ffd31"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="make_wave_win2" href="../make_wave_win2/index.html" />
+    <link rel="prev" title="spec_from_byz" href="../spec_from_byz/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickguide.html">Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../conf/index.html">conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cpmu_20/index.html">cpmu_20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unduwave/index.html">unduwave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_struct/index.html">test_struct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../KicksNGrits/index.html">KicksNGrits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../example_wave/index.html">example_wave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_from_by/index.html">spec_from_by</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cpmu_20_endp/index.html">cpmu_20_endp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cpmu_20_easy/index.html">cpmu_20_easy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undulator_obj/index.html">undulator_obj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_undulist/index.html">test_undulist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_from_byz/index.html">spec_from_byz</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">create_magnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.dir_path"><code class="docutils literal notranslate"><span class="pre">dir_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.res_folder"><code class="docutils literal notranslate"><span class="pre">res_folder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.res_folder_full"><code class="docutils literal notranslate"><span class="pre">res_folder_full</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.undu"><code class="docutils literal notranslate"><span class="pre">undu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.undu_prog_paras"><code class="docutils literal notranslate"><span class="pre">undu_prog_paras</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.pos"><code class="docutils literal notranslate"><span class="pre">pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.magn_paras"><code class="docutils literal notranslate"><span class="pre">magn_paras</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.magnObject"><code class="docutils literal notranslate"><span class="pre">magnObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.results"><code class="docutils literal notranslate"><span class="pre">results</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.trajx"><code class="docutils literal notranslate"><span class="pre">trajx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.by"><code class="docutils literal notranslate"><span class="pre">by</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.bz"><code class="docutils literal notranslate"><span class="pre">bz</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.intBy"><code class="docutils literal notranslate"><span class="pre">intBy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.intBz"><code class="docutils literal notranslate"><span class="pre">intBz</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.intBy2"><code class="docutils literal notranslate"><span class="pre">intBy2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.intBz2"><code class="docutils literal notranslate"><span class="pre">intBz2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.zProfile"><code class="docutils literal notranslate"><span class="pre">zProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.ByProfile"><code class="docutils literal notranslate"><span class="pre">ByProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.BzProfile"><code class="docutils literal notranslate"><span class="pre">BzProfile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.bmap"><code class="docutils literal notranslate"><span class="pre">bmap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create_magnet.nfig"><code class="docutils literal notranslate"><span class="pre">nfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">nfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">nfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">nfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">nfig</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_win2/index.html">make_wave_win2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_from_bmap/index.html">spec_from_bmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_from_by_m/index.html">spec_from_by_m</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_testing/index.html">undumag_testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom_material/index.html">custom_material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_undulator/index.html">create_undulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_msh_radia/index.html">undumag_msh_radia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_win2/index.html">make_undumag_win2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undulator_testing/index.html">undulator_testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../force_calculation/index.html">force_calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UndumagCreateCoil/index.html">UndumagCreateCoil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_wave_settings/index.html">test_wave_settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_unduwave_base/index.html">test_unduwave_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_undumag_radia/index.html">test_undumag_radia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elliptical_example/index.html">elliptical_example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_magnet_pole/index.html">create_magnet_pole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ivue32_construction/index.html">ivue32_construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bmap_representation/index.html">bmap_representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../combine_magnet_coil/index.html">combine_magnet_coil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Analytical_EB_Fields/index.html">Analytical_EB_Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_msh_radia_test1/index.html">undumag_msh_radia_test1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cpmu20_biii_construction/index.html">cpmu20_biii_construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UndumagLoadclcFileExample/index.html">UndumagLoadclcFileExample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_undulator_from_yaml/index.html">create_undulator_from_yaml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_msh_radia_ue51_test/index.html">undumag_msh_radia_ue51_test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_msh_radia_oneMagnet/index.html">undumag_msh_radia_oneMagnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_msh_radia_ue51_field_map/index.html">undumag_msh_radia_ue51_field_map</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+      <li class="breadcrumb-item active">create_magnet</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Unduwave/create_magnet/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-create_magnet">
+<span id="create-magnet"></span><h1>create_magnet<a class="headerlink" href="#module-create_magnet" title="Link to this heading"></a></h1>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.dir_path" title="create_magnet.dir_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir_path</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.res_folder" title="create_magnet.res_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">res_folder</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.res_folder_full" title="create_magnet.res_folder_full"><code class="xref py py-obj docutils literal notranslate"><span class="pre">res_folder_full</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.undu" title="create_magnet.undu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.undu_prog_paras" title="create_magnet.undu_prog_paras"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_prog_paras</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.pos" title="create_magnet.pos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pos</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.magn_paras" title="create_magnet.magn_paras"><code class="xref py py-obj docutils literal notranslate"><span class="pre">magn_paras</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.magnObject" title="create_magnet.magnObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">magnObject</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.results" title="create_magnet.results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">results</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.trajx" title="create_magnet.trajx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trajx</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.by" title="create_magnet.by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">by</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.bz" title="create_magnet.bz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bz</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.intBy" title="create_magnet.intBy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intBy</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.intBz" title="create_magnet.intBz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intBz</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.intBy2" title="create_magnet.intBy2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intBy2</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.intBz2" title="create_magnet.intBz2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intBz2</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.zProfile" title="create_magnet.zProfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zProfile</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.ByProfile" title="create_magnet.ByProfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ByProfile</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#create_magnet.BzProfile" title="create_magnet.BzProfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BzProfile</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#create_magnet.bmap" title="create_magnet.bmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bmap</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id3" title="create_magnet.nfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nfig</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id3" title="create_magnet.nfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nfig</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id3" title="create_magnet.nfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nfig</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id3" title="create_magnet.nfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nfig</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id3" title="create_magnet.nfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nfig</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.dir_path">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">dir_path</span></span><a class="headerlink" href="#create_magnet.dir_path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.res_folder">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">res_folder</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'res'</span></span><a class="headerlink" href="#create_magnet.res_folder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.res_folder_full">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">res_folder_full</span></span><a class="headerlink" href="#create_magnet.res_folder_full" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.undu">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">undu</span></span><a class="headerlink" href="#create_magnet.undu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.undu_prog_paras">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">undu_prog_paras</span></span><a class="headerlink" href="#create_magnet.undu_prog_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.pos">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#create_magnet.pos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.magn_paras">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">magn_paras</span></span><a class="headerlink" href="#create_magnet.magn_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.magnObject">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">magnObject</span></span><a class="headerlink" href="#create_magnet.magnObject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.results">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">results</span></span><a class="headerlink" href="#create_magnet.results" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.trajx">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">trajx</span></span><a class="headerlink" href="#create_magnet.trajx" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.by">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">by</span></span><a class="headerlink" href="#create_magnet.by" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.bz">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">bz</span></span><a class="headerlink" href="#create_magnet.bz" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.intBy">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">intBy</span></span><a class="headerlink" href="#create_magnet.intBy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.intBz">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">intBz</span></span><a class="headerlink" href="#create_magnet.intBz" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.intBy2">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">intBy2</span></span><a class="headerlink" href="#create_magnet.intBy2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.intBz2">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">intBz2</span></span><a class="headerlink" href="#create_magnet.intBz2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.zProfile">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">zProfile</span></span><a class="headerlink" href="#create_magnet.zProfile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.ByProfile">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">ByProfile</span></span><a class="headerlink" href="#create_magnet.ByProfile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.BzProfile">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">BzProfile</span></span><a class="headerlink" href="#create_magnet.BzProfile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.bmap">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">bmap</span></span><a class="headerlink" href="#create_magnet.bmap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="create_magnet.nfig">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">nfig</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#create_magnet.nfig" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">nfig</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">nfig</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">nfig</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-prename descclassname"><span class="pre">create_magnet.</span></span><span class="sig-name descname"><span class="pre">nfig</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../spec_from_byz/index.html" class="btn btn-neutral float-left" title="spec_from_byz" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../make_wave_win2/index.html" class="btn btn-neutral float-right" title="make_wave_win2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

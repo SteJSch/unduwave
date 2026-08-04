@@ -1,0 +1,247 @@
+unduwave.analytical_module.ana_undu.undulator
+=============================================
+
+.. py:module:: unduwave.analytical_module.ana_undu.undulator
+
+.. autoapi-nested-parse::
+
+   Defining Undulator
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.undulator.undulatorObj
+   unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.undulator.loadBessyIIundulatorList
+   unduwave.analytical_module.ana_undu.undulator.load_from_json_list
+   unduwave.analytical_module.ana_undu.undulator.find_undu_representation
+
+
+Module Contents
+---------------
+
+.. py:function:: loadBessyIIundulatorList()
+
+.. py:function:: load_from_json_list(file)
+
+.. py:function:: find_undu_representation(name, unduList)
+
+.. py:class:: undulatorObj(ebeam=None)
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: _undulatorGeoMatParas
+      :value: None
+
+
+
+   .. py:attribute:: _undulatorCharacter
+      :value: None
+
+
+
+   .. py:attribute:: _undulatorGeoMatRepres
+      :value: None
+
+
+
+   .. py:attribute:: _bfield
+      :value: None
+
+
+
+   .. py:attribute:: _ebeam
+      :value: None
+
+
+
+   .. py:attribute:: _anaCharacter
+
+
+   .. py:attribute:: _numCharacter
+
+
+   .. py:method:: setEbeam(ebeam)
+
+
+   .. py:method:: fromBField(bfield)
+
+      tries to get paras from the bfield? bmax bmin beff lambda
+
+
+
+   .. py:method:: fromRepres(undulatorRepres, periodLength=None, nPeriods=None, unduAPI=None, setSym=True, simulate=True, beffs=None, resFolder=None)
+
+      tries to get data from the clc-representation for undumag?
+
+
+
+   .. py:method:: setCharacter(undulatorCharacter)
+
+      tries to get data from the characterization?!
+
+
+
+   .. py:method:: fromUnduList(unduName)
+
+      loading undu from bessyII or III list, check if there is
+      a model to load, or create one simple model
+
+
+
+   .. py:method:: getGeoMatRepres()
+
+      Creates some easy representation in clc form of undulator from charact.
+      for this, need some scan b_eff(g,lamb) - nope, lamb set and beff is not(!!)
+      guaranteed. depends also on magnetizations.
+      anyway, get something close to beff with some std values?!
+
+
+
+   .. py:method:: getAnaSpectrum()
+
+      creates aspectrum object with self-paras, returns that
+
+
+
+   .. py:method:: setUndumag(unduAPI, setSym=True)
+
+      sets undumag paras, bfield range, symmetries?
+      since we want to simulate with undumag, we need the undulatorRepres
+
+
+
+   .. py:method:: setWAVE(wave)
+
+      make the wave input for some generic simu
+      setting energies around exptected 1st harm
+
+
+
+.. py:class:: undulatorCharacterization(bEffY=0.0, periodLength=0.0, numPeriods=0.0, bEffZ=0.0, lengthEndPeriodsRelative=0.0, ebeam=None, thetaObservation=0.0, unduKY=None, unduKZ=None)
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Definition
+
+
+   .. py:attribute:: bEffY
+
+
+   .. py:attribute:: bEffZ
+
+
+   .. py:attribute:: bEff
+
+
+   .. py:attribute:: periodLength
+
+
+   .. py:attribute:: numPeriods
+
+
+   .. py:attribute:: lengthEndPeriodsRelative
+
+
+   .. py:attribute:: undulatorLength
+
+
+   .. py:attribute:: undulatorWaveNum
+
+
+   .. py:attribute:: undulatorParameterKY
+
+
+   .. py:attribute:: undulatorParameterKZ
+
+
+   .. py:attribute:: undulatorParameterK
+
+
+   .. py:attribute:: reducedBeta
+
+
+   .. py:attribute:: undulatorFrequency
+
+
+   .. py:attribute:: undulatorPeriodTime
+
+
+   .. py:attribute:: reducedGamma
+
+
+   .. py:attribute:: reducedUndulatorParameterK
+
+
+   .. py:attribute:: maxDeflection
+
+
+   .. py:attribute:: maxAngle
+
+
+   .. py:attribute:: naturalOpeningAngle
+
+
+   .. py:attribute:: properFrequencyWeak
+
+
+   .. py:attribute:: properFrequencyStrong
+
+
+   .. py:attribute:: firstHarmEnergyWeak
+
+
+   .. py:attribute:: firstHarmEnergyStrong
+
+
+   .. py:attribute:: thetaObservation
+
+
+   .. py:attribute:: ebeam
+
+      Setting
+
+
+
+   .. py:method:: update_non_beam_values()
+
+
+   .. py:method:: update_values(ebeam, thetaObservation=0.0)
+
+
+   .. py:method:: set_paras_from_bessyII_undu_list(unduName)
+
+
+   .. py:method:: getHarmonicBField(unitsXB=[1.0, 1.0], wEnds=True)
+
+
+   .. py:method:: createEasyRepresentation()
+
+      creates a magnets list object representing the structure
+
+
+

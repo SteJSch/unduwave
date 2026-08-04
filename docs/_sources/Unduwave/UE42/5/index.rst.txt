@@ -1,0 +1,206 @@
+UE42.5
+======
+
+.. py:module:: UE42.5
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   UE42.5.dir_path
+   UE42.5.res_folder
+   UE42.5.wave
+   UE42.5.wave_prog_paras
+   UE42.5.K_para_z
+   UE42.5.K_para_y
+   UE42.5.period_length
+   UE42.5.shift
+   UE42.5.nperiods
+   UE42.5.wave_num_k
+   UE42.5.b0_y
+   UE42.5.b0_z
+   UE42.5.undu_paras
+   UE42.5.spectrometer_paras
+   UE42.5.screen_paras
+   UE42.5.ebeam_paras
+   UE42.5.ebeam_paras
+   UE42.5.results
+   UE42.5.nfig
+   UE42.5.traj_x
+   UE42.5.traj_y
+   UE42.5.traj_z
+   UE42.5.nfig
+   UE42.5.nfig
+   UE42.5.By
+   UE42.5.Bz
+   UE42.5.nfig
+   UE42.5.power_z
+   UE42.5.power_y
+   UE42.5.power_distro
+   UE42.5.nfig
+   UE42.5.en_flux
+   UE42.5.flux
+   UE42.5.nfig
+   UE42.5.en_brill
+   UE42.5.brill0
+   UE42.5.brill0e
+   UE42.5.brill0f
+   UE42.5.brill0ef
+   UE42.5.nfig
+   UE42.5.en_fd
+   UE42.5.flux_density_onaxis
+   UE42.5.nfig
+   UE42.5.flux_dens_distr_ens_loaded
+   UE42.5.fd_y
+   UE42.5.fd_z
+   UE42.5.fd
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: res_folder
+
+   Getting wave
+
+
+.. py:data:: wave
+
+.. py:data:: wave_prog_paras
+
+   Setting Undulator Parameter
+
+   We give the K-parameters and the B-Amplitudes are calculated from there
+   For Horizontal mode only, set Bz=K_para_z=0, shift=0
+   For Vertical mode only, set By=K_para_y=0, shift=0
+   For Circular mode, set By=Bz -> K_para_z=K_para_y, shift=0.25
+
+
+.. py:data:: K_para_z
+   :value: 1.8
+
+
+.. py:data:: K_para_y
+   :value: 0.5
+
+
+.. py:data:: period_length
+   :value: 0.0425
+
+
+.. py:data:: shift
+   :value: 0.25
+
+
+.. py:data:: nperiods
+   :value: 7
+
+
+.. py:data:: wave_num_k
+   :value: 147.83965428657848
+
+
+.. py:data:: b0_y
+   :value: 0.12600559687608387
+
+
+.. py:data:: b0_z
+   :value: 0.453620148753902
+
+
+.. py:data:: undu_paras
+
+.. py:data:: spectrometer_paras
+
+.. py:data:: screen_paras
+
+.. py:data:: ebeam_paras
+
+.. py:data:: ebeam_paras
+
+   Run
+
+
+.. py:data:: results
+
+.. py:data:: nfig
+   :value: 0
+
+
+   Plot Trajectory
+
+
+.. py:data:: traj_x
+
+.. py:data:: traj_y
+
+.. py:data:: traj_z
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+   Plot B-Field
+
+
+.. py:data:: By
+
+.. py:data:: Bz
+
+.. py:data:: nfig
+
+.. py:data:: power_z
+
+.. py:data:: power_y
+
+.. py:data:: power_distro
+
+.. py:data:: nfig
+
+   Plot Flux
+
+
+.. py:data:: en_flux
+
+.. py:data:: flux
+
+.. py:data:: nfig
+
+   Plot Brilliance
+
+
+.. py:data:: en_brill
+
+.. py:data:: brill0
+
+.. py:data:: brill0e
+
+.. py:data:: brill0f
+
+.. py:data:: brill0ef
+
+.. py:data:: nfig
+
+   Plot FLux density distributions
+
+
+.. py:data:: en_fd
+
+.. py:data:: flux_density_onaxis
+
+.. py:data:: nfig
+
+.. py:data:: flux_dens_distr_ens_loaded
+   :value: []
+
+
+.. py:data:: fd_y
+
+.. py:data:: fd_z
+
+.. py:data:: fd
+

@@ -1,0 +1,53 @@
+wave_example_4
+==============
+
+.. py:module:: wave_example_4
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   wave_example_4.ReplList
+   wave_example_4.Nexample
+   wave_example_4.System
+   wave_example_4.ps
+   wave_example_4.Fexample
+   wave_example_4.FexampleN
+   wave_example_4.Fex
+   wave_example_4.Fout
+   wave_example_4.rep
+
+
+Module Contents
+---------------
+
+.. py:data:: ReplList
+   :value: [[" CODE='WAVE.EXAMPLE'", " CODE='Example 4: APPLE-II Undulator'"], [' KELLIP=1', ' KELLIP=0'],...
+
+
+.. py:data:: Nexample
+   :value: 4
+
+
+.. py:data:: System
+
+.. py:data:: ps
+   :value: '\\'
+
+
+.. py:data:: Fexample
+   :value: '..\\input\\wave.example'
+
+
+.. py:data:: FexampleN
+   :value: '..\\input\\wave_example_.in'
+
+
+.. py:data:: Fex
+
+.. py:data:: Fout
+
+.. py:data:: rep
+

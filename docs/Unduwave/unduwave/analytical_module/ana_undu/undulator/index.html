@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>unduwave.analytical_module.ana_undu.undulator &mdash; Unduwave v0.9.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=518ffd31"></script>
+      <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="unduwave.analytical_module.ana_wave" href="../../ana_wave/index.html" />
+    <link rel="prev" title="unduwave.analytical_module.ana_undu.kicks" href="../kicks/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../quickguide.html">Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">unduwave</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../index.html">unduwave.analytical_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/index.html">unduwave.api</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../attribute_classes/index.html">unduwave.attribute_classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../constants/index.html">unduwave.constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../helpers/index.html">unduwave.helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../optimization_module/index.html">unduwave.optimization_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../quantities/index.html">unduwave.quantities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../undu_list/index.html">unduwave.undu_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../undu_modules/index.html">unduwave.undu_modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../unduwave_incl/index.html">unduwave.unduwave_incl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../wave_modules/index.html">unduwave.wave_modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#exceptions">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#package-contents">Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">unduwave</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">unduwave.analytical_module</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">unduwave.analytical_module.ana_undu</a></li>
+      <li class="breadcrumb-item active">unduwave.analytical_module.ana_undu.undulator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/Unduwave/unduwave/analytical_module/ana_undu/undulator/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-unduwave.analytical_module.ana_undu.undulator">
+<span id="unduwave-analytical-module-ana-undu-undulator"></span><h1>unduwave.analytical_module.ana_undu.undulator<a class="headerlink" href="#module-unduwave.analytical_module.ana_undu.undulator" title="Link to this heading"></a></h1>
+<p>Defining Undulator</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj" title="unduwave.analytical_module.ana_undu.undulator.undulatorObj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undulatorObj</span></code></a></p></td>
+<td><p>Represents a collection of attributes with children.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization" title="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undulatorCharacterization</span></code></a></p></td>
+<td><p>Represents a collection of attributes with children.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.undulator.loadBessyIIundulatorList" title="unduwave.analytical_module.ana_undu.undulator.loadBessyIIundulatorList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadBessyIIundulatorList</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.undulator.load_from_json_list" title="unduwave.analytical_module.ana_undu.undulator.load_from_json_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_from_json_list</span></code></a>(file)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.undulator.find_undu_representation" title="unduwave.analytical_module.ana_undu.undulator.find_undu_representation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_undu_representation</span></code></a>(name, unduList)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.loadBessyIIundulatorList">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.undulator.</span></span><span class="sig-name descname"><span class="pre">loadBessyIIundulatorList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.loadBessyIIundulatorList" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.load_from_json_list">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.undulator.</span></span><span class="sig-name descname"><span class="pre">load_from_json_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.load_from_json_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.find_undu_representation">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.undulator.</span></span><span class="sig-name descname"><span class="pre">find_undu_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unduList</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.find_undu_representation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.undulator.</span></span><span class="sig-name descname"><span class="pre">undulatorObj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ebeam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Represents a collection of attributes with children.
+This is a class containing attributes as class-members.
+The class members are administered in unison.</p>
+<p>Initialize the attribute collection</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj._undulatorGeoMatParas">
+<span class="sig-name descname"><span class="pre">_undulatorGeoMatParas</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj._undulatorGeoMatParas" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj._undulatorCharacter">
+<span class="sig-name descname"><span class="pre">_undulatorCharacter</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj._undulatorCharacter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj._undulatorGeoMatRepres">
+<span class="sig-name descname"><span class="pre">_undulatorGeoMatRepres</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj._undulatorGeoMatRepres" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj._bfield">
+<span class="sig-name descname"><span class="pre">_bfield</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj._bfield" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj._ebeam">
+<span class="sig-name descname"><span class="pre">_ebeam</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj._ebeam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj._anaCharacter">
+<span class="sig-name descname"><span class="pre">_anaCharacter</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj._anaCharacter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj._numCharacter">
+<span class="sig-name descname"><span class="pre">_numCharacter</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj._numCharacter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.setEbeam">
+<span class="sig-name descname"><span class="pre">setEbeam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ebeam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.setEbeam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.fromBField">
+<span class="sig-name descname"><span class="pre">fromBField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bfield</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.fromBField" title="Link to this definition"></a></dt>
+<dd><p>tries to get paras from the bfield? bmax bmin beff lambda</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.fromRepres">
+<span class="sig-name descname"><span class="pre">fromRepres</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undulatorRepres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periodLength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPeriods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unduAPI</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setSym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simulate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beffs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resFolder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.fromRepres" title="Link to this definition"></a></dt>
+<dd><p>tries to get data from the clc-representation for undumag?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.setCharacter">
+<span class="sig-name descname"><span class="pre">setCharacter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undulatorCharacter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.setCharacter" title="Link to this definition"></a></dt>
+<dd><p>tries to get data from the characterization?!</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.fromUnduList">
+<span class="sig-name descname"><span class="pre">fromUnduList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unduName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.fromUnduList" title="Link to this definition"></a></dt>
+<dd><p>loading undu from bessyII or III list, check if there is
+a model to load, or create one simple model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.getGeoMatRepres">
+<span class="sig-name descname"><span class="pre">getGeoMatRepres</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.getGeoMatRepres" title="Link to this definition"></a></dt>
+<dd><p>Creates some easy representation in clc form of undulator from charact.
+for this, need some scan b_eff(g,lamb) - nope, lamb set and beff is not(!!)
+guaranteed. depends also on magnetizations.
+anyway, get something close to beff with some std values?!</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.getAnaSpectrum">
+<span class="sig-name descname"><span class="pre">getAnaSpectrum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.getAnaSpectrum" title="Link to this definition"></a></dt>
+<dd><p>creates aspectrum object with self-paras, returns that</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.setUndumag">
+<span class="sig-name descname"><span class="pre">setUndumag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unduAPI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setSym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.setUndumag" title="Link to this definition"></a></dt>
+<dd><p>sets undumag paras, bfield range, symmetries?
+since we want to simulate with undumag, we need the undulatorRepres</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorObj.setWAVE">
+<span class="sig-name descname"><span class="pre">setWAVE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorObj.setWAVE" title="Link to this definition"></a></dt>
+<dd><p>make the wave input for some generic simu
+setting energies around exptected 1st harm</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.undulator.</span></span><span class="sig-name descname"><span class="pre">undulatorCharacterization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bEffY</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periodLength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numPeriods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bEffZ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lengthEndPeriodsRelative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ebeam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetaObservation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unduKY</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unduKZ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Represents a collection of attributes with children.
+This is a class containing attributes as class-members.
+The class members are administered in unison.</p>
+<p>Definition</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.bEffY">
+<span class="sig-name descname"><span class="pre">bEffY</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.bEffY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.bEffZ">
+<span class="sig-name descname"><span class="pre">bEffZ</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.bEffZ" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.bEff">
+<span class="sig-name descname"><span class="pre">bEff</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.bEff" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.periodLength">
+<span class="sig-name descname"><span class="pre">periodLength</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.periodLength" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.numPeriods">
+<span class="sig-name descname"><span class="pre">numPeriods</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.numPeriods" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.lengthEndPeriodsRelative">
+<span class="sig-name descname"><span class="pre">lengthEndPeriodsRelative</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.lengthEndPeriodsRelative" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorLength">
+<span class="sig-name descname"><span class="pre">undulatorLength</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorLength" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorWaveNum">
+<span class="sig-name descname"><span class="pre">undulatorWaveNum</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorWaveNum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorParameterKY">
+<span class="sig-name descname"><span class="pre">undulatorParameterKY</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorParameterKY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorParameterKZ">
+<span class="sig-name descname"><span class="pre">undulatorParameterKZ</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorParameterKZ" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorParameterK">
+<span class="sig-name descname"><span class="pre">undulatorParameterK</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorParameterK" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.reducedBeta">
+<span class="sig-name descname"><span class="pre">reducedBeta</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.reducedBeta" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorFrequency">
+<span class="sig-name descname"><span class="pre">undulatorFrequency</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorFrequency" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorPeriodTime">
+<span class="sig-name descname"><span class="pre">undulatorPeriodTime</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.undulatorPeriodTime" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.reducedGamma">
+<span class="sig-name descname"><span class="pre">reducedGamma</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.reducedGamma" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.reducedUndulatorParameterK">
+<span class="sig-name descname"><span class="pre">reducedUndulatorParameterK</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.reducedUndulatorParameterK" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.maxDeflection">
+<span class="sig-name descname"><span class="pre">maxDeflection</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.maxDeflection" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.maxAngle">
+<span class="sig-name descname"><span class="pre">maxAngle</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.maxAngle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.naturalOpeningAngle">
+<span class="sig-name descname"><span class="pre">naturalOpeningAngle</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.naturalOpeningAngle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.properFrequencyWeak">
+<span class="sig-name descname"><span class="pre">properFrequencyWeak</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.properFrequencyWeak" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.properFrequencyStrong">
+<span class="sig-name descname"><span class="pre">properFrequencyStrong</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.properFrequencyStrong" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.firstHarmEnergyWeak">
+<span class="sig-name descname"><span class="pre">firstHarmEnergyWeak</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.firstHarmEnergyWeak" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.firstHarmEnergyStrong">
+<span class="sig-name descname"><span class="pre">firstHarmEnergyStrong</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.firstHarmEnergyStrong" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.thetaObservation">
+<span class="sig-name descname"><span class="pre">thetaObservation</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.thetaObservation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.ebeam">
+<span class="sig-name descname"><span class="pre">ebeam</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.ebeam" title="Link to this definition"></a></dt>
+<dd><p>Setting</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.update_non_beam_values">
+<span class="sig-name descname"><span class="pre">update_non_beam_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.update_non_beam_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.update_values">
+<span class="sig-name descname"><span class="pre">update_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ebeam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetaObservation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.update_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.set_paras_from_bessyII_undu_list">
+<span class="sig-name descname"><span class="pre">set_paras_from_bessyII_undu_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unduName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.set_paras_from_bessyII_undu_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.getHarmonicBField">
+<span class="sig-name descname"><span class="pre">getHarmonicBField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unitsXB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1.0,</span> <span class="pre">1.0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wEnds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.getHarmonicBField" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.createEasyRepresentation">
+<span class="sig-name descname"><span class="pre">createEasyRepresentation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.undulator.undulatorCharacterization.createEasyRepresentation" title="Link to this definition"></a></dt>
+<dd><p>creates a magnets list object representing the structure</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../kicks/index.html" class="btn btn-neutral float-left" title="unduwave.analytical_module.ana_undu.kicks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../ana_wave/index.html" class="btn btn-neutral float-right" title="unduwave.analytical_module.ana_wave" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

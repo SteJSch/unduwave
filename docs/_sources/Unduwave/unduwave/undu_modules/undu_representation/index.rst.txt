@@ -1,0 +1,93 @@
+unduwave.undu_modules.undu_representation
+=========================================
+
+.. py:module:: unduwave.undu_modules.undu_representation
+
+.. autoapi-nested-parse::
+
+   Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that 
+   returns an instance of that class
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_representation.unduRepresentation
+
+
+Module Contents
+---------------
+
+.. py:class:: unduRepresentation(gap=0.0, shift=0.0, glueSlit=0.0, keeperSlit=0.0, rowSlit=0.0, nperiods=1, unduType='planar', endStructType='std', magnetsPerKeeper=[], endMagnets=[[], []], endSlits=[[], []], nKeeperPerPeriod=2)
+
+   
+   Defines the standard parameters of the ivue32 constellation
+   gap - gap
+   glueSlit - slit between 2 magnets on same keeper
+   keeperSlit - slit between 2 keepers on same row
+   rowSlit - slit between 2 rows on same horizontal plane
+
+
+   .. py:method:: getPeriodLength()
+
+
+   .. py:method:: getKeeperLength()
+
+
+   .. py:method:: get_end_magn_paras(endNum, magnParas)
+
+      Definition is such that that func. magn: (ll-row)
+       ---   
+      | |  ->main
+      |---  ->side1 (|)
+      |-    ->side1 (|)
+
+       ^ - side2
+      with y:|^ and z: ->
+
+
+
+   .. py:method:: createKeeper(center, magnetizations, magnSeq, startNum=0, nameCore='keeper_1')
+
+      returns undu_magnets object with the magnets ordered
+
+
+
+   .. py:method:: createPeriod(center, magnetizations, magnSeq, nameCore='period_1', startNum=0)
+
+
+   .. py:method:: createNPeriods(center, magnetizations, magnSeq, nameCore='period_1', startNum=0)
+
+
+   .. py:method:: createEndStructElliptStd(center, location, magnets, magnetizations, startNum, magnSeq, nameCore='')
+
+      creates the endstructure
+      type='us' or 'ds'
+
+
+
+   .. py:method:: createEndStructStd(center, magnets, magnetizations, magnSeq, which, nameCore='', startNum=0)
+
+      creates the endstructure
+      type='us' or 'ds'
+
+
+
+   .. py:method:: getEndLength(which)
+
+      Endpart length including gaps between periodic part
+
+
+
+   .. py:method:: createRow(center, magnetizations, magnSeq, nameCore='', pos='ll')
+
+
+   .. py:method:: reflectMagnetizations(magnSeq, mirrorPlane='xz')
+
+
+   .. py:method:: createUndulator(center, magnetizations, magnSeq, nameCore='', onlyLL=False)
+
+

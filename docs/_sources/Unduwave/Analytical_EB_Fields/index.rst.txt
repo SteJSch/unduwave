@@ -1,0 +1,71 @@
+Analytical_EB_Fields
+====================
+
+.. py:module:: Analytical_EB_Fields
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   Analytical_EB_Fields.dir_path
+   Analytical_EB_Fields.wave
+   Analytical_EB_Fields.ebeam
+   Analytical_EB_Fields.undu_paras
+   Analytical_EB_Fields.period_length
+   Analytical_EB_Fields.nperiods
+   Analytical_EB_Fields.b0_y
+   Analytical_EB_Fields.anaUndu
+   Analytical_EB_Fields.aspec
+   Analytical_EB_Fields.m0
+   Analytical_EB_Fields.order
+   Analytical_EB_Fields.fig
+   Analytical_EB_Fields.ax
+   Analytical_EB_Fields.theta_vals
+   Analytical_EB_Fields.phi_vals
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: wave
+
+.. py:data:: ebeam
+
+.. py:data:: undu_paras
+
+.. py:data:: period_length
+   :value: 0.02
+
+
+.. py:data:: nperiods
+   :value: 250
+
+
+.. py:data:: b0_y
+   :value: 1
+
+
+.. py:data:: anaUndu
+
+.. py:data:: aspec
+
+.. py:data:: m0
+   :value: None
+
+
+.. py:data:: order
+   :value: 1
+
+
+.. py:data:: fig
+
+.. py:data:: ax
+
+.. py:data:: theta_vals
+
+.. py:data:: phi_vals
+

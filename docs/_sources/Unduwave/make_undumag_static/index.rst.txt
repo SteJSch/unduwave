@@ -1,0 +1,82 @@
+make_undumag_static
+===================
+
+.. py:module:: make_undumag_static
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   make_undumag_static.args
+   make_undumag_static.nargs
+   make_undumag_static.UI
+   make_undumag_static.Iverbose
+   make_undumag_static.Idebug
+   make_undumag_static.Idry
+   make_undumag_static.Iverbose
+   make_undumag_static.Idebug
+   make_undumag_static.Scomp
+   make_undumag_static.Scomp_nowarn
+   make_undumag_static.Scomp_all
+   make_undumag_static.Scomp_omp
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   make_undumag_static.Quit
+   make_undumag_static.get_undu_tree
+   make_undumag_static.undu_update
+
+
+Module Contents
+---------------
+
+.. py:function:: Quit(*args, delay=0)
+
+.. py:data:: args
+
+.. py:data:: nargs
+
+.. py:data:: UI
+
+.. py:data:: Iverbose
+   :value: 0
+
+
+.. py:data:: Idebug
+   :value: 0
+
+
+.. py:data:: Idry
+   :value: 0
+
+
+.. py:data:: Iverbose
+
+.. py:data:: Idebug
+
+.. py:data:: Scomp
+   :value: 'gfortran -std=legacy -c -O2 -cpp -fbacktrace -ffpe-summary=invalid,zero,overflow -fdec...
+
+
+.. py:data:: Scomp_nowarn
+   :value: 'gfortran -w -std=legacy -c -O2 -cpp -fbacktrace -ffpe-summary=invalid,zero,overflow -fdec...
+
+
+.. py:data:: Scomp_all
+   :value: 'gfortran -std=legacy -c -O2 -cpp -fcheck=all -fbacktrace -ffpe-summary=invalid,zero,overflow...
+
+
+.. py:data:: Scomp_omp
+   :value: 'gfortran -std=legacy -c -O2 -cpp -finit-local-zero -fcheck=all -fopenmp -fbacktrace...
+
+
+.. py:function:: get_undu_tree()
+
+.. py:function:: undu_update()
+

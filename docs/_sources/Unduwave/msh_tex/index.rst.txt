@@ -1,0 +1,126 @@
+msh_tex
+=======
+
+.. py:module:: msh_tex
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   msh_tex.TeX_mu0eq
+   msh_tex.TeX_mu0
+   msh_tex.TeX_mueq
+   msh_tex.TeX_muplus
+   msh_tex.TeX_mu
+   msh_tex.TeX_murad
+   msh_tex.TeX_mum
+   msh_tex.TeX_chi2ndf
+   msh_tex.TeX_chi2prob
+   msh_tex.TeX_beta
+   msh_tex.TeX_gamma
+   msh_tex.TeX_egammaev
+   msh_tex.TeX_foregammaeq
+   msh_tex.TeX_pow
+   msh_tex.TeX_rKauf
+   msh_tex.TeX_rKzu
+   msh_tex.TeX_eKauf
+   msh_tex.TeX_eKzu
+   msh_tex.TeX_plus
+   msh_tex.TeX_mul
+   msh_tex.TeX_slash
+   msh_tex.TeX_blank
+
+
+Module Contents
+---------------
+
+.. py:data:: TeX_mu0eq
+   :value: '$\\mu_0$ = '
+
+
+.. py:data:: TeX_mu0
+   :value: '$\\mu_0$'
+
+
+.. py:data:: TeX_mueq
+   :value: '$\\mu$ = '
+
+
+.. py:data:: TeX_muplus
+   :value: '$\\mu$ + '
+
+
+.. py:data:: TeX_mu
+   :value: '$\\mu$'
+
+
+.. py:data:: TeX_murad
+   :value: '$\\mu$rad'
+
+
+.. py:data:: TeX_mum
+   :value: '[$\\mu$m]'
+
+
+.. py:data:: TeX_chi2ndf
+   :value: '$\\chi^2/Ndf$'
+
+
+.. py:data:: TeX_chi2prob
+   :value: '$\\chi^2 prob$'
+
+
+.. py:data:: TeX_beta
+   :value: 'N$_{\\beta}$'
+
+
+.. py:data:: TeX_gamma
+   :value: 'N$_{\\gamma}$'
+
+
+.. py:data:: TeX_egammaev
+   :value: '$E_{\\gamma}$ [eV]'
+
+
+.. py:data:: TeX_foregammaeq
+   :value: 'for E$_{\\gamma}$='
+
+
+.. py:data:: TeX_pow
+   :value: ' \\*\\* '
+
+
+.. py:data:: TeX_rKauf
+   :value: '\\('
+
+
+.. py:data:: TeX_rKzu
+   :value: '\\)'
+
+
+.. py:data:: TeX_eKauf
+   :value: '\\['
+
+
+.. py:data:: TeX_eKzu
+   :value: '\\]'
+
+
+.. py:data:: TeX_plus
+   :value: '\\+'
+
+
+.. py:data:: TeX_mul
+   :value: '\\*'
+
+
+.. py:data:: TeX_slash
+   :value: '\\/'
+
+
+.. py:data:: TeX_blank
+   :value: '\\,'
+
+

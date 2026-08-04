@@ -1,0 +1,2352 @@
+waves
+=====
+
+.. py:module:: waves
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   waves.Klold
+   waves.Nold
+   waves.Xa1old
+   waves.Xanold
+   waves.WavesMode
+   waves.Kpreload
+   waves.Wfiles
+   waves.Wdirs
+   waves.Wiesel
+   waves.Wesel
+   waves.Wener
+   waves.Wfd
+   waves.Vfd
+   waves.TextIn
+   waves.LastPlot
+   waves.Lastwin
+   waves.FiggeoEph
+   waves.Koverview
+   waves.Icalloverview
+   waves.WclipE
+   waves.IsameCanvas
+   waves.Tdf
+   waves.Tfig
+   waves.Figman
+   waves.Tax2d
+   waves.Tax3d
+   waves.H1h
+   waves.H1
+   waves.H1head
+   waves.Hdir
+   waves.Ndir
+   waves.Kdir
+   waves.Cdir
+   waves.H1HLast
+   waves.H2h
+   waves.H2
+   waves.H2head
+   waves.Ntup
+   waves.Nctup
+   waves.Ncind
+   waves.H1ind
+   waves.H2ind
+   waves.Nind
+   waves.Nhead
+   waves.Nh1
+   waves.Nh2
+   waves.Nntup
+   waves.Nnctup
+   waves.H1Last
+   waves.H2Last
+   waves.H1h
+   waves.H2h
+   waves.N
+   waves.Ind
+   waves.IndLast
+   waves.H1I
+   waves.H2I
+   waves.H1ILast
+   waves.H2ILast
+   waves.N
+   waves.Nsel
+   waves.NLast
+   waves.Ni
+   waves.NiLast
+   waves.Nlines
+   waves.Ncolon
+   waves.TnpFloat64
+   waves.Tnpcmpl128
+   waves.FillColor
+   waves.NxBinMax
+   waves.Khdeleted
+   waves.Tdate
+   waves.TdateOv
+   waves.Trun
+   waves.TrunOv
+   waves.WaveFilePrefix
+   waves.ZoomXmin
+   waves.ZoomXmax
+   waves.ZoomYmin
+   waves.ZoomYmax
+   waves.ZoomZmin
+   waves.ZoomZmax
+   waves.LogX
+   waves.LogY
+   waves.LogZ
+   waves.Console
+   waves.FirstConsole
+   waves.Figgeom
+   waves.Figgeom2
+   waves.FiggeomR
+   waves.FiggeomL
+   waves.XtermGeo
+   waves.Figgeoms
+   waves.Fwidth
+   waves.Fheight
+   waves.Fxoff
+   waves.Fyoff
+   waves.Kdate
+   waves.Kstat
+   waves.Ktitles
+   waves.Kecho
+   waves.Kdump
+   waves.Kpdf
+   waves.Ndump
+   waves.Npdf
+   waves.Author
+   waves.Waveplot
+   waves.Mrun
+   waves.Mcomment
+   waves.Mdate
+   waves.ROFx
+   waves.ROFy
+   waves.fcfg
+   waves.fcfg
+   waves.YFit
+   waves.Yfit
+   waves.Xfit
+   waves.XFit
+   waves.YStat
+   waves.Ystat
+   waves.Xstat
+   waves.XStat
+   waves.wcon
+   waves.Author
+   waves.Kplots
+   waves.Nwins
+   waves.Fig
+   waves.Ax
+   waves.Figs
+   waves.Nfigs
+   waves.IsameGlobal
+   waves.Ifill1d
+   waves.TitPad
+   waves.GtitFontSize
+   waves.TitFontSize
+   waves.AtitFontSize
+   waves.AtitFontSize3d
+   waves.AxisLabelSize
+   waves.TextFontSize
+   waves.DateFontSize
+   waves.StatFontSize
+   waves.AxisTitleDist
+   waves.AxisTitleDist3d
+   waves.Axistitledist3d
+   waves.AxisLabelDist3d
+   waves.AxisLabelDist
+   waves.NXtick
+   waves.NXtick3d
+   waves.Xtitle
+   waves.Ytitle
+   waves.YTitle
+   waves.YGtitle
+   waves.Ygtitle
+   waves.x_of_xlab
+   waves.y_of_xlab
+   waves.x_of_ylab
+   waves.y_of_ylab
+   waves.Itight
+   waves.Zones
+   waves.Nxzone
+   waves.Nyzone
+   waves.Kzone
+   waves.Axes
+   waves.Icmap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.CMap
+   waves.Cmaps
+   waves.Cmap
+   waves.Tcmap
+   waves.Mode3D
+   waves.Mode2D
+   waves.Surfcolor
+   waves.Surfcolor
+   waves.Surfcolor
+   waves.Surfcolor
+   waves.Ispline
+   waves.Linecolor
+   waves.Linewidth
+   waves.Markersize
+   waves.Markercolor
+   waves.Linestyle
+   waves.Markertype
+   waves.Fillstyle
+   waves.FillStyle
+   waves.LineColor
+   waves.LineWidth
+   waves.MarkerSize
+   waves.MarkerColor
+   waves.LineStyle
+   waves.MarkerType
+   waves.Textcolor
+   waves.Histbarwidth
+   waves.Histcolor
+   waves.HistEdgeColor
+   waves.Histedgecolor
+   waves.Klegend
+   waves.Igetconsole
+   waves.Imarker
+   waves.Ihist
+   waves.Iprof
+   waves.Ispline
+   waves.Isame
+   waves.Iscatter
+   waves.Iscat3d
+   waves.Icont3d
+   waves.Itrisurf
+   waves.Iclosed
+   waves.Iboxes
+   waves.Inoempty
+   waves.Ierr
+   waves.Isurf
+   waves.Iline
+   waves.Iinter
+   waves.Ifill1d
+   waves.Xtit
+   waves.Ytit
+   waves.Ztit
+   waves.Ptit
+   waves.Gtit
+   waves.Colors
+   waves.Surfcolors
+   waves.Linestyles
+   waves.Markertypes
+   waves.Tightpad
+   waves.Xtightpad
+   waves.Ytightpad
+   waves.ColorbarPad
+   waves.LeftMargin
+   waves.RightMargin
+   waves.TopMargin
+   waves.BottomMargin
+   waves.ScaleSizeX
+   waves.ScaleSizeY
+   waves.Xspace
+   waves.Yspace
+   waves.LexpX
+   waves.LexpY
+   waves.LexpRot
+   waves.LexpPow
+   waves.Kgrid
+   waves.Kbox
+   waves.KxAxis
+   waves.KyAxis
+   waves.KzAxis
+   waves.CanButIds
+   waves.CanButId
+   waves.Hull2D
+   waves.Hull3D
+   waves.Hull3DList
+   waves.THull3D
+   waves.Ishow
+   waves.N1
+   waves.N2
+   waves.N3
+   waves.N4
+   waves.N5
+   waves.N6
+   waves.N7
+   waves.N8
+   waves.N9
+   waves.Nv
+   waves.Nx
+   waves.Nxy
+   waves.Nxy
+   waves.Nxyz
+   waves.Mode3ds
+   waves.Istatus
+   waves.WarningText
+   waves.ErrorText
+   waves.Platform
+   waves.System
+   waves.fun
+   waves.Gdebug
+   waves.Debug
+   waves.Gdebug
+   waves.pwd
+   waves.WisLinux
+   waves.WAVEPATH
+   waves.WAVESPATH
+   waves.ReliefBd
+   waves.ReliefButBd
+   waves.MyWavesFont
+   waves.fwvs
+   waves.line
+   waves.line
+   waves.line
+   waves.line
+   waves.line
+   waves.words
+   waves.font
+   waves.size
+   waves.MyWavesFont
+   waves.Debug
+   waves.FWAVEIN
+   waves.FWVS
+   waves.WAVECom
+   waves.ROOTCom
+   waves.EDICom
+   waves.EWOUTCom
+   waves.WinDef
+   waves.Wavein
+   waves.WaveinO
+   waves.Wmenu
+   waves.Mapping
+   waves.MenuVeto
+   waves.MenuActive
+   waves.Nmenuactive
+   waves.MenuAllVeto
+   waves.NMenuAllVeto
+   waves.MappingVeto
+   waves.Veto
+   waves.InvVeto
+   waves.Variables
+   waves.Arrays
+   waves.VarToWaveIn
+   waves.Specvar
+   waves.Trigger
+   waves.Calc
+   waves.MMitem
+   waves.Iback
+   waves.SFrame
+   waves.SComment
+   waves.SMitem
+   waves.SMexist
+   waves.Help
+   waves.NHelp
+   waves.Nmenu
+   waves.Nmenuveto
+   waves.NmenuOld
+   waves.Mother
+   waves.MenuMother
+   waves.MenuOld
+   waves.Daughter
+   waves.IMother
+   waves.Istack
+   waves.Nveto
+   waves.Ninvveto
+   waves.Nmap
+   waves.Nvar
+   waves.Narr
+   waves.Ntrigger
+   waves.Ncalc
+   waves.Nwavein
+   waves.Nmitem
+   waves.Kmitem
+   waves.Lmitem
+   waves.FIOitem
+   waves.Kmitemold
+   waves.Nsitem
+   waves.NULL
+   waves.ONE
+   waves.MONE
+   waves.SNULL
+   waves.SONE
+   waves.SMONE
+   waves.I
+   waves.ZONE
+   waves.Ical
+   waves.Ifocus
+   waves.kWaveinRead
+   waves.Lastvar
+   waves.Tcolor
+   waves.Vetocolor
+   waves.Fwvs
+   waves.Wave
+   waves.Root
+   waves.WaveOut
+   waves.Editor
+   waves.WinGeo
+   waves.Fgeo
+   waves.Wave
+   waves.Root
+   waves.WaveOut
+   waves.Editor
+   waves.WGmain
+   waves.Pmenu
+   waves.PMenuGeo
+   waves.WGmain
+   waves.T_color
+   waves.Eb_color
+   waves.F_color
+   waves.Veto_color
+   waves.Passiv_color
+   waves.Bg_color
+   waves.B_color
+   waves.Select_color
+   waves.Select_color
+   waves.Select_color
+   waves.Deselect_color
+   waves.Fgcol
+   waves.Bgcol
+   waves.Afgcol
+   waves.Abgcol
+   waves.Hlcol
+   waves.Hlbcol
+   waves.Vfgcol
+   waves.Vbgcol
+   waves.Nsitem
+   waves.Nfocus
+   waves.screen_width
+   waves.screen_height
+   waves.wingeo
+   waves.wid
+   waves.hei
+   waves.posx
+   waves.posy
+   waves.WinPos
+   waves.wgeo
+   waves.PadX
+   waves.PadY
+   waves.Istack
+   waves.mmitem
+   waves.Nmitem
+   waves.mmitem
+   waves.Nmitem
+   waves.mmitem
+   waves.Nmitem
+   waves.mmitem
+   waves.Nmitem
+   waves.kmitem
+   waves.kmitem
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   waves.pe2
+   waves.pe3
+   waves.pe4
+   waves.pe5
+   waves.pe6
+   waves.pe7
+   waves.pe8
+   waves.pe9
+   waves.pe10
+   waves.pg2
+   waves.pg3
+   waves.pg4
+   waves.pg5
+   waves.pg6
+   waves.pg7
+   waves.pg8
+   waves.pg9
+   waves.pg10
+   waves.readfloat
+   waves.readint
+   waves.printnl
+   waves.set_console_title
+   waves.util_spline_coef_periodic
+   waves.util_spline_inter
+   waves.util_spline_coef
+   waves.Quit
+   waves.exit
+   waves.Wexit
+   waves.qwait
+   waves.sleep
+   waves.wait
+   waves.util_parabel
+   waves.util_eqn
+   waves.util_linear_fit_data
+   waves.util_vnorm
+   waves.util_rotate
+   waves.evnm
+   waves.nmev
+   waves.fsize
+   waves.fexist
+   waves.fwrite
+   waves.util_determinante
+   waves.util_solve
+   waves.util_break
+   waves.debug
+   waves.startgui
+   waves.start
+   waves.Getline
+   waves.getline
+   waves.getlineI
+   waves.getlineR
+   waves.readwavein
+   waves.debug
+   waves.get_menu_depth
+   waves.pmenu_update
+   waves.MenuKeyPress
+   waves.SelectButton
+   waves.MenuEnter
+   waves.ToggleVar
+   waves.DestroyMenu
+   waves.pmenu
+   waves.setup_input
+   waves.Check_Array
+   waves.test
+   waves.AddMenu
+   waves.setspecvar
+   waves.create_variable
+   waves.GetVarNum
+   waves.getmother
+   waves.readwvs
+   waves.checkskip
+   waves.wiwrite
+   waves.Icheck_Array_Var
+   waves.debug
+   waves.writewavein
+   waves.runwave
+   waves.waveplot
+   waves.HelpText
+   waves.debugcalc
+   waves.Calculate
+   waves.CheckVetos
+   waves.debugmapping
+   waves.CheckMapping
+   waves.CheckAll
+   waves.GetFocusWidget
+   waves.CheckButtons
+   waves.Up
+   waves.Down
+   waves.MouseIn
+   waves.FocusIn
+   waves.noFocusInArray
+   waves.FocusOut
+   waves.WAVESexit
+
+
+Module Contents
+---------------
+
+.. py:data:: Klold
+   :value: 1
+
+
+.. py:data:: Nold
+   :value: -99
+
+
+.. py:data:: Xa1old
+   :value: -9999.0
+
+
+.. py:data:: Xanold
+   :value: -9999.0
+
+
+.. py:function:: pe2(x)
+
+.. py:function:: pe3(x)
+
+.. py:function:: pe4(x)
+
+.. py:function:: pe5(x)
+
+.. py:function:: pe6(x)
+
+.. py:function:: pe7(x)
+
+.. py:function:: pe8(x)
+
+.. py:function:: pe9(x)
+
+.. py:function:: pe10(x)
+
+.. py:function:: pg2(x)
+
+.. py:function:: pg3(x)
+
+.. py:function:: pg4(x)
+
+.. py:function:: pg5(x)
+
+.. py:function:: pg6(x)
+
+.. py:function:: pg7(x)
+
+.. py:function:: pg8(x)
+
+.. py:function:: pg9(x)
+
+.. py:function:: pg10(x)
+
+.. py:function:: readfloat(s, default=-9999)
+
+.. py:function:: readint(s, default=-9999)
+
+.. py:function:: printnl(line)
+
+.. py:function:: set_console_title(console='Python')
+
+.. py:function:: util_spline_coef_periodic(x, y)
+
+   c--- calculates spline coefficients for periodic function
+   c--- the interval must be closed, i.e. x(n)-x(1)=periodlength and y(n)=y(1)
+
+   c--   input:
+
+   c-       n: number of x,y-values, must be at least five
+   c-       x: array of x-values
+   c-       y: array of y-values
+
+   c--   ouput:
+
+   c-       ypp:   spline-coefficients
+   c-     ifail:   error status
+
+   c--   workingspace: aa(n),bb(n),cc(n),c(n),cn(n)
+     
+
+
+.. py:function:: util_spline_inter(xa, ya, y2a, x, mode)
+
+.. py:function:: util_spline_coef(x, y, yp1=9999.0, ypn=9999.0)
+
+.. py:function:: Quit(*args, delay=0)
+
+.. py:function:: exit(text='')
+
+.. py:function:: Wexit(ew='')
+
+.. py:function:: qwait(delay=3)
+
+.. py:function:: sleep(isec)
+
+.. py:function:: wait(isec=1000, text='waiting')
+
+.. py:function:: util_parabel(xin, yin)
+
+   C--- CALCULATES A(1),A(2),A(3), THE DERIVATIVES YP(X(1)),YP(X(2)),YP(X(3)),
+   C    AND THE EXTREMUM (XOPT,A(XOPT)) OF PARABOLA Y=A1+A2*X+A3*X**2
+   C    FROM COORDINATES OF THE THREE POINTS (X(1),Y(1)),(X(2),Y(2)),(X(3),Y(3))
+   C
+
+
+.. py:function:: util_eqn(a, b)
+
+.. py:function:: util_linear_fit_data(datapoints, fitfun)
+
+.. py:function:: util_vnorm(v)
+
+.. py:function:: util_rotate(cen, vrot, phi, vin, eps=1e-10)
+
+.. py:function:: evnm(eg)
+
+.. py:function:: nmev(wl)
+
+.. py:function:: fsize(cfile)
+
+.. py:function:: fexist(f)
+
+.. py:function:: fwrite(F, *args)
+
+.. py:function:: util_determinante(a)
+
+.. py:function:: util_solve(a, x)
+
+.. py:function:: util_break(s='')
+
+.. py:data:: WavesMode
+   :value: None
+
+
+.. py:data:: Kpreload
+   :value: True
+
+
+.. py:data:: Wfiles
+   :value: []
+
+
+.. py:data:: Wdirs
+   :value: []
+
+
+.. py:data:: Wiesel
+   :value: -1.0
+
+
+.. py:data:: Wesel
+   :value: -1.0
+
+
+.. py:data:: Wener
+   :value: []
+
+
+.. py:data:: Wfd
+   :value: []
+
+
+.. py:data:: Vfd
+   :value: None
+
+
+.. py:data:: TextIn
+   :value: ''
+
+
+.. py:data:: LastPlot
+   :value: []
+
+
+.. py:data:: Lastwin
+   :value: ''
+
+
+.. py:data:: FiggeoEph
+   :value: ''
+
+
+.. py:data:: Koverview
+   :value: 0
+
+
+.. py:data:: Icalloverview
+   :value: 0
+
+
+.. py:data:: WclipE
+   :value: 1
+
+
+.. py:data:: IsameCanvas
+   :value: 0
+
+
+.. py:data:: Tdf
+
+.. py:data:: Tfig
+   :value: None
+
+
+.. py:data:: Figman
+   :value: None
+
+
+.. py:data:: Tax2d
+   :value: None
+
+
+.. py:data:: Tax3d
+   :value: None
+
+
+.. py:data:: H1h
+   :value: None
+
+
+.. py:data:: H1
+   :value: []
+
+
+.. py:data:: H1head
+   :value: []
+
+
+.. py:data:: Hdir
+   :value: []
+
+
+.. py:data:: Ndir
+   :value: 0
+
+
+.. py:data:: Kdir
+   :value: 0
+
+
+.. py:data:: Cdir
+   :value: ''
+
+
+.. py:data:: H1HLast
+   :value: None
+
+
+.. py:data:: H2h
+   :value: None
+
+
+.. py:data:: H2
+   :value: []
+
+
+.. py:data:: H2head
+   :value: []
+
+
+.. py:data:: Ntup
+   :value: []
+
+
+.. py:data:: Nctup
+   :value: []
+
+
+.. py:data:: Ncind
+   :value: []
+
+
+.. py:data:: H1ind
+   :value: []
+
+
+.. py:data:: H2ind
+   :value: []
+
+
+.. py:data:: Nind
+   :value: []
+
+
+.. py:data:: Nhead
+   :value: []
+
+
+.. py:data:: Nh1
+   :value: 0
+
+
+.. py:data:: Nh2
+   :value: 0
+
+
+.. py:data:: Nntup
+   :value: 0
+
+
+.. py:data:: Nnctup
+   :value: 0
+
+
+.. py:data:: H1Last
+   :value: None
+
+
+.. py:data:: H2Last
+   :value: None
+
+
+.. py:data:: H1h
+   :value: None
+
+
+.. py:data:: H2h
+   :value: None
+
+
+.. py:data:: N
+   :value: None
+
+
+.. py:data:: Ind
+   :value: -1
+
+
+.. py:data:: IndLast
+   :value: -1
+
+
+.. py:data:: H1I
+   :value: -1
+
+
+.. py:data:: H2I
+   :value: -1
+
+
+.. py:data:: H1ILast
+   :value: -1
+
+
+.. py:data:: H2ILast
+   :value: -1
+
+
+.. py:data:: N
+   :value: None
+
+
+.. py:data:: Nsel
+   :value: None
+
+
+.. py:data:: NLast
+   :value: None
+
+
+.. py:data:: Ni
+   :value: -1
+
+
+.. py:data:: NiLast
+   :value: -1
+
+
+.. py:data:: Nlines
+   :value: 0
+
+
+.. py:data:: Ncolon
+   :value: 0
+
+
+.. py:data:: TnpFloat64
+
+.. py:data:: Tnpcmpl128
+
+.. py:data:: FillColor
+   :value: 'none'
+
+
+.. py:data:: NxBinMax
+   :value: 0
+
+
+.. py:data:: Khdeleted
+   :value: 0
+
+
+.. py:data:: Tdate
+   :value: None
+
+
+.. py:data:: TdateOv
+   :value: None
+
+
+.. py:data:: Trun
+   :value: None
+
+
+.. py:data:: TrunOv
+   :value: None
+
+
+.. py:data:: WaveFilePrefix
+   :value: 'wave_plot_'
+
+
+.. py:data:: ZoomXmin
+   :value: -1e+30
+
+
+.. py:data:: ZoomXmax
+   :value: 1e+30
+
+
+.. py:data:: ZoomYmin
+   :value: -1e+30
+
+
+.. py:data:: ZoomYmax
+   :value: 1e+30
+
+
+.. py:data:: ZoomZmin
+   :value: -1e+30
+
+
+.. py:data:: ZoomZmax
+   :value: 1e+30
+
+
+.. py:data:: LogX
+   :value: 0
+
+
+.. py:data:: LogY
+   :value: 0
+
+
+.. py:data:: LogZ
+   :value: 0
+
+
+.. py:data:: Console
+   :value: 'wavesPython'
+
+
+.. py:data:: FirstConsole
+   :value: 1
+
+
+.. py:data:: Figgeom
+   :value: ''
+
+
+.. py:data:: Figgeom2
+   :value: ''
+
+
+.. py:data:: FiggeomR
+   :value: ''
+
+
+.. py:data:: FiggeomL
+   :value: ''
+
+
+.. py:data:: XtermGeo
+   :value: ''
+
+
+.. py:data:: Figgeoms
+   :value: []
+
+
+.. py:data:: Fwidth
+   :value: 500
+
+
+.. py:data:: Fheight
+   :value: 300
+
+
+.. py:data:: Fxoff
+   :value: 10
+
+
+.. py:data:: Fyoff
+   :value: 10
+
+
+.. py:data:: Kdate
+   :value: False
+
+
+.. py:data:: Kstat
+   :value: False
+
+
+.. py:data:: Ktitles
+   :value: 1
+
+
+.. py:data:: Kecho
+   :value: 1
+
+
+.. py:data:: Kdump
+   :value: True
+
+
+.. py:data:: Kpdf
+   :value: True
+
+
+.. py:data:: Ndump
+   :value: 0
+
+
+.. py:data:: Npdf
+   :value: 0
+
+
+.. py:data:: Author
+   :value: ''
+
+
+.. py:data:: Waveplot
+   :value: None
+
+
+.. py:data:: Mrun
+   :value: None
+
+
+.. py:data:: Mcomment
+   :value: None
+
+
+.. py:data:: Mdate
+   :value: None
+
+
+.. py:data:: ROFx
+   :value: 0.03
+
+
+.. py:data:: ROFy
+   :value: 0.95
+
+
+.. py:data:: fcfg
+   :value: ''
+
+
+.. py:data:: fcfg
+   :value: 'waveplot.cfg'
+
+
+.. py:data:: YFit
+   :value: 0.8
+
+
+.. py:data:: Yfit
+   :value: 0.8
+
+
+.. py:data:: Xfit
+   :value: 0.75
+
+
+.. py:data:: XFit
+   :value: 0.75
+
+
+.. py:data:: YStat
+   :value: 0.8
+
+
+.. py:data:: Ystat
+   :value: 0.8
+
+
+.. py:data:: Xstat
+   :value: 0.05
+
+
+.. py:data:: XStat
+   :value: 0.05
+
+
+.. py:data:: wcon
+
+.. py:data:: Author
+
+.. py:data:: Kplots
+
+.. py:data:: Nwins
+   :value: 0
+
+
+.. py:data:: Fig
+   :value: None
+
+
+.. py:data:: Ax
+   :value: None
+
+
+.. py:data:: Figs
+   :value: []
+
+
+.. py:data:: Nfigs
+   :value: 0
+
+
+.. py:data:: IsameGlobal
+   :value: 0
+
+
+.. py:data:: Ifill1d
+   :value: 0
+
+
+.. py:data:: TitPad
+   :value: 12
+
+
+.. py:data:: GtitFontSize
+   :value: 'large'
+
+
+.. py:data:: TitFontSize
+   :value: 'large'
+
+
+.. py:data:: AtitFontSize
+   :value: 11
+
+
+.. py:data:: AtitFontSize3d
+   :value: 11
+
+
+.. py:data:: AxisLabelSize
+   :value: 10
+
+
+.. py:data:: TextFontSize
+   :value: 11
+
+
+.. py:data:: DateFontSize
+   :value: 9
+
+
+.. py:data:: StatFontSize
+   :value: -9
+
+
+.. py:data:: AxisTitleDist
+   :value: 6.0
+
+
+.. py:data:: AxisTitleDist3d
+   :value: 5.0
+
+
+.. py:data:: Axistitledist3d
+   :value: 5.0
+
+
+.. py:data:: AxisLabelDist3d
+   :value: 1.0
+
+
+.. py:data:: AxisLabelDist
+   :value: 5.0
+
+
+.. py:data:: NXtick
+   :value: -9
+
+
+.. py:data:: NXtick3d
+   :value: 9
+
+
+.. py:data:: Xtitle
+   :value: 0.5
+
+
+.. py:data:: Ytitle
+   :value: 1.03
+
+
+.. py:data:: YTitle
+   :value: 1.03
+
+
+.. py:data:: YGtitle
+   :value: 1.03
+
+
+.. py:data:: Ygtitle
+   :value: 1.03
+
+
+.. py:data:: x_of_xlab
+   :value: 0.5
+
+
+.. py:data:: y_of_xlab
+   :value: -0.15
+
+
+.. py:data:: x_of_ylab
+   :value: 0.5
+
+
+.. py:data:: y_of_ylab
+   :value: 0.5
+
+
+.. py:data:: Itight
+   :value: 0
+
+
+.. py:data:: Zones
+   :value: []
+
+
+.. py:data:: Nxzone
+   :value: 0
+
+
+.. py:data:: Nyzone
+   :value: 0
+
+
+.. py:data:: Kzone
+   :value: 0
+
+
+.. py:data:: Axes
+   :value: []
+
+
+.. py:data:: Icmap
+   :value: 1
+
+
+.. py:data:: CMap
+   :value: None
+
+
+.. py:data:: CMap
+   :value: 'winter'
+
+
+.. py:data:: CMap
+   :value: 'hot'
+
+
+.. py:data:: CMap
+   :value: 'autumn'
+
+
+.. py:data:: CMap
+   :value: 'summer'
+
+
+.. py:data:: CMap
+   :value: 'magma'
+
+
+.. py:data:: CMap
+   :value: 'plasma'
+
+
+.. py:data:: CMap
+   :value: 'RdPu'
+
+
+.. py:data:: CMap
+   :value: 'copper'
+
+
+.. py:data:: CMap
+   :value: 'rainbow'
+
+
+.. py:data:: CMap
+   :value: 'jet'
+
+
+.. py:data:: Cmaps
+   :value: ['none', 'autumn', 'copper', 'jet', 'hot', 'magma', 'plasma', 'rainbow', 'RdPu', 'summer',...
+
+
+.. py:data:: Cmap
+   :value: 'jet'
+
+
+.. py:data:: Tcmap
+
+.. py:data:: Mode3D
+   :value: 'surf'
+
+
+.. py:data:: Mode2D
+   :value: '!'
+
+
+.. py:data:: Surfcolor
+   :value: 'salmon'
+
+
+.. py:data:: Surfcolor
+   :value: 'red'
+
+
+.. py:data:: Surfcolor
+   :value: 'navajowhite'
+
+
+.. py:data:: Surfcolor
+   :value: 'mediumspringgreen'
+
+
+.. py:data:: Ispline
+   :value: 0
+
+
+.. py:data:: Linecolor
+   :value: 'red'
+
+
+.. py:data:: Linewidth
+   :value: 1.0
+
+
+.. py:data:: Markersize
+   :value: 4.0
+
+
+.. py:data:: Markercolor
+   :value: 'red'
+
+
+.. py:data:: Linestyle
+   :value: 'solid'
+
+
+.. py:data:: Markertype
+   :value: 'o'
+
+
+.. py:data:: Fillstyle
+   :value: 'full'
+
+
+.. py:data:: FillStyle
+   :value: 'full'
+
+
+.. py:data:: LineColor
+   :value: 'red'
+
+
+.. py:data:: LineWidth
+   :value: 1.0
+
+
+.. py:data:: MarkerSize
+   :value: 6.0
+
+
+.. py:data:: MarkerColor
+   :value: 'red'
+
+
+.. py:data:: LineStyle
+   :value: 'solid'
+
+
+.. py:data:: MarkerType
+   :value: 'o'
+
+
+.. py:data:: Textcolor
+   :value: 'black'
+
+
+.. py:data:: Histbarwidth
+   :value: 1.0
+
+
+.. py:data:: Histcolor
+   :value: 'yellow'
+
+
+.. py:data:: HistEdgeColor
+   :value: 'blue'
+
+
+.. py:data:: Histedgecolor
+   :value: 'blue'
+
+
+.. py:data:: Klegend
+   :value: 0
+
+
+.. py:data:: Igetconsole
+   :value: True
+
+
+.. py:data:: Imarker
+   :value: 0
+
+
+.. py:data:: Ihist
+   :value: 0
+
+
+.. py:data:: Iprof
+   :value: 0
+
+
+.. py:data:: Ispline
+   :value: 0
+
+
+.. py:data:: Isame
+   :value: 0
+
+
+.. py:data:: Iscatter
+   :value: 0
+
+
+.. py:data:: Iscat3d
+   :value: 0
+
+
+.. py:data:: Icont3d
+   :value: 0
+
+
+.. py:data:: Itrisurf
+   :value: 0
+
+
+.. py:data:: Iclosed
+   :value: 0
+
+
+.. py:data:: Iboxes
+   :value: 0
+
+
+.. py:data:: Inoempty
+   :value: 0
+
+
+.. py:data:: Ierr
+   :value: 0
+
+
+.. py:data:: Isurf
+   :value: 0
+
+
+.. py:data:: Iline
+   :value: 0
+
+
+.. py:data:: Iinter
+   :value: 0
+
+
+.. py:data:: Ifill1d
+   :value: 0
+
+
+.. py:data:: Xtit
+   :value: ''
+
+
+.. py:data:: Ytit
+   :value: ''
+
+
+.. py:data:: Ztit
+   :value: ''
+
+
+.. py:data:: Ptit
+   :value: ''
+
+
+.. py:data:: Gtit
+   :value: ''
+
+
+.. py:data:: Colors
+   :value: ['black', 'red', 'blue', 'green', 'cyan', 'magenta', 'gray', 'yellow', 'white']
+
+
+.. py:data:: Surfcolors
+   :value: ['none', 'blue', 'cyan', 'gray', 'green', 'navajowhite', 'magenta', 'mediumspringgreen', 'red',...
+
+
+.. py:data:: Linestyles
+   :value: ['none', 'dashed', 'dotted', 'dashdot', 'solid']
+
+
+.. py:data:: Markertypes
+   :value: ['none', '.', 'o', 'v', 's', '*', '^', '<', '>', '+', 'P', 'x', 'X']
+
+
+.. py:data:: Tightpad
+   :value: 2.5
+
+
+.. py:data:: Xtightpad
+   :value: 0.5
+
+
+.. py:data:: Ytightpad
+   :value: 1.0
+
+
+.. py:data:: ColorbarPad
+   :value: '!'
+
+
+.. py:data:: LeftMargin
+   :value: 0.12
+
+
+.. py:data:: RightMargin
+   :value: 0.92
+
+
+.. py:data:: TopMargin
+   :value: 0.86
+
+
+.. py:data:: BottomMargin
+   :value: 0.13
+
+
+.. py:data:: ScaleSizeX
+   :value: 1.0
+
+
+.. py:data:: ScaleSizeY
+   :value: 1.0
+
+
+.. py:data:: Xspace
+   :value: 0.4
+
+
+.. py:data:: Yspace
+   :value: 0.5
+
+
+.. py:data:: LexpX
+   :value: 0.0
+
+
+.. py:data:: LexpY
+   :value: 0.05
+
+
+.. py:data:: LexpRot
+   :value: 'horizontal'
+
+
+.. py:data:: LexpPow
+   :value: 2
+
+
+.. py:data:: Kgrid
+   :value: True
+
+
+.. py:data:: Kbox
+   :value: True
+
+
+.. py:data:: KxAxis
+   :value: True
+
+
+.. py:data:: KyAxis
+   :value: True
+
+
+.. py:data:: KzAxis
+   :value: True
+
+
+.. py:data:: CanButIds
+   :value: []
+
+
+.. py:data:: CanButId
+   :value: 0
+
+
+.. py:data:: Hull2D
+   :value: []
+
+
+.. py:data:: Hull3D
+   :value: []
+
+
+.. py:data:: Hull3DList
+   :value: []
+
+
+.. py:data:: THull3D
+
+.. py:data:: Ishow
+   :value: 1
+
+
+.. py:data:: N1
+
+.. py:data:: N2
+
+.. py:data:: N3
+
+.. py:data:: N4
+
+.. py:data:: N5
+
+.. py:data:: N6
+
+.. py:data:: N7
+
+.. py:data:: N8
+
+.. py:data:: N9
+
+.. py:data:: Nv
+
+.. py:data:: Nx
+
+.. py:data:: Nxy
+
+.. py:data:: Nxy
+
+.. py:data:: Nxyz
+
+.. py:data:: Mode3ds
+   :value: ['none', 'boxes', 'cont3d', 'hist', 'inter', 'surf', 'trisurf']
+
+
+.. py:data:: Istatus
+   :value: 0
+
+
+.. py:data:: WarningText
+   :value: ''
+
+
+.. py:data:: ErrorText
+   :value: ''
+
+
+.. py:data:: Platform
+
+.. py:data:: System
+
+.. py:data:: fun
+
+.. py:data:: Gdebug
+   :value: 0
+
+
+.. py:function:: debug(kmenu=None, kitem=None)
+
+.. py:function:: startgui()
+
+.. py:function:: start()
+
+.. py:data:: Debug
+   :value: 0
+
+
+.. py:data:: Gdebug
+   :value: 0
+
+
+.. py:data:: pwd
+
+.. py:data:: WisLinux
+   :value: 1
+
+
+.. py:data:: WAVEPATH
+
+.. py:data:: WAVESPATH
+
+.. py:function:: Getline(Fwvs)
+
+.. py:function:: getline(Fwin)
+
+.. py:function:: getlineI(Fwin)
+
+.. py:function:: getlineR(Fwin)
+
+.. py:function:: readwavein()
+
+.. py:function:: debug(kmenu=None, kitem=None)
+
+.. py:data:: ReliefBd
+   :value: 2
+
+
+.. py:data:: ReliefButBd
+   :value: 5
+
+
+.. py:function:: get_menu_depth(kmenu)
+
+.. py:function:: pmenu_update(kmenu)
+
+.. py:function:: MenuKeyPress(event, kmenu)
+
+.. py:function:: SelectButton(kselect, kmenu)
+
+.. py:function:: MenuEnter(ev, kmenu)
+
+.. py:function:: ToggleVar(kmenu, kitem, kvar)
+
+.. py:function:: DestroyMenu()
+
+.. py:function:: pmenu(kmenu)
+
+.. py:function:: setup_input(event)
+
+.. py:function:: Check_Array(iarr)
+
+.. py:function:: test()
+
+.. py:function:: AddMenu(nam, moth, tit, items)
+
+.. py:function:: setspecvar()
+
+.. py:function:: create_variable(varnam, vartype)
+
+.. py:function:: GetVarNum(var)
+
+.. py:function:: getmother(iknown, isame)
+
+.. py:function:: readwvs()
+
+.. py:function:: checkskip()
+
+.. py:function:: wiwrite(fo, s)
+
+.. py:function:: Icheck_Array_Var(ivar)
+
+.. py:function:: debug(kmenu=None, kitem=None)
+
+.. py:function:: writewavein()
+
+.. py:function:: runwave(ev='')
+
+.. py:function:: waveplot(ev)
+
+.. py:function:: HelpText(kmenu)
+
+.. py:data:: MyWavesFont
+   :value: ('arial', 11)
+
+
+.. py:data:: fwvs
+
+.. py:data:: line
+
+.. py:data:: line
+
+.. py:data:: line
+
+.. py:data:: line
+
+.. py:data:: line
+
+.. py:data:: words
+
+.. py:data:: font
+
+.. py:data:: size
+
+.. py:data:: MyWavesFont
+
+.. py:data:: Debug
+   :value: 0
+
+
+.. py:data:: FWAVEIN
+   :value: 'wave.in'
+
+
+.. py:data:: FWVS
+   :value: 'waves.wvs'
+
+
+.. py:data:: WAVECom
+   :value: ''
+
+
+.. py:data:: ROOTCom
+   :value: ''
+
+
+.. py:data:: EDICom
+   :value: ''
+
+
+.. py:data:: EWOUTCom
+   :value: ''
+
+
+.. py:data:: WinDef
+   :value: ''
+
+
+.. py:data:: Wavein
+   :value: []
+
+
+.. py:data:: WaveinO
+   :value: []
+
+
+.. py:data:: Wmenu
+   :value: []
+
+
+.. py:data:: Mapping
+   :value: []
+
+
+.. py:data:: MenuVeto
+   :value: []
+
+
+.. py:data:: MenuActive
+   :value: []
+
+
+.. py:data:: Nmenuactive
+   :value: 0
+
+
+.. py:data:: MenuAllVeto
+   :value: []
+
+
+.. py:data:: NMenuAllVeto
+   :value: []
+
+
+.. py:data:: MappingVeto
+   :value: []
+
+
+.. py:data:: Veto
+   :value: []
+
+
+.. py:data:: InvVeto
+   :value: []
+
+
+.. py:data:: Variables
+   :value: []
+
+
+.. py:data:: Arrays
+   :value: []
+
+
+.. py:data:: VarToWaveIn
+   :value: []
+
+
+.. py:data:: Specvar
+   :value: []
+
+
+.. py:data:: Trigger
+   :value: []
+
+
+.. py:data:: Calc
+   :value: []
+
+
+.. py:data:: MMitem
+   :value: []
+
+
+.. py:data:: Iback
+   :value: []
+
+
+.. py:data:: SFrame
+   :value: []
+
+
+.. py:data:: SComment
+   :value: []
+
+
+.. py:data:: SMitem
+   :value: []
+
+
+.. py:data:: SMexist
+   :value: []
+
+
+.. py:data:: Help
+   :value: []
+
+
+.. py:data:: NHelp
+   :value: 0
+
+
+.. py:data:: Nmenu
+   :value: -1
+
+
+.. py:data:: Nmenuveto
+   :value: -1
+
+
+.. py:data:: NmenuOld
+   :value: -1
+
+
+.. py:data:: Mother
+   :value: 0
+
+
+.. py:data:: MenuMother
+
+.. py:data:: MenuOld
+   :value: 0
+
+
+.. py:data:: Daughter
+   :value: 0
+
+
+.. py:data:: IMother
+   :value: -1
+
+
+.. py:data:: Istack
+   :value: -1
+
+
+.. py:data:: Nveto
+   :value: -1
+
+
+.. py:data:: Ninvveto
+   :value: -1
+
+
+.. py:data:: Nmap
+   :value: -1
+
+
+.. py:data:: Nvar
+   :value: -1
+
+
+.. py:data:: Narr
+   :value: -1
+
+
+.. py:data:: Ntrigger
+   :value: -1
+
+
+.. py:data:: Ncalc
+   :value: -1
+
+
+.. py:data:: Nwavein
+   :value: -1
+
+
+.. py:data:: Nmitem
+   :value: -1
+
+
+.. py:data:: Kmitem
+   :value: -1
+
+
+.. py:data:: Lmitem
+   :value: 0
+
+
+.. py:data:: FIOitem
+   :value: -1
+
+
+.. py:data:: Kmitemold
+   :value: -1
+
+
+.. py:data:: Nsitem
+   :value: -1
+
+
+.. py:data:: NULL
+   :value: 0
+
+
+.. py:data:: ONE
+   :value: 1
+
+
+.. py:data:: MONE
+   :value: -1
+
+
+.. py:data:: SNULL
+   :value: '0'
+
+
+.. py:data:: SONE
+   :value: '1'
+
+
+.. py:data:: SMONE
+   :value: '-1'
+
+
+.. py:data:: I
+   :value: 1j
+
+
+.. py:data:: ZONE
+   :value: (1+0j)
+
+
+.. py:data:: Ical
+   :value: 0
+
+
+.. py:data:: Ifocus
+   :value: -1
+
+
+.. py:data:: kWaveinRead
+   :value: 0
+
+
+.. py:data:: Lastvar
+   :value: 0
+
+
+.. py:data:: Tcolor
+   :value: 'white'
+
+
+.. py:data:: Vetocolor
+   :value: 'black'
+
+
+.. py:data:: Fwvs
+
+.. py:data:: Wave
+
+.. py:data:: Root
+
+.. py:data:: WaveOut
+
+.. py:data:: Editor
+
+.. py:data:: WinGeo
+
+.. py:data:: Fgeo
+
+.. py:data:: Wave
+
+.. py:data:: Root
+
+.. py:data:: WaveOut
+
+.. py:data:: Editor
+
+.. py:data:: WGmain
+   :value: 0
+
+
+.. py:function:: debugcalc()
+
+.. py:function:: Calculate()
+
+.. py:function:: CheckVetos()
+
+.. py:function:: debugmapping()
+
+.. py:function:: CheckMapping(kmap=-1)
+
+.. py:function:: CheckAll(kmenu, kitem, kvar)
+
+.. py:function:: GetFocusWidget(kmenu)
+
+.. py:function:: CheckButtons()
+
+.. py:function:: Up(event, kmenu, kitem)
+
+.. py:function:: Down(event, kmenu, kitem)
+
+.. py:function:: MouseIn(event)
+
+.. py:function:: FocusIn(event, kmenu, kitem, kvar)
+
+.. py:function:: noFocusInArray(event, kmenu, kitem, kvar)
+
+.. py:function:: FocusOut(event, kmenu, kitem, kvar)
+
+.. py:function:: WAVESexit(ev)
+
+.. py:data:: Pmenu
+   :value: []
+
+
+.. py:data:: PMenuGeo
+   :value: []
+
+
+.. py:data:: WGmain
+
+.. py:data:: T_color
+   :value: 'white'
+
+
+.. py:data:: Eb_color
+   :value: 'blue'
+
+
+.. py:data:: F_color
+   :value: 'black'
+
+
+.. py:data:: Veto_color
+   :value: 'gray'
+
+
+.. py:data:: Passiv_color
+   :value: 'gray'
+
+
+.. py:data:: Bg_color
+   :value: 'yellow'
+
+
+.. py:data:: B_color
+   :value: 'blue'
+
+
+.. py:data:: Select_color
+   :value: 'magenta'
+
+
+.. py:data:: Select_color
+   :value: 'cyan'
+
+
+.. py:data:: Select_color
+   :value: 'red'
+
+
+.. py:data:: Deselect_color
+   :value: 'blue'
+
+
+.. py:data:: Fgcol
+   :value: 'black'
+
+
+.. py:data:: Bgcol
+   :value: 'blue'
+
+
+.. py:data:: Afgcol
+   :value: 'yellow'
+
+
+.. py:data:: Abgcol
+   :value: 'blue'
+
+
+.. py:data:: Hlcol
+   :value: 'yellow'
+
+
+.. py:data:: Hlbcol
+   :value: 'red'
+
+
+.. py:data:: Vfgcol
+   :value: 'gray'
+
+
+.. py:data:: Vbgcol
+   :value: 'blue'
+
+
+.. py:data:: Nsitem
+   :value: -1
+
+
+.. py:data:: Nfocus
+   :value: 0
+
+
+.. py:data:: screen_width
+
+.. py:data:: screen_height
+
+.. py:data:: wingeo
+
+.. py:data:: wid
+
+.. py:data:: hei
+
+.. py:data:: posx
+
+.. py:data:: posy
+
+.. py:data:: WinPos
+   :value: '++'
+
+
+.. py:data:: wgeo
+   :value: '++'
+
+
+.. py:data:: PadX
+   :value: 5
+
+
+.. py:data:: PadY
+   :value: 3
+
+
+.. py:data:: Istack
+   :value: 0
+
+
+.. py:data:: mmitem
+
+.. py:data:: Nmitem
+   :value: 0
+
+
+.. py:data:: mmitem
+
+.. py:data:: Nmitem
+   :value: 1
+
+
+.. py:data:: mmitem
+
+.. py:data:: Nmitem
+   :value: 2
+
+
+.. py:data:: mmitem
+
+.. py:data:: Nmitem
+   :value: 3
+
+
+.. py:data:: kmitem
+   :value: 0
+
+
+.. py:data:: kmitem
+   :value: 1
+
+

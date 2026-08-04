@@ -1,0 +1,63 @@
+undulatorsBessyII.cpmu_archive
+==============================
+
+.. py:module:: undulatorsBessyII.cpmu_archive
+
+.. autoapi-nested-parse::
+
+   Contains the wave_from_b class that incorporates the API from python to WAVE and the function create_wave_instance that 
+   returns an instance of that class
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   undulatorsBessyII.cpmu_archive.cpmuParas
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   undulatorsBessyII.cpmu_archive.cpmuPolFun
+   undulatorsBessyII.cpmu_archive.cpmuMagnetFun
+   undulatorsBessyII.cpmu_archive.getCPMU20Paras_OldOptm
+   undulatorsBessyII.cpmu_archive.getCPMU17Paras
+   undulatorsBessyII.cpmu_archive.getCPMU20Paras
+   undulatorsBessyII.cpmu_archive.getCPMURepresentation
+
+
+Module Contents
+---------------
+
+.. py:class:: cpmuParas(file=None, center=None, magn_seqs_ul=None, periodicMagnParas=None, periodicPolParas=None, endMagn1Paras=None, endMagn2Paras=None, endPolParas=None, gap=0.0, nperiods=1, magnetization=None, polDrop=0.0, magDrop=0.0, end_pole_drop=0.0, mag_pole_slit=0.0, pole_mag_slit=0.0, endmag2_pole_l_slit=0.0, pole_endmag1_l_slit=0.0, endmag1_pole_l_slit=0.0, pole_endmag1_r_slit=0.0, endmag1_pole_r_slit=0.0, pole_endmag2_r_slit=0.0, endMagn1Drop=0.0, endMagn2Drop=0.0, coating=0.003, coatingMaterial='TiN')
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+
+   .. py:method:: writeValsJSON(file)
+
+
+.. py:function:: cpmuPolFun(center, polParas, name='pol')
+
+.. py:function:: cpmuMagnetFun(center, magnParas, name)
+
+.. py:function:: getCPMU20Paras_OldOptm()
+
+.. py:function:: getCPMU17Paras()
+
+.. py:function:: getCPMU20Paras()
+
+.. py:function:: getCPMURepresentation(cpmuPs, undu, center)
+

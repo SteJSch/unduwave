@@ -1,0 +1,16 @@
+unduwave.undulatorsBessyII
+==========================
+
+.. py:module:: unduwave.undulatorsBessyII
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /Unduwave/unduwave/undulatorsBessyII/cpmu20/index
+   /Unduwave/unduwave/undulatorsBessyII/cpmu_archive/index
+
+

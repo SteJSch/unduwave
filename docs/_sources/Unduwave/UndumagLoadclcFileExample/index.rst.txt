@@ -1,0 +1,91 @@
+UndumagLoadclcFileExample
+=========================
+
+.. py:module:: UndumagLoadclcFileExample
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   UndumagLoadclcFileExample.dir_path
+   UndumagLoadclcFileExample.res_folder
+   UndumagLoadclcFileExample.res_folder_full
+   UndumagLoadclcFileExample.undu
+   UndumagLoadclcFileExample.undu_prog_paras
+   UndumagLoadclcFileExample.clc_file
+   UndumagLoadclcFileExample.clc_folder
+   UndumagLoadclcFileExample.results
+   UndumagLoadclcFileExample.trajx
+   UndumagLoadclcFileExample.by
+   UndumagLoadclcFileExample.bz
+   UndumagLoadclcFileExample.intBy
+   UndumagLoadclcFileExample.intBz
+   UndumagLoadclcFileExample.intBy2
+   UndumagLoadclcFileExample.intBz2
+   UndumagLoadclcFileExample.zProfile
+   UndumagLoadclcFileExample.ByProfile
+   UndumagLoadclcFileExample.BzProfile
+   UndumagLoadclcFileExample.bmap
+   UndumagLoadclcFileExample.nfig
+   UndumagLoadclcFileExample.nfig
+   UndumagLoadclcFileExample.nfig
+   UndumagLoadclcFileExample.nfig
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: res_folder
+   :value: 'res'
+
+
+.. py:data:: res_folder_full
+
+.. py:data:: undu
+
+.. py:data:: undu_prog_paras
+
+.. py:data:: clc_file
+   :value: 'undumag_example.clc'
+
+
+.. py:data:: clc_folder
+
+.. py:data:: results
+
+.. py:data:: trajx
+
+.. py:data:: by
+
+.. py:data:: bz
+
+.. py:data:: intBy
+
+.. py:data:: intBz
+
+.. py:data:: intBy2
+
+.. py:data:: intBz2
+
+.. py:data:: zProfile
+
+.. py:data:: ByProfile
+
+.. py:data:: BzProfile
+
+.. py:data:: bmap
+
+.. py:data:: nfig
+   :value: 0
+
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+

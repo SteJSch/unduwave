@@ -1,0 +1,39 @@
+unduwave.analytical_module.ana_undu.kicks
+=========================================
+
+.. py:module:: unduwave.analytical_module.ana_undu.kicks
+
+.. autoapi-nested-parse::
+
+   Contains the functionality for loading and processing b-field data
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.kicks.calculate_Be2_intgrl
+   unduwave.analytical_module.ana_undu.kicks.calculate_kick_map
+   unduwave.analytical_module.ana_undu.kicks.integrate_along_line
+   unduwave.analytical_module.ana_undu.kicks._init_shared
+   unduwave.analytical_module.ana_undu.kicks.worker
+   unduwave.analytical_module.ana_undu.kicks.calc_beff_mp
+
+
+Module Contents
+---------------
+
+.. py:function:: calculate_Be2_intgrl(self, gamma, nhor=None, dhor=None, horPnts=None, horIntrvl=None, nvert=None, dvert=None, vertPnts=None, vertIntrvl=None, longPnts=None, nlong=None, dlong=None, longIntrvl=None)
+
+.. py:function:: calculate_kick_map(self, gamma, nhor=None, dhor=None, horPnts=None, horIntrvl=None, nvert=None, dvert=None, vertPnts=None, vertIntrvl=None, longPnts=None, nlong=None, dlong=None, longIntrvl=None)
+
+.. py:function:: integrate_along_line(vals, limit=400, epsrel=0.001, epsabs=1e-05)
+
+.. py:function:: _init_shared(shared_data)
+
+.. py:function:: worker(arg)
+
+.. py:function:: calc_beff_mp(inputs, shared_data=None, processes=4)
+

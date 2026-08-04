@@ -1,0 +1,45 @@
+wave_example_11a
+================
+
+.. py:module:: wave_example_11a
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   wave_example_11a.Example
+   wave_example_11a.ReplList
+   wave_example_11a.Fexample
+   wave_example_11a.FexampleN
+   wave_example_11a.Fex
+   wave_example_11a.Fout
+   wave_example_11a.rep
+
+
+Module Contents
+---------------
+
+.. py:data:: Example
+   :value: '11a'
+
+
+.. py:data:: ReplList
+   :value: [[' XSHIFT=0.0', ' XSHIFT=0.056'], [' KBUNDUMAG=2', ' KBUNDUMAG=1'], [' IPERIODG=0', '...
+
+
+.. py:data:: Fexample
+   :value: 'wave.in'
+
+
+.. py:data:: FexampleN
+   :value: 'pex11a.in'
+
+
+.. py:data:: Fex
+
+.. py:data:: Fout
+
+.. py:data:: rep
+

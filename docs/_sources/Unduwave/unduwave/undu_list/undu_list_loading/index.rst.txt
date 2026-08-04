@@ -1,0 +1,103 @@
+unduwave.undu_list.undu_list_loading
+====================================
+
+.. py:module:: unduwave.undu_list.undu_list_loading
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   unduwave.undu_list.undu_list_loading.unduListError
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_list.undu_list_loading.undu_list_element
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.undu_list.undu_list_loading.rotate_xy
+   unduwave.undu_list.undu_list_loading.from_el_sequence_get_obj_list_length
+   unduwave.undu_list.undu_list_loading.get_set_std_val
+
+
+Module Contents
+---------------
+
+.. py:exception:: unduListError
+
+   Bases: :py:obj:`Exception`
+
+
+   Common base class for all non-exit exceptions.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+.. py:function:: rotate_xy(vecIn, angle, negative=False)
+
+.. py:function:: from_el_sequence_get_obj_list_length(sequence, objectDict, unduDict, center=np.array([0.0, 0.0, 0.0]), name_core='')
+
+.. py:function:: get_set_std_val(thedict, stdVal, name=None, names=[])
+
+.. py:class:: undu_list_element(listFile, listFolder=None, **kwargs)
+
+   .. py:attribute:: _listFile
+
+
+   .. py:attribute:: _material_file_folder
+      :value: None
+
+
+
+   .. py:attribute:: _fullFile
+
+
+   .. py:method:: loadYAML(file=None)
+
+
+   .. py:method:: constructUndulator(unduDict=None, gap=None, shift=None, center=None, useSymmetries=True, nperiods=None, api=None, construct_quadrants=['ll', 'lr', 'ul', 'ur'])
+
+
+   .. py:method:: constructPlanarHybridUndulator(unduDict, gap=None, center=None, useSymmetries=True, nperiods=None, api=None, construct_quadrants=[])
+
+
+   .. py:method:: createStdEndMagnets(unduDict, geometry_info, inName='periodic_magnet', name_base='end_mag')
+
+
+   .. py:method:: constructAppleUndulator(unduDict, gap=None, shift=None, center=None, useSymmetries=True, nperiods=None, construct_quadrants=['ll', 'lr', 'ul', 'ur'], api=None)
+
+
+   .. py:method:: copy_magnetic_object_dict(copy_dict, magn_obj_name=None)
+
+
+   .. py:method:: find_construct_magnetic_objects_from_dict(obj_names, geometry_info, unduDict)
+
+
+   .. py:method:: constructMagneticObject(objectDict, material_info)
+
+
+   .. py:method:: twoSidedClamps_a(objectDict, material_info)
+
+
+   .. py:method:: twoSidedClamps_b(objectDict, material_info)
+
+
+   .. py:method:: construct_cpmuStdPole_object(objectDict, material_info)
+
+
+   .. py:method:: construct_oneSidedClamps_object(objectDict, material_info)
+
+
+   .. py:method:: construct_square_object(objectDict, material_info)
+
+

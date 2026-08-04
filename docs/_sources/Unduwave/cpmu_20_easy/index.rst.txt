@@ -1,0 +1,181 @@
+cpmu_20_easy
+============
+
+.. py:module:: cpmu_20_easy
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   cpmu_20_easy.dir_path
+   cpmu_20_easy.res_folder
+   cpmu_20_easy.wave
+   cpmu_20_easy.wave_prog_paras
+   cpmu_20_easy.period_length
+   cpmu_20_easy.nperiods
+   cpmu_20_easy.b0_y
+   cpmu_20_easy.undu_paras
+   cpmu_20_easy.spectrometer_paras
+   cpmu_20_easy.screen_paras
+   cpmu_20_easy.ebeam_paras
+   cpmu_20_easy.ebeam_paras
+   cpmu_20_easy.results
+   cpmu_20_easy.nfig
+   cpmu_20_easy.traj_x
+   cpmu_20_easy.traj_y
+   cpmu_20_easy.traj_z
+   cpmu_20_easy.nfig
+   cpmu_20_easy.nfig
+   cpmu_20_easy.By
+   cpmu_20_easy.Bz
+   cpmu_20_easy.nfig
+   cpmu_20_easy.power_z
+   cpmu_20_easy.power_y
+   cpmu_20_easy.power_distro
+   cpmu_20_easy.nfig
+   cpmu_20_easy.en_flux
+   cpmu_20_easy.flux
+   cpmu_20_easy.nfig
+   cpmu_20_easy.en_brill
+   cpmu_20_easy.brill0
+   cpmu_20_easy.brill0e
+   cpmu_20_easy.brill0f
+   cpmu_20_easy.brill0ef
+   cpmu_20_easy.nfig
+   cpmu_20_easy.en_fd
+   cpmu_20_easy.flux_density_onaxis
+   cpmu_20_easy.nfig
+   cpmu_20_easy.flux_dens_distr_ens_loaded
+   cpmu_20_easy.fd_y
+   cpmu_20_easy.fd_z
+   cpmu_20_easy.fd
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: res_folder
+
+   Getting wave
+
+
+.. py:data:: wave
+
+.. py:data:: wave_prog_paras
+
+   Setting Undulator Parameter
+
+   We give the K-parameters and the B-Amplitudes are calculated from there
+
+
+.. py:data:: period_length
+   :value: 0.04
+
+
+.. py:data:: nperiods
+   :value: 3
+
+
+.. py:data:: b0_y
+   :value: 1.4
+
+
+.. py:data:: undu_paras
+
+.. py:data:: spectrometer_paras
+
+.. py:data:: screen_paras
+
+.. py:data:: ebeam_paras
+
+.. py:data:: ebeam_paras
+
+   Run
+
+
+.. py:data:: results
+
+.. py:data:: nfig
+   :value: 0
+
+
+   Plot Trajectory
+
+
+.. py:data:: traj_x
+
+.. py:data:: traj_y
+
+.. py:data:: traj_z
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+   Plot B-Field
+
+
+.. py:data:: By
+
+.. py:data:: Bz
+
+.. py:data:: nfig
+
+   Plot Power-Distribution
+
+
+.. py:data:: power_z
+
+.. py:data:: power_y
+
+.. py:data:: power_distro
+
+.. py:data:: nfig
+
+   Plot Flux
+
+
+.. py:data:: en_flux
+
+.. py:data:: flux
+
+.. py:data:: nfig
+
+   Plot Brilliance
+
+
+.. py:data:: en_brill
+
+.. py:data:: brill0
+
+.. py:data:: brill0e
+
+.. py:data:: brill0f
+
+.. py:data:: brill0ef
+
+.. py:data:: nfig
+
+   Plot FLux density distributions
+
+
+.. py:data:: en_fd
+
+.. py:data:: flux_density_onaxis
+
+.. py:data:: nfig
+
+.. py:data:: flux_dens_distr_ens_loaded
+   :value: []
+
+
+.. py:data:: fd_y
+
+.. py:data:: fd_z
+
+.. py:data:: fd
+

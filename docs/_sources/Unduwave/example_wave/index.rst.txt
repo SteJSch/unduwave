@@ -1,0 +1,57 @@
+example_wave
+============
+
+.. py:module:: example_wave
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   example_wave.dir_path
+   example_wave.wave
+   example_wave.wave_prog_paras
+   example_wave.results
+   example_wave.nfig
+   example_wave.traj_x
+   example_wave.traj_y
+   example_wave.traj_z
+   example_wave.nfig
+   example_wave.nfig
+   example_wave.By
+   example_wave.Bz
+   example_wave.nfig
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: wave
+
+.. py:data:: wave_prog_paras
+
+.. py:data:: results
+
+.. py:data:: nfig
+   :value: 0
+
+
+.. py:data:: traj_x
+
+.. py:data:: traj_y
+
+.. py:data:: traj_z
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+.. py:data:: By
+
+.. py:data:: Bz
+
+.. py:data:: nfig
+

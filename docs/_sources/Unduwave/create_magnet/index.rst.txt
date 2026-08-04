@@ -1,0 +1,95 @@
+create_magnet
+=============
+
+.. py:module:: create_magnet
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   create_magnet.dir_path
+   create_magnet.res_folder
+   create_magnet.res_folder_full
+   create_magnet.undu
+   create_magnet.undu_prog_paras
+   create_magnet.pos
+   create_magnet.magn_paras
+   create_magnet.magnObject
+   create_magnet.results
+   create_magnet.trajx
+   create_magnet.by
+   create_magnet.bz
+   create_magnet.intBy
+   create_magnet.intBz
+   create_magnet.intBy2
+   create_magnet.intBz2
+   create_magnet.zProfile
+   create_magnet.ByProfile
+   create_magnet.BzProfile
+   create_magnet.bmap
+   create_magnet.nfig
+   create_magnet.nfig
+   create_magnet.nfig
+   create_magnet.nfig
+   create_magnet.nfig
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: res_folder
+   :value: 'res'
+
+
+.. py:data:: res_folder_full
+
+.. py:data:: undu
+
+.. py:data:: undu_prog_paras
+
+.. py:data:: pos
+
+.. py:data:: magn_paras
+
+.. py:data:: magnObject
+
+.. py:data:: results
+
+.. py:data:: trajx
+
+.. py:data:: by
+
+.. py:data:: bz
+
+.. py:data:: intBy
+
+.. py:data:: intBz
+
+.. py:data:: intBy2
+
+.. py:data:: intBz2
+
+.. py:data:: zProfile
+
+.. py:data:: ByProfile
+
+.. py:data:: BzProfile
+
+.. py:data:: bmap
+
+.. py:data:: nfig
+   :value: 0
+
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+

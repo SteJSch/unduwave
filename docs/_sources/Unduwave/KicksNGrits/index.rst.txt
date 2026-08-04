@@ -1,0 +1,22 @@
+KicksNGrits
+===========
+
+.. py:module:: KicksNGrits
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   KicksNGrits.dir_path
+   KicksNGrits.wave
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: wave
+

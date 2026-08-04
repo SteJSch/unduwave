@@ -1,0 +1,927 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>undumag_msh_radia &mdash; Unduwave v0.9.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=518ffd31"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="unduwave.wave_modules.wave_results" href="../unduwave/wave_modules/wave_results/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickguide.html">Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../unduwave/index.html">unduwave</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">undumag_msh_radia</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.user"><code class="docutils literal notranslate"><span class="pre">user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mshObs"><code class="docutils literal notranslate"><span class="pre">mshObs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mshTrf"><code class="docutils literal notranslate"><span class="pre">mshTrf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mshNames"><code class="docutils literal notranslate"><span class="pre">mshNames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mshColors"><code class="docutils literal notranslate"><span class="pre">mshColors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mshCnt"><code class="docutils literal notranslate"><span class="pre">mshCnt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mshCntMembers"><code class="docutils literal notranslate"><span class="pre">mshCntMembers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mshCntMaster"><code class="docutils literal notranslate"><span class="pre">mshCntMaster</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.MagVoxelField"><code class="docutils literal notranslate"><span class="pre">MagVoxelField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.PolVoxelField"><code class="docutils literal notranslate"><span class="pre">PolVoxelField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.NL"><code class="docutils literal notranslate"><span class="pre">NL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.run"><code class="docutils literal notranslate"><span class="pre">run</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.comment"><code class="docutils literal notranslate"><span class="pre">comment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.iUnduXsym"><code class="docutils literal notranslate"><span class="pre">iUnduXsym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.iUnduYsym"><code class="docutils literal notranslate"><span class="pre">iUnduYsym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.iUnduZsym"><code class="docutils literal notranslate"><span class="pre">iUnduZsym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduSymX"><code class="docutils literal notranslate"><span class="pre">UnduSymX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.kDraw"><code class="docutils literal notranslate"><span class="pre">kDraw</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.unduplot_theta"><code class="docutils literal notranslate"><span class="pre">unduplot_theta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.unduplot_phi"><code class="docutils literal notranslate"><span class="pre">unduplot_phi</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduXCenter"><code class="docutils literal notranslate"><span class="pre">UnduXCenter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.iUnduForce"><code class="docutils literal notranslate"><span class="pre">iUnduForce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.ForceMagPol"><code class="docutils literal notranslate"><span class="pre">ForceMagPol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduXCenterShift"><code class="docutils literal notranslate"><span class="pre">UnduXCenterShift</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduTorqCenX"><code class="docutils literal notranslate"><span class="pre">UnduTorqCenX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduTorqCenY"><code class="docutils literal notranslate"><span class="pre">UnduTorqCenY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduTorqCenZ"><code class="docutils literal notranslate"><span class="pre">UnduTorqCenZ</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduXMapMin"><code class="docutils literal notranslate"><span class="pre">UnduXMapMin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduXMapMax"><code class="docutils literal notranslate"><span class="pre">UnduXMapMax</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nUnduXMap"><code class="docutils literal notranslate"><span class="pre">nUnduXMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduYMapMin"><code class="docutils literal notranslate"><span class="pre">UnduYMapMin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduYMapMax"><code class="docutils literal notranslate"><span class="pre">UnduYMapMax</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nUnduYMap"><code class="docutils literal notranslate"><span class="pre">nUnduYMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduZMapMin"><code class="docutils literal notranslate"><span class="pre">UnduZMapMin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduZMapMax"><code class="docutils literal notranslate"><span class="pre">UnduZMapMax</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nUnduZMap"><code class="docutils literal notranslate"><span class="pre">nUnduZMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nUnduNoPolMap"><code class="docutils literal notranslate"><span class="pre">nUnduNoPolMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nUnduNoMagMap"><code class="docutils literal notranslate"><span class="pre">nUnduNoMagMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.FracDivY_Mag_Hybrid"><code class="docutils literal notranslate"><span class="pre">FracDivY_Mag_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.FracDivZ_Mag_Hybrid"><code class="docutils literal notranslate"><span class="pre">FracDivZ_Mag_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.IronIndex_Hybrid"><code class="docutils literal notranslate"><span class="pre">IronIndex_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.RECIndex_Hybrid"><code class="docutils literal notranslate"><span class="pre">RECIndex_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.ColorMag_Hybrid"><code class="docutils literal notranslate"><span class="pre">ColorMag_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.ColorPol_Hybrid"><code class="docutils literal notranslate"><span class="pre">ColorPol_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.KsiPerp_Hybrid"><code class="docutils literal notranslate"><span class="pre">KsiPerp_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.Br_Hybrid"><code class="docutils literal notranslate"><span class="pre">Br_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mu_Hybrid"><code class="docutils literal notranslate"><span class="pre">mu_Hybrid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.Mcoating"><code class="docutils literal notranslate"><span class="pre">Mcoating</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.magenta"><code class="docutils literal notranslate"><span class="pre">magenta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.PerLen"><code class="docutils literal notranslate"><span class="pre">PerLen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.yellow"><code class="docutils literal notranslate"><span class="pre">yellow</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.white"><code class="docutils literal notranslate"><span class="pre">white</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.black"><code class="docutils literal notranslate"><span class="pre">black</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.green"><code class="docutils literal notranslate"><span class="pre">green</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.blue"><code class="docutils literal notranslate"><span class="pre">blue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.cyan"><code class="docutils literal notranslate"><span class="pre">cyan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.red"><code class="docutils literal notranslate"><span class="pre">red</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UmatREC"><code class="docutils literal notranslate"><span class="pre">UmatREC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UmatIron"><code class="docutils literal notranslate"><span class="pre">UmatIron</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.vertices"><code class="docutils literal notranslate"><span class="pre">vertices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.Br"><code class="docutils literal notranslate"><span class="pre">Br</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.system_magnet_coil_MyMagnet"><code class="docutils literal notranslate"><span class="pre">system_magnet_coil_MyMagnet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduMag"><code class="docutils literal notranslate"><span class="pre">UnduMag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduPol"><code class="docutils literal notranslate"><span class="pre">UnduPol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.AllMagPols"><code class="docutils literal notranslate"><span class="pre">AllMagPols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nUnduMag"><code class="docutils literal notranslate"><span class="pre">nUnduMag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nUnduPol"><code class="docutils literal notranslate"><span class="pre">nUnduPol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nMagPolTot"><code class="docutils literal notranslate"><span class="pre">nMagPolTot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">nUnduMag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">nMagPolTot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.nUnduFilaments"><code class="docutils literal notranslate"><span class="pre">nUnduFilaments</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.iSolve"><code class="docutils literal notranslate"><span class="pre">iSolve</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.UnduSetUp"><code class="docutils literal notranslate"><span class="pre">UnduSetUp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.ForceColor"><code class="docutils literal notranslate"><span class="pre">ForceColor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.FPrec"><code class="docutils literal notranslate"><span class="pre">FPrec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.t0"><code class="docutils literal notranslate"><span class="pre">t0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.mPi"><code class="docutils literal notranslate"><span class="pre">mPi</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.ixsym"><code class="docutils literal notranslate"><span class="pre">ixsym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.iysym"><code class="docutils literal notranslate"><span class="pre">iysym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.izsym"><code class="docutils literal notranslate"><span class="pre">izsym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">iysym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">izsym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">ixsym</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.wires"><code class="docutils literal notranslate"><span class="pre">wires</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">MagVoxelField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">PolVoxelField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.tiny"><code class="docutils literal notranslate"><span class="pre">tiny</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undumag_msh_radia.FPOLMAP"><code class="docutils literal notranslate"><span class="pre">FPOLMAP</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+      <li class="breadcrumb-item active">undumag_msh_radia</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Unduwave/undumag_msh_radia/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-undumag_msh_radia">
+<span id="undumag-msh-radia"></span><h1>undumag_msh_radia<a class="headerlink" href="#module-undumag_msh_radia" title="Link to this heading"></a></h1>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.user" title="undumag_msh_radia.user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.mshObs" title="undumag_msh_radia.mshObs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshObs</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.mshTrf" title="undumag_msh_radia.mshTrf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshTrf</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.mshNames" title="undumag_msh_radia.mshNames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshNames</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.mshColors" title="undumag_msh_radia.mshColors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshColors</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.mshCnt" title="undumag_msh_radia.mshCnt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshCnt</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.mshCntMembers" title="undumag_msh_radia.mshCntMembers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshCntMembers</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.mshCntMaster" title="undumag_msh_radia.mshCntMaster"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshCntMaster</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id5" title="undumag_msh_radia.MagVoxelField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MagVoxelField</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id6" title="undumag_msh_radia.PolVoxelField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PolVoxelField</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.NL" title="undumag_msh_radia.NL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NL</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.run" title="undumag_msh_radia.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.comment" title="undumag_msh_radia.comment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">comment</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.iUnduXsym" title="undumag_msh_radia.iUnduXsym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iUnduXsym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.iUnduYsym" title="undumag_msh_radia.iUnduYsym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iUnduYsym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.iUnduZsym" title="undumag_msh_radia.iUnduZsym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iUnduZsym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduSymX" title="undumag_msh_radia.UnduSymX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduSymX</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.kDraw" title="undumag_msh_radia.kDraw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kDraw</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.unduplot_theta" title="undumag_msh_radia.unduplot_theta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduplot_theta</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.unduplot_phi" title="undumag_msh_radia.unduplot_phi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduplot_phi</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduXCenter" title="undumag_msh_radia.UnduXCenter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduXCenter</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.iUnduForce" title="undumag_msh_radia.iUnduForce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iUnduForce</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.ForceMagPol" title="undumag_msh_radia.ForceMagPol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForceMagPol</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduXCenterShift" title="undumag_msh_radia.UnduXCenterShift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduXCenterShift</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduTorqCenX" title="undumag_msh_radia.UnduTorqCenX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduTorqCenX</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduTorqCenY" title="undumag_msh_radia.UnduTorqCenY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduTorqCenY</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduTorqCenZ" title="undumag_msh_radia.UnduTorqCenZ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduTorqCenZ</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduXMapMin" title="undumag_msh_radia.UnduXMapMin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduXMapMin</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduXMapMax" title="undumag_msh_radia.UnduXMapMax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduXMapMax</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.nUnduXMap" title="undumag_msh_radia.nUnduXMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduXMap</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduYMapMin" title="undumag_msh_radia.UnduYMapMin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduYMapMin</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduYMapMax" title="undumag_msh_radia.UnduYMapMax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduYMapMax</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.nUnduYMap" title="undumag_msh_radia.nUnduYMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduYMap</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduZMapMin" title="undumag_msh_radia.UnduZMapMin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduZMapMin</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduZMapMax" title="undumag_msh_radia.UnduZMapMax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduZMapMax</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.nUnduZMap" title="undumag_msh_radia.nUnduZMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduZMap</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.nUnduNoPolMap" title="undumag_msh_radia.nUnduNoPolMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduNoPolMap</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.nUnduNoMagMap" title="undumag_msh_radia.nUnduNoMagMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduNoMagMap</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.FracDivY_Mag_Hybrid" title="undumag_msh_radia.FracDivY_Mag_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FracDivY_Mag_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.FracDivZ_Mag_Hybrid" title="undumag_msh_radia.FracDivZ_Mag_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FracDivZ_Mag_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.IronIndex_Hybrid" title="undumag_msh_radia.IronIndex_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IronIndex_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.RECIndex_Hybrid" title="undumag_msh_radia.RECIndex_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RECIndex_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.ColorMag_Hybrid" title="undumag_msh_radia.ColorMag_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColorMag_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.ColorPol_Hybrid" title="undumag_msh_radia.ColorPol_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColorPol_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.KsiPerp_Hybrid" title="undumag_msh_radia.KsiPerp_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KsiPerp_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.Br_Hybrid" title="undumag_msh_radia.Br_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Br_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.mu_Hybrid" title="undumag_msh_radia.mu_Hybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mu_Hybrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.Mcoating" title="undumag_msh_radia.Mcoating"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mcoating</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.magenta" title="undumag_msh_radia.magenta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">magenta</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.PerLen" title="undumag_msh_radia.PerLen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PerLen</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.yellow" title="undumag_msh_radia.yellow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yellow</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.white" title="undumag_msh_radia.white"><code class="xref py py-obj docutils literal notranslate"><span class="pre">white</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.black" title="undumag_msh_radia.black"><code class="xref py py-obj docutils literal notranslate"><span class="pre">black</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.green" title="undumag_msh_radia.green"><code class="xref py py-obj docutils literal notranslate"><span class="pre">green</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.blue" title="undumag_msh_radia.blue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blue</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.cyan" title="undumag_msh_radia.cyan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cyan</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.red" title="undumag_msh_radia.red"><code class="xref py py-obj docutils literal notranslate"><span class="pre">red</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.UmatREC" title="undumag_msh_radia.UmatREC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UmatREC</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UmatIron" title="undumag_msh_radia.UmatIron"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UmatIron</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.vertices" title="undumag_msh_radia.vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vertices</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.Br" title="undumag_msh_radia.Br"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Br</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.system_magnet_coil_MyMagnet" title="undumag_msh_radia.system_magnet_coil_MyMagnet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">system_magnet_coil_MyMagnet</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduMag" title="undumag_msh_radia.UnduMag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduMag</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduPol" title="undumag_msh_radia.UnduPol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduPol</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.AllMagPols" title="undumag_msh_radia.AllMagPols"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AllMagPols</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id0" title="undumag_msh_radia.nUnduMag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduMag</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.nUnduPol" title="undumag_msh_radia.nUnduPol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduPol</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id1" title="undumag_msh_radia.nMagPolTot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nMagPolTot</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="undumag_msh_radia.nUnduMag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduMag</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id1" title="undumag_msh_radia.nMagPolTot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nMagPolTot</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.nUnduFilaments" title="undumag_msh_radia.nUnduFilaments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nUnduFilaments</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.iSolve" title="undumag_msh_radia.iSolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iSolve</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.UnduSetUp" title="undumag_msh_radia.UnduSetUp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnduSetUp</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.ForceColor" title="undumag_msh_radia.ForceColor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForceColor</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.FPrec" title="undumag_msh_radia.FPrec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FPrec</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.t0" title="undumag_msh_radia.t0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">t0</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.mPi" title="undumag_msh_radia.mPi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mPi</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id4" title="undumag_msh_radia.ixsym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ixsym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id2" title="undumag_msh_radia.iysym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iysym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id3" title="undumag_msh_radia.izsym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">izsym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id2" title="undumag_msh_radia.iysym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iysym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id3" title="undumag_msh_radia.izsym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">izsym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id4" title="undumag_msh_radia.ixsym"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ixsym</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.wires" title="undumag_msh_radia.wires"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wires</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id5" title="undumag_msh_radia.MagVoxelField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MagVoxelField</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id6" title="undumag_msh_radia.PolVoxelField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PolVoxelField</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#undumag_msh_radia.tiny" title="undumag_msh_radia.tiny"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tiny</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#undumag_msh_radia.FPOLMAP" title="undumag_msh_radia.FPOLMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FPOLMAP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.user">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#undumag_msh_radia.user" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mshObs">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mshObs</span></span><a class="headerlink" href="#undumag_msh_radia.mshObs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mshTrf">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mshTrf</span></span><a class="headerlink" href="#undumag_msh_radia.mshTrf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mshNames">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mshNames</span></span><a class="headerlink" href="#undumag_msh_radia.mshNames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mshColors">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mshColors</span></span><a class="headerlink" href="#undumag_msh_radia.mshColors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mshCnt">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mshCnt</span></span><a class="headerlink" href="#undumag_msh_radia.mshCnt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mshCntMembers">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mshCntMembers</span></span><a class="headerlink" href="#undumag_msh_radia.mshCntMembers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mshCntMaster">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mshCntMaster</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#undumag_msh_radia.mshCntMaster" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.MagVoxelField">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">MagVoxelField</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#undumag_msh_radia.MagVoxelField" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.PolVoxelField">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">PolVoxelField</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#undumag_msh_radia.PolVoxelField" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.NL">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">NL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Multiline-String</span></span><a class="headerlink" href="#undumag_msh_radia.NL" title="Link to this definition"></a></dt>
+<dd><details><summary>Show Value</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</details></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.run">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#undumag_msh_radia.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.comment">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">comment</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Planar</span> <span class="pre">Hybrid</span> <span class="pre">Undulator'</span></span><a class="headerlink" href="#undumag_msh_radia.comment" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.iUnduXsym">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">iUnduXsym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.iUnduXsym" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.iUnduYsym">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">iUnduYsym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.iUnduYsym" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.iUnduZsym">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">iUnduZsym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.iUnduZsym" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduSymX">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduSymX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduSymX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.kDraw">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">kDraw</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#undumag_msh_radia.kDraw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.unduplot_theta">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">unduplot_theta</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.unduplot_theta" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.unduplot_phi">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">unduplot_phi</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.unduplot_phi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduXCenter">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduXCenter</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduXCenter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.iUnduForce">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">iUnduForce</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.iUnduForce" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.ForceMagPol">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">ForceMagPol</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></span><a class="headerlink" href="#undumag_msh_radia.ForceMagPol" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduXCenterShift">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduXCenterShift</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduXCenterShift" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduTorqCenX">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduTorqCenX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduTorqCenX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduTorqCenY">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduTorqCenY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduTorqCenY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduTorqCenZ">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduTorqCenZ</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduTorqCenZ" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduXMapMin">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduXMapMin</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-189.972</span></span><a class="headerlink" href="#undumag_msh_radia.UnduXMapMin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduXMapMax">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduXMapMax</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">200.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduXMapMax" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nUnduXMap">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduXMap</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">391</span></span><a class="headerlink" href="#undumag_msh_radia.nUnduXMap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduYMapMin">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduYMapMin</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-30.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduYMapMin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduYMapMax">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduYMapMax</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduYMapMax" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nUnduYMap">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduYMap</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#undumag_msh_radia.nUnduYMap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduZMapMin">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduZMapMin</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-30.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduZMapMin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduZMapMax">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduZMapMax</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30.0</span></span><a class="headerlink" href="#undumag_msh_radia.UnduZMapMax" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nUnduZMap">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduZMap</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></span><a class="headerlink" href="#undumag_msh_radia.nUnduZMap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nUnduNoPolMap">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduNoPolMap</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#undumag_msh_radia.nUnduNoPolMap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nUnduNoMagMap">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduNoMagMap</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#undumag_msh_radia.nUnduNoMagMap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.FracDivY_Mag_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">FracDivY_Mag_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.0</span></span><a class="headerlink" href="#undumag_msh_radia.FracDivY_Mag_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.FracDivZ_Mag_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">FracDivZ_Mag_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.0</span></span><a class="headerlink" href="#undumag_msh_radia.FracDivZ_Mag_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.IronIndex_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">IronIndex_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.0</span></span><a class="headerlink" href="#undumag_msh_radia.IronIndex_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.RECIndex_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">RECIndex_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></span><a class="headerlink" href="#undumag_msh_radia.RECIndex_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.ColorMag_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">ColorMag_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.0</span></span><a class="headerlink" href="#undumag_msh_radia.ColorMag_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.ColorPol_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">ColorPol_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4.0</span></span><a class="headerlink" href="#undumag_msh_radia.ColorPol_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.KsiPerp_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">KsiPerp_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.KsiPerp_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.Br_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">Br_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.62</span></span><a class="headerlink" href="#undumag_msh_radia.Br_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mu_Hybrid">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mu_Hybrid</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></span><a class="headerlink" href="#undumag_msh_radia.mu_Hybrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.Mcoating">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">Mcoating</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.014</span></span><a class="headerlink" href="#undumag_msh_radia.Mcoating" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.magenta">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">magenta</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6.0</span></span><a class="headerlink" href="#undumag_msh_radia.magenta" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.PerLen">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">PerLen</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20.0</span></span><a class="headerlink" href="#undumag_msh_radia.PerLen" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.yellow">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">yellow</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5.0</span></span><a class="headerlink" href="#undumag_msh_radia.yellow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.white">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">white</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.white" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.black">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">black</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></span><a class="headerlink" href="#undumag_msh_radia.black" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.green">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">green</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3.0</span></span><a class="headerlink" href="#undumag_msh_radia.green" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.blue">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">blue</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4.0</span></span><a class="headerlink" href="#undumag_msh_radia.blue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.cyan">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">cyan</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7.0</span></span><a class="headerlink" href="#undumag_msh_radia.cyan" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.red">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">red</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.0</span></span><a class="headerlink" href="#undumag_msh_radia.red" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UmatREC">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UmatREC</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#undumag_msh_radia.UmatREC" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UmatIron">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UmatIron</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#undumag_msh_radia.UmatIron" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.vertices">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">vertices</span></span><a class="headerlink" href="#undumag_msh_radia.vertices" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.Br">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">Br</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[0.0,</span> <span class="pre">1.0,</span> <span class="pre">0.0]</span></span><a class="headerlink" href="#undumag_msh_radia.Br" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.system_magnet_coil_MyMagnet">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">system_magnet_coil_MyMagnet</span></span><a class="headerlink" href="#undumag_msh_radia.system_magnet_coil_MyMagnet" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduMag">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduMag</span></span><a class="headerlink" href="#undumag_msh_radia.UnduMag" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduPol">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduPol</span></span><a class="headerlink" href="#undumag_msh_radia.UnduPol" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.AllMagPols">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">AllMagPols</span></span><a class="headerlink" href="#undumag_msh_radia.AllMagPols" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nUnduMag">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduMag</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.nUnduMag" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nUnduPol">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduPol</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.nUnduPol" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nMagPolTot">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nMagPolTot</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.nMagPolTot" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduMag</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nMagPolTot</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.nUnduFilaments">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">nUnduFilaments</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4400</span></span><a class="headerlink" href="#undumag_msh_radia.nUnduFilaments" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.iSolve">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">iSolve</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#undumag_msh_radia.iSolve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.UnduSetUp">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">UnduSetUp</span></span><a class="headerlink" href="#undumag_msh_radia.UnduSetUp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.ForceColor">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">ForceColor</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[1,</span> <span class="pre">0,</span> <span class="pre">0.5]</span></span><a class="headerlink" href="#undumag_msh_radia.ForceColor" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.FPrec">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">FPrec</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.1</span></span><a class="headerlink" href="#undumag_msh_radia.FPrec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.t0">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">t0</span></span><a class="headerlink" href="#undumag_msh_radia.t0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.mPi">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">mPi</span></span><a class="headerlink" href="#undumag_msh_radia.mPi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.ixsym">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">ixsym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.ixsym" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.iysym">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">iysym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.iysym" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.izsym">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">izsym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#undumag_msh_radia.izsym" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">iysym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">izsym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">ixsym</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.wires">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">wires</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#undumag_msh_radia.wires" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">MagVoxelField</span></span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">PolVoxelField</span></span><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.tiny">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">tiny</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></span><a class="headerlink" href="#undumag_msh_radia.tiny" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="undumag_msh_radia.FPOLMAP">
+<span class="sig-prename descclassname"><span class="pre">undumag_msh_radia.</span></span><span class="sig-name descname"><span class="pre">FPOLMAP</span></span><a class="headerlink" href="#undumag_msh_radia.FPOLMAP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../unduwave/wave_modules/wave_results/index.html" class="btn btn-neutral float-left" title="unduwave.wave_modules.wave_results" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

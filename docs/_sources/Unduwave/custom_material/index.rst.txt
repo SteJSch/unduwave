@@ -1,0 +1,113 @@
+custom_material
+===============
+
+.. py:module:: custom_material
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   custom_material.dir_path
+   custom_material.res_folder
+   custom_material.res_folder_full
+   custom_material.material_folder
+   custom_material.undu
+   custom_material.undu_prog_paras
+   custom_material.mat_folders
+   custom_material.pos
+   custom_material.magn_paras
+   custom_material.magnObject
+   custom_material.pole_paras
+   custom_material.pos
+   custom_material.poleObject
+   custom_material.objs
+   custom_material.results
+   custom_material.trajx
+   custom_material.by
+   custom_material.bz
+   custom_material.intBy
+   custom_material.intBz
+   custom_material.intBy2
+   custom_material.intBz2
+   custom_material.zProfile
+   custom_material.ByProfile
+   custom_material.BzProfile
+   custom_material.bmap
+   custom_material.nfig
+   custom_material.nfig
+   custom_material.nfig
+   custom_material.nfig
+   custom_material.nfig
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: res_folder
+   :value: 'res'
+
+
+.. py:data:: res_folder_full
+
+.. py:data:: material_folder
+
+.. py:data:: undu
+
+.. py:data:: undu_prog_paras
+
+.. py:data:: mat_folders
+
+.. py:data:: pos
+
+.. py:data:: magn_paras
+
+.. py:data:: magnObject
+
+.. py:data:: pole_paras
+
+.. py:data:: pos
+
+.. py:data:: poleObject
+
+.. py:data:: objs
+
+.. py:data:: results
+
+.. py:data:: trajx
+
+.. py:data:: by
+
+.. py:data:: bz
+
+.. py:data:: intBy
+
+.. py:data:: intBz
+
+.. py:data:: intBy2
+
+.. py:data:: intBz2
+
+.. py:data:: zProfile
+
+.. py:data:: ByProfile
+
+.. py:data:: BzProfile
+
+.. py:data:: bmap
+
+.. py:data:: nfig
+   :value: 0
+
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+

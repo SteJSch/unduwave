@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>unduwave.analytical_module.ana_undu.grids &mdash; Unduwave v0.9.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=518ffd31"></script>
+      <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="unduwave.analytical_module.ana_undu.kicks" href="../kicks/index.html" />
+    <link rel="prev" title="unduwave.analytical_module.ana_undu.bfield" href="../bfield/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../quickguide.html">Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">unduwave</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../index.html">unduwave.analytical_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/index.html">unduwave.api</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../attribute_classes/index.html">unduwave.attribute_classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../constants/index.html">unduwave.constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../helpers/index.html">unduwave.helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../optimization_module/index.html">unduwave.optimization_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../quantities/index.html">unduwave.quantities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../undu_list/index.html">unduwave.undu_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../undu_modules/index.html">unduwave.undu_modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../unduwave_incl/index.html">unduwave.unduwave_incl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../wave_modules/index.html">unduwave.wave_modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#exceptions">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html#package-contents">Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">unduwave</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">unduwave.analytical_module</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">unduwave.analytical_module.ana_undu</a></li>
+      <li class="breadcrumb-item active">unduwave.analytical_module.ana_undu.grids</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/Unduwave/unduwave/analytical_module/ana_undu/grids/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-unduwave.analytical_module.ana_undu.grids">
+<span id="unduwave-analytical-module-ana-undu-grids"></span><h1>unduwave.analytical_module.ana_undu.grids<a class="headerlink" href="#module-unduwave.analytical_module.ana_undu.grids" title="Link to this heading"></a></h1>
+<p>Contains the functionality for loading and processing b-field data</p>
+<section id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.unduGridError" title="unduwave.analytical_module.ana_undu.grids.unduGridError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduGridError</span></code></a></p></td>
+<td><p>Common base class for all non-exit exceptions.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator" title="unduwave.analytical_module.ana_undu.grids.grid_interpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_interpolator</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization" title="unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bmap_hallbach_parametrization</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.get_line_through_point" title="unduwave.analytical_module.ana_undu.grids.get_line_through_point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_line_through_point</span></code></a>(p0, n0, xlims, ylims, zlims)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_get_lines_init_shared" title="unduwave.analytical_module.ana_undu.grids.grid_get_lines_init_shared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_get_lines_init_shared</span></code></a>(funs, xvals, yvals, zvals, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_get_lines_worker" title="unduwave.analytical_module.ana_undu.grids.grid_get_lines_worker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_get_lines_worker</span></code></a>(p0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_get_lines_calc" title="unduwave.analytical_module.ana_undu.grids.grid_get_lines_calc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_get_lines_calc</span></code></a>(funs, xvals, yvals, zvals, p0s, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_line_integrals_init_shared" title="unduwave.analytical_module.ana_undu.grids.grid_line_integrals_init_shared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_line_integrals_init_shared</span></code></a>(funs, xvals, yvals, zvals)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_line_integrals_worker" title="unduwave.analytical_module.ana_undu.grids.grid_line_integrals_worker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_line_integrals_worker</span></code></a>(cur_ind)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_line_integrals_calc" title="unduwave.analytical_module.ana_undu.grids.grid_line_integrals_calc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_line_integrals_calc</span></code></a>(funs, xvals, yvals, zvals[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_pnts_init_shared" title="unduwave.analytical_module.ana_undu.grids.grid_pnts_init_shared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_pnts_init_shared</span></code></a>(pnts, interpolators)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_pnts_worker" title="unduwave.analytical_module.ana_undu.grids.grid_pnts_worker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_pnts_worker</span></code></a>(cur_ind)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.grid_pnts_calc" title="unduwave.analytical_module.ana_undu.grids.grid_pnts_calc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_pnts_calc</span></code></a>(pnts, interpolators[, processes])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.analytical_module.ana_undu.grids.createPointList" title="unduwave.analytical_module.ana_undu.grids.createPointList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">createPointList</span></code></a>(vals[, npnts, dpnts, pnts, intrvl])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.get_line_through_point">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">get_line_through_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zlims</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.get_line_through_point" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_get_lines_init_shared">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_get_lines_init_shared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nvec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlinepnts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_get_lines_init_shared" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_get_lines_worker">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_get_lines_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_get_lines_worker" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_get_lines_calc">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_get_lines_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p0s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nvec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlinepnts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_get_lines_calc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_line_integrals_init_shared">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_line_integrals_init_shared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsrel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsabs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_line_integrals_init_shared" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_line_integrals_worker">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_line_integrals_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cur_ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_line_integrals_worker" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_line_integrals_calc">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_line_integrals_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsrel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsabs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_line_integrals_calc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_pnts_init_shared">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_pnts_init_shared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolators</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_pnts_init_shared" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_pnts_worker">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_pnts_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cur_ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_pnts_worker" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_pnts_calc">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_pnts_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_pnts_calc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.unduGridError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">unduGridError</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.unduGridError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Common base class for all non-exit exceptions.</p>
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.createPointList">
+<span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">createPointList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npnts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpnts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pnts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intrvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.createPointList" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">grid_interpolator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yvals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zvals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator" title="Link to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator._g_xvals">
+<span class="sig-name descname"><span class="pre">_g_xvals</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator._g_xvals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator._g_yvals">
+<span class="sig-name descname"><span class="pre">_g_yvals</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator._g_yvals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator._g_zvals">
+<span class="sig-name descname"><span class="pre">_g_zvals</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator._g_zvals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.processes">
+<span class="sig-name descname"><span class="pre">processes</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.processes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.setfuns">
+<span class="sig-name descname"><span class="pre">setfuns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">funs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.setfuns" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.create_difference_grid">
+<span class="sig-name descname"><span class="pre">create_difference_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.create_difference_grid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.plot_grid_map">
+<span class="sig-name descname"><span class="pre">plot_grid_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indPlot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zlab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xPos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yPos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zPos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nHor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nVert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.plot_grid_map" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.write_grid_data">
+<span class="sig-name descname"><span class="pre">write_grid_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.write_grid_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.load_radia_kicks">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">load_radia_kicks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.load_radia_kicks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.load_grid_data">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">load_grid_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skiprows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.load_grid_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.crop_grid">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">crop_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zlims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.crop_grid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.set_limits">
+<span class="sig-name descname"><span class="pre">set_limits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.set_limits" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.is_in_limits">
+<span class="sig-name descname"><span class="pre">is_in_limits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.is_in_limits" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.create_grid_interpolation">
+<span class="sig-name descname"><span class="pre">create_grid_interpolation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.create_grid_interpolation" title="Link to this definition"></a></dt>
+<dd><p>create interpolation from bvals, xvals,…</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_values">
+<span class="sig-name descname"><span class="pre">get_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.__call__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_values_on_plane">
+<span class="sig-name descname"><span class="pre">get_values_on_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_values_on_plane" title="Link to this definition"></a></dt>
+<dd><p>Returns the values on a plane including point p0, with n0 and v0 spanning the plane</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_values_on_grid">
+<span class="sig-name descname"><span class="pre">get_values_on_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_values_on_grid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.calcGradient">
+<span class="sig-name descname"><span class="pre">calcGradient</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.calcGradient" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_line_through_point">
+<span class="sig-name descname"><span class="pre">get_line_through_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordLimits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_line_through_point" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_values_along_line">
+<span class="sig-name descname"><span class="pre">get_values_along_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordLimits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.get_values_along_line" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.grid_interpolator.integrate_along_line">
+<span class="sig-name descname"><span class="pre">integrate_along_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsrel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsabs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordLimits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">square</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.grid_interpolator.integrate_along_line" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">unduwave.analytical_module.ana_undu.grids.</span></span><span class="sig-name descname"><span class="pre">bmap_hallbach_parametrization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization.create_hallbach_parametrization">
+<span class="sig-name descname"><span class="pre">create_hallbach_parametrization</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization.create_hallbach_parametrization" title="Link to this definition"></a></dt>
+<dd><p>create interpolation from bvals, xvals,…</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization.get_field">
+<span class="sig-name descname"><span class="pre">get_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization.get_field" title="Link to this definition"></a></dt>
+<dd><p>also set 0 outside of area?
+y&gt;?
+x</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../bfield/index.html" class="btn btn-neutral float-left" title="unduwave.analytical_module.ana_undu.bfield" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../kicks/index.html" class="btn btn-neutral float-right" title="unduwave.analytical_module.ana_undu.kicks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

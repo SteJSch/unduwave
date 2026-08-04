@@ -1,0 +1,107 @@
+mshradia
+========
+
+.. py:module:: mshradia
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   mshradia.mshObs
+   mshradia.mshTrf
+   mshradia.mshMagPols
+   mshradia.mshNames
+   mshradia.mshColors
+   mshradia.mshCnt
+   mshradia.mshCntMembers
+   mshradia.mshCntMaster
+   mshradia.MagVoxelField
+   mshradia.PolVoxelField
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   mshradia.mshabort
+   mshradia.mshObjAddToCnt
+   mshradia.mshIsPole
+   mshradia.mshGetObjName
+   mshradia.mshObjDpl
+   mshradia.mshObjDrw
+   mshradia._mshObjDrw
+   mshradia.mshObjCnt
+   mshradia.mshObjPolyhdr
+   mshradia.mshTrfOrnt
+   mshradia.mshTrfTrsl
+   mshradia.mshTrfRot
+   mshradia.mshqhull2d
+   mshradia.mshhull3d
+   mshradia.mshrect
+   mshradia.txyz
+
+
+Module Contents
+---------------
+
+.. py:data:: mshObs
+
+.. py:data:: mshTrf
+
+.. py:data:: mshMagPols
+
+.. py:data:: mshNames
+
+.. py:data:: mshColors
+
+.. py:data:: mshCnt
+
+.. py:data:: mshCntMembers
+
+.. py:data:: mshCntMaster
+   :value: []
+
+
+.. py:data:: MagVoxelField
+   :value: []
+
+
+.. py:data:: PolVoxelField
+   :value: []
+
+
+.. py:function:: mshabort(text='\n*** Aborted ***')
+
+.. py:function:: mshObjAddToCnt(cnt, obj)
+
+.. py:function:: mshIsPole(obj)
+
+.. py:function:: mshGetObjName(obj)
+
+.. py:function:: mshObjDpl(obj, sopt='FreeSym->False', nam='')
+
+.. py:function:: mshObjDrw(obj=0, facecolor='b', edgecolor='black', alpha=0.2, scale='xyz', modus='cen', msize=4.0)
+
+.. py:function:: _mshObjDrw(obj, facecolor='b', edgecolor='black', alpha=0.1, scale='xyz', tit='', isame=0, modus='cen', msize=4)
+
+.. py:function:: mshObjCnt(nam='')
+
+.. py:function:: mshObjPolyhdr(verts, ifaces, faces, bounds, Br, nam='', color='b', IsPole=-1)
+
+.. py:function:: mshTrfOrnt(obj, trf)
+
+.. py:function:: mshTrfTrsl(dxyz)
+
+.. py:function:: mshTrfRot(crot, vrot, ang)
+
+.. py:function:: mshqhull2d(x, y)
+
+.. py:function:: mshhull3d(points, modus='merge')
+
+.. py:function:: mshrect(x, y, z, lx, ly, lz)
+
+.. py:function:: txyz(pltit='Title', xtit='', ytit='', ztit='', tfs='12', xyzfs='10', titx=0.5, tity=1.0, titlesize='14')
+

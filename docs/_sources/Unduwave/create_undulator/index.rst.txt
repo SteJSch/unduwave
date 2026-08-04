@@ -1,0 +1,137 @@
+create_undulator
+================
+
+.. py:module:: create_undulator
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   create_undulator.dir_path
+   create_undulator.res_folder
+   create_undulator.res_folder_full
+   create_undulator.undu
+   create_undulator.undu_prog_paras
+   create_undulator.period_length
+   create_undulator.len_y_main
+   create_undulator.magn_pos
+   create_undulator.magn_paras
+   create_undulator.magnet
+   create_undulator.mag1
+   create_undulator.mag2
+   create_undulator.mag3
+   create_undulator.mag4
+   create_undulator.period_objects
+   create_undulator.period
+   create_undulator.magnetizations
+   create_undulator.periodicMagnetizationSequence
+   create_undulator.row
+   create_undulator.undulator
+   create_undulator.results
+   create_undulator.trajx
+   create_undulator.by
+   create_undulator.bz
+   create_undulator.intBy
+   create_undulator.intBz
+   create_undulator.intBy2
+   create_undulator.intBz2
+   create_undulator.zProfile
+   create_undulator.ByProfile
+   create_undulator.BzProfile
+   create_undulator.bmap
+   create_undulator.nfig
+   create_undulator.nfig
+   create_undulator.nfig
+   create_undulator.nfig
+   create_undulator.nfig
+
+
+Module Contents
+---------------
+
+.. py:data:: dir_path
+
+.. py:data:: res_folder
+   :value: 'res'
+
+
+.. py:data:: res_folder_full
+
+.. py:data:: undu
+
+.. py:data:: undu_prog_paras
+
+.. py:data:: period_length
+   :value: 20
+
+
+.. py:data:: len_y_main
+   :value: 20
+
+
+.. py:data:: magn_pos
+
+.. py:data:: magn_paras
+
+.. py:data:: magnet
+
+.. py:data:: mag1
+
+.. py:data:: mag2
+
+.. py:data:: mag3
+
+.. py:data:: mag4
+
+.. py:data:: period_objects
+
+.. py:data:: period
+
+.. py:data:: magnetizations
+   :value: [1.1, 1.2]
+
+
+.. py:data:: periodicMagnetizationSequence
+
+.. py:data:: row
+
+.. py:data:: undulator
+
+.. py:data:: results
+
+.. py:data:: trajx
+
+.. py:data:: by
+
+.. py:data:: bz
+
+.. py:data:: intBy
+
+.. py:data:: intBz
+
+.. py:data:: intBy2
+
+.. py:data:: intBz2
+
+.. py:data:: zProfile
+
+.. py:data:: ByProfile
+
+.. py:data:: BzProfile
+
+.. py:data:: bmap
+
+.. py:data:: nfig
+   :value: 0
+
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+
+.. py:data:: nfig
+

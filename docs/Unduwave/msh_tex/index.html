@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.2. msh_tex &mdash; Unduwave v0.9.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=518ffd31"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.3. m_hbook" href="../m_hbook/index.html" />
+    <link rel="prev" title="5.1. waves" href="../waves/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickguide.html">3. Quickguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickguide_undumag.html">4. Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">5. API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../waves/index.html">5.1. waves</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.2. msh_tex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">5.2.1. Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">5.2.2. Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_mu0eq"><code class="docutils literal notranslate"><span class="pre">TeX_mu0eq</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_mu0"><code class="docutils literal notranslate"><span class="pre">TeX_mu0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_mueq"><code class="docutils literal notranslate"><span class="pre">TeX_mueq</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_muplus"><code class="docutils literal notranslate"><span class="pre">TeX_muplus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_mu"><code class="docutils literal notranslate"><span class="pre">TeX_mu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_murad"><code class="docutils literal notranslate"><span class="pre">TeX_murad</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_mum"><code class="docutils literal notranslate"><span class="pre">TeX_mum</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_chi2ndf"><code class="docutils literal notranslate"><span class="pre">TeX_chi2ndf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_chi2prob"><code class="docutils literal notranslate"><span class="pre">TeX_chi2prob</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_beta"><code class="docutils literal notranslate"><span class="pre">TeX_beta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_gamma"><code class="docutils literal notranslate"><span class="pre">TeX_gamma</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_egammaev"><code class="docutils literal notranslate"><span class="pre">TeX_egammaev</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_foregammaeq"><code class="docutils literal notranslate"><span class="pre">TeX_foregammaeq</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_pow"><code class="docutils literal notranslate"><span class="pre">TeX_pow</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_rKauf"><code class="docutils literal notranslate"><span class="pre">TeX_rKauf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_rKzu"><code class="docutils literal notranslate"><span class="pre">TeX_rKzu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_eKauf"><code class="docutils literal notranslate"><span class="pre">TeX_eKauf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_eKzu"><code class="docutils literal notranslate"><span class="pre">TeX_eKzu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_plus"><code class="docutils literal notranslate"><span class="pre">TeX_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_mul"><code class="docutils literal notranslate"><span class="pre">TeX_mul</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_slash"><code class="docutils literal notranslate"><span class="pre">TeX_slash</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msh_tex.TeX_blank"><code class="docutils literal notranslate"><span class="pre">TeX_blank</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../m_hbook/index.html">5.3. m_hbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undugui/index.html">5.4. undugui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unduwave/index.html">5.5. unduwave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../waveplot/index.html">5.6. waveplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../waveshop/index.html">5.7. waveshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mshradia/index.html">5.8. mshradia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave/index.html">5.9. make_wave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag/index.html">5.10. make_undumag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_plot/index.html">5.11. undumag_plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_proc/index.html">5.12. undumag_proc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msh_tex_linux/index.html">5.13. msh_tex_linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_win/index.html">5.14. make_wave_win</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undu_ipylogon/index.html">5.15. undu_ipylogon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_1/index.html">5.16. wave_example_1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_6/index.html">5.17. wave_example_6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_2/index.html">5.18. wave_example_2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_win2/index.html">5.19. make_wave_win2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_8/index.html">5.20. wave_example_8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_3/index.html">5.21. wave_example_3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_7/index.html">5.22. wave_example_7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_4/index.html">5.23. wave_example_4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ipy_urad_phase/index.html">5.24. ipy_urad_phase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_5/index.html">5.25. wave_example_5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_9/index.html">5.26. wave_example_9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_intel/index.html">5.27. make_wave_intel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msh_tex_windows/index.html">5.28. msh_tex_windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_14/index.html">5.29. wave_example_14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_12/index.html">5.30. wave_example_12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_11/index.html">5.31. wave_example_11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_debug/index.html">5.32. make_wave_debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_13/index.html">5.33. wave_example_13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_12b/index.html">5.34. wave_example_12b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_12a/index.html">5.35. wave_example_12a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_12c/index.html">5.36. wave_example_12c</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_11a/index.html">5.37. wave_example_11a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_win/index.html">5.38. make_undumag_win</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msh_radia_example/index.html">5.39. msh_radia_example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_win2/index.html">5.40. make_undumag_win2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_debug/index.html">5.41. make_undumag_debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_static/index.html">5.42. make_undumag_static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_intel_debug/index.html">5.43. make_wave_intel_debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_adjust_example_5/index.html">5.44. wave_adjust_example_5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_proc_msh_radia/index.html">5.45. undumag_proc_msh_radia</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">5. </span>API Reference</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.2. </span>msh_tex</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Unduwave/msh_tex/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-msh_tex">
+<span id="msh-tex"></span><h1><span class="section-number">5.2. </span>msh_tex<a class="headerlink" href="#module-msh_tex" title="Link to this heading"></a></h1>
+<section id="attributes">
+<h2><span class="section-number">5.2.1. </span>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_mu0eq" title="msh_tex.TeX_mu0eq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_mu0eq</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_mu0" title="msh_tex.TeX_mu0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_mu0</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_mueq" title="msh_tex.TeX_mueq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_mueq</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_muplus" title="msh_tex.TeX_muplus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_muplus</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_mu" title="msh_tex.TeX_mu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_mu</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_murad" title="msh_tex.TeX_murad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_murad</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_mum" title="msh_tex.TeX_mum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_mum</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_chi2ndf" title="msh_tex.TeX_chi2ndf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_chi2ndf</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_chi2prob" title="msh_tex.TeX_chi2prob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_chi2prob</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_beta" title="msh_tex.TeX_beta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_beta</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_gamma" title="msh_tex.TeX_gamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_gamma</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_egammaev" title="msh_tex.TeX_egammaev"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_egammaev</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_foregammaeq" title="msh_tex.TeX_foregammaeq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_foregammaeq</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_pow" title="msh_tex.TeX_pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_pow</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_rKauf" title="msh_tex.TeX_rKauf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_rKauf</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_rKzu" title="msh_tex.TeX_rKzu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_rKzu</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_eKauf" title="msh_tex.TeX_eKauf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_eKauf</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_eKzu" title="msh_tex.TeX_eKzu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_eKzu</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_plus" title="msh_tex.TeX_plus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_plus</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_mul" title="msh_tex.TeX_mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_mul</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#msh_tex.TeX_slash" title="msh_tex.TeX_slash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_slash</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#msh_tex.TeX_blank" title="msh_tex.TeX_blank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TeX_blank</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2><span class="section-number">5.2.2. </span>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_mu0eq">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_mu0eq</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$\\mu_0$</span> <span class="pre">=</span> <span class="pre">'</span></span><a class="headerlink" href="#msh_tex.TeX_mu0eq" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_mu0">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_mu0</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$\\mu_0$'</span></span><a class="headerlink" href="#msh_tex.TeX_mu0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_mueq">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_mueq</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$\\mu$</span> <span class="pre">=</span> <span class="pre">'</span></span><a class="headerlink" href="#msh_tex.TeX_mueq" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_muplus">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_muplus</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$\\mu$</span> <span class="pre">+</span> <span class="pre">'</span></span><a class="headerlink" href="#msh_tex.TeX_muplus" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_mu">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_mu</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$\\mu$'</span></span><a class="headerlink" href="#msh_tex.TeX_mu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_murad">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_murad</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$\\mu$rad'</span></span><a class="headerlink" href="#msh_tex.TeX_murad" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_mum">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_mum</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[$\\mu$m]'</span></span><a class="headerlink" href="#msh_tex.TeX_mum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_chi2ndf">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_chi2ndf</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$\\chi^2/Ndf$'</span></span><a class="headerlink" href="#msh_tex.TeX_chi2ndf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_chi2prob">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_chi2prob</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$\\chi^2</span> <span class="pre">prob$'</span></span><a class="headerlink" href="#msh_tex.TeX_chi2prob" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_beta">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_beta</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'N$_{\\beta}$'</span></span><a class="headerlink" href="#msh_tex.TeX_beta" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_gamma">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_gamma</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'N$_{\\gamma}$'</span></span><a class="headerlink" href="#msh_tex.TeX_gamma" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_egammaev">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_egammaev</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'$E_{\\gamma}$</span> <span class="pre">[eV]'</span></span><a class="headerlink" href="#msh_tex.TeX_egammaev" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_foregammaeq">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_foregammaeq</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'for</span> <span class="pre">E$_{\\gamma}$='</span></span><a class="headerlink" href="#msh_tex.TeX_foregammaeq" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_pow">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_pow</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'</span> <span class="pre">\\*\\*</span> <span class="pre">'</span></span><a class="headerlink" href="#msh_tex.TeX_pow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_rKauf">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_rKauf</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\\('</span></span><a class="headerlink" href="#msh_tex.TeX_rKauf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_rKzu">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_rKzu</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\\)'</span></span><a class="headerlink" href="#msh_tex.TeX_rKzu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_eKauf">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_eKauf</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\\['</span></span><a class="headerlink" href="#msh_tex.TeX_eKauf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_eKzu">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_eKzu</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\\]'</span></span><a class="headerlink" href="#msh_tex.TeX_eKzu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_plus">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_plus</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\\+'</span></span><a class="headerlink" href="#msh_tex.TeX_plus" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_mul">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_mul</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\\*'</span></span><a class="headerlink" href="#msh_tex.TeX_mul" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_slash">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_slash</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\\/'</span></span><a class="headerlink" href="#msh_tex.TeX_slash" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="msh_tex.TeX_blank">
+<span class="sig-prename descclassname"><span class="pre">msh_tex.</span></span><span class="sig-name descname"><span class="pre">TeX_blank</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\\,'</span></span><a class="headerlink" href="#msh_tex.TeX_blank" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../waves/index.html" class="btn btn-neutral float-left" title="5.1. waves" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../m_hbook/index.html" class="btn btn-neutral float-right" title="5.3. m_hbook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

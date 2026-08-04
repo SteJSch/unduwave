@@ -1,0 +1,56 @@
+wave_example_12c
+================
+
+.. py:module:: wave_example_12c
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   wave_example_12c.Example
+   wave_example_12c.FileBmap
+   wave_example_12c.ReplList
+   wave_example_12c.System
+   wave_example_12c.ps
+   wave_example_12c.Fexample
+   wave_example_12c.FexampleN
+   wave_example_12c.Fex
+   wave_example_12c.Fout
+   wave_example_12c.rep
+
+
+Module Contents
+---------------
+
+.. py:data:: Example
+   :value: '12c'
+
+
+.. py:data:: FileBmap
+   :value: 'wave_example12a_bmap.dat'
+
+
+.. py:data:: ReplList
+
+.. py:data:: System
+
+.. py:data:: ps
+   :value: '\\'
+
+
+.. py:data:: Fexample
+   :value: '..\\input\\wave.example'
+
+
+.. py:data:: FexampleN
+   :value: '..\\input\\wave_example_12c.in'
+
+
+.. py:data:: Fex
+
+.. py:data:: Fout
+
+.. py:data:: rep
+

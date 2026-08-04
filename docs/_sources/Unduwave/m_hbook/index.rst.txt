@@ -1,0 +1,4741 @@
+m_hbook
+=======
+
+.. py:module:: m_hbook
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   m_hbook.WavesMode
+   m_hbook.Klold
+   m_hbook.Nold
+   m_hbook.Xa1old
+   m_hbook.Xanold
+   m_hbook.VxyzX
+   m_hbook.VxyzY
+   m_hbook.VxyzZ
+   m_hbook.VxyzE
+   m_hbook.VsplX
+   m_hbook.VsplY
+   m_hbook.Vspl1
+   m_hbook.Vspl2
+   m_hbook.VsplI
+   m_hbook.VsplI
+   m_hbook.VsplCoef
+   m_hbook.Vxint
+   m_hbook.Vyint
+   m_hbook.SplineMode
+   m_hbook.Nspline
+   m_hbook.Ninter
+   m_hbook.Nfitxy
+   m_hbook.Nfitint
+   m_hbook.Tnone
+   m_hbook.Tnpa
+   m_hbook.Istatus
+   m_hbook.WarningText
+   m_hbook.ErrorText
+   m_hbook.Platform
+   m_hbook.System
+   m_hbook.fun
+   m_hbook.Gdebug
+   m_hbook.Tdf
+   m_hbook.nt
+   m_hbook.Tfig
+   m_hbook.Figman
+   m_hbook.Tax2d
+   m_hbook.Tax3d
+   m_hbook.H1h
+   m_hbook.H1
+   m_hbook.H1head
+   m_hbook.Hdir
+   m_hbook.Ndir
+   m_hbook.Kdir
+   m_hbook.Cdir
+   m_hbook.H1HLast
+   m_hbook.H2h
+   m_hbook.H2
+   m_hbook.H2head
+   m_hbook.Ntup
+   m_hbook.Nctup
+   m_hbook.Ncind
+   m_hbook.H1ind
+   m_hbook.H2ind
+   m_hbook.Nind
+   m_hbook.Nhead
+   m_hbook.Nh1
+   m_hbook.Nh2
+   m_hbook.Nntup
+   m_hbook.Nnctup
+   m_hbook.H1Last
+   m_hbook.H2Last
+   m_hbook.H1h
+   m_hbook.H2h
+   m_hbook.N
+   m_hbook.Ind
+   m_hbook.IndLast
+   m_hbook.H1I
+   m_hbook.H2I
+   m_hbook.H1ILast
+   m_hbook.H2ILast
+   m_hbook.N
+   m_hbook.Nsel
+   m_hbook.NLast
+   m_hbook.Ni
+   m_hbook.NiLast
+   m_hbook.Nlines
+   m_hbook.Ncolon
+   m_hbook.TnpFloat64
+   m_hbook.Tnpcmpl128
+   m_hbook.N1
+   m_hbook.N2
+   m_hbook.N3
+   m_hbook.N4
+   m_hbook.N5
+   m_hbook.N6
+   m_hbook.N7
+   m_hbook.N8
+   m_hbook.N9
+   m_hbook.Nv
+   m_hbook.Nx
+   m_hbook.Nxy
+   m_hbook.Nxy
+   m_hbook.Nxyz
+   m_hbook.Mode3ds
+   m_hbook.FillColor
+   m_hbook.NxBinMax
+   m_hbook.Khdeleted
+   m_hbook.Tdate
+   m_hbook.TdateOv
+   m_hbook.Trun
+   m_hbook.TrunOv
+   m_hbook.WaveFilePrefix
+   m_hbook.ZoomXmin
+   m_hbook.ZoomXmax
+   m_hbook.ZoomYmin
+   m_hbook.ZoomYmax
+   m_hbook.ZoomZmin
+   m_hbook.ZoomZmax
+   m_hbook.LogX
+   m_hbook.LogY
+   m_hbook.LogZ
+   m_hbook.Console
+   m_hbook.FirstConsole
+   m_hbook.Figgeom
+   m_hbook.Figgeom2
+   m_hbook.FiggeomR
+   m_hbook.FiggeomL
+   m_hbook.XtermGeo
+   m_hbook.Figgeoms
+   m_hbook.Fwidth
+   m_hbook.Fheight
+   m_hbook.Fxoff
+   m_hbook.Fyoff
+   m_hbook.Kdate
+   m_hbook.Kstat
+   m_hbook.Kfit
+   m_hbook.Ktitles
+   m_hbook.Kecho
+   m_hbook.Kdump
+   m_hbook.Kpdf
+   m_hbook.Ndump
+   m_hbook.Npdf
+   m_hbook.Author
+   m_hbook.Waveplot
+   m_hbook.Mrun
+   m_hbook.Mcomment
+   m_hbook.Mdate
+   m_hbook.ROFx
+   m_hbook.ROFy
+   m_hbook.fcfg
+   m_hbook.fcfg
+   m_hbook.YFit
+   m_hbook.Yfit
+   m_hbook.Xfit
+   m_hbook.XFit
+   m_hbook.YStat
+   m_hbook.Ystat
+   m_hbook.Xstat
+   m_hbook.XStat
+   m_hbook.wcon
+   m_hbook.Author
+   m_hbook.Kplots
+   m_hbook.Nwins
+   m_hbook.Fig
+   m_hbook.Ax
+   m_hbook.Figs
+   m_hbook.Nfigs
+   m_hbook.IsameGlobal
+   m_hbook.Ifill1d
+   m_hbook.TitPad
+   m_hbook.GtitFontSize
+   m_hbook.TitFontSize
+   m_hbook.AtitFontSize
+   m_hbook.AtitFontSize3d
+   m_hbook.AxisLabelSize
+   m_hbook.TextFontSize
+   m_hbook.DateFontSize
+   m_hbook.StatFontSize
+   m_hbook.AxisTitleDist
+   m_hbook.AxisTitleDist3d
+   m_hbook.Axistitledist3d
+   m_hbook.AxisLabelDist3d
+   m_hbook.AxisLabelDist
+   m_hbook.NXtick
+   m_hbook.NXtick3d
+   m_hbook.Xtitle
+   m_hbook.Ytitle
+   m_hbook.YTitle
+   m_hbook.YGtitle
+   m_hbook.Ygtitle
+   m_hbook.x_of_xlab
+   m_hbook.y_of_xlab
+   m_hbook.x_of_ylab
+   m_hbook.y_of_ylab
+   m_hbook.Itight
+   m_hbook.Zones
+   m_hbook.Nxzone
+   m_hbook.Nyzone
+   m_hbook.Kzone
+   m_hbook.Axes
+   m_hbook.Icmap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.CMap
+   m_hbook.Cmaps
+   m_hbook.Cmap
+   m_hbook.Tcmap
+   m_hbook.Mode3D
+   m_hbook.Mode2D
+   m_hbook.Surfcolor
+   m_hbook.Surfcolor
+   m_hbook.Surfcolor
+   m_hbook.Surfcolor
+   m_hbook.Ispline
+   m_hbook.Linecolor
+   m_hbook.Linewidth
+   m_hbook.Markersize
+   m_hbook.Markercolor
+   m_hbook.Linestyle
+   m_hbook.Markertype
+   m_hbook.Fillstyle
+   m_hbook.FillStyle
+   m_hbook.LineColor
+   m_hbook.LineWidth
+   m_hbook.MarkerSize
+   m_hbook.MarkerColor
+   m_hbook.LineStyle
+   m_hbook.MarkerType
+   m_hbook.Textcolor
+   m_hbook.Histbarwidth
+   m_hbook.Histcolor
+   m_hbook.HistEdgeColor
+   m_hbook.Histedgecolor
+   m_hbook.Klegend
+   m_hbook.Igetconsole
+   m_hbook.Imarker
+   m_hbook.Ihist
+   m_hbook.Iprof
+   m_hbook.Ispline
+   m_hbook.Isame
+   m_hbook.Iscatter
+   m_hbook.Iscat3d
+   m_hbook.Icont3d
+   m_hbook.Itrisurf
+   m_hbook.Iclosed
+   m_hbook.Iboxes
+   m_hbook.Inoempty
+   m_hbook.Ierr
+   m_hbook.Inoerr
+   m_hbook.Isurf
+   m_hbook.Iline
+   m_hbook.Iinter
+   m_hbook.Ifill1d
+   m_hbook.Xtit
+   m_hbook.Ytit
+   m_hbook.Ztit
+   m_hbook.Ptit
+   m_hbook.Gtit
+   m_hbook.Colors
+   m_hbook.Surfcolors
+   m_hbook.Linestyles
+   m_hbook.Markertypes
+   m_hbook.Tightpad
+   m_hbook.Xtightpad
+   m_hbook.Ytightpad
+   m_hbook.ColorbarPad
+   m_hbook.LeftMargin
+   m_hbook.RightMargin
+   m_hbook.TopMargin
+   m_hbook.BottomMargin
+   m_hbook.ScaleSizeX
+   m_hbook.ScaleSizeY
+   m_hbook.Xspace
+   m_hbook.Yspace
+   m_hbook.LexpX
+   m_hbook.LexpY
+   m_hbook.LexpRot
+   m_hbook.LexpPow
+   m_hbook.Kgrid
+   m_hbook.Kbox
+   m_hbook.KxAxis
+   m_hbook.KyAxis
+   m_hbook.KzAxis
+   m_hbook.CanButIds
+   m_hbook.CanButId
+   m_hbook.Hull2D
+   m_hbook.Hull3D
+   m_hbook.Hull3DList
+   m_hbook.THull3D
+   m_hbook.Ishow
+   m_hbook.Kcolorbar
+   m_hbook.kcolorbar
+   m_hbook.complex_0
+   m_hbook.complex_i
+   m_hbook.hbarev1
+   m_hbook.clight1
+   m_hbook.emasskg1
+   m_hbook.emasse1
+   m_hbook.emassg1
+   m_hbook.echarge1
+   m_hbook.erad1
+   m_hbook.eps01
+   m_hbook.pi1
+   m_hbook.grarad1
+   m_hbook.radgra1
+   m_hbook.hplanck1
+   m_hbook.hbar1
+   m_hbook.wtoe1
+   m_hbook.cq1
+   m_hbook.cgam1
+   m_hbook.pol1con1
+   m_hbook.pol2con1
+   m_hbook.h2const
+   m_hbook.h2max
+   m_hbook.g1const
+   m_hbook.g1max
+   m_hbook.twopi1
+   m_hbook.halfpi1
+   m_hbook.sqrttwopi1
+   m_hbook.dnull1
+   m_hbook.done1
+   m_hbook.rmu01
+   m_hbook.rmu04pi1
+   m_hbook.alpha1
+   m_hbook.gaussn1
+   m_hbook.ck934
+   m_hbook.fwhmgauss1
+   m_hbook.fwhmsinxx21
+   m_hbook.rmssinxx21
+   m_hbook.specnor_si
+   m_hbook.sclight1
+   m_hbook.secharge1
+   m_hbook.shbarev1
+   m_hbook.Ff
+   m_hbook.Ftyp
+   m_hbook.Ftype
+   m_hbook.Legend
+   m_hbook.Sepp
+   m_hbook.Backslash
+   m_hbook.Narg
+   m_hbook.Argv
+   m_hbook.ClearCanvas
+   m_hbook.Foverview
+   m_hbook.Icallfromoverview
+   m_hbook.Krun
+   m_hbook.Waveplot
+   m_hbook.VarHead
+   m_hbook.SplineMode
+   m_hbook.ColorbarPad
+   m_hbook.Vlocate
+   m_hbook.VlocXO
+   m_hbook.VlocYO
+   m_hbook.VlocX
+   m_hbook.VlocY
+   m_hbook.VlocDistX
+   m_hbook.VlocDistY
+   m_hbook.VlocDist
+   m_hbook.Aspect
+   m_hbook.NL
+   m_hbook.MShWelcome
+   m_hbook.smcol
+   m_hbook.smblack
+   m_hbook.smblue
+   m_hbook.smcyan
+   m_hbook.smgray
+   m_hbook.smgreen
+   m_hbook.smmagenta
+   m_hbook.smred
+   m_hbook.smwhite
+   m_hbook.smbyellow
+   m_hbook.shcol
+   m_hbook.shblack
+   m_hbook.shblue
+   m_hbook.shcyan
+   m_hbook.shgray
+   m_hbook.shgreen
+   m_hbook.shmagenta
+   m_hbook.shred
+   m_hbook.shwhite
+   m_hbook.shbyellow
+   m_hbook.slcol
+   m_hbook.slblack
+   m_hbook.slblue
+   m_hbook.slcyan
+   m_hbook.slgray
+   m_hbook.slgreen
+   m_hbook.slmagenta
+   m_hbook.slred
+   m_hbook.slwhite
+   m_hbook.slbyellow
+   m_hbook.h1info
+   m_hbook.h2info
+   m_hbook.hfill2
+   m_hbook.hfill1
+   m_hbook.GetIndexH
+   m_hbook.h1index
+   m_hbook.h2index
+   m_hbook.hindex1
+   m_hbook.hindex2
+   m_hbook.h1list
+   m_hbook.hlist1
+   m_hbook.h2list
+   m_hbook.hlist2
+   m_hbook.h1book
+   m_hbook.h2book
+   m_hbook.hplot1
+   m_hbook.h1plot
+   m_hbook.hplot2
+   m_hbook.h2plot
+   m_hbook.hpl
+   m_hbook.wc
+   m_hbook.wcl
+   m_hbook.cc
+   m_hbook.pp
+   m_hbook.plotopt
+   m_hbook.ncolonlist
+   m_hbook.vpl
+   m_hbook.nupdh
+   m_hbook.nupdate
+   m_hbook.nup
+   m_hbook.rstat
+   m_hbook.medf
+   m_hbook.mdf
+   m_hbook.vton
+   m_hbook.vw
+   m_hbook.vwxy
+   m_hbook.vwxyz
+   m_hbook.vwxyt
+   m_hbook.setecho
+   m_hbook.vrxy
+   m_hbook.tbox
+   m_hbook.getzones
+   m_hbook.win
+   m_hbook.print3g
+   m_hbook.print4g
+   m_hbook.print5g
+   m_hbook.getconsole
+   m_hbook.cd
+   m_hbook.mkdir
+   m_hbook.nlc
+   m_hbook.nmc
+   m_hbook.nhc
+   m_hbook.pp
+   m_hbook.Q
+   m_hbook.vplotxy
+   m_hbook.setmarkerstyle
+   m_hbook.nexists
+   m_hbook.npl
+   m_hbook.nnpl
+   m_hbook.vexpand
+   m_hbook.vgrid
+   m_hbook.nexpand
+   m_hbook.ngrid
+   m_hbook.atan
+   m_hbook.polygon
+   m_hbook.nconcat
+   m_hbook.p2g
+   m_hbook.p3g
+   m_hbook.p4g
+   m_hbook.p5g
+   m_hbook.p6g
+   m_hbook.p7g
+   m_hbook.p8g
+   m_hbook.p9g
+   m_hbook.p10g
+   m_hbook.lmblau
+   m_hbook.lmrot
+   m_hbook.lmhellblau
+   m_hbook.lmlila
+   m_hbook.mblau
+   m_hbook.mrot
+   m_hbook.mhellblau
+   m_hbook.mlila
+   m_hbook.tblau
+   m_hbook.trot
+   m_hbook.thellblau
+   m_hbook.tlila
+   m_hbook.lblau
+   m_hbook.lrot
+   m_hbook.lhellblau
+   m_hbook.llila
+   m_hbook.lhmhellblau
+   m_hbook.lhmlila
+   m_hbook.vfitxypoly
+   m_hbook.circ
+   m_hbook.vgrafit
+   m_hbook.ngrafit
+   m_hbook.shell
+   m_hbook.she
+   m_hbook.setdump
+   m_hbook.ndelet
+   m_hbook.fexists
+   m_hbook.vfitg
+   m_hbook.cdu
+   m_hbook.cdd
+   m_hbook.cup
+   m_hbook.cdo
+   m_hbook.wcd
+   m_hbook.wpwd
+   m_hbook.nentries
+   m_hbook.nplp
+   m_hbook.xstat
+   m_hbook.setxstat
+   m_hbook.ystat
+   m_hbook.setystat
+   m_hbook.getxstat
+   m_hbook.getystat
+   m_hbook.nhull3d
+   m_hbook.hull3d
+   m_hbook.plotncyl
+   m_hbook.read_facets
+   m_hbook.nex
+   m_hbook.gtit
+   m_hbook.setgeo
+   m_hbook.setfit
+   m_hbook.tgruen
+   m_hbook.trot
+   m_hbook.tblau
+   m_hbook.tlila
+   m_hbook.thellblau
+   m_hbook.ryst
+   m_hbook.pyst
+   m_hbook.myst
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   m_hbook.pe2
+   m_hbook.pe3
+   m_hbook.pe4
+   m_hbook.pe5
+   m_hbook.pe6
+   m_hbook.pe7
+   m_hbook.pe8
+   m_hbook.pe9
+   m_hbook.pe10
+   m_hbook.pg2
+   m_hbook.pg3
+   m_hbook.pg4
+   m_hbook.pg5
+   m_hbook.pg6
+   m_hbook.pg7
+   m_hbook.pg8
+   m_hbook.pg9
+   m_hbook.pg10
+   m_hbook.readfloat
+   m_hbook.readint
+   m_hbook.printnl
+   m_hbook.set_console_title
+   m_hbook.util_spline_coef_periodic
+   m_hbook.util_spline_inter
+   m_hbook.util_spline_coef
+   m_hbook.Quit
+   m_hbook.exit
+   m_hbook.Wexit
+   m_hbook.qwait
+   m_hbook.sleep
+   m_hbook.wait
+   m_hbook.util_parabel
+   m_hbook.util_eqn
+   m_hbook.util_linear_fit_data
+   m_hbook.util_vnorm
+   m_hbook.util_rotate
+   m_hbook.evnm
+   m_hbook.nmev
+   m_hbook.fsize
+   m_hbook.fexist
+   m_hbook.fwrite
+   m_hbook.util_determinante
+   m_hbook.util_solve
+   m_hbook.util_break
+   m_hbook.abs
+   m_hbook._clearCanvas
+   m_hbook.set_ClearCanvas
+   m_hbook.get_ClearCanvas
+   m_hbook._delPlot
+   m_hbook._zones
+   m_hbook._lines
+   m_hbook._marker
+   m_hbook._options3d
+   m_hbook._optdate
+   m_hbook._optgrid
+   m_hbook._optxaxis
+   m_hbook._optbox
+   m_hbook._optyaxis
+   m_hbook._togglelinlogx
+   m_hbook._togglelinlogy
+   m_hbook._togglelinlogz
+   m_hbook._setlinlog
+   m_hbook._setzoom
+   m_hbook._setuser
+   m_hbook._setmode2d
+   m_hbook._setmode3d
+   m_hbook._optstat
+   m_hbook._optzaxis
+   m_hbook._optrun
+   m_hbook._settitles
+   m_hbook._titles
+   m_hbook._options3d
+   m_hbook._nextzone
+   m_hbook._setzones
+   m_hbook._setopt3d
+   m_hbook._vlocate
+   m_hbook._mhclick
+   m_hbook._sethistcolor
+   m_hbook._setaxislabelsize
+   m_hbook._setaxistitlesize3d
+   m_hbook._setaxistitlesize
+   m_hbook.getaxistitlesize
+   m_hbook._setaxistitledist
+   m_hbook._setaxistitledist3d
+   m_hbook._setaxislabeldist
+   m_hbook._setaxislabeldist3d
+   m_hbook._set_number_of_ticks_3d
+   m_hbook._set_number_of_ticks
+   m_hbook._setcolormap
+   m_hbook._setcolorbarpad
+   m_hbook._getcolorbarpad
+   m_hbook.debug
+   m_hbook.plotfaces
+   m_hbook.read_faces
+   m_hbook.plotqhull3d
+   m_hbook.qhull3d
+   m_hbook.qhull2d
+   m_hbook.qhull2d_old
+   m_hbook.nqhull3d
+   m_hbook.delPlot
+   m_hbook.delaxes
+   m_hbook.plt_connect
+   m_hbook.set_aspect
+   m_hbook.sind
+   m_hbook.cosd
+   m_hbook.tand
+   m_hbook.asind
+   m_hbook.acosd
+   m_hbook.atand
+   m_hbook.cotd
+   m_hbook.set_y_gtitle
+   m_hbook.get_y_title
+   m_hbook.set_x_fit
+   m_hbook.get_x_fit
+   m_hbook.set_y_fit
+   m_hbook.set_x_stat
+   m_hbook.get_x_stat
+   m_hbook.set_y_stat
+   m_hbook.get_y_stat
+   m_hbook.rystat
+   m_hbook.pystat
+   m_hbook.mystat
+   m_hbook.ellipse
+   m_hbook.nellipse
+   m_hbook.polygon2d
+   m_hbook.arc
+   m_hbook.narc
+   m_hbook.cylinder
+   m_hbook.ncylinder
+   m_hbook.cylinderpoly
+   m_hbook.plotncylinder
+   m_hbook.get_master
+   m_hbook.get_isame
+   m_hbook.get_kpdf
+   m_hbook.optdump
+   m_hbook.optpdf
+   m_hbook.store_kdump_kpdf
+   m_hbook.restore_kdump_kpdf
+   m_hbook.set_kpdf
+   m_hbook.get_kecho
+   m_hbook.set_kecho
+   m_hbook.get_kdump
+   m_hbook.set_kdump
+   m_hbook.latex
+   m_hbook.get_mshwelcome
+   m_hbook.mshwelcome
+   m_hbook.macro
+   m_hbook.rotate2d
+   m_hbook.draw_circle
+   m_hbook.setmode2d
+   m_hbook.getmode2d
+   m_hbook.setmode3d
+   m_hbook.getmode3d
+   m_hbook.set_frame_geom
+   m_hbook.set_frame_square
+   m_hbook.get_geo_all
+   m_hbook._clearCanvas
+   m_hbook.set_ClearCanvas
+   m_hbook.get_ClearCanvas
+   m_hbook._delPlot
+   m_hbook._zones
+   m_hbook._lines
+   m_hbook._marker
+   m_hbook._options3d
+   m_hbook._optdate
+   m_hbook._optgrid
+   m_hbook._optxaxis
+   m_hbook._optbox
+   m_hbook._optyaxis
+   m_hbook._togglelinlogx
+   m_hbook._togglelinlogy
+   m_hbook._togglelinlogz
+   m_hbook._setlinlog
+   m_hbook._setzoom
+   m_hbook._setuser
+   m_hbook._setmode2d
+   m_hbook._setmode3d
+   m_hbook._optstat
+   m_hbook._optzaxis
+   m_hbook._optrun
+   m_hbook._settitles
+   m_hbook._titles
+   m_hbook._options3d
+   m_hbook._nextzone
+   m_hbook._setzones
+   m_hbook._setopt3d
+   m_hbook._vlocate
+   m_hbook._mhclick
+   m_hbook._sethistcolor
+   m_hbook._setaxislabelsize
+   m_hbook._setaxistitlesize3d
+   m_hbook._setaxistitlesize
+   m_hbook.getaxistitlesize
+   m_hbook._setaxistitledist
+   m_hbook._setaxistitledist3d
+   m_hbook._setaxislabeldist
+   m_hbook._setaxislabeldist3d
+   m_hbook._set_number_of_ticks_3d
+   m_hbook._set_number_of_ticks
+   m_hbook._setcolormap
+   m_hbook._setcolorbarpad
+   m_hbook._getcolorbarpad
+   m_hbook.optbox
+   m_hbook.optxaxis
+   m_hbook.optyaxis
+   m_hbook.optzaxis
+   m_hbook.yesno
+   m_hbook.yesno_01
+   m_hbook.v123
+   m_hbook.v0123
+   m_hbook.vcre
+   m_hbook.getplotsize
+   m_hbook.vplothull3d
+   m_hbook.plothull3d
+   m_hbook.nmerge
+   m_hbook.bundu
+   m_hbook.mh
+   m_hbook.ml
+   m_hbook.mn
+   m_hbook.mm
+   m_hbook.ms
+   m_hbook.ncoph
+   m_hbook.legend
+   m_hbook.wans
+   m_hbook.nfun
+   m_hbook.hdump
+   m_hbook.hprint
+   m_hbook.hfun
+   m_hbook.h2header_update
+   m_hbook.weednan
+   m_hbook.h1header_update
+   m_hbook.hreset
+   m_hbook.h1reset
+   m_hbook.hdelete
+   m_hbook.hmin
+   m_hbook.hmax
+   m_hbook.printplopt
+   m_hbook.plotoptions
+   m_hbook.help
+   m_hbook.setnticksx
+   m_hbook.vfft
+   m_hbook.reset_zoom
+   m_hbook.mhb_mkdir
+   m_hbook.mhb_ldir
+   m_hbook.mhb_pwd
+   m_hbook.mhb_cd_up
+   m_hbook.mhb_cd_down
+   m_hbook.mhb_cd
+   m_hbook.zoom
+   m_hbook.get_xy_limits
+   m_hbook.get_xyz_limits
+   m_hbook.zoom3d
+   m_hbook.setplotsize
+   m_hbook.pplot
+   m_hbook.h1pack
+   m_hbook.hcopn
+   m_hbook.nrandom
+   m_hbook.nhull2d
+   m_hbook.vhull2d
+   m_hbook.hull3dold
+   m_hbook.mhull3d
+   m_hbook.nhull3dbad
+   m_hbook.nplothull3d
+   m_hbook.nappend
+   m_hbook.nfill
+   m_hbook.npeaksabs
+   m_hbook.hpeaks
+   m_hbook.npeaks
+   m_hbook.nstat
+   m_hbook.nmeanrms
+   m_hbook.nrms
+   m_hbook.nmean
+   m_hbook.nsum
+   m_hbook.nmax
+   m_hbook.nmin
+   m_hbook.nminmax
+   m_hbook.rlist
+   m_hbook.wlist
+   m_hbook.lilo
+   m_hbook.lolo
+   m_hbook.loli
+   m_hbook.lili
+   m_hbook.Line
+   m_hbook.LineNDC
+   m_hbook.Box
+   m_hbook.BoxNDC
+   m_hbook.textWC
+   m_hbook.NDC_to_WC
+   m_hbook.textNDC
+   m_hbook.nrenvars
+   m_hbook.nparse
+   m_hbook.make_empty_dataframe
+   m_hbook.make_dataframe
+   m_hbook.set_linecolor
+   m_hbook.h2fill
+   m_hbook.h1fill
+   m_hbook.hbook2
+   m_hbook.h2reset
+   m_hbook.get_htitle
+   m_hbook.set_htitle
+   m_hbook.hbook1
+   m_hbook.nscan
+   m_hbook.nfitxy
+   m_hbook.nfitg
+   m_hbook.nfitp1
+   m_hbook.nintern
+   m_hbook.ninter
+   m_hbook.nspline
+   m_hbook.nsolve
+   m_hbook.ndump
+   m_hbook.nlistcolon
+   m_hbook.nreset
+   m_hbook.ndelete
+   m_hbook.ncre
+   m_hbook.GetIndexH2
+   m_hbook.GetIndexN
+   m_hbook.GetIndexNct
+   m_hbook.GetIndexH1
+   m_hbook.GetIndex
+   m_hbook.getn
+   m_hbook.h1opt
+   m_hbook.voptpar
+   m_hbook.h1print
+   m_hbook.H1Info
+   m_hbook.H2Info
+   m_hbook.hstat2d
+   m_hbook.H1List
+   m_hbook.H2List
+   m_hbook.hinfo
+   m_hbook.hstat
+   m_hbook.hrms
+   m_hbook.hmean
+   m_hbook.nentry
+   m_hbook.ninfo
+   m_hbook.nlist
+   m_hbook.NctList
+   m_hbook.ncolumns
+   m_hbook.ncolumnsguess
+   m_hbook.nlook
+   m_hbook.mlook
+   m_hbook.nread
+   m_hbook.ncread
+   m_hbook.h1list
+   m_hbook.h2list
+   m_hbook.hlist
+   m_hbook.hindex
+   m_hbook.nproj2
+   m_hbook.nproj2n
+   m_hbook.nproj1
+   m_hbook.nproj1n
+   m_hbook.setnoempty
+   m_hbook.getnoempty
+   m_hbook.hstat1d
+   m_hbook.vstat
+   m_hbook.vmean
+   m_hbook.vcovcorr
+   m_hbook.hplot1d
+   m_hbook.hplot
+   m_hbook.hplave
+   m_hbook.geo_proz
+   m_hbook.read_window_geometry
+   m_hbook.window_geometry
+   m_hbook.get_window_geometry
+   m_hbook.get_window_width
+   m_hbook.get_window_height
+   m_hbook.window_get_title
+   m_hbook.window_set_title
+   m_hbook.gui_key_press
+   m_hbook.window
+   m_hbook.win2
+   m_hbook.winr
+   m_hbook.winl
+   m_hbook.showplot
+   m_hbook.optconsole
+   m_hbook.hplot2d
+   m_hbook.nextcolor
+   m_hbook.nexthistcolor
+   m_hbook.nextmarkercolor
+   m_hbook.nextlinecolor
+   m_hbook.samezone
+   m_hbook.nextzones
+   m_hbook.nextzone
+   m_hbook.zone
+   m_hbook.window_close
+   m_hbook.wca
+   m_hbook.window_clear
+   m_hbook.figure_clear
+   m_hbook.figure_close
+   m_hbook.set_title
+   m_hbook.set_x_title
+   m_hbook.get_x_title
+   m_hbook.set_z_title
+   m_hbook.get_z_title
+   m_hbook.set_titles
+   m_hbook.set_global_title
+   m_hbook.txyz
+   m_hbook.null3d
+   m_hbook.null
+   m_hbook.nnull
+   m_hbook.figtext
+   m_hbook.textndc
+   m_hbook.text3d
+   m_hbook.text
+   m_hbook.get_run_on_figure
+   m_hbook.set_run_on_figure
+   m_hbook.run_on_figure
+   m_hbook.date_on_figure
+   m_hbook.optnrun
+   m_hbook.optrun
+   m_hbook.optndate
+   m_hbook.optdate
+   m_hbook.getkdate
+   m_hbook.getkrun
+   m_hbook.set_author
+   m_hbook.hcopy1d
+   m_hbook.hcopy2d
+   m_hbook.nplc
+   m_hbook.nplcr
+   m_hbook.nplcb
+   m_hbook.nplcc
+   m_hbook.nplcm
+   m_hbook.nplgr
+   m_hbook.nplcs
+   m_hbook.nplcrs
+   m_hbook.nplcbs
+   m_hbook.nplccs
+   m_hbook.nplcms
+   m_hbook.nplcgs
+   m_hbook.nnplc
+   m_hbook.nnplcr
+   m_hbook.nnplcb
+   m_hbook.nnplcc
+   m_hbook.nnplcm
+   m_hbook.nplgr
+   m_hbook.npll
+   m_hbook.nnpll
+   m_hbook.nplm
+   m_hbook.nnplm
+   m_hbook.npllr
+   m_hbook.nnpllr
+   m_hbook.nplmr
+   m_hbook.nnplmr
+   m_hbook.npllb
+   m_hbook.nplmb
+   m_hbook.nnpllb
+   m_hbook.nnplmb
+   m_hbook.npllc
+   m_hbook.nplmc
+   m_hbook.npllc
+   m_hbook.nplmy
+   m_hbook.nnplly
+   m_hbook.nnplmc
+   m_hbook.npllm
+   m_hbook.nplmm
+   m_hbook.npllg
+   m_hbook.nplmg
+   m_hbook.nplls
+   m_hbook.nplms
+   m_hbook.npllrs
+   m_hbook.nplmrs
+   m_hbook.npllbs
+   m_hbook.nplmbs
+   m_hbook.npllgs
+   m_hbook.npllms
+   m_hbook.nplmms
+   m_hbook.npllcs
+   m_hbook.nplmcs
+   m_hbook.npllls
+   m_hbook.nplmls
+   m_hbook.npllys
+   m_hbook.nplmys
+   m_hbook.nplmgs
+   m_hbook.nplot
+   m_hbook.nprof
+   m_hbook.nprofs
+   m_hbook.nnplot
+   m_hbook.nplt
+   m_hbook.nnplt
+   m_hbook.vprint
+   m_hbook.vprintxy
+   m_hbook.vec
+   m_hbook.vplxy
+   m_hbook.vpll
+   m_hbook.vplm
+   m_hbook.vplls
+   m_hbook.vplms
+   m_hbook.vplmrs
+   m_hbook.vplmgs
+   m_hbook.vplmbs
+   m_hbook.vplmls
+   m_hbook.vplmcs
+   m_hbook.vpllgs
+   m_hbook.vpllrs
+   m_hbook.vpllbs
+   m_hbook.vpllls
+   m_hbook.vpllcs
+   m_hbook.pmark
+   m_hbook.vplxyey
+   m_hbook.vplxyerr
+   m_hbook.vinter
+   m_hbook.vintern
+   m_hbook.vspline_index
+   m_hbook.vspline
+   m_hbook.vspline_old
+   m_hbook.vcopn
+   m_hbook.vplx
+   m_hbook.nupdate_header
+   m_hbook.ndelrow
+   m_hbook.naddcol
+   m_hbook.ndelcol
+   m_hbook.vsolve
+   m_hbook.vsolvelin
+   m_hbook.voptspl
+   m_hbook.set_error
+   m_hbook.set_warning
+   m_hbook.reset_status
+   m_hbook.ncopn
+   m_hbook.ncopv
+   m_hbook.nclone
+   m_hbook.nsort
+   m_hbook.vxy
+   m_hbook.vxyz
+   m_hbook.vsortxy
+   m_hbook.vflip
+   m_hbook.vsortx
+   m_hbook.vwritexy
+   m_hbook.vreadx
+   m_hbook.vreadxy
+   m_hbook.vwritex
+   m_hbook.vwritexyz
+   m_hbook.vwritexyzt
+   m_hbook.vsmooth
+   m_hbook.vpeaks
+   m_hbook.vpeaksabs
+   m_hbook.hfwhm
+   m_hbook.hfwhmabs
+   m_hbook.nfwhmabs
+   m_hbook.nfwhm
+   m_hbook.nfwhmtot
+   m_hbook.vfwhmabs
+   m_hbook.vfwhm
+   m_hbook.vfwhmtot
+   m_hbook.vfwhmtotabs
+   m_hbook.getzone
+   m_hbook.set_console_title
+   m_hbook.get_console
+   m_hbook.getax
+   m_hbook.vplbxy
+   m_hbook.nplbxy
+   m_hbook.nplbxyz
+   m_hbook.vplbxyz
+   m_hbook.vplxyz
+   m_hbook.vplxyzt
+   m_hbook.textbox
+   m_hbook.shpl
+   m_hbook.seed
+   m_hbook.vfitpoly
+   m_hbook.vfitp1
+   m_hbook.gauss
+   m_hbook.fcos
+   m_hbook.fcosh
+   m_hbook.b_to_K
+   m_hbook.K_to_b
+   m_hbook.K_to_harm
+   m_hbook.b_to_harm
+   m_hbook.harm_to_K
+   m_hbook.expo
+   m_hbook.expo2
+   m_hbook.vgauss
+   m_hbook.getfitpar
+   m_hbook.getfitndf
+   m_hbook.getfitchi2ndf
+   m_hbook.getfitchi2prob
+   m_hbook.getfitsig
+   m_hbook.hfit
+   m_hbook.hfitg
+   m_hbook.vfit
+   m_hbook.fringefun
+   m_hbook.vfitdipole
+   m_hbook.vfitexp
+   m_hbook.vfitexp2
+   m_hbook.vfitgauss
+   m_hbook.vfitcosh
+   m_hbook.vfitcos
+   m_hbook.hget
+   m_hbook.nget
+   m_hbook.hadd
+   m_hbook.hsub
+   m_hbook.hdiv
+   m_hbook.hmul
+   m_hbook.df_to_ntup
+   m_hbook.h1copv
+   m_hbook.vlocate
+   m_hbook.setlinewidth
+   m_hbook.getlinewidth
+   m_hbook.getisame
+   m_hbook.getishow
+   m_hbook.setisame
+   m_hbook.setishow
+   m_hbook.settextcolor
+   m_hbook.tred
+   m_hbook.tblue
+   m_hbook.tgreen
+   m_hbook.tcyan
+   m_hbook.tmagenta
+   m_hbook.gettextcolor
+   m_hbook.setlinecolor
+   m_hbook.getlinecolor
+   m_hbook.sethistcolor
+   m_hbook.gethistcolor
+   m_hbook.shcolblack
+   m_hbook.shcolblue
+   m_hbook.shcolcyan
+   m_hbook.shcolgray
+   m_hbook.shcolgreen
+   m_hbook.shcolmagenta
+   m_hbook.shcolred
+   m_hbook.shcolwhite
+   m_hbook.shcolyellow
+   m_hbook.slcolblack
+   m_hbook.slcolblue
+   m_hbook.slcolcyan
+   m_hbook.slcolgray
+   m_hbook.slcolgreen
+   m_hbook.slcolmagenta
+   m_hbook.slcolred
+   m_hbook.slcolwhite
+   m_hbook.slcolyellow
+   m_hbook.setmarkercolor
+   m_hbook.getmarkercolor
+   m_hbook.smcolblack
+   m_hbook.smcolblue
+   m_hbook.smcolcyan
+   m_hbook.smcolgray
+   m_hbook.smcolgreen
+   m_hbook.smcolmagenta
+   m_hbook.smcolred
+   m_hbook.smcolwhite
+   m_hbook.smcolyellow
+   m_hbook.setlinestyle
+   m_hbook.setmarkertype
+   m_hbook.setfillstyle
+   m_hbook.dot
+   m_hbook.bull
+   m_hbook.circle
+   m_hbook.square
+   m_hbook.star
+   m_hbook.nextmarkertype
+   m_hbook.setmarkersize
+   m_hbook.getmarkersize
+   m_hbook.getaxislabelsize
+   m_hbook.getaxistitlesize3d
+   m_hbook.getaxistitledist
+   m_hbook.getaxistitledist3d
+   m_hbook.getaxislabeldist
+   m_hbook.getaxislabeldist3d
+   m_hbook.setaxislabelsize
+   m_hbook.setaxistitlesize3d
+   m_hbook.setaxistitlesize
+   m_hbook.setaxistitledist
+   m_hbook.setaxistitledist3d
+   m_hbook.setaxislabeldist
+   m_hbook.setaxislabeldist3d
+   m_hbook.showparams
+   m_hbook.optgrid
+   m_hbook.getgrid
+   m_hbook.grid
+   m_hbook.nogrid
+   m_hbook.getlegend
+   m_hbook.optlegend
+   m_hbook.setlegendposition
+   m_hbook.gettitlepad
+   m_hbook.settitlepad
+   m_hbook.getlinestyleindex
+   m_hbook.getmarkertypeindex
+   m_hbook.getcolorindex
+   m_hbook.getsurfcolorindex
+   m_hbook.getcmapindex
+   m_hbook.getmode3dindex
+   m_hbook.getwin
+   m_hbook.set_win_visible
+   m_hbook.setwin
+   m_hbook.getgeo
+   m_hbook.nexist
+   m_hbook.printg3
+   m_hbook.printg4
+   m_hbook.printg5
+   m_hbook.g8
+   m_hbook.g7
+   m_hbook.g6
+   m_hbook.g5
+   m_hbook.g4
+   m_hbook.g3
+   m_hbook.set_x_of_xlab
+   m_hbook.set_y_of_xlab
+   m_hbook.set_x_of_ylab
+   m_hbook.set_y_of_ylab
+   m_hbook.get_y_of_ylab
+   m_hbook.set_y_title_abs
+   m_hbook.get_y_title
+   m_hbook.set_y_title
+   m_hbook.get_y_title
+   m_hbook.get_y_stat
+   m_hbook.set_number_of_ticks
+   m_hbook.set_number_of_ticks_3d
+   m_hbook.opttitles
+   m_hbook.optecho
+   m_hbook.getecho
+   m_hbook.getcolormap
+   m_hbook.setcolormap
+   m_hbook.setcolorbarpad
+   m_hbook.getcolorbarpad
+   m_hbook.optfit
+   m_hbook.optnfit
+   m_hbook.getfit
+   m_hbook.optstat
+   m_hbook.optnstat
+   m_hbook.getstat
+   m_hbook.settopmargin
+   m_hbook.gettopmargin
+   m_hbook.setbottommargin
+   m_hbook.getbottommargin
+   m_hbook.setrightmargin
+   m_hbook.getrightmargin
+   m_hbook.setleftmargin
+   m_hbook.getleftmargin
+   m_hbook.setklegend
+   m_hbook.getklegend
+   m_hbook.setktitles
+   m_hbook.getktitles
+   m_hbook.set_plot_params
+   m_hbook.set_plot_params_3d
+   m_hbook.mred
+   m_hbook.mblue
+   m_hbook.myellow
+   m_hbook.mcyan
+   m_hbook.mgreen
+   m_hbook.mmagenta
+   m_hbook.mgray
+   m_hbook.lred
+   m_hbook.lblue
+   m_hbook.lyellow
+   m_hbook.lcyan
+   m_hbook.lgreen
+   m_hbook.lmagenta
+   m_hbook.lgray
+   m_hbook.tred
+   m_hbook.tblue
+   m_hbook.tyellow
+   m_hbook.tcyan
+   m_hbook.tgreen
+   m_hbook.tmagenta
+   m_hbook.tgray
+   m_hbook.lmred
+   m_hbook.lmblue
+   m_hbook.lmyellow
+   m_hbook.lmcyan
+   m_hbook.lmgreen
+   m_hbook.lmmagenta
+   m_hbook.lmgray
+   m_hbook.lhmred
+   m_hbook.lhmblue
+   m_hbook.lhmyellow
+   m_hbook.lhmcyan
+   m_hbook.lhmgreen
+   m_hbook.lhmmagenta
+   m_hbook.lhmgray
+   m_hbook.setfillcolor
+   m_hbook.getfillcolor
+   m_hbook.plotoptions_unklar
+   m_hbook.waveray
+   m_hbook.write
+   m_hbook.hexist
+   m_hbook.optitight
+   m_hbook.setxspace
+   m_hbook.setyspace
+   m_hbook.setleftmargin
+   m_hbook.settopmargin
+   m_hbook.setbottommargin
+   m_hbook.setrightmargin
+   m_hbook.chi2_crit
+   m_hbook.chi2_prob
+   m_hbook.chi2ndf_prob
+   m_hbook.pdf
+   m_hbook.setsurfcolor
+   m_hbook.vcross
+   m_hbook.setisame
+   m_hbook.vzero
+   m_hbook.listsub
+   m_hbook.listnorm
+   m_hbook.pnl
+   m_hbook.ivmin
+   m_hbook.vmin
+   m_hbook.ivmax
+   m_hbook.vmax
+   m_hbook.vsymxy
+   m_hbook.vminmax
+   m_hbook.getwavedump
+   m_hbook.ngetdump
+   m_hbook.linear_correlation
+   m_hbook.fold_gauss
+   m_hbook.get_view_3d
+   m_hbook.set_view_3d
+   m_hbook.dipole
+   m_hbook.vshiftphase
+   m_hbook.getVxyzX
+   m_hbook.getVxyzY
+   m_hbook.getVxyzZ
+   m_hbook.getVxyzE
+   m_hbook.get_Imarker
+   m_hbook.get_Iline
+   m_hbook.set_Imarker
+   m_hbook.set_Iline
+   m_hbook.print_cmap
+   m_hbook.set_statfontsize
+   m_hbook.nphasespace_ellip
+   m_hbook.set_kcolorbar
+   m_hbook.get_kcolorbar
+   m_hbook.nl
+   m_hbook.xstp
+   m_hbook.xstm
+   m_hbook.ystp
+   m_hbook.ystm
+
+
+Module Contents
+---------------
+
+.. py:data:: WavesMode
+   :value: 'M_Hbook'
+
+
+.. py:data:: Klold
+   :value: 1
+
+
+.. py:data:: Nold
+   :value: -99
+
+
+.. py:data:: Xa1old
+   :value: -9999.0
+
+
+.. py:data:: Xanold
+   :value: -9999.0
+
+
+.. py:function:: pe2(x)
+
+.. py:function:: pe3(x)
+
+.. py:function:: pe4(x)
+
+.. py:function:: pe5(x)
+
+.. py:function:: pe6(x)
+
+.. py:function:: pe7(x)
+
+.. py:function:: pe8(x)
+
+.. py:function:: pe9(x)
+
+.. py:function:: pe10(x)
+
+.. py:function:: pg2(x)
+
+.. py:function:: pg3(x)
+
+.. py:function:: pg4(x)
+
+.. py:function:: pg5(x)
+
+.. py:function:: pg6(x)
+
+.. py:function:: pg7(x)
+
+.. py:function:: pg8(x)
+
+.. py:function:: pg9(x)
+
+.. py:function:: pg10(x)
+
+.. py:function:: readfloat(s, default=-9999)
+
+.. py:function:: readint(s, default=-9999)
+
+.. py:function:: printnl(line='')
+
+.. py:function:: set_console_title(console='Python')
+
+.. py:function:: util_spline_coef_periodic(x, y)
+
+   c--- calculates spline coefficients for periodic function
+   c--- the interval must be closed, i.e. x(n)-x(1)=periodlength and y(n)=y(1)
+
+   c--   input:
+
+   c-       n: number of x,y-values, must be at least five
+   c-       x: array of x-values
+   c-       y: array of y-values
+
+   c--   ouput:
+
+   c-       ypp:   spline-coefficients
+   c-     ifail:   error status
+
+   c--   workingspace: aa(n),bb(n),cc(n),c(n),cn(n)
+     
+
+
+.. py:function:: util_spline_inter(xa, ya, y2a, x, mode)
+
+.. py:function:: util_spline_coef(x, y, yp1=9999.0, ypn=9999.0)
+
+.. py:function:: Quit(*args, delay=0)
+
+.. py:function:: exit(text='')
+
+.. py:function:: Wexit(ew='')
+
+.. py:function:: qwait(delay=3)
+
+.. py:function:: sleep(isec)
+
+.. py:function:: wait(isec=1000, text='waiting')
+
+.. py:function:: util_parabel(xin, yin)
+
+   C--- CALCULATES A(1),A(2),A(3), THE DERIVATIVES YP(X(1)),YP(X(2)),YP(X(3)),
+   C    AND THE EXTREMUM (XOPT,A(XOPT)) OF PARABOLA Y=A1+A2*X+A3*X**2
+   C    FROM COORDINATES OF THE THREE POINTS (X(1),Y(1)),(X(2),Y(2)),(X(3),Y(3))
+   C
+
+
+.. py:function:: util_eqn(a, b)
+
+.. py:function:: util_linear_fit_data(datapoints, fitfun)
+
+.. py:function:: util_vnorm(v)
+
+.. py:function:: util_rotate(cen, vrot, phi, vin, eps=1e-10)
+
+.. py:function:: evnm(eg)
+
+.. py:function:: nmev(wl)
+
+.. py:function:: fsize(cfile)
+
+.. py:function:: fexist(f)
+
+.. py:function:: fwrite(F, *args)
+
+.. py:function:: util_determinante(a)
+
+.. py:function:: util_solve(a, x)
+
+.. py:function:: util_break(s='')
+
+.. py:data:: VxyzX
+   :value: None
+
+
+.. py:data:: VxyzY
+   :value: None
+
+
+.. py:data:: VxyzZ
+   :value: None
+
+
+.. py:data:: VxyzE
+   :value: None
+
+
+.. py:data:: VsplX
+   :value: None
+
+
+.. py:data:: VsplY
+   :value: None
+
+
+.. py:data:: Vspl1
+   :value: None
+
+
+.. py:data:: Vspl2
+   :value: None
+
+
+.. py:data:: VsplI
+   :value: None
+
+
+.. py:data:: VsplI
+   :value: None
+
+
+.. py:data:: VsplCoef
+   :value: None
+
+
+.. py:data:: Vxint
+   :value: None
+
+
+.. py:data:: Vyint
+   :value: None
+
+
+.. py:data:: SplineMode
+   :value: 'new'
+
+
+.. py:data:: Nspline
+
+.. py:data:: Ninter
+
+.. py:data:: Nfitxy
+
+.. py:data:: Nfitint
+
+.. py:data:: Tnone
+
+.. py:data:: Tnpa
+
+.. py:data:: Istatus
+   :value: 0
+
+
+.. py:data:: WarningText
+   :value: ''
+
+
+.. py:data:: ErrorText
+   :value: ''
+
+
+.. py:data:: Platform
+
+.. py:data:: System
+
+.. py:data:: fun
+
+.. py:data:: Gdebug
+   :value: 0
+
+
+.. py:data:: Tdf
+
+.. py:data:: nt
+
+.. py:data:: Tfig
+   :value: None
+
+
+.. py:data:: Figman
+   :value: None
+
+
+.. py:data:: Tax2d
+   :value: None
+
+
+.. py:data:: Tax3d
+   :value: None
+
+
+.. py:data:: H1h
+   :value: None
+
+
+.. py:data:: H1
+   :value: []
+
+
+.. py:data:: H1head
+   :value: []
+
+
+.. py:data:: Hdir
+   :value: []
+
+
+.. py:data:: Ndir
+   :value: 0
+
+
+.. py:data:: Kdir
+   :value: 0
+
+
+.. py:data:: Cdir
+   :value: ''
+
+
+.. py:data:: H1HLast
+   :value: None
+
+
+.. py:data:: H2h
+   :value: None
+
+
+.. py:data:: H2
+   :value: []
+
+
+.. py:data:: H2head
+   :value: []
+
+
+.. py:data:: Ntup
+   :value: []
+
+
+.. py:data:: Nctup
+   :value: []
+
+
+.. py:data:: Ncind
+   :value: []
+
+
+.. py:data:: H1ind
+   :value: []
+
+
+.. py:data:: H2ind
+   :value: []
+
+
+.. py:data:: Nind
+   :value: []
+
+
+.. py:data:: Nhead
+   :value: []
+
+
+.. py:data:: Nh1
+   :value: 0
+
+
+.. py:data:: Nh2
+   :value: 0
+
+
+.. py:data:: Nntup
+   :value: 0
+
+
+.. py:data:: Nnctup
+   :value: 0
+
+
+.. py:data:: H1Last
+   :value: None
+
+
+.. py:data:: H2Last
+   :value: None
+
+
+.. py:data:: H1h
+   :value: None
+
+
+.. py:data:: H2h
+   :value: None
+
+
+.. py:data:: N
+   :value: None
+
+
+.. py:data:: Ind
+   :value: -1
+
+
+.. py:data:: IndLast
+   :value: -1
+
+
+.. py:data:: H1I
+   :value: -1
+
+
+.. py:data:: H2I
+   :value: -1
+
+
+.. py:data:: H1ILast
+   :value: -1
+
+
+.. py:data:: H2ILast
+   :value: -1
+
+
+.. py:data:: N
+   :value: None
+
+
+.. py:data:: Nsel
+   :value: None
+
+
+.. py:data:: NLast
+   :value: None
+
+
+.. py:data:: Ni
+   :value: -1
+
+
+.. py:data:: NiLast
+   :value: -1
+
+
+.. py:data:: Nlines
+   :value: 0
+
+
+.. py:data:: Ncolon
+   :value: 0
+
+
+.. py:data:: TnpFloat64
+
+.. py:data:: Tnpcmpl128
+
+.. py:data:: N1
+
+.. py:data:: N2
+
+.. py:data:: N3
+
+.. py:data:: N4
+
+.. py:data:: N5
+
+.. py:data:: N6
+
+.. py:data:: N7
+
+.. py:data:: N8
+
+.. py:data:: N9
+
+.. py:data:: Nv
+
+.. py:data:: Nx
+
+.. py:data:: Nxy
+
+.. py:data:: Nxy
+
+.. py:data:: Nxyz
+
+.. py:data:: Mode3ds
+   :value: ['none', 'boxes', 'cont3d', 'hist', 'inter', 'surf', 'trisurf']
+
+
+.. py:data:: FillColor
+   :value: 'none'
+
+
+.. py:data:: NxBinMax
+   :value: 0
+
+
+.. py:data:: Khdeleted
+   :value: 0
+
+
+.. py:data:: Tdate
+   :value: None
+
+
+.. py:data:: TdateOv
+   :value: None
+
+
+.. py:data:: Trun
+   :value: None
+
+
+.. py:data:: TrunOv
+   :value: None
+
+
+.. py:data:: WaveFilePrefix
+   :value: 'wave_plot_'
+
+
+.. py:data:: ZoomXmin
+   :value: -1e+30
+
+
+.. py:data:: ZoomXmax
+   :value: 1e+30
+
+
+.. py:data:: ZoomYmin
+   :value: -1e+30
+
+
+.. py:data:: ZoomYmax
+   :value: 1e+30
+
+
+.. py:data:: ZoomZmin
+   :value: -1e+30
+
+
+.. py:data:: ZoomZmax
+   :value: 1e+30
+
+
+.. py:data:: LogX
+   :value: 0
+
+
+.. py:data:: LogY
+   :value: 0
+
+
+.. py:data:: LogZ
+   :value: 0
+
+
+.. py:data:: Console
+   :value: 'wavesPython'
+
+
+.. py:data:: FirstConsole
+   :value: 1
+
+
+.. py:data:: Figgeom
+   :value: ''
+
+
+.. py:data:: Figgeom2
+   :value: ''
+
+
+.. py:data:: FiggeomR
+   :value: ''
+
+
+.. py:data:: FiggeomL
+   :value: ''
+
+
+.. py:data:: XtermGeo
+   :value: ''
+
+
+.. py:data:: Figgeoms
+   :value: []
+
+
+.. py:data:: Fwidth
+   :value: 500
+
+
+.. py:data:: Fheight
+   :value: 300
+
+
+.. py:data:: Fxoff
+   :value: 10
+
+
+.. py:data:: Fyoff
+   :value: 10
+
+
+.. py:data:: Kdate
+   :value: False
+
+
+.. py:data:: Kstat
+   :value: False
+
+
+.. py:data:: Kfit
+   :value: False
+
+
+.. py:data:: Ktitles
+   :value: 1
+
+
+.. py:data:: Kecho
+   :value: 1
+
+
+.. py:data:: Kdump
+   :value: True
+
+
+.. py:data:: Kpdf
+   :value: True
+
+
+.. py:data:: Ndump
+   :value: 0
+
+
+.. py:data:: Npdf
+   :value: 0
+
+
+.. py:data:: Author
+   :value: ''
+
+
+.. py:data:: Waveplot
+   :value: None
+
+
+.. py:data:: Mrun
+   :value: None
+
+
+.. py:data:: Mcomment
+   :value: None
+
+
+.. py:data:: Mdate
+   :value: None
+
+
+.. py:data:: ROFx
+   :value: 0.03
+
+
+.. py:data:: ROFy
+   :value: 0.95
+
+
+.. py:data:: fcfg
+   :value: ''
+
+
+.. py:data:: fcfg
+   :value: 'waveplot.cfg'
+
+
+.. py:data:: YFit
+   :value: 0.8
+
+
+.. py:data:: Yfit
+   :value: 0.8
+
+
+.. py:data:: Xfit
+   :value: 0.75
+
+
+.. py:data:: XFit
+   :value: 0.75
+
+
+.. py:data:: YStat
+   :value: 0.8
+
+
+.. py:data:: Ystat
+   :value: 0.8
+
+
+.. py:data:: Xstat
+   :value: 0.05
+
+
+.. py:data:: XStat
+   :value: 0.05
+
+
+.. py:data:: wcon
+
+.. py:data:: Author
+
+.. py:data:: Kplots
+
+.. py:data:: Nwins
+   :value: 0
+
+
+.. py:data:: Fig
+   :value: None
+
+
+.. py:data:: Ax
+   :value: None
+
+
+.. py:data:: Figs
+   :value: []
+
+
+.. py:data:: Nfigs
+   :value: 0
+
+
+.. py:data:: IsameGlobal
+   :value: 0
+
+
+.. py:data:: Ifill1d
+   :value: 0
+
+
+.. py:data:: TitPad
+   :value: 12
+
+
+.. py:data:: GtitFontSize
+   :value: 'large'
+
+
+.. py:data:: TitFontSize
+   :value: 'large'
+
+
+.. py:data:: AtitFontSize
+   :value: 11
+
+
+.. py:data:: AtitFontSize3d
+   :value: 11
+
+
+.. py:data:: AxisLabelSize
+   :value: 10
+
+
+.. py:data:: TextFontSize
+   :value: 11
+
+
+.. py:data:: DateFontSize
+   :value: 9
+
+
+.. py:data:: StatFontSize
+   :value: -9
+
+
+.. py:data:: AxisTitleDist
+   :value: 6.0
+
+
+.. py:data:: AxisTitleDist3d
+   :value: 5.0
+
+
+.. py:data:: Axistitledist3d
+   :value: 5.0
+
+
+.. py:data:: AxisLabelDist3d
+   :value: 1.0
+
+
+.. py:data:: AxisLabelDist
+   :value: 5.0
+
+
+.. py:data:: NXtick
+   :value: -9
+
+
+.. py:data:: NXtick3d
+   :value: 9
+
+
+.. py:data:: Xtitle
+   :value: 0.5
+
+
+.. py:data:: Ytitle
+   :value: 1.03
+
+
+.. py:data:: YTitle
+   :value: 1.03
+
+
+.. py:data:: YGtitle
+   :value: 1.03
+
+
+.. py:data:: Ygtitle
+   :value: 1.03
+
+
+.. py:data:: x_of_xlab
+   :value: 0.5
+
+
+.. py:data:: y_of_xlab
+   :value: -0.15
+
+
+.. py:data:: x_of_ylab
+   :value: 0.5
+
+
+.. py:data:: y_of_ylab
+   :value: 0.5
+
+
+.. py:data:: Itight
+   :value: 0
+
+
+.. py:data:: Zones
+   :value: []
+
+
+.. py:data:: Nxzone
+   :value: 0
+
+
+.. py:data:: Nyzone
+   :value: 0
+
+
+.. py:data:: Kzone
+   :value: 0
+
+
+.. py:data:: Axes
+   :value: []
+
+
+.. py:data:: Icmap
+   :value: 1
+
+
+.. py:data:: CMap
+   :value: None
+
+
+.. py:data:: CMap
+   :value: 'winter'
+
+
+.. py:data:: CMap
+   :value: 'hot'
+
+
+.. py:data:: CMap
+   :value: 'autumn'
+
+
+.. py:data:: CMap
+   :value: 'summer'
+
+
+.. py:data:: CMap
+   :value: 'magma'
+
+
+.. py:data:: CMap
+   :value: 'plasma'
+
+
+.. py:data:: CMap
+   :value: 'RdPu'
+
+
+.. py:data:: CMap
+   :value: 'copper'
+
+
+.. py:data:: CMap
+   :value: 'rainbow'
+
+
+.. py:data:: CMap
+   :value: 'jet'
+
+
+.. py:data:: Cmaps
+   :value: ['none', 'autumn', 'copper', 'jet', 'hot', 'magma', 'plasma', 'rainbow', 'RdPu', 'summer',...
+
+
+.. py:data:: Cmap
+   :value: 'jet'
+
+
+.. py:data:: Tcmap
+
+.. py:data:: Mode3D
+   :value: 'surf'
+
+
+.. py:data:: Mode2D
+   :value: '!'
+
+
+.. py:data:: Surfcolor
+   :value: 'salmon'
+
+
+.. py:data:: Surfcolor
+   :value: 'red'
+
+
+.. py:data:: Surfcolor
+   :value: 'navajowhite'
+
+
+.. py:data:: Surfcolor
+   :value: 'mediumspringgreen'
+
+
+.. py:data:: Ispline
+   :value: 0
+
+
+.. py:data:: Linecolor
+   :value: 'red'
+
+
+.. py:data:: Linewidth
+   :value: 1.0
+
+
+.. py:data:: Markersize
+   :value: 4.0
+
+
+.. py:data:: Markercolor
+   :value: 'red'
+
+
+.. py:data:: Linestyle
+   :value: 'solid'
+
+
+.. py:data:: Markertype
+   :value: 'o'
+
+
+.. py:data:: Fillstyle
+   :value: 'full'
+
+
+.. py:data:: FillStyle
+   :value: 'full'
+
+
+.. py:data:: LineColor
+   :value: 'red'
+
+
+.. py:data:: LineWidth
+   :value: 1.0
+
+
+.. py:data:: MarkerSize
+   :value: 6.0
+
+
+.. py:data:: MarkerColor
+   :value: 'red'
+
+
+.. py:data:: LineStyle
+   :value: 'solid'
+
+
+.. py:data:: MarkerType
+   :value: 'o'
+
+
+.. py:data:: Textcolor
+   :value: 'black'
+
+
+.. py:data:: Histbarwidth
+   :value: 1.0
+
+
+.. py:data:: Histcolor
+   :value: 'yellow'
+
+
+.. py:data:: HistEdgeColor
+   :value: 'blue'
+
+
+.. py:data:: Histedgecolor
+   :value: 'blue'
+
+
+.. py:data:: Klegend
+   :value: 0
+
+
+.. py:data:: Igetconsole
+   :value: True
+
+
+.. py:data:: Imarker
+   :value: 0
+
+
+.. py:data:: Ihist
+   :value: 0
+
+
+.. py:data:: Iprof
+   :value: 0
+
+
+.. py:data:: Ispline
+   :value: 0
+
+
+.. py:data:: Isame
+   :value: 0
+
+
+.. py:data:: Iscatter
+   :value: 0
+
+
+.. py:data:: Iscat3d
+   :value: 0
+
+
+.. py:data:: Icont3d
+   :value: 0
+
+
+.. py:data:: Itrisurf
+   :value: 0
+
+
+.. py:data:: Iclosed
+   :value: 0
+
+
+.. py:data:: Iboxes
+   :value: 0
+
+
+.. py:data:: Inoempty
+   :value: 0
+
+
+.. py:data:: Ierr
+   :value: 0
+
+
+.. py:data:: Inoerr
+   :value: 0
+
+
+.. py:data:: Isurf
+   :value: 0
+
+
+.. py:data:: Iline
+   :value: 0
+
+
+.. py:data:: Iinter
+   :value: 0
+
+
+.. py:data:: Ifill1d
+   :value: 0
+
+
+.. py:data:: Xtit
+   :value: ''
+
+
+.. py:data:: Ytit
+   :value: ''
+
+
+.. py:data:: Ztit
+   :value: ''
+
+
+.. py:data:: Ptit
+   :value: ''
+
+
+.. py:data:: Gtit
+   :value: ''
+
+
+.. py:data:: Colors
+   :value: ['black', 'red', 'blue', 'green', 'cyan', 'magenta', 'gray', 'yellow', 'white']
+
+
+.. py:data:: Surfcolors
+   :value: ['none', 'blue', 'cyan', 'gray', 'green', 'navajowhite', 'magenta', 'mediumspringgreen', 'red',...
+
+
+.. py:data:: Linestyles
+   :value: ['none', 'dashed', 'dotted', 'dashdot', 'solid']
+
+
+.. py:data:: Markertypes
+   :value: ['none', '.', 'o', 'v', 's', '*', '^', '<', '>', '+', 'P', 'x', 'X']
+
+
+.. py:data:: Tightpad
+   :value: 2.5
+
+
+.. py:data:: Xtightpad
+   :value: 0.5
+
+
+.. py:data:: Ytightpad
+   :value: 1.0
+
+
+.. py:data:: ColorbarPad
+   :value: '!'
+
+
+.. py:data:: LeftMargin
+   :value: 0.12
+
+
+.. py:data:: RightMargin
+   :value: 0.92
+
+
+.. py:data:: TopMargin
+   :value: 0.86
+
+
+.. py:data:: BottomMargin
+   :value: 0.13
+
+
+.. py:data:: ScaleSizeX
+   :value: 1.0
+
+
+.. py:data:: ScaleSizeY
+   :value: 1.0
+
+
+.. py:data:: Xspace
+   :value: 0.4
+
+
+.. py:data:: Yspace
+   :value: 0.5
+
+
+.. py:data:: LexpX
+   :value: 0.0
+
+
+.. py:data:: LexpY
+   :value: 0.05
+
+
+.. py:data:: LexpRot
+   :value: 'horizontal'
+
+
+.. py:data:: LexpPow
+   :value: 2
+
+
+.. py:data:: Kgrid
+   :value: True
+
+
+.. py:data:: Kbox
+   :value: True
+
+
+.. py:data:: KxAxis
+   :value: True
+
+
+.. py:data:: KyAxis
+   :value: True
+
+
+.. py:data:: KzAxis
+   :value: True
+
+
+.. py:data:: CanButIds
+   :value: []
+
+
+.. py:data:: CanButId
+   :value: 0
+
+
+.. py:data:: Hull2D
+   :value: []
+
+
+.. py:data:: Hull3D
+   :value: []
+
+
+.. py:data:: Hull3DList
+   :value: []
+
+
+.. py:data:: THull3D
+
+.. py:data:: Ishow
+   :value: 1
+
+
+.. py:data:: Kcolorbar
+   :value: []
+
+
+.. py:data:: kcolorbar
+   :value: 0
+
+
+.. py:data:: complex_0
+   :value: (1+0j)
+
+
+.. py:data:: complex_i
+   :value: 1j
+
+
+.. py:data:: hbarev1
+   :value: 6.58211889e-16
+
+
+.. py:data:: clight1
+   :value: 299792458.0
+
+
+.. py:data:: emasskg1
+   :value: 9.10938188e-31
+
+
+.. py:data:: emasse1
+   :value: 510998.902
+
+
+.. py:data:: emassg1
+   :value: 0.000510998902
+
+
+.. py:data:: echarge1
+   :value: 1.602176462e-19
+
+
+.. py:data:: erad1
+   :value: 2.817938e-15
+
+
+.. py:data:: eps01
+   :value: 8.854187817e-12
+
+
+.. py:data:: pi1
+   :value: 3.141592653589793
+
+
+.. py:data:: grarad1
+   :value: 0.017453292519943295
+
+
+.. py:data:: radgra1
+   :value: 57.29577951308232
+
+
+.. py:data:: hplanck1
+   :value: 6.62606876e-34
+
+
+.. py:data:: hbar1
+   :value: 1.0545715955643569e-34
+
+
+.. py:data:: wtoe1
+   :value: 1239.8418573430595
+
+
+.. py:data:: cq1
+   :value: 3.8319386004820543e-13
+
+
+.. py:data:: cgam1
+   :value: 8.846269012738866e-05
+
+
+.. py:data:: pol1con1
+   :value: 0.9237604307034013
+
+
+.. py:data:: pol2con1
+   :value: 0.00436172445783409
+
+
+.. py:data:: h2const
+   :value: 13270000000000.0
+
+
+.. py:data:: h2max
+   :value: 1.474
+
+
+.. py:data:: g1const
+   :value: 24570000000000.0
+
+
+.. py:data:: g1max
+   :value: 0.9212
+
+
+.. py:data:: twopi1
+   :value: 6.283185307179586
+
+
+.. py:data:: halfpi1
+   :value: 1.5707963267948966
+
+
+.. py:data:: sqrttwopi1
+   :value: 2.5066282746310002
+
+
+.. py:data:: dnull1
+   :value: 0.0
+
+
+.. py:data:: done1
+   :value: 1.0
+
+
+.. py:data:: rmu01
+   :value: 1.2566370614359173e-06
+
+
+.. py:data:: rmu04pi1
+   :value: 1e-07
+
+
+.. py:data:: alpha1
+   :value: 0.007297352535763425
+
+
+.. py:data:: gaussn1
+   :value: 0.3989422804014327
+
+
+.. py:data:: ck934
+   :value: 0.933729042128515
+
+
+.. py:data:: fwhmgauss1
+
+.. py:data:: fwhmsinxx21
+   :value: 2.783115
+
+
+.. py:data:: rmssinxx21
+   :value: 1.05244
+
+
+.. py:data:: specnor_si
+   :value: 5.000726970450421e+49
+
+
+.. py:data:: sclight1
+   :value: ''
+
+
+.. py:data:: secharge1
+   :value: ''
+
+
+.. py:data:: shbarev1
+   :value: ''
+
+
+.. py:data:: Ff
+
+.. py:data:: Ftyp
+
+.. py:data:: Ftype
+
+.. py:data:: Legend
+   :value: []
+
+
+.. py:function:: abs(x)
+
+.. py:function:: _clearCanvas(kclear=0)
+
+.. py:function:: set_ClearCanvas(kclear=0)
+
+.. py:function:: get_ClearCanvas()
+
+.. py:function:: _delPlot()
+
+.. py:function:: _zones()
+
+.. py:function:: _lines()
+
+.. py:function:: _marker()
+
+.. py:function:: _options3d()
+
+.. py:function:: _optdate()
+
+.. py:function:: _optgrid()
+
+.. py:function:: _optxaxis()
+
+.. py:function:: _optbox()
+
+.. py:function:: _optyaxis()
+
+.. py:function:: _togglelinlogx()
+
+.. py:function:: _togglelinlogy()
+
+.. py:function:: _togglelinlogz()
+
+.. py:function:: _setlinlog()
+
+.. py:function:: _setzoom()
+
+.. py:function:: _setuser()
+
+.. py:function:: _setmode2d(m='!')
+
+.. py:function:: _setmode3d(m='!')
+
+.. py:function:: _optstat()
+
+.. py:function:: _optzaxis()
+
+.. py:function:: _optrun()
+
+.. py:function:: _settitles()
+
+.. py:function:: _titles()
+
+.. py:function:: _options3d()
+
+.. py:function:: _nextzone()
+
+.. py:function:: _setzones()
+
+.. py:function:: _setopt3d()
+
+.. py:function:: _vlocate(ev)
+
+.. py:function:: _mhclick(event)
+
+.. py:function:: _sethistcolor(hc='!')
+
+.. py:function:: _setaxislabelsize(size='!')
+
+.. py:function:: _setaxistitlesize3d(size='!')
+
+.. py:function:: _setaxistitlesize(size='!')
+
+.. py:function:: getaxistitlesize()
+
+.. py:function:: _setaxistitledist(dist='!')
+
+.. py:function:: _setaxistitledist3d(dist='!')
+
+.. py:function:: _setaxislabeldist(dist='!')
+
+.. py:function:: _setaxislabeldist3d(dist='!')
+
+.. py:function:: _set_number_of_ticks_3d(n=-9)
+
+.. py:function:: _set_number_of_ticks(n=-9)
+
+.. py:function:: _setcolormap(cmap='!')
+
+.. py:function:: _setcolorbarpad(pad='!')
+
+.. py:function:: _getcolorbarpad()
+
+.. py:function:: debug(kmenu=None, kitem=None)
+
+.. py:data:: Sepp
+   :value: '/'
+
+
+.. py:data:: Backslash
+   :value: '\\'
+
+
+.. py:data:: Narg
+
+.. py:data:: Argv
+
+.. py:data:: ClearCanvas
+   :value: 0
+
+
+.. py:data:: Foverview
+   :value: None
+
+
+.. py:data:: Icallfromoverview
+   :value: None
+
+
+.. py:data:: Krun
+   :value: None
+
+
+.. py:data:: Waveplot
+   :value: 0
+
+
+.. py:data:: VarHead
+   :value: ''
+
+
+.. py:data:: SplineMode
+   :value: 'new'
+
+
+.. py:data:: ColorbarPad
+   :value: 0.1
+
+
+.. py:data:: Vlocate
+   :value: []
+
+
+.. py:data:: VlocXO
+   :value: 0
+
+
+.. py:data:: VlocYO
+   :value: 0
+
+
+.. py:data:: VlocX
+   :value: 0
+
+
+.. py:data:: VlocY
+   :value: 0
+
+
+.. py:data:: VlocDistX
+   :value: 0
+
+
+.. py:data:: VlocDistY
+   :value: 0
+
+
+.. py:data:: VlocDist
+   :value: 0
+
+
+.. py:data:: Aspect
+   :value: 'auto'
+
+
+.. py:function:: plotfaces(faces, isame=0, facecolor='b', edgecolor='black', alpha=0.5, linewidth=-1, markercolor='!', ishow=1)
+
+.. py:function:: read_faces(fname, cs='xyz')
+
+.. py:function:: plotqhull3d(vertices, ifaces, faces, isame=0, facecolor='b', edgecolor='black', alpha=0.5, linewidth=-1, markercolor='!', modus='facets', ishow=1)
+
+.. py:function:: qhull3d(x, y=None, z=None, modus='merge')
+
+.. py:function:: qhull2d(x, y=None)
+
+.. py:function:: qhull2d_old(x, y=None)
+
+.. py:function:: nqhull3d(nt='?', varlis='x:y:z', select='', plopt='', iplot=1, iretval=0, linewidth=1, facecolor='blue', mcolor='', edgecolor='black', alpha=0.3, ishow=1, modus='merge')
+
+.. py:function:: delPlot()
+
+.. py:function:: delaxes()
+
+.. py:function:: plt_connect(key, fun)
+
+.. py:function:: set_aspect(asp='!')
+
+.. py:data:: NL
+   :value: Multiline-String
+
+   .. raw:: html
+
+      <details><summary>Show Value</summary>
+
+   .. code-block:: python
+
+      """
+      """
+
+   .. raw:: html
+
+      </details>
+
+
+
+.. py:function:: sind(phi)
+
+.. py:function:: cosd(phi)
+
+.. py:function:: tand(phi)
+
+.. py:function:: asind(x)
+
+.. py:function:: acosd(x)
+
+.. py:function:: atand(x)
+
+.. py:function:: cotd(phi)
+
+.. py:function:: set_y_gtitle(y='!')
+
+.. py:function:: get_y_title()
+
+.. py:function:: set_x_fit(x='!')
+
+.. py:function:: get_x_fit()
+
+.. py:function:: set_y_fit(y='!')
+
+.. py:function:: set_x_stat(x='!')
+
+.. py:function:: get_x_stat()
+
+.. py:function:: set_y_stat(y='!')
+
+.. py:function:: get_y_stat()
+
+.. py:function:: rystat()
+
+.. py:function:: pystat()
+
+.. py:function:: mystat()
+
+.. py:function:: ellipse(x0, y0, a, b, alpha=0.0, n=1000)
+
+.. py:function:: nellipse(nt, x0=0.0, y0=0.0, a=1.0, b=1.0, alpha=0.0, n=1000)
+
+.. py:function:: polygon2d(x='?', y='?')
+
+.. py:function:: arc(x0=0.0, y0=0.0, a=1.0, b=1.0, alpha=0.0, phi=90.0, dphi=360.0, n=1000)
+
+.. py:function:: narc(nt='narc', x0=0.0, y0=0.0, a=1.0, b=1.0, alpha=0.0, phi=90.0, dphi=360.0, n=1000)
+
+.. py:function:: cylinder(x0=0.0, y0=0.0, z0=0, width=0.1, a=1.0, b=1.0, h=1.0, alpha=0.0, phi=90.0, dphi=360.0, n=1000)
+
+.. py:function:: ncylinder(nt='ncyl', x0=0.0, y0=0.0, z0=0, width=0.1, a=1.0, b=1.0, h=1.0, alpha=0.0, phi=90.0, dphi=360.0, n=1000, ioverwrite=1)
+
+.. py:function:: cylinderpoly(nt='ncyl')
+
+.. py:function:: plotncylinder(nt='ncyl', isame=0, linecolor='r', ishow=1)
+
+.. py:function:: get_master()
+
+.. py:function:: get_isame()
+
+.. py:function:: get_kpdf()
+
+.. py:function:: optdump(kdump='True')
+
+.. py:function:: optpdf(kpdf='True')
+
+.. py:function:: store_kdump_kpdf()
+
+.. py:function:: restore_kdump_kpdf()
+
+.. py:function:: set_kpdf(k)
+
+.. py:function:: get_kecho()
+
+.. py:function:: set_kecho(k)
+
+.. py:function:: get_kdump()
+
+.. py:function:: set_kdump(k)
+
+.. py:function:: latex(xNDC, yNDC, text, color='black', fontsize=12, halign='left', valign='top', bbox='none', bbstyle='round', fc='white', ec='black', pad=0.2)
+
+.. py:data:: MShWelcome
+   :value: False
+
+
+.. py:function:: get_mshwelcome()
+
+.. py:function:: mshwelcome(program='Wave-Plot', year='2021', getconsole=False)
+
+.. py:function:: macro(fmacro='')
+
+.. py:function:: rotate2d(x, y, phi=0.0, x0=0.0, y0=0.0, mode='grad')
+
+.. py:function:: draw_circle(x=0.0, y=0.0, r=1.0, fill=False, lwid=1)
+
+.. py:function:: setmode2d(m='!')
+
+.. py:function:: getmode2d()
+
+.. py:function:: setmode3d(m='surf')
+
+.. py:function:: getmode3d()
+
+.. py:function:: set_frame_geom(wf=0, hf=0, window='!')
+
+.. py:function:: set_frame_square(wf=0, window='!')
+
+.. py:function:: get_geo_all()
+
+.. py:function:: _clearCanvas(kclear=0)
+
+.. py:function:: set_ClearCanvas(kclear=0)
+
+.. py:function:: get_ClearCanvas()
+
+.. py:function:: _delPlot()
+
+.. py:function:: _zones()
+
+.. py:function:: _lines()
+
+.. py:function:: _marker()
+
+.. py:function:: _options3d()
+
+.. py:function:: _optdate()
+
+.. py:function:: _optgrid()
+
+.. py:function:: _optxaxis()
+
+.. py:function:: _optbox()
+
+.. py:function:: _optyaxis()
+
+.. py:function:: _togglelinlogx()
+
+.. py:function:: _togglelinlogy()
+
+.. py:function:: _togglelinlogz()
+
+.. py:function:: _setlinlog()
+
+.. py:function:: _setzoom()
+
+.. py:function:: _setuser()
+
+.. py:function:: _setmode2d(m='!')
+
+.. py:function:: _setmode3d(m='!')
+
+.. py:function:: _optstat()
+
+.. py:function:: _optzaxis()
+
+.. py:function:: _optrun()
+
+.. py:function:: _settitles()
+
+.. py:function:: _titles()
+
+.. py:function:: _options3d()
+
+.. py:function:: _nextzone()
+
+.. py:function:: _setzones()
+
+.. py:function:: _setopt3d()
+
+.. py:function:: _vlocate(ev)
+
+.. py:function:: _mhclick(event)
+
+.. py:function:: _sethistcolor(hc='!')
+
+.. py:function:: _setaxislabelsize(size='!')
+
+.. py:function:: _setaxistitlesize3d(size='!')
+
+.. py:function:: _setaxistitlesize(size='!')
+
+.. py:function:: getaxistitlesize()
+
+.. py:function:: _setaxistitledist(dist='!')
+
+.. py:function:: _setaxistitledist3d(dist='!')
+
+.. py:function:: _setaxislabeldist(dist='!')
+
+.. py:function:: _setaxislabeldist3d(dist='!')
+
+.. py:function:: _set_number_of_ticks_3d(n=-9)
+
+.. py:function:: _set_number_of_ticks(n=-9)
+
+.. py:function:: _setcolormap(cmap='!')
+
+.. py:function:: _setcolorbarpad(pad='!')
+
+.. py:function:: _getcolorbarpad()
+
+.. py:function:: optbox(k=True)
+
+.. py:function:: optxaxis(k=True)
+
+.. py:function:: optyaxis(k=True)
+
+.. py:function:: optzaxis(k=True)
+
+.. py:function:: yesno(sin)
+
+.. py:function:: yesno_01(sin)
+
+.. py:function:: v123(nx=10)
+
+.. py:function:: v0123(nx=10)
+
+.. py:function:: vcre(nx=10, xmin=1, xmax=10)
+
+.. py:function:: getplotsize()
+
+.. py:function:: vplothull3d(x, y, z, isame=0, facecolor='blue', alpha=0.5, edgecolor='black', ishow=1, modus='simplices')
+
+.. py:function:: plothull3d(isame=0, facecolor='blue', alpha=0.5, edgecolor='black', ishow=1, modus='face')
+
+.. py:function:: nmerge(n1, n2, n12, vars1='', vars2='', vars12='', ioverwrite=1)
+
+.. py:function:: bundu(gl, a=3.598, b=-3.84, c=0.631)
+
+.. py:function:: mh()
+
+.. py:function:: ml()
+
+.. py:function:: mn()
+
+.. py:function:: mm()
+
+.. py:function:: ms()
+
+.. py:function:: ncoph()
+
+.. py:function:: legend(lege='', loc='best', x='', y='')
+
+.. py:function:: wans(text='Q or q to quit:')
+
+.. py:function:: nfun(ntup='?', fun='x', xvals='default', ioverwrite=1)
+
+.. py:function:: hdump(hist='?', filh='hdump.dat')
+
+.. py:function:: hprint(hist='?')
+
+.. py:function:: hfun(hist='?', fun='x', nx=101, xmin=-0.5, xmax=100.5)
+
+.. py:function:: h2header_update(hist='?')
+
+.. py:function:: weednan(h)
+
+.. py:function:: h1header_update(hist='?')
+
+.. py:function:: hreset(h)
+
+.. py:function:: h1reset(h)
+
+.. py:function:: hdelete(h='?')
+
+.. py:function:: hmin(h='?')
+
+.. py:function:: hmax(h='?')
+
+.. py:function:: printplopt()
+
+.. py:function:: plotoptions(plopt='')
+
+.. py:function:: help(key='')
+
+.. py:function:: setnticksx(nx=0)
+
+.. py:function:: vfft(vx, vy)
+
+.. py:function:: reset_zoom()
+
+.. py:function:: mhb_mkdir(chdir='!')
+
+.. py:function:: mhb_ldir()
+
+.. py:function:: mhb_pwd(isilent=0, iretval=0)
+
+.. py:function:: mhb_cd_up()
+
+.. py:function:: mhb_cd_down()
+
+.. py:function:: mhb_cd(cdir='!')
+
+.. py:function:: zoom(xmin, xmax, ymin=-1.2345e+30, ymax=1.2345e+30, zmin=1.2345e+30, zmax=1.2345e+30)
+
+.. py:function:: get_xy_limits()
+
+.. py:function:: get_xyz_limits()
+
+.. py:function:: zoom3d(xmin, xmax, ymin=-1.2345e+30, ymax=1.2345e+30, zmin=1.2345e+30, zmax=1.2345e+30)
+
+.. py:function:: setplotsize(fig='', w='A4', h='landscape', pad=2.0)
+
+.. py:function:: pplot(pname='WavePlot.pdf', w=0, h=0)
+
+.. py:function:: h1pack(idh='?', data=None)
+
+.. py:function:: hcopn(idh='?', nt='', varlis='x:y:ey', ntit='!', kweedzero=1)
+
+.. py:function:: nrandom(nt='?', varlis='', n=100, width=[1.0], modu='u', iplot=0)
+
+.. py:function:: nhull2d(nt='?', varlis='', select='', iplot=1, iretval=1)
+
+.. py:function:: vhull2d(vx, vy, varlis='', iplot=0)
+
+.. py:function:: hull3dold(points)
+
+.. py:function:: mhull3d(nt='?', varlis='', select='', isame=0, facecolor='blue', edgecolor='black', alpha=0.5, iplot=1)
+
+.. py:function:: nhull3dbad(nt='?', varlis='', select='', plopt='', iplot=1, iretval=0, color='!', mcolor='!')
+
+.. py:function:: nplothull3d(nt='Nhull3d', plopt='')
+
+.. py:function:: nappend(nt='?', nt2='')
+
+.. py:function:: nfill(nt='?', data='')
+
+.. py:function:: npeaksabs(nt='?', varlis='', select='', pkmin=0.5, nsmooth=0, isilent=0, iretval=0)
+
+.. py:function:: hpeaks(h='?', select='', pkmin=0.5, nsmooth=0, isilent=0, iretval=0)
+
+.. py:function:: npeaks(nt='?', varlis='', select='', pkmin=0.5, nsmooth=0, isilent=0, iretval=0)
+
+.. py:function:: nstat(nt='?', var='', select='', iretval=1, isilent=0)
+
+.. py:function:: nmeanrms(nt='?', var='', select='', iretval=1, isilent=0)
+
+.. py:function:: nrms(nt='?', var='', select='', iretval=1, isilent=0)
+
+.. py:function:: nmean(nt='?', var='', select='', iretval=1, isilent=0)
+
+.. py:function:: nsum(nt='?', var='', select='', iretval=1, isilent=0)
+
+.. py:function:: nmax(nt='?', var='', select='', iretval=1)
+
+.. py:function:: nmin(nt='?', var='', select='', iretval=1)
+
+.. py:function:: nminmax(nt='?', var='', select='', iretval=1)
+
+.. py:function:: rlist(filei='wlist.dat')
+
+.. py:function:: wlist(lis='?', fileo='wlist.dat')
+
+.. py:function:: lilo()
+
+.. py:function:: lolo()
+
+.. py:function:: loli()
+
+.. py:function:: lili()
+
+.. py:function:: Line(x1, y1, x2, y2, color=-9, width=2.0)
+
+.. py:function:: LineNDC(x1, y1, x2, y2, color=-9, width=2.0)
+
+.. py:function:: Box(x1, x2, y1, y2, color=-9, width=2.0)
+
+.. py:function:: BoxNDC(x1, x2, y1, y2, color=-9, width=2.0)
+
+.. py:function:: textWC(x, y, text, fontsize='!', ishow=1, color='black', halign='center', valign='center', angle=0.0)
+
+.. py:function:: NDC_to_WC(x, y)
+
+.. py:function:: textNDC(x, y, text, fontsize='!', ishow=1, color='black', halign='center', valign='center', angle=0.0)
+
+.. py:function:: nrenvars(nt, varlis)
+
+.. py:function:: nparse(nt, varlis)
+
+.. py:function:: make_empty_dataframe(varlis)
+
+.. py:function:: make_dataframe(varlis='x', x='', y='', z='', s='', t='', bx='', by='', bz='')
+
+.. py:function:: set_linecolor(lcol='r')
+
+.. py:function:: h2fill(idh='?', x=1e+30, y=1e+30, w=1.0)
+
+.. py:function:: h1fill(idh=-1, x=1e+30, wei=1.0)
+
+.. py:function:: hbook2(idh=-1, tit='Histogram2D', nx=10, xmin=0.0, xmax=1.0, ny=10, ymin=0.0, ymax=1.0, overwrite=False)
+
+.. py:function:: h2reset(idh)
+
+.. py:function:: get_htitle(h)
+
+.. py:function:: set_htitle(h, title)
+
+.. py:function:: hbook1(idh=-1, tit='Histogram1D', nx=10, xmin=0.0, xmax=1.0, overwrite=False)
+
+.. py:function:: nscan(nt='?', varlis='', select='', isilent=0, ifirst=0, ilast=0)
+
+.. py:function:: nfitxy(nt='?', varlis='', select='', fitfun=None, absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, iplot=0, fitcol='!', kweedzero=1)
+
+.. py:function:: nfitg(nt='?', varlis='', select='', fitfun=None, absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, iplot=0, fitcol='!')
+
+.. py:function:: nfitp1(nt='?', varlis='', select='', fitfun=None, absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, iplot=0, fitcol='!')
+
+.. py:function:: nintern(nt='?', varlis='', select='', xint='!')
+
+.. py:function:: ninter(nt='?', varlis='', select='', xint='!')
+
+.. py:function:: nspline(nt='?', varlis='', select='', xspl='!', periodic=False)
+
+.. py:function:: nsolve(nt='?', varlis='', select='', val=0.0)
+
+.. py:function:: ndump(nt='', varlis='', select='', fout='ndump.dat', sep=' ', floatform='%.5e', k_header=True, k_index=False, decimal='.')
+
+.. py:function:: nlistcolon(varlis)
+
+.. py:function:: nreset(nt='?', varlis='')
+
+.. py:function:: ndelete(nt='?', isilent=0)
+
+.. py:function:: ncre(ntname='', nttit='', varlis='', ioverwrite=0)
+
+.. py:function:: GetIndexH2(idh='?')
+
+.. py:function:: GetIndexN(nt='?', isilent=0)
+
+.. py:function:: GetIndexNct(idh='?')
+
+.. py:function:: GetIndexH1(idh='?')
+
+.. py:function:: GetIndex(idh='?')
+
+.. py:function:: getn(idn)
+
+.. py:function:: h1opt(idh)
+
+.. py:function:: voptpar(vx, vy)
+
+.. py:function:: h1print(idh='?')
+
+.. py:function:: H1Info(idh='?')
+
+.. py:function:: H2Info(idh='?')
+
+.. py:function:: hstat2d(idh='?')
+
+.. py:function:: H1List()
+
+.. py:function:: H2List()
+
+.. py:function:: hinfo(idh)
+
+.. py:function:: hstat(idh)
+
+.. py:function:: hrms(idh, iretval=1, isilent=0)
+
+.. py:function:: hmean(idh)
+
+.. py:function:: nentry(nt='?')
+
+.. py:function:: ninfo(nt='?')
+
+.. py:function:: nlist()
+
+.. py:function:: NctList()
+
+.. py:function:: ncolumns(fname='ntuple.dat', skiphead=-1, sep=' ')
+
+.. py:function:: ncolumnsguess(fname='ntuple.dat')
+
+.. py:function:: nlook(nt='Nlook', fname='ntuple.dat', header=None, skiphead=-1, skipfoot=0, silent=0, comment='*', sep=' ', iguessncols=1, iplot=1)
+
+.. py:function:: mlook(fname='ntuple.dat', header=None, skiphead=-1, skipfoot=0, silent=0, comment='*', sep=' ', iguessncols=1, iplot=1)
+
+.. py:function:: nread(nt='', fname='ntuple.dat', header=None, skiphead=-1, skipfoot=0, silent=0, comment='*', sep=' ')
+
+.. py:function:: ncread(ntname='', varlis='', fname='ntuple.dat', header=None, skiphead=-1, skipfoot=0, silent=0, comment='*', sep=' ', iguessncols=1, ioverwrite=1)
+
+.. py:function:: h1list()
+
+.. py:function:: h2list()
+
+.. py:function:: hlist()
+
+.. py:function:: hindex(idh)
+
+.. py:function:: nproj2(nt='?', xy='', weight=1.0, select='', scalex=1.0, scaley=1.0, scalez=1.0, nx=-1, ny=-1, idh=-1, ioverwrite=1)
+
+.. py:function:: nproj2n(nt='?', xy='', weight=1.0, select='', scalex=1.0, scaley=1.0, scalez=1.0, nx=51, ny=51, idh=-1, ioverwrite=1)
+
+.. py:function:: nproj1(nt='?', var='', weight=1.0, select='', scalex=1.0, scaley=1, nx=101, idh=-1, ioverwrite=1)
+
+.. py:function:: nproj1n(nt='?', var='', weight=1.0, select='', scalex=1.0, scaley=1, nx=101, idh=-1, ioverwrite=1)
+
+.. py:function:: setnoempty(no=1)
+
+.. py:function:: getnoempty()
+
+.. py:function:: hstat1d(idh='?')
+
+.. py:function:: vstat(x='?', y='')
+
+.. py:function:: vmean(x='?', y='')
+
+.. py:function:: vcovcorr(x, y, a=1.0, b=1.0)
+
+.. py:function:: hplot1d(idh='?', plopt='2d', Tit='!', xTit='', yTit='', legend='', barwidth=-9, block=False)
+
+.. py:function:: hplot(idh, plopt='!', Tit='!', xTit='', yTit='', zTit='', legend='', block=False)
+
+.. py:function:: hplave(idh, plopt='!', Tit='!', xTit='', yTit='', zTit='', legend='', block=False)
+
+.. py:function:: geo_proz(sgeo)
+
+.. py:function:: read_window_geometry(fname='ntupplot.cfg')
+
+.. py:function:: window_geometry(geom='', fig=-1, set=True)
+
+.. py:function:: get_window_geometry(fig=-1)
+
+.. py:function:: get_window_width(fig=-1)
+
+.. py:function:: get_window_height(fig=-1)
+
+.. py:function:: window_get_title(fig=-1)
+
+.. py:function:: window_set_title(Title='', fig=-1)
+
+.. py:function:: gui_key_press(ev)
+
+.. py:function:: window(title='', geom='!', block=False, projection='2d', getconsole=True, visible=False)
+
+.. py:function:: win2(title='Win_2', geom='!', block=False, projection='2d', getconsole=True, visible=True)
+
+.. py:function:: winr(title='Win_r', geom='!', block=False, projection='2d', getconsole=True, visible=False)
+
+.. py:function:: winl(title='Win_l', geom='!', block=False, projection='2d', getconsole=True, visible=False)
+
+.. py:function:: showplot(visible=True, kpdf=0)
+
+.. py:function:: optconsole(con=True)
+
+.. py:function:: hplot2d(idh, plopt='!', block=False, scalex=1.0, scaley=1.0, scalez=1.0, cmap='', surfcolor='', tit='', xtit='', ytit='', ztit='')
+
+.. py:function:: nextcolor()
+
+.. py:function:: nexthistcolor()
+
+.. py:function:: nextmarkercolor()
+
+.. py:function:: nextlinecolor()
+
+.. py:function:: samezone(isame=1)
+
+.. py:function:: nextzones(isilent=1)
+
+.. py:function:: nextzone(projection='2d', visible=False, isame=0, caller='')
+
+.. py:function:: zone(nx=1, ny=1, kzone=1, isame='', projection='2d', visible=True)
+
+.. py:function:: window_close(win=-1)
+
+.. py:function:: wca()
+
+.. py:function:: window_clear(win=-1)
+
+.. py:function:: figure_clear(kfig=-1)
+
+.. py:function:: figure_close(kfig=-1)
+
+.. py:function:: set_title(title='Title', tfs=-9.0, titx=-9.0, tity=-9)
+
+.. py:function:: set_x_title(xtit='xTit', pos=0.5)
+
+.. py:function:: get_x_title()
+
+.. py:function:: set_z_title(ztit='zTit', pos=0.5)
+
+.. py:function:: get_z_title()
+
+.. py:function:: set_titles(gtit='', pltit='Title', xtit='xTit', ytit='yTit', ztit='')
+
+.. py:function:: set_global_title(gtit='', fontsize='!')
+
+.. py:function:: txyz(pltit='Title', xtit='', ytit='', ztit='', tfs=-9.0, xyzfs=-9, titx=-9, tity=-9, titlesize=-9)
+
+.. py:function:: null3d(xmin=-10.0, xmax=10.0, ymin=-10.0, ymax=10.0, zmin=-10.0, zmax=10.0, elev=30, azim=-60, roll=0)
+
+.. py:function:: null(xmin=-10.0, xmax=10.0, ymin=-10.0, ymax=10.0)
+
+.. py:function:: nnull(xmin=-10.0, xmax=10.0, ymin=-10.0, ymax=10.0)
+
+.. py:function:: figtext(x, y, text, fontsize='!', ishow=1)
+
+.. py:function:: textndc(x, y, text, fontsize='!', ishow=1, color='black', halign='center', valign='center', angle=0.0)
+
+.. py:function:: text3d(x, y, z, text, fontsize='!', ishow=1, fontname='', fontfamily='', color='black', halign='center', valign='center', angle=0.0)
+
+.. py:function:: text(x, y, text, fontsize='!', ishow=1, fontname='', fontfamily='', color='black', halign='center', valign='center', angle=0.0)
+
+.. py:function:: get_run_on_figure()
+
+.. py:function:: set_run_on_figure(krun=True)
+
+.. py:function:: run_on_figure(x=0.03, y=0.95, fontsize='!', ishow=1, iforce=0)
+
+.. py:function:: date_on_figure(x=0.04, y=0.02, fontsize='!', ishow=1)
+
+.. py:function:: optnrun(krun=False)
+
+.. py:function:: optrun(krun=True)
+
+.. py:function:: optndate(kdate=False)
+
+.. py:function:: optdate(kdate=True)
+
+.. py:function:: getkdate()
+
+.. py:function:: getkrun()
+
+.. py:function:: set_author(author='')
+
+.. py:function:: hcopy1d(idh, idnew, tit='', scalex=1.0, scaley=1.0, reset=0, overwrite=True)
+
+.. py:function:: hcopy2d(idh, idnew, tit='', scalex=1.0, scaley=1.0, scalez=1.0, reset=0, overwrite=True)
+
+.. py:function:: nplc(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: nplcr(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: nplcb(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: nplcc(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: nplcm(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: nplgr(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='green')
+
+.. py:function:: nplcs(nt='?', varlis='', select='', weights='', plopt='samespline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: nplcrs(nt='?', varlis='', select='', weights='', plopt='samespline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: nplcbs(nt='?', varlis='', select='', weights='', plopt='samespline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: nplccs(nt='?', varlis='', select='', weights='', plopt='samespline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: nplcms(nt='?', varlis='', select='', weights='', plopt='samespline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: nplcgs(nt='?', varlis='', select='', weights='', plopt='samespline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='green')
+
+.. py:function:: nnplc(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: nnplcr(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: nnplcb(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: nnplcc(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: nnplcm(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: nplgr(nt='?', varlis='', select='', weights='', plopt='spline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='green')
+
+.. py:function:: npll(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: nnpll(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: nplm(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: nnplm(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: npllr(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: nnpllr(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: nplmr(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: nnplmr(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: npllb(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: nplmb(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: nnpllb(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: nnplmb(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: npllc(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: nplmc(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: npllc(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: nplmy(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='yellow')
+
+.. py:function:: nnplly(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='yellow')
+
+.. py:function:: nnplmc(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: npllm(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: nplmm(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: npllg(nt='?', varlis='', select='', weights='', plopt='line', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='green')
+
+.. py:function:: nplmg(nt='?', varlis='', select='', weights='', plopt='marker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='green')
+
+.. py:function:: nplls(nt='?', varlis='', select='', weights='', plopt='sameline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: nplms(nt='?', varlis='', select='', weights='', plopt='samemarker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default')
+
+.. py:function:: npllrs(nt='?', varlis='', select='', weights='', plopt='sameline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: nplmrs(nt='?', varlis='', select='', weights='', plopt='samemarker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='red')
+
+.. py:function:: npllbs(nt='?', varlis='', select='', weights='', plopt='sameline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: nplmbs(nt='?', varlis='', select='', weights='', plopt='samemarker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='blue')
+
+.. py:function:: npllgs(nt='?', varlis='', select='', weights='', plopt='sameline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='green')
+
+.. py:function:: npllms(nt='?', varlis='', select='', weights='', plopt='sameline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: nplmms(nt='?', varlis='', select='', weights='', plopt='samemarker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: npllcs(nt='?', varlis='', select='', weights='', plopt='sameline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: nplmcs(nt='?', varlis='', select='', weights='', plopt='samemarker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='cyan')
+
+.. py:function:: npllls(nt='?', varlis='', select='', weights='', plopt='sameline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: nplmls(nt='?', varlis='', select='', weights='', plopt='samemarker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='magenta')
+
+.. py:function:: npllys(nt='?', varlis='', select='', weights='', plopt='sameline', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='yellow')
+
+.. py:function:: nplmys(nt='?', varlis='', select='', weights='', plopt='samemarker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='yellow')
+
+.. py:function:: nplmgs(nt='?', varlis='', select='', weights='', plopt='samemarker', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='green')
+
+.. py:function:: nplot(nt='?', varlis='', select='', weights='', plopt='', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='!', color='default', isort=0, nx=-1, ny=-1)
+
+.. py:function:: nprof(nt='?', varlis='', select='', weights='', plopt='', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default', isort=0)
+
+.. py:function:: nprofs(nt='?', varlis='', select='', weights='', plopt='sameprof', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default', isort=0)
+
+.. py:function:: nnplot(nt='?', varlis='', select='', weights='', plopt='', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default', isort=0)
+
+.. py:function:: nplt(nt='?', varlis='', select='', weights='', plopt='', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default', isort=0)
+
+.. py:function:: nnplt(nt='?', varlis='', select='', weights='', plopt='', legend='', scalex=1.0, scaley=1.0, scalez=1.0, scalet=1.0, cmap='', hist='HnPlot', color='default', isort=0)
+
+.. py:function:: vprint(v)
+
+.. py:function:: vprintxy(x, y)
+
+.. py:function:: vec(xmin, xmax, nx)
+
+.. py:function:: vplxy(x='!', y='!', plopt='', label='', color='!', fillcolor='none')
+
+.. py:function:: vpll(x='!', y='!', plopt='line', label='', color='!', fillcolor='none')
+
+.. py:function:: vplm(x='!', y='!', plopt='marker', label='', color='!', fillcolor='none')
+
+.. py:function:: vplls(x='!', y='!', plopt='sameline', label='', color='!', fillcolor='none')
+
+.. py:function:: vplms(x='!', y='!', plopt='samemarker', label='', color='!', fillcolor='none')
+
+.. py:function:: vplmrs(x='!', y='!', plopt='samemarker', label='', color='r', fillcolor='none')
+
+.. py:function:: vplmgs(x='!', y='!', plopt='samemarker', label='', color='g', fillcolor='none')
+
+.. py:function:: vplmbs(x='!', y='!', plopt='samemarker', label='', color='b', fillcolor='none')
+
+.. py:function:: vplmls(x='!', y='!', plopt='samemarker', label='', color='l', fillcolor='none')
+
+.. py:function:: vplmcs(x='!', y='!', plopt='samemarker', label='', color='c', fillcolor='none')
+
+.. py:function:: vpllgs(x='!', y='!', plopt='sameline', label='', color='g', fillcolor='none')
+
+.. py:function:: vpllrs(x='!', y='!', plopt='sameline', label='', color='r', fillcolor='none')
+
+.. py:function:: vpllbs(x='!', y='!', plopt='sameline', label='', color='b', fillcolor='none')
+
+.. py:function:: vpllls(x='!', y='!', plopt='sameline', label='', color='l', fillcolor='none')
+
+.. py:function:: vpllcs(x='!', y='!', plopt='sameline', label='', color='c', fillcolor='none')
+
+.. py:function:: pmark(x, y, z='!', plopt='same')
+
+.. py:function:: vplxyey(x, y, ey='', plopt='o', label='', marker='o', mfc='', mec='', ms='', mew=0)
+
+.. py:function:: vplxyerr(x, y, ey='', ex='', plopt='o', label='', marker='o', mfc='', mec='', ms='', mew=0)
+
+.. py:function:: vinter(x, y, xint='!')
+
+.. py:function:: vintern(x, y, xint='!')
+
+.. py:function:: vspline_index(x, y, nspl=1001, periodic=False, ypp1=0.0, yppn=0.0)
+
+.. py:function:: vspline(x, y, xspl='!', periodic=False, ypp1=0.0, yppn=0.0)
+
+.. py:function:: vspline_old(x, y, xspl='!', periodic=False)
+
+.. py:function:: vcopn(nt, varlis='x', x='', y='', z='', s='', t='', bx='', by='', bz='')
+
+.. py:function:: vplx(x, plopt='!')
+
+.. py:function:: nupdate_header(nt, reindex=1)
+
+.. py:function:: ndelrow(nt, irow1, irow2, reindex=1)
+
+.. py:function:: naddcol(nt, newnam='', newdef='')
+
+.. py:function:: ndelcol(nt, varlis='')
+
+.. py:function:: vsolve(x, y, val=0.0, xmin=-1e+30, xmax=1e+30)
+
+.. py:function:: vsolvelin(x, y, val=0.0)
+
+.. py:function:: voptspl(x, y)
+
+.. py:function:: set_error(text, istat=-1)
+
+.. py:function:: set_warning(text, istat=1)
+
+.. py:function:: reset_status()
+
+.. py:function:: ncopn(nt, ncnam, varlis='', select='', ioverwrite=0)
+
+.. py:function:: ncopv(nt, varlis, select='')
+
+.. py:function:: nclone(nt, ncnam, nctit='', ioverwrite=0)
+
+.. py:function:: nsort(nt, var)
+
+.. py:function:: vxy(x, y)
+
+.. py:function:: vxyz(x, y, z)
+
+.. py:function:: vsortxy(x, y)
+
+.. py:function:: vflip(v)
+
+.. py:function:: vsortx(x)
+
+.. py:function:: vwritexy(x, y, filename='vxy.dat', ifirst=-1, ilast=-1, nlines=-1)
+
+.. py:function:: vreadx(fname='ndump.dat', header=None, skiphead=0, skipfoot=0, comment='*', sep=' ')
+
+.. py:function:: vreadxy(fname='ndump.dat', header=None, skiphead=0, skipfoot=0, comment='*', sep=' ')
+
+.. py:function:: vwritex(x, filename='vx.dat')
+
+.. py:function:: vwritexyz(x, y, z, filename='vxyz.dat', ifirst=-1, ilast=-1, nlines=-1)
+
+.. py:function:: vwritexyzt(x, y, z, t, filename='vxyzt.dat', ifirst=-1, ilast=-1, nlines=-1)
+
+.. py:function:: vsmooth(vx, nsmooth=0)
+
+.. py:function:: vpeaks(x, y, pkmin=0.5, nsmooth=0, isilent=0)
+
+.. py:function:: vpeaksabs(x, y, pkmin=0.5, nsmooth=0, isilent=0)
+
+.. py:function:: hfwhm(h='?', nsmooth=0, isilent=0)
+
+.. py:function:: hfwhmabs(h='?', nsmooth=0, isilent=0)
+
+.. py:function:: nfwhmabs(nt='?', varlis='', select='', nsmooth=0, isilent=0)
+
+.. py:function:: nfwhm(nt='?', varlis='', select='', nsmooth=0, isilent=0)
+
+.. py:function:: nfwhmtot(nt='?', varlis='', select='', nsmooth=0, isilent=0)
+
+.. py:function:: vfwhmabs(x='?', y='', nsmooth=0, isilent=0)
+
+.. py:function:: vfwhm(x='?', y='', nsmooth=0, isilent=0)
+
+.. py:function:: vfwhmtot(x='?', y='', nsmooth=0, isilent=0)
+
+   Referes to only one total maximum, not to peaks like vfwhm(...) 
+
+
+.. py:function:: vfwhmtotabs(x='?', y='', nsmooth=0, isilent=0)
+
+.. py:function:: getzone(projection='')
+
+.. py:function:: set_console_title(console='Python')
+
+.. py:function:: get_console(console='')
+
+.. py:function:: getax(visible=True)
+
+.. py:function:: vplbxy(x, y, u, v, scale=-9999.0, plopt='', tit='', xtit='', ytit='', ztit='', label='', color='default')
+
+.. py:function:: nplbxy(nt='?', varlis='x:y:bx:by', select='', scale=-9999.0, plopt='', tit='', xtit='', ytit='', label='', color='default')
+
+.. py:function:: nplbxyz(nt='?', varlis='x:y:z:bx:by:bz', select='', scale=1.0, plopt='', tit='', xtit='', ytit='', ztit='', label='', color='default')
+
+.. py:function:: vplbxyz(x, y, z, u, v, w, scale, plopt='', tit='', xtit='', ytit='', ztit='', label='', color='default')
+
+.. py:function:: vplxyz(x, y, z, plopt='', tit='', xtit='', ytit='', ztit='', label='', color='default', cmap='', surfcolor='')
+
+.. py:function:: vplxyzt(x, y, z, t, plopt='', tit='', xtit='', ytit='', ztit='', label='', color='default', cmap='')
+
+.. py:function:: textbox(text, x=0.05, y=0.95, tcolor=None, bgcolor='white', alpha=0.9, rotation='horizontal')
+
+.. py:function:: shpl()
+
+.. py:function:: seed(iseed=0, plopt='')
+
+.. py:function:: vfitpoly(nord, x, y, ey='', cov='default', isilent=0, ninter=101, iretval=1, kweedzero=1)
+
+.. py:function:: vfitp1(x, y, ey='', cov='default', isilent=0, ninter=101, iretval=1, kweedzero=1)
+
+.. py:function:: gauss(x, A=0.3989422804014, mu=0.0, sig=1.0)
+
+.. py:function:: fcos(x, A=1.0, x0=0.0, L=6.283185307179586)
+
+.. py:function:: fcosh(x, A=1.0, x0=0.0, L=6.283185307179586)
+
+.. py:function:: b_to_K(bv='?', lam=None, bh=0.0)
+
+.. py:function:: K_to_b(K='?', lam=None)
+
+.. py:function:: K_to_harm(K='?', lam=None, ebeam=None)
+
+.. py:function:: b_to_harm(b='?', lam=None, ebeam=None)
+
+.. py:function:: harm_to_K(ebeam='?', lam=None, nharm=None, harm=None)
+
+.. py:function:: expo(x, a=1.0, lam=1.0)
+
+.. py:function:: expo2(x, a=1.0, lam=1.0, lam2=0.0)
+
+.. py:function:: vgauss(x, mu=0.0, sig=1.0)
+
+.. py:function:: getfitpar()
+
+.. py:function:: getfitndf()
+
+.. py:function:: getfitchi2ndf()
+
+.. py:function:: getfitchi2prob()
+
+.. py:function:: getfitsig()
+
+.. py:function:: hfit(idh, fitfun, select='', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, iplot=1, fitcol='!', kweedzero=1)
+
+.. py:function:: hfitg(idh, select='', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, iplot=1, fitcol='!', kweedzero=1)
+
+.. py:function:: vfit(fitfun, x, y, ey='', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, kweedzero=1)
+
+.. py:function:: fringefun(xin, fint, gap)
+
+.. py:function:: vfitdipole(x, y, ey='', fringemodel='quintic-spline', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, kweedzero=1)
+
+.. py:function:: vfitexp(x, y, ey='', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, kweedzero=1)
+
+.. py:function:: vfitexp2(x, y, ey='', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, iretval=1, kweedzero=1)
+
+.. py:function:: vfitgauss(x, y, ey='', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, kweedzero=1)
+
+.. py:function:: vfitcosh(x, y, ey='', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, kweedzero=1)
+
+.. py:function:: vfitcos(x, y, ey='', absolute_sigma='default', parstart=None, bounds=None, method=None, isilent=0, ninter=101, kweedzero=1)
+
+.. py:function:: hget(idh='')
+
+.. py:function:: nget(idn='')
+
+.. py:function:: hadd(h1, h2, hres, tit='')
+
+.. py:function:: hsub(h1, h2, hres, tit='')
+
+.. py:function:: hdiv(h1, h2, hres, tit='')
+
+.. py:function:: hmul(h1, h2, hres, tit='')
+
+.. py:function:: df_to_ntup(df, nt, tit='!')
+
+.. py:function:: h1copv(h, varlis='x:y', sel='')
+
+.. py:function:: vlocate(command='new')
+
+.. py:function:: setlinewidth(lw=1.5)
+
+.. py:function:: getlinewidth()
+
+.. py:function:: getisame()
+
+.. py:function:: getishow()
+
+.. py:function:: setisame(isa=1)
+
+.. py:function:: setishow(isho=1)
+
+.. py:function:: settextcolor(tc='black')
+
+.. py:function:: tred()
+
+.. py:function:: tblue()
+
+.. py:function:: tgreen()
+
+.. py:function:: tcyan()
+
+.. py:function:: tmagenta()
+
+.. py:function:: gettextcolor()
+
+.. py:function:: setlinecolor(lc='red')
+
+.. py:function:: getlinecolor()
+
+.. py:function:: sethistcolor(hc='blue')
+
+.. py:function:: gethistcolor()
+
+.. py:function:: shcolblack()
+
+.. py:function:: shcolblue()
+
+.. py:function:: shcolcyan()
+
+.. py:function:: shcolgray()
+
+.. py:function:: shcolgreen()
+
+.. py:function:: shcolmagenta()
+
+.. py:function:: shcolred()
+
+.. py:function:: shcolwhite()
+
+.. py:function:: shcolyellow()
+
+.. py:function:: slcolblack()
+
+.. py:function:: slcolblue()
+
+.. py:function:: slcolcyan()
+
+.. py:function:: slcolgray()
+
+.. py:function:: slcolgreen()
+
+.. py:function:: slcolmagenta()
+
+.. py:function:: slcolred()
+
+.. py:function:: slcolwhite()
+
+.. py:function:: slcolyellow()
+
+.. py:function:: setmarkercolor(mc='red')
+
+.. py:function:: getmarkercolor()
+
+.. py:function:: smcolblack()
+
+.. py:function:: smcolblue()
+
+.. py:function:: smcolcyan()
+
+.. py:function:: smcolgray()
+
+.. py:function:: smcolgreen()
+
+.. py:function:: smcolmagenta()
+
+.. py:function:: smcolred()
+
+.. py:function:: smcolwhite()
+
+.. py:function:: smcolyellow()
+
+.. py:data:: smcol
+
+.. py:data:: smblack
+
+.. py:data:: smblue
+
+.. py:data:: smcyan
+
+.. py:data:: smgray
+
+.. py:data:: smgreen
+
+.. py:data:: smmagenta
+
+.. py:data:: smred
+
+.. py:data:: smwhite
+
+.. py:data:: smbyellow
+
+.. py:data:: shcol
+
+.. py:data:: shblack
+
+.. py:data:: shblue
+
+.. py:data:: shcyan
+
+.. py:data:: shgray
+
+.. py:data:: shgreen
+
+.. py:data:: shmagenta
+
+.. py:data:: shred
+
+.. py:data:: shwhite
+
+.. py:data:: shbyellow
+
+.. py:data:: slcol
+
+.. py:data:: slblack
+
+.. py:data:: slblue
+
+.. py:data:: slcyan
+
+.. py:data:: slgray
+
+.. py:data:: slgreen
+
+.. py:data:: slmagenta
+
+.. py:data:: slred
+
+.. py:data:: slwhite
+
+.. py:data:: slbyellow
+
+.. py:function:: setlinestyle(ls='solid')
+
+.. py:function:: setmarkertype(ms='o')
+
+.. py:function:: setfillstyle(fs='none')
+
+.. py:function:: dot()
+
+.. py:function:: bull()
+
+.. py:function:: circle()
+
+.. py:function:: square()
+
+.. py:function:: star()
+
+.. py:function:: nextmarkertype()
+
+.. py:function:: setmarkersize(ms=6.0)
+
+.. py:function:: getmarkersize()
+
+.. py:function:: getaxislabelsize()
+
+.. py:function:: getaxistitlesize3d()
+
+.. py:function:: getaxistitledist()
+
+.. py:function:: getaxistitledist3d()
+
+.. py:function:: getaxislabeldist()
+
+.. py:function:: getaxislabeldist3d()
+
+.. py:function:: setaxislabelsize(size)
+
+.. py:function:: setaxistitlesize3d(size)
+
+.. py:function:: setaxistitlesize(size)
+
+.. py:function:: setaxistitledist(dist)
+
+.. py:function:: setaxistitledist3d(dist)
+
+.. py:function:: setaxislabeldist(dist)
+
+.. py:function:: setaxislabeldist3d(dist)
+
+.. py:function:: showparams()
+
+.. py:function:: optgrid(g=True)
+
+.. py:function:: getgrid(g=True)
+
+.. py:function:: grid(g=True)
+
+.. py:function:: nogrid(g=False)
+
+.. py:function:: getlegend()
+
+.. py:function:: optlegend(ilege=1, pos='upper right')
+
+.. py:function:: setlegendposition(pos='upper right')
+
+.. py:function:: gettitlepad()
+
+.. py:function:: settitlepad(pad=6.0)
+
+.. py:function:: getlinestyleindex(lsty)
+
+.. py:function:: getmarkertypeindex(mty)
+
+.. py:function:: getcolorindex(col)
+
+.. py:function:: getsurfcolorindex(col)
+
+.. py:function:: getcmapindex(cma)
+
+.. py:function:: getmode3dindex(cmo)
+
+.. py:function:: getwin()
+
+.. py:function:: set_win_visible(vis=True)
+
+.. py:function:: setwin(wintit)
+
+.. py:function:: getgeo()
+
+.. py:function:: nexist(nt)
+
+.. py:function:: printg3(x)
+
+.. py:function:: printg4(x)
+
+.. py:function:: printg5(x)
+
+.. py:function:: g8(x)
+
+.. py:function:: g7(x)
+
+.. py:function:: g6(x)
+
+.. py:function:: g5(x)
+
+.. py:function:: g4(x)
+
+.. py:function:: g3(x)
+
+.. py:function:: set_x_of_xlab(pos=0.5)
+
+.. py:function:: set_y_of_xlab(pos=-0.1)
+
+.. py:function:: set_x_of_ylab(pos=0.5)
+
+.. py:function:: set_y_of_ylab(pos=0.5)
+
+.. py:function:: get_y_of_ylab()
+
+.. py:function:: set_y_title_abs(ytit='yTit', pos=0.5)
+
+.. py:function:: get_y_title()
+
+.. py:function:: set_y_title(y='!')
+
+.. py:function:: get_y_title()
+
+.. py:function:: get_y_stat()
+
+.. py:function:: set_number_of_ticks(n=-9)
+
+.. py:function:: set_number_of_ticks_3d(n=-9)
+
+.. py:function:: opttitles(k=1)
+
+.. py:function:: optecho(k=1)
+
+.. py:function:: getecho()
+
+.. py:function:: getcolormap()
+
+.. py:function:: setcolormap(cmap='jet')
+
+.. py:function:: setcolorbarpad(pad='!')
+
+.. py:function:: getcolorbarpad()
+
+.. py:function:: optfit(k=1)
+
+.. py:function:: optnfit(k=1)
+
+.. py:function:: getfit()
+
+.. py:function:: optstat(k=1)
+
+.. py:function:: optnstat(k=1)
+
+.. py:function:: getstat()
+
+.. py:function:: settopmargin(mar=0.86)
+
+.. py:function:: gettopmargin()
+
+.. py:function:: setbottommargin(mar=0.92)
+
+.. py:function:: getbottommargin()
+
+.. py:function:: setrightmargin(mar=0.12)
+
+.. py:function:: getrightmargin()
+
+.. py:function:: setleftmargin(mar=0.12)
+
+.. py:function:: getleftmargin()
+
+.. py:function:: setklegend(kl=True)
+
+.. py:function:: getklegend()
+
+.. py:function:: setktitles(kt=True)
+
+.. py:function:: getktitles()
+
+.. py:function:: set_plot_params()
+
+.. py:function:: set_plot_params_3d()
+
+.. py:function:: mred()
+
+.. py:function:: mblue()
+
+.. py:function:: myellow()
+
+.. py:function:: mcyan()
+
+.. py:function:: mgreen()
+
+.. py:function:: mmagenta()
+
+.. py:function:: mgray()
+
+.. py:function:: lred()
+
+.. py:function:: lblue()
+
+.. py:function:: lyellow()
+
+.. py:function:: lcyan()
+
+.. py:function:: lgreen()
+
+.. py:function:: lmagenta()
+
+.. py:function:: lgray()
+
+.. py:function:: tred()
+
+.. py:function:: tblue()
+
+.. py:function:: tyellow()
+
+.. py:function:: tcyan()
+
+.. py:function:: tgreen()
+
+.. py:function:: tmagenta()
+
+.. py:function:: tgray()
+
+.. py:function:: lmred()
+
+.. py:function:: lmblue()
+
+.. py:function:: lmyellow()
+
+.. py:function:: lmcyan()
+
+.. py:function:: lmgreen()
+
+.. py:function:: lmmagenta()
+
+.. py:function:: lmgray()
+
+.. py:function:: lhmred()
+
+.. py:function:: lhmblue()
+
+.. py:function:: lhmyellow()
+
+.. py:function:: lhmcyan()
+
+.. py:function:: lhmgreen()
+
+.. py:function:: lhmmagenta()
+
+.. py:function:: lhmgray()
+
+.. py:function:: setfillcolor(fillcolor='none')
+
+.. py:function:: getfillcolor()
+
+.. py:data:: h1info
+
+.. py:data:: h2info
+
+.. py:data:: hfill2
+
+.. py:data:: hfill1
+
+.. py:data:: GetIndexH
+
+.. py:data:: h1index
+
+.. py:data:: h2index
+
+.. py:data:: hindex1
+
+.. py:data:: hindex2
+
+.. py:data:: h1list
+
+.. py:data:: hlist1
+
+.. py:data:: h2list
+
+.. py:data:: hlist2
+
+.. py:data:: h1book
+
+.. py:data:: h2book
+
+.. py:data:: hplot1
+
+.. py:data:: h1plot
+
+.. py:data:: hplot2
+
+.. py:data:: h2plot
+
+.. py:data:: hpl
+
+.. py:data:: wc
+
+.. py:data:: wcl
+
+.. py:data:: cc
+
+.. py:data:: pp
+
+.. py:data:: plotopt
+
+.. py:data:: ncolonlist
+
+.. py:data:: vpl
+
+.. py:data:: nupdh
+
+.. py:data:: nupdate
+
+.. py:data:: nup
+
+.. py:data:: rstat
+
+.. py:data:: medf
+
+.. py:data:: mdf
+
+.. py:data:: vton
+
+.. py:data:: vw
+
+.. py:data:: vwxy
+
+.. py:data:: vwxyz
+
+.. py:data:: vwxyt
+
+.. py:data:: setecho
+
+.. py:data:: vrxy
+
+.. py:data:: tbox
+
+.. py:data:: getzones
+
+.. py:data:: win
+
+.. py:data:: print3g
+
+.. py:data:: print4g
+
+.. py:data:: print5g
+
+.. py:data:: getconsole
+
+.. py:data:: cd
+
+.. py:data:: mkdir
+
+.. py:data:: nlc
+
+.. py:data:: nmc
+
+.. py:data:: nhc
+
+.. py:data:: pp
+
+.. py:data:: Q
+
+.. py:data:: vplotxy
+
+.. py:data:: setmarkerstyle
+
+.. py:data:: nexists
+
+.. py:data:: npl
+
+.. py:data:: nnpl
+
+.. py:data:: vexpand
+
+.. py:data:: vgrid
+
+.. py:data:: nexpand
+
+.. py:data:: ngrid
+
+.. py:data:: atan
+
+.. py:data:: polygon
+
+.. py:data:: nconcat
+
+.. py:data:: p2g
+
+.. py:data:: p3g
+
+.. py:data:: p4g
+
+.. py:data:: p5g
+
+.. py:data:: p6g
+
+.. py:data:: p7g
+
+.. py:data:: p8g
+
+.. py:data:: p9g
+
+.. py:data:: p10g
+
+.. py:data:: lmblau
+
+.. py:data:: lmrot
+
+.. py:data:: lmhellblau
+
+.. py:data:: lmlila
+
+.. py:data:: mblau
+
+.. py:data:: mrot
+
+.. py:data:: mhellblau
+
+.. py:data:: mlila
+
+.. py:data:: tblau
+
+.. py:data:: trot
+
+.. py:data:: thellblau
+
+.. py:data:: tlila
+
+.. py:data:: lblau
+
+.. py:data:: lrot
+
+.. py:data:: lhellblau
+
+.. py:data:: llila
+
+.. py:data:: lhmhellblau
+
+.. py:data:: lhmlila
+
+.. py:data:: vfitxypoly
+
+.. py:data:: circ
+
+.. py:data:: vgrafit
+
+.. py:data:: ngrafit
+
+.. py:data:: shell
+
+.. py:data:: she
+
+.. py:data:: setdump
+
+.. py:data:: ndelet
+
+.. py:data:: fexists
+
+.. py:data:: vfitg
+
+.. py:data:: cdu
+
+.. py:data:: cdd
+
+.. py:data:: cup
+
+.. py:data:: cdo
+
+.. py:data:: wcd
+
+.. py:data:: wpwd
+
+.. py:data:: nentries
+
+.. py:data:: nplp
+
+.. py:data:: xstat
+
+.. py:data:: setxstat
+
+.. py:data:: ystat
+
+.. py:data:: setystat
+
+.. py:data:: getxstat
+
+.. py:data:: getystat
+
+.. py:data:: nhull3d
+
+.. py:data:: hull3d
+
+.. py:data:: plotncyl
+
+.. py:data:: read_facets
+
+.. py:data:: nex
+
+.. py:data:: gtit
+
+.. py:data:: setgeo
+
+.. py:data:: setfit
+
+.. py:data:: tgruen
+
+.. py:data:: trot
+
+.. py:data:: tblau
+
+.. py:data:: tlila
+
+.. py:data:: thellblau
+
+.. py:data:: ryst
+
+.. py:data:: pyst
+
+.. py:data:: myst
+
+.. py:function:: plotoptions_unklar(plopt='')
+
+.. py:function:: waveray(nt='nray', fray='wave_ray.dat', iplot=1)
+
+.. py:function:: write(*args)
+
+.. py:function:: hexist(idh)
+
+.. py:function:: optitight(itight=0)
+
+.. py:function:: setxspace(xs=0.4)
+
+.. py:function:: setyspace(ys=0.5)
+
+.. py:function:: setleftmargin(m=0.12)
+
+.. py:function:: settopmargin(m=0.86)
+
+.. py:function:: setbottommargin(m=0.13)
+
+.. py:function:: setrightmargin(m=0.92)
+
+.. py:function:: chi2_crit(crit, ndf)
+
+.. py:function:: chi2_prob(ch2, ndf)
+
+.. py:function:: chi2ndf_prob(ch2n, ndf)
+
+.. py:function:: pdf(vals, cnam='x')
+
+.. py:function:: setsurfcolor(col)
+
+.. py:function:: vcross(x, y)
+
+.. py:function:: setisame(isa=1)
+
+.. py:function:: vzero(n)
+
+.. py:function:: listsub(l1, l2)
+
+.. py:function:: listnorm(l)
+
+.. py:function:: pnl()
+
+.. py:function:: ivmin(v)
+
+.. py:function:: vmin(v)
+
+.. py:function:: ivmax(v)
+
+.. py:function:: vmax(v)
+
+.. py:function:: vsymxy(x, y)
+
+.. py:function:: vminmax(x='?', y='')
+
+.. py:function:: getwavedump()
+
+.. py:function:: ngetdump(nt='Ndmp', varlis='x:y:z')
+
+.. py:function:: linear_correlation(x, y)
+
+.. py:function:: fold_gauss(x, y, sig, modus='full')
+
+.. py:function:: get_view_3d()
+
+.. py:function:: set_view_3d(elev=30, azim=-60, roll=0, ishow=1)
+
+.. py:function:: dipole(ebeam, b, curr, isilent=0, iretval=0)
+
+.. py:function:: vshiftphase(vreal, vimag, ishift=-9999, shift=9999.0)
+
+.. py:function:: getVxyzX()
+
+.. py:function:: getVxyzY()
+
+.. py:function:: getVxyzZ()
+
+.. py:function:: getVxyzE()
+
+.. py:function:: get_Imarker()
+
+.. py:function:: get_Iline()
+
+.. py:function:: set_Imarker(i)
+
+.. py:function:: set_Iline(i)
+
+.. py:function:: print_cmap(cnam='', m=-1, cfile='', ifortran=1)
+
+.. py:function:: set_statfontsize(s)
+
+.. py:function:: nphasespace_ellip(emit, beta0, s, npoi=1000)
+
+.. py:function:: set_kcolorbar(kzone, k=1)
+
+.. py:function:: get_kcolorbar(kzone)
+
+.. py:function:: nl()
+
+.. py:function:: xstp()
+
+.. py:function:: xstm()
+
+.. py:function:: ystp()
+
+.. py:function:: ystm()
+

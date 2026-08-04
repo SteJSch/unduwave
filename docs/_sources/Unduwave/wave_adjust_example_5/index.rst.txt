@@ -1,0 +1,19 @@
+wave_adjust_example_5
+=====================
+
+.. py:module:: wave_adjust_example_5
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   wave_adjust_example_5.wave_adjust
+
+
+Module Contents
+---------------
+
+.. py:function:: wave_adjust(argv)
+

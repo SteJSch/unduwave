@@ -1,0 +1,111 @@
+make_undumag_win2
+=================
+
+.. py:module:: make_undumag_win2
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   make_undumag_win2.dlls
+   make_undumag_win2.Move
+   make_undumag_win2.args
+   make_undumag_win2.nargs
+   make_undumag_win2.Sepp
+   make_undumag_win2.UI
+   make_undumag_win2.tree
+   make_undumag_win2.UINCL
+   make_undumag_win2.Iverbose
+   make_undumag_win2.Idebug
+   make_undumag_win2.Idry
+   make_undumag_win2.Iverbose
+   make_undumag_win2.Idebug
+   make_undumag_win2.Scomp
+   make_undumag_win2.Scomp_nowarn
+   make_undumag_win2.Scomp_all
+   make_undumag_win2.Scomp_omp
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   make_undumag_win2.forcomp
+   make_undumag_win2.touch
+   make_undumag_win2.Quit
+   make_undumag_win2.get_undu_tree
+   make_undumag_win2.undu_update
+
+
+Module Contents
+---------------
+
+.. py:data:: dlls
+   :value: ['libgfortran-5.dll', 'libquadmath-0.dll', 'libgcc_s_seh-1.dll', 'libgomp-1.dll', 'libwinpthread-1.dll']
+
+
+.. py:data:: Move
+   :value: 'move '
+
+
+.. py:function:: forcomp(scom)
+
+.. py:function:: touch(filename)
+
+.. py:function:: Quit(*args, delay=0)
+
+.. py:data:: args
+
+.. py:data:: nargs
+
+.. py:data:: Sepp
+   :value: '\\'
+
+
+.. py:data:: UI
+
+.. py:data:: tree
+   :value: ['bin', 'for', 'lib', 'main', 'mshcern', 'mshplt', 'python']
+
+
+.. py:data:: UINCL
+
+.. py:data:: Iverbose
+   :value: 0
+
+
+.. py:data:: Idebug
+   :value: 0
+
+
+.. py:data:: Idry
+   :value: 0
+
+
+.. py:data:: Iverbose
+
+.. py:data:: Idebug
+
+.. py:data:: Scomp
+   :value: 'x86_64-w64-mingw32-gfortran-win32 -std=legacy -c -O2 -cpp -fbacktrace...
+
+
+.. py:data:: Scomp_nowarn
+   :value: 'x86_64-w64-mingw32-gfortran-win32 -w -std=legacy -c -O2 -cpp -fbacktrace...
+
+
+.. py:data:: Scomp_all
+   :value: 'x86_64-w64-mingw32-gfortran-win32 -std=legacy -c -O2 -cpp -fcheck=all -fbacktrace...
+
+
+.. py:data:: Scomp_omp
+   :value: 'x86_64-w64-mingw32-gfortran-win32 -std=legacy -c -O2 -cpp -finit-local-zero -fcheck=all...
+
+
+.. py:function:: get_undu_tree()
+
+.. py:function:: undu_update()
+

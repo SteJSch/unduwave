@@ -1,0 +1,311 @@
+unduwave.undu_modules.undu_magnets_old
+======================================
+
+.. py:module:: unduwave.undu_modules.undu_magnets_old
+
+.. autoapi-nested-parse::
+
+   Undu_magnet definitions allowing to construct a 3D magnetic system comprissed of magnet blocks (w/o chamfers)
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_magnets_old.magnetParameters
+   unduwave.undu_modules.undu_magnets_old.point_coords
+   unduwave.undu_modules.undu_magnets_old.undu_magnets
+   unduwave.undu_modules.undu_magnets_old.undu_magnet_block_coords
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_magnets_old.rotate
+   unduwave.undu_modules.undu_magnets_old.get_magn_ignore
+   unduwave.undu_modules.undu_magnets_old.create_magnetization_unit_vec
+   unduwave.undu_modules.undu_magnets_old.get_magnet_period
+   unduwave.undu_modules.undu_magnets_old.get_magnet_struct
+
+
+Module Contents
+---------------
+
+.. py:class:: magnetParameters(len_x_main=None, len_y_main=None, len_z_main=None, magnetization=1.0, magn_unit_vec='+x', segm_x=1, segm_y=1, segm_z=1, material='mag', chamf=None, frac_y=1, frac_z=1)
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+
+   .. py:attribute:: _len_x_main
+
+
+   .. py:attribute:: _len_y_main
+
+
+   .. py:attribute:: _len_z_main
+
+
+   .. py:attribute:: _magnetization
+
+
+   .. py:attribute:: _magn_unit_vec
+
+
+   .. py:attribute:: _segm_x
+
+
+   .. py:attribute:: _segm_y
+
+
+   .. py:attribute:: _segm_z
+
+
+   .. py:attribute:: _material
+
+
+   .. py:attribute:: _chamf
+
+
+   .. py:attribute:: _frac_y
+
+
+   .. py:attribute:: _frac_z
+
+
+   .. py:method:: __eq__(other)
+
+
+.. py:class:: point_coords(x=0.0, y=0.0, z=0.0)
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initializes simple 3d vector class
+
+   :param float x: x-component
+   :param float y: y-component
+   :param float z: z-component
+
+
+   .. py:attribute:: _x
+      :value: 0.0
+
+
+
+   .. py:attribute:: _y
+      :value: 0.0
+
+
+
+   .. py:attribute:: _z
+      :value: 0.0
+
+
+
+   .. py:method:: __sub__(pnt)
+
+      Substraction of vector pnt
+
+      :param point_coords pnt: vector to substract
+
+
+
+   .. py:method:: __add__(pnt)
+
+      Addition of vector pnt
+
+      :param point_coords pnt: vector to add
+
+
+
+   .. py:method:: __eq__(other)
+
+
+   .. py:method:: __getstate__()
+
+
+   .. py:method:: __setstate__(state)
+
+
+.. py:function:: rotate(pnts, degrees, axis=point_coords(0, 0, 0), plane='yz')
+
+   Takes a list of vectors and rotates them (their component in the yz-plane).
+   The x-component of the vectors remains unchanged. Returns the rotated vectors
+
+   :param list pnts: List of point_coords to be rotated
+   :param float degrees: Degrees by which to rotate [°]
+   :param 
+
+
+.. py:class:: undu_magnets(magnet_blocks, api=None)
+
+   Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
+   extent determination
+   magnet_blocks - list of undu_magnet_block_coords objects
+
+
+   .. py:attribute:: _magnet_blocks
+
+
+   .. py:attribute:: _api
+      :value: None
+
+
+
+   .. py:method:: set_api(api=None)
+
+
+   .. py:method:: move_it(vec)
+
+
+   .. py:method:: find_magn_name(names, fnd_list=None)
+
+
+   .. py:method:: find_all_names(names=None)
+
+
+   .. py:method:: find_all_mag_blocks(mag_blocks=[])
+
+
+   .. py:method:: rotate(degrees, axis, plane='yz')
+
+
+   .. py:method:: mirror(coord='x')
+
+
+   .. py:method:: change_segm(segm_x, segm_y, segm_z, frac_y=None, frac_z=None)
+
+
+   .. py:method:: set_inactive()
+
+
+   .. py:method:: add_to_clc(magns_ignore=None, api=None, refresh=False)
+
+
+   .. py:method:: get_max_extent(maxs=None, mins=None)
+
+
+   .. py:method:: set_magnetization(magnetization, magn_unit_vec)
+
+
+   .. py:method:: get_center()
+
+
+   .. py:method:: get_period_length(name_hints=['ll'])
+
+      n_magn / n_magn_per_per = n_per
+
+
+
+.. py:class:: undu_magnet_block_coords(p_center, magnetParameters, pnts=None, name='name', mother='mother', api=None)
+
+   Implements basic undumag magnet block
+   can be moved, mirrored, incorporated into undumag-clc and the extent can be calculated
+
+   material - "magnet" or "pole"
+   chamf - if some float - chamfer is added
+
+
+   .. py:attribute:: _p_center
+
+
+   .. py:attribute:: _magnParas
+
+
+   .. py:attribute:: _name
+      :value: 'name'
+
+
+
+   .. py:attribute:: _mother
+      :value: 'mother'
+
+
+
+   .. py:attribute:: _pnts
+      :value: None
+
+
+
+   .. py:attribute:: _inactive
+      :value: False
+
+
+
+   .. py:method:: set_api(api)
+
+
+   .. py:method:: find_all_names(names=None)
+
+
+   .. py:method:: find_all_mag_blocks(mag_blocks=[])
+
+
+   .. py:method:: set_inactive()
+
+
+   .. py:method:: change_segm(segm_x, segm_y, segm_z, frac_y=None, frac_z=None)
+
+
+   .. py:method:: find_magn_name(names, fnd_list=None)
+
+
+   .. py:method:: set_magnetization(magnetization, magn_unit_vec)
+
+
+   .. py:method:: create_edge_points()
+
+
+   .. py:method:: move_it(vec)
+
+
+   .. py:method:: rotate(degrees, axis, plane='yz')
+
+
+   .. py:method:: mirror(coord='x')
+
+
+   .. py:method:: add_to_clc(magns_ignore=None, api=None)
+
+
+   .. py:method:: create_clc_txt()
+
+
+   .. py:method:: get_max_extent(maxs=None, mins=None)
+
+      determines the extent of this magnet block and compares to maxs and mins vals given, returns
+      the max and min vals
+
+
+
+.. py:function:: get_magn_ignore(n_magn_ignore, ignore_level, magns_ignore=[])
+
+   n_magn_ignore : number of magnet to be ignored
+   ignore_level : 'u'/'l' - upper or lower rows
+
+
+.. py:function:: create_magnetization_unit_vec(magn_string)
+
+.. py:function:: get_magnet_period(magn_collection, denominator, nperiod, n_el_per_period=4, offset=0)
+
+.. py:function:: get_magnet_struct(magn_collection, denominator, magn_nums=[])
+
+   Returns list of all objects whose name contains one of: 
+   { denominator and str(magn_nums[i]) | forall i}
+
+

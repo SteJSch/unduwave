@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.8. mshradia &mdash; Unduwave v0.9.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=518ffd31"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.9. make_wave" href="../make_wave/index.html" />
+    <link rel="prev" title="5.7. waveshop" href="../waveshop/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickguide.html">3. Quickguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickguide_undumag.html">4. Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">5. API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../waves/index.html">5.1. waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msh_tex/index.html">5.2. msh_tex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../m_hbook/index.html">5.3. m_hbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undugui/index.html">5.4. undugui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unduwave/index.html">5.5. unduwave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../waveplot/index.html">5.6. waveplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../waveshop/index.html">5.7. waveshop</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.8. mshradia</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">5.8.1. Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">5.8.2. Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">5.8.3. Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshObs"><code class="docutils literal notranslate"><span class="pre">mshObs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshTrf"><code class="docutils literal notranslate"><span class="pre">mshTrf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshMagPols"><code class="docutils literal notranslate"><span class="pre">mshMagPols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshNames"><code class="docutils literal notranslate"><span class="pre">mshNames</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshColors"><code class="docutils literal notranslate"><span class="pre">mshColors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshCnt"><code class="docutils literal notranslate"><span class="pre">mshCnt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshCntMembers"><code class="docutils literal notranslate"><span class="pre">mshCntMembers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshCntMaster"><code class="docutils literal notranslate"><span class="pre">mshCntMaster</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.MagVoxelField"><code class="docutils literal notranslate"><span class="pre">MagVoxelField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.PolVoxelField"><code class="docutils literal notranslate"><span class="pre">PolVoxelField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshabort"><code class="docutils literal notranslate"><span class="pre">mshabort()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshObjAddToCnt"><code class="docutils literal notranslate"><span class="pre">mshObjAddToCnt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshIsPole"><code class="docutils literal notranslate"><span class="pre">mshIsPole()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshGetObjName"><code class="docutils literal notranslate"><span class="pre">mshGetObjName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshObjDpl"><code class="docutils literal notranslate"><span class="pre">mshObjDpl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshObjDrw"><code class="docutils literal notranslate"><span class="pre">mshObjDrw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia._mshObjDrw"><code class="docutils literal notranslate"><span class="pre">_mshObjDrw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshObjCnt"><code class="docutils literal notranslate"><span class="pre">mshObjCnt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshObjPolyhdr"><code class="docutils literal notranslate"><span class="pre">mshObjPolyhdr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshTrfOrnt"><code class="docutils literal notranslate"><span class="pre">mshTrfOrnt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshTrfTrsl"><code class="docutils literal notranslate"><span class="pre">mshTrfTrsl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshTrfRot"><code class="docutils literal notranslate"><span class="pre">mshTrfRot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshqhull2d"><code class="docutils literal notranslate"><span class="pre">mshqhull2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshhull3d"><code class="docutils literal notranslate"><span class="pre">mshhull3d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.mshrect"><code class="docutils literal notranslate"><span class="pre">mshrect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mshradia.txyz"><code class="docutils literal notranslate"><span class="pre">txyz()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave/index.html">5.9. make_wave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag/index.html">5.10. make_undumag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_plot/index.html">5.11. undumag_plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_proc/index.html">5.12. undumag_proc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msh_tex_linux/index.html">5.13. msh_tex_linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_win/index.html">5.14. make_wave_win</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undu_ipylogon/index.html">5.15. undu_ipylogon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_1/index.html">5.16. wave_example_1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_6/index.html">5.17. wave_example_6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_2/index.html">5.18. wave_example_2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_win2/index.html">5.19. make_wave_win2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_8/index.html">5.20. wave_example_8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_3/index.html">5.21. wave_example_3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_7/index.html">5.22. wave_example_7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_4/index.html">5.23. wave_example_4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ipy_urad_phase/index.html">5.24. ipy_urad_phase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_5/index.html">5.25. wave_example_5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_9/index.html">5.26. wave_example_9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_intel/index.html">5.27. make_wave_intel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msh_tex_windows/index.html">5.28. msh_tex_windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_14/index.html">5.29. wave_example_14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_12/index.html">5.30. wave_example_12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_11/index.html">5.31. wave_example_11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_debug/index.html">5.32. make_wave_debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_13/index.html">5.33. wave_example_13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_12b/index.html">5.34. wave_example_12b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_12a/index.html">5.35. wave_example_12a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_12c/index.html">5.36. wave_example_12c</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_example_11a/index.html">5.37. wave_example_11a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_win/index.html">5.38. make_undumag_win</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msh_radia_example/index.html">5.39. msh_radia_example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_win2/index.html">5.40. make_undumag_win2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_debug/index.html">5.41. make_undumag_debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_undumag_static/index.html">5.42. make_undumag_static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_wave_intel_debug/index.html">5.43. make_wave_intel_debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wave_adjust_example_5/index.html">5.44. wave_adjust_example_5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../undumag_proc_msh_radia/index.html">5.45. undumag_proc_msh_radia</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">5. </span>API Reference</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.8. </span>mshradia</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Unduwave/mshradia/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-mshradia">
+<span id="mshradia"></span><h1><span class="section-number">5.8. </span>mshradia<a class="headerlink" href="#module-mshradia" title="Link to this heading"></a></h1>
+<section id="attributes">
+<h2><span class="section-number">5.8.1. </span>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshObs" title="mshradia.mshObs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshObs</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshTrf" title="mshradia.mshTrf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshTrf</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshMagPols" title="mshradia.mshMagPols"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshMagPols</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshNames" title="mshradia.mshNames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshNames</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshColors" title="mshradia.mshColors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshColors</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshCnt" title="mshradia.mshCnt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshCnt</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshCntMembers" title="mshradia.mshCntMembers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshCntMembers</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshCntMaster" title="mshradia.mshCntMaster"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshCntMaster</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.MagVoxelField" title="mshradia.MagVoxelField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MagVoxelField</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.PolVoxelField" title="mshradia.PolVoxelField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PolVoxelField</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2><span class="section-number">5.8.2. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshabort" title="mshradia.mshabort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshabort</span></code></a>([text])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshObjAddToCnt" title="mshradia.mshObjAddToCnt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshObjAddToCnt</span></code></a>(cnt, obj)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshIsPole" title="mshradia.mshIsPole"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshIsPole</span></code></a>(obj)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshGetObjName" title="mshradia.mshGetObjName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshGetObjName</span></code></a>(obj)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshObjDpl" title="mshradia.mshObjDpl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshObjDpl</span></code></a>(obj[, sopt, nam])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshObjDrw" title="mshradia.mshObjDrw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshObjDrw</span></code></a>([obj, facecolor, edgecolor, alpha, scale, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia._mshObjDrw" title="mshradia._mshObjDrw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_mshObjDrw</span></code></a>(obj[, facecolor, edgecolor, alpha, scale, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshObjCnt" title="mshradia.mshObjCnt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshObjCnt</span></code></a>([nam])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshObjPolyhdr" title="mshradia.mshObjPolyhdr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshObjPolyhdr</span></code></a>(verts, ifaces, faces, bounds, Br[, nam, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshTrfOrnt" title="mshradia.mshTrfOrnt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshTrfOrnt</span></code></a>(obj, trf)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshTrfTrsl" title="mshradia.mshTrfTrsl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshTrfTrsl</span></code></a>(dxyz)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshTrfRot" title="mshradia.mshTrfRot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshTrfRot</span></code></a>(crot, vrot, ang)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshqhull2d" title="mshradia.mshqhull2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshqhull2d</span></code></a>(x, y)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.mshhull3d" title="mshradia.mshhull3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshhull3d</span></code></a>(points[, modus])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mshradia.mshrect" title="mshradia.mshrect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mshrect</span></code></a>(x, y, z, lx, ly, lz)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mshradia.txyz" title="mshradia.txyz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">txyz</span></code></a>([pltit, xtit, ytit, ztit, tfs, xyzfs, titx, ...])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2><span class="section-number">5.8.3. </span>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.mshObs">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshObs</span></span><a class="headerlink" href="#mshradia.mshObs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.mshTrf">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshTrf</span></span><a class="headerlink" href="#mshradia.mshTrf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.mshMagPols">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshMagPols</span></span><a class="headerlink" href="#mshradia.mshMagPols" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.mshNames">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshNames</span></span><a class="headerlink" href="#mshradia.mshNames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.mshColors">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshColors</span></span><a class="headerlink" href="#mshradia.mshColors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.mshCnt">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshCnt</span></span><a class="headerlink" href="#mshradia.mshCnt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.mshCntMembers">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshCntMembers</span></span><a class="headerlink" href="#mshradia.mshCntMembers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.mshCntMaster">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshCntMaster</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#mshradia.mshCntMaster" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.MagVoxelField">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">MagVoxelField</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#mshradia.MagVoxelField" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mshradia.PolVoxelField">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">PolVoxelField</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#mshradia.PolVoxelField" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshabort">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshabort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\n***</span> <span class="pre">Aborted</span> <span class="pre">***'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshabort" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshObjAddToCnt">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshObjAddToCnt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cnt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshObjAddToCnt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshIsPole">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshIsPole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshIsPole" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshGetObjName">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshGetObjName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshGetObjName" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshObjDpl">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshObjDpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sopt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FreeSym-&gt;False'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshObjDpl" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshObjDrw">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshObjDrw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">facecolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edgecolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'black'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xyz'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cen'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshObjDrw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia._mshObjDrw">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">_mshObjDrw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">facecolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edgecolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'black'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xyz'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cen'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia._mshObjDrw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshObjCnt">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshObjCnt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshObjCnt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshObjPolyhdr">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshObjPolyhdr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ifaces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">faces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Br</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IsPole</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshObjPolyhdr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshTrfOrnt">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshTrfOrnt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshTrfOrnt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshTrfTrsl">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshTrfTrsl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxyz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshTrfTrsl" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshTrfRot">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshTrfRot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vrot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ang</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshTrfRot" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshqhull2d">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshqhull2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshqhull2d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshhull3d">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshhull3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'merge'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshhull3d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.mshrect">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">mshrect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ly</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.mshrect" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mshradia.txyz">
+<span class="sig-prename descclassname"><span class="pre">mshradia.</span></span><span class="sig-name descname"><span class="pre">txyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pltit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Title'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xtit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ytit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ztit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyzfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'10'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titlesize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'14'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mshradia.txyz" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../waveshop/index.html" class="btn btn-neutral float-left" title="5.7. waveshop" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../make_wave/index.html" class="btn btn-neutral float-right" title="5.9. make_wave" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

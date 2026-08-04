@@ -1,0 +1,291 @@
+unduwave.analytical_module.ana_undu.bfield
+==========================================
+
+.. py:module:: unduwave.analytical_module.ana_undu.bfield
+
+.. autoapi-nested-parse::
+
+   Contains the functionality for loading and processing b-field data
+
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.bfield.unduBfieldError
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.bfield.bfield
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.bfield.beffs_init_shared
+   unduwave.analytical_module.ana_undu.bfield.beffs_worker
+   unduwave.analytical_module.ana_undu.bfield.beff_grid_calc
+   unduwave.analytical_module.ana_undu.bfield.create_indefinite_integral_cs
+
+
+Module Contents
+---------------
+
+.. py:exception:: unduBfieldError
+
+   Bases: :py:obj:`Exception`
+
+
+   Common base class for all non-exit exceptions.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+.. py:function:: beffs_init_shared(all_pnts, xs, prd_lngth, n_max)
+
+.. py:function:: beffs_worker(cur_inds)
+
+.. py:function:: beff_grid_calc(all_pnts, xs, prd_lngth, n_max=10, processes=6)
+
+.. py:function:: create_indefinite_integral_cs(spline, xs, integr_limit)
+
+.. py:class:: bfield(unitsXB=[0.001, 1.0], **kwargs)
+
+   Bases: :py:obj:`unduwave.quantities.quantities.quantity`
+
+
+   Holds the bfield data
+
+   api - reference to the api class (wave or undu)
+   name : name of the quantity
+   description: some basic description
+   unit : physical unit
+   data: data-object
+   plot_name: name shown in plot
+
+
+   .. py:attribute:: _unitsXB
+      :value: [0.001, 1.0]
+
+
+
+   .. py:attribute:: _data
+
+
+   .. py:attribute:: bvals
+
+
+   .. py:attribute:: xvals
+
+
+   .. py:attribute:: zvals
+
+
+   .. py:attribute:: yvals
+
+
+   .. py:attribute:: _interpolator
+      :value: None
+
+
+
+   .. py:method:: write_field(file, cols=None, outType='std', unitsXB=None, filez=None, filex=None, data=None)
+
+
+   .. py:method:: write_field_unduOut(file, unitsXB=None, colx='x')
+
+      UndumagOut file Units are mm for the length and T for B
+
+
+
+   .. py:method:: write_field_std(file, unitsXB=None, whatStr='', colx='x')
+
+      UndumagOut file Units are mm for the length and T for B
+
+
+
+   .. py:method:: write_field_waveByz(filey, filez, unitsXB=None, colx='x')
+
+      UndumagOut file Units are mm for the length and T for B
+
+
+
+   .. py:method:: write_field_waveBxyz(filex, filey, filez, unitsXB=None, colx='x')
+
+      Outputs 3 separate files with 1D-data
+
+
+
+   .. py:method:: write_field_map(file, unitsXB=None, wave=False)
+
+
+   .. py:method:: write_field_map_undu(file, unduMap, unitsXB=None)
+
+
+   .. py:method:: fromQuants(xQuant, byQuant, bzQuant=None)
+
+
+   .. py:method:: clear_undumag_bmap_exact(undu_bmap, vHor, vVert, fileOut=None)
+
+
+   .. py:method:: load_clear_undu_map(mapFile, vHor, vVert, mapOutName)
+
+      if mapOut None the mapFile will be replaced
+
+
+
+   .. py:method:: load_field_from_file(file, fieldMap=False, cols=None, unduFile=False, radiaFile=False, header=None, skiprows=None)
+
+      If radiaFile, unduFile and fieldMap are false, the file loaded is supposed
+      to contain 1 space-dimension (ordered) and up to 3 B-components
+
+      Undufile=True : The on-axis field file from an undumag simulation is loaded,
+      that is 1-space dimension data with by,bz components.
+
+      fieldMap=True, 
+      unduFile=False
+      unduFile=True
+      Undumag field-map file is loaded
+      general 3D map (x,y,z) with full B-components
+      fileOut : If a field-map is loaded from undumag and cleared, it can be put out into this
+
+
+
+
+   .. py:method:: move(dist, colx)
+
+
+   .. py:method:: center(colx='x')
+
+
+   .. py:method:: gauge(gauge_fac)
+
+
+   .. py:method:: expandPeriodic(periodLength, nperiodsAdd, start=0.0)
+
+
+   .. py:method:: get_pos_ind(colx, valx)
+
+
+   .. py:method:: get_xvals(colx)
+
+
+   .. py:method:: set_xvals(xvals, colx)
+
+
+   .. py:method:: add_field(bfieldA, pos=None, colx='x', pntsOut=None)
+
+      Glues the field bfieldA to this field.
+      pos=None - The fields are overlayed as they are
+      'front' - start of bfieldA is shifted onto end of this data
+      'back' - end of bfieldA is shifted to start of this data
+
+
+
+
+   .. py:method:: create_harm_field(periodLength, amplitude, nperiods=None, phase_shift=0, num_pnts_per_period=100, colx='x', coly='By', deltaX=None)
+
+      Creates a sine field: 
+      amplitude*sin( k_per * x + phase_shift ) for all x lying in deltaX
+      or if deltaX=None, it is set to 
+      [ -nperiods*periodLength/2.0, nperiods*periodLength/2.0 ]
+      creates bfield class filled with data, with num_pnts_per_period pnts per period in deltaX
+
+
+
+
+   .. py:method:: create_harm_field_with_ends(periodLength, amplitude, nperiods, num_pnts_per_period=100, colx='x', coly='By', shift=0)
+
+
+   .. py:method:: clone_me()
+
+
+   .. py:method:: calc_integrals_grid(longIntrvl=None, nlongs=None, nhor=None, dhor=None, horPnts=None, horIntrvl=None, nvert=None, dvert=None, vertPnts=None, vertIntrvl=None, intrgnt_limit=400, epsrel=0.001, epsabs=1e-05, processes=1)
+
+
+   .. py:method:: calc_kicks_grid(prd_lngth, longIntrvl=None, nlongs=None, nhor=None, dhor=None, horPnts=None, horIntrvl=None, nvert=None, dvert=None, vertPnts=None, vertIntrvl=None, intrgnt_limit=400, n_max=10, epsrel=0.001, epsabs=1e-05, processes=1, method='harmonic', beamEnGeV=1)
+
+
+   .. py:method:: calc_beff_grid(prd_lngth, nlongs=None, longIntrvl=None, nhor=None, dhor=None, horPnts=None, horIntrvl=None, nvert=None, dvert=None, vertPnts=None, vertIntrvl=None, intrgnt_limit=None, n_max=10, epsrel=0.001, epsabs=1e-05, processes=1)
+
+
+   .. py:method:: find_zero_in_array(array, xs)
+
+
+   .. py:method:: find_zero_crossings(nperiods)
+
+
+   .. py:method:: find_period_length()
+
+
+   .. py:method:: getSplines()
+
+
+   .. py:method:: field_integrals()
+
+
+   .. py:method:: getTotalFieldIntegrals()
+
+
+   .. py:method:: getFieldIntegrals(colx='x')
+
+
+   .. py:method:: get_integral_data(colx='x', coly='By', intrvl=None)
+
+
+   .. py:method:: integrate_fld(xs=[None, None], colx='x', coly='By')
+
+
+   .. py:method:: compare_fields(bf, colx='x', coly='By')
+
+
+   .. py:method:: get_field_interval(intrvl, colx='x', coly='By')
+
+
+   .. py:method:: plot_fld_map(bWhat, xPos=None, yPos=None, zPos=None, nfig=None, filename=None, title=None)
+
+
+   .. py:method:: create_difference_grid(bmap, nx=None, ny=None, nz=None)
+
+
+   .. py:method:: create_grid_interpolation()
+
+      create interpolation from bvals, xvals,...
+
+
+
+   .. py:method:: get_field_map_interpol(interpolator=None, xs=None, ys=None, zs=None, nx=None, ny=None, nz=None)
+
+                      
+
+
+
+   .. py:method:: plot_fld(colx='x', coly='By', title=None, plt_extrm=False, folder='', add='', nfig=None, plot=True, save=False, filename=None)
+
+
+   .. py:method:: calc_regression_B(nfig=None, color='black', linestyle='--', nperiods=None, add='', intrvl=None, plot_it=True)
+
+
+   .. py:method:: plot_diffs(bf, colx='x', coly='By', xlims=[], folder='', add='', fun=None)
+
+
+   .. py:method:: find_best_gauge_factor(bf)
+
+
+   .. py:method:: plot_intgrls(colx='x', coly='By', folder='', add='', nfig=None, save=False, plot=True, title=None, filename=None)
+
+
+   .. py:method:: plot_zeros(colx='x', coly='By')
+
+
+   .. py:method:: plot_rel_diffs()
+
+
