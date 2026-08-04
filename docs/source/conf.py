@@ -16,6 +16,8 @@ sys.path.insert(0, os.path.abspath(here/"../.."))
 import unduwave
 autoapi_dirs = [os.path.dirname(unduwave.__file__)]
 
+print(autoapi_dirs)
+
 project = 'Unduwave'
 copyright = 'CC BY-NC'
 author = 'Stefan J. Schäfer'
