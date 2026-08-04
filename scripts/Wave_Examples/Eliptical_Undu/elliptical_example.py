@@ -53,9 +53,9 @@ Setting Undulator Parameter
 undu_paras = wave._undu_paras # getting parameter object
 undu_paras.bEffY.set(1.18)
 undu_paras.bEffZ.set(0.5)
-undu_paras.elliptUnduNumPeriods.set(10)
-undu_paras.elliptUnduPerLength.set(0.020)
-undu_paras.elliptUnduPerShift.set(0.0)
+undu_paras.numPeriods.set(10)
+undu_paras.periodLength.set(0.020)
+undu_paras.elliptUnduPerShift.set(0.25)
 
 """
 Setting Beam Parameter

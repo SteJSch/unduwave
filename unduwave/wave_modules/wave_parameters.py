@@ -173,6 +173,12 @@ class undu_paras(_attribute_collection):
 		self.planarUnduB0 = _attribute(1.0,in_name='B0HALBASY')
 		self.planarUnduPerLength = _attribute(0.02,in_name='ZLHALBASY')
 		self.planarUnduNumPeriods = _attribute(2,in_name='AHWPOL')
+
+		self.planarUnduKEasy = _attribute(0.0,in_name='PKHALBA')
+		self.planarUnduB0Easy = _attribute(1.0,in_name='B0HALBA')
+		self.planarUnduPerLengthEasy = _attribute(0.02,in_name='ZLHALBA')
+		self.planarUnduNumPeriodsEasy = _attribute(2,in_name='PERHAL')
+
 		self.undu_type = _attribute()
 
 		# Simple elliptic undulator
@@ -234,7 +240,6 @@ class undu_paras(_attribute_collection):
 		wave_mode - same as prog_parameters.wave_mode
 		"""
 		self.undu_type.set(wave_mode)
-
 		self.bEffY.set(None)
 		self.bEffZ.set(None)
 		self.unduParameterKY.set(None)
@@ -243,7 +248,6 @@ class undu_paras(_attribute_collection):
 		self.numPeriods.set(78)
 		self.lengthEndPeriodsRelative.set(1.5)
 		self.ebeam.set(ebeam)
-		self.update_values(thetaObservation=thetaObservation)
 		return self
 
 	def update_values(self,thetaObservation=0.0) :
@@ -254,12 +258,6 @@ class undu_paras(_attribute_collection):
 					if self.unduParameterKZ() is None :
 						if self.unduParameterKY() is None :
 							raise waveParaError(f"wave parameters: bEffY,bEffZ,unduParameterKZ or unduParameterKY have to be given")
-			if not (self.bEffY() is None) :
-				if not (self.unduParameterKY() is None) :
-					self.unduParameterKY.set(None)
-			if not (self.bEffZ() is None) :
-				if not (self.unduParameterKZ() is None) :
-					self.unduParameterKZ.set(None)
 			if self.elliptUnduPerShift() is None :
 				if self.undu_type=='undu_ellip' :
 					raise waveParaError(f"wave parameters: shift have to be given for elliptical mode")
@@ -286,10 +284,6 @@ class undu_paras(_attribute_collection):
 
 		self.bEffY.set(myUndu.bEffY())
 		self.bEffZ.set(myUndu.bEffZ())
-		beff=myUndu.bEff()
-		self.unduParameterKY.set(myUndu.undulatorParameterKY())
-		self.unduParameterKZ.set(myUndu.undulatorParameterKZ())
-		kval=myUndu.undulatorParameterK()
 		if (self.undu_type == 'undu_ellip') or (self.undu_type=='undu_ellip_ana') :
 
 			shift=self.elliptUnduPerShift()
@@ -300,7 +294,7 @@ class undu_paras(_attribute_collection):
 				self.elliptUnduB0Y.set(self.bEffY())
 				self.elliptUnduB0Z.set(self.bEffZ())
 			elif shift==-0.5 : # antiparallel in this crazy world
-				self.shift.set(0.0)
+				self.elliptUnduPerShift.set(0.0)
 				self.elliptUnduB0Y.set(self.bEffY())
 				self.elliptUnduB0Z.set(self.bEffY())
 			elif shift==0.5 :
@@ -312,10 +306,17 @@ class undu_paras(_attribute_collection):
 			self.elliptUnduNumPeriods.set(self.numPeriods())
 			self.elliptUnduPerLength.set(self.periodLength())
 
-		elif (self.undu_type == 'undu_easy') or (self.undu_type == 'undu_endp')\
-				or (self.undu_type == 'undu_gap') :
-			self.planarUnduK.set(None)
-			self.planarUnduB0.set(self.bEffY())
+		elif (self.undu_type == 'undu_easy') :
+
+			self.planarUnduKEasy.set(0.0)
+			self.planarUnduB0Easy.set(self.bEffY())
+			self.planarUnduPerLengthEasy.set(self.periodLength())
+			self.planarUnduNumPeriodsEasy.set(self.numPeriods())
+
+		elif (self.undu_type == 'undu_endp') or (self.undu_type == 'undu_gap') :
+			self.planarUnduK.set(0.0)
+			beffY=self.bEffY()
+			self.planarUnduB0.set(beffY)
 			self.planarUnduPerLength.set(self.periodLength())
 			if (self.undu_type == 'undu_endp') :
 				self.planarUnduNumPeriods.set(2*self.numPeriods.get()+1) # we count the number of B-field peaks here - one extra for the end-fields (odd)

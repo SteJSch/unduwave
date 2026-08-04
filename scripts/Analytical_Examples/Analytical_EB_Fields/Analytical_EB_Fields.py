@@ -79,8 +79,6 @@ ax.set_zlabel('Power [W]', fontsize=12)
 plt.savefig(dir_path+f"/power_distro_order_{order}.png"   , bbox_inches='tight')
 plt.show()
 
-pdb.set_trace()
-
 theta_vals = np.linspace(-1/ebeam.gammaFactor.get(),1/ebeam.gammaFactor.get(),100)
 phi_vals = np.linspace(0,2*math.pi,100)
 

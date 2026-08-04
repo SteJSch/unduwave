@@ -1,28 +1,25 @@
-
-import pdb
-import sys
-import os
-sys.path.insert(0, '../../../')
+import unduwave as uw
+from unduwave import undu_blocks
+from unduwave import undulatorComponents
+from unduwave.unduwave_incl import *
 
 try :
 	# works when calling script with python3 script_file
-	dir_path = os.path.dirname(os.path.realpath(__file__))
+	dir_path = Path(os.path.dirname(os.path.realpath(__file__)))
 except:
 	# works when calling script with exec from python console
-	dir_path = os.getcwd()
-
-import unduwave as uw
+	dir_path = Path(os.getcwd())
 
 res_folder='res'
-res_folder_full=dir_path+f'/{res_folder}/'
+res_folder_full=dir_path/f'{res_folder}/'
 
 undu = uw.undu(undu_mode='from_clc_file')
 undu_prog_paras = undu._prog_paras
-undu_prog_paras.res_folder.set(res_folder+'/')
+undu_prog_paras.res_folder.set(res_folder_full)
 undu_prog_paras.plotGeometry.set(1)
 
 clc_file='undumag_example.clc'
-clc_folder=dir_path+'/'
+clc_folder=dir_path
 
 undu_prog_paras.copy_clc_folder.set(clc_folder)
 undu_prog_paras.in_file_clc.set(clc_file)
@@ -93,7 +90,7 @@ bmap.plot_fld_map(
 	yPos=0.0,
 	zPos=None,
 	nfig=nfig,
-	filename=res_folder_full+"bymap.png",
+	filename=res_folder_full/"bymap.png",
 	title="By Map",
 	)
 

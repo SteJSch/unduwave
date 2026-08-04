@@ -275,6 +275,9 @@ class grid_interpolator :
 		yvals=None,
 		zvals=None,
 		) : 
+		if (len(funs.shape) == 2) : 
+			if funs.shape[0] == xvals.shape[0] : 
+				funs=funs.reshape((funs.shape[0],1,1,3))
 		self._g_xvals=np.array(xvals)
 		self._g_yvals=np.array(yvals)
 		self._g_zvals=np.array(zvals)
@@ -482,6 +485,9 @@ class grid_interpolator :
 			if save :
 				if filename is None :
 					filename = "colormap.png"
+				directory = os.path.dirname(filename)
+				if not os.path.exists(directory):
+					os.makedirs(directory)
 				plt.savefig(filename , bbox_inches='tight')
 
 			plt.draw()

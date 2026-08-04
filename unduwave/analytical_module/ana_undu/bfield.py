@@ -191,6 +191,7 @@ class bfield(quantities.quantity) :
 				doBx=False
 			if not ('Bz' in whatStr) :
 				doBz=False
+
 		with open( file, 'w') as o_f:
 			for ind, xval in enumerate(x_vals) :
 				lineStr=f"{xval*unitConvX}"
@@ -207,7 +208,7 @@ class bfield(quantities.quantity) :
 		"""
 		UndumagOut file Units are mm for the length and T for B
 		"""
-		path, fileN = os.path.split(file)
+		path, fileN = os.path.split(filey)
 		os.makedirs(path, exist_ok=True)
 		if unitsXB is None :
 			unitsXB=self._unitsXB
@@ -216,15 +217,15 @@ class bfield(quantities.quantity) :
 		x_vals=self.get_xvals(colx=colx)
 		b_vals = self.bvals
 		with open( filey, 'w') as o_f:
-			o_f.write('Comment\n')
-			o_f.write('1.0 1.0\n')
-			o_f.write(str(len(x_vals))+'\n')
+			# o_f.write('Comment\n')
+			# o_f.write('1.0 1.0\n')
+			# o_f.write(str(len(x_vals))+'\n')
 			for ind, xval in enumerate(x_vals) :
 				o_f.write(f"{xval*unitConvX} {b_vals[ind,1]*unitConvB}\n")
 		with open( filez, 'w') as o_f:
-			o_f.write('Comment\n')
-			o_f.write('1.0 1.0\n')
-			o_f.write(str(len(x_vals))+'\n')
+			# o_f.write('Comment\n')
+			# o_f.write('1.0 1.0\n')
+			# o_f.write(str(len(x_vals))+'\n')
 			for ind, xval in enumerate(x_vals) :
 				o_f.write(f"{xval*unitConvX} {b_vals[ind,2]*unitConvB}\n")
 
@@ -606,7 +607,8 @@ class bfield(quantities.quantity) :
 		elif 'z' in cols :
 			self.zvals=np.round(np.array(data['z'].to_list()),8)
 			nvals=len(self.zvals)
-		self.bvals=np.zeros((nvals,3))
+		if not (self.bvals.shape == (nvals,3)) :
+			self.bvals=np.zeros((nvals,3))
 		if 'Bx' in cols :
 			self.bvals[:,0]=data['Bx'].to_list()
 		if 'By' in cols :
@@ -985,7 +987,6 @@ class bfield(quantities.quantity) :
 			)
 
 		firstIntFuns=np.zeros( (len(xvals),len(line_intgrls),3) )
-
 		# print("here3")
 		for ind,splineVec in enumerate(line_intgrls) : 
 			longSpline=splineVec[0]
@@ -1275,7 +1276,6 @@ class bfield(quantities.quantity) :
 			npnts=nlongs,
 			intrvl=longIntrvl,
 		)
-
 		interpolation=self.create_grid_interpolation()
 		allpnts, xs, ys, zs=interpolation.get_values_on_grid(
 			xs=data_x,
@@ -1332,6 +1332,22 @@ class bfield(quantities.quantity) :
 		yzeros=self.find_zero_in_array(array=self.bvals[:,1],xs=self.xvals)
 		zzeros=self.find_zero_in_array(array=self.bvals[:,2],xs=self.xvals)
 		return yzeros, zzeros
+
+	def find_period_length(self) :
+
+		yzeros, zzeros=self.find_zero_crossings(nperiods=100)
+		prd_lngths=[]
+		for zeros in [yzeros,zzeros] :
+
+			if len(zeros) == 0 :
+				prd_lngths.append(0.0)
+				continue
+
+			lz=len(zeros)
+			middle=int(lz/2)
+			prd_lngths.append( 2*(zeros[middle+1]-zeros[middle]) )
+		prd_lngths=np.array(prd_lngths)*self._unitsXB[0]
+		return prd_lngths
 
 	def getSplines(self) : 
 		by = CubicSpline(self.xvals , self.bvals[:,1] )

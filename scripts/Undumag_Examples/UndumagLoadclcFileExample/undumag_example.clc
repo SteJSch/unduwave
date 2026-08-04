@@ -167,7 +167,7 @@ Corners obj_3_mag_sideL obj_3_mag $ColorMag_Hybrid  !key, name, mother, color
 
 & Materials
 2            ! number of material files
-1 1 1 pm_rec_77K.dat
+1 1 1 pm_rec.dat
 2 2 3 fm_vanadium_permendur.dat
 
 

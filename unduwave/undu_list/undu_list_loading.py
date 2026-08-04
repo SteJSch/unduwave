@@ -89,11 +89,13 @@ def from_el_sequence_get_obj_list_length(
 def get_set_std_val(thedict,stdVal,name=None,names=[]) :
 	if not (name is None) :
 		names=[name]
+	if not isinstance(stdVal,list) : 
+		stdVal=[stdVal for v in names ]
 	vals=()
-	for name in names :
-		val=stdVal
+	for ind, name in enumerate(names) :
+		val=stdVal[ind]
 		if not name in thedict.keys() : 
-			thedict.update({name:stdVal})
+			thedict.update({name:val})
 		else:
 			val=thedict[name]
 		vals=vals+(val,)
@@ -129,6 +131,9 @@ class undu_list_element :
 			shift=None,
 			center=None,
 			useSymmetries=True,
+			nperiods=None,
+			api=None,
+			construct_quadrants=['ll','lr','ul','ur'],
 			) :
 		undulator=None
 		try:
@@ -137,12 +142,15 @@ class undu_list_element :
 
 			unduType=unduDict['undulator']['type']
 
-			if unduType == 'Planar-Hybrid' :
+			if unduType.find('Planar')>=0:
 				undulator=self.constructPlanarHybridUndulator(
 					unduDict=unduDict,
 					gap=gap,
 					center=center,
 					useSymmetries=useSymmetries,
+					nperiods=nperiods,
+					api=api,
+					construct_quadrants=construct_quadrants,
 					)
 
 			if unduType == 'APPLE' :
@@ -152,6 +160,9 @@ class undu_list_element :
 					shift=shift,
 					center=center,
 					useSymmetries=useSymmetries,
+					nperiods=nperiods,
+					api=api,
+					construct_quadrants=construct_quadrants,
 					)
 
 			"""
@@ -173,6 +184,9 @@ class undu_list_element :
 			gap=None,
 			center=None,
 			useSymmetries=True,
+			nperiods=None,
+			api=None,
+			construct_quadrants=[],
 			) : 
 		undulator=None
 		try:
@@ -195,9 +209,10 @@ class undu_list_element :
 				raise unduListError("The accelerator entry is missing from the list")
 			accelerator=unduDict['undulator']['accelerator']
 
-			if not 'periods' in unduDict['undulator'].keys() : 
-				raise unduListError("The periods entry is missing from the list")
-			nperiods=unduDict['undulator']['periods']
+			if nperiods is None :
+				if not 'periods' in unduDict['undulator'].keys() : 
+					raise unduListError("The periods entry is missing from the list")
+				nperiods=unduDict['undulator']['periods']
 
 			if not 'minimum_gap' in unduDict['undulator'].keys() : 
 				raise unduListError("The minimum_gap entry is missing from the list")
@@ -206,19 +221,27 @@ class undu_list_element :
 				gap=minimum_gap
 			gap_range=[minimum_gap,100.0]
 
-			if not 'symmetries' in unduDict['general'].keys() : 
-				raise unduListError("The symmetries entry is missing from the list")
-			symmetries=[]
-			if useSymmetries :
-				symmetries=unduDict['general']['symmetries']
-			for ind,el in enumerate(symmetries) :
-				if el == 'X' :
-					symmetries[ind]='z'
-				elif el=='Y':
-					symmetries[ind]='y'
 			if not 'period_length' in unduDict['undulator'].keys() : 
 				raise unduListError("The period_length entry is missing from the list")
 			period_length=unduDict['undulator']['period_length']
+
+			(symmetries,)=get_set_std_val(
+				name='symmetries',
+				thedict=unduDict['general'],
+				stdVal=[[]]
+				)
+
+			(undu_type,)=get_set_std_val(
+				name='type',
+				thedict=unduDict['undulator'],
+				stdVal='Planar'
+				)
+
+			(mag_slit,)=get_set_std_val(
+				name='shim_m',
+				thedict=unduDict['undulator'],
+				stdVal=0.0
+				)
 
 			(mag_pole_slit,)=get_set_std_val(
 				name='shim_mp',
@@ -267,27 +290,107 @@ class undu_list_element :
 			fullGeometryFile=os.path.join(self._listFolder, geometry_info_file)
 			geometry_info=self.loadYAML(file=fullGeometryFile)
 
-			obj_names={ 
-				'periodic_magnet',
-				'end_magnet_1',
-				'end_magnet_2',
-				'periodic_pole',
-				'end_pole',
-			}
-
-			objectDict=self.find_construct_magnetic_objects_from_dict(
-				obj_names=obj_names,
-				geometry_info=geometry_info,
-				unduDict=unduDict,
+			(periodic_dict,)=get_set_std_val(
+				name='period',
+				thedict=unduDict,
+				stdVal={'sequence':[]}
 				)
+
+			if periodic_dict['sequence']==[] :
+				if undu_type == 'Planar' :
+					period_seq=['periodic_magnet','shim_m','periodic_magnet','shim_m','periodic_magnet','shim_m','periodic_magnet','shim_m']
+				elif undu_type == 'Planar-Hybrid' :
+					period_seq=['periodic_pole','shim_pm','periodic_magnet','shim_mp','periodic_pole','shim_pm','periodic_magnet','shim_mp']
+			else :
+				period_seq=periodic_dict['sequence']
+
+			allObjects=[]
+			for el in (period_seq) :
+				if el in unduDict.keys() :
+					if isinstance(unduDict[el],dict) :
+						if 'geometry' in unduDict[el].keys() :
+							allObjects.append(el)
 
 			magnetizationNorm=unduDict['periodic_magnet']['remanence']
 			periodicMagnetizationSequence=[el*magnetizationNorm for el in periodicMagnetizationSequence]
 
-			period_seq=['periodic_pole','shim_pm','periodic_magnet','shim_mp','periodic_pole','shim_pm','periodic_magnet','shim_mp']
+			(end_struct_dict,)=get_set_std_val(
+				name='end_struct',
+				thedict=unduDict,
+				stdVal={'type':'standard','sequence':[]}
+				)
+
+			endtype=end_struct_dict['type']
+
+			stdEnds=False
+			if undu_type == 'Planar-Hybrid' :
+				if endtype == 'standard' : 
+					end_dict_sequence=[
+						'end_magnet_1',
+						'end_magnet_2',
+						'end_pole',
+						]
+					sequence_up=['end_magnet_2','shim_mp','end_pole','shim_pm','end_magnet_1','shim_mp']
+					sequence_down=['shim_mp','periodic_pole','shim_pm','end_magnet_1','shim_mp','end_pole','shim_pm','end_magnet_2']
+
+			elif undu_type == 'Planar' :
+				if endtype == 'standard' : 
+					end_dict_sequence=[
+						'end_mag_std_1',
+						'end_mag_std_2',
+						'end_mag_std_3',
+						]
+					self.createStdEndMagnets(
+							unduDict=unduDict,
+							geometry_info=geometry_info, 
+							inName='periodic_magnet',
+							name_base='end_mag_std'
+							)
+					stdEnds=True
+					sequence_up=end_dict_sequence
+					sequence_down=end_dict_sequence
+
+			if (len(sequence_up) == 0) or (len(sequence_down) == 0) :
+				if endtype == 'user' : 
+					if 'sequence' in end_struct_dict.keys() : 
+						sequence=end_struct_dict['sequence']
+						sequence_down=sequence
+						sequence_up=sequence
+					elif 'sequence_up' in end_struct_dict.keys() : 
+						sequence_up=end_struct_dict['sequence_up']
+						if 'sequence_down' in end_struct_dict.keys() : 
+							sequence_down=end_struct_dict['sequence_down']
+						else :
+							raise unduListError("The sequence_down entry is missing from end_struct list")
+					else :
+						raise unduListError("The sequence/up/down entries are wrong or missing from end_struct list")
+				else :
+					raise unduListError("The type entry from the end_struct element is unknown")
+
+			end_dict_sequence_tmp=[]
+			for el in (sequence_down+sequence_up) :
+				if el in unduDict.keys() :
+					if isinstance(unduDict[el],dict) :
+						if 'geometry' in unduDict[el].keys() :
+							end_dict_sequence_tmp.append(el)
+
+			allObjects=allObjects+end_dict_sequence_tmp
+
+			allObjectsDict=self.find_construct_magnetic_objects_from_dict(
+				obj_names=allObjects,
+				geometry_info=geometry_info,
+				unduDict=unduDict,
+				)
+
+			if stdEnds:
+				magnLen0=allObjectsDict['periodic_magnet']['geo_info']['main_block_dimensions'][2]
+
+				sequence_up=['end_mag_std_3',0.5*magnLen0,'end_mag_std_2',0.5*magnLen0,'end_mag_std_1','shim_m']
+				sequence_down=['end_mag_std_1',0.5*magnLen0,'end_mag_std_2',0.5*magnLen0,'end_mag_std_3']
+
 			len_period, period_objects = from_el_sequence_get_obj_list_length(
 				sequence=period_seq,
-				objectDict=objectDict,
+				objectDict=allObjectsDict,
 				unduDict=unduDict,
 				center=np.array([0.0,0.0,0.0])
 				)
@@ -302,41 +405,15 @@ class undu_list_element :
 				name='period1'
 			)
 
-			(end_struct_dict,)=get_set_std_val(
-				name='end_struct',
-				thedict=unduDict,
-				stdVal={'type':'standard','sequence':[]}
-				)
-
-			mytype=end_struct_dict['type']
-			if mytype == 'standard' : 
-				sequence_up=['end_magnet_2','shim_mp','end_pole','shim_pm','end_magnet_1','shim_mp']
-				sequence_down=['shim_mp','periodic_pole','shim_pm','end_magnet_1','shim_mp','end_pole','shim_pm','end_magnet_2']
-			elif mytype == 'user' : 
-				if 'sequence' in end_struct_dict.keys() : 
-					sequence=end_struct_dict['sequence']
-					sequence_down=sequence
-					sequence_up=sequence
-				elif 'sequence_up' in end_struct_dict.keys() : 
-					sequence_up=end_struct_dict['sequence_up']
-					if 'sequence_down' in end_struct_dict.keys() : 
-						sequence_down=end_struct_dict['sequence_down']
-					else :
-						raise unduListError("The sequence_down entry is missing from end_struct list")
-				else :
-					raise unduListError("The sequence/up/down entries are wrong or missing from end_struct list")
-			else :
-				raise unduListError("The type entry from the end_struct element is unknown")
-
 			len_upStrm, upstream_end_objects = from_el_sequence_get_obj_list_length(
 				sequence=sequence_up,
-				objectDict=objectDict,
+				objectDict=allObjectsDict,
 				unduDict=unduDict,
 				center=np.array([0.0,0.0,0.0])
 				)
 			len_dwnStrm, downstream_end_objects = from_el_sequence_get_obj_list_length(
 				sequence=sequence_down,
-				objectDict=objectDict,
+				objectDict=allObjectsDict,
 				unduDict=unduDict,
 				center=np.array([0.0,0.0,0.0])
 				)
@@ -378,6 +455,7 @@ class undu_list_element :
 				shift=0.0,
 				symmetries=symmetries,
 				construct_quadrants=['ll'],
+				api=api,
 				)
 
 		except unduListError as e :
@@ -385,12 +463,44 @@ class undu_list_element :
 			print(e)
 		return undulator
 
+	def createStdEndMagnets(self,
+			unduDict,
+			geometry_info, 
+			inName='periodic_magnet',
+			name_base='end_mag'
+			) :
+
+		geometry_info_in_name=unduDict[inName]['geometry']
+		runDicts=[
+			{'name': name_base+'_1', 'fac': 0.75},
+			{'name': name_base+'_2', 'fac': 0.5},
+			{'name': name_base+'_3', 'fac': 0.25},
+			]
+
+		for run in runDicts :
+
+			unduDict.update({
+				run['name'] : copy.deepcopy(unduDict[inName])
+				})
+			unduDict[run['name']]['geometry']=run['name']
+			geometry_info.update({
+				run['name'] : copy.deepcopy(geometry_info[geometry_info_in_name])
+				})
+			geometry_info[run['name']]['main_block_dimensions'][2] = \
+				geometry_info[run['name']]['main_block_dimensions'][2]*run['fac']
+			if 'clamp_cutout' in geometry_info[run['name']].keys() :
+				geometry_info[run['name']]['clamp_cutout'][2] = \
+					geometry_info[run['name']]['clamp_cutout'][2]*run['fac']
+
 	def constructAppleUndulator(self,
 			unduDict,
 			gap=None,
 			shift=None,
 			center=None,
 			useSymmetries=True,
+			nperiods=None,
+			construct_quadrants=['ll','lr','ul','ur'],
+			api=None,
 			) : 
 		undulator=None
 		try:
@@ -428,9 +538,10 @@ class undu_list_element :
 				raise unduListError("The accelerator entry is missing from the list")
 			accelerator=unduDict['undulator']['accelerator']
 
-			if not 'periods' in unduDict['undulator'].keys() : 
-				raise unduListError("The periods entry is missing from the list")
-			nperiods=unduDict['undulator']['periods']
+			if nperiods is None :
+				if not 'periods' in unduDict['undulator'].keys() : 
+					raise unduListError("The periods entry is missing from the list")
+				nperiods=unduDict['undulator']['periods']
 
 			if not 'minimum_gap' in unduDict['undulator'].keys() : 
 				raise unduListError("The minimum_gap entry is missing from the list")
@@ -461,7 +572,12 @@ class undu_list_element :
 			(shim_m,row_slit,keeper_slit,)=get_set_std_val(
 				names=['shim_m','row_slit','keeper_slit'],
 				thedict=unduDict['undulator'],
-				stdVal=False
+				stdVal=[0.0,0.0,0.0],
+				)
+			(undu_type,)=get_set_std_val(
+				name='type',
+				thedict=unduDict['undulator'],
+				stdVal='APPLE'
 				)
 
 			"""
@@ -473,7 +589,7 @@ class undu_list_element :
 				stdVal={
 					'll' : {
 						'sequence' : 
-							['upstream_end','periodic','downstream_end']
+							['upstream_end','period','downstream_end']
 							}
 						},
 				)
@@ -524,56 +640,27 @@ class undu_list_element :
 
 			"""create the end-magnet info"""
 
-			unduDict.update({
-				'end_mag_1' : copy.deepcopy(unduDict['periodic_magnet'])
-				})
-			unduDict['end_mag_1']['geometry']='end_mag_1'
-			geometry_info.update({
-				'end_mag_1' : copy.deepcopy(geometry_info['periodic_magnet'])
-				})
-			geometry_info['end_mag_1']['main_block_dimensions'][2] = \
-				geometry_info['end_mag_1']['main_block_dimensions'][2]*0.75
-			geometry_info['end_mag_1']['clamp_cutout'][2] = \
-				geometry_info['end_mag_1']['clamp_cutout'][2]*0.75
-
-			unduDict.update({
-				'end_mag_2' : copy.deepcopy(unduDict['periodic_magnet'])
-				})
-			unduDict['end_mag_2']['geometry']='end_mag_2'
-			geometry_info.update({
-				'end_mag_2' : copy.deepcopy(geometry_info['periodic_magnet'])
-				})
-			geometry_info['end_mag_2']['main_block_dimensions'][2] = \
-				geometry_info['end_mag_2']['main_block_dimensions'][2]*0.5
-			geometry_info['end_mag_2']['clamp_cutout'][2] = \
-				geometry_info['end_mag_2']['clamp_cutout'][2]*0.5
-
-			unduDict.update({
-				'end_mag_3' : copy.deepcopy(unduDict['periodic_magnet'])
-				})
-			geometry_info.update({
-				'end_mag_3' : copy.deepcopy(geometry_info['periodic_magnet'])
-				})
-			unduDict['end_mag_3']['geometry']='end_mag_3'
-			geometry_info['end_mag_3']['main_block_dimensions'][2] = \
-				geometry_info['end_mag_3']['main_block_dimensions'][2]*0.25
-			geometry_info['end_mag_3']['clamp_cutout'][2] = \
-				geometry_info['end_mag_3']['clamp_cutout'][2]*0.25
-
-			obj_names={
-				'periodic_magnet',
-				'compensation_magnet',
-				'end_mag_1',
-				'end_mag_2',
-				'end_mag_3',
-			}
-
-			objectDict=self.find_construct_magnetic_objects_from_dict(
-				obj_names=obj_names,
-				geometry_info=geometry_info,
-				unduDict=unduDict,
+			(periodic_dict,)=get_set_std_val(
+				name='period',
+				thedict=unduDict,
+				stdVal={'sequence':[]}
 				)
-			magnLen0=objectDict['periodic_magnet']['geo_info']['main_block_dimensions'][2]
+
+			if periodic_dict['sequence'] == [] :
+				if undu_type == 'APPLE' :
+					period_seq=['periodic_magnet',shim_m,'periodic_magnet',keeper_slit,'periodic_magnet',shim_m,'periodic_magnet',keeper_slit]
+			else :
+				period_seq=periodic_dict['sequence']
+
+			three_seq=['periodic_magnet',shim_m,'periodic_magnet',shim_m,'periodic_magnet']
+			(three_seq,)=get_set_std_val(
+				name='three_keeper',
+				thedict=unduDict,
+				stdVal=[three_seq]
+				)
+
+			allObjects=period_seq
+			allObjects=allObjects+three_seq+['compensation_magnet']
 
 			magnetizationNorm=unduDict['periodic_magnet']['remanence']
 			if not isinstance(magnetizationNorm,list) :
@@ -581,50 +668,6 @@ class undu_list_element :
 			lenMagnNorm=len(magnetizationNorm)
 
 			periodicMagnetizationSequence=[el*magnetizationNorm[ind%lenMagnNorm] for ind,el in enumerate(periodicMagnetizationSequence)]
-
-			three_seq=['periodic_magnet',shim_m,'periodic_magnet',shim_m,'periodic_magnet']
-			period_seq=['periodic_magnet',shim_m,'periodic_magnet',keeper_slit,'periodic_magnet',shim_m,'periodic_magnet',keeper_slit]
-			len_period, period_objects = from_el_sequence_get_obj_list_length(
-				sequence=period_seq,
-				objectDict=objectDict,
-				unduDict=unduDict,
-				center=np.array([0.0,0.0,0.0])
-				)
-
-			if not (len_period==period_length) :
-				raise unduListError(f"Reconstructed period does not match given period! reconstructed={len_period}, given={period_length}")
-
-			period=undulatorComponents.period(
-				period_length=period_length/1e3,
-				objects=period_objects, # list of objects making up one period
-				center=np.array([0.0,0.0,0.0]),
-				name='p1'
-			)
-
-			# # creating compensation parts if needed
-			if compensation : 
-
-				compMagnLen0=objectDict['compensation_magnet']['geo_info']['main_block_dimensions'][2]
-				keeper_slit_comp=period_length/2.0-(2.0*compMagnLen0+shim_m)
-				period_seq_c=['compensation_magnet',shim_m,'compensation_magnet',keeper_slit_comp,'compensation_magnet',shim_m,'compensation_magnet',keeper_slit_comp]
-				len_period_comp, period_objects_comp = from_el_sequence_get_obj_list_length(
-					sequence=period_seq_c,
-					objectDict=objectDict,
-					unduDict=unduDict,
-					center=np.array([0.0,0.0,0.0])
-					)
-
-				if not (len_period_comp==period_length) :
-					raise unduListError(f"Reconstructed compens. period does not match given period! reconstructed={len_period_comp}, given={period_length}")
-
-				period_c=undulatorComponents.period(
-					period_length=period_length/1e3,
-					objects=period_objects_comp, # list of objects making up one period
-					center=np.array([0.0,0.0,0.0]),
-					name='pc1'
-				)
-
-				three_seq_c=['compensation_magnet',shim_m,'compensation_magnet',shim_m,'compensation_magnet']
 
 			# creating the ends
 
@@ -635,10 +678,17 @@ class undu_list_element :
 				)
 
 			mytype=end_struct_dict['type']
+			stdEnds=False
 			if mytype == 'standard' : 
-				sequence_up=['end_mag_3',0.5*magnLen0,'end_mag_2',0.5*magnLen0,'end_mag_1']
-				# minus keeper_slit in sequence_down is for closing the keeper-slit of last period
-				sequence_down=['end_mag_1',0.5*magnLen0,'end_mag_2',0.5*magnLen0,'end_mag_3']
+				stdEnds=True
+				self.createStdEndMagnets(
+						unduDict=unduDict,
+						geometry_info=geometry_info, 
+						inName='periodic_magnet',
+						name_base='end_mag_std'
+						)
+				sequence_up=['end_mag_std_3','end_mag_std_2','end_mag_std_1']
+				sequence_down=[]
 			elif mytype == 'user' : 
 				if 'sequence' in end_struct_dict.keys() : 
 					sequence=end_struct_dict['sequence']
@@ -656,6 +706,67 @@ class undu_list_element :
 				pass
 			else :
 				raise unduListError("The type entry from the end_struct element is unknown")
+			allObjects=allObjects+sequence_up+sequence_down
+
+			allObjectsTmp=[]
+			for el in allObjects :
+				if el in unduDict.keys() :
+					if isinstance(unduDict[el],dict) :
+						if 'geometry' in unduDict[el].keys() :
+							allObjectsTmp.append(el)
+
+			allObjectsDict=self.find_construct_magnetic_objects_from_dict(
+				obj_names=allObjectsTmp,
+				geometry_info=geometry_info,
+				unduDict=unduDict,
+				)
+			magnLen0=allObjectsDict['periodic_magnet']['geo_info']['main_block_dimensions'][2]
+			if stdEnds :
+				sequence_up=['end_mag_std_3',0.5*magnLen0,'end_mag_std_2',0.5*magnLen0,'end_mag_std_1']
+				# minus keeper_slit in sequence_down is for closing the keeper-slit of last period
+				sequence_down=['end_mag_std_1',0.5*magnLen0,'end_mag_std_2',0.5*magnLen0,'end_mag_std_3']
+
+			len_period, period_objects = from_el_sequence_get_obj_list_length(
+				sequence=period_seq,
+				objectDict=allObjectsDict,
+				unduDict=unduDict,
+				center=np.array([0.0,0.0,0.0])
+				)
+
+			if not (len_period==period_length) :
+				raise unduListError(f"Reconstructed period does not match given period! reconstructed={len_period}, given={period_length}")
+
+			period=undulatorComponents.period(
+				period_length=period_length/1e3,
+				objects=period_objects, # list of objects making up one period
+				center=np.array([0.0,0.0,0.0]),
+				name='p1'
+			)
+
+			# # creating compensation parts if needed
+			if compensation : 
+
+				compMagnLen0=periodicObjectsDict['compensation_magnet']['geo_info']['main_block_dimensions'][2]
+				keeper_slit_comp=period_length/2.0-(2.0*compMagnLen0+shim_m)
+				period_seq_c=['compensation_magnet',shim_m,'compensation_magnet',keeper_slit_comp,'compensation_magnet',shim_m,'compensation_magnet',keeper_slit_comp]
+				len_period_comp, period_objects_comp = from_el_sequence_get_obj_list_length(
+					sequence=period_seq_c,
+					objectDict=allObjectsDict,
+					unduDict=unduDict,
+					center=np.array([0.0,0.0,0.0])
+					)
+
+				if not (len_period_comp==period_length) :
+					raise unduListError(f"Reconstructed compens. period does not match given period! reconstructed={len_period_comp}, given={period_length}")
+
+				period_c=undulatorComponents.period(
+					period_length=period_length/1e3,
+					objects=period_objects_comp, # list of objects making up one period
+					center=np.array([0.0,0.0,0.0]),
+					name='pc1'
+				)
+
+				three_seq_c=['compensation_magnet',shim_m,'compensation_magnet',shim_m,'compensation_magnet']
 
 			rows=[]
 			for key, item in rows_dicts.items() : 
@@ -666,7 +777,7 @@ class undu_list_element :
 				objcSeqDown=[]
 				indPeriod=0
 				try:
-					indPeriod=rowSeq.index('periodic')
+					indPeriod=rowSeq.index('period')
 				except ValueError as e:
 					print("No period found")
 
@@ -690,14 +801,14 @@ class undu_list_element :
 
 				len_upStrm, upstream_end_objects = from_el_sequence_get_obj_list_length(
 					sequence=objcSeqUp,
-					objectDict=objectDict,
+					objectDict=allObjectsDict,
 					unduDict=unduDict,
 					center=np.array([0.0,0.0,0.0]),
 					)
 
 				len_dwnStrm, downstream_end_objects = from_el_sequence_get_obj_list_length(
 					sequence=objcSeqDown,
-					objectDict=objectDict,
+					objectDict=allObjectsDict,
 					unduDict=unduDict,
 					center=np.array([0.0,0.0,0.0])
 					)
@@ -772,7 +883,7 @@ class undu_list_element :
 
 					len_upStrm_c, upstream_end_objects_c1 = from_el_sequence_get_obj_list_length(
 						sequence=upSeq_c,
-						objectDict=objectDict,
+						objectDict=allObjectsDict,
 						unduDict=unduDict,
 						center=np.array([0.0,0.0,0.0]),
 						)
@@ -788,7 +899,7 @@ class undu_list_element :
 
 					len_dwnStrm_c, downstream_end_objects_c1 = from_el_sequence_get_obj_list_length(
 						sequence=downSeq_c,
-						objectDict=objectDict,
+						objectDict=allObjectsDict,
 						unduDict=unduDict,
 						center=np.array([0.0,0.0,0.0])
 						)
@@ -833,7 +944,7 @@ class undu_list_element :
 
 					len_upStrm_c, upstream_end_objects_c2 = from_el_sequence_get_obj_list_length(
 						sequence=upSeq_c,
-						objectDict=objectDict,
+						objectDict=allObjectsDict,
 						unduDict=unduDict,
 						center=np.array([0.0,0.0,0.0]),
 						)
@@ -849,7 +960,7 @@ class undu_list_element :
 
 					len_dwnStrm_c, downstream_end_objects_c2 = from_el_sequence_get_obj_list_length(
 						sequence=downSeq_c,
-						objectDict=objectDict,
+						objectDict=allObjectsDict,
 						unduDict=unduDict,
 						center=np.array([0.0,0.0,0.0])
 						)
@@ -903,7 +1014,8 @@ class undu_list_element :
 				gap_range=gap_range,
 				shift=shift,
 				symmetries=symmetries,
-				construct_quadrants=['ll','lr','ul','ur'],
+				construct_quadrants=construct_quadrants,
+				api=api,
 				# construct_quadrants=['ul'],
 				)
 
@@ -961,6 +1073,9 @@ class undu_list_element :
 				stdVal='gap',
 				name='y_alignment_0',
 				)
+			# if y_alignment_0==["gap"] :
+			# 	pdb.set_trace()
+			# 	y_alignment_0=0.0
 
 			item.update({'y_drop' : y_drop})
 			item.update({'y_alignment_0' : y_alignment_0})
@@ -991,7 +1106,7 @@ class undu_list_element :
 			if not (alignWith is None) :
 
 				if not (alignWith in resDict.keys()) :
-					raise unduListError(f"Trying alignment of {info['name']}, but target {alignWith} is missing from unduDict")
+					raise unduListError(f"Trying alignment of {objName}, but target {alignWith} is missing from unduDict")
 				my_p_center, my_maxs, my_mins=item['magn_object'].get_max_extent()
 				o_p_center, o_maxs, o_mins=resDict[alignWith]['magn_object'].get_max_extent()
 				if alignBottom : 
@@ -1223,7 +1338,7 @@ class undu_list_element :
 			fullDims=objectDict['main_block_dimensions']
 			segms=objectDict['segms']
 			fracs=objectDict['fracs']
-			frac_z=int(fracs[0]/2)
+			frac_z=int(fracs[0])
 			chamf=objectDict['chamf']
 			if chamf == 0.0 : 
 				chamf=None
@@ -1233,10 +1348,10 @@ class undu_list_element :
 			poleParasMain=undu_blocks.magParameters(
 				len_x_main=fullDims[2], 
 				len_y_main=fullDims[1],
-				len_z_main=fullDims[0]/2.0, 
+				len_z_main=fullDims[0], 
 				segm_x=segms[2],
 				segm_y=segms[1],
-				segm_z=int(segms[0]/2),
+				segm_z=int(segms[0]),
 				frac_y=fracs[1],
 				frac_z=frac_z,
 				chamf=chamf,
@@ -1300,9 +1415,9 @@ class undu_list_element :
 			cutOut=objectDict['clamp_cutout']
 			segms=objectDict['segms']
 			fracs=objectDict['fracs']
-			frac_z=int(fracs[0]/2)
-			if frac_z < 1 :
-				frac_z=1			
+			frac_z=int(fracs[0])
+			# if frac_z < 1 :
+			# 	frac_z=1			
 			chamf=objectDict['chamf']
 			if chamf == 0.0 : 
 				chamf=None			
@@ -1310,10 +1425,10 @@ class undu_list_element :
 			magnParasMain=undu_blocks.magParameters(
 				len_x_main=fullDims[2], 
 				len_y_main=fullDims[1],
-				len_z_main=fullDims[0]/2.0-cutOut[0], 
+				len_z_main=fullDims[0]-cutOut[0], 
 				segm_x=segms[2],
 				segm_y=segms[1],
-				segm_z=int(segms[0]/2),
+				segm_z=int(segms[0]),
 				frac_y=fracs[1],
 				frac_z=frac_z,
 				chamf=chamf,
@@ -1333,7 +1448,7 @@ class undu_list_element :
 				material_id=material_info['material_id'],
 			)
 
-			magnObject=magneticObjectGeometries.create_cpmuStdMagnet_geometry(
+			magnObject=magneticObjectGeometries.create_oneSidedClamps(
 				center=np.array([
 					0.0,
 					-magnParasMain._len_y_main()/2.0,

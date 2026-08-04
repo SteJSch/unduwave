@@ -3,6 +3,7 @@ import unittest
 import unduwave as uw
 from unduwave.unduwave_incl import *
 from unduwave import undu_blocks
+import unduwave.helpers.file_folder_helpers as f_h
 
 try :
 	# works when calling script with python3 script_file
@@ -165,45 +166,106 @@ class unduwave_base_test(unittest.TestCase) :
 		self.assertEqual(os.path.exists(wave_folder_full/"photon_flux_(pinhole)_248001.wvh"),True)
 		self.assertEqual(os.path.exists(wave_folder_full/"irradiated_power_dist.wva"),True)
 
-		# pdb.set_trace()
+		self.tearDown()
 
-		# traj_y.plot_over(x_quant=traj_x,nfig=nfig,nosave=True)
-		# nfig=traj_z.plot_over(x_quant=traj_x,nfig=nfig)
+	def test_undu_mat(self) :
 
-		# By.plot_over(x_quant=traj_x,nfig=nfig,nosave=True)
-		# nfig=Bz.plot_over(x_quant=traj_x,nfig=nfig)
+		self.res_folder='res'
+		self.res_folder_dir=dir_path/f'{self.res_folder}/'
 
-		# power_z = results.get_result(which='power_z')
-		# power_y = results.get_result(which='power_y')
-		# power_distro = results.get_result(which='power_distribution')
-		# nfig=power_distro.plot_over_3d(x_quant=power_y,y_quant=power_z,file_name=None,nosave=False,nfig=nfig)
+		material_folder=dir_path/'test_material/'
 
-		# en_flux = results.get_result(which='en_flux')
-		# flux = results.get_result(which='flux')
-		# nfig=flux.plot_over(x_quant=en_flux,file_name=None,nosave=False,nfig=nfig,loglog=False)
+		material_combos=[ 
+			["super_material","pm_rec","fm_vanadium_permendur"], 
+#			["super_material","super_material"], 
+#			["pm_rec","fm_vanadium_permendur"], 
+#			["pm_rec","pm_rec"], 
+#			["pm_rec","super_material"], 
+#			["fm_vanadium_permendur","super_material"], 
+			]
 
-		# en_brill = results.get_result(which='en_brill')
-		# brill0 = results.get_result(which='brill0')
-		# brill0e = results.get_result(which='brill0e')
-		# brill0f = results.get_result(which='brill0f')
-		# brill0ef = results.get_result(which='brill0ef')
-		# brill0.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=True)
-		# brill0e.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=True)
-		# brill0f.plot_over(x_quant=en_brill,nfig=nfig,nosave=True,loglog=True)
-		# nfig=brill0ef.plot_over(x_quant=en_brill,nfig=nfig,loglog=True)
+		for combo in material_combos :
 
-		# en_fd = results.get_result(which='en_fd')
-		# flux_density_onaxis = results.get_result(which='flux_density')
-		# nfig=flux_density_onaxis.plot_over(x_quant=en_fd,nfig=nfig,loglog=False)
+			undu = uw.undu(undu_mode='from_undu_magns')
+			undu_prog_paras = undu._prog_paras
+			undu_prog_paras.res_folder.set(self.res_folder_dir)
+			undu_prog_paras.plotGeometry.set(1)
+			undu_prog_paras.create_z_sym.set(0)
 
-		# flux_dens_distr_ens_loaded = results.find_load_flux_density_distribution(energies=[anaUndu.firstHarmEnergyStrong.get()])
-		# fd_y = results.get_result(which='fd_y')
-		# fd_z = results.get_result(which='fd_z')
-		# for en in flux_dens_distr_ens_loaded :
-		# 	fd = results.get_result(which=f'flux_density_distribution_{en:.2f}')
-		# 	nfig=fd.plot_over_3d(x_quant=fd_y,y_quant=fd_z,file_name=None,nosave=False,nfig=nfig)
+			undu_prog_paras.bmap_z_min.set(-20)
+			undu_prog_paras.bmap_z_max.set(20)
+			undu_prog_paras.bmap_y_min.set(0)
+			undu_prog_paras.bmap_y_max.set(0)
 
-		# pdb.set_trace()
+			undu_prog_paras.bmap_ny.set(1)
+			undu_prog_paras.bmap_nz.set(10)
+			undu_prog_paras.bmap_nx.set(10)
+
+			mat_folders=undu_prog_paras.material_files_std_folders()
+			mat_folders.append(material_folder)
+			undu_prog_paras.material_files_std_folders.set(mat_folders)
+
+			pos0=np.array([ -15.0, 0.0, 0.0 ])
+			magnet_blocks=[]
+			for ind,el in enumerate(combo) :
+
+				magn_paras=undu_blocks.magParameters(
+					len_x_main=10, 
+					len_y_main=20,
+					len_z_main=30, 
+					segm_x=2,
+					segm_y=2,
+					segm_z=2,
+					frac_y=1,
+					frac_z=1,
+					chamf=0.3,
+					material_id=el,
+				)
+
+				magnObject = undu_blocks.undumagBlockObject(
+					center=pos0,
+					magnParas=magn_paras,
+					name=f'MyMagnet{ind}',
+					parentName='',
+					api=undu,
+					)
+				magnet_blocks.append(magnObject)
+				pos0=pos0 + np.array([ 15.0, 0.0, 0.0 ])
+
+			objs=undu_blocks.undumagObjectList(
+				magnet_blocks=magnet_blocks,
+				name='magnet_pole',
+				parentName='',
+				center=np.array([0.0,0.0,0.0]),
+				)
+
+			undu.set_magnet_objects(magn_objects=objs)
+
+			undu.run()
+
+		self.tearDown()
+
+	# def test_undu_run(self) :
+
+	# 	self.res_folder='res'
+	# 	self.res_folder_dir=dir_path/f'{self.res_folder}/'
+
+	# 	ROOT_DIR=uw.ROOT_DIR/'../scripts/Wave_Examples'
+	# 	wave_script_folders=[
+	# 		ROOT_DIR/'Spec_From_BField/spec_from_by',
+	# 		ROOT_DIR/'Spec_From_BField/spec_from_byz',
+	# 		]
+
+	# 	for script in wave_script_folders :
+
+	# 		os.chdir(script)
+	# 		pyfiles=f_h.find_files_exptn(folder=script, hints=['.py'], exptns=[])
+	# 		for pyfile in pyfiles:
+	# 			subprocess.call(['python', pyfile])
+
+	# 			pdb.set_trace()
+
+	# 	self.tearDown()
 
 	def setUp(self):
 		self.resource = "Resource allocated"
@@ -215,7 +277,7 @@ class unduwave_base_test(unittest.TestCase) :
 		ROOT_DIR_TEST = Path(__file__).resolve().parent
 		del_dirs=[
 			ROOT_DIR_TEST/'__pycache__',
-			ROOT_DIR_TEST/self.res_folder,
+			ROOT_DIR_TEST/self.res_folder_dir,
 			]
 
 		for del_dir in del_dirs :

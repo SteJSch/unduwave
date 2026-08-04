@@ -1,19 +1,14 @@
-import os
-import pdb
-import sys
-sys.path.insert(0, '../../../')
+import unduwave as uw
+from unduwave.unduwave_incl import *
 
 try :
 	# works when calling script with python3 script_file
-	dir_path = os.path.dirname(os.path.realpath(__file__))
+	dir_path = Path(os.path.dirname(os.path.realpath(__file__)))
 except:
 	# works when calling script with exec from python console
-	dir_path = os.getcwd()
+	dir_path = Path(os.getcwd())
 
-import unduwave as uw
-
-field_folder = f'/'
-res_folder = dir_path+'/res/'
+res_folder = dir_path/'res/'
 
 """
 Getting wave
@@ -30,7 +25,7 @@ bfield=uw.bfield.bfield(
 	)
 
 bfield.load_field_from_file(
-			file=dir_path+'/field_map.map', 
+			file=dir_path/'field_map.map', 
 			fieldMap=True,
 			cols=['x','y','z','Bx','By','Bz'],
 			unduFile = False, 

@@ -6,22 +6,20 @@
 Welcome to the unduwave docs
 ==============================
 
-This package provides basic functionality to run WAVE and Undumag from python. 
+This package bundles functionality for magnetic field calculations for a wide variety of magnet arrangements and calculations of radiation emitted by electron beams traversing those magnetic fields.
 
 .. note::
-    This project is under active development. |
+    This project is under active development. 
     
 Contents
 --------
 
 .. toctree::
     :maxdepth: 2
-    :numbered:
 
     introduction
     installation
     quickguide
-    quickguide_undumag
 
 Indices and tables
 ==================

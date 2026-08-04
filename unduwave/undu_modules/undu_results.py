@@ -237,13 +237,17 @@ class undu_results :
 		num2 = float(text_forces[1].strip()[3:] + '.' + text_forces[2].strip()[0:3])
 		num3 = float(text_forces[2].strip()[3:] + '.' + text_forces[3].strip()[0:3])
 		force_components = np.array([num1, num2, num3])
-	
-		# text_torques = text_torques.split('.') # gives 4 elements, each number has 3 after comma
-		# num1 = float(text_torques[0].strip() + text_torques[1].strip()[0:3])
-		# num2 = float(text_torques[1].strip()[3:] + text_torques[2].strip()[0:3])
-		# num3 = float(text_torques[2].strip()[3:] + text_torques[3].strip()[0:3])
-		# torque_components = [num1, num2, num3]
-		return force_components, torque_components
+		try:
+			text_torques = text_torques.split(' ') # gives 4 elements, each number has 3 after comma
+			allTorques=[]
+			for el in text_torques :
+				el=el.strip()
+				if len(el) < 1 :
+					continue
+				allTorques.append(float(el))
+		except:
+			pass
+		return force_components, allTorques
 
 	def extract_summary(self,add='') : 
 		file_name = f'undumag{add}.beff'

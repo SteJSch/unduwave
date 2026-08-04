@@ -76,7 +76,6 @@ class endConfig(undu_blocks.undumagObjectList) :
 
 	@staticmethod
 	def loadFromDict(dictParas) : 
-
 		endBlcks=undu_blocks.undumagObjectList.loadFromDict(dictParas=dictParas)
 		end=endConfig(
 			name=dictParas['name'],
@@ -95,7 +94,7 @@ class row(undu_blocks.undumagObjectList) :
 		period_length,
 		nperiods,
 		periodicMagnetizationSequence,
-		pos='',
+		pos='ll',
 		downstream_end=None,
 		upstream_end=None,
 		api=None,
@@ -246,8 +245,14 @@ class row(undu_blocks.undumagObjectList) :
 	@staticmethod
 	def loadFromDict(dictParas,nperiods=None) : 
 		nperiod=period.loadFromDict(dictParas['periodic_part'])
-		downstream_end=endConfig.loadFromDict(dictParas['downstream_end'])
-		upstream_end=endConfig.loadFromDict(dictParas['upstream_end'])
+		downstream_end=None
+		upstream_end=None
+		if 'downstream_end' in dictParas.keys() : 
+			if not (dictParas['downstream_end'] == {} ) : 
+				downstream_end=endConfig.loadFromDict(dictParas['downstream_end'])
+		if 'upstream_end' in dictParas.keys() : 
+			if not (dictParas['upstream_end'] == {} ) : 
+				upstream_end=endConfig.loadFromDict(dictParas['upstream_end'])
 		if nperiods is None :
 			nperiods=dictParas['nperiods']
 
@@ -270,6 +275,7 @@ class undulator(undu_blocks.undumagObjectList) :
 	def __init__(self,
 		rows,
 		gap,
+		period_length,
 		gap_range=None,
 		shift=0.0,
 		shifts=None,
@@ -280,7 +286,7 @@ class undulator(undu_blocks.undumagObjectList) :
 		api=None,
 		name='',
 		accelerator='',
-		period_length=None,
+		symmetries=[],
 		nperiods=None,
 		**kwargs,
 		) :
@@ -299,6 +305,7 @@ class undulator(undu_blocks.undumagObjectList) :
 			self._shift_range=shift_range
 			self._period_length=period_length
 			self._nperiods=nperiods
+			self._symmetries=symmetries
 
 			period_lengths=[]
 			nperiods=[]
@@ -313,7 +320,6 @@ class undulator(undu_blocks.undumagObjectList) :
 					shfts = [-shift,0.0,0.0,shift]
 				elif shift > 0 :
 					shfts = [shift,0.0,0.0,shift]
-
 			quadrants={
 					'll_rows':[],'ll_obj' : None,'ll_shifts' : np.array([shfts[2],0.0,0.0]),
 					'lr_rows':[],'lr_obj' : None,'lr_shifts' : np.array([shfts[3],0.0,0.0]),

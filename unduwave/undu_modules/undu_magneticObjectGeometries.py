@@ -186,7 +186,7 @@ def create_cpmuStdPole_geometry(
 	# 	magnet_blocks=[main_block,upper_side_block_left,lower_side_block_left,upper_side_block_right,lower_side_block_right]
 	# 	)
 
-def create_cpmuStdMagnet_geometry(
+def create_oneSidedClamps(
 		center,
 		magnParasMain,
 		magnParasSide,
