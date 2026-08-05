@@ -79,13 +79,7 @@ undu.set_force_calc(
 	segmentations=np.array([20,50,50]),
 	)
 
-# undu.run()
-results = undu.get_results()
-forces=results._summary['force']
-torques=results._summary['torque']
-print(f"The forces are {forces}, and torques: {torques}")
-
-# undu.run()
+undu.run()
 
 results = undu.get_results()
 

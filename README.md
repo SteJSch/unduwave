@@ -16,7 +16,7 @@ To install this package run:
 
 ## Get started using unduwave
 
-To get started, see the documentation on [github pages](https://stejsch.github.io/unduwave), or on [readthedocs](https://unduwave.readthedocs.io/en/latest/).
+To get started, see the documentation on [github pages](https://stejsch.github.io/unduwave), or on [readthedocs](https://unduwave.readthedocs.io/en/latest/) (which weirdly do not show the autoapi sections).
 
 ## How to cite unduwave
 
