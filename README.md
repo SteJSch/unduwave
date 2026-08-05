@@ -20,7 +20,7 @@ To get started, see the documentation on [github pages](https://stejsch.github.i
 
 ## How to cite unduwave
 
-citation information here
+[1] S. Schäfer. M. Scheer. (2026). unduwave. [Online]. Available: https://github.com/SteJSch/unduwave
 
 ## Version
 
