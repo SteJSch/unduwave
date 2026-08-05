@@ -1,5 +1,5 @@
-unduwave
-========
+:py:mod:`unduwave`
+==================
 
 .. py:module:: unduwave
 
@@ -9,57 +9,38 @@ unduwave
 
 
 
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   analytical_module/index.rst
+   api/index.rst
+   attribute_classes/index.rst
+   helpers/index.rst
+   optimization_module/index.rst
+   quantities/index.rst
+   undu_list/index.rst
+   undu_modules/index.rst
+   wave_modules/index.rst
+
+
 Submodules
 ----------
-
 .. toctree::
+   :titlesonly:
    :maxdepth: 1
 
-   /Unduwave/unduwave/analytical_module/index
-   /Unduwave/unduwave/api/index
-   /Unduwave/unduwave/attribute_classes/index
-   /Unduwave/unduwave/constants/index
-   /Unduwave/unduwave/helpers/index
-   /Unduwave/unduwave/optimization_module/index
-   /Unduwave/unduwave/quantities/index
-   /Unduwave/unduwave/undu_list/index
-   /Unduwave/unduwave/undu_modules/index
-   /Unduwave/unduwave/unduwave_incl/index
-   /Unduwave/unduwave/wave_modules/index
+   constants/index.rst
+   unduwave_incl/index.rst
 
 
-Attributes
-----------
-
-.. autoapisummary::
-
-   unduwave.cm_inch
-   unduwave.ROOT_DIR
-   unduwave.fein_const
-   unduwave.hbar
-   unduwave.q_el
-   unduwave.m_el
-   unduwave.v_c
-   unduwave.mu0
-   unduwave.eps0
-   unduwave.R_el
-   unduwave.cm_inch
-   unduwave.ROOT_DIR
-   unduwave.dir_path
-   unduwave.cm_inch
-   unduwave.ROOT_DIR
-
-
-Exceptions
-----------
-
-.. autoapisummary::
-
-   unduwave.waveParaError
-
+Package Contents
+----------------
 
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
@@ -85,8 +66,9 @@ Classes
    unduwave.undu_results
 
 
+
 Functions
----------
+~~~~~~~~~
 
 .. autoapisummary::
 
@@ -101,12 +83,30 @@ Functions
    unduwave.unit_velocity_from_trans_angles
 
 
-Package Contents
-----------------
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.cm_inch
+   unduwave.ROOT_DIR
+   unduwave.fein_const
+   unduwave.hbar
+   unduwave.q_el
+   unduwave.m_el
+   unduwave.v_c
+   unduwave.mu0
+   unduwave.eps0
+   unduwave.R_el
+   unduwave.cm_inch
+   unduwave.ROOT_DIR
+   unduwave.dir_path
+   unduwave.cm_inch
+   unduwave.ROOT_DIR
+
 
 .. py:data:: cm_inch
-   :value: 0.39370078740157477
-
 
    Conversion factor cm to inch
 
@@ -122,13 +122,15 @@ Package Contents
 
 .. py:function:: combine_strings(str_add, str_add_to)
 
+
 .. py:function:: unit_velocity_from_trans_angles(hor_angle, vert_angle)
+
 
 .. py:data:: ROOT_DIR
 
-.. py:data:: fein_const
-   :value: 0.0072992700729927005
+   
 
+.. py:data:: fein_const
 
    Fein Structure Constant
 
@@ -136,13 +138,11 @@ Package Contents
 .. py:data:: hbar
    :value: 1.054e-34
 
-
    Planck's constant devided by 2 pi
 
 
 .. py:data:: q_el
    :value: 1.602e-19
-
 
    Charge of electron, [C]
 
@@ -150,13 +150,11 @@ Package Contents
 .. py:data:: m_el
    :value: 9.109e-31
 
-
    mass pf electron [kg]
 
 
 .. py:data:: v_c
    :value: 299792458
-
 
    velocity of light [m/s]
 
@@ -164,20 +162,21 @@ Package Contents
 .. py:data:: mu0
    :value: 1.25663706127e-06
 
-
    Vacuum permittivity [F/m]
 
 
 .. py:data:: eps0
    :value: 8.854e-12
 
-
    classical electron radius [m]
 
 
 .. py:data:: R_el
 
+   
+
 .. py:class:: wave(wave_mode='undu_endp')
+
 
    
    Wave API-class for controlling basic wave-functionality. 
@@ -186,29 +185,33 @@ Package Contents
    :param str wave_mode: can be one of the following
            'bfield', 'undu_ellip', 'undu_endp' :
 
-
    .. py:attribute:: _prog_paras
 
+      
 
    .. py:attribute:: _ebeam_paras
 
+      
 
    .. py:attribute:: _screen_paras
 
+      
 
    .. py:attribute:: _spectrometer_paras
 
+      
 
    .. py:attribute:: _bfield_paras
 
+      
 
    .. py:attribute:: _undu_paras
 
+      
 
    .. py:method:: run(add='')
 
       Runs wave with the given settings, prepares and postprocesses data
-
 
 
    .. py:method:: get_results(add='')
@@ -218,6 +221,7 @@ Package Contents
 
 
 .. py:class:: undu(undu_mode='from_undu_magns', magn_objects=None)
+
 
    
    Undumag API-class for controlling basic undumag-functionality. 
@@ -230,10 +234,6 @@ Package Contents
    the undu_magns classes.
    change
 
-
-   .. py:attribute:: _prog_paras
-
-
    .. py:method:: set_magnet_objects(magn_objects=None)
 
 
@@ -242,12 +242,10 @@ Package Contents
       Runs undumag with the given settings, prepares and postprocesses data.
 
 
-
    .. py:method:: load_clc_raw()
 
       Loads a raw-clc file template from the folder set in prog_paras.in_file_folder+prog_paras.in_file_clc_raw.
       After loading prog_paras.in_file_clc_lines holds the list representation of the file in form of a list of strings.
-
 
 
    .. py:method:: set_force_calc(object, segmentations=np.array([20, 50, 50]))
@@ -258,7 +256,6 @@ Package Contents
 
 
 
-
    .. py:method:: get_results(add='')
 
       Returns the results from a given simulation as result-object.
@@ -266,6 +263,7 @@ Package Contents
 
 
 .. py:class:: _attribute(value=None, name=None, in_name=None, unit='', fac=None, *args, **kwargs)
+
 
    Represents an attribute with a value.
 
@@ -280,25 +278,7 @@ Package Contents
    :param str unit: The physical unit of the quantity
    'param float fac': gauging factor
 
-
-   .. py:attribute:: _value
-      :value: None
-
-
-
-   .. py:attribute:: _in_name
-      :value: None
-
-
-
-   .. py:attribute:: _unit
-      :value: ''
-
-
-
-   .. py:attribute:: _fac
-      :value: None
-
+   .. py:property:: name
 
 
    .. py:method:: set(value)
@@ -306,11 +286,9 @@ Package Contents
       Sets the value
 
 
-
    .. py:method:: get()
 
       Returns the value
-
 
 
    .. py:method:: get_fac()
@@ -318,11 +296,9 @@ Package Contents
       Returns scaling factor
 
 
-
    .. py:method:: set_name(name)
 
       Setting the name
-
 
 
    .. py:method:: set_in_name(in_name)
@@ -330,26 +306,27 @@ Package Contents
       Setting the in-name
 
 
-
    .. py:method:: get_in_name()
 
       Returns in-name
 
 
-
    .. py:method:: __eq__(other)
+
+      Return self==value.
 
 
    .. py:method:: __call__()
 
 
-   .. py:property:: name
-
-
    .. py:method:: __str__()
+
+      Return str(self).
 
 
    .. py:method:: __repr__()
+
+      Return repr(self).
 
 
    .. py:method:: __iter__()
@@ -361,7 +338,9 @@ Package Contents
    .. py:method:: __setstate__(state)
 
 
+
 .. py:class:: _attribute_collection(*args, **kwargs)
+
 
    Represents a collection of attributes with children.
    This is a class containing attributes as class-members.
@@ -369,17 +348,10 @@ Package Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: _children
-      :value: []
-
-
-
    .. py:method:: _add_attributes()
 
       Scans all class members, finds those of type _attribute and sets those 
       as new attributes
-
 
 
    .. py:method:: show_all_children()
@@ -387,11 +359,9 @@ Package Contents
       Prints the names of the children
 
 
-
    .. py:method:: children()
 
       Yields the children of the _attribute_collection.
-
 
 
    .. py:method:: __iter__()
@@ -406,8 +376,6 @@ Package Contents
 
 
 .. py:data:: cm_inch
-   :value: 0.39370078740157477
-
 
    Conversion factor cm to inch
 
@@ -423,11 +391,16 @@ Package Contents
 
 .. py:function:: combine_strings(str_add, str_add_to)
 
+
 .. py:function:: unit_velocity_from_trans_angles(hor_angle, vert_angle)
+
 
 .. py:data:: ROOT_DIR
 
+   
+
 .. py:class:: _attribute(value=None, name=None, in_name=None, unit='', fac=None, *args, **kwargs)
+
 
    Represents an attribute with a value.
 
@@ -442,25 +415,7 @@ Package Contents
    :param str unit: The physical unit of the quantity
    'param float fac': gauging factor
 
-
-   .. py:attribute:: _value
-      :value: None
-
-
-
-   .. py:attribute:: _in_name
-      :value: None
-
-
-
-   .. py:attribute:: _unit
-      :value: ''
-
-
-
-   .. py:attribute:: _fac
-      :value: None
-
+   .. py:property:: name
 
 
    .. py:method:: set(value)
@@ -468,11 +423,9 @@ Package Contents
       Sets the value
 
 
-
    .. py:method:: get()
 
       Returns the value
-
 
 
    .. py:method:: get_fac()
@@ -480,11 +433,9 @@ Package Contents
       Returns scaling factor
 
 
-
    .. py:method:: set_name(name)
 
       Setting the name
-
 
 
    .. py:method:: set_in_name(in_name)
@@ -492,26 +443,27 @@ Package Contents
       Setting the in-name
 
 
-
    .. py:method:: get_in_name()
 
       Returns in-name
 
 
-
    .. py:method:: __eq__(other)
+
+      Return self==value.
 
 
    .. py:method:: __call__()
 
 
-   .. py:property:: name
-
-
    .. py:method:: __str__()
+
+      Return str(self).
 
 
    .. py:method:: __repr__()
+
+      Return repr(self).
 
 
    .. py:method:: __iter__()
@@ -523,7 +475,9 @@ Package Contents
    .. py:method:: __setstate__(state)
 
 
+
 .. py:class:: _attribute_collection(*args, **kwargs)
+
 
    Represents a collection of attributes with children.
    This is a class containing attributes as class-members.
@@ -531,17 +485,10 @@ Package Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: _children
-      :value: []
-
-
-
    .. py:method:: _add_attributes()
 
       Scans all class members, finds those of type _attribute and sets those 
       as new attributes
-
 
 
    .. py:method:: show_all_children()
@@ -549,11 +496,9 @@ Package Contents
       Prints the names of the children
 
 
-
    .. py:method:: children()
 
       Yields the children of the _attribute_collection.
-
 
 
    .. py:method:: __iter__()
@@ -569,10 +514,12 @@ Package Contents
 
 .. py:data:: dir_path
 
+   
+
 .. py:exception:: waveParaError
 
-   Bases: :py:obj:`Exception`
 
+   Bases: :py:obj:`Exception`
 
    Common base class for all non-exit exceptions.
 
@@ -581,8 +528,8 @@ Package Contents
 
 .. py:class:: ebeam_parameters
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Defining basic electron-beam parameters
    beam_en - Beam energy in [GeV]
@@ -599,55 +546,6 @@ Package Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: beam_en
-
-
-   .. py:attribute:: gammaFactor
-
-
-   .. py:attribute:: alphaFactor
-
-
-   .. py:attribute:: betaFactor
-
-
-   .. py:attribute:: current
-
-
-   .. py:attribute:: beamSizeHor
-
-
-   .. py:attribute:: beamDiveHor
-
-
-   .. py:attribute:: beamSizeVer
-
-
-   .. py:attribute:: beamDiveVer
-
-
-   .. py:attribute:: espread
-
-
-   .. py:attribute:: emittanceHor
-
-
-   .. py:attribute:: emittanceVer
-
-
-   .. py:attribute:: betaFunctionHor
-
-
-   .. py:attribute:: betaFunctionVer
-
-
-   .. py:attribute:: circumference
-
-
-   .. py:attribute:: rdipol
-
-
    .. py:method:: get_std_bessy_III_paras()
 
 
@@ -660,10 +558,11 @@ Package Contents
    .. py:method:: update_values()
 
 
+
 .. py:class:: screen_parameters
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Basic screen parameters
    screen_extent_hor/vert - width and height of pinhole [mm]
@@ -673,35 +572,14 @@ Package Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: screen_extent_hor
-
-
-   .. py:attribute:: screen_extent_vert
-
-
-   .. py:attribute:: screen_pos_x
-
-
-   .. py:attribute:: screen_pos_y
-
-
-   .. py:attribute:: screen_pos_z
-
-
-   .. py:attribute:: screen_segm_hor
-
-
-   .. py:attribute:: screen_segm_vert
-
-
    .. py:method:: get_std_paras()
+
 
 
 .. py:class:: spectrometer_paras
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Basic spectrometer parameters
    spectrum_min_energy, spectrum_max_energy - Energie at which to start/end spectrum calculation [eV]
@@ -711,32 +589,14 @@ Package Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: spectrum_min_energy
-
-
-   .. py:attribute:: spectrum_max_energy
-
-
-   .. py:attribute:: spectrum_n_energies
-
-
-   .. py:attribute:: spectrum_undu_mode
-
-
-   .. py:attribute:: spectrum_wigg_mode
-
-
-   .. py:attribute:: spectrum_dipole_mode
-
-
    .. py:method:: get_std_paras()
+
 
 
 .. py:class:: undu_paras
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Parameters controlling the generation of the B-Field inside WAVE
 
@@ -755,73 +615,6 @@ Package Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: ebeam
-
-
-   .. py:attribute:: planarUnduK
-
-
-   .. py:attribute:: planarUnduB0
-
-
-   .. py:attribute:: planarUnduPerLength
-
-
-   .. py:attribute:: planarUnduNumPeriods
-
-
-   .. py:attribute:: planarUnduKEasy
-
-
-   .. py:attribute:: planarUnduB0Easy
-
-
-   .. py:attribute:: planarUnduPerLengthEasy
-
-
-   .. py:attribute:: planarUnduNumPeriodsEasy
-
-
-   .. py:attribute:: undu_type
-
-
-   .. py:attribute:: elliptUnduB0Y
-
-
-   .. py:attribute:: elliptUnduB0Z
-
-
-   .. py:attribute:: elliptUnduNumPeriods
-
-
-   .. py:attribute:: elliptUnduPerLength
-
-
-   .. py:attribute:: elliptUnduPerShift
-
-
-   .. py:attribute:: bEffY
-
-
-   .. py:attribute:: bEffZ
-
-
-   .. py:attribute:: unduParameterKY
-
-
-   .. py:attribute:: unduParameterKZ
-
-
-   .. py:attribute:: periodLength
-
-
-   .. py:attribute:: numPeriods
-
-
-   .. py:attribute:: lengthEndPeriodsRelative
-
-
    .. py:method:: set_paras_from_bessyII_undu_list(unduName)
 
 
@@ -831,14 +624,14 @@ Package Contents
       wave_mode - same as prog_parameters.wave_mode
 
 
-
    .. py:method:: update_values(thetaObservation=0.0)
+
 
 
 .. py:class:: bfield_paras
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Represents a collection of attributes with children.
    This is a class containing attributes as class-members.
@@ -846,272 +639,29 @@ Package Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: field_folder
-
-
-   .. py:attribute:: bfield
-
-
    .. py:attribute:: field_type
 
       Possible Types: 
       By / Byz / Bxyz / Bmap
 
 
-
    .. py:method:: get_std_paras(bfield=None)
+
 
 
 .. py:class:: wave_prog_parameters
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Represents standard parameters for wave simulations.
 
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: wave_curr_folder
-
-
-   .. py:attribute:: wave_stage_folder
-
-
-   .. py:attribute:: wave_prog_folder
-
-
-   .. py:attribute:: in_file_folder
-
-
-   .. py:attribute:: in_files
-
-
-   .. py:attribute:: field_folder
-
-
-   .. py:attribute:: field_files
-
-
-   .. py:attribute:: four_file
-
-
-   .. py:attribute:: res_folder
-
-
-   .. py:attribute:: wave_data_res_folder
-
-
-   .. py:attribute:: pics_folder
-
-
-   .. py:attribute:: res_summary_file
-
-
-   .. py:attribute:: no_copy
-
-
-   .. py:attribute:: wave_ending_extract
-
-
-   .. py:attribute:: wave_ending_copy
-
-
-   .. py:attribute:: wave_files_essentials
-
-
-   .. py:attribute:: wave_res_copy_behaviour
-
-
-   .. py:attribute:: zip_res_folder
-
-
-   .. py:attribute:: nthreads
-
-
-   .. py:attribute:: zipped
-
-
-   .. py:attribute:: calc_spectrum
-
-
-   .. py:attribute:: calc_emittance
-
-
-   .. py:attribute:: calc_energy_fold
-
-
-   .. py:attribute:: emittance_fold_with_sigmas
-
-
-   .. py:attribute:: ipin
-
-
-   .. py:attribute:: observationPnts
-
-
-   .. py:attribute:: observationFile
-
-
-   .. py:attribute:: applyFilter
-
-
-   .. py:attribute:: filterFile
-
-
-   .. py:attribute:: powerOutputObsrvtnPnts
-
-
-   .. py:attribute:: magseq
-
-
-   .. py:attribute:: magseqFile
-
-
-   .. py:attribute:: cx1
-
-
-   .. py:attribute:: cy1
-
-
-   .. py:attribute:: cz1
-
-
-   .. py:attribute:: wc1
-
-
-   .. py:attribute:: hc1
-
-
-   .. py:attribute:: cx2
-
-
-   .. py:attribute:: cy2
-
-
-   .. py:attribute:: cz2
-
-
-   .. py:attribute:: wc2
-
-
-   .. py:attribute:: hc2
-
-
-   .. py:attribute:: source_point_calc
-
-
-   .. py:attribute:: ihisascii
-
-
-   .. py:attribute:: ntupgrid
-
-
-   .. py:attribute:: rayfile
-
-
-   .. py:attribute:: electron_intermediate_x
-
-
-   .. py:attribute:: electron_x0
-
-
-   .. py:attribute:: electron_y0
-
-
-   .. py:attribute:: electron_z0
-
-
-   .. py:attribute:: electron_end_x
-
-
-   .. py:attribute:: electron_vx0
-
-
-   .. py:attribute:: electron_vy0
-
-
    .. py:attribute:: electron_vz0
 
       Writing Field-Maps
-
-
-
-   .. py:attribute:: bxmapmin
-
-
-   .. py:attribute:: bxmapmax
-
-
-   .. py:attribute:: bxmapn
-
-
-   .. py:attribute:: bymapmin
-
-
-   .. py:attribute:: bymapmax
-
-
-   .. py:attribute:: bymapn
-
-
-   .. py:attribute:: bzmapmin
-
-
-   .. py:attribute:: bzmapmax
-
-
-   .. py:attribute:: bzmapn
-
-
-   .. py:attribute:: b_type
-
-
-   .. py:attribute:: irbtab
-
-
-   .. py:attribute:: irfileb0
-
-
-   .. py:attribute:: iwfilf
-
-
-   .. py:attribute:: irfilf
-
-
-   .. py:attribute:: nfourwls
-
-
-   .. py:attribute:: ifour0
-
-
-   .. py:attribute:: iwbmap
-
-
-   .. py:attribute:: irbtabzy
-
-
-   .. py:attribute:: irbtabxyz
-
-
-   .. py:attribute:: undu_easy
-
-
-   .. py:attribute:: undu_endp
-
-
-   .. py:attribute:: undu_gap
-
-
-   .. py:attribute:: undu_ellip
-
-
-   .. py:attribute:: undu_ellip_ana
-
-
-   .. py:attribute:: wave_mode
 
 
    .. py:method:: get_std_paras(wave_mode='undu_easy')
@@ -1126,13 +676,11 @@ Package Contents
       - wave_mode = 'undu_gap'
 
 
-
    .. py:method:: update_values(bfield_paras=None)
 
 
-.. py:data:: cm_inch
-   :value: 0.39370078740157477
 
+.. py:data:: cm_inch
 
    Conversion factor cm to inch
 
@@ -1148,11 +696,16 @@ Package Contents
 
 .. py:function:: combine_strings(str_add, str_add_to)
 
+
 .. py:function:: unit_velocity_from_trans_angles(hor_angle, vert_angle)
+
 
 .. py:data:: ROOT_DIR
 
+   
+
 .. py:class:: wave_postprocess(wave_api)
+
 
    A class for postprocessing WAVE files.
 
@@ -1161,15 +714,10 @@ Package Contents
 
    Takes external api and create postprocess class
 
-
-   .. py:attribute:: _wave_api
-
-
    .. py:method:: copy_results(add='')
 
       Cleans the wave-stage folder and copies the desired files to their location,
       deletes non-desired files, and zips the results based on the wave_res_copy_behaviour setting.
-
 
 
    .. py:method:: cleanup()
@@ -1183,19 +731,13 @@ Package Contents
 
 .. py:class:: wave_prepare(wave_api)
 
+
    _summary_
 
    Args:
            wave_api (wave_api): Standard Parameters used for the simulation
 
    Ini wave-prepare class for setting everything up for calcs
-
-
-   .. py:attribute:: _wave_api
-
-
-   .. py:attribute:: _all_paras
-
 
    .. py:method:: create_wave_input()
 
@@ -1204,7 +746,6 @@ Package Contents
       Loads the input file set in wave_paras, updates properties 
       based on other wave_paras properties,and copies the 
       resulting file to the WAVE program folder.
-
 
 
    .. py:method:: prepare_b_files_for_wave()
@@ -1218,18 +759,12 @@ Package Contents
 
 .. py:class:: wave_control(wave_api, current_folder=None)
 
+
    Internal API for the WAVE program
 
    Initialize the internal API
    wave_api : external wave_api class
    current_folder : folder to which you want to jump back after wave was run
-
-
-   .. py:attribute:: _wave_api
-
-
-   .. py:attribute:: wave_folder
-
 
    .. py:method:: run()
 
@@ -1241,36 +776,13 @@ Package Contents
 
 .. py:class:: wave_results(wave_api)
 
+
    
    Init wave-result class holding all the results
-
-
-   .. py:attribute:: _wave_api
-
-
-   .. py:attribute:: _res_quantities
-      :value: []
-
-
-
-   .. py:attribute:: _summary
-      :value: None
-
-
-
-   .. py:attribute:: _res_folder
-
-
-   .. py:attribute:: _res_folder_wave
-
-
-   .. py:attribute:: _res_folder_pics
-
 
    .. py:method:: load_from_res_folder(add='')
 
       goes through folder and loads all results it can find, flux, flux_d, brilliance
-
 
 
    .. py:method:: writeSummary()
@@ -1285,7 +797,6 @@ Package Contents
               folder (str): The folder containing the WAVE run files.
 
 
-
    .. py:method:: find_load_flux_density_distribution(energies, add='')
 
       Finds the distribution that is closed to each energy in energies, loads y/z data and flux distribution and adds them to the
@@ -1294,11 +805,9 @@ Package Contents
       energies - list of energies in eV at which flux distribution is to be plotted
 
 
-
    .. py:method:: find_load_stokes(add='')
 
       Loads on-axis flux-density
-
 
 
    .. py:method:: find_load_flux_density_on_axis(add='')
@@ -1306,11 +815,9 @@ Package Contents
       Loads on-axis flux-density
 
 
-
    .. py:method:: find_load_brilliance(add='')
 
       Loads brilliance data
-
 
 
    .. py:method:: find_load_flux(add='')
@@ -1318,17 +825,14 @@ Package Contents
       Loads flux through pinhole
 
 
-
    .. py:method:: find_load_power_distribution(add='')
 
       Loads power-distribution data
 
 
-
    .. py:method:: find_load_trajectory_bfield_data(add='')
 
       Loads trajectory-bfield data
-
 
 
    .. py:method:: get_result(which)
@@ -1339,6 +843,7 @@ Package Contents
 
 .. py:class:: undu_postprocess(undu_api)
 
+
    A class for postprocessing Undumag files.
 
    Args:
@@ -1346,15 +851,10 @@ Package Contents
 
    Takes external api and create postprocess class
 
-
-   .. py:attribute:: _undu_api
-
-
    .. py:method:: copy_results(add='')
 
       Cleans the undumag-stage folder and copies the desired files to their location,
       deletes non-desired files, and zips the results based on the undu_res_copy_behaviour setting.
-
 
 
    .. py:method:: process_radia_out(radia_file, add='')
@@ -1366,11 +866,12 @@ Package Contents
 
 
 
-
    .. py:method:: clear_map_file(touchedFiles=[], add='')
 
 
+
 .. py:class:: undu_prepare(undu_api)
+
 
    _summary_
 
@@ -1378,13 +879,6 @@ Package Contents
            undu_api (undu_api): Standard Parameters used for the simulation
 
    Ini wave-prepare class for setting everything up for calcs
-
-
-   .. py:attribute:: _undu_api
-
-
-   .. py:attribute:: _all_paras
-
 
    .. py:method:: update_materials_section_in_clc(clc_lines)
 
@@ -1394,7 +888,6 @@ Package Contents
       Writes/Wrote the clc file from some parameter list - but this is deprecated for now
 
 
-
    .. py:method:: create_fresh_nam()
 
       Updates the nam file from parameters.
@@ -1402,7 +895,6 @@ Package Contents
       Loads the input file set in undu_paras, updates properties 
       based on other undu_paras properties,and copies the 
       resulting file to the Undu program folder.
-
 
 
    .. py:method:: prepare_material_files()
@@ -1419,19 +911,13 @@ Package Contents
 
 .. py:class:: undu_control(undu_api)
 
+
    
    An object for controling undumag, allowing to run simulations
 
    :param undu_api undu_api: external wave_api class
    :param current_folder: folder to which you want to jump back after wave was run
    :type current_folder: str or None
-
-
-   .. py:attribute:: _undu_api
-
-
-   .. py:attribute:: _undu_folder
-
 
    .. py:method:: run()
 
@@ -1441,42 +927,12 @@ Package Contents
 
 .. py:class:: undu_results(undu_api=None)
 
+
    
    This class is for this and that
 
    :param parameter1: my favorite int
    :param parameter2: my favorite class
-
-
-   .. py:attribute:: _undu_api
-      :value: None
-
-
-
-   .. py:attribute:: _res_quantities
-      :value: []
-
-
-
-   .. py:attribute:: _summary
-      :value: None
-
-
-
-   .. py:attribute:: _res_folder
-      :value: None
-
-
-
-   .. py:attribute:: _res_folder_undu
-      :value: None
-
-
-
-   .. py:attribute:: _res_folder_pics
-      :value: None
-
-
 
    .. py:method:: load_from_res_folder(add='')
 
@@ -1485,7 +941,6 @@ Package Contents
       :param parameter1: my favorite int
       :param parameter2: my favorite class
       :return: returns some nothing
-
 
 
    .. py:method:: load_field_map(add='', res_folder=None)

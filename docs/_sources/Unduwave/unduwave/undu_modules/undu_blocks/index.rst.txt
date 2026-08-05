@@ -1,5 +1,5 @@
-unduwave.undu_modules.undu_blocks
-=================================
+:py:mod:`unduwave.undu_modules.undu_blocks`
+===========================================
 
 .. py:module:: unduwave.undu_modules.undu_blocks
 
@@ -9,16 +9,11 @@ unduwave.undu_modules.undu_blocks
 
 
 
-Exceptions
-----------
-
-.. autoapisummary::
-
-   unduwave.undu_modules.undu_blocks.unduBlockError
-
+Module Contents
+---------------
 
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
@@ -28,8 +23,9 @@ Classes
    unduwave.undu_modules.undu_blocks.undumagBlockObject
 
 
+
 Functions
----------
+~~~~~~~~~
 
 .. autoapisummary::
 
@@ -40,13 +36,11 @@ Functions
    unduwave.undu_modules.undu_blocks.get_magnet_struct
 
 
-Module Contents
----------------
 
 .. py:exception:: unduBlockError
 
-   Bases: :py:obj:`Exception`
 
+   Bases: :py:obj:`Exception`
 
    Common base class for all non-exit exceptions.
 
@@ -55,38 +49,14 @@ Module Contents
 
 .. py:class:: magnetic_material(material_id=None, base_material_type=None, ksi_easy=None, ksi_perp=None, magnetization_data=None, magnetization_file=None)
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Represents a collection of attributes with children.
    This is a class containing attributes as class-members.
    The class members are administered in unison.
 
    Initialize the attribute collection
-
-
-   .. py:attribute:: _base_material_type
-
-
-   .. py:attribute:: _material_id
-
-
-   .. py:attribute:: _ksi_easy
-
-
-   .. py:attribute:: _ksi_perp
-
-
-   .. py:attribute:: _magnetization_file
-
-
-   .. py:attribute:: _magnetization_data
-
-
-   .. py:attribute:: _ini
-      :value: False
-
-
 
    .. py:method:: initialize()
 
@@ -101,10 +71,8 @@ Module Contents
       :staticmethod:
 
 
-
    .. py:method:: add_new_to_material_list(theList, other)
       :staticmethod:
-
 
 
    .. py:method:: __eq__(other)
@@ -115,8 +83,8 @@ Module Contents
 
 .. py:class:: magParameters(material_id=None, len_x_main=None, len_y_main=None, len_z_main=None, magnetization=1.0, magn_unit_vec='+x', segm_x=1, segm_y=1, segm_z=1, chamf=None, frac_y=1, frac_z=1, **kwargs)
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Represents a collection of attributes with children.
    This is a class containing attributes as class-members.
@@ -124,44 +92,10 @@ Module Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: _len_x_main
-
-
-   .. py:attribute:: _len_y_main
-
-
-   .. py:attribute:: _len_z_main
-
-
-   .. py:attribute:: _magnetization
-
-
-   .. py:attribute:: _magn_unit_vec
-
-
-   .. py:attribute:: _segm_x
-
-
-   .. py:attribute:: _segm_y
-
-
-   .. py:attribute:: _segm_z
-
-
-   .. py:attribute:: _material_id
-
-
-   .. py:attribute:: _chamf
-
-
-   .. py:attribute:: _frac_y
-
-
-   .. py:attribute:: _frac_z
-
-
    .. py:method:: __eq__(other)
+
+      Return self==value.
+
 
 
 .. py:function:: rotate(pnts, degrees, axis=np.array([0, 0, 0]), plane='yz')
@@ -176,33 +110,10 @@ Module Contents
 
 .. py:class:: undumagObjectList(magnet_blocks=[], name='', parentName='', api=None, center=np.array([0.0, 0.0, 0.0]), includeInStruct=True, **kwargs)
 
+
    Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
    extent determination
    magnet_blocks - list of undu_magnet_block_coords objects
-
-
-   .. py:attribute:: _magnet_blocks
-      :value: []
-
-
-
-   .. py:attribute:: _api
-      :value: None
-
-
-
-   .. py:attribute:: _name
-      :value: ''
-
-
-
-   .. py:attribute:: _parentName
-      :value: ''
-
-
-
-   .. py:attribute:: _center
-
 
    .. py:method:: getDictInfo(onlyBase=False)
 
@@ -211,10 +122,8 @@ Module Contents
       :staticmethod:
 
 
-
    .. py:method:: getDictFromYAMLFile(file)
       :staticmethod:
-
 
 
    .. py:method:: writeToParameterFile(file)
@@ -235,7 +144,6 @@ Module Contents
    .. py:method:: set_absolute_position(parentPos=np.array([0.0, 0.0, 0.0]))
 
       absolute position is updated for me and all children
-
 
 
    .. py:method:: find_magn_name(names, fnd_list=None)
@@ -279,54 +187,11 @@ Module Contents
 
 .. py:class:: undumagBlockObject(center, magnParas=None, pnts=None, name='name', parentName='', api=None)
 
+
    Implements basic undumag magnet block
    can be moved, mirrored, incorporated into undumag-clc and the extent can be calculated
 
    chamf - if some float - chamfer is added
-
-
-   .. py:attribute:: _center
-
-
-   .. py:attribute:: _magnParas
-      :value: None
-
-
-
-   .. py:attribute:: _name
-      :value: 'name'
-
-
-
-   .. py:attribute:: _parentName
-      :value: ''
-
-
-
-   .. py:attribute:: _mother
-      :value: 'mother'
-
-
-
-   .. py:attribute:: _pnts
-      :value: None
-
-
-
-   .. py:attribute:: _createdWithPoints
-      :value: True
-
-
-
-   .. py:attribute:: _api
-      :value: None
-
-
-
-   .. py:attribute:: _inactive
-      :value: False
-
-
 
    .. py:method:: writeToParameterFile(file)
 
@@ -335,13 +200,11 @@ Module Contents
       :staticmethod:
 
 
-
    .. py:method:: getDictInfo()
 
 
    .. py:method:: loadFromDict(dictParas)
       :staticmethod:
-
 
 
    .. py:method:: set_struct_name(parentName='')
@@ -380,12 +243,10 @@ Module Contents
       also changes its own absolute position
 
 
-
    .. py:method:: set_absolute_position(parentPos=np.array([0.0, 0.0, 0.0]))
 
       for a singal magnet block, relative and absolute coordinates 
       are defined to coincide, makes life easier
-
 
 
    .. py:method:: rotate(degrees, axis, plane='yz')
@@ -415,7 +276,9 @@ Module Contents
 
 .. py:function:: create_magnetization_unit_vec(magn_string)
 
+
 .. py:function:: get_magnet_period(magn_collection, denominator, nperiod, n_el_per_period=4, offset=0)
+
 
 .. py:function:: get_magnet_struct(magn_collection, denominator, magn_nums=[])
 

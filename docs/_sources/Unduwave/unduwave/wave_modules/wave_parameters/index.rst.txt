@@ -1,27 +1,14 @@
-unduwave.wave_modules.wave_parameters
-=====================================
+:py:mod:`unduwave.wave_modules.wave_parameters`
+===============================================
 
 .. py:module:: unduwave.wave_modules.wave_parameters
 
 
-Attributes
-----------
-
-.. autoapisummary::
-
-   unduwave.wave_modules.wave_parameters.dir_path
-
-
-Exceptions
-----------
-
-.. autoapisummary::
-
-   unduwave.wave_modules.wave_parameters.waveParaError
-
+Module Contents
+---------------
 
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
@@ -33,15 +20,24 @@ Classes
    unduwave.wave_modules.wave_parameters.wave_prog_parameters
 
 
-Module Contents
----------------
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.wave_modules.wave_parameters.dir_path
+
 
 .. py:data:: dir_path
 
+   
+
 .. py:exception:: waveParaError
 
-   Bases: :py:obj:`Exception`
 
+   Bases: :py:obj:`Exception`
 
    Common base class for all non-exit exceptions.
 
@@ -50,8 +46,8 @@ Module Contents
 
 .. py:class:: ebeam_parameters
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Defining basic electron-beam parameters
    beam_en - Beam energy in [GeV]
@@ -68,55 +64,6 @@ Module Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: beam_en
-
-
-   .. py:attribute:: gammaFactor
-
-
-   .. py:attribute:: alphaFactor
-
-
-   .. py:attribute:: betaFactor
-
-
-   .. py:attribute:: current
-
-
-   .. py:attribute:: beamSizeHor
-
-
-   .. py:attribute:: beamDiveHor
-
-
-   .. py:attribute:: beamSizeVer
-
-
-   .. py:attribute:: beamDiveVer
-
-
-   .. py:attribute:: espread
-
-
-   .. py:attribute:: emittanceHor
-
-
-   .. py:attribute:: emittanceVer
-
-
-   .. py:attribute:: betaFunctionHor
-
-
-   .. py:attribute:: betaFunctionVer
-
-
-   .. py:attribute:: circumference
-
-
-   .. py:attribute:: rdipol
-
-
    .. py:method:: get_std_bessy_III_paras()
 
 
@@ -129,10 +76,11 @@ Module Contents
    .. py:method:: update_values()
 
 
+
 .. py:class:: screen_parameters
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Basic screen parameters
    screen_extent_hor/vert - width and height of pinhole [mm]
@@ -142,35 +90,14 @@ Module Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: screen_extent_hor
-
-
-   .. py:attribute:: screen_extent_vert
-
-
-   .. py:attribute:: screen_pos_x
-
-
-   .. py:attribute:: screen_pos_y
-
-
-   .. py:attribute:: screen_pos_z
-
-
-   .. py:attribute:: screen_segm_hor
-
-
-   .. py:attribute:: screen_segm_vert
-
-
    .. py:method:: get_std_paras()
+
 
 
 .. py:class:: spectrometer_paras
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Basic spectrometer parameters
    spectrum_min_energy, spectrum_max_energy - Energie at which to start/end spectrum calculation [eV]
@@ -180,32 +107,14 @@ Module Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: spectrum_min_energy
-
-
-   .. py:attribute:: spectrum_max_energy
-
-
-   .. py:attribute:: spectrum_n_energies
-
-
-   .. py:attribute:: spectrum_undu_mode
-
-
-   .. py:attribute:: spectrum_wigg_mode
-
-
-   .. py:attribute:: spectrum_dipole_mode
-
-
    .. py:method:: get_std_paras()
+
 
 
 .. py:class:: undu_paras
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Parameters controlling the generation of the B-Field inside WAVE
 
@@ -224,73 +133,6 @@ Module Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: ebeam
-
-
-   .. py:attribute:: planarUnduK
-
-
-   .. py:attribute:: planarUnduB0
-
-
-   .. py:attribute:: planarUnduPerLength
-
-
-   .. py:attribute:: planarUnduNumPeriods
-
-
-   .. py:attribute:: planarUnduKEasy
-
-
-   .. py:attribute:: planarUnduB0Easy
-
-
-   .. py:attribute:: planarUnduPerLengthEasy
-
-
-   .. py:attribute:: planarUnduNumPeriodsEasy
-
-
-   .. py:attribute:: undu_type
-
-
-   .. py:attribute:: elliptUnduB0Y
-
-
-   .. py:attribute:: elliptUnduB0Z
-
-
-   .. py:attribute:: elliptUnduNumPeriods
-
-
-   .. py:attribute:: elliptUnduPerLength
-
-
-   .. py:attribute:: elliptUnduPerShift
-
-
-   .. py:attribute:: bEffY
-
-
-   .. py:attribute:: bEffZ
-
-
-   .. py:attribute:: unduParameterKY
-
-
-   .. py:attribute:: unduParameterKZ
-
-
-   .. py:attribute:: periodLength
-
-
-   .. py:attribute:: numPeriods
-
-
-   .. py:attribute:: lengthEndPeriodsRelative
-
-
    .. py:method:: set_paras_from_bessyII_undu_list(unduName)
 
 
@@ -300,14 +142,14 @@ Module Contents
       wave_mode - same as prog_parameters.wave_mode
 
 
-
    .. py:method:: update_values(thetaObservation=0.0)
+
 
 
 .. py:class:: bfield_paras
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Represents a collection of attributes with children.
    This is a class containing attributes as class-members.
@@ -315,272 +157,29 @@ Module Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: field_folder
-
-
-   .. py:attribute:: bfield
-
-
    .. py:attribute:: field_type
 
       Possible Types: 
       By / Byz / Bxyz / Bmap
 
 
-
    .. py:method:: get_std_paras(bfield=None)
+
 
 
 .. py:class:: wave_prog_parameters
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Represents standard parameters for wave simulations.
 
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: wave_curr_folder
-
-
-   .. py:attribute:: wave_stage_folder
-
-
-   .. py:attribute:: wave_prog_folder
-
-
-   .. py:attribute:: in_file_folder
-
-
-   .. py:attribute:: in_files
-
-
-   .. py:attribute:: field_folder
-
-
-   .. py:attribute:: field_files
-
-
-   .. py:attribute:: four_file
-
-
-   .. py:attribute:: res_folder
-
-
-   .. py:attribute:: wave_data_res_folder
-
-
-   .. py:attribute:: pics_folder
-
-
-   .. py:attribute:: res_summary_file
-
-
-   .. py:attribute:: no_copy
-
-
-   .. py:attribute:: wave_ending_extract
-
-
-   .. py:attribute:: wave_ending_copy
-
-
-   .. py:attribute:: wave_files_essentials
-
-
-   .. py:attribute:: wave_res_copy_behaviour
-
-
-   .. py:attribute:: zip_res_folder
-
-
-   .. py:attribute:: nthreads
-
-
-   .. py:attribute:: zipped
-
-
-   .. py:attribute:: calc_spectrum
-
-
-   .. py:attribute:: calc_emittance
-
-
-   .. py:attribute:: calc_energy_fold
-
-
-   .. py:attribute:: emittance_fold_with_sigmas
-
-
-   .. py:attribute:: ipin
-
-
-   .. py:attribute:: observationPnts
-
-
-   .. py:attribute:: observationFile
-
-
-   .. py:attribute:: applyFilter
-
-
-   .. py:attribute:: filterFile
-
-
-   .. py:attribute:: powerOutputObsrvtnPnts
-
-
-   .. py:attribute:: magseq
-
-
-   .. py:attribute:: magseqFile
-
-
-   .. py:attribute:: cx1
-
-
-   .. py:attribute:: cy1
-
-
-   .. py:attribute:: cz1
-
-
-   .. py:attribute:: wc1
-
-
-   .. py:attribute:: hc1
-
-
-   .. py:attribute:: cx2
-
-
-   .. py:attribute:: cy2
-
-
-   .. py:attribute:: cz2
-
-
-   .. py:attribute:: wc2
-
-
-   .. py:attribute:: hc2
-
-
-   .. py:attribute:: source_point_calc
-
-
-   .. py:attribute:: ihisascii
-
-
-   .. py:attribute:: ntupgrid
-
-
-   .. py:attribute:: rayfile
-
-
-   .. py:attribute:: electron_intermediate_x
-
-
-   .. py:attribute:: electron_x0
-
-
-   .. py:attribute:: electron_y0
-
-
-   .. py:attribute:: electron_z0
-
-
-   .. py:attribute:: electron_end_x
-
-
-   .. py:attribute:: electron_vx0
-
-
-   .. py:attribute:: electron_vy0
-
-
    .. py:attribute:: electron_vz0
 
       Writing Field-Maps
-
-
-
-   .. py:attribute:: bxmapmin
-
-
-   .. py:attribute:: bxmapmax
-
-
-   .. py:attribute:: bxmapn
-
-
-   .. py:attribute:: bymapmin
-
-
-   .. py:attribute:: bymapmax
-
-
-   .. py:attribute:: bymapn
-
-
-   .. py:attribute:: bzmapmin
-
-
-   .. py:attribute:: bzmapmax
-
-
-   .. py:attribute:: bzmapn
-
-
-   .. py:attribute:: b_type
-
-
-   .. py:attribute:: irbtab
-
-
-   .. py:attribute:: irfileb0
-
-
-   .. py:attribute:: iwfilf
-
-
-   .. py:attribute:: irfilf
-
-
-   .. py:attribute:: nfourwls
-
-
-   .. py:attribute:: ifour0
-
-
-   .. py:attribute:: iwbmap
-
-
-   .. py:attribute:: irbtabzy
-
-
-   .. py:attribute:: irbtabxyz
-
-
-   .. py:attribute:: undu_easy
-
-
-   .. py:attribute:: undu_endp
-
-
-   .. py:attribute:: undu_gap
-
-
-   .. py:attribute:: undu_ellip
-
-
-   .. py:attribute:: undu_ellip_ana
-
-
-   .. py:attribute:: wave_mode
 
 
    .. py:method:: get_std_paras(wave_mode='undu_easy')
@@ -595,7 +194,7 @@ Module Contents
       - wave_mode = 'undu_gap'
 
 
-
    .. py:method:: update_values(bfield_paras=None)
+
 
 

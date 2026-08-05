@@ -1,5 +1,5 @@
-unduwave.analytical_module.ana_wave.ana_eb_fields
-=================================================
+:py:mod:`unduwave.analytical_module.ana_wave.ana_eb_fields`
+===========================================================
 
 .. py:module:: unduwave.analytical_module.ana_wave.ana_eb_fields
 
@@ -11,16 +11,20 @@ unduwave.analytical_module.ana_wave.ana_eb_fields
 
 
 
+Module Contents
+---------------
+
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
    unduwave.analytical_module.ana_wave.ana_eb_fields.aspectrum
 
 
+
 Functions
----------
+~~~~~~~~~
 
 .. autoapisummary::
 
@@ -31,16 +35,18 @@ Functions
    unduwave.analytical_module.ana_wave.ana_eb_fields.make_coords
 
 
-Module Contents
----------------
 
 .. py:function:: compare_sum_res(new_res, old_res)
 
+
 .. py:function:: bessel_sum(type, order_m, arg_a, arg_b, accur=0.001)
+
 
 .. py:function:: xyz_from_spherical(rs, thetas, phis)
 
+
 .. py:function:: spherical_coord_from_xyz(xs, ys, zs)
+
 
 .. py:function:: make_coords(fun, coords1, coords2)
 
@@ -50,21 +56,14 @@ Module Contents
 
 .. py:class:: aspectrum(ebeam, undulator)
 
-   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
 
    Represents a collection of attributes with children.
    This is a class containing attributes as class-members.
    The class members are administered in unison.
 
    Initialize the attribute collection
-
-
-   .. py:attribute:: _ebeam
-
-
-   .. py:attribute:: _undulator
-
 
    .. py:method:: spectral_fun(omega, order)
 
@@ -89,7 +88,7 @@ Module Contents
       ens in [eV]
 
 
-
    .. py:method:: flux_factor_comparisson(order)
+
 
 

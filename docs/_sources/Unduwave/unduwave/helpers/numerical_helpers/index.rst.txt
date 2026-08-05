@@ -1,5 +1,5 @@
-unduwave.helpers.numerical_helpers
-==================================
+:py:mod:`unduwave.helpers.numerical_helpers`
+============================================
 
 .. py:module:: unduwave.helpers.numerical_helpers
 
@@ -11,26 +11,30 @@ unduwave.helpers.numerical_helpers
 
 
 
-Attributes
-----------
-
-.. autoapisummary::
-
-   unduwave.helpers.numerical_helpers.dir_path
+Module Contents
+---------------
 
 
 Functions
----------
+~~~~~~~~~
 
 .. autoapisummary::
 
    unduwave.helpers.numerical_helpers.fourier_series_coeff_numpy
 
 
-Module Contents
----------------
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.helpers.numerical_helpers.dir_path
+
 
 .. py:data:: dir_path
+
+   
 
 .. py:function:: fourier_series_coeff_numpy(f, T, d0, N, return_complex=False)
 

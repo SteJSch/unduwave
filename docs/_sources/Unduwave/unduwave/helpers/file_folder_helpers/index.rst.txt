@@ -1,5 +1,5 @@
-unduwave.helpers.file_folder_helpers
-====================================
+:py:mod:`unduwave.helpers.file_folder_helpers`
+==============================================
 
 .. py:module:: unduwave.helpers.file_folder_helpers
 
@@ -11,16 +11,12 @@ unduwave.helpers.file_folder_helpers
 
 
 
-Attributes
-----------
-
-.. autoapisummary::
-
-   unduwave.helpers.file_folder_helpers.dir_path
+Module Contents
+---------------
 
 
 Functions
----------
+~~~~~~~~~
 
 .. autoapisummary::
 
@@ -34,10 +30,18 @@ Functions
    unduwave.helpers.file_folder_helpers.del_all_files
 
 
-Module Contents
----------------
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.helpers.file_folder_helpers.dir_path
+
 
 .. py:data:: dir_path
+
+   
 
 .. py:function:: convert_path_to_win(path)
 

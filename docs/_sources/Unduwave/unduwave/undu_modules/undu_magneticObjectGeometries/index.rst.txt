@@ -1,11 +1,15 @@
-unduwave.undu_modules.undu_magneticObjectGeometries
-===================================================
+:py:mod:`unduwave.undu_modules.undu_magneticObjectGeometries`
+=============================================================
 
 .. py:module:: unduwave.undu_modules.undu_magneticObjectGeometries
 
 
+Module Contents
+---------------
+
+
 Functions
----------
+~~~~~~~~~
 
 .. autoapisummary::
 
@@ -15,12 +19,12 @@ Functions
    unduwave.undu_modules.undu_magneticObjectGeometries.create_twoSidedClamps_b
 
 
-Module Contents
----------------
 
 .. py:function:: create_cpmuStdPole_geometry(center, poleParasMain, poleParasLowerSide, poleParasUpperSide, cliffSide, name='pol')
 
+
 .. py:function:: create_oneSidedClamps(center, magnParasMain, magnParasSide, name)
+
 
 .. py:function:: create_twoSidedClamps_a(center, magn_paras, magn_paras_clamp, name='mag')
 

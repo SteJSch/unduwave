@@ -1,5 +1,5 @@
-unduwave.api.undu_api_root
-==========================
+:py:mod:`unduwave.api.undu_api_root`
+====================================
 
 .. py:module:: unduwave.api.undu_api_root
 
@@ -9,18 +9,21 @@ unduwave.api.undu_api_root
 
 
 
+Module Contents
+---------------
+
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
    unduwave.api.undu_api_root.undu_api
 
 
-Module Contents
----------------
+
 
 .. py:class:: undu_api(undu_mode='from_undu_magns', magn_objects=None)
+
 
    
    Undumag API-class for controlling basic undumag-functionality. 
@@ -33,10 +36,6 @@ Module Contents
    the undu_magns classes.
    change
 
-
-   .. py:attribute:: _prog_paras
-
-
    .. py:method:: set_magnet_objects(magn_objects=None)
 
 
@@ -45,12 +44,10 @@ Module Contents
       Runs undumag with the given settings, prepares and postprocesses data.
 
 
-
    .. py:method:: load_clc_raw()
 
       Loads a raw-clc file template from the folder set in prog_paras.in_file_folder+prog_paras.in_file_clc_raw.
       After loading prog_paras.in_file_clc_lines holds the list representation of the file in form of a list of strings.
-
 
 
    .. py:method:: set_force_calc(object, segmentations=np.array([20, 50, 50]))
@@ -58,7 +55,6 @@ Module Contents
       Prepares the parameter list for calculation of force on the undu_magnets object object.
 
       param undu_magnets object: An undu_magnets object (i.e. a collection of magnets) on which the force is to be calculated.
-
 
 
 

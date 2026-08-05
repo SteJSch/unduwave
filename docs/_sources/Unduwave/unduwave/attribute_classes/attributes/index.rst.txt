@@ -1,5 +1,5 @@
-unduwave.attribute_classes.attributes
-=====================================
+:py:mod:`unduwave.attribute_classes.attributes`
+===============================================
 
 .. py:module:: unduwave.attribute_classes.attributes
 
@@ -9,8 +9,11 @@ unduwave.attribute_classes.attributes
 
 
 
+Module Contents
+---------------
+
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
@@ -18,10 +21,10 @@ Classes
    unduwave.attribute_classes.attributes._attribute_collection
 
 
-Module Contents
----------------
+
 
 .. py:class:: _attribute(value=None, name=None, in_name=None, unit='', fac=None, *args, **kwargs)
+
 
    Represents an attribute with a value.
 
@@ -36,25 +39,7 @@ Module Contents
    :param str unit: The physical unit of the quantity
    'param float fac': gauging factor
 
-
-   .. py:attribute:: _value
-      :value: None
-
-
-
-   .. py:attribute:: _in_name
-      :value: None
-
-
-
-   .. py:attribute:: _unit
-      :value: ''
-
-
-
-   .. py:attribute:: _fac
-      :value: None
-
+   .. py:property:: name
 
 
    .. py:method:: set(value)
@@ -62,11 +47,9 @@ Module Contents
       Sets the value
 
 
-
    .. py:method:: get()
 
       Returns the value
-
 
 
    .. py:method:: get_fac()
@@ -74,11 +57,9 @@ Module Contents
       Returns scaling factor
 
 
-
    .. py:method:: set_name(name)
 
       Setting the name
-
 
 
    .. py:method:: set_in_name(in_name)
@@ -86,26 +67,27 @@ Module Contents
       Setting the in-name
 
 
-
    .. py:method:: get_in_name()
 
       Returns in-name
 
 
-
    .. py:method:: __eq__(other)
+
+      Return self==value.
 
 
    .. py:method:: __call__()
 
 
-   .. py:property:: name
-
-
    .. py:method:: __str__()
+
+      Return str(self).
 
 
    .. py:method:: __repr__()
+
+      Return repr(self).
 
 
    .. py:method:: __iter__()
@@ -117,7 +99,9 @@ Module Contents
    .. py:method:: __setstate__(state)
 
 
+
 .. py:class:: _attribute_collection(*args, **kwargs)
+
 
    Represents a collection of attributes with children.
    This is a class containing attributes as class-members.
@@ -125,17 +109,10 @@ Module Contents
 
    Initialize the attribute collection
 
-
-   .. py:attribute:: _children
-      :value: []
-
-
-
    .. py:method:: _add_attributes()
 
       Scans all class members, finds those of type _attribute and sets those 
       as new attributes
-
 
 
    .. py:method:: show_all_children()
@@ -143,11 +120,9 @@ Module Contents
       Prints the names of the children
 
 
-
    .. py:method:: children()
 
       Yields the children of the _attribute_collection.
-
 
 
    .. py:method:: __iter__()

@@ -1,15 +1,15 @@
-unduwave.quantities
-===================
+:py:mod:`unduwave.quantities`
+=============================
 
 .. py:module:: unduwave.quantities
 
 
 Submodules
 ----------
-
 .. toctree::
+   :titlesonly:
    :maxdepth: 1
 
-   /Unduwave/unduwave/quantities/quantities/index
+   quantities/index.rst
 
 

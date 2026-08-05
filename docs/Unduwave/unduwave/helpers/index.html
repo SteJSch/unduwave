@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
@@ -7,21 +5,25 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>unduwave.helpers &mdash; Unduwave v0.9.2 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
 
   
-      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../../_static/documentation_options.js?v=518ffd31"></script>
-      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=518ffd31"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="unduwave.helpers.file_folder_helpers" href="file_folder_helpers/index.html" />
-    <link rel="prev" title="unduwave.constants" href="../constants/index.html" /> 
+    <link rel="prev" title="unduwave.attribute_classes.attributes" href="../attribute_classes/attributes/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,25 +50,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../quickguide.html">Quickguide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">unduwave</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../analytical_module/index.html">unduwave.analytical_module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/index.html">unduwave.api</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../attribute_classes/index.html">unduwave.attribute_classes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../constants/index.html">unduwave.constants</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">unduwave.helpers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../optimization_module/index.html">unduwave.optimization_module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../quantities/index.html">unduwave.quantities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../undu_list/index.html">unduwave.undu_list</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../undu_modules/index.html">unduwave.undu_modules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../unduwave_incl/index.html">unduwave.unduwave_incl</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../wave_modules/index.html">unduwave.wave_modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../analytical_module/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.api</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../attribute_classes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.attribute_classes</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../optimization_module/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.optimization_module</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quantities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.quantities</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../undu_list/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_list</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../undu_modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wave_modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.wave_modules</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#attributes">Attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#exceptions">Exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#classes">Classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../index.html#package-contents">Package Contents</a></li>
 </ul>
 </li>
@@ -89,8 +86,8 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../index.html">API Reference</a></li>
-          <li class="breadcrumb-item"><a href="../index.html">unduwave</a></li>
-      <li class="breadcrumb-item active">unduwave.helpers</li>
+          <li class="breadcrumb-item"><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave</span></code></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers</span></code></li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/Unduwave/unduwave/helpers/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -101,13 +98,13 @@
            <div itemprop="articleBody">
              
   <section id="module-unduwave.helpers">
-<span id="unduwave-helpers"></span><h1>unduwave.helpers<a class="headerlink" href="#module-unduwave.helpers" title="Link to this heading"></a></h1>
+<span id="unduwave-helpers"></span><h1><a class="reference internal" href="#module-unduwave.helpers" title="unduwave.helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers</span></code></a><a class="headerlink" href="#module-unduwave.helpers" title="Link to this heading"></a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="file_folder_helpers/index.html">unduwave.helpers.file_folder_helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numerical_helpers/index.html">unduwave.helpers.numerical_helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_folder_helpers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers.file_folder_helpers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_helpers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers.numerical_helpers</span></code></a></li>
 </ul>
 </div>
 </section>
@@ -117,7 +114,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../constants/index.html" class="btn btn-neutral float-left" title="unduwave.constants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../attribute_classes/attributes/index.html" class="btn btn-neutral float-left" title="unduwave.attribute_classes.attributes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="file_folder_helpers/index.html" class="btn btn-neutral float-right" title="unduwave.helpers.file_folder_helpers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

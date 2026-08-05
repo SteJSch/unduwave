@@ -1,5 +1,5 @@
-unduwave.unduwave_incl
-======================
+:py:mod:`unduwave.unduwave_incl`
+================================
 
 .. py:module:: unduwave.unduwave_incl
 
@@ -9,17 +9,12 @@ unduwave.unduwave_incl
 
 
 
-Attributes
-----------
-
-.. autoapisummary::
-
-   unduwave.unduwave_incl.cm_inch
-   unduwave.unduwave_incl.ROOT_DIR
+Module Contents
+---------------
 
 
 Functions
----------
+~~~~~~~~~
 
 .. autoapisummary::
 
@@ -28,12 +23,17 @@ Functions
    unduwave.unduwave_incl.unit_velocity_from_trans_angles
 
 
-Module Contents
----------------
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.unduwave_incl.cm_inch
+   unduwave.unduwave_incl.ROOT_DIR
+
 
 .. py:data:: cm_inch
-   :value: 0.39370078740157477
-
 
    Conversion factor cm to inch
 
@@ -49,7 +49,11 @@ Module Contents
 
 .. py:function:: combine_strings(str_add, str_add_to)
 
+
 .. py:function:: unit_velocity_from_trans_angles(hor_angle, vert_angle)
 
+
 .. py:data:: ROOT_DIR
+
+   
 

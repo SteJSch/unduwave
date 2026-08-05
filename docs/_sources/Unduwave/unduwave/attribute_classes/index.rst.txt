@@ -1,15 +1,15 @@
-unduwave.attribute_classes
-==========================
+:py:mod:`unduwave.attribute_classes`
+====================================
 
 .. py:module:: unduwave.attribute_classes
 
 
 Submodules
 ----------
-
 .. toctree::
+   :titlesonly:
    :maxdepth: 1
 
-   /Unduwave/unduwave/attribute_classes/attributes/index
+   attributes/index.rst
 
 

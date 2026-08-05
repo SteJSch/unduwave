@@ -1,16 +1,16 @@
-unduwave.api
-============
+:py:mod:`unduwave.api`
+======================
 
 .. py:module:: unduwave.api
 
 
 Submodules
 ----------
-
 .. toctree::
+   :titlesonly:
    :maxdepth: 1
 
-   /Unduwave/unduwave/api/undu_api_root/index
-   /Unduwave/unduwave/api/wave_api_root/index
+   undu_api_root/index.rst
+   wave_api_root/index.rst
 
 

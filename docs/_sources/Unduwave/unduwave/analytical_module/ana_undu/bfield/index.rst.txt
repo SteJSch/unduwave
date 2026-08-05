@@ -1,5 +1,5 @@
-unduwave.analytical_module.ana_undu.bfield
-==========================================
+:py:mod:`unduwave.analytical_module.ana_undu.bfield`
+====================================================
 
 .. py:module:: unduwave.analytical_module.ana_undu.bfield
 
@@ -9,24 +9,20 @@ unduwave.analytical_module.ana_undu.bfield
 
 
 
-Exceptions
-----------
-
-.. autoapisummary::
-
-   unduwave.analytical_module.ana_undu.bfield.unduBfieldError
-
+Module Contents
+---------------
 
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
    unduwave.analytical_module.ana_undu.bfield.bfield
 
 
+
 Functions
----------
+~~~~~~~~~
 
 .. autoapisummary::
 
@@ -36,13 +32,11 @@ Functions
    unduwave.analytical_module.ana_undu.bfield.create_indefinite_integral_cs
 
 
-Module Contents
----------------
 
 .. py:exception:: unduBfieldError
 
-   Bases: :py:obj:`Exception`
 
+   Bases: :py:obj:`Exception`
 
    Common base class for all non-exit exceptions.
 
@@ -51,16 +45,20 @@ Module Contents
 
 .. py:function:: beffs_init_shared(all_pnts, xs, prd_lngth, n_max)
 
+
 .. py:function:: beffs_worker(cur_inds)
+
 
 .. py:function:: beff_grid_calc(all_pnts, xs, prd_lngth, n_max=10, processes=6)
 
+
 .. py:function:: create_indefinite_integral_cs(spline, xs, integr_limit)
+
 
 .. py:class:: bfield(unitsXB=[0.001, 1.0], **kwargs)
 
-   Bases: :py:obj:`unduwave.quantities.quantities.quantity`
 
+   Bases: :py:obj:`unduwave.quantities.quantities.quantity`
 
    Holds the bfield data
 
@@ -71,32 +69,6 @@ Module Contents
    data: data-object
    plot_name: name shown in plot
 
-
-   .. py:attribute:: _unitsXB
-      :value: [0.001, 1.0]
-
-
-
-   .. py:attribute:: _data
-
-
-   .. py:attribute:: bvals
-
-
-   .. py:attribute:: xvals
-
-
-   .. py:attribute:: zvals
-
-
-   .. py:attribute:: yvals
-
-
-   .. py:attribute:: _interpolator
-      :value: None
-
-
-
    .. py:method:: write_field(file, cols=None, outType='std', unitsXB=None, filez=None, filex=None, data=None)
 
 
@@ -105,11 +77,9 @@ Module Contents
       UndumagOut file Units are mm for the length and T for B
 
 
-
    .. py:method:: write_field_std(file, unitsXB=None, whatStr='', colx='x')
 
       UndumagOut file Units are mm for the length and T for B
-
 
 
    .. py:method:: write_field_waveByz(filey, filez, unitsXB=None, colx='x')
@@ -117,11 +87,9 @@ Module Contents
       UndumagOut file Units are mm for the length and T for B
 
 
-
    .. py:method:: write_field_waveBxyz(filex, filey, filez, unitsXB=None, colx='x')
 
       Outputs 3 separate files with 1D-data
-
 
 
    .. py:method:: write_field_map(file, unitsXB=None, wave=False)
@@ -141,7 +109,6 @@ Module Contents
       if mapOut None the mapFile will be replaced
 
 
-
    .. py:method:: load_field_from_file(file, fieldMap=False, cols=None, unduFile=False, radiaFile=False, header=None, skiprows=None)
 
       If radiaFile, unduFile and fieldMap are false, the file loaded is supposed
@@ -156,7 +123,6 @@ Module Contents
       Undumag field-map file is loaded
       general 3D map (x,y,z) with full B-components
       fileOut : If a field-map is loaded from undumag and cleared, it can be put out into this
-
 
 
 
@@ -190,7 +156,6 @@ Module Contents
 
 
 
-
    .. py:method:: create_harm_field(periodLength, amplitude, nperiods=None, phase_shift=0, num_pnts_per_period=100, colx='x', coly='By', deltaX=None)
 
       Creates a sine field: 
@@ -198,7 +163,6 @@ Module Contents
       or if deltaX=None, it is set to 
       [ -nperiods*periodLength/2.0, nperiods*periodLength/2.0 ]
       creates bfield class filled with data, with num_pnts_per_period pnts per period in deltaX
-
 
 
 
@@ -261,11 +225,9 @@ Module Contents
       create interpolation from bvals, xvals,...
 
 
-
    .. py:method:: get_field_map_interpol(interpolator=None, xs=None, ys=None, zs=None, nx=None, ny=None, nz=None)
 
                       
-
 
 
    .. py:method:: plot_fld(colx='x', coly='By', title=None, plt_extrm=False, folder='', add='', nfig=None, plot=True, save=False, filename=None)
@@ -287,5 +249,6 @@ Module Contents
 
 
    .. py:method:: plot_rel_diffs()
+
 
 

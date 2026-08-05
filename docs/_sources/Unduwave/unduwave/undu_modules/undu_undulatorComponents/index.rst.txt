@@ -1,19 +1,14 @@
-unduwave.undu_modules.undu_undulatorComponents
-==============================================
+:py:mod:`unduwave.undu_modules.undu_undulatorComponents`
+========================================================
 
 .. py:module:: unduwave.undu_modules.undu_undulatorComponents
 
 
-Exceptions
-----------
-
-.. autoapisummary::
-
-   unduwave.undu_modules.undu_undulatorComponents.unduComponentsError
-
+Module Contents
+---------------
 
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
@@ -23,13 +18,12 @@ Classes
    unduwave.undu_modules.undu_undulatorComponents.undulator
 
 
-Module Contents
----------------
+
 
 .. py:exception:: unduComponentsError
 
-   Bases: :py:obj:`Exception`
 
+   Bases: :py:obj:`Exception`
 
    Common base class for all non-exit exceptions.
 
@@ -38,16 +32,12 @@ Module Contents
 
 .. py:class:: period(period_length, objects, center, api=None, **kwargs)
 
-   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagObjectList`
 
+   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagObjectList`
 
    Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
    extent determination
    magnet_blocks - list of undu_magnet_block_coords objects
-
-
-   .. py:attribute:: _period_length
-
 
    .. py:method:: getDictInfo()
 
@@ -59,16 +49,12 @@ Module Contents
 
 .. py:class:: endConfig(dist_period, objects, center, api=None, **kwargs)
 
-   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagObjectList`
 
+   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagObjectList`
 
    Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
    extent determination
    magnet_blocks - list of undu_magnet_block_coords objects
-
-
-   .. py:attribute:: _dist_period
-
 
    .. py:method:: getDictInfo()
 
@@ -80,51 +66,12 @@ Module Contents
 
 .. py:class:: row(period, center, period_length, nperiods, periodicMagnetizationSequence, pos='ll', downstream_end=None, upstream_end=None, api=None, **kwargs)
 
-   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagObjectList`
 
+   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagObjectList`
 
    Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
    extent determination
    magnet_blocks - list of undu_magnet_block_coords objects
-
-
-   .. py:attribute:: _pos
-      :value: 'll'
-
-
-
-   .. py:attribute:: _period
-
-
-   .. py:attribute:: _downstream_end
-      :value: None
-
-
-
-   .. py:attribute:: _upstream_end
-      :value: None
-
-
-
-   .. py:attribute:: _period_length
-
-
-   .. py:attribute:: _nperiods
-
-
-   .. py:attribute:: _periodicMagnetizationSequence
-
-
-   .. py:attribute:: _periodicMagnetizationSequenceNorm
-      :value: []
-
-
-
-   .. py:attribute:: _center
-
-
-   .. py:attribute:: _absCenter
-
 
    .. py:method:: positionMagnetizeEnds(center)
 
@@ -145,13 +92,12 @@ Module Contents
 
 .. py:class:: undulator(rows, gap, period_length, gap_range=None, shift=0.0, shifts=None, beff=None, shift_range=np.array([0.0, 0.0]), center=np.array([0.0, 0.0, 0.0]), construct_quadrants=['ll', 'lr', 'ul', 'ur'], api=None, name='', accelerator='', symmetries=[], nperiods=None, **kwargs)
 
-   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagObjectList`
 
+   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagObjectList`
 
    Collects a group of magnets into a list and implements some functionality on that list, like move,mirror,clc-creation,
    extent determination
    magnet_blocks - list of undu_magnet_block_coords objects
-
 
    .. py:method:: createUndulator()
 

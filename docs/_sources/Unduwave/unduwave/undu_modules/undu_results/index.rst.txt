@@ -1,5 +1,5 @@
-unduwave.undu_modules.undu_results
-==================================
+:py:mod:`unduwave.undu_modules.undu_results`
+============================================
 
 .. py:module:: unduwave.undu_modules.undu_results
 
@@ -9,55 +9,27 @@ unduwave.undu_modules.undu_results
 
 
 
+Module Contents
+---------------
+
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
    unduwave.undu_modules.undu_results.undu_results
 
 
-Module Contents
----------------
+
 
 .. py:class:: undu_results(undu_api=None)
+
 
    
    This class is for this and that
 
    :param parameter1: my favorite int
    :param parameter2: my favorite class
-
-
-   .. py:attribute:: _undu_api
-      :value: None
-
-
-
-   .. py:attribute:: _res_quantities
-      :value: []
-
-
-
-   .. py:attribute:: _summary
-      :value: None
-
-
-
-   .. py:attribute:: _res_folder
-      :value: None
-
-
-
-   .. py:attribute:: _res_folder_undu
-      :value: None
-
-
-
-   .. py:attribute:: _res_folder_pics
-      :value: None
-
-
 
    .. py:method:: load_from_res_folder(add='')
 
@@ -66,7 +38,6 @@ Module Contents
       :param parameter1: my favorite int
       :param parameter2: my favorite class
       :return: returns some nothing
-
 
 
    .. py:method:: load_field_map(add='', res_folder=None)

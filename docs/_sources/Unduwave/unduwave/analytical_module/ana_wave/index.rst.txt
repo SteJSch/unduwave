@@ -1,15 +1,15 @@
-unduwave.analytical_module.ana_wave
-===================================
+:py:mod:`unduwave.analytical_module.ana_wave`
+=============================================
 
 .. py:module:: unduwave.analytical_module.ana_wave
 
 
 Submodules
 ----------
-
 .. toctree::
+   :titlesonly:
    :maxdepth: 1
 
-   /Unduwave/unduwave/analytical_module/ana_wave/ana_eb_fields/index
+   ana_eb_fields/index.rst
 
 

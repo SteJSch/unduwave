@@ -1,21 +1,24 @@
-unduwave.wave_modules.wave_prepare
-==================================
+:py:mod:`unduwave.wave_modules.wave_prepare`
+============================================
 
 .. py:module:: unduwave.wave_modules.wave_prepare
 
 
+Module Contents
+---------------
+
 Classes
--------
+~~~~~~~
 
 .. autoapisummary::
 
    unduwave.wave_modules.wave_prepare.wave_prepare
 
 
-Module Contents
----------------
+
 
 .. py:class:: wave_prepare(wave_api)
+
 
    _summary_
 
@@ -24,13 +27,6 @@ Module Contents
 
    Ini wave-prepare class for setting everything up for calcs
 
-
-   .. py:attribute:: _wave_api
-
-
-   .. py:attribute:: _all_paras
-
-
    .. py:method:: create_wave_input()
 
       Creates all the files needed as input fro Wave.
@@ -38,7 +34,6 @@ Module Contents
       Loads the input file set in wave_paras, updates properties 
       based on other wave_paras properties,and copies the 
       resulting file to the WAVE program folder.
-
 
 
    .. py:method:: prepare_b_files_for_wave()

@@ -1,5 +1,5 @@
-unduwave.constants
-==================
+:py:mod:`unduwave.constants`
+============================
 
 .. py:module:: unduwave.constants
 
@@ -9,27 +9,10 @@ unduwave.constants
 
 
 
-Attributes
-----------
-
-.. autoapisummary::
-
-   unduwave.constants.fein_const
-   unduwave.constants.hbar
-   unduwave.constants.q_el
-   unduwave.constants.m_el
-   unduwave.constants.v_c
-   unduwave.constants.mu0
-   unduwave.constants.eps0
-   unduwave.constants.R_el
-
-
 Module Contents
 ---------------
 
 .. py:data:: fein_const
-   :value: 0.0072992700729927005
-
 
    Fein Structure Constant
 
@@ -37,13 +20,11 @@ Module Contents
 .. py:data:: hbar
    :value: 1.054e-34
 
-
    Planck's constant devided by 2 pi
 
 
 .. py:data:: q_el
    :value: 1.602e-19
-
 
    Charge of electron, [C]
 
@@ -51,13 +32,11 @@ Module Contents
 .. py:data:: m_el
    :value: 9.109e-31
 
-
    mass pf electron [kg]
 
 
 .. py:data:: v_c
    :value: 299792458
-
 
    velocity of light [m/s]
 
@@ -65,16 +44,16 @@ Module Contents
 .. py:data:: mu0
    :value: 1.25663706127e-06
 
-
    Vacuum permittivity [F/m]
 
 
 .. py:data:: eps0
    :value: 8.854e-12
 
-
    classical electron radius [m]
 
 
 .. py:data:: R_el
+
+   
 
