@@ -1,0 +1,63 @@
+:py:mod:`unduwave.undu_modules.undu_results`
+============================================
+
+.. py:module:: unduwave.undu_modules.undu_results
+
+.. autoapi-nested-parse::
+
+   This file is nice
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_results.undu_results
+
+
+
+
+.. py:class:: undu_results(undu_api=None)
+
+
+   
+   This class is for this and that
+
+   :param parameter1: my favorite int
+   :param parameter2: my favorite class
+
+   .. py:method:: load_from_res_folder(add='')
+
+      This fun is for this and that
+
+      :param parameter1: my favorite int
+      :param parameter2: my favorite class
+      :return: returns some nothing
+
+
+   .. py:method:: load_field_map(add='', res_folder=None)
+
+
+   .. py:method:: load_field_profile(add='')
+
+
+   .. py:method:: load_on_axis_undumag_file(add='')
+
+
+   .. py:method:: load_force_undumag_file(add='')
+
+
+   .. py:method:: extract_summary(add='')
+
+
+   .. py:method:: get_result(which)
+
+      Pass string "flux_dens",... to get object containing data and some functionality
+
+
+

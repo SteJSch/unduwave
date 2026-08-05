@@ -1,0 +1,52 @@
+:py:mod:`unduwave.undu_modules.undu_parameters`
+===============================================
+
+.. py:module:: unduwave.undu_modules.undu_parameters
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_parameters.undu_prog_parameters
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_parameters.load_old_para
+   unduwave.undu_modules.undu_parameters.load_old_para
+
+
+
+.. py:function:: load_old_para(folder=None, file='para.txt')
+
+
+.. py:function:: load_old_para(folder=None, file='para.txt')
+
+
+.. py:class:: undu_prog_parameters
+
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+   Represents standard parameters for undumag simulations.
+
+   Initialize the attribute collection
+
+   .. py:method:: load_all_magnetic_material_files_from_folders(folders=None)
+
+
+   .. py:method:: get_std_paras(undu_mode='from_clc_file')
+
+                      
+
+
+

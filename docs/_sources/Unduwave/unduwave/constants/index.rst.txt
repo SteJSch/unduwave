@@ -1,0 +1,59 @@
+:py:mod:`unduwave.constants`
+============================
+
+.. py:module:: unduwave.constants
+
+.. autoapi-nested-parse::
+
+   Contains physical constants for unduwave
+
+
+
+Module Contents
+---------------
+
+.. py:data:: fein_const
+
+   Fein Structure Constant
+
+
+.. py:data:: hbar
+   :value: 1.054e-34
+
+   Planck's constant devided by 2 pi
+
+
+.. py:data:: q_el
+   :value: 1.602e-19
+
+   Charge of electron, [C]
+
+
+.. py:data:: m_el
+   :value: 9.109e-31
+
+   mass pf electron [kg]
+
+
+.. py:data:: v_c
+   :value: 299792458
+
+   velocity of light [m/s]
+
+
+.. py:data:: mu0
+   :value: 1.25663706127e-06
+
+   Vacuum permittivity [F/m]
+
+
+.. py:data:: eps0
+   :value: 8.854e-12
+
+   classical electron radius [m]
+
+
+.. py:data:: R_el
+
+   
+

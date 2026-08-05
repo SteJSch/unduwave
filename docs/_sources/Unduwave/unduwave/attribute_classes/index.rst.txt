@@ -1,0 +1,15 @@
+:py:mod:`unduwave.attribute_classes`
+====================================
+
+.. py:module:: unduwave.attribute_classes
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   attributes/index.rst
+
+

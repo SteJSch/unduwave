@@ -1,0 +1,64 @@
+:py:mod:`unduwave.undu_modules.undu_coils`
+==========================================
+
+.. py:module:: unduwave.undu_modules.undu_coils
+
+.. autoapi-nested-parse::
+
+   Defining the functionality to representations of current-carrying coils.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_coils.coil
+
+
+
+
+.. py:class:: coil(center, coil_type, current, normal_vec, rot_angle, length, inner_z, outer_z, inner_radius, height, n_vert, n_hor, n_rad, name='', filling=None, n_windings=None, api=None, parentName='', **kwargs)
+
+
+   Bases: :py:obj:`unduwave.undu_modules.undu_blocks.undumagBlockObject`
+
+   Implements basic undumag magnet block
+   can be moved, mirrored, incorporated into undumag-clc and the extent can be calculated
+
+   chamf - if some float - chamfer is added
+
+   .. py:method:: getDictInfo()
+
+
+   .. py:method:: loadFromDict(dictParas)
+      :staticmethod:
+
+
+   .. py:method:: add_to_clc(magns_ignore=None, api=None)
+
+      Gets the clc-text for this coil and adds it to the api._prog_paras.in_file_clc_lines list.
+      The in_file_clc_lines lines object can be initialized or, if empty, will be initialized via the api.
+
+
+   .. py:method:: create_clc_txt()
+
+      Creates the actual clc text from the object's parameters
+
+      :return list: The list containing str representing the content of the undumag clc file
+
+
+   .. py:method:: get_max_extent(maxs=None, mins=None)
+
+      determines the extent of this magnet block and compares to maxs and mins vals given, returns
+      the max and min vals
+
+
+   .. py:method:: get_copy(name=None, parentName=None)
+
+
+

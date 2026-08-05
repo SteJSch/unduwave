@@ -1,0 +1,18 @@
+:py:mod:`unduwave.analytical_module.ana_undu`
+=============================================
+
+.. py:module:: unduwave.analytical_module.ana_undu
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   bfield/index.rst
+   grids/index.rst
+   kicks/index.rst
+   undulator/index.rst
+
+

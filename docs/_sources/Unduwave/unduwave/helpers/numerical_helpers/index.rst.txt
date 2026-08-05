@@ -1,0 +1,77 @@
+:py:mod:`unduwave.helpers.numerical_helpers`
+============================================
+
+.. py:module:: unduwave.helpers.numerical_helpers
+
+.. autoapi-nested-parse::
+
+   Contains functionality for handling files.
+
+   Module to handle various file operations including finding, moving, copying, and deleting files.
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.helpers.numerical_helpers.fourier_series_coeff_numpy
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.helpers.numerical_helpers.dir_path
+
+
+.. py:data:: dir_path
+
+   
+
+.. py:function:: fourier_series_coeff_numpy(f, T, d0, N, return_complex=False)
+
+   Calculates the first 2*N+1 Fourier series coeff. of a periodic function.
+
+   Given a periodic, function f(t) with period T, this function returns the
+   coefficients a0, {a1,a2,...},{b1,b2,...} such that:
+
+   f(t) ~= a0/2+ sum_{k=1}^{N} ( a_k*cos(2*pi*k*t/T) + b_k*sin(2*pi*k*t/T) )
+
+   If return_complex is set to True, it returns instead the coefficients
+   {c0,c1,c2,...}
+   such that:
+
+   f(t) ~= sum_{k=-N}^{N} c_k * exp(i*2*pi*k*t/T)
+
+   where we define c_{-n} = complex_conjugate(c_{n})
+
+   Refer to wikipedia for the relation between the real-valued and complex
+   valued coeffs at http://en.wikipedia.org/wiki/Fourier_series.
+
+   Parameters
+   ----------
+   f : the periodic function, a callable like f(t)
+   T : the period of the function f, so that f(0)==f(T)
+   N_max : the function will return the first N_max + 1 Fourier coeff.
+
+   Returns
+   -------
+   if return_complex == False, the function returns:
+
+   a0 : float
+   a,b : numpy float arrays describing respectively the cosine and sine coeff.
+
+   if return_complex == True, the function returns:
+
+   c : numpy 1-dimensional complex-valued array of size N+1
+
+
+

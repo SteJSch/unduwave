@@ -1,0 +1,16 @@
+:py:mod:`unduwave.analytical_module`
+====================================
+
+.. py:module:: unduwave.analytical_module
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   ana_undu/index.rst
+   ana_wave/index.rst
+
+

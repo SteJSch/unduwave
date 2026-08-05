@@ -1,0 +1,59 @@
+:py:mod:`unduwave.unduwave_incl`
+================================
+
+.. py:module:: unduwave.unduwave_incl
+
+.. autoapi-nested-parse::
+
+   Contains the import statements for undupy modules
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.unduwave_incl.to_scn
+   unduwave.unduwave_incl.combine_strings
+   unduwave.unduwave_incl.unit_velocity_from_trans_angles
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.unduwave_incl.cm_inch
+   unduwave.unduwave_incl.ROOT_DIR
+
+
+.. py:data:: cm_inch
+
+   Conversion factor cm to inch
+
+
+.. py:function:: to_scn(number, norm = True)
+
+   Converts number to string using scientific notation
+
+   :param number: The number to convert
+   :param norm: If true, std scientific notation, False: With leading 0.
+   :return: The resulting string.
+
+
+.. py:function:: combine_strings(str_add, str_add_to)
+
+
+.. py:function:: unit_velocity_from_trans_angles(hor_angle, vert_angle)
+
+
+.. py:data:: ROOT_DIR
+
+   
+

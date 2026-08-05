@@ -1,0 +1,48 @@
+:py:mod:`unduwave.undu_modules.undu_postprocess`
+================================================
+
+.. py:module:: unduwave.undu_modules.undu_postprocess
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.undu_modules.undu_postprocess.undu_postprocess
+
+
+
+
+.. py:class:: undu_postprocess(undu_api)
+
+
+   A class for postprocessing Undumag files.
+
+   Args:
+           undu_api 
+
+   Takes external api and create postprocess class
+
+   .. py:method:: copy_results(add='')
+
+      Cleans the undumag-stage folder and copies the desired files to their location,
+      deletes non-desired files, and zips the results based on the undu_res_copy_behaviour setting.
+
+
+   .. py:method:: process_radia_out(radia_file, add='')
+
+
+   .. py:method:: cleanup(touchedFiles=[], add='')
+
+      Cleans up the Undumag run
+
+
+
+   .. py:method:: clear_map_file(touchedFiles=[], add='')
+
+
+

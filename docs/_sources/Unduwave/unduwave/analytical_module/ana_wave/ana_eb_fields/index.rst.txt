@@ -1,0 +1,94 @@
+:py:mod:`unduwave.analytical_module.ana_wave.ana_eb_fields`
+===========================================================
+
+.. py:module:: unduwave.analytical_module.ana_wave.ana_eb_fields
+
+.. autoapi-nested-parse::
+
+   Contains functionality for handling files.
+
+   Module to handle various file operations including finding, moving, copying, and deleting files.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_wave.ana_eb_fields.aspectrum
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_wave.ana_eb_fields.compare_sum_res
+   unduwave.analytical_module.ana_wave.ana_eb_fields.bessel_sum
+   unduwave.analytical_module.ana_wave.ana_eb_fields.xyz_from_spherical
+   unduwave.analytical_module.ana_wave.ana_eb_fields.spherical_coord_from_xyz
+   unduwave.analytical_module.ana_wave.ana_eb_fields.make_coords
+
+
+
+.. py:function:: compare_sum_res(new_res, old_res)
+
+
+.. py:function:: bessel_sum(type, order_m, arg_a, arg_b, accur=0.001)
+
+
+.. py:function:: xyz_from_spherical(rs, thetas, phis)
+
+
+.. py:function:: spherical_coord_from_xyz(xs, ys, zs)
+
+
+.. py:function:: make_coords(fun, coords1, coords2)
+
+   Takes 2 lists of coordinates for which fun is evaluated. Fun is expected to give back cartesian coordinates of a point.
+   Returns 3 2d-arrays containing the grid coordinates
+
+
+.. py:class:: aspectrum(ebeam, undulator)
+
+
+   Bases: :py:obj:`unduwave.attribute_classes.attributes._attribute_collection`
+
+   Represents a collection of attributes with children.
+   This is a class containing attributes as class-members.
+   The class members are administered in unison.
+
+   Initialize the attribute collection
+
+   .. py:method:: spectral_fun(omega, order)
+
+
+   .. py:method:: fun_transv(theta, phi)
+
+
+   .. py:method:: fun_transv_ultra_rel(theta, phi)
+
+
+   .. py:method:: angular_power_order(xs, ys, zs, order, omega=None, sigmaOff=False, piOff=False)
+
+
+   .. py:method:: angularSpectralFluxDistro_order(r, dX_scrn, dY_scrn, order, omega, num_integration_pnts=101, sigmaOff=False, piOff=False)
+
+
+   .. py:method:: angular_power_distro_order(r, dX_scrn, dY_scrn, order=1, omega=None, num_integration_pnts=101, sigmaOff=False, piOff=False, fac=1)
+
+
+   .. py:method:: onAxisAngularSpectralFluxDensity(ens, orders, freqs=None)
+
+      ens in [eV]
+
+
+   .. py:method:: flux_factor_comparisson(order)
+
+
+

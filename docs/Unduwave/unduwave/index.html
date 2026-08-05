@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>unduwave &mdash; Unduwave v1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=76e2d817"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="unduwave.analytical_module" href="analytical_module/index.html" />
+    <link rel="prev" title="API Reference" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Unduwave
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickguide.html">Quickguide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="analytical_module/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.api</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="attribute_classes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.attribute_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="helpers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="optimization_module/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.optimization_module</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="quantities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.quantities</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="undu_list/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_list</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="undu_modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="wave_modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.wave_modules</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="constants/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.constants</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unduwave_incl/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.unduwave_incl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#package-contents">Package Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Unduwave</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Unduwave/unduwave/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-unduwave">
+<span id="unduwave"></span><h1><a class="reference internal" href="#module-unduwave" title="unduwave"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave</span></code></a><a class="headerlink" href="#module-unduwave" title="Link to this heading"></a></h1>
+<p>Unduwave init statements</p>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="analytical_module/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analytical_module/ana_undu/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module.ana_undu</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analytical_module/ana_undu/bfield/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module.ana_undu.bfield</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analytical_module/ana_undu/grids/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module.ana_undu.grids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analytical_module/ana_undu/kicks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module.ana_undu.kicks</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analytical_module/ana_undu/undulator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module.ana_undu.undulator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="analytical_module/ana_wave/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module.ana_wave</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analytical_module/ana_wave/ana_eb_fields/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.analytical_module.ana_wave.ana_eb_fields</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.api</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/undu_api_root/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.api.undu_api_root</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/wave_api_root/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.api.wave_api_root</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attribute_classes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.attribute_classes</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attribute_classes/attributes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helpers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="helpers/file_folder_helpers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers.file_folder_helpers</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers/numerical_helpers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.helpers.numerical_helpers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optimization_module/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.optimization_module</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.quantities</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quantities/quantities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.quantities.quantities</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="undu_list/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_list</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="undu_list/undu_list_loading/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_list.undu_list_loading</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="undu_modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_blocks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_blocks</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_coils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_coils</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_control/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_control</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_magneticObjectGeometries/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_magneticObjectGeometries</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_magnets_old/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_magnets_old</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_parameters</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_postprocess/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_postprocess</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_prepare/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_prepare</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_results/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_results</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="undu_modules/undu_undulatorComponents/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.undu_modules.undu_undulatorComponents</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wave_modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.wave_modules</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wave_modules/wave_control/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.wave_modules.wave_control</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="wave_modules/wave_parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.wave_modules.wave_parameters</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="wave_modules/wave_postprocess/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.wave_modules.wave_postprocess</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="wave_modules/wave_prepare/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.wave_modules.wave_prepare</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="wave_modules/wave_results/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.wave_modules.wave_results</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="constants/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.constants</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="unduwave_incl/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unduwave.unduwave_incl</span></code></a></li>
+</ul>
+</div>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.wave" title="unduwave.wave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave</span></code></a></p></td>
+<td><p>Wave API-class for controlling basic wave-functionality.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu" title="unduwave.undu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu</span></code></a></p></td>
+<td><p>Undumag API-class for controlling basic undumag-functionality.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id5" title="unduwave._attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_attribute</span></code></a></p></td>
+<td><p>Represents an attribute with a value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id20" title="unduwave._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_attribute_collection</span></code></a></p></td>
+<td><p>Represents a collection of attributes with children.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id5" title="unduwave._attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_attribute</span></code></a></p></td>
+<td><p>Represents an attribute with a value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id20" title="unduwave._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_attribute_collection</span></code></a></p></td>
+<td><p>Represents a collection of attributes with children.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.ebeam_parameters" title="unduwave.ebeam_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ebeam_parameters</span></code></a></p></td>
+<td><p>Defining basic electron-beam parameters</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.screen_parameters" title="unduwave.screen_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">screen_parameters</span></code></a></p></td>
+<td><p>Basic screen parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.spectrometer_paras" title="unduwave.spectrometer_paras"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectrometer_paras</span></code></a></p></td>
+<td><p>Basic spectrometer parameters</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_paras" title="unduwave.undu_paras"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_paras</span></code></a></p></td>
+<td><p>Parameters controlling the generation of the B-Field inside WAVE</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.bfield_paras" title="unduwave.bfield_paras"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfield_paras</span></code></a></p></td>
+<td><p>Represents a collection of attributes with children.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.wave_prog_parameters" title="unduwave.wave_prog_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave_prog_parameters</span></code></a></p></td>
+<td><p>Represents standard parameters for wave simulations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.wave_postprocess" title="unduwave.wave_postprocess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave_postprocess</span></code></a></p></td>
+<td><p>A class for postprocessing WAVE files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.wave_prepare" title="unduwave.wave_prepare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave_prepare</span></code></a></p></td>
+<td><p>_summary_</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.wave_control" title="unduwave.wave_control"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave_control</span></code></a></p></td>
+<td><p>Internal API for the WAVE program</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.wave_results" title="unduwave.wave_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave_results</span></code></a></p></td>
+<td><p>Init wave-result class holding all the results</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_postprocess" title="unduwave.undu_postprocess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_postprocess</span></code></a></p></td>
+<td><p>A class for postprocessing Undumag files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_prepare" title="unduwave.undu_prepare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_prepare</span></code></a></p></td>
+<td><p>_summary_</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.undu_control" title="unduwave.undu_control"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_control</span></code></a></p></td>
+<td><p>An object for controling undumag, allowing to run simulations</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.undu_results" title="unduwave.undu_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undu_results</span></code></a></p></td>
+<td><p>This class is for this and that</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id28" title="unduwave.to_scn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_scn</span></code></a>(number[, norm])</p></td>
+<td><p>Converts number to string using scientific notation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id29" title="unduwave.combine_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine_strings</span></code></a>(str_add, str_add_to)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id30" title="unduwave.unit_velocity_from_trans_angles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_velocity_from_trans_angles</span></code></a>(hor_angle, vert_angle)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id28" title="unduwave.to_scn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_scn</span></code></a>(number[, norm])</p></td>
+<td><p>Converts number to string using scientific notation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id29" title="unduwave.combine_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine_strings</span></code></a>(str_add, str_add_to)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id30" title="unduwave.unit_velocity_from_trans_angles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_velocity_from_trans_angles</span></code></a>(hor_angle, vert_angle)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id28" title="unduwave.to_scn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_scn</span></code></a>(number[, norm])</p></td>
+<td><p>Converts number to string using scientific notation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id29" title="unduwave.combine_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine_strings</span></code></a>(str_add, str_add_to)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id30" title="unduwave.unit_velocity_from_trans_angles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_velocity_from_trans_angles</span></code></a>(hor_angle, vert_angle)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id27" title="unduwave.cm_inch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cm_inch</span></code></a></p></td>
+<td><p>Conversion factor cm to inch</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id31" title="unduwave.ROOT_DIR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ROOT_DIR</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.fein_const" title="unduwave.fein_const"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fein_const</span></code></a></p></td>
+<td><p>Fein Structure Constant</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.hbar" title="unduwave.hbar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hbar</span></code></a></p></td>
+<td><p>Planck's constant devided by 2 pi</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.q_el" title="unduwave.q_el"><code class="xref py py-obj docutils literal notranslate"><span class="pre">q_el</span></code></a></p></td>
+<td><p>Charge of electron, [C]</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.m_el" title="unduwave.m_el"><code class="xref py py-obj docutils literal notranslate"><span class="pre">m_el</span></code></a></p></td>
+<td><p>mass pf electron [kg]</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.v_c" title="unduwave.v_c"><code class="xref py py-obj docutils literal notranslate"><span class="pre">v_c</span></code></a></p></td>
+<td><p>velocity of light [m/s]</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.mu0" title="unduwave.mu0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mu0</span></code></a></p></td>
+<td><p>Vacuum permittivity [F/m]</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.eps0" title="unduwave.eps0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eps0</span></code></a></p></td>
+<td><p>classical electron radius [m]</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unduwave.R_el" title="unduwave.R_el"><code class="xref py py-obj docutils literal notranslate"><span class="pre">R_el</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id27" title="unduwave.cm_inch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cm_inch</span></code></a></p></td>
+<td><p>Conversion factor cm to inch</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id31" title="unduwave.ROOT_DIR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ROOT_DIR</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unduwave.dir_path" title="unduwave.dir_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir_path</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#id27" title="unduwave.cm_inch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cm_inch</span></code></a></p></td>
+<td><p>Conversion factor cm to inch</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id31" title="unduwave.ROOT_DIR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ROOT_DIR</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.cm_inch">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">cm_inch</span></span><a class="headerlink" href="#unduwave.cm_inch" title="Link to this definition"></a></dt>
+<dd><p>Conversion factor cm to inch</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.to_scn">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">to_scn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.to_scn" title="Link to this definition"></a></dt>
+<dd><p>Converts number to string using scientific notation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number</strong> (<em>float</em>) – The number to convert</p></li>
+<li><p><strong>norm</strong> (<em>bool</em>) – If true, std scientific notation, False: With leading 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.combine_strings">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">combine_strings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str_add</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str_add_to</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.combine_strings" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unduwave.unit_velocity_from_trans_angles">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">unit_velocity_from_trans_angles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hor_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.unit_velocity_from_trans_angles" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.ROOT_DIR">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">ROOT_DIR</span></span><a class="headerlink" href="#unduwave.ROOT_DIR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.fein_const">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">fein_const</span></span><a class="headerlink" href="#unduwave.fein_const" title="Link to this definition"></a></dt>
+<dd><p>Fein Structure Constant</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.hbar">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">hbar</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.054e-34</span></em><a class="headerlink" href="#unduwave.hbar" title="Link to this definition"></a></dt>
+<dd><p>Planck’s constant devided by 2 pi</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.q_el">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">q_el</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.602e-19</span></em><a class="headerlink" href="#unduwave.q_el" title="Link to this definition"></a></dt>
+<dd><p>Charge of electron, [C]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.m_el">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">m_el</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9.109e-31</span></em><a class="headerlink" href="#unduwave.m_el" title="Link to this definition"></a></dt>
+<dd><p>mass pf electron [kg]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.v_c">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">v_c</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">299792458</span></em><a class="headerlink" href="#unduwave.v_c" title="Link to this definition"></a></dt>
+<dd><p>velocity of light [m/s]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.mu0">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">mu0</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.25663706127e-06</span></em><a class="headerlink" href="#unduwave.mu0" title="Link to this definition"></a></dt>
+<dd><p>Vacuum permittivity [F/m]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.eps0">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">eps0</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8.854e-12</span></em><a class="headerlink" href="#unduwave.eps0" title="Link to this definition"></a></dt>
+<dd><p>classical electron radius [m]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.R_el">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">R_el</span></span><a class="headerlink" href="#unduwave.R_el" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.wave">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'undu_endp'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave" title="Link to this definition"></a></dt>
+<dd><p>Wave API-class for controlling basic wave-functionality.
+Holds the basic parameter classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>wave_mode</strong> (<em>str</em>) – can be one of the following
+‘bfield’, ‘undu_ellip’, ‘undu_endp’ :</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.wave._prog_paras">
+<span class="sig-name descname"><span class="pre">_prog_paras</span></span><a class="headerlink" href="#unduwave.wave._prog_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.wave._ebeam_paras">
+<span class="sig-name descname"><span class="pre">_ebeam_paras</span></span><a class="headerlink" href="#unduwave.wave._ebeam_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.wave._screen_paras">
+<span class="sig-name descname"><span class="pre">_screen_paras</span></span><a class="headerlink" href="#unduwave.wave._screen_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.wave._spectrometer_paras">
+<span class="sig-name descname"><span class="pre">_spectrometer_paras</span></span><a class="headerlink" href="#unduwave.wave._spectrometer_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.wave._bfield_paras">
+<span class="sig-name descname"><span class="pre">_bfield_paras</span></span><a class="headerlink" href="#unduwave.wave._bfield_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.wave._undu_paras">
+<span class="sig-name descname"><span class="pre">_undu_paras</span></span><a class="headerlink" href="#unduwave.wave._undu_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave.run" title="Link to this definition"></a></dt>
+<dd><p>Runs wave with the given settings, prepares and postprocesses data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave.get_results">
+<span class="sig-name descname"><span class="pre">get_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave.get_results" title="Link to this definition"></a></dt>
+<dd><p>Returns the results from a given simulation as result-object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">undu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'from_undu_magns'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magn_objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu" title="Link to this definition"></a></dt>
+<dd><p>Undumag API-class for controlling basic undumag-functionality.</p>
+<p>param str undu_mode: Determines the basic mode by which a magnet structure is
+constructed. Can be one of the following:
+‘from_clc_file’: The magnet structure is read from an Undumag .clc file.</p>
+<p>‘from_undu_magns’: A model of the magnet structure is constructed using
+the undu_magns classes.
+change</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu.set_magnet_objects">
+<span class="sig-name descname"><span class="pre">set_magnet_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magn_objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu.set_magnet_objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu.run" title="Link to this definition"></a></dt>
+<dd><p>Runs undumag with the given settings, prepares and postprocesses data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu.load_clc_raw">
+<span class="sig-name descname"><span class="pre">load_clc_raw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu.load_clc_raw" title="Link to this definition"></a></dt>
+<dd><p>Loads a raw-clc file template from the folder set in prog_paras.in_file_folder+prog_paras.in_file_clc_raw.
+After loading prog_paras.in_file_clc_lines holds the list representation of the file in form of a list of strings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu.set_force_calc">
+<span class="sig-name descname"><span class="pre">set_force_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segmentations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.array([20,</span> <span class="pre">50,</span> <span class="pre">50])</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu.set_force_calc" title="Link to this definition"></a></dt>
+<dd><p>Prepares the parameter list for calculation of force on the undu_magnets object object.</p>
+<p>param undu_magnets object: An undu_magnets object (i.e. a collection of magnets) on which the force is to be calculated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu.get_results">
+<span class="sig-name descname"><span class="pre">get_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu.get_results" title="Link to this definition"></a></dt>
+<dd><p>Returns the results from a given simulation as result-object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave._attribute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute" title="Link to this definition"></a></dt>
+<dd><p>Represents an attribute with a value.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value: Initial value of the attribute.
+name (str, optional): Name of the attribute.</p>
+</dd>
+</dl>
+<p>Initialize an attribute.
+:param value: The value held by this class
+:param str name: Name of the attribute
+:param str in_name: Name as used by Wave or Undumag
+:param str unit: The physical unit of the quantity
+‘param float fac’: gauging factor</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="unduwave._attribute.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#unduwave._attribute.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.set" title="Link to this definition"></a></dt>
+<dd><p>Sets the value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.get" title="Link to this definition"></a></dt>
+<dd><p>Returns the value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.get_fac">
+<span class="sig-name descname"><span class="pre">get_fac</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.get_fac" title="Link to this definition"></a></dt>
+<dd><p>Returns scaling factor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.set_name" title="Link to this definition"></a></dt>
+<dd><p>Setting the name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.set_in_name">
+<span class="sig-name descname"><span class="pre">set_in_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.set_in_name" title="Link to this definition"></a></dt>
+<dd><p>Setting the in-name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.get_in_name">
+<span class="sig-name descname"><span class="pre">get_in_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.get_in_name" title="Link to this definition"></a></dt>
+<dd><p>Returns in-name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.__eq__" title="Link to this definition"></a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.__call__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.__str__" title="Link to this definition"></a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.__repr__" title="Link to this definition"></a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.__iter__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.__getstate__">
+<span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.__getstate__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute.__setstate__">
+<span class="sig-name descname"><span class="pre">__setstate__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute.__setstate__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave._attribute_collection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">_attribute_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute_collection" title="Link to this definition"></a></dt>
+<dd><p>Represents a collection of attributes with children.
+This is a class containing attributes as class-members.
+The class members are administered in unison.</p>
+<p>Initialize the attribute collection</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute_collection._add_attributes">
+<span class="sig-name descname"><span class="pre">_add_attributes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute_collection._add_attributes" title="Link to this definition"></a></dt>
+<dd><p>Scans all class members, finds those of type _attribute and sets those
+as new attributes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute_collection.show_all_children">
+<span class="sig-name descname"><span class="pre">show_all_children</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute_collection.show_all_children" title="Link to this definition"></a></dt>
+<dd><p>Prints the names of the children</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute_collection.children">
+<span class="sig-name descname"><span class="pre">children</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute_collection.children" title="Link to this definition"></a></dt>
+<dd><p>Yields the children of the _attribute_collection.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute_collection.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute_collection.__iter__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute_collection.toFile">
+<span class="sig-name descname"><span class="pre">toFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute_collection.toFile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave._attribute_collection.fromFile">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave._attribute_collection.fromFile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">cm_inch</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Conversion factor cm to inch</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">to_scn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Converts number to string using scientific notation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number</strong> (<em>float</em>) – The number to convert</p></li>
+<li><p><strong>norm</strong> (<em>bool</em>) – If true, std scientific notation, False: With leading 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">combine_strings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str_add</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str_add_to</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">unit_velocity_from_trans_angles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hor_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">ROOT_DIR</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id5">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>Represents an attribute with a value.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value: Initial value of the attribute.
+name (str, optional): Name of the attribute.</p>
+</dd>
+</dl>
+<p>Initialize an attribute.
+:param value: The value held by this class
+:param str name: Name of the attribute
+:param str in_name: Name as used by Wave or Undumag
+:param str unit: The physical unit of the quantity
+‘param float fac’: gauging factor</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="id6">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id7" title="Link to this definition"></a></dt>
+<dd><p>Sets the value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd><p>Returns the value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">get_fac</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id9" title="Link to this definition"></a></dt>
+<dd><p>Returns scaling factor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
+<dd><p>Setting the name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">set_in_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id11" title="Link to this definition"></a></dt>
+<dd><p>Setting the in-name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">get_in_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id12" title="Link to this definition"></a></dt>
+<dd><p>Returns in-name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id13" title="Link to this definition"></a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id14" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id15" title="Link to this definition"></a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id16" title="Link to this definition"></a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id17" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id18" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-name descname"><span class="pre">__setstate__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id19" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id20">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">_attribute_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id20" title="Link to this definition"></a></dt>
+<dd><p>Represents a collection of attributes with children.
+This is a class containing attributes as class-members.
+The class members are administered in unison.</p>
+<p>Initialize the attribute collection</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-name descname"><span class="pre">_add_attributes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id21" title="Link to this definition"></a></dt>
+<dd><p>Scans all class members, finds those of type _attribute and sets those
+as new attributes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-name descname"><span class="pre">show_all_children</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id22" title="Link to this definition"></a></dt>
+<dd><p>Prints the names of the children</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-name descname"><span class="pre">children</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id23" title="Link to this definition"></a></dt>
+<dd><p>Yields the children of the _attribute_collection.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id24">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id24" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id25">
+<span class="sig-name descname"><span class="pre">toFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id25" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id26">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id26" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="unduwave.dir_path">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">dir_path</span></span><a class="headerlink" href="#unduwave.dir_path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="unduwave.waveParaError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">waveParaError</span></span><a class="headerlink" href="#unduwave.waveParaError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Common base class for all non-exit exceptions.</p>
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.ebeam_parameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">ebeam_parameters</span></span><a class="headerlink" href="#unduwave.ebeam_parameters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Defining basic electron-beam parameters
+beam_en - Beam energy in [GeV]
+current - current in [A]
+beamSizeHor - horizontal beam size [m]
+beamDiveHor - Horizontal beam divergence [rad]
+beamSizeVer - vertical beam size [m]
+beamDiveVer - vertical beam divergence [rad]
+espread - energy spread [%]
+emittanceHor/Ver - horizontal and vertical emittance [mrad]
+betaFunctionHor/Ver - horizontal and vertical beta functions [m]
+circumference - Ring circumference in [m]
+rdipol - Bending radius of dipoles [m]</p>
+<p>Initialize the attribute collection</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.ebeam_parameters.get_std_bessy_III_paras">
+<span class="sig-name descname"><span class="pre">get_std_bessy_III_paras</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.ebeam_parameters.get_std_bessy_III_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.ebeam_parameters.get_std_bessy_II_paras">
+<span class="sig-name descname"><span class="pre">get_std_bessy_II_paras</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.ebeam_parameters.get_std_bessy_II_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.ebeam_parameters.get_std_paras">
+<span class="sig-name descname"><span class="pre">get_std_paras</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.ebeam_parameters.get_std_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.ebeam_parameters.update_values">
+<span class="sig-name descname"><span class="pre">update_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.ebeam_parameters.update_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.screen_parameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">screen_parameters</span></span><a class="headerlink" href="#unduwave.screen_parameters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Basic screen parameters
+screen_extent_hor/vert - width and height of pinhole [mm]
+screen_pos_x - distance of pinhole from center of undu [m]
+screen_segm_hor - number of points in z-direction
+screen_segm_vert - number of points in y-direction</p>
+<p>Initialize the attribute collection</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.screen_parameters.get_std_paras">
+<span class="sig-name descname"><span class="pre">get_std_paras</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.screen_parameters.get_std_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.spectrometer_paras">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">spectrometer_paras</span></span><a class="headerlink" href="#unduwave.spectrometer_paras" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Basic spectrometer parameters
+spectrum_min_energy, spectrum_max_energy - Energie at which to start/end spectrum calculation [eV]
+spectrum_n_energies - number of energies for which to calculate spectrum
+spectrum_undu_mode - undulator-mode (whole trajectory is source of radiation - coherent)
+spectrum_wigg_mode - wiggler-mode (only source-areas are considered and added incoherently)</p>
+<p>Initialize the attribute collection</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.spectrometer_paras.get_std_paras">
+<span class="sig-name descname"><span class="pre">get_std_paras</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.spectrometer_paras.get_std_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_paras">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">undu_paras</span></span><a class="headerlink" href="#unduwave.undu_paras" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Parameters controlling the generation of the B-Field inside WAVE</p>
+<dl class="simple">
+<dt>prog_parameters.undu_endp = 1</dt><dd><p>planarUnduK - K-Parameter of Machine
+planarUnduB0 - B-Amplitude of Machine (either planarUnduK or this) [T]
+planarUnduPerLength- period length in x-direction [m]
+planarUnduNumPeriods - number of b-field peaks - each period contributes 2, the endpoles 3 -&gt; odd number</p>
+</dd>
+<dt>prog_parameters.undu_ellip = 1</dt><dd><p>elliptUnduB0Y - B-Amplitude in y - [T]
+elliptUnduB0Z - B-Amplitude in z - [T]
+elliptUnduNumPeriods- numer of periods
+elliptUnduPerLength - period length - [m]
+elliptUnduPerShift - shift, % of period</p>
+</dd>
+</dl>
+<p>Initialize the attribute collection</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_paras.set_paras_from_bessyII_undu_list">
+<span class="sig-name descname"><span class="pre">set_paras_from_bessyII_undu_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unduName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_paras.set_paras_from_bessyII_undu_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_paras.get_std_paras">
+<span class="sig-name descname"><span class="pre">get_std_paras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ebeam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetaObservation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_paras.get_std_paras" title="Link to this definition"></a></dt>
+<dd><p>getting standard undu parameters
+wave_mode - same as prog_parameters.wave_mode</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_paras.update_values">
+<span class="sig-name descname"><span class="pre">update_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thetaObservation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_paras.update_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.bfield_paras">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">bfield_paras</span></span><a class="headerlink" href="#unduwave.bfield_paras" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Represents a collection of attributes with children.
+This is a class containing attributes as class-members.
+The class members are administered in unison.</p>
+<p>Initialize the attribute collection</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.bfield_paras.field_type">
+<span class="sig-name descname"><span class="pre">field_type</span></span><a class="headerlink" href="#unduwave.bfield_paras.field_type" title="Link to this definition"></a></dt>
+<dd><p>Possible Types:
+By / Byz / Bxyz / Bmap</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.bfield_paras.get_std_paras">
+<span class="sig-name descname"><span class="pre">get_std_paras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bfield</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.bfield_paras.get_std_paras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.wave_prog_parameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">wave_prog_parameters</span></span><a class="headerlink" href="#unduwave.wave_prog_parameters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="attribute_classes/attributes/index.html#unduwave.attribute_classes.attributes._attribute_collection" title="unduwave.attribute_classes.attributes._attribute_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unduwave.attribute_classes.attributes._attribute_collection</span></code></a></p>
+<p>Represents standard parameters for wave simulations.</p>
+<p>Initialize the attribute collection</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unduwave.wave_prog_parameters.electron_vz0">
+<span class="sig-name descname"><span class="pre">electron_vz0</span></span><a class="headerlink" href="#unduwave.wave_prog_parameters.electron_vz0" title="Link to this definition"></a></dt>
+<dd><p>Writing Field-Maps</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_prog_parameters.get_std_paras">
+<span class="sig-name descname"><span class="pre">get_std_paras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'undu_easy'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_prog_parameters.get_std_paras" title="Link to this definition"></a></dt>
+<dd><p>Getting standard wave-parameters depending on mode
+- wave_mode = ‘By’ - takes by field data and runs with that
+- wave_mode = ‘Byz’
+- wave_mode = ‘Bxyz’
+- wave_mode = ‘undu_ellip’ - standard elliptical undulator
+- wave_mode = ‘undu_easy’
+- wave_mode = ‘undu_endp’
+- wave_mode = ‘undu_gap’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_prog_parameters.update_values">
+<span class="sig-name descname"><span class="pre">update_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bfield_paras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_prog_parameters.update_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">cm_inch</span></span><a class="headerlink" href="#id27" title="Link to this definition"></a></dt>
+<dd><p>Conversion factor cm to inch</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">to_scn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id28" title="Link to this definition"></a></dt>
+<dd><p>Converts number to string using scientific notation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number</strong> (<em>float</em>) – The number to convert</p></li>
+<li><p><strong>norm</strong> (<em>bool</em>) – If true, std scientific notation, False: With leading 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">combine_strings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str_add</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str_add_to</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id29" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">unit_velocity_from_trans_angles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hor_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id30" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id31">
+<span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">ROOT_DIR</span></span><a class="headerlink" href="#id31" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.wave_postprocess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">wave_postprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_postprocess" title="Link to this definition"></a></dt>
+<dd><p>A class for postprocessing WAVE files.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>wave_api (StdParameters): An instance of the StdParameters class.</p>
+</dd>
+</dl>
+<p>Takes external api and create postprocess class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_postprocess.copy_results">
+<span class="sig-name descname"><span class="pre">copy_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_postprocess.copy_results" title="Link to this definition"></a></dt>
+<dd><p>Cleans the wave-stage folder and copies the desired files to their location,
+deletes non-desired files, and zips the results based on the wave_res_copy_behaviour setting.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_postprocess.cleanup">
+<span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_postprocess.cleanup" title="Link to this definition"></a></dt>
+<dd><p>Cleans up the WAVE run by removing the ‘WAVE.mhb’ file if it exists in the specified folder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>wave_folder (str): The folder containing the WAVE run files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.wave_prepare">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">wave_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_prepare" title="Link to this definition"></a></dt>
+<dd><p>_summary_</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>wave_api (wave_api): Standard Parameters used for the simulation</p>
+</dd>
+</dl>
+<p>Ini wave-prepare class for setting everything up for calcs</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_prepare.create_wave_input">
+<span class="sig-name descname"><span class="pre">create_wave_input</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_prepare.create_wave_input" title="Link to this definition"></a></dt>
+<dd><p>Creates all the files needed as input fro Wave.</p>
+<p>Loads the input file set in wave_paras, updates properties
+based on other wave_paras properties,and copies the
+resulting file to the WAVE program folder.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_prepare.prepare_b_files_for_wave">
+<span class="sig-name descname"><span class="pre">prepare_b_files_for_wave</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_prepare.prepare_b_files_for_wave" title="Link to this definition"></a></dt>
+<dd><p>Prepare the files for WAVE depending on the b type.</p>
+<p>Depending on which b_type, copies and
+formats the b-field files needed</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.wave_control">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">wave_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_control" title="Link to this definition"></a></dt>
+<dd><p>Internal API for the WAVE program</p>
+<p>Initialize the internal API
+wave_api : external wave_api class
+current_folder : folder to which you want to jump back after wave was run</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_control.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_control.run" title="Link to this definition"></a></dt>
+<dd><p>Run Wave from the self.wave_folder.</p>
+<p>If given, change the directory back to self.current_folder</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.wave_results">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">wave_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave_api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results" title="Link to this definition"></a></dt>
+<dd><p>Init wave-result class holding all the results</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.load_from_res_folder">
+<span class="sig-name descname"><span class="pre">load_from_res_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.load_from_res_folder" title="Link to this definition"></a></dt>
+<dd><p>goes through folder and loads all results it can find, flux, flux_d, brilliance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.writeSummary">
+<span class="sig-name descname"><span class="pre">writeSummary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.writeSummary" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.extract_summary">
+<span class="sig-name descname"><span class="pre">extract_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.extract_summary" title="Link to this definition"></a></dt>
+<dd><p>Extracts summary information from a WAVE run’s files in the specified folder
+and stores the results in the file self.wave_paras.res_summary_file within the folder.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>folder (str): The folder containing the WAVE run files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.find_load_flux_density_distribution">
+<span class="sig-name descname"><span class="pre">find_load_flux_density_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.find_load_flux_density_distribution" title="Link to this definition"></a></dt>
+<dd><p>Finds the distribution that is closed to each energy in energies, loads y/z data and flux distribution and adds them to the
+res_quantities list</p>
+<p>energies - list of energies in eV at which flux distribution is to be plotted</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.find_load_stokes">
+<span class="sig-name descname"><span class="pre">find_load_stokes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.find_load_stokes" title="Link to this definition"></a></dt>
+<dd><p>Loads on-axis flux-density</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.find_load_flux_density_on_axis">
+<span class="sig-name descname"><span class="pre">find_load_flux_density_on_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.find_load_flux_density_on_axis" title="Link to this definition"></a></dt>
+<dd><p>Loads on-axis flux-density</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.find_load_brilliance">
+<span class="sig-name descname"><span class="pre">find_load_brilliance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.find_load_brilliance" title="Link to this definition"></a></dt>
+<dd><p>Loads brilliance data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.find_load_flux">
+<span class="sig-name descname"><span class="pre">find_load_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.find_load_flux" title="Link to this definition"></a></dt>
+<dd><p>Loads flux through pinhole</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.find_load_power_distribution">
+<span class="sig-name descname"><span class="pre">find_load_power_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.find_load_power_distribution" title="Link to this definition"></a></dt>
+<dd><p>Loads power-distribution data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.find_load_trajectory_bfield_data">
+<span class="sig-name descname"><span class="pre">find_load_trajectory_bfield_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.find_load_trajectory_bfield_data" title="Link to this definition"></a></dt>
+<dd><p>Loads trajectory-bfield data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.wave_results.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.wave_results.get_result" title="Link to this definition"></a></dt>
+<dd><p>Pass string “flux_dens”,… to get object containing data and some functionality</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_postprocess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">undu_postprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_postprocess" title="Link to this definition"></a></dt>
+<dd><p>A class for postprocessing Undumag files.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>undu_api</p>
+</dd>
+</dl>
+<p>Takes external api and create postprocess class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_postprocess.copy_results">
+<span class="sig-name descname"><span class="pre">copy_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_postprocess.copy_results" title="Link to this definition"></a></dt>
+<dd><p>Cleans the undumag-stage folder and copies the desired files to their location,
+deletes non-desired files, and zips the results based on the undu_res_copy_behaviour setting.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_postprocess.process_radia_out">
+<span class="sig-name descname"><span class="pre">process_radia_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radia_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_postprocess.process_radia_out" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_postprocess.cleanup">
+<span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">touchedFiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_postprocess.cleanup" title="Link to this definition"></a></dt>
+<dd><p>Cleans up the Undumag run</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_postprocess.clear_map_file">
+<span class="sig-name descname"><span class="pre">clear_map_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">touchedFiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_postprocess.clear_map_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_prepare">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">undu_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_prepare" title="Link to this definition"></a></dt>
+<dd><p>_summary_</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>undu_api (undu_api): Standard Parameters used for the simulation</p>
+</dd>
+</dl>
+<p>Ini wave-prepare class for setting everything up for calcs</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_prepare.update_materials_section_in_clc">
+<span class="sig-name descname"><span class="pre">update_materials_section_in_clc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clc_lines</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_prepare.update_materials_section_in_clc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_prepare.create_fresh_clc">
+<span class="sig-name descname"><span class="pre">create_fresh_clc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_prepare.create_fresh_clc" title="Link to this definition"></a></dt>
+<dd><p>Writes/Wrote the clc file from some parameter list - but this is deprecated for now</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_prepare.create_fresh_nam">
+<span class="sig-name descname"><span class="pre">create_fresh_nam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_prepare.create_fresh_nam" title="Link to this definition"></a></dt>
+<dd><p>Updates the nam file from parameters.</p>
+<p>Loads the input file set in undu_paras, updates properties
+based on other undu_paras properties,and copies the
+resulting file to the Undu program folder.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_prepare.prepare_material_files">
+<span class="sig-name descname"><span class="pre">prepare_material_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_prepare.prepare_material_files" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_prepare.prepare_radia_file">
+<span class="sig-name descname"><span class="pre">prepare_radia_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_prepare.prepare_radia_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_prepare.create_undu_input">
+<span class="sig-name descname"><span class="pre">create_undu_input</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_prepare.create_undu_input" title="Link to this definition"></a></dt>
+<dd><p>Creates all the files needed as input for Undumag.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_control">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">undu_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_control" title="Link to this definition"></a></dt>
+<dd><p>An object for controling undumag, allowing to run simulations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>undu_api</strong> (<a class="reference internal" href="api/undu_api_root/index.html#unduwave.api.undu_api_root.undu_api" title="unduwave.api.undu_api_root.undu_api"><em>undu_api</em></a>) – external wave_api class</p></li>
+<li><p><strong>current_folder</strong> (<em>str</em><em> or </em><em>None</em>) – folder to which you want to jump back after wave was run</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_control.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_control.run" title="Link to this definition"></a></dt>
+<dd><p>Run an undumag simulation</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unduwave.undu_results">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unduwave.</span></span><span class="sig-name descname"><span class="pre">undu_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undu_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_results" title="Link to this definition"></a></dt>
+<dd><p>This class is for this and that</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter1</strong> – my favorite int</p></li>
+<li><p><strong>parameter2</strong> – my favorite class</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_results.load_from_res_folder">
+<span class="sig-name descname"><span class="pre">load_from_res_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_results.load_from_res_folder" title="Link to this definition"></a></dt>
+<dd><p>This fun is for this and that</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter1</strong> – my favorite int</p></li>
+<li><p><strong>parameter2</strong> – my favorite class</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns some nothing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_results.load_field_map">
+<span class="sig-name descname"><span class="pre">load_field_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_results.load_field_map" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_results.load_field_profile">
+<span class="sig-name descname"><span class="pre">load_field_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_results.load_field_profile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_results.load_on_axis_undumag_file">
+<span class="sig-name descname"><span class="pre">load_on_axis_undumag_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_results.load_on_axis_undumag_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_results.load_force_undumag_file">
+<span class="sig-name descname"><span class="pre">load_force_undumag_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_results.load_force_undumag_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_results.extract_summary">
+<span class="sig-name descname"><span class="pre">extract_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_results.extract_summary" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unduwave.undu_results.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">which</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unduwave.undu_results.get_result" title="Link to this definition"></a></dt>
+<dd><p>Pass string “flux_dens”,… to get object containing data and some functionality</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="analytical_module/index.html" class="btn btn-neutral float-right" title="unduwave.analytical_module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CC BY-NC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+:py:mod:`unduwave.analytical_module.ana_undu.grids`
+===================================================
+
+.. py:module:: unduwave.analytical_module.ana_undu.grids
+
+.. autoapi-nested-parse::
+
+   Contains the functionality for loading and processing b-field data
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.grids.grid_interpolator
+   unduwave.analytical_module.ana_undu.grids.bmap_hallbach_parametrization
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   unduwave.analytical_module.ana_undu.grids.get_line_through_point
+   unduwave.analytical_module.ana_undu.grids.grid_get_lines_init_shared
+   unduwave.analytical_module.ana_undu.grids.grid_get_lines_worker
+   unduwave.analytical_module.ana_undu.grids.grid_get_lines_calc
+   unduwave.analytical_module.ana_undu.grids.grid_line_integrals_init_shared
+   unduwave.analytical_module.ana_undu.grids.grid_line_integrals_worker
+   unduwave.analytical_module.ana_undu.grids.grid_line_integrals_calc
+   unduwave.analytical_module.ana_undu.grids.grid_pnts_init_shared
+   unduwave.analytical_module.ana_undu.grids.grid_pnts_worker
+   unduwave.analytical_module.ana_undu.grids.grid_pnts_calc
+   unduwave.analytical_module.ana_undu.grids.createPointList
+
+
+
+.. py:function:: get_line_through_point(p0, n0, xlims, ylims, zlims)
+
+
+.. py:function:: grid_get_lines_init_shared(funs, xvals, yvals, zvals, nvec, interpolators, nlinepnts)
+
+
+.. py:function:: grid_get_lines_worker(p0)
+
+
+.. py:function:: grid_get_lines_calc(funs, xvals, yvals, zvals, p0s, nvec, interpolators, nlinepnts=100, processes=3)
+
+
+.. py:function:: grid_line_integrals_init_shared(funs, xvals, yvals, zvals, limit=400, epsrel=0.001, epsabs=1e-05)
+
+
+.. py:function:: grid_line_integrals_worker(cur_ind)
+
+
+.. py:function:: grid_line_integrals_calc(funs, xvals, yvals, zvals, limit=400, epsrel=0.001, epsabs=1e-05, processes=3)
+
+
+.. py:function:: grid_pnts_init_shared(pnts, interpolators)
+
+
+.. py:function:: grid_pnts_worker(cur_ind)
+
+
+.. py:function:: grid_pnts_calc(pnts, interpolators, processes=3)
+
+
+.. py:exception:: unduGridError
+
+
+   Bases: :py:obj:`Exception`
+
+   Common base class for all non-exit exceptions.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+.. py:function:: createPointList(vals, npnts=None, dpnts=None, pnts=None, intrvl=None)
+
+
+.. py:class:: grid_interpolator(funs, xvals, yvals=None, zvals=None)
+
+
+   .. py:method:: setfuns(funs)
+
+
+   .. py:method:: create_difference_grid(grid, nx=None, ny=None, nz=None)
+
+
+   .. py:method:: plot_grid_map(indPlot=0, zlab='', xPos=None, yPos=None, zPos=None, nHor=None, nVert=None, nfig=None, save=False, filename=None, title=None)
+
+
+   .. py:method:: write_grid_data(file, cols=None)
+
+
+   .. py:method:: load_radia_kicks(file, xval=0.0)
+      :staticmethod:
+
+
+   .. py:method:: load_grid_data(file, header=0, skiprows=None)
+      :staticmethod:
+
+                      
+
+
+   .. py:method:: crop_grid(data, xlims=None, ylims=None, zlims=None)
+      :staticmethod:
+
+
+   .. py:method:: set_limits()
+
+
+   .. py:method:: is_in_limits(pnt)
+
+
+   .. py:method:: create_grid_interpolation()
+
+      create interpolation from bvals, xvals,...
+
+
+   .. py:method:: get_values(pnts)
+
+
+   .. py:method:: __call__(pnts)
+
+
+   .. py:method:: get_values_on_plane(p0, v0, h0, nv=None, nh=None)
+
+      Returns the values on a plane including point p0, with n0 and v0 spanning the plane
+
+
+   .. py:method:: get_values_on_grid(xs=None, ys=None, zs=None, nx=None, ny=None, nz=None)
+
+                      
+
+
+   .. py:method:: calcGradient()
+
+
+   .. py:method:: get_line_through_point(p0, n0, coordLimits=None)
+
+
+   .. py:method:: get_values_along_line(p0, n0, dx=None, dy=None, dz=None, n=100, coordLimits=None)
+
+
+   .. py:method:: integrate_along_line(p0, n0, limit=400, epsrel=0.001, epsabs=1e-05, coordLimits=None, square=False)
+
+
+
+.. py:class:: bmap_hallbach_parametrization(**kwargs)
+
+
+   .. py:method:: create_hallbach_parametrization()
+
+      create interpolation from bvals, xvals,...
+
+
+   .. py:method:: get_field(pos)
+
+      also set 0 outside of area?
+      y>?
+      x
+
+
+

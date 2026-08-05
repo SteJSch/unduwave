@@ -1,0 +1,24 @@
+:py:mod:`unduwave.undu_modules`
+===============================
+
+.. py:module:: unduwave.undu_modules
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   undu_blocks/index.rst
+   undu_coils/index.rst
+   undu_control/index.rst
+   undu_magneticObjectGeometries/index.rst
+   undu_magnets_old/index.rst
+   undu_parameters/index.rst
+   undu_postprocess/index.rst
+   undu_prepare/index.rst
+   undu_results/index.rst
+   undu_undulatorComponents/index.rst
+
+

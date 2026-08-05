@@ -8,19 +8,29 @@
 
 import os
 import sys
+from pathlib import Path
 
-sys.path.insert(0, os.path.abspath("../.."))
+here = Path(__file__).resolve().parent
 
+sys.path.insert(0, os.path.abspath(here/"../.."))
+import unduwave
+autoapi_dirs = [os.path.dirname(unduwave.__file__)]
+
+#print(autoapi_dirs)
+print(Path(unduwave.__file__))
+#print("package exists:", os.path.exists(unduwave.__file__))
+#print("package exists:", os.path.exists(unduwave.wave_modules.undu_control.__file__))
+#
 project = 'Unduwave'
 copyright = 'CC BY-NC'
 author = 'Stefan J. Schäfer'
-release = 'v0.9.2'
+release = 'v1.0.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ['autoapi.extension','sphinx.ext.autodoc','sphinx_rtd_theme']
-autoapi_dirs = ['../../unduwave/']  # Relative path to the Python package to document
+#autoapi_dirs = [str((here / "../../unduwave").resolve())]  # Relative path to the Python package to document
 autoapi_ignore = ['*UNDWAVE_IN_FILES*','undumag_proc_msh_radia.py','*archive*','*External-Software*']
 autoapi_python_class_content = 'both'
 autoapi_root = 'Unduwave'
@@ -33,4 +43,5 @@ exclude_patterns=[]
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 autodoc_typehints = 'description'
+autoapi_add_toctree_entry = True
 
