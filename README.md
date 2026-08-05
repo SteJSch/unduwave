@@ -24,7 +24,7 @@ To get started, see the documentation on [github pages](https://stejsch.github.i
 
 ## Version
 
-- Current Version: 0.9.2
+- Current Version: 1.0.0
 
 ## License
 

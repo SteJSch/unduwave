@@ -24,7 +24,7 @@ print(Path(unduwave.__file__))
 project = 'Unduwave'
 copyright = 'CC BY-NC'
 author = 'Stefan J. Schäfer'
-release = 'v0.9.2'
+release = 'v1.0.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
