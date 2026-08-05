@@ -703,6 +703,86 @@ class bfield(quantities.quantity) :
 
 		return bf
 
+	def crop(self,xlims=None,ylims=None,zlims=None) : 
+
+		nfuns=copy.deepcopy(self.bvals)
+		xvals=copy.deepcopy(self.xvals)
+		yvals=copy.deepcopy(self.yvals)
+		zvals=copy.deepcopy(self.zvals)
+		if not (xlims is None) :
+
+			indStart=None
+			indEnd=None
+			for ind, xval in enumerate(xlims) :
+				if indStart is None : 
+					if xval >= xlims[0] :
+						indStart=ind
+				if xval > xlims[1] :
+					indEnd=ind
+					break
+			if indEnd is None :
+				if not (indStart is None):
+					indEnd=len(xvals)-1
+			if (indEnd is None) :
+				indEnd=len(xlims)
+			if (indStart is None) :
+				indStart=0
+			nxvals=xvals[indStart:indEnd]
+
+			nfuns=nfuns[indStart:indEnd,:,:,:]
+			xvals=nxvals
+
+		if not (ylims is None) :
+
+			indStart=None
+			indEnd=None
+			for ind, xval in enumerate(ylims) :
+				if indStart is None : 
+					if xval >= ylims[0] :
+						indStart=ind
+				if xval > ylims[1] :
+					indEnd=ind
+					break
+			if indEnd is None :
+				if not (indStart is None):
+					indEnd=len(yvals)-1
+			if (indEnd is None) :
+				indEnd=len(ylims)
+			if (indStart is None) :
+				indStart=0
+			nxvals=yvals[indStart:indEnd]
+			nfuns=nfuns[:,indStart:indEnd,:,:]
+			yvals=nxvals
+			pdb.set_trace()
+
+		if not (zlims is None) :
+
+			indStart=None
+			indEnd=None
+			for ind, xval in enumerate(zlims) :
+				if indStart is None : 
+					if xval >= zlims[0] :
+						indStart=ind
+				if xval > zlims[1] :
+					indEnd=ind
+					break
+			if indEnd is None :
+				if not (indStart is None):
+					indEnd=len(zvals)-1
+			if (indEnd is None) :
+				indEnd=len(zlims)
+			if (indStart is None) :
+				indStart=0
+			nxvals=zvals[indStart:indEnd]
+			nfuns=nfuns[:,:,indStart:indEnd,:]
+			zvals=nxvals
+		bf=self.clone_me()
+		bf.xvals=xvals
+		bf.yvals=yvals
+		bf.zvals=zvals
+		bf.bvals=nfuns
+		return bf
+
 	def get_pos_ind(self,colx,valx) :
 		vals=self.get_xvals(colx=colx)
 		for ind, val in enumerate(vals) :
@@ -1062,12 +1142,14 @@ class bfield(quantities.quantity) :
 			processes=1,
 			method='harmonic',# 'full', 'harmonic',
 			beamEnGeV=1, # Beam Energy in GeV
+			nperiods=1,
 			) :
 
 		facKicks=-1e-6*1/2*(uc.v_c*1e-9/beamEnGeV)**2
 
 		if method=='harmonic' :
 
+			facKicks=facKicks*nperiods
 			beffs, ys, zs, longIntrvl=self.calc_beff_grid(
 				prd_lngth=prd_lngth,
 				nlongs=nlongs,
